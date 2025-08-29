@@ -11,27 +11,77 @@
     </a>
 </p>
 
+
 ## Usage
 
-1. Open App
-2. Under settings, import `rose-pine.theme`
-3. Select `Rosé Pine` from the themes dropdown
+### App / Theme usage
 
-## Gallery
+1. Open the Theme/App manager you use for importing themes.
+2. Import `rose-pine.theme` (if provided by your tooling).
+3. Select **Rosé Pine** from the themes dropdown.
 
-![Rosé Pine with App](https://user-images.githubusercontent.com/1474821/166155319-06796439-95a7-4aea-910e-927c1f24518e.png)
+## Archive of Our Own (AO3) — Installation
 
-## Thanks to
+> To use this site skin, you'll need to create and chain several individual skins together.
 
-- [neos by ZerafinaCSS](https://github.com/ZerafinaCSS/neos/tree/main)
+### 1. Create the base skin
 
-## Style guide
+1. Go to Dashboard → Skins → Create Site Skin on Archive of Our Own.
+2. Give it a unique title, for example: `[BBC] Rosé Pine Dawn`.
+3. Paste the base CSS into the CSS field (see `ao3_rosepinedawn.css` in this repo or `css/base_default.css` for font settings where appropriate).
+4. Under Advanced, select **Parent Only**.
+5. Click **Submit**.
 
-> Be sure to remove this section 😌
+### 2. Optional: add a color variation
 
-- Lowercase meta files, eg. `readme.md`
-- Repo name should be the simplest version of the app name, eg. iterm instead of iTerm2
-- Add a description and topics to automatically show the theme on [rosepinetheme.com/themes](https://rosepinetheme.com/themes)
-    - Description should read "Soho vibes for App" where "App" is the display name
-    - Topics should include [existing categories](https://rosepinetheme.com/themes)
-    - Generate and upload social image via [Rosé Pine Images](https://rose-pine-images.vercel.app)
+Skip this step if you only want the Dawn scheme.
+
+1. Create another skin titled something like `[BBC] Rosé Pine Moon`.
+2. Paste the alternate color-scheme CSS into the CSS field. See:
+   - `ao3_rosepinemoon.css` (Moon)
+   - `ao3_rosepine.css` (Rosé Pine)
+3. Set this skin to **Parent Only** and submit.
+4. (Optional) To have this act as a dark-mode variation, edit the skin and under Advanced → Choose @media, set: `(prefers-color-scheme: dark)`.
+
+### 3. Create the tablet skin
+
+1. Create a skin titled `[BBC] Rosé Pine - Tablet`.
+2. Paste the tablet CSS into the CSS field: `css/media01_tablet.css`.
+3. Under Advanced → Choose @media select: `only screen (max-width: 62em)`.
+4. Submit.
+
+### 4. Create the mobile skin
+
+1. Create a skin titled `[BBC] Rosé Pine - Mobile`.
+2. Paste the mobile CSS into the CSS field: `css/media02_mobile.css`.
+3. Under Advanced → Choose @media select: `only screen (max-width: 42em)`.
+4. Submit.
+
+### 5. Chain the skins together
+
+1. Create a final skin titled `[BBC] Rosé Pine - Default`.
+2. Paste the default chaining CSS into the CSS field: `css/base_default.css` (this contains font settings and is required to save the skin).
+3. Under Advanced click **Add parent skin** and add the skins you created in this order:
+   1. Base Skin (Dawn)
+   2. Optional Color Skin (Moon / Rosé Pine) — if used
+   3. Tablet Skin
+   4. Mobile Skin
+4. Click **Submit**, then **Use**.
+
+## Customization
+
+- Fonts: recommended — [Domine](https://fonts.google.com/specimen/Domine) (serif) and [Outfit](https://fonts.google.com/specimen/Outfit) (sans-serif).
+- Color hex codes are listed at the top of each CSS file in the repo. To change accents:
+  1. Open the CSS file in a text editor.
+  2. Find the color you want to replace and use Replace (Ctrl+H) to update instances. Be careful: using "Replace All" will change every instance of that hex.
+  3. If you only want to change specific section colors (for example, tags), edit that section manually.
+
+## Credits
+
+- Thanks to [neos by ZerafinaCSS](https://github.com/ZerafinaCSS/neos/tree/main)
+
+## Preview
+
+| Rosé Pine Dawn | Rosé Pine Moon | Rosé Pine |
+| --- | --- | --- |
+| ![Rosé Pine Dawn](images/image_rose-pine-dawn.png) | ![Rosé Pine Moon](images/image_rose-pine-moon.png) | ![Rosé Pine](images/image_rose-pine.png) |
