@@ -1,0 +1,97 @@
+<div>
+  <h2>Preview: Desktop</h2>
+  <h6>RoséPine Dawn</h6>
+  <figure>
+    <img src="https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/5e0a95924b897ea6924a2c423746702e6ad5c7ad/images/image_rose-pine-dawn.png" alt="Rose Pine Dawn preview" title="Rose Pine Dawn" />
+  </figure>
+  <h6>RoséPine Moon</h6>
+  <figure>
+    <img src="https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/5e0a95924b897ea6924a2c423746702e6ad5c7ad/images/image_rose-pine-moon.png" alt="Rose Pine Moon preview" title="Rose Pine Moon" />
+  </figure>
+  <h6>RoséPine</h6>
+  <figure>
+    <img src="https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/5e0a95924b897ea6924a2c423746702e6ad5c7ad/images/image_rose-pine.png" alt="Rose Pine preview" title="Rose Pine" />
+  </figure>
+  <h2>Installation</h2>
+  <p>To use this site skin, you'll need to create and chain several individual skins together.</p>
+  <h3>1. Create the Base Skin</h3>
+  <ul>
+    <li>Go to your <strong>Dashboard → Skins → Create Site Skin</strong>.</li>
+    <li>Give it a unique title (e.g., "[BBC] Rosé Pine Dawn").</li>
+    <li>Paste the <a href="https://github.com/Wolfbatcat/ao3-rose-pine/blob/main/ao3_rosepinedawn.css" title="base CSS">base CSS code</a> into the <strong>CSS</strong> field.</li>
+    <li>Under <strong>Advanced</strong>, select <strong>Parent Only</strong>.</li>
+    <li>Click <strong>Submit</strong>.</li>
+  </ul>
+
+  <h3>2. Optional: Add a Color Variation</h3>
+  <p>Skip this step if you're solely using the base Rosé Pine Dawn scheme.</p>
+  <ul>
+    <li>Create another skin with a title like "[BBC] Rosé Pine Moon".</li>
+    <li>Paste the alternate color scheme CSS into the <strong>CSS</strong> field:
+      <ul>
+        <li><a href="https://github.com/Wolfbatcat/ao3-rose-pine/blob/main/ao3_rosepinemoon.css" title="Rosé Pine Moon">Rosé Pine Moon</a></li>
+        <li><a href="https://github.com/Wolfbatcat/ao3-rose-pine/blob/main/ao3_rosepine.css" title="Rosé Pine">Rosé Pine</a></li>
+      </ul>
+    </li>
+    <li>Set it to <strong>Parent Only</strong> and submit.</li>
+  </ul>
+
+  <h3>3. Create the Tablet Skin</h3>
+  <ul>
+    <li>Create a new skin titled "[BBC] Rosé Pine - Tablet".</li>
+    <li>Paste the <a href="https://github.com/Wolfbatcat/ao3-rose-pine/blob/main/css/media01_tablet.css" title="tablet CSS">tablet CSS code</a> into the <strong>CSS</strong> field.</li>
+    <li>Under <strong>Advanced</strong>, go to <strong>Choose @media</strong> and select:
+      <ul>
+        <li><code>only screen (max-width: 62em)</code></li>
+      </ul>
+    </li>
+    <li>Submit the skin.</li>
+  </ul>
+
+  <h3>4. Create the Mobile Skin</h3>
+  <ul>
+    <li>Create a new skin titled "[BBC] Rosé Pine - Mobile".</li>
+    <li>Paste the <a href="https://github.com/Wolfbatcat/ao3-rose-pine/blob/main/css/media02_mobile.css" title="mobile CSS">mobile CSS code</a> into the <strong>CSS</strong> field.</li>
+    <li>Under <strong>Advanced</strong>, go to <strong>Choose @media</strong> and select:
+      <ul>
+        <li><code>only screen (max-width: 42em)</code></li>
+      </ul>
+    </li>
+    <li>Submit the skin.</li>
+  </ul>
+
+  <h3>5. Chain All Skins Together</h3>
+  <ul>
+    <li>Create one final skin titled "[BBC] Rosé Pine - Default".</li>
+    <li>Paste the <a href="https://github.com/Wolfbatcat/ao3-rose-pine/blob/main/css/base_default.css" title="default skin code">default skin code</a> into the <strong>CSS</strong> field. (This contains font settings and is required to save the skin.)</li>
+    <li>Under <strong>Advanced</strong>, click <strong>Add parent skin</strong> and add all the skins you created, in this order:
+      <ol>
+        <li>Base Skin</li>
+        <li>Optional Color Skin (if used)</li>
+        <li>Tablet Skin</li>
+        <li>Mobile Skin</li>
+      </ol>
+    </li>
+    <li>Click <strong>Submit</strong>, then <strong>Use</strong>.</li>
+  </ul>
+
+  <h3>Customization</h3>
+  <ul>
+    <li>For fonts, I highly recommended <a href="https://fonts.google.com/specimen/Domine" title="Domine">Domine</a> (serif) and <a href="https://fonts.google.com/specimen/Outfit" title="Outfit">Outfit</a> (sans-serif).</li>
+    <li>Color hex codes are listed at the top of each CSS file for easy reference. To change accent colors:
+      <ol>
+        <li>Paste the code into a text editor</li>
+        <li>Highlight the color you'd like to replace on the color guide.</li>
+        <li>Press <strong>Ctrl+H</strong> and replace all instances with the color you want.</li>
+        <li><strong>NOTE:</strong> Using 'Replace All' will replace every instance of that color in the guide! If you simply want to change tag colors, navigate to the tag section and make the changes individually.</li>
+      </ol>
+    </li>
+    <li>
+      <strong>Enable Dark Mode Support</strong>
+      <ul>
+        <li>If you added an alternate color skin and want it to act as a dark mode: edit that skin and under <strong>Advanced → Choose @media</strong>, select: <code>(prefers-color-scheme: dark)</code></li>
+        <li>Update the skin.</li>
+      </ul>
+    </li>
+  </ul>
+</div>
