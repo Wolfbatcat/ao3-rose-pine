@@ -77,7 +77,7 @@ Skip this step if you only want the Dawn scheme.
 
 ## Customization
 
-- Fonts: recommended — [Domine](https://fonts.google.com/specimen/Domine) (serif) and [Outfit](https://fonts.google.com/specimen/Outfit) (sans-serif).
+- Fonts: recommended — [Domine](https://fonts.google.com/specimen/Domine) (serif) and [Outfit](https://fonts.google.com/specimen/Outfit) (sans-serif). If you use Outfit, also [Pier Sans](https://befonts.com/pier-sans-font-family.html) works nicely for the headers.
 - Color hex codes are listed at the top of each CSS file in the repo. To change accents:
   1. Open the CSS file in a text editor.
   2. Find the color you want to replace and use Replace (Ctrl+H) to update instances. Be careful: using "Replace All" will change every instance of that hex.
