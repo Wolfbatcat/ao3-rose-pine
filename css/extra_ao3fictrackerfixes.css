@@ -1,0 +1,25 @@
+/*═════════════════════════════════════════════════════════════*
+ *                   ʚʚʚ Rose Pine ɞɞɞ                   *
+ *           A Site Skin for the Archive of Our Own           *
+ *                      By Wolfbatcat                        *
+ *═════════════════════════════════════════════════════════════*/
+
+/*═════════════════════════════════════════════════════════════*
+ *                ʚʚʚ Extras ɞɞɞ                *
+ *═════════════════════════════════════════════════════════════*/
+
+ .toggle-note-btn {
+	background-color: transparent;
+    border: none;
+    box-shadow: none;
+}
+
+.note-container textarea {
+    position: relative;
+    z-index: 1001 !important;
+}
+
+.clear-note-btn,
+.save-note-btn {
+	z-index: 1002 !important;
+}
