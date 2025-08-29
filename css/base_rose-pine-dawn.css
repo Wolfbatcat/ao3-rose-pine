@@ -3882,6 +3882,14 @@ dl.meta.statistics dd {
   padding-left: 5px;
 }
 
+/* Allow stats to break if too long */
+dl.stats,
+dl.stats > * {
+  min-width: 0;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+}
+
 /*===== Setup For The Stats Icons =====*/
 
 /* hide the text before the stats */
