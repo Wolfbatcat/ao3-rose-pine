@@ -2188,7 +2188,7 @@ li.blurb,
 .blurb .blurb,
 .region.own + .dashboard li.blurb.own {
   padding: 0.75em 0.75em 0.643em;
-  background-color: #fffaf3;
+  background-color: #fffaf3 !important;
   box-shadow: 0 2px 8px 0 #c8b6ad33, 0 1.5px 0 0 #e7d3cb80;
 }
 
@@ -4307,4 +4307,24 @@ rect {
 /* Text edit area */
 .tox .tox-edit-area__iframe {
   background-color: #fffaf3;
+}
+
+/*========== FicTracker Styling ==========*/
+/* https://greasyfork.org/en/scripts/513435-ao3-fictracker */
+
+/* Style FicTracker note button and pop-up */
+ .toggle-note-btn {
+	background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+.note-container textarea {
+    position: relative;
+    z-index: 1001 !important;
+}
+
+.clear-note-btn,
+.save-note-btn {
+	z-index: 1002 !important;
 }
