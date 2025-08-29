@@ -2196,7 +2196,7 @@ li.blurb,
 li.blurb,
 li.picture.blurb,
 .toggled.blurb {
-  border: 1px solid #e4d1c9 ;
+  border: 1px solid #e4d1c9 !important;
   border-radius: 0.75rem;
   box-shadow: 0 2px 8px 0 #c8b6ad33, 0 1.5px 0 0 #e7d3cb80;
 }

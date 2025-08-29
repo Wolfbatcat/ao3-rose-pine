@@ -1089,7 +1089,7 @@ li.blurb,
 li.blurb,
 li.picture.blurb,
 .toggled.blurb {
-  border: 1px solid #3f3857;
+  border: 1px solid #3f3857 !important;
   box-shadow: 0 8px 28px 0 rgba(35, 33, 54, 0.60), 0 4px 0 0 rgba(35, 33, 54, 0.32);
 }
 

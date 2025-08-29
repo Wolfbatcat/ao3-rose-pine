@@ -1081,7 +1081,7 @@ dl.meta {
 li.blurb,
 .blurb .blurb,
 .region.own+.dashboard li.blurb.own {
-  background-color: #1f1d2e !imporant;
+  background-color: #1f1d2e !important;
   box-shadow: 0 8px 28px 0 rgba(25, 23, 36, 0.60), 0 4px 0 0 rgba(25, 23, 36, 0.32);
 }
 
@@ -1089,7 +1089,7 @@ li.blurb,
 li.blurb,
 li.picture.blurb,
 .toggled.blurb {
-  border: 1px solid #2e2a47;
+  border: 1px solid #2e2a47 !important;
   box-shadow: 0 8px 28px 0 rgba(25, 23, 36, 0.60), 0 4px 0 0 rgba(25, 23, 36, 0.32);
 }
 
