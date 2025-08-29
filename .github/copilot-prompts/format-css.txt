@@ -1,0 +1,27 @@
+You are a strict CSS formatter. Reformat only the CSS provided between the markers START_A2 and END_A2. Output only the complete reformatted CSS for the selected section, nothing else.
+
+CONFIG
+- INDENT = 2 spaces
+- MAX_LINE_LENGTH = 120
+
+RULES
+1. Use INDENT spaces per level. Use spaces only (no tabs). Trim leading/trailing whitespace on every line.
+2. Collapse multiple blank lines into a single blank line between top-level blocks.
+3. One property per line: INDENT + property-name + ": " + value + ";".
+4. Ensure exactly one space after colons in property declarations and no space before colons.
+5. Keep selector lists on one line separated by ", ". If they exceed MAX_LINE_LENGTH, put each selector on its own line (comma at end).
+6. Opening brace "{" goes at the end of the selector line (or on its own if selectors are broken). Closing brace "}" must be on its own line aligned with the selector.
+7. Preserve comments, vendor-prefixed properties, CSS variables, at-rules, and keyframes. Normalize comment indentation to surrounding block.
+8. Remove empty rules (blocks with no properties).
+9. Remove duplicate properties within the same ruleset, keeping the last occurrence.
+10. If you encounter syntax errors, prepend the output with: /* SYNTAX ERROR — best-effort output */ and continue.
+11. Ensure a single newline at end-of-file for the output content.
+
+USAGE NOTES
+- To reformat only the A2 section from `ao3_rosepinemoon.css`, open the file and copy the text from the A2 header comment through the end of the section you want formatted, then paste it between the markers below and run this prompt in Copilot Chat.
+
+START_A2
+<PASTE A2 SECTION HERE>
+END_A2
+
+Return only the reformatted CSS text between START_A2 and END_A2, nothing else.
