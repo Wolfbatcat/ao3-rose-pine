@@ -1615,7 +1615,7 @@ fieldset.actions li:not(:first-child) {
 /* Own works background */
 .own,
 li.blurb.own {
-  background-color: #faf4ed;
+  background-color: #faf4ed !important;
 }
 
 /* Draft wrapper background */
@@ -2188,7 +2188,7 @@ li.blurb,
 .blurb .blurb,
 .region.own + .dashboard li.blurb.own {
   padding: 0.75em 0.75em 0.643em;
-  background-color: #fffaf3 !important;
+  background-color: #fffaf3;
   box-shadow: 0 2px 8px 0 #c8b6ad33, 0 1.5px 0 0 #e7d3cb80;
 }
 
@@ -2196,14 +2196,14 @@ li.blurb,
 li.blurb,
 li.picture.blurb,
 .toggled.blurb {
-  border: 1px solid #e4d1c9 !important;
+  border: 1px solid #e4d1c9;
   border-radius: 0.75rem;
   box-shadow: 0 2px 8px 0 #c8b6ad33, 0 1.5px 0 0 #e7d3cb80;
 }
 
 /* Listbox blurb border and shadow styling */
 .listbox li.blurb {
-  border: 1px solid #e4d1c9 ;
+  border: 1px solid #e4d1c9;
   border-radius: 0.75rem;
   box-shadow: 0 1.5px 4px 0 #c8b6ad22, 0 1px 0 0 #e7d3cb40;
 }
@@ -2393,7 +2393,7 @@ li.picture.blurb,
 
 /* Bookmark user box styling */
 .bookmark .user {
-  border: 1px solid #e4d1c9 ;
+  border: 1px solid #e4d1c9;
   border-radius: 0.75rem;
   box-sizing: border-box;
   padding: 0.643em;

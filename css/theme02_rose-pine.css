@@ -837,7 +837,7 @@ span.delete a {
 /* Own works background */
 .own,
 li.blurb.own {
-  background-color: #191724;
+  background-color: #191724 !important;
 }
 
 /* Draft state styling */
@@ -1089,7 +1089,7 @@ li.blurb,
 li.blurb,
 li.picture.blurb,
 .toggled.blurb {
-  border: 1px solid #2e2a47 !important;
+  border: 1px solid #2e2a47;
   box-shadow: 0 8px 28px 0 rgba(25, 23, 36, 0.60), 0 4px 0 0 rgba(25, 23, 36, 0.32);
 }
 
@@ -1139,6 +1139,7 @@ li.picture.blurb,
 
 /* Bookmark user box styling */
 .bookmark .user {
+  background-color: #28253d;
   border: 1px solid #2e2a47;
   box-shadow: 0 3px 10px 0 rgba(25, 23, 36, 0.28), 0 2px 0 0 rgba(25, 23, 36, 0.17);
 }
