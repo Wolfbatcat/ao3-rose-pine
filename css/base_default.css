@@ -1,0 +1,71 @@
+/*═════════════════════════════════════════════════════════════*
+ *                   ʚʚʚ Rose Pine ɞɞɞ                   *
+ *           A Site Skin for the Archive of Our Own           *
+ *                      By Wolfbatcat                        *
+ *═════════════════════════════════════════════════════════════*/
+
+/*═════════════════════════════════════════════════════════════*
+ *                ʚʚʚ Fonts ɞɞɞ                *
+ *═════════════════════════════════════════════════════════════*/
+
+/* main font family */
+body,
+input,
+.toggled form,
+.dynamic form,
+.secondary,
+.dropdown,
+blockquote,
+.prompt .blurb h6,
+.bookmark .user .meta,
+a.work,
+span.symbol,
+.heading .actions,
+.heading .action,
+.heading span.actions,
+button,
+span.unread,
+.replied,
+span.claimed,
+.actions span.defaulted,
+.splash .news .meta,
+.datetime,
+h5.fandoms.heading a.tag,
+dd.fandom.tags a,
+select {
+    font-family: Domine, Outfit, Helvetica, "Trebuchet MS", "Lucida Sans", Arial, serif, "GNU Unifont";
+    font-weight: 400;
+}
+
+/* headings font family */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.heading {
+    font-family: Domine, Outfit, Helvetica, "Trebuchet MS", "Lucida Sans", Arial, serif, "GNU Unifont";
+    font-weight: 600;
+}
+
+/* "code" font family */
+kbd,
+tt,
+code,
+var,
+pre,
+samp,
+textarea,
+textarea#skin_css,
+.css.module blockquote pre,
+#floaty-textarea {
+    font-family: Victor Mono SemiBold, Consolas, Monaco, Courier, monospace;
+    font-size: 0.9em;
+}
+
+/*═════════════════════════════════════════════════════════════*
+ *                ʚʚʚ Optional Settings ɞɞɞ                *
+ *═════════════════════════════════════════════════════════════*/
+
+ 

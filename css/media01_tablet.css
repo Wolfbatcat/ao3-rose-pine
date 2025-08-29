@@ -1,0 +1,104 @@
+/*============================================================
+
+
+                           ~ Rose Pine ~
+          TABLET / MIDSIZE SCREENS (max-width: 62em)
+                CREDITS TO NEOS BY ZERAFINACSS
+
+
+============================================================*/
+ 
+#inner {
+  flex-flow: column; /* converts dashboard from sidebar to top menu */
+}
+
+/*============================================================
+>> 03 REGION: HEADER
+============================================================*/
+
+#header .heading {
+  margin-left: 2.5%;
+}
+
+#login,
+#greeting {
+  margin-right: 2.5%;
+}
+
+#header .primary {
+  justify-content: center;
+}
+
+#header h2 {
+  text-align: center;
+}
+
+/*============================================================
+>> 04 REGION: DASHBOARD
+============================================================*/
+
+#dashboard,
+#dashboard.own {
+  z-index: 2;
+  top: unset;
+  max-height: unset;
+  width: 100%;
+  min-width: unset;
+  max-width: unset;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  border-bottom: 1px solid;
+  border-right: none;
+  overflow: visible;
+  text-align: center;
+}
+
+#dashboard ul {
+  width: 100%;
+  margin: 0;
+  padding: 0.25em 2.5%; /* padding left and right here has to be same as header padding */
+  text-align: center;
+  box-sizing: border-box;
+}
+
+#dashboard a,
+#dashboard span {
+  display: inline-block; /* puts menu items next to each other */
+  margin-block: 1px;
+}
+
+#dashboard .secondary {
+  position: absolute;
+  width: fit-content;
+  max-width: 95%;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+/*============================================================
+>> 05 REGION: MAIN
+============================================================*/
+
+#main,
+#main.dashboard {
+  width: 100%;
+  padding-inline: 2.5%; /* narrower layout - same value as header inline padding */
+}
+
+/*============================================================
+>> 16 ZONE: SYSTEM
+============================================================*/
+ 
+.logged-in .splash > .module {
+  width: 48.5%;
+}
+
+/*============================================================
+>> 18 ZONE: SEARCH/BROWSE
+============================================================*/
+
+/* prevent the filter box from overlapping the pagination buttons */
+.region:has(ol.pagination.actions) form.filters {
+  margin-bottom: 7.5em !important;
+}
