@@ -802,11 +802,11 @@ a:link.current,
   border-color: #3e8fb0;
 }
 
-/* Style delete buttons/links minimal, blue */
+/* Style delete buttons/links */
 .delete a,
 span.delete,
 span.delete a {
-  color: #3e8fb0;
+  color: #ffffff;
 }
 
 /* Style delete button/link on hover darker */
