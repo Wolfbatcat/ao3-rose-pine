@@ -2686,14 +2686,13 @@ li.comment:has(.edit_comment) {
 /* Favorite tags in splash */
 .splash .favorite a.tag {
   border: 0;
-  background-color: transparent;
   border-radius: 0.75rem;
   color: #575279;
 }
 
 /* Odd favorite tags: alternate background */
 .splash .favorite li:nth-of-type(odd) a.tag {
-  background-color: #faf4ed;
+  background-color: #ece7e1;
 }
 
 /* Favorite tags hover effect */
