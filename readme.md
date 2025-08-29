@@ -14,59 +14,66 @@
 
 ## Usage
 
-### App / Theme usage
-
-1. Open the Theme/App manager you use for importing themes.
-2. Import `rose-pine.theme` (if provided by your tooling).
-3. Select **Rosé Pine** from the themes dropdown.
-
-## Archive of Our Own (AO3) — Installation
-
 > To use this site skin, you'll need to create and chain several individual skins together.
 
-### 1. Create the base skin
+<details>
+<summary>1. Create the base skin</summary>
 
-1. Go to Dashboard → Skins → Create Site Skin on Archive of Our Own.
+1. Go to Dashboard → Skins → [Create Site Skin](https://archiveofourown.org/skins/new?skin_type=Skin) on Archive of Our Own.
 2. Give it a unique title, for example: `[BBC] Rosé Pine Dawn`.
 3. Paste the base CSS into the CSS field (see `ao3_rosepinedawn.css` in this repo or `css/base_default.css` for font settings where appropriate).
 4. Under Advanced, select **Parent Only**.
 5. Click **Submit**.
 
-### 2. Optional: add a color variation
+</details>
+
+<details>
+<summary>2. Optional: add a color variation</summary>
 
 Skip this step if you only want the Dawn scheme.
 
 1. Create another skin titled something like `[BBC] Rosé Pine Moon`.
 2. Paste the alternate color-scheme CSS into the CSS field. See:
-   - `ao3_rosepinemoon.css` (Moon)
-   - `ao3_rosepine.css` (Rosé Pine)
+    - `ao3_rosepinemoon.css` (Moon)
+    - `ao3_rosepine.css` (Rosé Pine)
 3. Set this skin to **Parent Only** and submit.
 4. (Optional) To have this act as a dark-mode variation, edit the skin and under Advanced → Choose @media, set: `(prefers-color-scheme: dark)`.
 
-### 3. Create the tablet skin
+</details>
+
+<details>
+<summary>3. Create the tablet skin</summary>
 
 1. Create a skin titled `[BBC] Rosé Pine - Tablet`.
 2. Paste the tablet CSS into the CSS field: `css/media01_tablet.css`.
 3. Under Advanced → Choose @media select: `only screen (max-width: 62em)`.
 4. Submit.
 
-### 4. Create the mobile skin
+</details>
+
+<details>
+<summary>4. Create the mobile skin</summary>
 
 1. Create a skin titled `[BBC] Rosé Pine - Mobile`.
 2. Paste the mobile CSS into the CSS field: `css/media02_mobile.css`.
 3. Under Advanced → Choose @media select: `only screen (max-width: 42em)`.
 4. Submit.
 
-### 5. Chain the skins together
+</details>
+
+<details>
+<summary>5. Chain the skins together</summary>
 
 1. Create a final skin titled `[BBC] Rosé Pine - Default`.
 2. Paste the default chaining CSS into the CSS field: `css/base_default.css` (this contains font settings and is required to save the skin).
 3. Under Advanced click **Add parent skin** and add the skins you created in this order:
-   1. Base Skin (Dawn)
-   2. Optional Color Skin (Moon / Rosé Pine) — if used
-   3. Tablet Skin
-   4. Mobile Skin
+    1. Base Skin (Dawn)
+    2. Optional Color Skin (Moon / Rosé Pine) — if used
+    3. Tablet Skin
+    4. Mobile Skin
 4. Click **Submit**, then **Use**.
+
+</details>
 
 ## Customization
 
