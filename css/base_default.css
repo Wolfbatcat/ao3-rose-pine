@@ -33,8 +33,7 @@ span.claimed,
 h5.fandoms.heading a.tag,
 dd.fandom.tags a,
 select {
-    font-family: Domine, Outfit, Helvetica, "Trebuchet MS", "Lucida Sans", Arial, serif, "GNU Unifont";
-    font-weight: 400;
+    font-family: Outfit, Domine, Helvetica, "Trebuchet MS", "Lucida Sans", Arial, sans-serif, "GNU Unifont";
 }
 
 /* headings font family */
@@ -45,8 +44,8 @@ h4,
 h5,
 h6,
 .heading {
-    font-family: Domine, Outfit, Helvetica, "Trebuchet MS", "Lucida Sans", Arial, serif, "GNU Unifont";
-    font-weight: 600;
+    font-family: Outfit, Domine, Helvetica, "Trebuchet MS", "Lucida Sans", Arial, sans-serif, "GNU Unifont";
+    font-weight: 500;
 }
 
 /* "code" font family */
@@ -62,10 +61,18 @@ textarea#skin_css,
 #floaty-textarea {
     font-family: Victor Mono SemiBold, Consolas, Monaco, Courier, monospace;
     font-size: 0.9em;
+    /* font-style: italic; */
+    /* For cursive version of Victor Mono */
 }
 
 /*═════════════════════════════════════════════════════════════*
  *                ʚʚʚ Optional Settings ɞɞɞ                *
  *═════════════════════════════════════════════════════════════*/
 
- 
+/* #workskin p {
+        font-size: 150%;
+    } */
+
+/*  .userstuff p {
+        text-align: left !important;
+    } */

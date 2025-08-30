@@ -1184,7 +1184,6 @@ li.comment:not(:has(.edit_comment)) {
   color: #e0def4;
 }
 
-
 /*===== Module: "Find Your Favorites" =====*/
 
 /* Color of the little arrows in splash browse */
@@ -1210,7 +1209,6 @@ li.comment:not(:has(.edit_comment)) {
   background-image: linear-gradient(to bottom right, #ea9a97 0%, #eb6f92 60%, #eb6f92 100%);
   color: #ffffff;
 }
-
 
 /*===== Module: News =====*/
 
