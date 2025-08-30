@@ -88,12 +88,14 @@ FIND ME ON:
 .interactive-form-3 { color: #eb6f92; } /* Input focus outline, link hover */
 
 /*──────────────────── States & Statuses ───────────────────*/
-.state-error { color: #FCDCE2; }        /* Error backgrounds (alerts, messages) */
-.state-error-text { color: #C72C53; }   /* Error text */
-.state-warning { color: #FFF7E5; }      /* Warning backgrounds */
-.state-warning-text { color: #A77916; } /* Warning text */
-.state-success { color: #CFFFF2; }      /* Success backgrounds */
-.state-success-text { color: #008F85; } /* Success text */
+.state-error { color: #f7e6ec; }        /* Error backgrounds (alerts, messages) */
+.state-error-text { color: #EB6F92; }   /* Error text */
+.state-warning { color: #f8f3e3; }      /* Warning backgrounds */
+.state-warning-text { color: #F6C177; } /* Warning text */
+.state-success { color: #e6f4ef; }      /* Success backgrounds */
+.state-success-text { color: #3E8FB0; } /* Success text */
+.state-notice { color: #eceaf7; }        /* Notice backgrounds */
+.state-notice-text { color: #9A7FD1; }   /* Notice text */
 
 /*──────────────────── Tag Backgrounds ─────────────────────*/
 .tag-bg-1 { color: #9ccfd8; }    /* Default tags */
@@ -1187,21 +1189,21 @@ p.character_counter {
 }
 
 .LV_invalid {
-  background: #FCDCE2;
-  border: 1px solid #C72C53;
+  background: #f7e6ec;
+  border: 1px solid #EB6F92;
   border-radius: 0.75rem;
-  color: #C72C53;
+  color: #EB6F92;
   box-shadow: none;
 }
 
 .LV_invalid_field,
 input.LV_invalid_field:is(:hover, :focus, :active),
 textarea.LV_invalid_field:is(:hover, :focus, :active) {
-  border: 1px solid #C72C53;
+  border: 1px solid #EB6F92;
 }
 
 .LV_invalid::before {
-  border-color: #C72C53 transparent;
+  border-color: #EB6F92 transparent;
 }
 
 /*──────────── Widget: Auto Complete ─────────────*/
@@ -1650,43 +1652,43 @@ span.claimed,
 .draggable,
 .droppable,
 span.requested {
-  color: #C72C53;
+  color: #EB6F92;
 }
 
 /* Nominations: unreviewed state */
 .nominations .unreviewed,
 .unreviewed.symbol {
-  background-color: #FFF7E5;
-  border: 1px solid #A77916;
-  color: #A77916;
+  background-color: #f8f3e3;
+  border: 1px solid #F6C177;
+  color: #F6C177;
 }
 
 /* Nominations: approved state */
 .replied,
 .nominations .approved,
 .approved.symbol {
-  background-color: #CFFFF2;
-  border: 1px solid #008F85;
-  color: #008F85;
+  background-color: #e6f4ef;
+  border: 1px solid #3E8FB0;
+  color: #3E8FB0;
 }
 
 /* Nominations: rejected/unread state */
 span.unread,
 .nominations .rejected,
 .rejected.symbol {
-  background-color: #FCDCE2;
-  border: 1px solid #C72C53;
-  color: #C72C53;
+  background-color: #f7e6ec;
+  border: 1px solid #EB6F92;
+  color: #EB6F92;
 }
 
 /* Offered: highlight color */
 span.offered {
-  color: #008F85;
+  color: #3E8FB0;
 }
 
 /* Offered and requested: alternate highlight */
 span.offered.requested {
-  color: #A77916;
+  color: #F6C177;
 }
 
 /*========== Arrows for the Accordion Widget ==========*/
@@ -1979,7 +1981,7 @@ dl.index dd {
 
 /* Reindex action underline */
 .actions .reindex a {
-  border-bottom: 3px solid #C72C53;
+  border-bottom: 3px solid #EB6F92;
 }
 
 /* Series in blurb: display each on separate line */
@@ -2734,7 +2736,7 @@ li.comment:has(.edit_comment) {
 /* FAQ and guideline example border */
 .faq .example,
 .guideline .example {
-  border: 1px solid #2E6CB2;
+  border: 1px solid #9A7FD1;
 }
 
 /*========== Zone: System: TOS (Terms of Service) Popup ==========*/
@@ -2766,8 +2768,8 @@ li.comment:has(.edit_comment) {
 
 /* Proxy notice styling */
 #proxy-notice {
-  background: #FCDCE2;
-  border-bottom: 1px solid #C72C53;
+  background: #f7e6ec;
+  border-bottom: 1px solid #EB6F92;
 }
 
 /*═════════════════════════════════════════════════════════════*
@@ -3213,15 +3215,15 @@ alert.flash ul li {
 .comment_notice,
 .kudos_notice,
 ul.notes {
-  color: #2E6CB2;
-  background-color: #DEEAF7;
+  color: #9A7FD1;
+  background-color: #eceaf7;
   border-color: currentColor;
 }
 
 /* Colors for warnings */
 .caution {
-  color: #A77916;
-  background-color: #FFF7E5;
+  color: #F6C177;
+  background-color: #f8f3e3;
   border-color: currentColor;
 }
 
@@ -3232,14 +3234,14 @@ div.error,
 .kudos_error,
 .alert.flash,
 .required.notice {
-  color: #C72C53;
-  background-color: #FCDCE2;
+  color: #EB6F92;
+  background-color: #f7e6ec;
   border-color: currentColor;
 }
 
 /* Required field color */
 .required {
-  color: #C72C53;
+  color: #EB6F92;
 }
 
 /* System message links */
@@ -3271,7 +3273,7 @@ div.error,
   border-bottom: 1px solid #00000020;
   padding: 1em 0 1em 2em;
   z-index: 1;
-  background: #DEEAF7;
+  background: #eceaf7;
 }
 
 /* Announcement userstuff styling */
@@ -3313,7 +3315,7 @@ div.error,
 
 /* Event announcement background */
 .announcement.event {
-  background: #C72C53;
+  background: #EB6F92;
 }
 
 /* Event announcement userstuff color */
@@ -3324,7 +3326,7 @@ div.error,
 
 /* Alert announcement background */
 .announcement.alert {
-  background: #FFF7E5;
+  background: #f8f3e3;
 }
 
 /* Alert announcement userstuff color */
@@ -3365,7 +3367,7 @@ div.error,
 
 /* Thermometer progress bar styling */
 .announcement .thermometer .track div.progress {
-  background-image: linear-gradient(to right, #CFFFF2 -25%, #008F85 50%) !important;
+  background-image: linear-gradient(to right, #e6f4ef -25%, #3E8FB0 50%) !important;
   border-radius: 9999px;
 }
 
