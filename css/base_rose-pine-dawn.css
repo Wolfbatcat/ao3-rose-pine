@@ -1513,7 +1513,7 @@ a:link.current,
   border-color: #3e8fb0;
 }
 
-/* Style delete buttons/links */
+/* Style delete buttons/links minimal, blue */
 .delete a,
 span.delete,
 span.delete a {
@@ -1615,7 +1615,7 @@ fieldset.actions li:not(:first-child) {
 /* Own works background */
 .own,
 li.blurb.own {
-  background-color: #faf4ed !important;
+  background-color: #faf4ed;
 }
 
 /* Draft wrapper background */
@@ -2196,14 +2196,14 @@ li.blurb,
 li.blurb,
 li.picture.blurb,
 .toggled.blurb {
-  border: 1px solid #e4d1c9;
+  border: 1px solid #e4d1c9 ;
   border-radius: 0.75rem;
   box-shadow: 0 2px 8px 0 #c8b6ad33, 0 1.5px 0 0 #e7d3cb80;
 }
 
 /* Listbox blurb border and shadow styling */
 .listbox li.blurb {
-  border: 1px solid #e4d1c9;
+  border: 1px solid #e4d1c9 ;
   border-radius: 0.75rem;
   box-shadow: 0 1.5px 4px 0 #c8b6ad22, 0 1px 0 0 #e7d3cb40;
 }
@@ -2393,7 +2393,7 @@ li.picture.blurb,
 
 /* Bookmark user box styling */
 .bookmark .user {
-  border: 1px solid #e4d1c9;
+  border: 1px solid #e4d1c9 ;
   border-radius: 0.75rem;
   box-sizing: border-box;
   padding: 0.643em;
@@ -2686,6 +2686,7 @@ li.comment:has(.edit_comment) {
 /* Favorite tags in splash */
 .splash .favorite a.tag {
   border: 0;
+  background-color: transparent;
   border-radius: 0.75rem;
   color: #575279;
 }
@@ -4309,22 +4310,3 @@ rect {
   background-color: #fffaf3;
 }
 
-/*========== FicTracker Styling ==========*/
-/* https://greasyfork.org/en/scripts/513435-ao3-fictracker */
-
-/* Style FicTracker note button and pop-up */
- .toggle-note-btn {
-	background-color: transparent !important;
-    border: none !important;
-    box-shadow: none !important;
-}
-
-.note-container textarea {
-    position: relative;
-    z-index: 1001 !important;
-}
-
-.clear-note-btn,
-.save-note-btn {
-	z-index: 1002 !important;
-}
