@@ -934,7 +934,7 @@ dd.fandom.tags a:hover::before,
 [class^=relationship] a.tag:hover::before,
 [class^=character] a.tag:hover::before,
 .tags a[data-remote="true"]:hover::before {
-  filter: brightness(1.08);
+  filter: brightness(1.1);
   box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.3);
 }
 
