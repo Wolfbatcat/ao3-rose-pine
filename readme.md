@@ -85,6 +85,20 @@ Skip this step if you only want the Dawn scheme.
   2. Find the color you want to replace and use Replace (Ctrl+H) to update instances. Be careful: using "Replace All" will change every instance of that hex.
   3. If you only want to change specific section colors (for example, tags), edit that section manually.
 
+- **Change the tag symbol:** To use a different symbol (such as `✦`, `✿`, `♥`, or `ɞ`) after each tag, search for "tag symbol" in your CSS file to find the relevant section. Example rule:
+
+    ```css
+    h5.fandoms.heading a.tag:after,
+    dd.fandom.tags a:after,
+    [class^=warning] a.tag:after,
+    [class^=relationship] a.tag:after,
+    [class^=character] a.tag:after,
+    a.tag:not(.fandom.index.group a.tag, h2.heading a.tag, .splash .favorite a.tag):after {
+        content: "\00a0\00a0✦";
+    }
+    ```
+    Change the `content` value to your preferred symbol. For example, to use a heart: `content: "\00a0\00a0♥";`
+
 ## Credits
 
 - Thanks to [neos by ZerafinaCSS](https://github.com/ZerafinaCSS/neos/tree/main)

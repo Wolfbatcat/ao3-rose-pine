@@ -91,6 +91,17 @@
         <li><strong>NOTE:</strong> Using 'Replace All' will replace every instance of that color in the guide! If you simply want to change tag colors, navigate to the tag section and make the changes individually.</li>
       </ol>
     </li>
+  <li><strong>Change the tag symbol:</strong> To use a different symbol (such as <code>✦</code>, <code>✿</code>, <code>♥</code>, or <code>ɞ</code>) after each tag, find the following CSS rule in your file by searching "tag symbol":<br>
+  <pre><code>h5.fandoms.heading a.tag:after,
+dd.fandom.tags a:after,
+[class^=warning] a.tag:after,
+[class^=relationship] a.tag:after,
+[class^=character] a.tag:after,
+a.tag:not(.fandom.index.group a.tag, h2.heading a.tag, .splash .favorite a.tag):after {
+  content: "\00a0\00a0✦";
+}</code></pre>
+  Change the <code>content</code> value to your preferred symbol. For example, to use a heart: <code>content: "\00a0\00a0♥";</code>
+  </li>
     <li>
       <strong>Enable Dark Mode Support</strong>
       <ul>
