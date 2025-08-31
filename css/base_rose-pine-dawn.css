@@ -1790,7 +1790,7 @@ a.tag:not(.fandom.index.group a.tag, h2.heading a.tag, .splash .favorite a.tag),
   background-color: #9ccfd8;
 }
 
-/* Add flower symbols to tags */
+/* Add tag symbols */
 /* Examples: ɞɞ, ✿, ✦, ♥  */ 
 h5.fandoms.heading a.tag:after,
 dd.fandom.tags a:after,
