@@ -10,8 +10,8 @@
 
 CODE & INSTRUCTIONS:
 
-- Code (GitHub):       
-- Instructions (AO3):  
+- Code (GitHub):       https://github.com/Wolfbatcat/ao3-rose-pine
+- Instructions (AO3):  https://archiveofourown.org/works/69993411
 
 CREDITS:
 
@@ -62,83 +62,84 @@ FIND ME ON:
 *═════════════════════════════════════════════════════════════*/
 
 /*──────────────────── Main Backgrounds ────────────────────*/
-.core-bg-1 { color: #232136; }   /* Primary page background (body, main containers) */
-.core-bg-2 { color: #2a273f; }   /* Header, buttons, blurbs, dashboard, listboxes, tables */
-.core-bg-3 { color: #3f3857; }   /* Footer, active button state, some borders */
-.core-bg-4 { color: #28253c; }   /* Search bar background */
-.core-bg-5 { color: #2e2c44; }   /* Dashboard current, button backgrounds */
+.core-bg-1 { color: #232136; }   /* Main background */
+.core-bg-2 { color: #2a273f; }   /* Secondary background */
+.core-bg-3 { color: #3f3857; }   /* Tertiary background */
+.core-bg-4 { color: #28253c; }   /* Quaternary background */
+.core-bg-5 { color: #2e2c44; }   /* Quinary background */
 
 /*──────────────────── Borders & Dividers ──────────────────*/
-.border-1 { color: #3f3857; }    /* Light borders (header, dashboard, userstuff) */
-.border-2 { color: #36324e; }    /* Main borders (blurbs, forms, inputs, tables) */
-.border-3 { color: #463e61; }    /* Dark borders (dropdowns, icons, buttons) */
-.border-4 { color: #3f3857; }    /* Icon image border */
-.border-5 { color: #00000025; }  /* Faint icon/image border */
-.border-6 { color: #9893a525; }  /* Tag border (faint) */
-.border-7 { color: #0000001a; }  /* Transparent border for icons */
-.border-8 { color: #3f3857; }    /* Button active border */
+.border-1 { color: #3f3857; }    /* Light border */
+.border-2 { color: #36324e; }    /* Main border */
+.border-3 { color: #463e61; }    /* Dark border */
+.border-4 { color: #3f3857; }    /* Icon border */
+.border-5 { color: #00000025; }  /* Faint border */
+.border-6 { color: #9893a525; }  /* Faint tag border */
+.border-7 { color: #0000001a; }  /* Transparent border */
+.border-8 { color: #3f3857; }    /* Active button border */
+.border-9 { color: #595574; }    /* Current border */
 
 /*──────────────────── Text & Font Colors ──────────────────*/
-.core-text-1 { color: #e0def4; } /* Main body text */
-.core-text-2 { color: #ea9a97; } /* Standard links, default tags */
-.core-text-3 { color: #3e8fb0; } /* Visited/footer links, character tags, delete links */
-.core-text-4 { color: #211F2E; } /* Headings, dark text elements, announcement buttons */
-.core-text-5 { color: #ffffff; }    /* White text (tags, buttons, etc) */
-.core-text-6 { color: #9ccfd8; } /* Visited links, tag backgrounds, rating icons */
+.core-text-1 { color: #e0def4; } /* Main text */
+.core-text-2 { color: #eb6f92; } /* Link text */
+.core-text-3 { color: #3e8fb0; } /* Visited/secondary text */
+.core-text-4 { color: #211F2E; } /* Headings, dark text */
+.core-text-5 { color: #ffffff; } /* White text */
+.core-text-6 { color: #9ccfd8; } /* Highlight text */
 
 /*──────────────────── Interactive Elements ────────────────*/
-.interactive-btn-1 { color: #2a273f; } /* Button background (default) */
+.interactive-btn-1 { color: #2a273f; } /* Button background */
 .interactive-btn-2 { color: #3e8fb0; } /* Button hover/focus */
 .interactive-btn-3 { color: #3f3857; } /* Button active/selected */
-.interactive-btn-4 { color: #403e62; } /* Tag/button background (alt) */
-.interactive-form-1 { color: #232136; } /* Input backgrounds */
-.interactive-form-2 { color: #36324e; } /* Input borders, main borders */
-.interactive-form-3 { color: #eb6f92; } /* Input focus outline, link hover */
-.hover-border { color: #eb8895; }
+.interactive-btn-4 { color: #403e62; } /* Alt button/tag background */
+.interactive-btn-5 { color: #44415a; } /* Button current */
+.interactive-form-1 { color: #232136; } /* Input background */
+.interactive-form-2 { color: #36324e; } /* Input border */
+.interactive-form-3 { color: #eb6f92; } /* Input focus/hover */
+.hover-border { color: #eb8895; } /* Hover border */
 
 /*──────────────────── States & Statuses ───────────────────*/
-.state-error { color: #210b13; }        /* Error backgrounds (alerts, messages) */
+.state-error { color: #210b13; }        /* Error background */
 .state-error-text { color: #EB6F92; }   /* Error text */
-.state-warning { color: #2b2107; }      /* Warning backgrounds */
+.state-warning { color: #2b2107; }      /* Warning background */
 .state-warning-text { color: #F6C177; } /* Warning text */
-.state-success { color: #11211c; }      /* Success backgrounds */
+.state-success { color: #11211c; }      /* Success background */
 .state-success-text { color: #3E8FB0; } /* Success text */
-.state-notice { color: #18162b; }        /* Notice backgrounds */
+.state-notice { color: #18162b; }        /* Notice background */
 .state-notice-text { color: #9A7FD1; }   /* Notice text */
 
 /*──────────────────── Tag Backgrounds ─────────────────────*/
-.tag-bg-1 { color: #403e62; }    /* Default tags */
-.tag-bg-2 { color: #eb6f92; }    /* Fandom tags */
-.tag-bg-3 { color: #9ccfd8; }    /* Relationship tags */
-.tag-bg-4 { color: #3e8fb0; }    /* Character tags */
-.tag-bg-5 { color: #ea9a97; }    /* Warning tags */
-.tag-bg-6 { color: rgba(50, 48, 70, 0.22); }  /* Transparent tag base (25% opacity) */
-.tag-bg-7 { color: #9ccfd8; }    /* Visited links, rating icons, warning tags alt */
+.tag-bg-1 { color: #403e62; }    /* Default tag */
+.tag-bg-2 { color: #eb6f92; }    /* Fandom tag */
+.tag-bg-3 { color: #9ccfd8; }    /* Relationship tag */
+.tag-bg-4 { color: #3e8fb0; }    /* Character tag */
+.tag-bg-5 { color: #ea9a97; }    /* Warning tag */
+.tag-bg-6 { color: rgba(50, 48, 70, 0.22); }  /* Transparent tag */
+.tag-bg-7 { color: #9ccfd8; }    /* Alt tag */
 
 /*──────────────────── Icons & Symbols ─────────────────────*/
-.icon-1 { color: #9ccfd8; }      /* Rating: General, stats icon 1 */
-.icon-2 { color: #3e8fb0; }      /* Rating: Teen, stats icon 2 */
-.icon-3 { color: #ea9a97; }      /* Rating: Mature, stats icon 3 */
-.icon-4 { color: #eb6f92; }      /* Rating: Explicit, stats icon 4 */
-.icon-5 { color: #9ccfd8; }      /* Visited links, rating icons, warning tags alt */
-.symbol-1 { color: #ea9a97; }    /* Bookmark: Rec */
-.symbol-2 { color: #9ccfd8; }    /* Bookmark: Public */
-.symbol-3 { color: #eb6f92; }    /* Bookmark: Private */
-.symbol-4 { color: #3e8fb0; }    /* Bookmark: Hidden */
+.icon-1 { color: #9ccfd8; }      /* General icon */
+.icon-2 { color: #3e8fb0; }      /* Teen icon */
+.icon-3 { color: #ea9a97; }      /* Mature icon */
+.icon-4 { color: #eb6f92; }      /* Explicit icon */
+.icon-5 { color: #9ccfd8; }      /* Alt icon */
+.symbol-1 { color: #ea9a97; }    /* Rec symbol */
+.symbol-2 { color: #9ccfd8; }    /* Public symbol */
+.symbol-3 { color: #eb6f92; }    /* Private symbol */
+.symbol-4 { color: #3e8fb0; }    /* Hidden symbol */
 
 /*──────────────────── Utility & Effects ───────────────────*/
-.utility-1 { color: #eb6f92; }   /* Text selection highlight */
-.utility-2 { color: #36324e; }   /* Scrollbar thumb */
+.utility-1 { color: #eb6f92; }   /* Selection highlight */
+.utility-2 { color: #7b76a1; }   /* Scrollbar thumb */
 .utility-3 { color: #3f3857; }   /* Scrollbar track */
-.utility-4 { color: rgba(50, 48, 70, 0.22); } /* Box shadows (25% opacity, tags) */
+.utility-4 { color: rgba(50, 48, 70, 0.22); } /* Box shadow */
 
 /*──────────────────── Shadows & Gradients ─────────────────*/
-.box-shadow-1 { box-shadow: 0 8px 28px 0 rgba(35, 33, 54, 0.60), 0 4px 0 0 rgba(35, 33, 54, 0.32); } /* Main card/module shadow */
-.box-shadow-2 { box-shadow: 0 3px 10px 0 rgba(35, 33, 54, 0.28), 0 2px 0 0 rgba(35, 33, 54, 0.17); } /* Subtle shadow (e.g., bookmarks) */
-.header-shadow { box-shadow: 0 6px 20px 0 rgba(35, 33, 54, 0.24), 0 2px 0 0 rgba(100, 90, 120, 0.13); } /* Header shadow */
+.box-shadow-1 { box-shadow: 0 8px 28px 0 rgba(35, 33, 54, 0.60), 0 4px 0 0 rgba(35, 33, 54, 0.32); } /* Main shadow */
+.box-shadow-2 { box-shadow: 0 3px 10px 0 rgba(35, 33, 54, 0.28), 0 2px 0 0 rgba(35, 33, 54, 0.17); } /* Subtle shadow */
 .button-shadow { box-shadow: 0 3px 8px 0 rgba(35, 33, 54, 0.33), 0 2px 0 0 rgba(100, 90, 120, 0.15); } /* Button shadow */
-.shadow-dashboard { color: rgba(50, 48, 70, 0.22); } /* Dashboard shadow (transparent) */
-.gradient-action { background: linear-gradient(to bottom right, #ea9a97 0%, #eb6f92 60%, #eb6f92 100%); } /* Action/primary button gradient */
+.shadow-dashboard { color: rgba(50, 48, 70, 0.22); } /* Dashboard shadow */
+.gradient-action { background: linear-gradient(to bottom right, #ea9a97 0%, #eb6f92 60%, #eb6f92 100%); } /* Action gradient */
 
 /*═════════════════════════════════════════════════════════════*
  *         ʚʚʚ A2 Basic Layout Settings Etc. ɞɞɞ             *
@@ -1139,7 +1140,7 @@ li.picture.blurb,
 
 /* Bookmark user box styling */
 .bookmark .user {
-  background-color: #28253d;
+  background-color: #29263e;
   border: 1px solid #3f3857;
   box-shadow: 0 3px 10px 0 rgba(35, 33, 54, 0.28), 0 2px 0 0 rgba(35, 33, 54, 0.17);
 }
@@ -1492,7 +1493,7 @@ img[src$="/images/skins/iconsets/default/icon_user.png"] {
   /* diagonal gradient */
   background-color: #eb6f92;
   /* fallback color */
-  border: 1px solid #00000025;
+  border: none;
 }
 
 /* Anon comment icon replacement */
@@ -1503,7 +1504,7 @@ img[src$="/images/skins/iconsets/default/icon_user.png"] {
   /* diagonal gradient */
   background-color: #ea9a97;
   /* fallback color */
-  border: 1px solid #00000025;
+  border: none;
   background-size: cover;
 }
 
@@ -1515,7 +1516,7 @@ img[src$="/images/skins/iconsets/default/icon_user.png"] {
   /* diagonal gradient */
   background-color: #ea9a97;
   /* fallback color */
-  border: 1px solid #00000025;
+  border: none;
   background-size: cover;
 }
 
@@ -1527,7 +1528,7 @@ img[src$="/images/skins/iconsets/default/icon_collection.png"] {
   /* diagonal gradient */
   background-color: #eb6f92;
   /* fallback color */
-  border: 1px solid #00000025;
+  border: none;
   /* change border width and color here */
 }
 
@@ -1541,7 +1542,7 @@ img[src$="/images/skins/iconsets/default/icon_collection.png"] {
   /* diagonal gradient */
   background-color: #eb6f92;
   /* fallback color */
-  border: 1px solid #00000025;
+  border: none;
   background-size: cover;
 }
 
@@ -1564,7 +1565,7 @@ img[src$="/images/skins/iconsets/default/icon_collection.png"] {
     linear-gradient(to bottom right, #ea9a97 0%, #eb6f92 60%, #eb6f92 100%);
   /* diagonal gradient */
   background-color: #eb6f92;
-  border: 1px solid #00000025;
+  border: none;
 }
 
 /* Default icon for skins replacement */
@@ -1575,7 +1576,7 @@ img[src$="/images/skins/iconsets/default/icon_collection.png"] {
     linear-gradient(to bottom right, #ea9a97 0%, #eb6f92 60%, #eb6f92 100%);
   /* diagonal gradient */
   background-color: #eb6f92;
-  border: 1px solid #00000025;
+  border: none;
   background-size: cover;
 }
 
@@ -1907,7 +1908,7 @@ dl.statistics dt::before {
 
 /* Scrollbar */
 * {
-  scrollbar-color: #36324e #3f3857;
+  scrollbar-color: #7b76a1 #3f3857;
 }
 
 /* Text selection */

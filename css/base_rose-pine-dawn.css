@@ -64,71 +64,74 @@ FIND ME ON:
 *═════════════════════════════════════════════════════════════*/
 
 /*──────────────────── Main Backgrounds ────────────────────*/
-.core-bg-1 { color: #faf4ed; }   /* Primary page background (body, main containers) */
-.core-bg-2 { color: #fffaf5; }   /* Header, buttons, blurbs, dashboard, listboxes, tables */
-.core-bg-3 { color: #e4d1c9; }   /* Footer, active button state, some borders */
+.core-bg-1 { color: #faf4ed; }   /* Main background */
+.core-bg-2 { color: #fffaf5; }   /* Secondary background */
+.core-bg-3 { color: #e4d1c9; }   /* Tertiary background */
 
 /*──────────────────── Borders & Dividers ──────────────────*/
-.border-1 { color: #e4d1c9; }    /* Light borders (header, dashboard) */
-.border-2 { color: #e7d3cb; }    /* Main borders (blurbs, forms, inputs) */
-.border-3 { color: #D7BFB6; }    /* Dark borders (dropdowns, icons) */
+.border-1 { color: #e4d1c9; }    /* Light border */
+.border-2 { color: #e7d3cb; }    /* Main border */
+.border-3 { color: #D7BFB6; }    /* Dark border */
+.border-4 { color: #eaddcf; }   /* Current border */
 
 /*──────────────────── Text & Font Colors ──────────────────*/
-.core-text-1 { color: #575279; } /* Main body text */
-.core-text-2 { color: #9ccfd8; } /* Standard links, default tags */
-.core-text-3 { color: #3e8fb0; } /* Visited/footer links, character tags */
-.core-text-4 { color: #211F2E; } /* Headings, dark text elements */
+.core-text-1 { color: #575279; } /* Main text */
+.core-text-2 { color: #9ccfd8; } /* Link text */
+.core-text-3 { color: #3e8fb0; } /* Visited/secondary text */
+.core-text-4 { color: #211F2E; } /* Headings, dark text */
+.core-text-5 { color: #ffffff; } /* White text (tags, buttons, hover) */
+.core-text-6 { color: #eb6f92; } /* Accent text */
 
 /*──────────────────── Interactive Elements ────────────────*/
-.interactive-btn-1 { color: #fffaf5; } /* Button background (default) */
+.interactive-btn-1 { color: #fffaf5; } /* Button background */
 .interactive-btn-2 { color: #3e8fb0; } /* Button hover/focus */
 .interactive-btn-3 { color: #e4d1c9; } /* Button active/selected */
-.interactive-form-1 { color: #faf4ed; } /* Input backgrounds */
-.interactive-form-2 { color: #e7d3cb; } /* Input borders, main borders */
-.interactive-form-3 { color: #eb6f92; } /* Input focus outline, link hover */
+.interactive-form-1 { color: #faf4ed; } /* Input background */
+.interactive-form-2 { color: #e7d3cb; } /* Input border */
+.interactive-form-3 { color: #eb6f92; } /* Input focus/hover */
 
 /*──────────────────── States & Statuses ───────────────────*/
-.state-error { color: #f7e6ec; }        /* Error backgrounds (alerts, messages) */
+.state-error { color: #f7e6ec; }        /* Error background */
 .state-error-text { color: #EB6F92; }   /* Error text */
-.state-warning { color: #f8f3e3; }      /* Warning backgrounds */
+.state-warning { color: #f8f3e3; }      /* Warning background */
 .state-warning-text { color: #F6C177; } /* Warning text */
-.state-success { color: #e6f4ef; }      /* Success backgrounds */
+.state-success { color: #e6f4ef; }      /* Success background */
 .state-success-text { color: #3E8FB0; } /* Success text */
-.state-notice { color: #eceaf7; }        /* Notice backgrounds */
+.state-notice { color: #eceaf7; }        /* Notice background */
 .state-notice-text { color: #9A7FD1; }   /* Notice text */
 
 /*──────────────────── Tag Backgrounds ─────────────────────*/
-.tag-bg-1 { color: #9ccfd8; }    /* Default tags */
-.tag-bg-2 { color: #eb6f92; }    /* Fandom tags */
-.tag-bg-3 { color: #ea9a97; }    /* Relationship tags */
-.tag-bg-4 { color: #3e8fb0; }    /* Character tags */
-.tag-bg-5 { color: #f6c177; }    /* Warning tags */
-.tag-bg-6 { color: #3e8fb025; }  /* Transparent tag base (25% opacity) */
+.tag-bg-1 { color: #9ccfd8; }    /* Default tag */
+.tag-bg-2 { color: #eb6f92; }    /* Fandom tag */
+.tag-bg-3 { color: #ea9a97; }    /* Relationship tag */
+.tag-bg-4 { color: #3e8fb0; }    /* Character tag */
+.tag-bg-5 { color: #f6c177; }    /* Warning tag */
+.tag-bg-6 { color: #3e8fb025; }  /* Transparent tag */
 
 /*──────────────────── Icons & Symbols ─────────────────────*/
-.icon-1 { color: #3e8fb0; }      /* Rating: General, stats icon 1 */
-.icon-2 { color: #9ccfd8; }      /* Rating: Teen, stats icon 2 */
-.icon-3 { color: #eb6f92; }      /* Rating: Mature, stats icon 3 */
-.icon-4 { color: #f6c177; }      /* Rating: Explicit, stats icon 4 */
-.symbol-1 { color: #f6c177; }    /* Bookmark: Rec */
-.symbol-2 { color: #3e8fb0; }    /* Bookmark: Public */
-.symbol-3 { color: #eb6f92; }    /* Bookmark: Private */
-.symbol-4 { color: #3e8fb0; }    /* Bookmark: Hidden */
+.icon-1 { color: #3e8fb0; }      /* General icon */
+.icon-2 { color: #9ccfd8; }      /* Teen icon */
+.icon-3 { color: #eb6f92; }      /* Mature icon */
+.icon-4 { color: #f6c177; }      /* Explicit icon */
+.symbol-1 { color: #f6c177; }    /* Rec symbol */
+.symbol-2 { color: #3e8fb0; }    /* Public symbol */
+.symbol-3 { color: #eb6f92; }    /* Private symbol */
+.symbol-4 { color: #3e8fb0; }    /* Hidden symbol */
 
 /*──────────────────── Utility & Effects ───────────────────*/
-.utility-1 { color: #eb6f92; }   /* Text selection highlight */
+.utility-1 { color: #eb6f92; }   /* Selection highlight */
 .utility-2 { color: #e7d3cb; }   /* Scrollbar thumb */
 .utility-3 { color: #e4d1c9; }   /* Scrollbar track */
-.utility-4 { color: #3e8fb025; } /* Box shadows (25% opacity, tags) */
+.utility-4 { color: #3e8fb025; } /* Box shadow */
 
 /*──────────────────── Shadows & Gradients ─────────────────*/
-.box-shadow-1 { box-shadow: 0 2px 8px 0 #c8b6ad33, 0 1.5px 0 0 #e7d3cb80; } /* Main card/module shadow */
-.box-shadow-2 { box-shadow: 0 1.5px 4px 0 #c8b6ad22, 0 1px 0 0 #e7d3cb40; } /* Subtle shadow (e.g., bookmarks) */
+.box-shadow-1 { box-shadow: 0 2px 8px 0 #c8b6ad33, 0 1.5px 0 0 #e7d3cb80; } /* Main shadow */
+.box-shadow-2 { box-shadow: 0 1.5px 4px 0 #c8b6ad22, 0 1px 0 0 #e7d3cb40; } /* Subtle shadow */
 .header-shadow { box-shadow: 0 2px 8px 0 rgba(120, 110, 100, 0.18), 0 1px 0 0 rgba(200, 182, 173, 0.10); } /* Header shadow */
 .button-shadow { box-shadow: 0 2px 6px 0 #c8b6ad33, 0 1.5px 0 0 #e7d3cb80; } /* Button shadow */
-.shadow-dashboard { color: #3e8fb025; } /* Dashboard shadow (transparent) */
-.gradient-action { background: linear-gradient(to bottom right, #ea9a97, #eb6f92); } /* Action/primary button gradient */
-.gradient-dashboard-current { background: linear-gradient(to bottom right, #fffaf5 60%, #fff7ef 100%); } /* Dashboard current gradient */
+.shadow-dashboard { color: #3e8fb025; } /* Dashboard shadow */
+.gradient-action { background: linear-gradient(to bottom right, #ea9a97, #eb6f92); } /* Action gradient */
+.gradient-dashboard-current { background: linear-gradient(to bottom right, #fffaf5 60%, #fff7ef 100%); } /* Dashboard gradient */
 
 /*═════════════════════════════════════════════════════════════*
  *         ʚʚʚ A2 Basic Layout Settings Etc. ɞɞɞ             *
@@ -1785,6 +1788,17 @@ a.tag:not(.fandom.index.group a.tag, h2.heading a.tag, .splash .favorite a.tag),
 .added.tag,
 .tags a[data-remote="true"] {
   background-color: #9ccfd8;
+}
+
+/* Add flower symbols to tags */
+/* Examples: ɞɞ, ✿, ✦, ♥  */ 
+h5.fandoms.heading a.tag:after,
+dd.fandom.tags a:after,
+[class^=warning] a.tag:after,
+[class^=relationship] a.tag:after,
+[class^=character] a.tag:after,
+a.tag:not(.fandom.index.group a.tag, h2.heading a.tag, .splash .favorite a.tag):after {
+  content: "\00a0\00a0✦";
 }
 
 /*========== Consolidated Hover Effects ==========*/
