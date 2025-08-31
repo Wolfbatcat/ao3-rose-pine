@@ -21,7 +21,7 @@
 
 1. Go to Dashboard → Skins → [Create Site Skin](https://archiveofourown.org/skins/new?skin_type=Skin) on Archive of Our Own.
 2. Give it a unique title, for example: `[BBC] Rosé Pine Dawn`.
-3. Paste the base CSS into the CSS field (see `ao3_rosepinedawn.css` in this repo or `css/base_default.css` for font settings where appropriate).
+3. Paste the base CSS into the CSS field (see `base_rose-pine-dawn.css` in this repo or `css/base_default.css` for font settings where appropriate).
 4. Under Advanced, select **Parent Only**.
 5. Click **Submit**.
 
@@ -34,8 +34,10 @@ Skip this step if you only want the Dawn scheme.
 
 1. Create another skin titled something like `[BBC] Rosé Pine Moon`.
 2. Paste the alternate color-scheme CSS into the CSS field. See:
-    - `ao3_rosepinemoon.css` (Moon)
-    - `ao3_rosepine.css` (Rosé Pine)
+    - `theme01_rose-pine-moon` (Rose Pine Moon)
+    - `theme02_rose-pine-moon-cool` (Rose Pine Moon Cool)
+    - `theme03_rose-pine` (Rosé Pine)
+    - `theme04_rose-pine-cool` (Rosé Pine Cool)
 3. Set this skin to **Parent Only** and submit.
 4. (Optional) To have this act as a dark-mode variation, edit the skin and under Advanced → Choose @media, set: `(prefers-color-scheme: dark)`.
 
