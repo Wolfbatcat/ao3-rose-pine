@@ -108,5 +108,5 @@ Skip this step if you only want the Dawn scheme.
 | Rosé Pine Dawn | Rosé Pine Moon | Rosé Pine |
 | --- | --- | --- |
 | ![Rosé Pine Dawn](https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/images/image_splash-rose-pine-dawn.png) | ![Rosé Pine Moon](https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/images/image_splash-rose-pine-moon.png) | ![Rosé Pine](https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/images/image_splash-rose-pine.png) |
-|  | **Rosé Pine Moon - Cool** | **Rosé Pine - Cool** |
-|  | ![Rosé Pine Moon - Cool](https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/images/image_splash-rose-pine-moon-cool.png) | ![Rosé Pine - Cool](https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/images/image_splash-rose-pine-cool.png) |
+| **Rosé Pine Moon - Cool** | **Rosé Pine - Cool** | **Mobile** |
+| ![Rosé Pine Moon - Cool](https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/images/image_splash-rose-pine-moon-cool.png) | ![Rosé Pine - Cool](https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/images/image_splash-rose-pine-cool.png) | ![Mobile](https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/images/image_mobile.jpg) |
