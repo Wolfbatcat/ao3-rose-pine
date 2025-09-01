@@ -120,8 +120,8 @@ FIND ME ON:
 
 /*──────────────────── Utility & Effects ───────────────────*/
 .utility-1 { color: #eb6f92; }   /* Selection highlight */
-.utility-2 { color: #e7d3cb; }   /* Scrollbar thumb */
-.utility-3 { color: #e4d1c9; }   /* Scrollbar track */
+.utility-2 { color: #af9f98; }   /* Scrollbar thumb */
+.utility-3 { color: #fffaf5; }   /* Scrollbar track */
 .utility-4 { color: #3e8fb025; } /* Box shadow */
 
 /*──────────────────── Shadows & Gradients ─────────────────*/
@@ -2897,7 +2897,7 @@ form.filters {
   border-radius: 0.75rem;
   margin-block: 0.643em !important; /* same as blurbs */
   padding: 0 0.643em 0 2%; /* leave a little more space on the right for the scrollbar */
-  scrollbar-color: #e7d3cb transparent;
+  scrollbar-color: #af9f98 transparent;
 }
 
 /* Hide scrollbar except on hover for filters */
@@ -4216,7 +4216,7 @@ color: #575279; /* link color */
 
 /* Scrollbar */
 * {
-  scrollbar-color: #e7d3cb #e4d1c9 ;
+  scrollbar-color: #af9f98 #fffaf5;
   scrollbar-width: thin;
 }
 
