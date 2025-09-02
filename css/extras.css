@@ -10,3 +10,20 @@
 /* To install, create a new parent skin and add it to your default skin. /* 
 /* NOTE: These are work-in-progress and will be subject to updates.  */
 
+/*========== FicTracker Fixes ==========*/
+/* https://greasyfork.org/en/scripts/513435-ao3-fictracker */
+ .toggle-note-btn {
+    background-color: transparent;
+    box-shadow: none;
+    border: none;
+ }
+
+ .note-container textarea {
+    position: relative;
+    z-index: 1001;
+ }
+
+ .clear-note-btn,
+ .save-note-btn {
+    z-index: 1002 !important;
+ }
