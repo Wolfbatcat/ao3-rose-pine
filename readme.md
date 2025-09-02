@@ -21,7 +21,7 @@
 
 1. Go to Dashboard → Skins → [Create Site Skin](https://archiveofourown.org/skins/new?skin_type=Skin) on Archive of Our Own.
 2. Give it a unique title, for example: `[BBC] Rosé Pine Dawn`.
-3. Paste the base CSS into the CSS field (see `ao3_rosepinedawn.css` in this repo or `css/base_default.css` for font settings where appropriate).
+3. Paste the base CSS into the CSS field (see `base_rose-pine-dawn.css` in this repo or `css/base_default.css` for font settings where appropriate).
 4. Under Advanced, select **Parent Only**.
 5. Click **Submit**.
 
@@ -34,8 +34,10 @@ Skip this step if you only want the Dawn scheme.
 
 1. Create another skin titled something like `[BBC] Rosé Pine Moon`.
 2. Paste the alternate color-scheme CSS into the CSS field. See:
-    - `ao3_rosepinemoon.css` (Moon)
-    - `ao3_rosepine.css` (Rosé Pine)
+    - `theme01_rose-pine-moon` (Rose Pine Moon)
+    - `theme02_rose-pine-moon-cool` (Rose Pine Moon Cool)
+    - `theme03_rose-pine` (Rosé Pine)
+    - `theme04_rose-pine-cool` (Rosé Pine Cool)
 3. Set this skin to **Parent Only** and submit.
 4. (Optional) To have this act as a dark-mode variation, edit the skin and under Advanced → Choose @media, set: `(prefers-color-scheme: dark)`.
 
@@ -66,7 +68,7 @@ Skip this step if you only want the Dawn scheme.
 
 1. Create a final skin titled `[BBC] Rosé Pine - Default`.
 2. Paste the default chaining CSS into the CSS field: `css/base_default.css` (this contains font settings and is required to save the skin).
-3. Under Advanced click **Add parent skin** and add the skins you created in this order:
+3. Under Advanced, add the skins you created in this order:
     1. Base Skin (Dawn)
     2. Optional Color Skin (Moon / Rosé Pine) — if used
     3. Tablet Skin
@@ -77,11 +79,25 @@ Skip this step if you only want the Dawn scheme.
 
 ## Customization
 
-- Fonts: recommended — [Domine](https://fonts.google.com/specimen/Domine) (serif) and [Outfit](https://fonts.google.com/specimen/Outfit) (sans-serif). If you use Outfit, also [Pier Sans](https://befonts.com/pier-sans-font-family.html) works nicely for the headers.
-- Color hex codes are listed at the top of each CSS file in the repo. To change accents:
+- **Fonts**: recommended — [Domine](https://fonts.google.com/specimen/Domine) (serif) and [Outfit](https://fonts.google.com/specimen/Outfit) (sans-serif). If you use Outfit, also [Pier Sans](https://befonts.com/pier-sans-font-family.html) works nicely for the headers. The code font is [Victor Mono](https://rubjo.github.io/victor-mono/) set to cursive, just uncomment it in `base_default.css`.
+- **Colors**: Color hex codes are listed at the top of each CSS file in the repo. To change colors:
   1. Open the CSS file in a text editor.
   2. Find the color you want to replace and use Replace (Ctrl+H) to update instances. Be careful: using "Replace All" will change every instance of that hex.
   3. If you only want to change specific section colors (for example, tags), edit that section manually.
+
+- **Change the tag symbol:** To use a different symbol (such as `✦`, `✿`, `♥`, or `ɞ`) after each tag, search for "tag symbol" in your CSS file to find the relevant section. Example rule:
+
+    ```css
+    h5.fandoms.heading a.tag:after,
+    dd.fandom.tags a:after,
+    [class^=warning] a.tag:after,
+    [class^=relationship] a.tag:after,
+    [class^=character] a.tag:after,
+    a.tag:not(.fandom.index.group a.tag, h2.heading a.tag, .splash .favorite a.tag):after {
+        content: "\00a0\00a0✦";
+    }
+    ```
+    Change the `content` value to your preferred symbol. For example, to use a heart: `content: "\00a0\00a0♥";`
 
 ## Credits
 
@@ -91,4 +107,6 @@ Skip this step if you only want the Dawn scheme.
 
 | Rosé Pine Dawn | Rosé Pine Moon | Rosé Pine |
 | --- | --- | --- |
-| ![Rosé Pine Dawn](images/image_rose-pine-dawn.png) | ![Rosé Pine Moon](images/image_rose-pine-moon.png) | ![Rosé Pine](images/image_rose-pine.png) |
+| ![Rosé Pine Dawn](https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/images/image_splash-rose-pine-dawn.png) | ![Rosé Pine Moon](https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/images/image_splash-rose-pine-moon.png) | ![Rosé Pine](https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/images/image_splash-rose-pine.png) |
+| **Rosé Pine Moon - Cool** | **Rosé Pine - Cool** | **Mobile** |
+| ![Rosé Pine Moon - Cool](https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/images/image_splash-rose-pine-moon-cool.png) | ![Rosé Pine - Cool](https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/images/image_splash-rose-pine-cool.png) | <img src="https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/images/image_mobile.jpg" alt="Mobile" width="1845"> |
