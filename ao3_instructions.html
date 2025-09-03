@@ -1,5 +1,5 @@
 <div>
-  <h2>Preview: Desktop</h2>
+  <h2>Previews</h2>
   <h6>Rosé Pine Dawn</h6>
   <figure>
     <img src="https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/images/image_splash-rose-pine-dawn.png" alt="Rose Pine Dawn preview" title="Rose Pine Dawn" />
@@ -8,7 +8,7 @@
   <figure>
     <img src="https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/images/image_splash-rose-pine-moon.png" alt="Rose Pine Moon preview" title="Rose Pine Moon" />
   </figure>
-    <h6>Rosé Pine Moon Cool</h6>
+  <h6>Rosé Pine Moon Cool</h6>
   <figure>
     <img src="https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/images/image_splash-rose-pine-moon-cool.png" alt="Rose Pine Moon preview" title="Rose Pine Moon" />
   </figure>
@@ -16,15 +16,14 @@
   <figure>
     <img src="https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/images/image_splash-rose-pine.png" alt="Rose Pine preview" title="Rose Pine" />
   </figure>
-    <h6>Rosé Pine Cool</h6>
+  <h6>Rosé Pine Cool</h6>
   <figure>
     <img src="https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/images/image_splash-rose-pine-cool.png" alt="Rose Pine preview" title="Rose Pine" />
   </figure>
-      <h6>Rosé Pine Moon Cool - Mobile</h6>
+  <h6>Rosé Pine Moon Cool - Mobile</h6>
   <figure>
     <img src="https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/images/image_mobile.jpg" alt="Rose Pine preview" title="Mobile Layout" />
   </figure>
-
   <h2>Installation</h2>
 
 <p>To use this site skin, you'll need to create and chain several individual skins together.</p><h3>1. Create the Base Skin</h3>
@@ -75,7 +74,7 @@
   <ul>
     <li>Create one final skin titled "[BBC] Rosé Pine - Default".</li>
     <li>Paste the <a href="https://github.com/Wolfbatcat/ao3-rose-pine/blob/main/css/base_default.css" title="default skin code" rel="nofollow">default skin code</a> into the <strong>CSS</strong> field. (This contains font settings and is required to save the skin.)</li>
-    <li>Under <strong>Advanced</strong>, add all the skins you created, in this order:
+    <li>Under <strong>Advanced</strong> and then <strong>Parent Skins</strong>, add all the skins you created, in this order:
       <ol>
         <li>Base Skin</li>
         <li>Optional Color Skin (if used)</li>
@@ -87,7 +86,7 @@
   </ul>
   <h3>Customization</h3>
   <ul>
-    <li>For fonts, I highly recommended <a href="https://fonts.google.com/specimen/Domine" title="Domine" rel="nofollow">Domine</a> (serif) and <a href="https://fonts.google.com/specimen/Outfit" title="Outfit" rel="nofollow">Outfit</a> (sans-serif). If you use Outfit, you can also use  <a href="https://befonts.com/pier-sans-font-family.html" title="Pier Sans" rel="nofollow">Pier Sans</a> for the headings. The code font is <a href="https://rubjo.github.io/victor-mono/" title="Victor Mono" rel="nofollow">Victor Mono</a>, which can be set to cursive in <code>base_default.css</code>. </li>
+    <li>For fonts, I highly recommended <a href="https://fonts.google.com/specimen/Domine" title="Domine" rel="nofollow">Domine</a> (serif) and <a href="https://fonts.google.com/specimen/Outfit" title="Outfit" rel="nofollow">Outfit</a> (sans-serif). If you use Outfit, you can also use  <a href="https://befonts.com/pier-sans-font-family.html" title="Pier Sans" rel="nofollow">Pier Sans</a> for the headings.</li>
     <li>Color hex codes are listed at the top of each CSS file for easy reference. To change accent colors:
       <ol>
         <li>Paste the code into a text editor.</li>
@@ -96,8 +95,8 @@
         <li><strong>NOTE:</strong> Using 'Replace All' will replace every instance of that color in the guide! If you simply want to change tag colors, navigate to the tag section and make the changes individually.</li>
       </ol>
     </li>
-  <li><strong>Change the tag symbol:</strong> To use a different symbol (such as <code>✦</code>, <code>✿</code>, <code>♥</code>, or <code>ɞ</code>) after each tag, find the following CSS rule in your file by searching "tag symbol":<br>
-  <pre><code>h5.fandoms.heading a.tag:after,
+  <li><strong>Change the tag symbol:</strong> To use a different symbol (such as <code>✦</code>, <code>✿</code>, <code>♥</code>, or <code>ɞ</code>) after each tag, find the following CSS rule in your file by searching "tag symbol":<br />
+<pre><code>h5.fandoms.heading a.tag:after,
 dd.fandom.tags a:after,
 [class^=warning] a.tag:after,
 [class^=relationship] a.tag:after,

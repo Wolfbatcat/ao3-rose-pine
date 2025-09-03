@@ -68,7 +68,7 @@ Skip this step if you only want the Dawn scheme.
 
 1. Create a final skin titled `[BBC] Rosé Pine - Default`.
 2. Paste the default chaining CSS into the CSS field: `css/base_default.css` (this contains font settings and is required to save the skin).
-3. Under Advanced, add the skins you created in this order:
+3. Under Advanced >> Parent Skins, add the skins you created in this order:
     1. Base Skin (Dawn)
     2. Optional Color Skin (Moon / Rosé Pine) — if used
     3. Tablet Skin
