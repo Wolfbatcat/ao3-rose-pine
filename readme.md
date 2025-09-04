@@ -49,7 +49,7 @@ Skip this step if you only want the Dawn scheme.
 1. Create a skin titled `[BBC] Rosé Pine - Tablet`.
 2. Paste the tablet CSS into the CSS field: `css/media01_tablet.css`.
 3. Under Advanced → Choose @media select: `only screen (max-width: 62em)`.
-4. Submit.
+4. Set this skin to **Parent Only** and submit.
 
 </details>
 
@@ -59,7 +59,7 @@ Skip this step if you only want the Dawn scheme.
 1. Create a skin titled `[BBC] Rosé Pine - Mobile`.
 2. Paste the mobile CSS into the CSS field: `css/media02_mobile.css`.
 3. Under Advanced → Choose @media select: `only screen (max-width: 42em)`.
-4. Submit.
+4. Set this skin to **Parent Only** and submit.
 
 </details>
 
