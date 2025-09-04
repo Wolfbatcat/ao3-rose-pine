@@ -96,7 +96,8 @@
       </ol>
     </li>
   <li><strong>Change the tag symbol:</strong> To use a different symbol (such as <code>✦</code>, <code>✿</code>, <code>♥</code>, or <code>ɞ</code>) after each tag, find the following CSS rule in your file by searching "tag symbol":<br />
-<pre><code>h5.fandoms.heading a.tag:after,
+<br>
+    <pre><code>h5.fandoms.heading a.tag:after,
 dd.fandom.tags a:after,
 [class^=warning] a.tag:after,
 [class^=relationship] a.tag:after,
@@ -104,6 +105,7 @@ dd.fandom.tags a:after,
 a.tag:not(.fandom.index.group a.tag, h2.heading a.tag, .splash .favorite a.tag):after {
   content: "\00a0\00a0✦";
 }</code></pre>
+<br>
   Change the <code>content</code> value to your preferred symbol. For example, to use a heart: <code>content: "\00a0\00a0♥";</code>
   </li>
     <li>
