@@ -34,25 +34,24 @@ FIND ME ON:
 
 >> A1 COLOR GUIDE
 >> A2 BASIC LAYOUT SETTINGS ETC.
->> A3 FONTS
->> 02 ELEMENTS
->> 03 REGION: HEADER
->> 04 REGION: DASHBOARD
->> 05 REGION: MAIN
->> 06 REGION: FOOTER
->> 07 INTERACTIONS
->> 08 ACTIONS: BUTTONS
->> 09 ROLES AND STATES
->> 10 TYPES OF DATA, GROUPS OF DATA
->> 11 GROUP: LISTBOX
->> 12 GROUP: META
->> 13 GROUP: BLURB
->> 14 GROUP: PREFACE
->> 15 GROUP: COMMENTS
->> 16 ZONE: SYSTEM
->> 17 ZONE: HOME
->> 18 ZONE: SEARCH/BROWSE
->> 19 ZONE: TAGS, TAGSETS, and TAG WRANGLING
+>> 01 ELEMENTS
+>> 02 REGION: HEADER
+>> 03 REGION: DASHBOARD
+>> 04 REGION: MAIN
+>> 05 REGION: FOOTER
+>> 06 INTERACTIONS
+>> 07 ACTIONS: BUTTONS
+>> 08 ROLES AND STATES
+>> 09 TYPES OF DATA, GROUPS OF DATA
+>> 10 GROUP: LISTBOX
+>> 11 GROUP: META
+>> 12 GROUP: BLURB
+>> 13 GROUP: PREFACE
+>> 14 GROUP: COMMENTS
+>> 15 ZONE: SYSTEM
+>> 16 ZONE: HOME
+>> 17 ZONE: SEARCH/BROWSE
+>> 18 ZONE: TAGS, TAGSETS, and TAG WRANGLING
 >> 21 USERSTUFF
 >> 22 SYSTEM MESSAGES
 >> Z1 REPLACE THE ICONS AND IMAGES
@@ -183,68 +182,7 @@ button:focus,
 }
 
 /*═════════════════════════════════════════════════════════════*
- *                ʚʚʚ A3 Fonts ɞɞɞ                         *
- *═════════════════════════════════════════════════════════════*/
-
-/* Main font family */
-body,
-input,
-.toggled form,
-.dynamic form,
-.secondary,
-.dropdown,
-blockquote,
-.prompt .blurb h6,
-.bookmark .user .meta,
-a.work,
-span.symbol,
-.heading .actions,
-.heading .action,
-.heading span.actions,
-button,
-span.unread,
-.replied,
-span.claimed,
-.actions span.defaulted,
-.splash .news .meta,
-.datetime,
-h5.fandoms.heading a.tag,
-dd.fandom.tags a,
-select {
-  font-family: Domine, Outfit, Helvetica, "Trebuchet MS", "Lucida Sans", Arial, serif, "GNU Unifont";
-  font-weight: 400;
-}
-
-/* Headings font family */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-.heading {
-  font-family: Domine, Outfit, Helvetica, "Trebuchet MS", "Lucida Sans", Arial, serif, "GNU Unifont";
-  font-weight: 600;
-}
-
-/* Code font family */
-kbd,
-tt,
-code,
-var,
-pre,
-samp,
-textarea,
-textarea#skin_css,
-.css.module blockquote pre {
-  font-family: Victor Mono, Consolas, Monaco, Courier, monospace;
-  font-size: 0.9em;
-  font-style: bold;
-  /* Font-style: italic; */ /* For use with Victor Mono */
-}
-
-/*═════════════════════════════════════════════════════════════*
- *                ʚʚʚ 02 Elements ɞɞɞ                     *
+ *                ʚʚʚ 01 Elements ɞɞɞ                     *
  *═════════════════════════════════════════════════════════════*/
 /* See "Archive: (2) Elements Skin" by AO3. */
 
@@ -349,7 +287,7 @@ col.name {
 }
 
 /*═════════════════════════════════════════════════════════════*
- *             ʚʚʚ 03 Region: Header ɞɞɞ                   *
+ *             ʚʚʚ 02 Region: Header ɞɞɞ                   *
  *═════════════════════════════════════════════════════════════*/
 /* See "Archive 2.0: (3) Region Header Skin" by AO3 */
 
@@ -681,7 +619,7 @@ col.name {
 }
 
 /*═════════════════════════════════════════════════════════════*
- *           ʚʚʚ 04 Region: Dashboard ɞɞɞ                   *
+ *           ʚʚʚ 03 Region: Dashboard ɞɞɞ                   *
  *═════════════════════════════════════════════════════════════*/
 /* see "Archive: (4) region dashboard skin" by AO3 */
 /* #2 of the 4 regions shown on every page */
@@ -762,7 +700,7 @@ col.name {
 }
 
 /*═════════════════════════════════════════════════════════════*
- *               ʚʚʚ 05 Region: Main ɞɞɞ                   *
+ *               ʚʚʚ 04 Region: Main ɞɞɞ                   *
  *═════════════════════════════════════════════════════════════*/
 /* See "Archive: (5) Region Main Skin" by AO3 */
 /* Third of four regions shown on every page */
@@ -798,7 +736,7 @@ col.name {
 }
 
 /*═════════════════════════════════════════════════════════════*
- *               ʚʚʚ 06 Region: Footer ɞɞɞ                 *
+ *               ʚʚʚ 05 Region: Footer ɞɞɞ                 *
  *═════════════════════════════════════════════════════════════*/
 /* See "Archive: (6) Region Footer Skin" by AO3 */
 /* Fourth of four regions shown on every page */
@@ -857,7 +795,7 @@ col.name {
 }
 
 /*═════════════════════════════════════════════════════════════*
- *             ʚʚʚ 07 Interactions ɞɞɞ                     *
+ *             ʚʚʚ 06 Interactions ɞɞɞ                     *
  *═════════════════════════════════════════════════════════════*/
 /* See "Archive: (7) Interactions Skin" by AO3 */
 
@@ -1429,7 +1367,7 @@ dd.required {
 }
 
 /*═════════════════════════════════════════════════════════════*
- *           ʚʚʚ 08 Actions: Buttons ɞɞɞ                   *
+ *           ʚʚʚ 07 Actions: Buttons ɞɞɞ                   *
  *═════════════════════════════════════════════════════════════*/
 /* See "Archive: (8) Actions Skin" by AO3 */
 /* Subtypes: .action, .navigation, .sorting, .submit, .cancel, .close, .delete, .pagination, .current, .landmark, #skiplinks, input[type="submit"], button */
@@ -1602,7 +1540,7 @@ fieldset.actions li:not(:first-child) {
 }
 
 /*═════════════════════════════════════════════════════════════*
- *           ʚʚʚ 09 Roles and States ɞɞɞ                   *
+ *           ʚʚʚ 08 Roles and States ɞɞɞ                   *
  *═════════════════════════════════════════════════════════════*/
 /* See "Archive: (9) Roles States Skin" by AO3 */
 
@@ -1724,7 +1662,7 @@ span.offered.requested {
 }
 
 /*═════════════════════════════════════════════════════════════*
- *     ʚʚʚ 10 Types of Data, Groups of Data ɞɞɞ             *
+ *     ʚʚʚ 09 Types of Data, Groups of Data ɞɞɞ             *
  *═════════════════════════════════════════════════════════════*/
 
 /*========== Type: Tags ==========*/
@@ -1754,7 +1692,7 @@ a.tag:not(.fandom.index.group a.tag, h2.heading a.tag, .splash .favorite a.tag),
   line-height: 1.25;
   border: 1px solid #9893a525;
   border-radius: 0 15px 15px;
-  color: #ffffff;
+  color: #fff;
   font-size: 0.9em;
   position: relative;
   z-index: 1;
@@ -1788,7 +1726,6 @@ a.tag:not(.fandom.index.group a.tag, h2.heading a.tag, .splash .favorite a.tag),
 .added.tag,
 .tags a[data-remote="true"] {
   background-color: #9ccfd8;
-  padding-right: 1.5em; /* Add space for the toggle symbol */
 }
 
 /* Add tag symbols */
@@ -1870,6 +1807,19 @@ dd.fandom.tags a {
   border: 1px solid #9893a525;
 }
 
+/* "Show" arrow for hidden tags */
+.tags a[data-remote="true"]::after {
+  content: "ɞɞ";
+  margin-left: 0.25em;
+  /* Space between text and arrow */
+  font-size: 1em;
+}
+
+.tags a[data-remote="true"]:hover,
+.tags a[data-remote="true"]:focus {
+  background-color: #9ccfd8;
+}
+
 /* Special hover cases for tags */
 .fandom.index.group a.tag:hover,
 h2.heading a.tag:hover {
@@ -1879,10 +1829,12 @@ h2.heading a.tag:hover {
 
 /* "Show" arrow for hidden tags */
 .tags a[data-remote="true"]::after {
-  content: "ɞɞ";
-  margin-left: 0.25em; /* Space between text and symbol */
-  color: #ffffff;
-  font-size: 1em;
+  content: "";
+  display: inline-block;
+  margin-right: 0.35em;
+  margin-bottom: 0.025em;
+  border-block: 0.35em solid transparent;
+  border-left: 0.5em solid;
 }
 
 /* Fandom/heading tag line height fix */
@@ -2036,7 +1988,7 @@ dd.series span {
 }
 
 /*═════════════════════════════════════════════════════════════*
- *             ʚʚʚ 11 Group: Listbox ɞɞɞ                   *
+ *             ʚʚʚ 10 Group: Listbox ɞɞɞ                   *
  *═════════════════════════════════════════════════════════════*/
 /* see "Archive 2.0: (11) group listbox skin by AO3" by AO3 */
 
@@ -2150,7 +2102,7 @@ fieldset fieldset.listbox {
 }
 
 /*═════════════════════════════════════════════════════════════*
- *                ʚʚʚ 12 Group: Meta ɞɞɞ                   *
+ *                ʚʚʚ 11 Group: Meta ɞɞɞ                   *
  *═════════════════════════════════════════════════════════════*/
 /* See "Archive: (12) group meta skin" by AO3 */
 
@@ -2194,7 +2146,7 @@ dl.meta dd ul {
 }
 
 /*═════════════════════════════════════════════════════════════*
- *                ʚʚʚ 13 Group: Blurb ɞɞɞ                  *
+ *                ʚʚʚ 12 Group: Blurb ɞɞɞ                  *
  *═════════════════════════════════════════════════════════════*/
 /* See "Archive: (13) group blurb skin" by AO3 */
 
@@ -2499,7 +2451,7 @@ li.picture.blurb,
 }
 
 /*═════════════════════════════════════════════════════════════*
- *        ʚʚʚ 14 Group: Preface (= Work Prefaces) ɞɞɞ        *
+ *        ʚʚʚ 13 Group: Preface (= Work Prefaces) ɞɞɞ        *
  *═════════════════════════════════════════════════════════════*/
 /* See "Archive: (14) Group Preface Skin" by AO3 */
 
@@ -2531,7 +2483,7 @@ div.afterword {
 }
 
 /*═════════════════════════════════════════════════════════════*
- *             ʚʚʚ 15 Group: Comments ɞɞɞ                   *
+ *             ʚʚʚ 14 Group: Comments ɞɞɞ                   *
  *═════════════════════════════════════════════════════════════*/
 /* See "Archive: (15) Group Comments Skin" by AO3 */
 
@@ -2636,7 +2588,7 @@ li.comment:has(.edit_comment) {
 }
 
 /*═════════════════════════════════════════════════════════════*
- *             ʚʚʚ 16 Zone: System ɞɞɞ                      *
+ *             ʚʚʚ 15 Zone: System ɞɞɞ                      *
  *═════════════════════════════════════════════════════════════*/
 /* See "Archive: (16) Zone System Skin" by AO3 */
 
@@ -2786,7 +2738,7 @@ li.comment:has(.edit_comment) {
 }
 
 /*═════════════════════════════════════════════════════════════*
- *             ʚʚʚ 17 Zone: Home ɞɞɞ                        *
+ *             ʚʚʚ 16 Zone: Home ɞɞɞ                        *
  *═════════════════════════════════════════════════════════════*/
 /* See "Archive: (17) Zone Home Skin" by AO3 */
 
@@ -2852,7 +2804,7 @@ this zone always shows a dashboard styled in region-dashboard and its parent is 
 }
 
 /*═════════════════════════════════════════════════════════════*
- *         ʚʚʚ 18 Zone: Search/Browse ɞɞɞ                    *
+ *         ʚʚʚ 17 Zone: Search/Browse ɞɞɞ                    *
  *═════════════════════════════════════════════════════════════*/
 /* See "Archive: (18) Zone Searchbrowse Skin" by AO3 */
 
@@ -3053,7 +3005,7 @@ form.filters dl dl {
 }
 
 /*═════════════════════════════════════════════════════════════*
- *   ʚʚʚ 19 Zone: Tags, Tagsets, And Tag Wrangling ɞɞɞ       *
+ *   ʚʚʚ 18 Zone: Tags, Tagsets, And Tag Wrangling ɞɞɞ       *
  *═════════════════════════════════════════════════════════════*/
 /* See "Archive: (19) Zone Tags Skin" by AO3 */
 
