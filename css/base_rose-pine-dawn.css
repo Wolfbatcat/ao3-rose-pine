@@ -1754,7 +1754,7 @@ a.tag:not(.fandom.index.group a.tag, h2.heading a.tag, .splash .favorite a.tag),
   line-height: 1.25;
   border: 1px solid #9893a525;
   border-radius: 0 15px 15px;
-  color: #fff;
+  color: #ffffff;
   font-size: 0.9em;
   position: relative;
   z-index: 1;
@@ -1788,6 +1788,7 @@ a.tag:not(.fandom.index.group a.tag, h2.heading a.tag, .splash .favorite a.tag),
 .added.tag,
 .tags a[data-remote="true"] {
   background-color: #9ccfd8;
+  padding-right: 1.5em; /* Add space for the toggle symbol */
 }
 
 /* Add tag symbols */
@@ -1869,19 +1870,6 @@ dd.fandom.tags a {
   border: 1px solid #9893a525;
 }
 
-/* "Show" arrow for hidden tags */
-.tags a[data-remote="true"]::after {
-  content: "ɞɞ";
-  margin-left: 0.25em;
-  /* Space between text and arrow */
-  font-size: 1em;
-}
-
-.tags a[data-remote="true"]:hover,
-.tags a[data-remote="true"]:focus {
-  background-color: #9ccfd8;
-}
-
 /* Special hover cases for tags */
 .fandom.index.group a.tag:hover,
 h2.heading a.tag:hover {
@@ -1891,12 +1879,10 @@ h2.heading a.tag:hover {
 
 /* "Show" arrow for hidden tags */
 .tags a[data-remote="true"]::after {
-  content: "";
-  display: inline-block;
-  margin-right: 0.35em;
-  margin-bottom: 0.025em;
-  border-block: 0.35em solid transparent;
-  border-left: 0.5em solid;
+  content: "ɞɞ";
+  margin-left: 0.25em; /* Space between text and symbol */
+  color: #ffffff;
+  font-size: 1em;
 }
 
 /* Fandom/heading tag line height fix */
