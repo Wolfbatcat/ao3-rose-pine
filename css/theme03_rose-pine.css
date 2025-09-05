@@ -979,6 +979,11 @@ dd.fandom.tags a {
   border: 1px solid #9893a525;
 }
 
+.tags a[data-remote="true"]:hover,
+.tags a[data-remote="true"]:focus {
+  background-color: #48436c;
+}
+
 .added.tag {
   position: relative;
   background-color: #48436c;

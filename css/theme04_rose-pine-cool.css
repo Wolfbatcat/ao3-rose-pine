@@ -81,7 +81,7 @@ FIND ME ON:
 
 /*──────────────────── Text & Font Colors ──────────────────*/
 .core-text-1 { color: #e0def4; } /* Main text */
-.core-text-2 { color: #403e62; } /* Link text */
+.core-text-2 { color: #48436c; } /* Link text */
 .core-text-3 { color: #3e8fb0; } /* Visited/secondary text */
 .core-text-4 { color: #211F2E; } /* Headings, dark text */
 .core-text-5 { color: #ffffff; } /* White text (tags, buttons, hover) */
@@ -91,7 +91,7 @@ FIND ME ON:
 .interactive-btn-1 { color: #1f1d2e; } /* Button background */
 .interactive-btn-2 { color: #3e8fb0; } /* Button hover/focus */
 .interactive-btn-3 { color: #2e2a47; } /* Button active/selected */
-.interactive-btn-4 { color: #403e62; } /* Alt tag/button background */
+.interactive-btn-4 { color: #48436c; } /* Alt tag/button background */
 .interactive-btn-5 { color: #2e2d45; } /* Button current */
 .interactive-form-1 { color: #191724; } /* Input background */
 .interactive-form-2 { color: #2c283d; } /* Input border */
@@ -109,7 +109,7 @@ FIND ME ON:
 .state-notice-text { color: #7CB7E6; }   /* Notice text */
 
 /*──────────────────── Tag Backgrounds ─────────────────────*/
-.tag-bg-1 { color: #403e62; }    /* Default tag */
+.tag-bg-1 { color: #48436c; }    /* Default tag */
 .tag-bg-2 { color: #c4a7e7; }    /* Fandom tag */
 .tag-bg-3 { color: #9ccfd8; }    /* Relationship tag */
 .tag-bg-4 { color: #3e8fb0; }    /* Character tag */
@@ -118,7 +118,7 @@ FIND ME ON:
 .tag-bg-7 { color: #9ccfd8; }    /* Accent tag/icon */
 
 /*──────────────────── Icons & Symbols ─────────────────────*/
-.icon-1 { color: #403e62; }      /* General icon */
+.icon-1 { color: #48436c; }      /* General icon */
 .icon-2 { color: #9ccfd8; }      /* Teen icon */
 .icon-3 { color: #3e8fb0; }      /* Mature icon */
 .icon-4 { color: #c4a7e7; }      /* Explicit icon */
@@ -621,7 +621,7 @@ textarea.LV_invalid_field:is(:hover, :focus, :active) {
 /* Highlight autocomplete item on hover or when selected */
 .autocomplete .dropdown ul li:hover,
 .autocomplete .dropdown li.selected {
-  background: linear-gradient(125deg, #c4a7e7, #403e62);
+  background: linear-gradient(125deg, #c4a7e7, #48436c);
   color: #ffffff;
 }
 
@@ -864,8 +864,8 @@ span.requested {
 .nominations .unreviewed,
 .unreviewed.symbol {
   background-color: #2b2107;
-  border: 1px solid #403e62;
-  color: #403e62;
+  border: 1px solid #48436c;
+  color: #48436c;
 }
 
 /* Nominations: approved state */
@@ -893,7 +893,7 @@ span.offered {
 
 /* Offered and requested: alternate highlight */
 span.offered.requested {
-  color: #403e62;
+  color: #48436c;
 }
 
 /*========== Arrows for the Accordion Widget ==========*/
@@ -922,7 +922,7 @@ a.tag:not(.fandom.index.group a.tag, h2.heading a.tag, .splash .favorite a.tag),
 a.tag:not(.fandom.index.group a.tag, h2.heading a.tag, .splash .favorite a.tag),
 .added.tag,
 .tags a[data-remote="true"] {
-  background-color: #403e62;
+  background-color: #48436c;
 }
 
 /*========== Consolidated Hover Effects ==========*/
@@ -975,13 +975,18 @@ dd.fandom.tags a {
 }
 
 .unwrangled {
-  background-color: #403e62 !important;
+  background-color: #48436c !important;
   border: 1px solid #9893a525;
+}
+
+.tags a[data-remote="true"]:hover,
+.tags a[data-remote="true"]:focus {
+  background-color: #48436c;
 }
 
 .added.tag {
   position: relative;
-  background-color: #403e62;
+  background-color: #48436c;
 }
 
 /*===== Definition Lists (Subscriptions, Related Works, Edit Multiple Works) =====*/
@@ -1609,7 +1614,7 @@ You can replace the border color with any other rgb, rgba, or hex color, transpa
 img[src$="/images/skins/iconsets/default/rating-general-audience.png"] {
   background: url("https://i.ibb.co/cXk9HdYH/zerafina-icon-rating-gen-01.png");
   /* url of new icon */
-  background-color: #403e62;
+  background-color: #48436c;
   /* change background color here */
   color: #0000001a;
   /* change border color here */
@@ -1677,7 +1682,7 @@ img[src$="/images/skins/iconsets/default/category-het.png"] {
 img[src$="/images/skins/iconsets/default/category-gen.png"] {
   background: url("https://i.ibb.co/8gwHmMQX/zerafina-icon-category-gen-01.png");
   /* url of new icon */
-  background-color: #403e62;
+  background-color: #48436c;
   /* change background color here */
   color: #0000001a;
   /* change border color here */
@@ -1697,7 +1702,7 @@ img[src$="/images/skins/iconsets/default/category-slash.png"] {
 /* Multi */
 .required-tags .category-multi,
 img[src$="/images/skins/iconsets/default/category-multi.png"] {
-  background: conic-gradient(from 360deg, #c4a7e7 0% 25%, #403e62 25% 50%, #9ccfd8 50% 75%, #3e8fb0 75% 100%);
+  background: conic-gradient(from 360deg, #c4a7e7 0% 25%, #48436c 25% 50%, #9ccfd8 50% 75%, #3e8fb0 75% 100%);
   /* conic gradient with the colors of the relationship icons */
   color: #0000001a;
   /* change border color here */
@@ -1708,7 +1713,7 @@ img[src$="/images/skins/iconsets/default/category-multi.png"] {
 img[src$="/images/skins/iconsets/default/category-other.png"] {
   background: url("https://i.ibb.co/MD6r4zyH/zerafina-icon-category-other-01.png"),
     /* url of new icon */
-    linear-gradient(to left top, #3e8fb0, #9ccfd8, #c4a7e7, #403e62);
+    linear-gradient(to left top, #3e8fb0, #9ccfd8, #c4a7e7, #48436c);
   /* gradient with the colors of the relationship icons */
   background-color: #3e8fb0;
   /* change background color here */
@@ -1745,7 +1750,7 @@ img[src$="/images/skins/iconsets/default/warning-yes.png"] {
 img[src$="/images/skins/iconsets/default/warning-external-work.png"] {
   background: url("https://i.ibb.co/p635NXjk/zerafina-icon-warning-external-work-02.png");
   /* url of new icon */
-  background-color: #403e62;
+  background-color: #48436c;
   /* change background color here */
   color: #0000001a;
   /* change border color here */
@@ -1758,7 +1763,7 @@ img[src$="/images/skins/iconsets/default/warning-external-work.png"] {
 img[src$="/images/skins/iconsets/default/complete-no.png"] {
   background: url("https://i.ibb.co/pYzPL49/zerafina-icon-complete-no-01.png");
   /* url of new icon */
-  background-color: #403e62;
+  background-color: #48436c;
   /* change background color here */
   color: #0000001a;
   /* change border color here */
@@ -1782,14 +1787,14 @@ img[src$="/images/skins/iconsets/default/complete-yes.png"] {
 img[src$="/images/skins/iconsets/default/bookmark-rec.png"] {
   background: url("https://i.ibb.co/jPq89bqP/zerafina-icon-bookmark-rec-01.png");
   /* url of new icon */
-  background-color: #403e62;
+  background-color: #48436c;
   /* change background color here */
   color: #0000001a;
   /* change border color here */
 }
 
 .bookmark .blurb p.status a:not(.short a):has(.rec)::before {
-  border-inline-color: #403e62;
+  border-inline-color: #48436c;
   /* ribbon color */
 }
 
