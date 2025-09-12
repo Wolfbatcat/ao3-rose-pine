@@ -136,6 +136,7 @@ FIND ME ON:
  *         ʚʚʚ A2 Basic Layout Settings Etc. ɞɞɞ             *
  *═════════════════════════════════════════════════════════════*/
 
+
 /* This wraps everything: header, inner, and footer */
 #outer {
   min-height: 100vh;
@@ -181,7 +182,7 @@ button:focus,
 }
 
 /*═════════════════════════════════════════════════════════════*
- *                ʚʚʚ 02 Elements ɞɞɞ                     *
+ *                ʚʚʚ 01 Elements ɞɞɞ                     *
  *═════════════════════════════════════════════════════════════*/
 /* See "Archive: (2) Elements Skin" by AO3. */
 
@@ -200,8 +201,9 @@ a:hover,
 a:visited:hover,
 .blurb .heading a:hover,
 .blurb .heading a:visited:hover,
-.fandom.index.group a.tag:hover
 div.preface .byline a:hover,
+.fandom.index.group a.tag:hover,
+h2.heading a.tag:hover,
 .filters p a:hover {
   color: #eb6f92; /* Link hover color */
   border-bottom: 1px solid; /* Underline for link hover */
@@ -284,12 +286,8 @@ col.name {
   background-color: #fffaf5;
 }
 
+/*═════════════════════════════════════════════════════════════*
  *             ʚʚʚ 02 Region: Header ɞɞɞ                   *
-/*═════════════════════════════════════════════════════════════*
- *             ʚʚʚ 01 Elements ɞɞɞ                        *
- *═════════════════════════════════════════════════════════════*/
-/* Add your global element styles here (body, headings, links, etc.) */
-/*═════════════════════════════════════════════════════════════*
  *═════════════════════════════════════════════════════════════*/
 /* See "Archive 2.0: (3) Region Header Skin" by AO3 */
 
@@ -491,17 +489,17 @@ col.name {
 
 /* User icon (replaces the "Hi, [username]!") */
 #header #greeting .dropdown > a[href*="/users/"] {
-  content: url("https://i.ibb.co/CcTHKR1/zerafina-header-icon-user.png");
+  content: url("https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/experimental/assets/zerafina-header-icon-user.png");
 }
 
 /* "Post" icon */
 #header #greeting .dropdown > a[href*="/works/new"] {
-  content: url("https://i.ibb.co/mVn7sTrk/zerafina-header-icon-new-work.png");
+  content: url("https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/experimental/assets/zerafina-header-icon-new-work.png");
 }
 
 /* "Log Out" icon */
 #header #greeting a[href*="/users/logout"] {
-  content: url("https://i.ibb.co/27fbpWrV/zerafina-header-icon-logout.png");
+  content: url("https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/experimental/assets/zerafina-header-icon-logout.png");
 }
 
 /* Settings for the icons */
@@ -3429,7 +3427,7 @@ dl#symbols-key dd {
 /* Default user icon replacement */
 img[src$="/images/skins/iconsets/default/icon_user.png"] {
   box-sizing: border-box;
-  content: url("https://i.ibb.co/JWmJv92v/zerafina-icon-user-visitor-02.png"); /* url of new icon */
+  content: url("https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/experimental/assets/zerafina-icon-user-visitor-02.png"); /* url of new icon */
   background-image: linear-gradient(to bottom right, #ea9a97, #eb6f92); /* diagonal gradient */
   background-color: #eb6f92; /* fallback color */
   border: 1px solid #00000025;
@@ -3440,7 +3438,7 @@ img[src$="/images/skins/iconsets/default/icon_user.png"] {
 .comment .icon .anonymous {
   box-sizing: border-box;
   background: 
-    url("https://i.ibb.co/1tbz1GYk/zerafina-icon-anon-01.png"),
+    url("https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/experimental/assets/zerafina-icon-anon-01.png"),
     linear-gradient(to bottom right, #ea9a97, #eb6f92); /* diagonal gradient */
   background-size: cover;
   background-color: #9ccfd8; /* fallback color */
@@ -3451,7 +3449,7 @@ img[src$="/images/skins/iconsets/default/icon_user.png"] {
 .comment .icon .visitor { 
   box-sizing: border-box;
   background: 
-    url("https://i.ibb.co/JWmJv92v/zerafina-icon-user-visitor-02.png"),
+    url("https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/experimental/assets/zerafina-icon-user-visitor-02.png"),
     linear-gradient(to bottom right, #ea9a97, #eb6f92); /* diagonal gradient */
   background-size: cover;
   background-color: #9ccfd8; /* fallback color */
@@ -3461,7 +3459,7 @@ img[src$="/images/skins/iconsets/default/icon_user.png"] {
 /* Default collection icon replacement */
 img[src$="/images/skins/iconsets/default/icon_collection.png"] {
   box-sizing: border-box;
-  content: url("https://i.ibb.co/LX19mpdV/zerafina-icon-collection-02.png"); /* url of new icon */
+  content: url("https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/experimental/assets/zerafina-icon-collection-02.png"); /* url of new icon */
   background-image: linear-gradient(to bottom right, #ea9a97, #eb6f92); /* diagonal gradient */
   background-color: #eb6f92; /* fallback color */
   border: 1px solid #00000025; /* change border width and color here */
@@ -3474,7 +3472,7 @@ img[src$="/images/skins/iconsets/default/icon_collection.png"] {
 .index .tagset .icon {
   box-sizing: border-box;
   background: 
-    url("https://i.ibb.co/sdVVMJ9z/zerafina-icon-tag-02.png"),
+    url("https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/experimental/assets/zerafina-icon-tag-02.png"),
     linear-gradient(to bottom right, #ea9a97, #eb6f92); /* diagonal gradient */
   background-size: cover;
   background-color: #eb6f92; /* fallback color */
@@ -3485,7 +3483,7 @@ img[src$="/images/skins/iconsets/default/icon_collection.png"] {
 .index .mystery .icon {
   box-sizing: border-box;
   background: 
-    url("https://i.ibb.co/1tbz1GYk/zerafina-icon-anon-01.png"),
+    url("https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/experimental/assets/zerafina-icon-anon-01.png"),
     linear-gradient(to bottom right, #ea9a97, #eb6f92); /* diagonal gradient */
   background-size: cover;
   background-color: #eb6f92;
@@ -3497,7 +3495,7 @@ img[src$="/images/skins/iconsets/default/icon_collection.png"] {
 .admin .primary .icon {
   box-sizing: border-box;
   background: 
-    url("https://i.ibb.co/TBW1YD5b/zerafina-icon-admin-02.png"),
+    url("https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/experimental/assets/zerafina-icon-admin-02.png"),
     linear-gradient(to bottom right, #ea9a97, #eb6f92); /* diagonal gradient */
   background-size: cover;
   background-color: #eb6f92;
@@ -3509,7 +3507,7 @@ img[src$="/images/skins/iconsets/default/icon_collection.png"] {
 .index .skins .icon:not(:has(a .icon)) {
   box-sizing: border-box;
   background: 
-    url("https://i.ibb.co/Qj9QDRCZ/zerafina-icon-skins-02.png"),
+    url("https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/experimental/assets/zerafina-icon-skins-02.png"),
     linear-gradient(to bottom right, #ea9a97, #eb6f92); /* diagonal gradient */
   background-size: cover;
   background-color: #eb6f92;
