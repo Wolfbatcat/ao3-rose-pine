@@ -181,7 +181,6 @@ a:visited:hover,
 .blurb .heading a:visited:hover,
 div.preface .byline a:hover,
 .fandom.index.group a.tag:hover,
-h2.heading a.tag:hover,
 .filters p a:hover {
   color: #eb6f92;
   /* Link hover color */
@@ -982,6 +981,11 @@ dd.fandom.tags a {
 .tags a[data-remote="true"]:hover,
 .tags a[data-remote="true"]:focus {
   background-color: #403e62;
+}
+
+.fandom.index.group a.tag:hover,
+h2.heading a.tag:hover {
+  color: #eb6f92 !important;
 }
 
 .added.tag {
