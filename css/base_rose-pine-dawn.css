@@ -1726,7 +1726,7 @@ a.tag:not(.fandom.index.group a.tag, h2.heading a.tag, .splash .favorite a.tag),
 .added.tag,
 .tags a[data-remote="true"] {
   background-color: #9ccfd8;
-  padding-right: 1.5em; /* Add space for the arrow */
+  padding-right: 1.5em; /* Add space for the toggle symbol */
 }
 
 /*========== Consolidated Hover Effects ==========*/
@@ -1797,24 +1797,25 @@ dd.fandom.tags a {
   border: 1px solid #9893a525;
 }
 
-/* Special hover cases for tags */
-.fandom.index.group a.tag:hover,
-h2.heading a.tag:hover {
-  color: #eb6f92 !important;
-  background-color: transparent !important;
-  box-shadow: none !important;
-}
-
 /* "Show" arrow for hidden tags */
 .tags a[data-remote="true"]::after {
-  content: "ɞɞ";
-  margin-left: 0.25em; /* Space between text and arrow */
+  content: "ɞ";
+  margin-left: 0.25em; /* Space between text and symbol */
+  color: #ffffff;
   font-size: 1em;
 }
 
 .tags a[data-remote="true"]:hover,
 .tags a[data-remote="true"]:focus {
   background-color: #9ccfd8;
+}
+
+/* Special hover cases for tags */
+.fandom.index.group a.tag:hover,
+h2.heading a.tag:hover {
+  color: #eb6f92 !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
 }
 
 /* Fandom/heading tag line height fix */
