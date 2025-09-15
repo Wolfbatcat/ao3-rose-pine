@@ -19,14 +19,11 @@ CREDITS:
 - Base:                "neos" by ZerafinaCSS               https://github.com/ZerafinaCSS/neos
 - Used:                "Stats Icons with Hover Text"       https://archiveofourown.org/works/55604875/chapters/141130912
 
-/* Thank you ZerafinaCSS for your amazing Neos theme. */
-
 FIND ME ON:
 
 - GitHub:              https://github.com/Wolfbatcat
-- AO3:                 https://archiveofourown.org/users/Wolfbatcat/pseuds/Wolfbatcat
-- Tumblr:              https://www.tumblr.com/wolfebat
-
+- AO3:                 https://archiveofourown.org/users/BlackBatCat/pseuds/BlackBatCat
+- Tumblr:              https://www.tumblr.com/blackbatcats
 
 /*═════════════════════════════════════════════════════════════*
  *                ʚʚʚ Directory ɞɞɞ                      *
@@ -115,7 +112,7 @@ FIND ME ON:
 .symbol-1 { color: #f6c177; }    /* Rec symbol */
 .symbol-2 { color: #3e8fb0; }    /* Public symbol */
 .symbol-3 { color: #eb6f92; }    /* Private symbol */
-.symbol-4 { color: #3e8fb0; }    /* Hidden symbol */
+.symbol-4 { color: #908caa; }    /* Hidden symbol */
 
 /*──────────────────── Utility & Effects ───────────────────*/
 .utility-1 { color: #eb6f92; }   /* Selection highlight */
@@ -135,7 +132,6 @@ FIND ME ON:
 /*═════════════════════════════════════════════════════════════*
  *         ʚʚʚ A2 Basic Layout Settings Etc. ɞɞɞ             *
  *═════════════════════════════════════════════════════════════*/
-
 
 /* This wraps everything: header, inner, and footer */
 #outer {
@@ -489,17 +485,17 @@ col.name {
 
 /* User icon (replaces the "Hi, [username]!") */
 #header #greeting .dropdown > a[href*="/users/"] {
-  content: url("https://i.ibb.co/CcTHKR1/zerafina-header-icon-user.png");
+  content: url("https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/assets/zerafina-header-icon-user.png");
 }
 
 /* "Post" icon */
 #header #greeting .dropdown > a[href*="/works/new"] {
-  content: url("https://i.ibb.co/mVn7sTrk/zerafina-header-icon-new-work.png");
+  content: url("https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/assets/zerafina-header-icon-new-work.png");
 }
 
 /* "Log Out" icon */
 #header #greeting a[href*="/users/logout"] {
-  content: url("https://i.ibb.co/27fbpWrV/zerafina-header-icon-logout.png");
+  content: url("https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/assets/zerafina-header-icon-logout.png");
 }
 
 /* Settings for the icons */
@@ -3428,7 +3424,7 @@ dl#symbols-key dd {
 /* Default user icon replacement */
 img[src$="/images/skins/iconsets/default/icon_user.png"] {
   box-sizing: border-box;
-  content: url("https://i.ibb.co/JWmJv92v/zerafina-icon-user-visitor-02.png"); /* url of new icon */
+  content: url("https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/assets/zerafina-icon-user-visitor-02.png"); /* url of new icon */
   background-image: linear-gradient(to bottom right, #ea9a97, #eb6f92); /* diagonal gradient */
   background-color: #eb6f92; /* fallback color */
   border: 1px solid #00000025;
@@ -3439,7 +3435,7 @@ img[src$="/images/skins/iconsets/default/icon_user.png"] {
 .comment .icon .anonymous {
   box-sizing: border-box;
   background: 
-    url("https://i.ibb.co/1tbz1GYk/zerafina-icon-anon-01.png"),
+    url("https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/assets/zerafina-icon-anon-01.png"),
     linear-gradient(to bottom right, #ea9a97, #eb6f92); /* diagonal gradient */
   background-size: cover;
   background-color: #9ccfd8; /* fallback color */
@@ -3450,7 +3446,7 @@ img[src$="/images/skins/iconsets/default/icon_user.png"] {
 .comment .icon .visitor { 
   box-sizing: border-box;
   background: 
-    url("https://i.ibb.co/JWmJv92v/zerafina-icon-user-visitor-02.png"),
+    url("https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/assets/zerafina-icon-user-visitor-02.png"),
     linear-gradient(to bottom right, #ea9a97, #eb6f92); /* diagonal gradient */
   background-size: cover;
   background-color: #9ccfd8; /* fallback color */
@@ -3460,7 +3456,7 @@ img[src$="/images/skins/iconsets/default/icon_user.png"] {
 /* Default collection icon replacement */
 img[src$="/images/skins/iconsets/default/icon_collection.png"] {
   box-sizing: border-box;
-  content: url("https://i.ibb.co/LX19mpdV/zerafina-icon-collection-02.png"); /* url of new icon */
+  content: url("https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/assets/zerafina-icon-collection-02.png"); /* url of new icon */
   background-image: linear-gradient(to bottom right, #ea9a97, #eb6f92); /* diagonal gradient */
   background-color: #eb6f92; /* fallback color */
   border: 1px solid #00000025; /* change border width and color here */
@@ -3473,7 +3469,7 @@ img[src$="/images/skins/iconsets/default/icon_collection.png"] {
 .index .tagset .icon {
   box-sizing: border-box;
   background: 
-    url("https://i.ibb.co/sdVVMJ9z/zerafina-icon-tag-02.png"),
+    url("https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/assets/zerafina-icon-tag-02.png"),
     linear-gradient(to bottom right, #ea9a97, #eb6f92); /* diagonal gradient */
   background-size: cover;
   background-color: #eb6f92; /* fallback color */
@@ -3484,7 +3480,7 @@ img[src$="/images/skins/iconsets/default/icon_collection.png"] {
 .index .mystery .icon {
   box-sizing: border-box;
   background: 
-    url("https://i.ibb.co/1tbz1GYk/zerafina-icon-anon-01.png"),
+    url("https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/assets/zerafina-icon-anon-01.png"),
     linear-gradient(to bottom right, #ea9a97, #eb6f92); /* diagonal gradient */
   background-size: cover;
   background-color: #eb6f92;
@@ -3496,7 +3492,7 @@ img[src$="/images/skins/iconsets/default/icon_collection.png"] {
 .admin .primary .icon {
   box-sizing: border-box;
   background: 
-    url("https://i.ibb.co/TBW1YD5b/zerafina-icon-admin-02.png"),
+    url("https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/assets/zerafina-icon-admin-02.png"),
     linear-gradient(to bottom right, #ea9a97, #eb6f92); /* diagonal gradient */
   background-size: cover;
   background-color: #eb6f92;
@@ -3508,7 +3504,7 @@ img[src$="/images/skins/iconsets/default/icon_collection.png"] {
 .index .skins .icon:not(:has(a .icon)) {
   box-sizing: border-box;
   background: 
-    url("https://i.ibb.co/Qj9QDRCZ/zerafina-icon-skins-02.png"),
+    url("https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/assets/zerafina-icon-skins-02.png"),
     linear-gradient(to bottom right, #ea9a97, #eb6f92); /* diagonal gradient */
   background-size: cover;
   background-color: #eb6f92;
@@ -3572,7 +3568,7 @@ You can replace the border color with any other rgb, rgba, or hex color, transpa
 /* General audiences */
 .required-tags .rating-general-audience,
 img[src$="/images/skins/iconsets/default/rating-general-audience.png"] { 
-  background: url("https://i.ibb.co/cXk9HdYH/zerafina-icon-rating-gen-01.png"); /* url of new icon */
+  background: url("https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/assets/zerafina-icon-rating-gen-01.png"); /* url of new icon */
   background-color: #3e8fb0; /* change background color here */
   color: #0000001a; /* change border color here */
 }
@@ -3580,7 +3576,7 @@ img[src$="/images/skins/iconsets/default/rating-general-audience.png"] {
 /* Teen and up audiences */
 .required-tags .rating-teen,
 img[src$="/images/skins/iconsets/default/rating-teen.png"] { 
-  background: url("https://i.ibb.co/xSmwW6CN/zerafina-icon-rating-teen-01.png"); /* url of new icon */
+  background: url("https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/assets/zerafina-icon-rating-teen-01.png"); /* url of new icon */
   background-color: #9ccfd8; /* change background color here */
   color: #0000001a; /* change border color here */
 }
@@ -3588,7 +3584,7 @@ img[src$="/images/skins/iconsets/default/rating-teen.png"] {
 /* Mature */
 .required-tags .rating-mature,
 img[src$="/images/skins/iconsets/default/rating-mature.png"] { 
-  background: url("https://i.ibb.co/chYzvd2w/zerafina-icon-rating-mature-01.png"); /* url of new icon */
+  background: url("https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/assets/zerafina-icon-rating-mature-01.png"); /* url of new icon */
   background-color: #eb6f92; /* change background color here */
   color: #0000001a; /* change border color here */
 }
@@ -3596,7 +3592,7 @@ img[src$="/images/skins/iconsets/default/rating-mature.png"] {
 /* Explicit */
 .required-tags .rating-explicit,
 img[src$="/images/skins/iconsets/default/rating-explicit.png"] { 
-  background: url("https://i.ibb.co/Kp2nk21k/zerafina-icon-rating-explicit-01.png"); /* url of new icon */
+  background: url("https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/assets/zerafina-icon-rating-explicit-01.png"); /* url of new icon */
   background-color: #f6c177; /* change background color here */
   color: #0000001a; /* change border color here */
 }
@@ -3606,7 +3602,7 @@ img[src$="/images/skins/iconsets/default/rating-explicit.png"] {
 /* F/F */
 .required-tags .category-femslash, 
 img[src$="/images/skins/iconsets/default/category-femslash.png"] {
-  background: url("https://i.ibb.co/JwHx18Ht/zerafina-icon-category-ff-01.png"); /* url of new icon */
+  background: url("https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/assets/zerafina-icon-category-ff-01.png"); /* url of new icon */
   background-color: #f6c177; /* change background color here */
   color: #0000001a; /* change border color here */
 }
@@ -3614,7 +3610,7 @@ img[src$="/images/skins/iconsets/default/category-femslash.png"] {
 /* F/M */
 .required-tags .category-het, 
 img[src$="/images/skins/iconsets/default/category-het.png"] {
-  background: url("https://i.ibb.co/0yD62BY2/zerafina-icon-category-mf-01.png"); /* url of new icon */
+  background: url("https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/assets/zerafina-icon-category-mf-01.png"); /* url of new icon */
   background-color: #eb6f92; /* change background color here */
   color: #0000001a; /* change border color here */
 }
@@ -3622,7 +3618,7 @@ img[src$="/images/skins/iconsets/default/category-het.png"] {
 /* Gen */
 .required-tags .category-gen,
 img[src$="/images/skins/iconsets/default/category-gen.png"] {
-  background: url("https://i.ibb.co/8gwHmMQX/zerafina-icon-category-gen-01.png"); /* url of new icon */
+  background: url("https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/assets/zerafina-icon-category-gen-01.png"); /* url of new icon */
   background-color: #3e8fb0; /* change background color here */
   color: #0000001a; /* change border color here */
 }
@@ -3630,7 +3626,7 @@ img[src$="/images/skins/iconsets/default/category-gen.png"] {
 /* M/M */
 .required-tags .category-slash,
 img[src$="/images/skins/iconsets/default/category-slash.png"] {
-  background: url("https://i.ibb.co/GQ2YZ686/zerafina-icon-category-mm-01.png"); /* url of new icon */
+  background: url("https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/assets/zerafina-icon-category-mm-01.png"); /* url of new icon */
   background-color: #9ccfd8; /* change background color here */
   color: #0000001a; /* change border color here */
 }
@@ -3645,7 +3641,7 @@ img[src$="/images/skins/iconsets/default/category-multi.png"] {
 /* Other relationships */
 .required-tags .category-other, 
 img[src$="/images/skins/iconsets/default/category-other.png"] {
-  background: url("https://i.ibb.co/MD6r4zyH/zerafina-icon-category-other-01.png"), /* url of new icon */
+  background: url("https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/assets/zerafina-icon-category-other-01.png"), /* url of new icon */
     linear-gradient(to left top, #3e8fb0, #9ccfd8, #eb6f92, #f6c177); /* gradient with the colors of the relationship icons */
   background-color: #3e8fb0; /* change background color here */
   color: #0000001a; /* change border color here */
@@ -3656,7 +3652,7 @@ img[src$="/images/skins/iconsets/default/category-other.png"] {
 /* Author chose not to warn */
 .required-tags .warning-choosenotto, 
 img[src$="/images/skins/iconsets/default/warning-choosenotto.png"] {
-  background: url("https://i.ibb.co/m5Yk1TtQ/zerafina-icon-warning-choosenotto-01.png"); /* url of new icon */
+  background: url("https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/assets/zerafina-icon-warning-choosenotto-01.png"); /* url of new icon */
   background-color: #eb6f92; /* change background color here */
   color: #0000001a; /* change border color here */
 }
@@ -3664,7 +3660,7 @@ img[src$="/images/skins/iconsets/default/warning-choosenotto.png"] {
 /* Warnings apply */
 .required-tags .warning-yes,
 img[src$="/images/skins/iconsets/default/warning-yes.png"] { 
-  background: url("https://i.ibb.co/Jj9yFqFq/zerafina-icon-warning-yes-01.png"); /* url of new icon */
+  background: url("https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/assets/zerafina-icon-warning-yes-01.png"); /* url of new icon */
   background-color: #f6c177; /* change background color here */
   color: #0000001a; /* change border color here */
 }
@@ -3672,7 +3668,7 @@ img[src$="/images/skins/iconsets/default/warning-yes.png"] {
 /* External work */
 .required-tags .external-work,
 img[src$="/images/skins/iconsets/default/warning-external-work.png"] {
-  background: url("https://i.ibb.co/p635NXjk/zerafina-icon-warning-external-work-02.png"); /* url of new icon */
+  background: url("https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/assets/zerafina-icon-warning-external-work-02.png"); /* url of new icon */
   background-color: #9ccfd8; /* change background color here */
   color: #0000001a; /* change border color here */
 }
@@ -3682,7 +3678,7 @@ img[src$="/images/skins/iconsets/default/warning-external-work.png"] {
 /* Uncomplete/unfulfilled */
 .required-tags .complete-no, 
 img[src$="/images/skins/iconsets/default/complete-no.png"] { 
-  background: url("https://i.ibb.co/pYzPL49/zerafina-icon-complete-no-01.png"); /* url of new icon */
+  background: url("https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/assets/zerafina-icon-complete-no-01.png"); /* url of new icon */
   background-color: #f6c177; /* change background color here */
   color: #0000001a; /* change border color here */
 }
@@ -3690,7 +3686,7 @@ img[src$="/images/skins/iconsets/default/complete-no.png"] {
 /* Completed/filled */
 .required-tags .complete-yes,
 img[src$="/images/skins/iconsets/default/complete-yes.png"] { 
-  background: url("https://i.ibb.co/6JBN1vhz/zerafina-icon-complete-yes-01.png"); /* url of new icon */
+  background: url("https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/assets/zerafina-icon-complete-yes-01.png"); /* url of new icon */
   background-color: #3e8fb0; /* change background color here */
   color: #0000001a; /* change border color here */
 }
@@ -3700,7 +3696,7 @@ img[src$="/images/skins/iconsets/default/complete-yes.png"] {
 /* Rec */
 .status .rec,
 img[src$="/images/skins/iconsets/default/bookmark-rec.png"] { 
-  background: url("https://i.ibb.co/jPq89bqP/zerafina-icon-bookmark-rec-01.png"); /* url of new icon */
+  background: url("https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/assets/zerafina-icon-bookmark-rec-01.png"); /* url of new icon */
   background-color: #f6c177; /* change background color here */
   color: #0000001a; /* change border color here */
 }
@@ -3712,7 +3708,7 @@ img[src$="/images/skins/iconsets/default/bookmark-rec.png"] {
 /* Public bookmark */
 .status .public, 
 img[src$="/images/skins/iconsets/default/bookmark-public.png"] { 
-  background: url("https://i.ibb.co/KjDwkXfk/zerafina-icon-bookmark-public-02.png"); /* url of new icon */
+  background: url("https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/assets/zerafina-icon-bookmark-public-02.png"); /* url of new icon */
   background-color: #3e8fb0; /* change background color here */
   color: #0000001a; /* change border color here */
 }
@@ -3727,7 +3723,7 @@ img[src$="/images/skins/iconsets/default/bookmark-private.png"] {
   font-size: inherit;
   text-indent: -9999px;
   white-space: nowrap;
-  background: url("https://i.ibb.co/4wjGjfhb/zerafina-icon-bookmark-locked-02.png"); /* url of new icon */
+  background: url("https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/assets/zerafina-icon-bookmark-locked-02.png"); /* url of new icon */
   background-color: #eb6f92; /* change background color here */
   color: #0000001a; /* change border color here */
 }
@@ -3739,13 +3735,13 @@ img[src$="/images/skins/iconsets/default/bookmark-private.png"] {
 /* Hidden bookmark */
 .status .hidden, 
 img[src$="/images/skins/iconsets/default/bookmark-hidden.png"] {
-  background: url("https://i.ibb.co/tp1vXhJ3/zerafina-icon-bookmark-hidden-01.png"); /* url of new icon */
-  background-color: #3e8fb0; /* change background color here */
+  background: url("https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/assets/zerafina-icon-bookmark-hidden-01.png"); /* url of new icon */
+  background-color: #908caa; /* change background color here */
   color: #0000001a; /* change border color here */
 }
 
 .bookmark .blurb p.status a:not(.short a):has(.hidden)::before {
-  border-inline-color: #3e8fb0; /* ribbon color */
+  border-inline-color: #908caa; /* ribbon color */
 }
 
 /* Remove borders from bookmark ribbons */
@@ -3774,7 +3770,7 @@ a.rss span {
   content: "";
   height: 0.85em;
   width: 0.85em;
-  background-image: url("https://i.ibb.co/35VLs1PW/zerafina-icon-rss-01.png"); /* url of new icon */
+  background-image: url("https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/assets/zerafina-icon-rss-01.png"); /* url of new icon */
   background-size: cover;
   background-color: #eb6f92; /* background color */
   box-shadow: inset 0 0 0 1px; /* border */
@@ -3795,15 +3791,15 @@ div:has(> p.kudos)::before {
   height: 55px;
   width: 55px;
   position: absolute;
-  background-image: url("https://i.ibb.co/fdCwtNqS/zerafina-icon-kudos-03.png"); /* url of new icon */
+  background-image: url("https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/assets/zerafina-icon-kudos-03.png"); /* url of new icon */
   background-size: cover;
-  filter: brightness(0) saturate(100%) invert(71%) sepia(22%) saturate(4960%) hue-rotate(300deg) brightness(94%) contrast(96%); /* adjust filter values to change color */
+  filter: brightness(0) saturate(100%) invert(45%) sepia(77%) saturate(345%) hue-rotate(152deg) brightness(96%) contrast(90%); /* adjust filter values to change color */
 }
 
 /*========== Lock Icon for Restricted Works ==========*/
 
 img[src$="/images/lockblue.png"] {
-  content: url("https://i.ibb.co/kVCsBwzY/zerafina-icon-lock-01.png"); /* url of new icon */
+  content: url("https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/assets/zerafina-icon-lock-01.png"); /* url of new icon */
     filter: brightness(0) saturate(100%) invert(31%) sepia(23%) saturate(756%) hue-rotate(208deg) brightness(98%) contrast(87%); /* adjust filter values to change color */
   }
 
@@ -3863,122 +3859,122 @@ dl.statistics dt::before {
 
 /* Language */
 .stats dd.language::before {
-  background-image: url("https://i.ibb.co/KzD2KWZv/zerafina-stats-icon-language-01.png");
+  background-image: url("https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/assets/zerafina-stats-icon-language-01.png");
 }
 
 /* Words */
 .stats dd.words::before,
 dl.statistics dt.words::before {
-  background-image: url("https://i.ibb.co/7x2N2zV8/zerafina-stats-icon-words-01.png");
+  background-image: url("https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/assets/zerafina-stats-icon-words-01.png");
 }
 
 /* Works */
 .stats dd.works::before,
 .stats dd:has(a[href$=works])::before /* works in collection */ {
-  background-image: url("https://i.ibb.co/twZf0RM9/zerafina-stats-icon-works-01.png");
+  background-image: url("https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/assets/zerafina-stats-icon-works-01.png");
 }
 
 /* Chapters */
 .stats dd.chapters::before {
-  background-image: url("https://i.ibb.co/JRpLfkgf/zerafina-stats-icon-chapters-01.png");
+  background-image: url("https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/assets/zerafina-stats-icon-chapters-01.png");
 }
 
 /* Comments */
 .stats dd.comments::before {
-  background-image: url("https://i.ibb.co/3YTgryH2/zerafina-stats-icon-comments-01.png");
+  background-image: url("https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/assets/zerafina-stats-icon-comments-01.png");
 }
 
 /* Kudos */
 .stats dd.kudos::before,
 dl.statistics dt.kudos::before {
-  background-image: url("https://i.ibb.co/5gPnsXN4/zerafina-stats-icon-kudos-01.png");
+  background-image: url("https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/assets/zerafina-stats-icon-kudos-01.png");
 }
 
 /* Bookmarks */
 .stats dd.bookmarks::before,
 dl.statistics dt.bookmarks::before {
-  background-image: url("https://i.ibb.co/DDgZz4Gw/zerafina-stats-icon-bookmarks-02.png");
+  background-image: url("https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/assets/zerafina-stats-icon-bookmarks-02.png");
 }
 
 /* Related works (external bookmarks) */
 .stats dd.inspired::before {
-  background-image: url("https://i.ibb.co/rGDJWrbZ/zerafina-stats-icon-related-works-01.png");
+  background-image: url("https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/assets/zerafina-stats-icon-related-works-01.png");
 }
 
 /* Hits */
 .stats dd.hits::before,
 dl.statistics dt.hits::before {
-  background-image: url("https://i.ibb.co/Zz7mY8yL/zerafina-stats-icon-hits-01.png");
+  background-image: url("https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/assets/zerafina-stats-icon-hits-01.png");
 }
 
 /* Collections */
 .stats dd.collections::before,
 .stats dd:has(a[href$=collections])::before /* subcollections*/ {
-  background-image: url("https://i.ibb.co/ks5VXnDZ/zerafina-stats-icon-collection-01.png");
+  background-image: url("https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/assets/zerafina-stats-icon-collection-01.png");
 }
 
 /* Date published */
 .stats dd.published::before {
-  background-image: url("https://i.ibb.co/DDmDb5sP/zerafina-stats-icon-published-01.png");
+  background-image: url("https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/assets/zerafina-stats-icon-published-01.png");
 }
 
 /* Date updated/completed */
 /* I have not found a way to display a different icon for each case */
 .stats dd.status::before {
-  background-image: url("https://i.ibb.co/Y7zRgwS3/zerafina-stats-icon-updated-01.png");
+  background-image: url("https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/assets/zerafina-stats-icon-updated-01.png");
 }
 
 /* Completion status (series) */
 .series.meta.group .stats dd:nth-of-type(3)::before {
-  background-image: url("https://i.ibb.co/S7vdPxLc/zerafina-stats-icon-complete-01.png");
+  background-image: url("https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/assets/zerafina-stats-icon-complete-01.png");
 }
 
 /* Subscriptions (statistics page) */
 .stats dd.subscriptions::before,
 dl.statistics dt.subscriptions::before {
-  background-image: url("https://i.ibb.co/VY57wxPD/zerafina-stats-icon-subscriptions-01.png");
+  background-image: url("https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/assets/zerafina-stats-icon-subscriptions-01.png");
 }
 
 /* Comment threads (statistics page) */
 .statistics .stats dd.comments::before,
 dl.statistics dt.comment::before {
-  background-image: url("https://i.ibb.co/078f2nh/zerafina-stats-icon-comment-threads-01.png");
+  background-image: url("https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/assets/zerafina-stats-icon-comment-threads-01.png");
 }
 
 /* Fandoms */
 .stats dd:has(a[href$=fandoms])::before,
 .tagset .stats dd:nth-of-type(1)::before {
-  background-image: url("https://i.ibb.co/tPpqR5g3/zerafina-stats-icon-fandoms-01.png");
+  background-image: url("https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/assets/zerafina-stats-icon-fandoms-01.png");
 }
 
 /* Collections: bookmarked items */
 .collection.blurb .stats dd:has(a[href$=bookmarks])::before {
-  background-image: url("https://i.ibb.co/h5cy7x0/zerafina-stats-icon-bookmarked-items-01.png");
+  background-image: url("https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/assets/zerafina-stats-icon-bookmarked-items-01.png");
 }
 
 /* collections: promts/requests */
 .stats dd:has(a[href$=requests])::before {
-  background-image: url("https://i.ibb.co/tSm91Kw/zerafina-stats-icon-promts-01.png");
+  background-image: url("https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/assets/zerafina-stats-icon-promts-01.png");
 }
 
 /* tagsets: characters */
 .tagset .stats dd:nth-of-type(2)::before {
-  background-image: url("https://i.ibb.co/G4FxyzRY/zerafina-stats-icon-characters-01.png");
+  background-image: url("https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/assets/zerafina-stats-icon-characters-01.png");
 }
 
 /* tagests: relationships */
 .tagset .stats dd:nth-of-type(3)::before {
-  background-image: url("https://i.ibb.co/sJdDTdTq/zerafina-stats-icon-relationships-01.png");
+  background-image: url("https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/assets/zerafina-stats-icon-relationships-01.png");
 }
 
 /* tagsets: additional tags*/
 .tagset .stats dd:nth-of-type(4)::before {
-  background-image: url("https://i.ibb.co/HLPwzwMh/zerafina-stats-icon-tags-additional-01.png");
+  background-image: url("https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/assets/zerafina-stats-icon-tags-additional-01.png");
 }
 
 /* tagsets: freeform tags *//* example: https://archiveofourown.org/tag_sets/19213 */
 .tagset .meta .stats dd:nth-of-type(4)::before {
-  background-image: url("https://i.ibb.co/ynKkVZyk/zerafina-stats-icon-tags-freeform-01.png");
+  background-image: url("https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/assets/zerafina-stats-icon-tags-freeform-01.png");
 }
 
 /*========== Stats Hover Text ==========*/
@@ -4187,7 +4183,7 @@ color: #575279; /* link color */
 
 /* Make chart background transparent */
 rect {
-  filter: opacity(0)
+  filter: opacity(0);
 }
 
 /* Change color of chart */

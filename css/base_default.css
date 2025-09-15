@@ -8,7 +8,7 @@
  *                ʚʚʚ Fonts ɞɞɞ                *
  *═════════════════════════════════════════════════════════════*/
 
-/* main font family */
+/* Main font family */
 body,
 input,
 .toggled form,
@@ -37,7 +37,7 @@ select {
     font-weight: 400;
 }
 
-/* headings font family */
+/* Headings font family */
 h1,
 h2,
 h3,
@@ -49,7 +49,7 @@ h6,
     font-weight: 600;
 }
 
-/* "code" font family */
+/* Code font family */
 kbd,
 tt,
 code,
@@ -69,7 +69,7 @@ textarea#skin_css,
 /*═════════════════════════════════════════════════════════════*
  *                ʚʚʚ Optional Settings ɞɞɞ                *
  *═════════════════════════════════════════════════════════════*/
- 
+
 /* Add tag symbols */
 /* Examples: ɞɞ, ✿, ✦, ♥  */
 h5.fandoms.heading a.tag:after,
