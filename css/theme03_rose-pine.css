@@ -407,12 +407,14 @@ col.name {
 }
 
 /* Links in footer */
-#footer a {
+#footer a,
+#footer button {
   color: #e0def4;
 }
 
 /* Hover for links in footer */
-#footer a:hover {
+#footer a:hover,
+#footer button:hover {
   color: #eb6f92;
 }
 

@@ -779,13 +779,16 @@ col.name {
 }
 
 /* Links in footer */
-#footer a {
+#footer a,
+#footer button {
   color: #575279;
-  border-bottom: 0;
+  border-bottom: none;
+  text-decoration: none;
 }
 
 /* Hover for links in footer */
-#footer a:hover {
+#footer a:hover,
+#footer button:hover {
   color: #eb6f92;
   border-bottom: 1px solid;
 }
