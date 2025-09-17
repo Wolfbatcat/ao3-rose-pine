@@ -793,6 +793,11 @@ col.name {
   border-bottom: 1px solid;
 }
 
+#modal .footer .action.modal-closer:hover {
+	color: #ffffff;
+  border: 1px solid #ea9a97;
+}
+
 /*═════════════════════════════════════════════════════════════*
  *             ʚʚʚ 06 Interactions ɞɞɞ                     *
  *═════════════════════════════════════════════════════════════*/
