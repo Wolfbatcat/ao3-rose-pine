@@ -67,25 +67,50 @@ textarea#skin_css,
 }
 
 /*═════════════════════════════════════════════════════════════*
+ *                ʚʚʚ Symbols ɞɞɞ                *
+ *═════════════════════════════════════════════════════════════*/
+/* Examples: ʚ, ɞ, ɞɞ, ✿, ✦, ♥  */
+
+/* Change title and header symbols */
+#header .heading a::before {
+  content: "ʚAO3ɞ";
+}
+
+#dashboard .current:after {
+  content: " ɞɞ";
+}
+
+.home .header h2::after {
+	content: " ɞɞ";
+}
+
+/* Splash page heading after content */
+.splash > .module h3::after {
+  content: " ɞɞ";
+}
+
+/* Change tag symbols */
+a.tag:not(.fandom.index.group a.tag,
+h2.heading a.tag,
+.splash .favorite a.tag,
+h5.fandoms.heading a.tag,
+dd.fandom.tags a,
+[class^=warning] a.tag,
+[class^=relationship] a,
+[class^=character] a.tag):after {
+  content: "\00a0\00a0ɞɞ";
+}
+
+/*═════════════════════════════════════════════════════════════*
  *                ʚʚʚ Optional Settings ɞɞɞ                *
  *═════════════════════════════════════════════════════════════*/
 
-/* Add tag symbols */
-/* Examples: ɞɞ, ✿, ✦, ♥  */
-h5.fandoms.heading a.tag:after,
-dd.fandom.tags a:after,
-[class^=warning] a.tag:after,
-[class^=relationship] a.tag:after,
-[class^=character] a.tag:after,
-a.tag:not(.fandom.index.group a.tag, h2.heading a.tag, .splash .favorite a.tag):after {
-    content: "\00a0\00a0✿";
-}
-
+ /* Reader font size */
 /*  #workskin p {
         font-size: 150%;
     }
 
+/* Align userstuff text to left */
    /*  .userstuff p {
         text-align: left !important;
-    }
-}
+    } 

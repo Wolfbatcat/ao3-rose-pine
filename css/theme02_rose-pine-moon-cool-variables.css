@@ -1,0 +1,183 @@
+/*═════════════════════════════════════════════════════════════*
+ *                  ʚʚʚ Rose Pine Moon Cool ɞɞɞ                   *
+ *           A Site Skin for the Archive of Our Own           *
+ *                      By Wolfbatcat                         *
+ *═════════════════════════════════════════════════════════════*/
+
+/*═════════════════════════════════════════════════════════════*
+ *                ʚʚʚ Links & Credits ɞɞɞ                     *
+ *═════════════════════════════════════════════════════════════*
+ * Code (GitHub):       https://github.com/Wolfbatcat/ao3-rose-pine
+ * Instructions (AO3):  https://archiveofourown.org/works/69993411
+ *
+ * Inspired by:         Rose Pine — https://rosepinetheme.com/
+ * Base:                "neos" by ZerafinaCSS — https://github.com/ZerafinaCSS/neos
+ * Used:                "Stats Icons with Hover Text" — https://archiveofourown.org/works/55604875/chapters/141130912
+ *
+ * Find me:
+ * - GitHub:   https://github.com/Wolfbatcat
+ * - AO3:      https://archiveofourown.org/users/BlackBatCat/pseuds/BlackBatCat
+ * - Tumblr:   https://www.tumblr.com/blackbatcats
+ */
+
+/*═════════════════════════════════════════════════════════════*
+ *                 ʚʚʚ A1 COLOR GUIDE ɞɞɞ                      *
+ *  Role-based tokens only; change values here to retheme.      *
+ *═════════════════════════════════════════════════════════════*/
+
+:root {
+ 
+  /* ===== CORE ROSEPINE MOON COLOR PALETTE ===== */
+  --rp-base: #232136;
+  --rp-surface: #2a273f;
+  --rp-overlay: #3f3857;
+  --rp-muted: #6e6a86;
+  --rp-subtle: #908caa;
+  --rp-text: #e0def4;
+  --rp-love: #eb6f92;
+  --rp-gold: #f6c177;
+  --rp-rose: #ea9a97;
+  --rp-pine: #3e8fb0;
+  --rp-foam: #9ccfd8;
+  --rp-iris: #c4a7e7;
+
+  /* ===== SEMANTIC VARIABLES ===== */
+  /* Surfaces */
+  --surface-1: var(--rp-base);
+  --surface-2: var(--rp-surface);
+  --surface-3: var(--rp-overlay);
+  --surface-light: var(--rp-surface);
+
+  /* Borders & Dividers */
+  --line-1: var(--rp-overlay);
+  --line-2: #36324e;
+  --line-3: #463e61;
+  --line-4: var(--rp-overlay);
+
+  /* Buttons */
+  --button-bg: #2e2c44;
+  --button-border: #463e61;
+  --button-radius: 0.75rem;
+  --button-color: var(--text-1);
+  --button-shadow: var(--shadow-button);
+  --button-hover-bg: linear-gradient(to bottom right, var(--accent-2) 0%, var(--accent-1) 60%, var(--accent-1) 100%);
+  --button-hover-color: var(--text-invert);
+  --button-hover-border: var(--accent-1);
+  --button-hover-shadow: none;
+  --button-active-bg: #44415a;
+  --button-active-border: #595574;
+  --button-active-color: var(--text-1);
+  --button-active-shadow: var(--shadow-button);
+  --button-disabled-bg: var(--rp-overlay);
+  --button-disabled-color: var(--text-1);
+  --button-disabled-border: var(--accent-4);
+
+  /* Text */
+  --text-1: var(--rp-text);
+  --text-2: var(--accent-3);
+  --text-3: #211F2E;
+  --text-invert: #ffffff;
+
+  /* Accents */
+  --accent-1: var(--rp-iris);
+  --accent-2: var(--rp-rose);
+  --accent-3: var(--rp-foam);
+  --accent-4: var(--rp-pine);
+  --accent-5: var(--rp-gold);
+  --accent-muted: var(--rp-muted);
+
+  /* Widgets & Utilities */
+  --scroll-thumb: #7b76a1;
+  --scroll-track: var(--accent-1);
+  --tag-translucent: rgba(50, 48, 70, 0.22);
+  --icon-line: #0000001a;
+
+  /* States */
+  --state-err-bg: #210b13;
+  --state-err-text: var(--accent-1);
+  --state-warn-bg: #2b2107;
+  --state-warn-text: var(--accent-5);
+  --state-ok-bg: #11211c;
+  --state-ok-text: var(--accent-4);
+  --state-note-bg: #18162b;
+  --state-note-text: #9a7fd1;
+
+  /* Shadows */
+  --shadow-1: 0 8px 28px 0 rgba(35, 33, 54, 0.60), 0 4px 0 0 rgba(35, 33, 54, 0.32); /* box-shadow-1 */
+  --shadow-2: 0 3px 10px 0 rgba(35, 33, 54, 0.28), 0 2px 0 0 rgba(35, 33, 54, 0.17); /* box-shadow-2 */
+  --shadow-header: var(--shadow-1); /* header uses box-shadow-1 */
+  --shadow-button: 0 3px 8px 0 rgba(35, 33, 54, 0.33), 0 2px 0 0 rgba(100, 90, 120, 0.15); /* button-shadow */
+  --shadow-soft: 0 0.2em 0.35em rgba(50, 48, 70, 0.22); /* utility-4 */
+  --shadow-current: var(--shadow-button); /* dashboard .current */
+
+  /* Gradients */
+  --grad-stop-a: var(--accent-3);
+  --grad-stop-b: var(--accent-4);
+
+  /* Filters */
+  --filter-1: brightness(0) saturate(100%) invert(88%) sepia(20%) saturate(167%) hue-rotate(206deg) brightness(97%) contrast(96%);
+  --filter-2: brightness(0) saturate(100%) invert(62%) sepia(26%) saturate(1195%) hue-rotate(299deg) brightness(90%) contrast(105%);
+
+  /* ===== DOMAIN TOKENS (color-only for theme layering) ===== */
+  /* Bookmark Ribbon */
+  --bookmark-ribbon-public: var(--accent-3); /* symbol-2: public */
+  --bookmark-ribbon-rec: var(--rp-overlay);    /* symbol-1: rec */
+  --bookmark-ribbon-private: var(--accent-1);/* symbol-3: private */
+  --bookmark-ribbon-hidden: var(--accent-4); /* symbol-4: hidden */
+
+  /* Content Ratings */
+  --rating-gen-bg: var(--accent-3);      /* icon-2: teen */
+  --rating-teen-bg: var(--accent-4);     /* icon-1: general */
+  --rating-mature-bg: var(--accent-2);   /* icon-3: mature */
+  --rating-explicit-bg: var(--accent-1); /* icon-4: explicit */
+  --rating-notrated-bg: var(--rp-overlay); /* fallback/neutral */
+
+  /* Relationships */
+  --rel-ff-bg: var(--accent-2);      /* not directly mapped, keep as is */
+  --rel-mm-bg: var(--accent-1);      /* tag-bg-3: relationship */
+  --rel-mf-bg: var(--accent-4);      /* tag-bg-2: fandom */
+  --rel-gen-bg: var(--accent-3);     /* tag-bg-4: character */
+  --rel-other-bg: var(--accent-muted);   /* accent-muted */
+
+  /* Content Warnings */
+  --warn-yes-bg: var(--accent-1);        /* tag-bg-5: warning */
+  --warn-no-bg: var(--rp-overlay);         /* tag-bg-1: default */
+  --warn-choosenotto-bg: var(--accent-3);/* tag-bg-2: fandom */
+  --warn-external-bg: var(--accent-2);   /* tag-bg-3: relationship */
+
+  /* Completion Status */
+  --complete-bg: var(--accent-4);    /* tag-bg-4: character */
+  --incomplete-bg: var(--accent-2);  /* not directly mapped, keep as is */
+  --draft-bg: var(--rp-overlay);       /* tag-bg-1: default */
+
+  /* Symbols & Tags */
+  --tag-fandom: var(--accent-1);         /* tag-bg-2: fandom */
+  --tag-warning: var(--accent-2);        /* tag-bg-5: warning */
+  --tag-relationship: var(--accent-3);   /* tag-bg-3: relationship */
+  --tag-character: var(--accent-4);      /* tag-bg-4: character */
+  --tag-bg: #403e62;             /* tag-bg-1: default */
+  --tag-text: #ffffff;
+  --tag-border: #9893a525;
+  --splash-tag-bg: #28253c;
+  --symbol-bg: var(--accent-1);
+  --symbol-border: #36324e;
+}
+
+/*═════════════════════════════════════════════════════════════*
+ *               ʚʚʚ 01 Miscellaneous ɞɞɞ                   *
+ *═════════════════════════════════════════════════════════════*/
+
+#header .primary:not(:has(.open)) li.dropdown:hover::before,
+#header #greeting:not(:has(.open)) li.dropdown:hover::before,
+#header .open::before {
+  filter: drop-shadow(0 -1px #D7BFB6); /* excluded from variable substitution as requested */
+}
+
+#header #search .text {
+  background-color: var(--splash-tag-bg);
+  border: 1px solid var(--rp-overlay);
+}
+
+.required-tags .category-multi, img[src$="/images/skins/iconsets/default/category-multi.png"] {
+  background: conic-gradient(from 360deg, var(--rp-love) 0% 25%, var(--rp-rose) 25% 50%, var(--rp-foam) 50% 75%, var(--rp-pine) 75% 100%);
+}

@@ -1,171 +1,199 @@
 /*═════════════════════════════════════════════════════════════*
  *                  ʚʚʚ Rose Pine Dawn ɞɞɞ                   *
  *           A Site Skin for the Archive of Our Own           *
- *                      By Wolfbatcat                        *
+ *                      By Wolfbatcat                         *
  *═════════════════════════════════════════════════════════════*/
 
 /*═════════════════════════════════════════════════════════════*
- *                ʚʚʚ Links & Credits ɞɞɞ                *
+ *                ʚʚʚ Links & Credits ɞɞɞ                     *
+ *═════════════════════════════════════════════════════════════*
+ * Code (GitHub):       https://github.com/Wolfbatcat/ao3-rose-pine
+ * Instructions (AO3):  https://archiveofourown.org/works/69993411
+ *
+ * Inspired by:         Rose Pine — https://rosepinetheme.com/
+ * Base:                "neos" by ZerafinaCSS — https://github.com/ZerafinaCSS/neos
+ * Used:                "Stats Icons with Hover Text" — https://archiveofourown.org/works/55604875/chapters/141130912
+ *
+ * Find me:
+ * - GitHub:   https://github.com/Wolfbatcat
+ * - AO3:      https://archiveofourown.org/users/BlackBatCat/pseuds/BlackBatCat
+ * - Tumblr:   https://www.tumblr.com/blackbatcats
+ */
+
+/*═════════════════════════════════════════════════════════════*
+ *                 ʚʚʚ A1 COLOR GUIDE ɞɞɞ                      *
+ *  Role-based tokens only; change values here to retheme.      *
  *═════════════════════════════════════════════════════════════*/
 
-CODE & INSTRUCTIONS:
+:root {
+  /* ===== CORE ROSEPINE COLOR PALETTE ===== */
+  --rp-base: #faf4ed;
+  --rp-surface: #fffaf5;
+  --rp-overlay: #f2e9e1;
+  --rp-muted: #9893a5;
+  --rp-subtle: #797593;
+  --rp-text: #575279;
+  --rp-love: #eb6f92;
+  --rp-gold: #f6c177;
+  --rp-rose: #ea9a97;
+  --rp-pine: #3e8fb0;
+  --rp-foam: #9ccfd8;
+  --rp-iris: #c4a7e7;
   
-- Code (GitHub):       https://github.com/Wolfbatcat/ao3-rose-pine
-- Instructions (AO3):  https://archiveofourown.org/works/69993411
+  /* ===== SEMANTIC VARIABLES ===== */
+  /* Surfaces */
+  --surface-1: var(--rp-base);
+  --surface-2: var(--rp-surface);
+  --surface-3: #e4d1c9;
+  --surface-light: #fffbf5;
+  
+  /* Borders & Dividers */
+  --line-1: #e4d1c9;
+  --line-2: #e7d3cb;
+  --line-3: #D7BFB6;
+  --line-4: #eaddcf;
 
-CREDITS:
+  /* Buttons */
+  --button-bg: var(--surface-2);
+  --button-border: var(--line-3);
+  --button-radius: 0.75rem;
+  --button-color: var(--text-1);
+  --button-shadow: var(--shadow-button);
+  --button-hover-bg: linear-gradient(to bottom right, var(--grad-stop-a), var(--grad-stop-b));
+  --button-hover-color: var(--text-invert);
+  --button-hover-border: var(--accent-2);
+  --button-hover-shadow: none;
+  --button-active-bg: var(--surface-2);
+  --button-active-border: var(--line-2);
+  --button-active-color: var(--text-1);
+  --button-active-shadow: none;
+  --button-disabled-bg: var(--surface-3);
+  --button-disabled-color: var(--text-1);
+  --button-disabled-border: var(--text-2);
 
-- Inspired by:         "Rose Pine"                         https://rosepinetheme.com/
-- Base:                "neos" by ZerafinaCSS               https://github.com/ZerafinaCSS/neos
-- Used:                "Stats Icons with Hover Text"       https://archiveofourown.org/works/55604875/chapters/141130912
+  /* Text */
+  --text-1: var(--rp-text);
+  --text-2: var(--rp-pine);
+  --text-3: #211F2E;
+  --text-invert: #ffffff;
+  
+  /* Accents */
+  --accent-1: var(--rp-love);
+  --accent-2: var(--rp-rose);
+  --accent-3: var(--rp-foam);
+  --accent-4: var(--rp-pine);
+  --accent-5: var(--rp-gold);
+  --accent-muted: var(--rp-muted);
+  
+  /* Widgets & Utilities */
+  --scroll-thumb: #af9f98;
+  --scroll-track: var(--surface-2);
+  --tag-translucent: #3e8fb025;
+  --icon-line: #0000001a;
+  
+  /* States */
+  --state-err-bg: #f7e6ec;
+  --state-err-text: var(--accent-1);
+  --state-warn-bg: #f8f3e3;
+  --state-warn-text: var(--accent-5);
+  --state-ok-bg: #e6f4ef;
+  --state-ok-text: var(--accent-4);
+  --state-note-bg: #eceaf7;
+  --state-note-text: var(--rp-iris);
+  
+  /* Shadows */
+  --shadow-1: 0 2px 8px 0 #c8b6ad33, 0 1.5px 0 0 #e7d3cb80;
+  --shadow-2: 0 1.5px 4px 0 #c8b6ad22, 0 1px 0 0 #e7d3cb40;
+  --shadow-header: 0 2px 8px 0 rgba(120, 110, 100, 0.18), 0 1px 0 0 rgba(200, 182, 173, 0.10);
+  --shadow-button: 0 2px 6px 0 #c8b6ad33, 0 1.5px 0 0 #e7d3cb80;
+  --shadow-soft: 0 0.2em 0.35em var(--tag-translucent);
+  --shadow-current: 0 2px 8px 0 #eaddcf33;
+  
+  /* Gradients */
+  --grad-stop-a: var(--accent-2);
+  --grad-stop-b: var(--accent-1);
+  
+  /* Filters */
+  --filter-1: brightness(0) saturate(100%) invert(31%) sepia(23%) saturate(756%) hue-rotate(208deg) brightness(98%) contrast(87%);
+  --filter-2: brightness(0) saturate(100%) invert(71%) sepia(22%) saturate(4960%) hue-rotate(300deg) brightness(94%) contrast(96%);
+ 
+  /* ===== DOMAIN TOKENS (color-only for theme layering) ===== */
+  /* Bookmark Ribbon */
+  --bookmark-ribbon-public: var(--accent-4);
+  --bookmark-ribbon-rec: var(--accent-5);
+  --bookmark-ribbon-private: var(--accent-1);
+  --bookmark-ribbon-hidden: var(--accent-muted);
 
-FIND ME ON:
+  /* Content Ratings */
+  --rating-gen-bg: var(--accent-4);
+  --rating-teen-bg: var(--accent-3);
+  --rating-mature-bg: var(--accent-1);
+  --rating-explicit-bg: var(--accent-5);
+  --rating-notrated-bg: var(--surface-3);
 
-- GitHub:              https://github.com/Wolfbatcat
-- AO3:                 https://archiveofourown.org/users/BlackBatCat/pseuds/BlackBatCat
-- Tumblr:              https://www.tumblr.com/blackbatcats
+  /* Relationships */
+  --rel-ff-bg: var(--accent-5);
+  --rel-mm-bg: var(--accent-3);
+  --rel-mf-bg: var(--accent-1);
+  --rel-gen-bg: var(--accent-4);
+  --rel-other-bg: var(--accent-muted);
 
-/*═════════════════════════════════════════════════════════════*
- *                ʚʚʚ Directory ɞɞɞ                      *
- *═════════════════════════════════════════════════════════════*/
+  /* Content Warnings */
+  --warn-yes-bg: var(--accent-5);
+  --warn-no-bg: var(--surface-3);
+  --warn-choosenotto-bg: var(--accent-1);
+  --warn-external-bg: var(--accent-3);
 
->> A1 COLOR GUIDE
->> A2 BASIC LAYOUT SETTINGS ETC.
->> 01 ELEMENTS
->> 02 REGION: HEADER
->> 03 REGION: DASHBOARD
->> 04 REGION: MAIN
->> 05 REGION: FOOTER
->> 06 INTERACTIONS
->> 07 ACTIONS: BUTTONS
->> 08 ROLES AND STATES
->> 09 TYPES OF DATA, GROUPS OF DATA
->> 10 GROUP: LISTBOX
->> 11 GROUP: META
->> 12 GROUP: BLURB
->> 13 GROUP: PREFACE
->> 14 GROUP: COMMENTS
->> 15 ZONE: SYSTEM
->> 16 ZONE: HOME
->> 17 ZONE: SEARCH/BROWSE
->> 18 ZONE: TAGS, TAGSETS, and TAG WRANGLING
->> 21 USERSTUFF
->> 22 SYSTEM MESSAGES
->> Z1 REPLACE THE ICONS AND IMAGES
->> Z2 STATS ICONS WITH HOVER TEXT
->> Z3 MISCELLANEOUS
+  /* Completion Status */
+  --complete-bg: var(--accent-4);
+  --incomplete-bg: var(--accent-5);
+  --draft-bg: var(--surface-3);
 
-/*═════════════════════════════════════════════════════════════*
-    *                ʚʚʚ A1 COLOR GUIDE ɞɞɞ                  *
-*═════════════════════════════════════════════════════════════*/
-
-/*──────────────────── Main Backgrounds ────────────────────*/
-.core-bg-1 { color: #faf4ed; }   /* Main background */
-.core-bg-2 { color: #fffaf5; }   /* Secondary background */
-.core-bg-3 { color: #e4d1c9; }   /* Tertiary background */
-
-/*──────────────────── Borders & Dividers ──────────────────*/
-.border-1 { color: #e4d1c9; }    /* Light border */
-.border-2 { color: #e7d3cb; }    /* Main border */
-.border-3 { color: #D7BFB6; }    /* Dark border */
-.border-4 { color: #eaddcf; }   /* Current border */
-
-/*──────────────────── Text & Font Colors ──────────────────*/
-.core-text-1 { color: #575279; } /* Main text */
-.core-text-2 { color: #9ccfd8; } /* Link text */
-.core-text-3 { color: #3e8fb0; } /* Visited/secondary text */
-.core-text-4 { color: #211F2E; } /* Headings, dark text */
-.core-text-5 { color: #ffffff; } /* White text (tags, buttons, hover) */
-.core-text-6 { color: #eb6f92; } /* Accent text */
-
-/*──────────────────── Interactive Elements ────────────────*/
-.interactive-btn-1 { color: #fffaf5; } /* Button background */
-.interactive-btn-2 { color: #3e8fb0; } /* Button hover/focus */
-.interactive-btn-3 { color: #e4d1c9; } /* Button active/selected */
-.interactive-form-1 { color: #faf4ed; } /* Input background */
-.interactive-form-2 { color: #e7d3cb; } /* Input border */
-.interactive-form-3 { color: #eb6f92; } /* Input focus/hover */
-
-/*──────────────────── States & Statuses ───────────────────*/
-.state-error { color: #f7e6ec; }        /* Error background */
-.state-error-text { color: #EB6F92; }   /* Error text */
-.state-warning { color: #f8f3e3; }      /* Warning background */
-.state-warning-text { color: #F6C177; } /* Warning text */
-.state-success { color: #e6f4ef; }      /* Success background */
-.state-success-text { color: #3E8FB0; } /* Success text */
-.state-notice { color: #eceaf7; }        /* Notice background */
-.state-notice-text { color: #9A7FD1; }   /* Notice text */
-
-/*──────────────────── Tag Backgrounds ─────────────────────*/
-.tag-bg-1 { color: #9ccfd8; }    /* Default tag */
-.tag-bg-2 { color: #eb6f92; }    /* Fandom tag */
-.tag-bg-3 { color: #ea9a97; }    /* Relationship tag */
-.tag-bg-4 { color: #3e8fb0; }    /* Character tag */
-.tag-bg-5 { color: #f6c177; }    /* Warning tag */
-.tag-bg-6 { color: #3e8fb025; }  /* Transparent tag */
-
-/*──────────────────── Icons & Symbols ─────────────────────*/
-.icon-1 { color: #3e8fb0; }      /* General icon */
-.icon-2 { color: #9ccfd8; }      /* Teen icon */
-.icon-3 { color: #eb6f92; }      /* Mature icon */
-.icon-4 { color: #f6c177; }      /* Explicit icon */
-.symbol-1 { color: #f6c177; }    /* Rec symbol */
-.symbol-2 { color: #3e8fb0; }    /* Public symbol */
-.symbol-3 { color: #eb6f92; }    /* Private symbol */
-.symbol-4 { color: #908caa; }    /* Hidden symbol */
-
-/*──────────────────── Utility & Effects ───────────────────*/
-.utility-1 { color: #eb6f92; }   /* Selection highlight */
-.utility-2 { color: #af9f98; }   /* Scrollbar thumb */
-.utility-3 { color: #fffaf5; }   /* Scrollbar track */
-.utility-4 { color: #3e8fb025; } /* Box shadow */
-
-/*──────────────────── Shadows & Gradients ─────────────────*/
-.box-shadow-1 { box-shadow: 0 2px 8px 0 #c8b6ad33, 0 1.5px 0 0 #e7d3cb80; } /* Main shadow */
-.box-shadow-2 { box-shadow: 0 1.5px 4px 0 #c8b6ad22, 0 1px 0 0 #e7d3cb40; } /* Subtle shadow */
-.header-shadow { box-shadow: 0 2px 8px 0 rgba(120, 110, 100, 0.18), 0 1px 0 0 rgba(200, 182, 173, 0.10); } /* Header shadow */
-.button-shadow { box-shadow: 0 2px 6px 0 #c8b6ad33, 0 1.5px 0 0 #e7d3cb80; } /* Button shadow */
-.shadow-dashboard { color: #3e8fb025; } /* Dashboard shadow */
-.gradient-action { background: linear-gradient(to bottom right, #ea9a97, #eb6f92); } /* Action gradient */
-.gradient-dashboard-current { background: linear-gradient(to bottom right, #fffaf5 60%, #fff7ef 100%); } /* Dashboard gradient */
+  /* Symbols & Tags */
+  --tag-fandom: var(--accent-4);
+  --tag-warning: var(--accent-5);
+  --tag-relationship: var(--accent-1);
+  --tag-character: var(--accent-2);
+  --tag-bg: var(--accent-3);
+  --tag-text: var(--text-invert);
+  --tag-border: #9893a525;
+  --splash-tag-bg: #ece7e1;
+  --symbol-bg: var(--surface-3);
+  --symbol-border: var(--line-2);
+}
 
 /*═════════════════════════════════════════════════════════════*
  *         ʚʚʚ A2 Basic Layout Settings Etc. ɞɞɞ             *
  *═════════════════════════════════════════════════════════════*/
 
-/* This wraps everything: header, inner, and footer */
 #outer {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background-color: #faf4ed;
+  background-color: var(--surface-1);
 }
 
-/* This is where the content is */
 #inner {
   min-height: 70vh;
   display: flex;
-  flex-grow: 1; /* This makes the footer stay at the bottom of the screen */
+  flex-grow: 1;
   flex-flow: row;
   justify-content: flex-start;
 }
 
-/* The main font color is set here */
 body,
 .toggled form,
 .dynamic form,
 .secondary,
 .dropdown {
-  color: #575279; /* Main font color */
+  color: var(--text-1);
 }
 
-/* This removes some spaces and gaps */
 .blurb li,
 .meta ul li {
   padding-left: 0;
 }
 
-/* Remove dotted outline on some active and focused elements */
 a:active,
 a:focus,
 a:focus img,
@@ -180,17 +208,14 @@ button:focus,
 /*═════════════════════════════════════════════════════════════*
  *                ʚʚʚ 01 Elements ɞɞɞ                     *
  *═════════════════════════════════════════════════════════════*/
-/* See "Archive: (2) Elements Skin" by AO3. */
-
-/*========== Links ==========*/
 
 a,
 a:link,
 a.work,
 .blurb h4 a:link,
 .filters p a {
-  color: #eb6f92; /* Link color */
-  border-bottom: none; /* Remove the link underline */
+  color: var(--accent-1);
+  border-bottom: none;
 }
 
 a:hover,
@@ -201,23 +226,19 @@ div.preface .byline a:hover,
 .fandom.index.group a.tag:hover,
 h2.heading a.tag:hover,
 .filters p a:hover {
-  color: #eb6f92; /* Link hover color */
-  border-bottom: 1px solid; /* Underline for link hover */
+  color: var(--accent-1);
+  border-bottom: 1px solid;
 }
 
 a:visited,
 .blurb .heading a:visited {
-  color: #3e8fb0; /* Different color for visited links */
+  color: var(--text-2);
 }
 
-/* Remove border on images that are links */
 a img {
   border: 0;
 }
 
-/*========== Text ==========*/
-
-/* H2 headings */
 h2 {
   font-size: 1.8em;
   line-height: 1.2;
@@ -228,49 +249,45 @@ h2.heading:has(+ .navigation.actions.module) {
   margin-top: 0;
 }
 
-/* Horizontal rule to separate content */
 hr {
   border: 0;
   border-bottom: 3px double;
 }
 
-/* Emphasis, cite, italic */
 em,
 cite,
 i {
-  font-style: italic; /* This is oblique in default skin but I want true italics */
+  font-style: italic;
 }
 
-/*========== Tables ==========*/
-
 table {
-  background-color: #fffaf5;
-  border: 1px solid #e7d3cb;
+  background-color: var(--surface-2);
+  border: 1px solid var(--line-2);
 }
 
 thead,
 tfoot,
 tbody tr {
-  border-color: #e7d3cb;
+  border-color: var(--line-2);
 }
 
 thead th {
-  background-color: #faf4ed;
-  border-color: #e7d3cb;
+  background-color: var(--surface-1);
+  border-color: var(--line-2);
 }
 
 thead td {
-  background-color: #e4d1c9 ;
-  border-color: #fffaf5;
+  background-color: var(--surface-3);
+  border-color: var(--surface-2);
 }
 
 tbody th {
-  background-color: #faf4ed;
-  border-color: #e7d3cb;
+  background-color: var(--surface-1);
+  border-color: var(--line-2);
 }
 
 tfoot td {
-  border-color: #D7BFB6 ;
+  border-color: var(--line-3);
 }
 
 td {
@@ -279,15 +296,13 @@ td {
 
 tr:hover,
 col.name {
-  background-color: #fffaf5;
+  background-color: var(--surface-2);
 }
 
 /*═════════════════════════════════════════════════════════════*
  *             ʚʚʚ 02 Region: Header ɞɞɞ                   *
  *═════════════════════════════════════════════════════════════*/
-/* See "Archive 2.0: (3) Region Header Skin" by AO3 */
 
-/* Header container */
 #header {
   width: 100%;
   max-width: 100%;
@@ -300,36 +315,31 @@ col.name {
   column-gap: 1.25em;
   box-sizing: border-box;
   z-index: 100;
-  background-color: #fffaf5;
-  border-bottom: 1px solid #e7d3cb;
-  box-shadow: 0 2px 8px 0 rgba(120, 110, 100, 0.18), 0 1px 0 0 rgba(200, 182, 173, 0.10);
-  /*box-shadow: 0 0.1em 0.5em #e7d3cb65; */
+  background-color: var(--surface-2);
+  border-bottom: 1px solid var(--line-2);
+  box-shadow: var(--shadow-header);
 }
 
-/* Header elements */
 #header > h1,
 #header > h2,
 #header > nav .user,
 #header > nav .dropdown-toggle,
 #header li.search {
-  min-height: 38px; /* CHANGE HEIGHT OF HEADER HERE */
+  min-height: 38px;
   display: flex;
   align-items: center;
   box-sizing: border-box;
 }
 
-/* Remove space before header title */
 #header div.clear {
   display: none;
 }
 
 #header li {
-	display: block;
-	float: left;
-	position: relative;
+  display: block;
+  float: left;
+  position: relative;
 }
-
-/*========== Logo And Title/Heading ==========*/
 
 #header .heading {
   margin-left: 14px;
@@ -337,33 +347,27 @@ col.name {
   order: 1;
 }
 
-/* Reset heading style */
 #header .heading a {
   line-height: 1;
   font-size: 1em;
 }
 
-/* AO3 logo and heading */
 #header .heading a::before {
   content: "ʚAO3ɞ";
-  font-weight: 700; /* make title bold */
+  font-weight: 700;
   font-size: 1.15em;
-  color: #575279; /* change title/heading color here */
+  color: var(--text-1);
 }
 
-/* Gradient text on hover */
 #header .heading a:is(:hover, :focus, :active)::before {
   background-clip: text;
-  background-image: linear-gradient(to bottom right, #ea9a97, #eb6f92);
+  background-image: linear-gradient(to bottom right, var(--grad-stop-a), var(--grad-stop-b));
   color: transparent;
 }
 
-/* Hide AO3 beta title and logo */
 #header .heading a * {
   display: none;
 }
-
-/*========== Header Dropdown Menus ==========*/
 
 #header .dropdown-menu,
 #small_login {
@@ -374,11 +378,10 @@ col.name {
   border-radius: 0.75rem;
   font-size: 0.95em;
   box-sizing: border-box;
-  box-shadow: 0 0.25em 0.5em #3e8fb025;
+  box-shadow: var(--shadow-soft);
   z-index: 5;
 }
 
-/* Add arrow on top of dropdown menu */
 #header .primary:not(:has(.open)) li.dropdown:hover::before,
 #header #greeting:not(:has(.open)) li.dropdown:hover::before,
 #header .open::before {
@@ -388,72 +391,59 @@ col.name {
   height: 0; 
   border-right: 8px solid transparent !important;
   border-left: 8px solid transparent !important;
-  border-bottom: 8px solid #fffbf5;
-  filter: drop-shadow(0 -1px #D7BFB6 );
+  border-bottom: 8px solid var(--surface-2) !important;
+  filter: drop-shadow(0 -1px #D7BFB6);
   transform: translate(-50%, 31px);
   z-index: 6;
 }
 
-/* Arrow placement for greeting/user menu */
 #greeting .dropdown-menu {
   transform: translateX(1.5em);
   z-index: 7;
 }
 
-/* Continued arrow placement for greeting/user menu */
 #header #greeting:not(:has(.open)) li.dropdown:hover::before,
 #header #greeting .open::before {
   transform: translate(5%, 31px);
   z-index: 8;
 }
 
-/* Dropdown menu */
 #header .navigation .dropdown .menu {
   background-image: none;
-  background-color: #fffaf5;
-  border-color: #D7BFB6 ;
+  background-color: var(--surface-2);
+  border-color: var(--line-3);
 }
 
-/* Dropdown menu list items */
 #header .navigation .dropdown .menu li {
   margin: 0 0.25em;
   border-bottom: none;
   text-align: left;
 }
 
-/* Dropdown menu list item links */
 #header .navigation .dropdown:is(*) .menu li a {
   max-width: unset;
   background-color: transparent;
   display: block;
   padding: 0.5em;
-  color: #575279;
+  color: var(--text-1);
   border-radius: 0.75rem;
 }
 
-/* Dropdown menu list item links hover */
 #header .navigation .dropdown .menu li a:is(:hover, :focus, :active) {
-  background-image: linear-gradient(to bottom right, #ea9a97, #eb6f92);
-  color: #ffffff;
+  background-image: linear-gradient(to bottom right, var(--grad-stop-a), var(--grad-stop-b));
+  color: var(--text-invert);
 }
 
-/*========== Header Navigation / Dropdown Toggles ==========*/
-
-/* Header navigation */
 #header .navigation a {
   background: transparent;
-  color: #575279;
+  color: var(--text-1);
 }
 
-/* Currently selected dropdown toggle */
 #header .navigation .dropdown:is(.open, :hover, :focus, :active) > a {
   background: transparent;
-  color: #eb6f92;
+  color: var(--accent-1);
 }
 
-/*========== Login and Greeting (= User Actions in Header) ==========*/
-
-/* Placement */
 #login,
 #greeting {
   order: 3;
@@ -463,7 +453,6 @@ col.name {
   background-color: transparent;
 }
 
-/* Remove margin and padding */
 #header .user,
 #header .user a,
 #small_login .action,
@@ -476,56 +465,44 @@ col.name {
   line-height: 0;
 }
 
-/* Hide small user icon */
 #greeting p.icon {
   display: none;
 }
 
-/*===== Replace User Actions Buttons With Icons =====*/
-
-/* User icon (replaces the "Hi, [username]!") */
 #header #greeting .dropdown > a[href*="/users/"] {
   content: url("https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/assets/zerafina-header-icon-user.png");
 }
 
-/* "Post" icon */
 #header #greeting .dropdown > a[href*="/works/new"] {
   content: url("https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/assets/zerafina-header-icon-new-work.png");
 }
 
-/* "Log Out" icon */
 #header #greeting a[href*="/users/logout"] {
   content: url("https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/assets/zerafina-header-icon-logout.png");
 }
 
-/* Settings for the icons */
 #header #greeting > ul > li > a {
   display: inline-block;
   height: 18px;
   width: 18px;
   padding: 10px 0;
   background: transparent;
-  filter: brightness(0) saturate(100%) invert(31%) sepia(23%) saturate(756%) hue-rotate(208deg) brightness(98%) contrast(87%); /* adjust filters to change header icon colors */
+  filter: var(--filter-1);
 }
 
-/* Colors for header icons when selected */
 #header #greeting > ul > li:is(.open, :hover, :focus, :active) > a {
-  filter: brightness(0) saturate(100%) invert(71%) sepia(22%) saturate(4960%) hue-rotate(300deg) brightness(94%) contrast(96%); /* adjust filters to change colors */
+  filter: var(--filter-2);
 }
 
-/* Gap between icons (works because of "display: flex" above) */
 #header > nav .user {
   column-gap: 0.5em;
 }
-
-/*========== Primary Navigation ==========*/
-/* This is the header navigation bar with Fandoms, Browse, Search and About and the search bar */
 
 #header nav:has(> .primary) {
   order: 2;
   flex: 1;
   max-width: 100%;
-  border-color: #e7d3cb !important; /* border color here is important for the mobile skin */
+  border-color: var(--line-2) !important;
 }
 
 #header .primary {
@@ -534,17 +511,14 @@ col.name {
   justify-content: left;
   align-content: center;
   align-items: center;
-  background: none; /* remove red background-image and fallback color */
+  background: none;
   box-sizing: border-box;
   box-shadow: none;
 }
 
-/* Remove space before navigation */
 #header .primary > li.dropdown:first-of-type {
   margin-left: 0;
 }
-
-/*===== Primary Navigation: Header Search Bar =====*/
 
 #header .search {
   margin: 0;
@@ -554,51 +528,43 @@ col.name {
   margin-inline: 1.25em;
 }
 
-/* Add search bar icon */
 #header li.search::before {
   position: absolute;
   left: 0.4em;
-  content: "\002315"; /* this is a unicode symbol that looks like a magnifying glass */
+  content: "\002315";
   font-size: 1.25em;
   font-weight: 700;
-  color: #eb6f92;
+  color: var(--accent-1);
   z-index: 1;
 }
 
-/* Remove weird empty space before the search bar */
 #header li.search form label {
   display: none;
 }
 
-/* This changes the look of header search bar */
 #header #search .text {
   max-width: 20vw;
   min-width: 100px;
   margin: 0;
-  padding-left: 1.8em; /* make room for the search icon icon */
-  background-color: #fffaf5;
-  border: 1px solid #e7d3cb;
+  padding-left: 1.8em;
+  background-color: var(--surface-2);
+  border: 1px solid var(--line-2);
   border-radius: 0.75rem;
   box-shadow: none;
   transition: width 0.15s;
 }
 
-/* How the search bar looks when selected */
 #header #search input:focus {
-  color: #575279;
-  outline: 1px solid #eb6f92;
-  border: 1px solid #eb6f92;
+  color: var(--text-1);
+  outline: 1px solid var(--accent-1);
+  border: 1px solid var(--accent-1);
 }
 
-/* Hide search button */
 #header #search .button,
 #header #search span.actions {
   display: none;
 }
 
-/*========== Context: Collections ==========*/
-
-/* Collection header */
 #header h2 {
   display: block;
   min-height: unset;
@@ -606,29 +572,26 @@ col.name {
   width: 100%;
   padding: 0.25em 14px;
   font-size: 1.25em;
-  background-color: #eb6f92 !important;
+  background-color: var(--accent-1) !important;
   background-size: auto 100% !important;
-  color: #ffffff;
+  color: var(--text-invert);
   border-inline: none;
-  border-top: 1px solid #e7d3cb;
+  border-top: 1px solid var(--line-2);
   order: 4;
 }
 
 /*═════════════════════════════════════════════════════════════*
  *           ʚʚʚ 03 Region: Dashboard ɞɞɞ                   *
  *═════════════════════════════════════════════════════════════*/
-/* see "Archive: (4) region dashboard skin" by AO3 */
-/* #2 of the 4 regions shown on every page */
 
-/* create sticky dashboard */
 #dashboard,
 #dashboard.own {
   position: sticky;
   top: 0;
   max-height: 100vh;
   width: 18%;
-  min-width: 150px; /* prevent sidebar from getting too narrow */
-  max-width: 230px; /* prevent sidebar from getting too wide */
+  min-width: 150px;
+  max-width: 230px;
   padding: 0.5em 0.5em 0 0.5em;
   overflow-y: auto;
   overflow-x: visible;
@@ -637,8 +600,8 @@ col.name {
   border-radius: 0;
   box-sizing: border-box;
   scrollbar-color: transparent transparent;
-  background-color: #faf4ed;
-  border-color: #e7d3cb  !important; /* needs to be like this for tablet + mobile skin */
+  background-color: var(--surface-1);
+  border-color: var(--line-2) !important;
   font-size: 0.875em;
 }
 
@@ -647,7 +610,7 @@ col.name {
   display: block;
   padding: 0.429em 0;
   text-align: left;
-  border-top: 1px solid #e7d3cb;
+  border-top: 1px solid var(--line-2);
   position: relative;
 }
 
@@ -664,19 +627,19 @@ col.name {
   padding: 0.429em;
   border-radius: 0.75rem;
   line-height: 1.286;
-  color: #575279;
+  color: var(--text-1);
 }
 
 #dashboard a:hover {
-  background: linear-gradient(to bottom right, #ea9a97, #eb6f92);
-  color: #ffffff;
+  background: linear-gradient(to bottom right, var(--grad-stop-a), var(--grad-stop-b));
+  color: var(--text-invert);
 }
 
 #dashboard .current {
-  background: linear-gradient(to bottom right, #fffaf5 60%, #fff7ef 100%);
-  color: #575279;
-  box-shadow: 0 2px 8px 0 #eaddcf33;
-  border: 1.5px solid #eaddcf;
+  background-color: var(--button-active-bg);
+  color: var(--button-active-color);
+  box-shadow: var(--shadow-current);
+  border: 1.5px solid var(--button-active-border);
 }
 
 #dashboard .current:hover {
@@ -690,16 +653,14 @@ col.name {
 #dashboard .secondary {
   margin-block: 0.25em;
   padding: 0.25em;
-  border: 1px solid #e7d3cb;
-  background-color: #fffaf5;
-  box-shadow: 0 0.2em 0.35em #3e8fb025;
+  border: 1px solid var(--line-2);
+  background-color: var(--surface-2);
+  box-shadow: var(--shadow-soft);
 }
 
 /*═════════════════════════════════════════════════════════════*
  *               ʚʚʚ 04 Region: Main ɞɞɞ                   *
  *═════════════════════════════════════════════════════════════*/
-/* See "Archive: (5) Region Main Skin" by AO3 */
-/* Third of four regions shown on every page */
 
 #main,
 #main.dashboard {
@@ -707,18 +668,16 @@ col.name {
   max-width: 100%;
   flex-grow: 1;
   margin: 0;
-  padding: 1.5em 5%; /* Narrower layout */
+  padding: 1.5em 5%;
   box-sizing: border-box;
-  font-size: 0.875em; /* Change the font size here */
+  font-size: 0.875em;
   line-height: 1.286;
 }
 
-/* Dashboard is 18% wide so #main with dashboard should take up the remaining space */
 #main.dashboard {
   width: 82%;
 }
 
-/* Hide error message pictures */
 #main.errors,
 #main.error-502,
 #main.error-503-maintenance,
@@ -734,17 +693,15 @@ col.name {
 /*═════════════════════════════════════════════════════════════*
  *               ʚʚʚ 05 Region: Footer ɞɞɞ                 *
  *═════════════════════════════════════════════════════════════*/
-/* See "Archive: (6) Region Footer Skin" by AO3 */
-/* Fourth of four regions shown on every page */
 
 #footer {
   width: 100%;
   max-width: 100%;
   padding: 3% 5%;
   font-size: 0.8em;
-  color: #575279;
-  background: linear-gradient(to top, #faf4ed 80%, #fffaf5 100%);
-  border-top: 1px solid #e4d1c9 ;
+  color: var(--text-1);
+  background: linear-gradient(to top, var(--surface-1) 80%, var(--surface-2) 100%);
+  border-top: 1px solid var(--surface-3);
   box-sizing: border-box;
   overflow: hidden;
 }
@@ -772,38 +729,27 @@ col.name {
   width: 100%;
 }
 
-/* Headings for footer sections */
 #footer .heading {
-  color: #eb6f92;
+  color: var(--accent-1);
   font-weight: 700;
 }
 
-/* Links in footer */
 #footer a,
 #footer button {
-  color: #575279;
+  color: var(--text-1);
   border-bottom: none;
   text-decoration: none;
 }
 
-/* Hover for links in footer */
 #footer a:hover,
 #footer button:hover {
-  color: #eb6f92;
+  color: var(--accent-1);
   border-bottom: 1px solid;
-}
-
-#modal .footer .action.modal-closer:hover {
-	color: #ffffff;
-  border: 1px solid #ea9a97;
 }
 
 /*═════════════════════════════════════════════════════════════*
  *             ʚʚʚ 06 Interactions ɞɞɞ                     *
  *═════════════════════════════════════════════════════════════*/
-/* See "Archive: (7) Interactions Skin" by AO3 */
-
-/*========== Nesting ==========*/
 
 form dl,
 fieldset dl dl,
@@ -814,15 +760,14 @@ form blockquote.userstuff,
 form.single fieldset,
 fieldset,
 textarea#skin_css {
-  background-color: #fffaf5;
-  border: 1px solid #e7d3cb;
+  background-color: var(--surface-2);
+  border: 1px solid var(--line-2);
   border-radius: 0.75rem;
   margin: 0.643em 0;
   padding: 0.634em;
-  box-shadow: 0 1.5px 4px 0 #c8b6ad22, 0 1px 0 0 #e7d3cb40;
+  box-shadow: var(--shadow-2);
 }
 
-/* Remove only box-shadow from .filters fieldset and fieldset > dl, keep other effects */
 .filters fieldset,
 fieldset > dl {
   box-shadow: none !important;
@@ -836,7 +781,7 @@ fieldset dl fieldset dl {
 }
 
 fieldset fieldset {
-  background-color: #fffaf5;
+  background-color: var(--surface-2);
 }
 
 fieldset dd dl,
@@ -845,8 +790,6 @@ fieldset dl fieldset dl,
 dd fieldset {
   margin: 0.643em 0;
 }
-
-/*========== Form Rules ==========*/
 
 label {
   margin-right: 0;
@@ -864,12 +807,12 @@ input,
 textarea {
   width: 100%;
   max-width: 100%;
-  background-color: #fffaf5;
-  border: 1px solid #e7d3cb;
+  background-color: var(--surface-2);
+  border: 1px solid var(--line-2);
   border-radius: 0.75rem;
   box-shadow: none;
   box-sizing: border-box;
-  color: #575279;
+  color: var(--text-1);
 }
 
 input[type="text"]:focus,
@@ -877,9 +820,9 @@ input[type="text"]:focus,
 input#user_password:focus,
 select:focus,
 textarea:focus {
-  background-color: #fffaf5;
-  border-color: #eb6f92;
-  outline: 1px solid #eb6f92;
+  background-color: var(--surface-2);
+  border-color: var(--accent-1);
+  outline: 1px solid var(--accent-1);
 }
 
 select {
@@ -887,14 +830,14 @@ select {
   width: 100%;
   min-width: 10.5em;
   padding: 0.15em 0.25em;
-  color: #575279;
-  border: 1px solid #e7d3cb;
+  color: var(--text-1);
+  border: 1px solid var(--line-2);
   border-radius: 0.75rem;
-  background-color: #fffbf5;
+  background-color: var(--surface-light);
 }
 
 select:not(select[multiple]):hover {
-  background-color: #fffbf5;
+  background-color: var(--surface-light);
 }
 
 .datetime select {
@@ -904,26 +847,26 @@ select:not(select[multiple]):hover {
 option,
 .actions option,
 form code {
-  color: #575279;
+  color: var(--text-1);
 }
 
 option:is(:checked, :hover, :focus, :active),
 option:checked:is(:checked, :hover, :focus, :active) {
-  background: #fffaf5;
-  color: #575279;
+  background: var(--surface-2);
+  color: var(--text-1);
   border-radius: 0.75rem;
 }
 
 option:is(:hover, :focus, :active) {
-  background-image: linear-gradient(to bottom right, #ea9a97, #eb6f92);
-  color: #ffffff;
+  background-image: linear-gradient(to bottom right, var(--grad-stop-a), var(--grad-stop-b));
+  color: var(--text-invert);
 }
 
 form dt {
   display: inline-block;
   width: 25%;
   min-width: unset;
-  border-bottom: 1px solid #e7d3cb;
+  border-bottom: 1px solid var(--line-2);
   box-sizing: border-box;
 }
 
@@ -938,35 +881,30 @@ form dd + dd {
 }
 
 form dd.required {
-  color: #575279;
+  color: var(--text-1);
 }
 
 form fieldset#parent-options dd:has(ul) {
   margin: 0;
 }
 
-/* Legends = little heading boxes on forms */
 form.verbose legend,
 .verbose form legend,
 form.single legend {
   font-weight: 700;
-  background-color: #fffaf5;
-  border: 1px solid #e7d3cb;
+  background-color: var(--surface-2);
+  border: 1px solid var(--line-2);
   border-radius: 0.75rem;
-  box-shadow: 0 2px 8px 0 #c8b6ad33, 0 1.5px 0 0 #e7d3cb80;
+  box-shadow: var(--shadow-1);
 }
 
-/* Styling the preview box for the "Comment Formatting and Preview" userscript => https://greasyfork.org/en/scripts/484002-ao3-comment-formatting-and-preview */
 div.comment-preview.userstuff {
   margin-top: 0.429em;
   background: transparent;
-  border: 1px solid #e7d3cb;
+  border: 1px solid var(--line-2);
   border-radius: 0.75rem;
 }
 
-/*========== Input Elements: Checkboxes, Radio Buttons Etc. ==========*/
-
-/* Remove browser-specific appearance of checkbox and radio buttons, apply new styling */
 input[type="checkbox"],
 input[type="radio"],
 .filters [type="radio"],
@@ -984,28 +922,26 @@ label.action input[type="checkbox"] {
   box-sizing: border-box;
   box-shadow: none;
   background-image: none !important;
-  background-color: #fffaf5;
-  border: 1.5px solid #D7BFB6 ;
+  background-color: var(--surface-2);
+  border: 1.5px solid var(--line-3);
   border-radius: 0.75rem;
-  color: #ffffff;
+  color: var(--text-invert);
   flex-shrink: 0;
 }
 
-/* Hover and focus for checkbox and radio buttons */
 input[type="checkbox"]:hover,
 input[type="radio"]:hover,
 .actions input[type="checkbox"]:hover,
 label.action input[type="checkbox"]:hover,
 .filters [type="checkbox"]:hover:not(:checked)::before {
-  border-color: #eb6f92;
-  color: #eb6f92;
+  border-color: var(--accent-1);
+  color: var(--accent-1);
 }
 
-/* Disabled checkbox and radio buttons */
 input[type="checkbox"]:disabled,
 input[type="radio"]:disabled {
-  background-color: #3e8fb0 !important;
-  border-color: #3e8fb0 !important;
+  background-color: var(--text-2) !important;
+  border-color: var(--text-2) !important;
 }
 
 input[type="radio"] + label,
@@ -1013,7 +949,6 @@ input[type="checkbox"] + label {
   padding-left: 0;
 }
 
-/* Attempt at fixing positioning of checkbox labels */
 ul:not(ul.actions) li:has(input[type="checkbox"] + label):not(:has(fieldset)),
 ul:not(ul.actions) li:has(input[type="radio"] + label):not(:has(fieldset)),
 ul:not(ul.actions) li:not(.blurb ul li) > label:has(input[type="checkbox"]),
@@ -1026,18 +961,14 @@ ul:not(ul.actions) li:not(.blurb ul li) > label:has(input[type="radio"]) {
   width: fit-content;
 }
 
-/*===== Checkboxes =====*/
-
-/* Checked checkboxes */
 input[type="checkbox"]:checked,
 .actions input[type="checkbox"]:checked,
 label.action input[type="checkbox"]:checked {
-  background-color: #eb6f92;
-  border-color: #eb6f92;
-  color: #ffffff;
+  background-color: var(--accent-1);
+  border-color: var(--accent-1);
+  color: var(--text-invert);
 }
 
-/* Replace checkmark symbol */
 input[type="checkbox"]::before,
 .filters [type="checkbox"]::before,
 .actions input[type="checkbox"]::before {
@@ -1048,13 +979,12 @@ input[type="checkbox"]::before,
   border-bottom: 0.25em solid;
   border-right: 0.25em solid;
   transform: translate(15%, -20%) scale(0.5) rotate(45deg);
-  color: #ffffff;
+  color: var(--text-invert);
   opacity: 0;
 }
 
-/* Cross for exclude filter checkboxes */
 .filters .exclude [type="checkbox"]::before {
-  content: "\002716\fe0e"; /* unicode cross */
+  content: "\002716\fe0e";
   width: 100%;
   border: none;
   transform: unset;
@@ -1063,206 +993,168 @@ input[type="checkbox"]::before,
   text-align: center;
 }
 
-/* Make checkmark visible when checked */
 input[type="checkbox"]:checked::before,
 .filters [type="checkbox"]:checked::before,
 .actions input[type="checkbox"]:checked::before {
   opacity: 1;
 }
 
-/* Filters checkbox symbols should always be visible */
 .filters [type="checkbox"]:not(:checked)::before {
-  color: #D7BFB6 ;
+  color: var(--line-3);
   opacity: 1;
 }
 
-/* Hover for checked checkboxes */
 input[type="checkbox"]:checked:hover,
 .actions input[type="checkbox"]:checked:hover,
 label.action input[type="checkbox"]:checked:hover {
-  background-color: #eb6f92;
-  border-color: #eb6f92;
+  background-color: var(--accent-1);
+  border-color: var(--accent-1);
 }
 
 .actions input[type="checkbox"] {
   vertical-align: baseline;
 }
 
-/* Hide filter checkbox duplicates */
 .filters [type="radio"] + .indicator,
 .filters [type="checkbox"] + .indicator {
   display: none;
 }
 
-/*===== Radio Buttons =====*/
-
 input[type="radio"],
 .filters [type="radio"] {
-  border-radius: 100%; /* Make them round again */
+  border-radius: 100%;
 }
 
 input[type="radio"]:checked,
 .filters [type="radio"]:checked {
   background-image: none;
-  background-color: #eb6f92;
-  border-color: #eb6f92;
+  background-color: var(--accent-1);
+  border-color: var(--accent-1);
   box-shadow: inset 0 0 0 2.5px;
-  color: #fffaf5
+  color: var(--surface-2)
 }
 
-/*===== File Upload Button =====*/
-
 input[type="file"] {
-  background: #e4d1c9 ;
+  background: var(--surface-3);
 }
 
 input::file-selector-button {
-/* Style file selector button to match other buttons */
   box-shadow: none !important;
 }
-
-/*========== Widget: Character Counter ==========*/
 
 p.character_counter {
   font-size: 0.85em;
 }
-
-/*========== Widget: Live Validation ==========*/
 
 .LV_validation_message {
   display: block;
 }
 
 .LV_invalid {
-  background: #f7e6ec;
-  border: 1px solid #EB6F92;
+  background: var(--state-err-bg);
+  border: 1px solid var(--state-err-text);
   border-radius: 0.75rem;
-  color: #EB6F92;
+  color: var(--state-err-text);
   box-shadow: none;
 }
 
 .LV_invalid_field,
 input.LV_invalid_field:is(:hover, :focus, :active),
 textarea.LV_invalid_field:is(:hover, :focus, :active) {
-  border: 1px solid #EB6F92;
+  border: 1px solid var(--state-err-text);
 }
 
 .LV_invalid::before {
-  border-color: #EB6F92 transparent;
+  border-color: var(--state-err-text) transparent;
 }
 
-/*──────────── Widget: Auto Complete ─────────────*/
-
-/* Style autocomplete dropdown container (transparent background) */
 .autocomplete div.dropdown {
   background: transparent;
 }
 
-/* Style dropdown like a tooltip */
 .autocomplete div.dropdown ul {
-  background: #fffbf5;
-  color: #575279;
-  border: 1px solid #D7BFB6 ;
+  background: var(--surface-light);
+  color: var(--text-1);
+  border: 1px solid var(--line-3);
   border-radius: 0.75rem;
   box-shadow: none;
 }
 
-/* Style autocomplete dropdown list items (rounded, padded) */
 .autocomplete .dropdown ul li {
   border-radius: 0.75rem;
   padding: 0.1em 0.35em;
 }
 
-/* Highlight autocomplete item on hover or when selected */
 .autocomplete .dropdown ul li:hover,
 .autocomplete .dropdown li.selected {
-  background: linear-gradient(125deg, #ea9a97, #eb6f92);
-  color: #ffffff;
+  background: linear-gradient(125deg, var(--grad-stop-a), var(--grad-stop-b));
+  color: var(--text-invert);
 }
 
 .required .autocomplete {
-  color: #575279;
+  color: var(--text-1);
 }
 
-/* Style autocomplete notice like a tooltip */
 .autocomplete .notice {
-/* Style autocomplete notice like a tooltip */
-  /* Style autocomplete notice like a tooltip: soft background, rounded, subtle border */
-  background: #fffbf5;
+  background: var(--surface-light);
   font-size: 0.95em;
-  color: #575279;
-  border: 1px solid #D7BFB6 ;
+  color: var(--text-1);
+  border: 1px solid var(--line-3);
   border-radius: 0.75rem;
 }
 
-/*──────────── Widget: Sortable List ─────────────*/
-
-/* Style sortable list items (draggable, rounded, no shadow by default) */
 .ui-sortable li,
 .ui-sortable li:hover {
-  background: #fffaf5;
-  border: 1px solid #e4d1c9 ;
+  background: var(--surface-2);
+  border: 1px solid var(--surface-3);
   border-radius: 0.75rem;
   box-shadow: none;
 }
 
-/* Add subtle shadow to sortable list item on hover (except action lists) */
 .ui-sortable li:hover:not(.ui-sortable ul.actions li:hover) {
-  box-shadow: 0 0.2em 0.35em #3e8fb025;
+  box-shadow: var(--shadow-soft);
 }
 
-/* Add subtle shadow to draggable form */
 .ui-draggable form {
-  box-shadow: 0 0.2em 0.35em #3e8fb025;
+  box-shadow: var(--shadow-soft);
 }
 
-/*──────────── Widget: Datepicker, Timepicker ─────────────*/
-
-/* Style datepicker/timepicker popup (rounded, soft shadow) */
 #ui-datepicker-div {
-  background: #fffbf5;
-  border: 1px solid #D7BFB6 ;
+  background: var(--surface-light);
+  border: 1px solid var(--line-3);
   border-radius: 0.75rem;
-  box-shadow: 0 0.2em 0.35em #3e8fb025;
+  box-shadow: var(--shadow-soft);
 }
 
-/* Make datepicker header links look clickable */
 .ui-datepicker-header a {
   cursor: pointer;
 }
 
 .ui-datepicker-header a:not(:hover) {
-  border-bottom: 1px solid transparent; /* Width should be same as hover for links */
+  border-bottom: 1px solid transparent;
 }
 
-/* Style datepicker table background */
 .ui-datepicker table {
-  background: #fffaf5;
+  background: var(--surface-2);
 }
 
-/* Style datepicker table cell borders */
 .ui-datepicker td {
-  border-color: #e7d3cb;
+  border-color: var(--line-2);
 }
 
-/* Highlight datepicker row on hover */
 .ui-datepicker tr:hover {
-  background: #e4d1c9 ;
+  background: var(--surface-3);
 }
 
-/* Highlight datepicker cell on hover */
 .ui-datepicker td:hover {
-  background: #faf4ed
+  background: var(--surface-1)
 }
 
-/*──────────── Tooltip ─────────────*/
-
-/* Style tooltip and qtip content rounded, soft background */
 .search [role="tooltip"],
 .qtip-content {
-  background: #fffbf5;
-  color: #575279;
-  border: 1px solid #D7BFB6 ;
+  background: var(--surface-light);
+  color: var(--text-1);
+  border: 1px solid var(--line-3);
   border-radius: 0.75rem;
   padding: 0.429em;
   z-index: 6;
@@ -1273,22 +1165,16 @@ textarea.LV_invalid_field:is(:hover, :focus, :active) {
   border-top-left-radius: 0;
 }
 
-/*──────────── Widget: Modal Dialogs ─────────────*/
-/* Dialog box or popup window displayed on top of the page, e.g. when clicking a help symbol */
-
-/* Style modal dialog or popup window */
 #modal {
-  background: #faf4ed;
-  border: 1px solid #e7d3cb;
+  background: var(--surface-1);
+  border: 1px solid var(--line-2);
   border-radius: 0.75rem;
 }
 
-/* Add divider to modal content */
 #modal .content {
-  border-bottom: 1px solid #e7d3cb;
+  border-bottom: 1px solid var(--line-2);
 }
 
-/* Style modal footer centered, padded */
 #modal .footer {
   align-content: center;
   overflow: auto;
@@ -1296,40 +1182,28 @@ textarea.LV_invalid_field:is(:hover, :focus, :active) {
   line-height: unset;
 }
 
-/* Style links in image modals with white text */
 #modal.img a {
-  color: #ffffff;
+  color: var(--text-invert);
 }
 
-/*──────────── Mode: Dynamic ─────────────*/
-
-/* Remove background for dynamic content containers */
 div.dynamic {
   background: transparent;
 }
 
-/*──────────── Mods: Single ─────────────*/
-/* For prominent simple forms with one text input, e.g. blocked user page */
-
-/* Style single prominent submit button vertical align */
 form.single input[type="submit"] {
   vertical-align: unset;
 }
 
-/*──────────── Widget: Toggled Forms (Show/Hide) ─────────────*/
-
-/* Style toggled forms show/hide, dynamic forms rounded, shadow */
 .toggled form,
 .dynamic form {
   padding: 0.643em;
-  background-color: #faf4ed;
-  border: 1px solid #e7d3cb;
+  background-color: var(--surface-1);
+  border: 1px solid var(--line-2);
   border-radius: 0.75rem;
-  box-shadow: 0 0.2em 0.35em #3e8fb025;
+  box-shadow: var(--shadow-soft);
   margin-bottom: 0.429em;
 }
 
-/* Make toggled/dynamic form dt/dd full width, padded */
 .toggled form dd,
 .toggled form dt,
 .dynamic form dd,
@@ -1338,14 +1212,12 @@ form.single input[type="submit"] {
   padding: 2px;
 }
 
-/* Remove margin/padding from toggled/dynamic form dl */
 .toggled form dl,
 .dynamic form dl {
   margin: 0;
   padding: 0.643em 0;
 }
 
-/* Allow overflow for nested fieldsets/forms */
 .dynamic form fieldset,
 .toggled form fieldset,
 .toggled form dl,
@@ -1354,27 +1226,21 @@ form.single input[type="submit"] {
   overflow: visible;
 }
 
-/* Style footnotes in toggled/dynamic forms margin, line height */
 .toggled form p.footnote,
 .dynamic form p.footnote {
   margin-bottom: 0.643em;
   line-height: 1;
 }
 
-/*──────────── Interaction: Post (Work, Chapter, Comment, News, Feedback, Challenge Etc) ─────────────*/
-
-/* Style required warning text in posts/comments */
 .post .required .warnings,
 dd.required {
   font-weight: 400;
-  color: #575279;
+  color: var(--text-1);
 }
 
 /*═════════════════════════════════════════════════════════════*
  *           ʚʚʚ 07 Actions: Buttons ɞɞɞ                   *
  *═════════════════════════════════════════════════════════════*/
-/* See "Archive: (8) Actions Skin" by AO3 */
-/* Subtypes: .action, .navigation, .sorting, .submit, .cancel, .close, .delete, .pagination, .current, .landmark, #skiplinks, input[type="submit"], button */
 
 .actions a,
 .actions a:is(:link, :visited),
@@ -1394,30 +1260,25 @@ input[type="submit"],
 input::file-selector-button {
   height: auto;
   padding: 0.25em 0.75em;
-  background: #fffaf5;
-  background-origin: border-box !important; /* Border-box so background image (gradient) starts from border corner, not padding edge */
-  border: 1px solid #D7BFB6 ;
-  border-radius: 0.75rem;
-  color: #575279;
-  white-space: normal; /* Prevent overflow */
-  box-shadow: 0 2px 6px 0 #c8b6ad33, 0 1.5px 0 0 #e7d3cb80;
+  background: var(--button-bg);
+  background-origin: border-box !important;
+  border: 1px solid var(--button-border);
+  border-radius: var(--button-radius);
+  color: var(--button-color);
+  white-space: normal;
+  box-shadow: var(--button-shadow);
 }
 
-/* Remove box-shadow from action labels and tag search */
 label.action,
 .actions label,
 form.search input[type="text"] {
   box-shadow: none;
 }
 
-/* Ensure submit button height is consistent */
 input[type="submit"] {
-  height: auto; /* Do not delete */
+  height: auto;
 }
 
-/*========== Subtypes and Modes ==========*/
-
-/* Style actions/buttons on hover and focus gradient, white text */
 .actions a:is(:hover, :focus),
 .actions input:is(:hover, :focus),
 .actions button:is(:hover, :focus),
@@ -1427,44 +1288,40 @@ label.action:is(:hover, :focus),
 input[type="submit"]:is(:hover, :focus),
 input::file-selector-button:is(:hover, :focus),
 .listbox > .heading .action a:is(:hover, :focus) {
-  background-image: linear-gradient(to bottom right, #ea9a97, #eb6f92);
-  color: #ffffff;
-  border: 1px solid #ea9a97;
-  box-shadow: none;
+  background-image: var(--button-hover-bg);
+  color: var(--button-hover-color);
+  border: 1px solid var(--button-hover-border);
+  box-shadow: var(--button-hover-shadow);
 }
 
-/* Style currently selected/active actions/buttons */
 .actions a:active,
 .current,
 a.current,
 a.current:hover,
 a:link.current,
 .current a:visited {
-  background: #fffaf5 ;
-  border-color: #e7d3cb;
-  color: #575279;
-  box-shadow: none;
+  background: var(--button-active-bg);
+  border-color: var(--button-active-border);
+  color: var(--button-active-color);
+  box-shadow: var(--button-active-shadow);
   cursor: default;
 }
 
-/* Style disabled action labels */
 .actions label.disabled {
-  background-color: #e4d1c9 ;
+  background-color: var(--button-disabled-bg);
 }
 
-/* Style disabled selects in actions */
 .actions .disabled select,
 .actions .disabled select:hover {
   background-color: transparent;
-  color: #575279;
-  border-color: #3e8fb0;
+  color: var(--button-disabled-color);
+  border-color: var(--button-disabled-border);
 }
 
-/* Style delete buttons/links minimal, blue */
 .delete a,
 span.delete,
 span.delete a {
-  color: #ffffff;
+  color: var(--text-invert);
   margin: 0;
   padding: 0;
   box-shadow: none;
@@ -1472,46 +1329,35 @@ span.delete a {
   background-color: transparent;
 }
 
-/* Style delete button/link on hover darker */
 .delete a:hover {
-  color: #211F2E;
+  color: var(--text-3);
 }
 
-/* Style secondary action containers absolute, rounded, shadow */
 .secondary {
   position: absolute;
-  background-color: #fffaf5; 
-  border: 1px solid #D7BFB6 ;
+  background-color: var(--surface-2);
+  border: 1px solid var(--line-3);
   border-radius: 0.75rem;
-  box-shadow: 0 0.2em 0.35em #3e8fb025;
+  box-shadow: var(--shadow-soft);
 }
 
-/* Prevent unsubscribe button from overflowing nowrap, ellipsis */
 .subscriptions-index .edit_subscription > input[type="submit"] {
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
 }
 
-/*========== Attempt to Fix the Spacing ==========*/
-/* Temporary fix for spacing issues */
-
-/* Fix spacing between action items except first */
 ul.actions:not(.navigation) > *:not(:first-child),
 fieldset.actions li:not(:first-child) {
   padding-left: 0.2em;
 }
 
-/* Add margin between multiple actions in heading */
 .heading .actions:not(:last-child),
 .heading .action:not(:last-child),
 .heading span.actions:not(:last-child) {
   margin-right: 0.5em;
 }
 
-/*========== Contexts ==========*/
-
-/* Position secondary menus in chapters/downloads */
 .chapter .secondary,
 .download .secondary {
   top: unset;
@@ -1521,15 +1367,10 @@ fieldset.actions li:not(:first-child) {
   transform: translate(-50%, 2.6em);
 }
 
-/* Hide landmark in dashboard header */
 .dashboard .header .landmark {
   display: none;
 }
 
-/*===== Buttons With the "To Top" Arrows and "Expand"/"Contract" Symbols =====*/
-/* Used in other locations as well */
-
-/* Style heading actions with links no background/border */
 .listbox > .heading .action:has(a) {
   padding: 0;
   background-color: transparent;
@@ -1537,7 +1378,6 @@ fieldset.actions li:not(:first-child) {
   box-shadow: none;
 }
 
-/* Style action links in heading inline, inherit color */
 .listbox > .heading .action a {
   padding-inline: 0.3em;
   color: inherit;
@@ -1546,9 +1386,7 @@ fieldset.actions li:not(:first-child) {
 /*═════════════════════════════════════════════════════════════*
  *           ʚʚʚ 08 Roles and States ɞɞɞ                   *
  *═════════════════════════════════════════════════════════════*/
-/* See "Archive: (9) Roles States Skin" by AO3 */
 
-/* Roles and states: own, draft, unread, etc (opacity, backgrounds) */
 .own,
 .draft,
 .draft .wrapper,
@@ -1559,25 +1397,21 @@ fieldset.actions li:not(:first-child) {
   opacity: 1;
 }
 
-/* Own works background */
 .own,
 li.blurb.own {
-  background-color: #faf4ed;
+  background-color: var(--surface-1);
 }
 
-/* Draft wrapper background */
 .draft .wrapper {
   background-color: transparent;
 }
 
-/* Draft state styling */
 .draft {
   background-color: transparent;
-  border: 1.5px dotted #D7BFB6 ;
+  border: 1.5px dotted var(--line-3);
   border-radius: 0.75rem;
 }
 
-/* Unread, replied, claimed, defaulted: rounded corners */
 span.unread,
 .replied,
 span.claimed,
@@ -1585,71 +1419,60 @@ span.claimed,
   border-radius: 0.75rem;
 }
 
-/* Claimed/defaulted: background, border, color */
 span.claimed,
 .actions span.defaulted {
-  background-color: #e4d1c9 ;
-  border: 1px solid #D7BFB6 ;
-  color: #575279;
+  background-color: var(--surface-3);
+  border: 1px solid var(--line-3);
+  color: var(--text-1);
 }
 
-/* Draggable, droppable, requested: highlight color */
 .draggable,
 .droppable,
 span.requested {
-  color: #EB6F92;
+  color: var(--state-err-text);
 }
 
-/* Nominations: unreviewed state */
 .nominations .unreviewed,
 .unreviewed.symbol {
-  background-color: #f8f3e3;
-  border: 1px solid #F6C177;
-  color: #F6C177;
+  background-color: var(--state-warn-bg);
+  border: 1px solid var(--state-warn-text);
+  color: var(--state-warn-text);
 }
 
-/* Nominations: approved state */
 .replied,
 .nominations .approved,
 .approved.symbol {
-  background-color: #e6f4ef;
-  border: 1px solid #3E8FB0;
-  color: #3E8FB0;
+  background-color: var(--state-ok-bg);
+  border: 1px solid var(--state-ok-text);
+  color: var(--state-ok-text);
 }
 
-/* Nominations: rejected/unread state */
 span.unread,
 .nominations .rejected,
 .rejected.symbol {
-  background-color: #f7e6ec;
-  border: 1px solid #EB6F92;
-  color: #EB6F92;
+  background-color: var(--state-err-bg);
+  border: 1px solid var(--state-err-text);
+  color: var(--state-err-text);
 }
 
-/* Offered: highlight color */
 span.offered {
-  color: #3E8FB0;
+  color: var(--state-ok-text);
 }
 
-/* Offered and requested: alternate highlight */
 span.offered.requested {
-  color: #F6C177;
+  color: var(--state-warn-text);
 }
 
-/*========== Arrows for the Accordion Widget ==========*/
-
-/* Accordion collapsed arrow */
 .collapsed:after {
   content: "";
   border-style: solid;
   border-width: 0 0.15em 0.15em 0;
   display: inline-block;
   padding: 0.2em;
-  margin: 0 0 0.2em 0.5em;
+  margin: 0 0 0.5em;
   transform: rotate(45deg);
 }
 
-/* Accordion expanded arrow */
 .expanded:after {
   content: "";
   border-style: solid;
@@ -1660,31 +1483,26 @@ span.offered.requested {
   transform: rotate(-135deg);
 }
 
-/* Unreviewed comment context */
 .comment span.unreviewed {
-  background-color: #fffaf5;
+  background-color: var(--surface-2);
 }
 
 /*═════════════════════════════════════════════════════════════*
  *     ʚʚʚ 09 Types of Data, Groups of Data ɞɞɞ             *
  *═════════════════════════════════════════════════════════════*/
 
-/*========== Type: Tags ==========*/
 ul .tags.commas {
   text-align: left;
 }
 
-/* Hide commas between tags */
 .commas:has(.tag, a[data-remote="true"]) li::after {
-  content: " "; /* leave space here to keep tag groups separated */
+  content: " ";
 }
 
-/* Reset space between tags */
 .commas:has(.tag) li {
   padding: 0;
 }
 
-/* General formatting for the tags */
 a.tag:not(.fandom.index.group a.tag, h2.heading a.tag, .splash .favorite a.tag),
 .tags a[data-remote="true"],
 .unwrangled,
@@ -1694,16 +1512,15 @@ a.tag:not(.fandom.index.group a.tag, h2.heading a.tag, .splash .favorite a.tag),
   padding: 0.15em 0.5em;
   margin: 0.2em 0;
   line-height: 1.25;
-  border: 1px solid #9893a525;
+  border: 1px solid var(--tag-border);
   border-radius: 0 15px 15px;
-  color: #ffffff;
+  color: var(--tag-text);
   font-size: 0.9em;
   position: relative;
   z-index: 1;
   transition: all 0.2s ease;
 }
 
-/* Add pseudo-element for background */
 a.tag:not(.fandom.index.group a.tag, h2.heading a.tag, .splash .favorite a.tag)::before,
 .tags a[data-remote="true"]::before,
 .added.tag::before,
@@ -1725,15 +1542,13 @@ dd.fandom.tags a::before,
   transition: all 0.2s ease;
 }
 
-/* Default tag background */
 a.tag:not(.fandom.index.group a.tag, h2.heading a.tag, .splash .favorite a.tag), 
 .added.tag,
 .tags a[data-remote="true"] {
-  background-color: #9ccfd8;
-  padding-right: 1.5em; /* Add space for the toggle symbol */
+  background-color: var(--tag-bg);
+  padding-right: 1.5em;
 }
 
-/*========== Consolidated Hover Effects ==========*/
 a.tag:hover::before,
 .added.tag:hover::before,
 .unwrangled:hover::before,
@@ -1756,22 +1571,19 @@ dd.fandom.tags a:hover,
 [class^=warning] a.tag:hover,
 [class^=relationship] a.tag:hover,
 [class^=character] a.tag:hover {
-  color: #fffaf5 !important;
+  color: var(--text-invert) !important;
   transform: translateY(-1px);
 }
 
-/* Delete button turns white when tag is hovered */
 li.added:hover .delete a {
-  color: #ffffff;
+  color: var(--text-invert);
 }
 
-/* Hide commas between blurb fandom tags */
 h5.fandoms.heading {
   letter-spacing: -10px;
   color: transparent;
 }
 
-/* Repair and format fandom tags */
 h5.fandoms.heading a.tag {
   letter-spacing: 0;
   margin-right: 0.35em !important;
@@ -1780,54 +1592,50 @@ h5.fandoms.heading a.tag {
 
 h5.fandoms.heading a.tag,
 dd.fandom.tags a {
-  background-color: #eb6f92 !important;
+  background-color: var(--tag-fandom)!important;
 }
 
 [class^=warning] a.tag {
   font-weight: 400;
-  background-color: #f6c177 !important;
+  background-color: var(--tag-warning)!important;
 }
 
 [class^=relationship] a.tag {
-  background-color: #ea9a97 !important;
+  background-color: var(--tag-relationship)!important;
 }
 
 [class^=character] a.tag {
-  background-color: #3e8fb0 !important;
+  background-color: var(--tag-character)!important;
 }
 
 .unwrangled {
-  background-color: #9ccfd8 !important;
-  border: 1px solid #9893a525;
+  background-color: var(--tag-bg)!important;
+  border: 1px solid var(--tag-border);
 }
 
-/* "Show" arrow for hidden tags */
 .tags a[data-remote="true"]::after {
   content: "ɞ";
-  margin-left: 0.25em; /* Space between text and symbol */
-  color: #ffffff;
+  margin-left: 0.25em;
+  color: var(--text-invert);
   font-size: 1em;
 }
 
 .tags a[data-remote="true"]:hover,
 .tags a[data-remote="true"]:focus {
-  background-color: #9ccfd8;
+  background-color: var(--accent-3);
 }
 
-/* Special hover cases for tags */
 .fandom.index.group a.tag:hover,
 h2.heading a.tag:hover {
-  color: #eb6f92 !important;
+  color: var(--accent-1) !important;
   background-color: transparent !important;
   box-shadow: none !important;
 }
 
-/* Fandom/heading tag line height fix */
 h2.heading a.tag {
   line-height: inherit;
 }
 
-/* Added tags styling */
 .autocomplete li.added,
 .post .meta dd ul li.added {
   display: inline-flex;
@@ -1845,243 +1653,191 @@ h2.heading a.tag {
 
 .added.tag {
   position: relative;
-  background-color: #9ccfd8;
+  background-color: var(--accent-3);
 }
 
-/*========== Group Cloud (= Tag Clouds) ==========*/
-
-/* Tag cloud size 1 */
 a.cloud1 {
   font-size: 0.9em !important;
 }
 
-/* Tag cloud size 2 */
 a.cloud2 {
   font-size: 1em !important;
 }
 
-/* Tag cloud size 3 */
 a.cloud3 {
   font-size: 1.1em !important;
 }
 
-/* Tag cloud size 4 */
 a.cloud4 {
   font-size: 1.2em !important;
 }
 
-/* Tag cloud size 5 */
 a.cloud5 {
   font-size: 1.3em !important;
 }
 
-/* Tag cloud size 6 */
 a.cloud6 {
   font-size: 1.4em !important;
 }
 
-/* Tag cloud size 7 */
 a.cloud7 {
   font-size: 1.5em !important;
 }
 
-/* Tag cloud size 8 */
 a.cloud8 {
   font-size: 1.6em !important;
 }
 
-/*========== Groups ==========*/
-
-/* Remove box-shadow from wrappers */
 .wrapper,
 #outer.wrapper,
 #inner.wrapper {
   box-shadow: none;
 }
 
-/*===== Definition Lists (Subscriptions, Related Works, Edit Multiple Works) =====*/
-
-/* Index definition list styling */
 dl.index dt,
 dl.index dd {
   padding: 0.643em;
-  border: 1px solid #e7d3cb;
-  background-color: #fffaf5;
-  box-shadow: 0 2px 8px 0 #c8b6ad33, 0 1.5px 0 0 #e7d3cb80;
+  border: 1px solid var(--line-2);
+  background-color: var(--surface-2);
+  box-shadow: var(--shadow-1);
 }
 
-/* Index definition list top border radius */
 dl.index dt {
   border-radius: 0.75rem 0.75rem 0 0;
 }
 
-/* Index definition list first link bold */
 dl.index dt a:first-of-type {
   font-weight: 700;
 }
 
-/* Index definition list bottom border radius */
 dl.index dd {
   border-top: 0;
   border-radius: 0 0 0.75rem 0.75rem;
   margin-inline: 0;
 }
 
-/*========== Types ==========*/
-
-/* Reindex action underline */
 .actions .reindex a {
-  border-bottom: 3px solid #EB6F92;
+  border-bottom: 3px solid var(--state-err-text);
 }
 
-/* Series in blurb: display each on separate line */
 .blurb ul.series li:not(:first-of-type) {
   display: block;
   margin-block: 0.5em 0;
 }
 
-/* Series divider color */
 span.series .divider {
-  color: #e7d3cb;
+  color: var(--line-2);
 }
 
-/* Series in meta box: display each on separate line */
 span.series:not(:first-of-type) {
   display: block;
   margin-top: 0.5em;
 }
 
-/* Hide comma between series in meta box (workaround) */
 dd.series {
   color: transparent;
 }
 
-/* Make text visible again after hiding the comma */
 dd.series span {
-  color: #575279;
+  color: var(--text-1);
 }
 
-/* Remove border from icon links */
 .icon a {
   border: 0 !important;
 }
 
-/* Even statistics index rows: background and rounded */
 .statistics .index li:nth-of-type(even) {
-  background-color: #fffaf5;
+  background-color: var(--surface-2);
   border-radius: 0.75rem;
 }
 
 /*═════════════════════════════════════════════════════════════*
  *             ʚʚʚ 10 Group: Listbox ɞɞɞ                   *
  *═════════════════════════════════════════════════════════════*/
-/* see "Archive 2.0: (11) group listbox skin by AO3" by AO3 */
 
-/* Listbox and nested listbox styling */
 .listbox,
 fieldset fieldset.listbox {
   clear: right;
-  background-color: #fffaf5;
-  border: 1px solid #e4d1c9;
+  background-color: var(--surface-2);
+  border: 1px solid var(--surface-3);
   border-radius: 0.75rem;
   padding: 0;
   margin: 0.643em auto 1em auto;
   overflow: hidden;
-  box-shadow: 0 1.5px 4px 0 #c8b6ad22, 0 1px 0 0 #e7d3cb40;
+  box-shadow: var(--shadow-2);
 }
 
-/* Nested listbox margin */
 .listbox > .listbox {
   margin: 0.649em;
 }
 
-/* Listbox heading styling */
 .listbox > .heading {
   margin: 0;
   padding: 0.5em;
-  color: #575279;
+  color: var(--text-1);
 }
 
-/* Listbox heading link color */
 .listbox > .heading a:not(.action a, .actions a),
 .listbox > .heading a:visited:not(.action a:visited, .actions a:visited) {
-  color: #575279;
+  color: var(--text-1);
 }
 
-/* Listbox index styling */
 .listbox .index {
   width: auto;
   padding: 0.643em;
   margin: 0;
   float: none;
   clear: right;
-  background-color: #fffaf5;
-  box-shadow: 0 2px 8px 0 #c8b6ad33, 0 1.5px 0 0 #e7d3cb80;
+  background-color: var(--surface-2);
+  box-shadow: var(--shadow-1);
   box-sizing: border-box;
-  border-top: 1px solid #e7d3cb;
+  border-top: 1px solid var(--line-2);
 }
 
-/* Remove box shadow from fandom listbox */
 .listbox .index:has(+ .actions[role="navigation"], + h4, + .actions #expand-fandoms) {
   box-shadow: none !important;
 }
 
-/* Listbox index: border at the bottom only in some cases */
 .listbox .index:has(+ .actions[role="navigation"], + h4, + .actions #expand-fandoms) {
-  border-bottom: 1px solid #e7d3cb;
+  border-bottom: 1px solid var(--line-2);
 }
 
-/* Alphabet/media listbox margin fix */
 .alphabet .listbox li,
 .media .listbox {
   margin-inline: 0;
 }
 
-/*========== Placement Of Listbox Buttons ==========*/
-/* This is such a mess */
-
-/* Listbox actions and pagination margin/padding */
 #user-fandoms.listbox .actions,
 .listbox > .actions.pagination {
   margin: 0.643em;
   padding: 0;
 }
 
-/* Listbox navigation actions margin/padding */
 .listbox > .actions[role="navigation"]:not(.pagination) {
   margin: 0;
   padding: 0;
 }
 
-/* Listbox paragraph actions margin */
 .listbox > p.actions {
   margin: 0;
 }
 
-/* Listbox navigation action link margin */
 .listbox > .actions[role="navigation"]:not(.pagination) a {
   margin: 0.643em 0.429em;
 }
 
-/*========== Fix Tagset Media Listboxes ==========*/
-
-/* Tagset media listbox styling */
 .tagset .media .listbox {
   width: 49.5%;
   margin-right: 1%;
   box-sizing: border-box;
-  background-color: #fffaf5;
-  border-color: #e7d3cb;
+  background-color: var(--surface-2);
+  border-color: var(--line-2);
 }
 
-/* Tagset media listbox even child margin fix */
 .tagset .media .listbox:nth-child(even) {
   margin-right: 0;
 }
 
-/*========== Interaction Context ==========*/
-
-/* Listbox with many items: max height */
 .listbox .many {
   max-height: 35vh;
 }
@@ -2089,42 +1845,33 @@ fieldset fieldset.listbox {
 /*═════════════════════════════════════════════════════════════*
  *                ʚʚʚ 11 Group: Meta ɞɞɞ                   *
  *═════════════════════════════════════════════════════════════*/
-/* See "Archive: (12) group meta skin" by AO3 */
 
-/* Meta definition list styling */
 dl.meta {
-  background-color: #fffaf5;
-  border: 1px solid #e4d1c9 ;
+  background-color: var(--surface-2);
+  border: 1px solid var(--surface-3);
   border-radius: 0.75rem;
-  box-shadow: 0 2px 8px 0 #c8b6ad33, 0 1.5px 0 0 #e7d3cb80;
+  box-shadow: var(--shadow-1);
 }
 
-/* Meta term styling */
 .meta dt {
   min-width: unset;
   width: 26.5%;
   box-sizing: border-box;
 }
 
-/* Meta description styling */
 .meta dd {
   width: 73.5%;
   box-sizing: border-box;
 }
 
-/* Move meta tags up a tiny bit */
 dl.meta dd ul {
   margin-top: -0.15em;
 }
 
-/* Meta tag list item padding fix */
 .meta dd ul li {
   padding-inline-end: 0;
 }
 
-/*========== Contexts ==========*/
-
-/* News meta: transparent background, no shadow */
 .news dl.meta {
   background-color: transparent;
   box-shadow: none;
@@ -2133,54 +1880,44 @@ dl.meta dd ul {
 /*═════════════════════════════════════════════════════════════*
  *                ʚʚʚ 12 Group: Blurb ɞɞɞ                  *
  *═════════════════════════════════════════════════════════════*/
-/* See "Archive: (13) group blurb skin" by AO3 */
 
-/* Blurb container styling */
 li.blurb,
 .blurb .blurb,
 .region.own + .dashboard li.blurb.own {
   padding: 0.75em 0.75em 0.643em;
-  background-color: #fffaf5 !important;
-  box-shadow: 0 2px 8px 0 #c8b6ad33, 0 1.5px 0 0 #e7d3cb80;
+  background-color: var(--surface-2) !important;
+  box-shadow: var(--shadow-1);
 }
 
-/* Blurb border and shadow styling */
 li.blurb,
 li.picture.blurb,
 .toggled.blurb {
-  border: 1px solid #e4d1c9 ;
+  border: 1px solid var(--surface-3);
   border-radius: 0.75rem;
-  box-shadow: 0 2px 8px 0 #c8b6ad33, 0 1.5px 0 0 #e7d3cb80;
+  box-shadow: var(--shadow-1);
 }
 
-/* Listbox blurb border and shadow styling */
 .listbox li.blurb {
-  border: 1px solid #e4d1c9 ;
+  border: 1px solid var(--surface-3);
   border-radius: 0.75rem;
-  box-shadow: 0 1.5px 4px 0 #c8b6ad22, 0 1px 0 0 #e7d3cb40;
+  box-shadow: var(--shadow-2);
 }
 
-/* Blurb title bold */
 .blurb .header h4.heading a:first-child {
   font-weight: 700;
 }
 
-/* Restricted works lock icon size */
 .blurb .header img {
   width: 0.8em;
   height: 0.8em;
   vertical-align: baseline;
 }
 
-/* Blurb date posted position */
 .blurb .datetime {
-  top: 0; /* leave this here for bookmarks */
-  padding: 0; /* leave this here for own mystery blurbs */
+  top: 0;
+  padding: 0;
 }
 
-/*========== New Blurb Header Layout Starts Here ==========*/
-
-/* Blurb header with required tags: flex layout */
 .blurb .header:has(ul.required-tags) {
   display: flex;
   flex-wrap: wrap;
@@ -2188,12 +1925,10 @@ li.picture.blurb,
   justify-content: space-between;
 }
 
-/* Remove space for icons on right side of blurb header */
 .blurb .header .heading {
   margin: 0;
 }
 
-/* Blurb work title and author etc */
 .blurb .header h4.heading {
   order: 1;
   flex: 1;
@@ -2204,18 +1939,15 @@ li.picture.blurb,
   word-break: break-word;
 }
 
-/* Fandom tags in blurb header moved down */
 .blurb h5.fandoms.heading {
   order: 4;
   margin-top: 0.5em;
 }
 
-/* Hide blank space on prompts with no fandom */
 .blurb h5.fandoms.heading:not(:has(a.tag)) {
   height: 0;
 }
 
-/* Change position of content icons in blurb header */
 .blurb .header ul.required-tags {
   order: 3;
   display: flex;
@@ -2225,10 +1957,9 @@ li.picture.blurb,
   width: 100%;
   margin-top: 0.429em;
   padding-top: 0.643em;
-  border-top: 1px solid #e4d1c9 ;
+  border-top: 1px solid var(--surface-3);
 }
 
-/* Also needed to change position of content icons */
 .blurb ul.required-tags, 
 .blurb ul.required-tags li,
 .blurb ul.required-tags li+li+li,
@@ -2247,34 +1978,27 @@ li.picture.blurb,
   margin: 0.5em 0 0 0;
 }
 
-/*========== Modification: Picture ==========*/
-/* For indices with icon pictures, e.g. collections, users, skins, mystery blurbs */
-
-/* Formatting picture blurb header */
 .picture.blurb:has(.icon) > .header,
 .mystery.blurb:has(.icon) > .header {
   min-height: 45px;
   margin: 0;
   padding-bottom: 0.75em;
-  border-bottom: 1px solid #e4d1c9 ;
+  border-bottom: 1px solid var(--surface-3);
 }
 
-/* Remove border for user picture blurbs without descriptions or buttons */
 .user.pseud.picture.blurb:not(:has(blockquote, ul.actions)) > .header {
   border: none;
   padding: 0;
   margin: 0;
 }
 
-/* Make picture blurb icons smaller and rounded */
 .picture .icon img,
 .index .picture .icon {
   height: 45px;
   width: 45px;
-  border-radius: 0.75rem; /* also give them rounded corners */
+  border-radius: 0.75rem;
 }
 
-/* Space for picture blurb icon */
 .blurb:has(.icon) > .header h4,
 .blurb:has(.icon) > .header h5,
 .blurb > .header > .mods.commas {
@@ -2282,124 +2006,100 @@ li.picture.blurb,
   padding-left: 0.75em;
 }
 
-/* ========== Various Little Mods ==========*/
-
-/* Blurbs on the manage collection items pages */
 .item dl.visibility {
-  background-color: #fffaf5;
+  background-color: var(--surface-2);
 }
 
-/*===== Mod: Bookmark =====*/
-
-/* Bookmarks index: hide overflow */
 .bookmarks-index .bookmark.index {
   overflow: hidden;
 }
 
-/* Bookmark blurb heading padding */
 .bookmark .blurb h4.heading {
   padding-right: 14ch;
 }
 
-/* Bookmark icon placement for blurbs */
 .bookmark p.status {
   width: 25px;
   margin: 0;
   top: 5px;
-  right: 0.75em; /* same as blurb padding */
+  right: 0.75em;
 }
 
-/* Create bookmark ribbon */
 .bookmark .blurb p.status a:not(.short a)::before {
   content: "";
   height: 40px;
   top: -5px;
   position: absolute;
   box-sizing: border-box;
-  border-inline: 14px solid; /* width */
+  border-inline: 14px solid;
   border-bottom: 5.5px solid transparent;
   border-radius: 0 0 0.2rem 0.2rem;
   z-index: -1;
 }
 
-/* Hide number of bookmarks icon (can be found in stats anyway) */
 .bookmark span.count {
   display: none;
 }
 
-/* Number of bookmarks color (symbol hidden anyway) */
 .bookmark .count a {
-  color: #575279; /* this is technically not necessary because the symbol is hidden anyway */
+  color: var(--text-1);
 }
 
-/* Number of bookmarks color on hover/focus */
 .bookmark .count a:hover,
 .bookmark .count a:focus {
-  color: #eb6f92; /* this is technically not necessary because the symbol is hidden anyway */
+  color: var(--accent-1);
 }
 
-/* Move date next to bookmark icon */
 .bookmark p.status:has(span.text) + .header .datetime {
   margin-right: 33px;
 }
 
-/* Bookmark user box styling */
 .bookmark .user {
-  border: 1px solid #e4d1c9 ;
+  border: 1px solid var(--surface-3);
   border-radius: 0.75rem;
   box-sizing: border-box;
   padding: 0.643em;
   word-break: break-word;
-  box-shadow: 0 1.5px 4px 0 #c8b6ad22, 0 1px 0 0 #e7d3cb40;
+  box-shadow: var(--shadow-2);
 }
 
-/* Bookmark user meta styling */
 .bookmark .user .meta {
   font-size: inherit;
   line-height: inherit;
   margin: 0;
 }
 
-/* Bookmark user byline styling */
 .bookmark .user .byline {
   font-weight: 700;
   margin: 0 6em 0 0;
 }
 
-/* Bookmark module/short meta margin */
 .bookmark .module:has(.meta) > .byline,
 .bookmark .short:has(.meta) > .header {
   margin-bottom: 0.649em;
 }
 
-/* Bookmark user datetime position */
 .bookmark div.user .datetime {
   top: 0.7em;
   right: 0.75em;
 }
 
-/* The following part is for the overview pages of who has bookmarked a specific work */
-
-/* Short blurb header layout for bookmarks */
 .bookmark .short.blurb .header {
   display: flex;
   min-height: 25px;
   column-gap: 0.643em;
 }
 
-/* Short blurb with meta: header margin */
 .bookmark .short.blurb:has(.meta) .header {
   margin-bottom: 0.429em;
 }
 
-/* Short blurb header h5 layout */
 .bookmark .short.blurb .header h5 {
   order: 2;
   flex: 1;
   margin: 0;
 }
 
-/* Short blurb header datetime layout */
 .bookmark .short.blurb .header .datetime {
   position: unset;
   order: 3;
@@ -2407,62 +2107,50 @@ li.picture.blurb,
   margin-left: auto;
 }
 
-/* Short blurb header status layout */
 .bookmark .short.blurb .header .status {
   position: unset;
   order: 1;
 }
 
-/*===== Mod: Reading =====*/
-
-/* "Last visited" reading header */
 .reading h4.viewed {
-  background-color: #fffaf5;
+  background-color: var(--surface-2);
   font-size: 1em;
   padding: 0.25em 0.429em;
-  border: 1px solid #e7d3cb;
-  border-left: 5px solid #e7d3cb;
+  border: 1px solid var(--line-2);
+  border-left: 5px solid var(--line-2);
   border-radius: 0.75rem;
 }
 
-/* Deleted reading header: transparent background */
 .reading .deleted h4.viewed {
   background-color: transparent;
 }
 
-/* Hide prompt blurb h6 to remove extra space */
 .prompt .blurb h6 {
-  display: none; /* hide this to get rid of the weird space before and after promt summary; not sure if this affects anything else */
+  display: none;
 }
 
 /*═════════════════════════════════════════════════════════════*
  *        ʚʚʚ 13 Group: Preface (= Work Prefaces) ɞɞɞ        *
  *═════════════════════════════════════════════════════════════*/
-/* See "Archive: (14) Group Preface Skin" by AO3 */
 
-/* Preface container styling */
 div.preface {
   margin-inline: 5%;
   padding-inline: 0;
 }
 
-/* Chapter preface: top border */
 .chapter .preface {
   border-top: 1.5px solid;
 }
 
-/* Preface title bold */
 .preface h2.title {
   font-weight: 700;
 }
 
-/* Preface h3: bottom border and margin */
 .preface h3 {
   border-bottom: 1.5px solid;
   margin-bottom: 1em;
 }
 
-/* Afterword margin */
 div.afterword {
   margin-bottom: 1em;
 }
@@ -2470,33 +2158,28 @@ div.afterword {
 /*═════════════════════════════════════════════════════════════*
  *             ʚʚʚ 14 Group: Comments ɞɞɞ                   *
  *═════════════════════════════════════════════════════════════*/
-/* See "Archive: (15) Group Comments Skin" by AO3 */
 
-/* Comment container: remove border */
 div.comment {
   border: 0;
 }
 
-/* Comment body styling */
 li.comment:not(:has(.edit_comment)) {
-  border: 1px solid #e4d1c9 ;
+  border: 1px solid var(--surface-3);
   border-radius: 0.75rem;
-  background-color: #fffaf5;
+  background-color: var(--surface-2);
   padding: 0.643em 0.643em 0.429em 0.643em;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: flex-end;
-  box-shadow: 0 2px 8px 0 #c8b6ad33, 0 1.5px 0 0 #e7d3cb80;
+  box-shadow: var(--shadow-1);
 }
 
-/* Comment outline fieldset */
 .comment fieldset {
-	border: 1px solid #e7d3cb; /* border color */
-  box-shadow: 0 2px 8px 0 #c8b6ad33, 0 1.5px 0 0 #e7d3cb80;
+  border: 1px solid var(--line-2);
+  box-shadow: var(--shadow-1);
 }
 
-/* Comment icon: make smaller than default */
 .comment div.icon,
 .comment .icon,
 .abbreviated .icon {
@@ -2506,7 +2189,6 @@ li.comment:not(:has(.edit_comment)) {
   order: 1;
 }
 
-/* Comment byline styling */
 .comment h4.byline {
   background-color: transparent;
   padding: 0 0 0 0.642em;
@@ -2520,7 +2202,6 @@ li.comment:not(:has(.edit_comment)) {
   word-break: break-word;
 }
 
-/* Comment text styling */
 .comment .userstuff,
 .splash .comment .userstuff {
   margin: 0;
@@ -2531,43 +2212,36 @@ li.comment:not(:has(.edit_comment)) {
   box-sizing: border-box;
 }
 
-/* Comment date posted styling */
 .comment .posted {
   width: 100%;
   font-size: 1em;
 }
 
-/* Comment last edited styling */
 .comment .edited {
   order: 4;
   width: 100%;
   margin: 1em 0;
 }
 
-/* Comment buttons order */
 .comment ul.actions {
   order: 5;
 }
 
-/* Comment delete confirmation order */
 .comment div[id^="delete_comment"] {
   order: 6;
   width: 100%;
 }
 
-/* Comment reply form order and margin */
 .comment div:has(.post.comment) {
   margin-top: 0.429em;
   width: 100%;
   order: 7;
 }
 
-/* Edit comment: remove border */
 li.comment:has(.edit_comment) {
   border: none;
 }
 
-/* Thread indent */
 .thread .thread {
   margin-left: 3%;
 }
@@ -2575,16 +2249,11 @@ li.comment:has(.edit_comment) {
 /*═════════════════════════════════════════════════════════════*
  *             ʚʚʚ 15 Zone: System ɞɞɞ                      *
  *═════════════════════════════════════════════════════════════*/
-/* See "Archive: (16) Zone System Skin" by AO3 */
 
-/* System zone userstuff: remove max-width */
 .system .userstuff {
   max-width: unset;
 }
 
-/*========== Zone: System: Splash Page ==========*/
-
-/* Splash page: create flexbox layout */
 .splash {
   box-sizing: border-box;
   max-width: unset;
@@ -2594,21 +2263,18 @@ li.comment:has(.edit_comment) {
   justify-content: space-between;
 }
 
-/* Splash page headings */
 .splash > .module h3 {
   content: "  ɞɞ";
   border-bottom: 1.5px solid;
-  color: #575279;
+  color: var(--text-1);
   font-size: 1.4em;
   font-weight: 700;
 }
 
-/* Splash page heading after content */
 .splash > .module h3::after {
   content: " ɞɞ";
 }
 
-/* Splash modules (favorite tags, news, unread messages etc) */
 .splash > .module,
 .logged-in .splash > .module {
   margin-inline: 0;
@@ -2616,121 +2282,87 @@ li.comment:has(.edit_comment) {
   box-sizing: border-box;
 }
 
-/* Logged-in splash module width */
 .logged-in .splash > .module {
   width: 49%;
 }
 
-/* Hide the social splash section */
 .splash .social {
   display: none;
 }
 
-/*===== Module: "Find Your Favorites" =====*/
-
-/* Color of the little arrows in splash browse */
 .splash .browse li a::before {
-  color: #575279;
+  color: var(--text-1);
 }
 
-/*===== Module: Favorite Tags =====*/
-
-/* Favorite tags in splash */
 .splash .favorite a.tag {
   border: 0;
   background-color: transparent;
   border-radius: 0.75rem;
-  color: #575279;
+  color: var(--text-1);
 }
 
-/* Odd favorite tags: alternate background */
 .splash .favorite li:nth-of-type(odd) a.tag {
-  background-color: #ece7e1;
+  background-color: var(--splash-tag-bg);
 }
 
-/* Favorite tags hover effect */
 .splash .favorite a.tag:hover, 
 .splash .favorite li:nth-of-type(odd) a.tag:hover {
   border: 0;
-  background-image: linear-gradient(to bottom right, #ea9a97, #eb6f92);
+  background-image: linear-gradient(to bottom right, var(--grad-stop-a), var(--grad-stop-b));
   border-radius: 0.75rem;
-  color: #ffffff;
+  color: var(--tag-text);
 }
 
-
-/*===== Module: News =====*/
-
-/* News module heading */
 .splash .news h4 {
   font-weight: 700;
   font-size: 1em;
 }
 
-/* News module list item border */
 .splash .news li {
-  border-bottom: 1.5px solid #e4d1c9 ;
+  border-bottom: 1.5px solid var(--surface-3);
 }
 
-/* News module last item: remove border */
 .splash .news li:last-of-type {
   border-bottom: none;
 }
 
-/*========== Zone: System: FAQs ==========*/
-
-/* FAQ categories heading border color */
 .faq .categories h3 {
-  border-color: #575279;
+  border-color: var(--text-1);
 }
 
-/* FAQ and guideline example border */
 .faq .example,
 .guideline .example {
-  border: 1px solid #9A7FD1;
+  border: 1px solid var(--state-note-text);
 }
 
-/*========== Zone: System: TOS (Terms of Service) Popup ==========*/
-
-/* TOS popup summary border color */
 .tos .userstuff nav.toc > details > summary {
   border-color: inherit;
 }
 
-/* TOS prompt background */
 #tos_prompt {
-  background: #faf4ed;
+  background: var(--surface-1);
 }
 
-/* TOS prompt heading styling */
 #tos_prompt .heading {
-  background: #eb6f92;
-  color: #ffffff;
-  border-bottom: 1px solid #eb6f92
+  background: var(--accent-1);
+  color: var(--text-invert);
+  border-bottom: 1px solid var(--accent-1)
 }
 
-/* TOS prompt disabled state */
 #tos_prompt [disabled] {
-  background: #e7d3cb;
+  background: var(--line-2);
   box-shadow: none;
 }
 
-/*========== Zone: System: Proxy Notice ==========*/
-
-/* Proxy notice styling */
 #proxy-notice {
-  background: #f7e6ec;
-  border-bottom: 1px solid #EB6F92;
+  background: var(--state-err-bg);
+  border-bottom: 1px solid var(--state-err-text);
 }
 
 /*═════════════════════════════════════════════════════════════*
  *             ʚʚʚ 16 Zone: Home ɞɞɞ                        *
  *═════════════════════════════════════════════════════════════*/
-/* See "Archive: (17) Zone Home Skin" by AO3 */
 
-/* User home, collections and challenges home, tag home, admin comms home 
-this zone always shows a dashboard styled in region-dashboard and its parent is #main.dashboard */
-
-/* Home primary header module layout */
 .home .primary.header.module {
   margin-bottom: 1em;
   display: flex;
@@ -2738,88 +2370,70 @@ this zone always shows a dashboard styled in region-dashboard and its parent is 
   flex-wrap: wrap;
 }
 
-/* Home header h2 styling */
 .home .header h2 {
   margin-block: 0.429em 0;
   width: 100%;
   height: fit-content;
-  border-bottom: 1.5px solid #e4d1c9 ;
+  border-bottom: 1.5px solid var(--surface-3);
 }
 
-/* Home header h2 after content */
 .home .header h2:after {
   content: "  ɞɞ";
 }
 
-/* Home header actions list styling */
 .home .header ul.actions {
   margin-left: 100px;
   width: 100%;
   text-align: right;
 }
 
-/* Home header userstuff margin/padding */
 .home .header .userstuff {
   margin: 0;
   padding-top: 2em;
 }
 
-/* Home header type margin */
 .home .header .type {
   margin: 0 0 0.643em 0;
 }
 
-/* Home header stats margin/width */
 .home .header dl.stats {
   margin-left: auto;
   width: 100%;
 }
 
-/* Skins page CSS code block styling */
 .skins.home .css.module blockquote {
   max-height: 60vh;
   overflow: auto;
   margin-inline: 0;
   padding: 0.643em;
   border-radius: 0.75rem;
-  border: 1px solid #e7d3cb;
-  background-color: #fffaf5;
-  color: #575279;
-  box-shadow: 0 2px 8px 0 #c8b6ad33, 0 1.5px 0 0 #e7d3cb80;
+  border: 1px solid var(--line-2);
+  background-color: var(--surface-2);
+  color: var(--text-1);
+  box-shadow: var(--shadow-1);
 }
 
 /*═════════════════════════════════════════════════════════════*
  *         ʚʚʚ 17 Zone: Search/Browse ɞɞɞ                    *
  *═════════════════════════════════════════════════════════════*/
-/* See "Archive: (18) Zone Searchbrowse Skin" by AO3 */
 
-/*========== Index Pages (With Filters) ==========*/
-
-/* Remove right space for filtered index pages without filters */
 .filtered .index:not(:has(+ form.filters)) {
   width: 100%;
 }
 
-/*========== Interaction: Search ==========*/
-
-/* Search form text input styling */
 form.search input[type="text"] {
-  border: 1px solid #D7BFB6 ;
+  border: 1px solid var(--line-3);
   border-radius: 0.75rem;
   background-image: none;
-  background-color: #fffaf5;
-  color: #575279;
+  background-color: var(--surface-2);
+  color: var(--text-1);
 }
 
-/* Search fieldset padding/font size */
 li.search fieldset {
   padding: 0 0.429em;
   font-size: 1em;
 }
 
-/*========== Interaction: Filter ==========*/
-
-/* Sticky filters box styling */
 form.filters {
   position: sticky;
   top: 2vh;
@@ -2831,22 +2445,19 @@ form.filters {
   width: 25%;
   max-width: 400px;
   border-radius: 0.75rem;
-  margin-block: 0.643em !important; /* same as blurbs */
-  padding: 0 0.643em 0 2%; /* leave a little more space on the right for the scrollbar */
-  scrollbar-color: #af9f98 transparent;
+  margin-block: 0.643em !important;
+  padding: 0 0.643em 0 2%;
+  scrollbar-color: var(--scroll-thumb) transparent;
 }
 
-/* Hide scrollbar except on hover for filters */
 form.filters:not(:hover) {
   scrollbar-color: transparent transparent;
 }
 
-/* Prevent filter box from overlapping pagination buttons */
 .region:has(ol.pagination.actions) form.filters {
   margin-bottom: 4.5em !important;
 }
 
-/* Filters fieldset styling */
 .filters fieldset {
   padding: 0;
   margin: 0;
@@ -2855,23 +2466,19 @@ form.filters:not(:hover) {
   border: none;
 }
 
-/* Filters fieldset list item styling */
 .filters fieldset li {
   margin: 0;
   padding: 0;
 }
 
-/* Filters heading margin */
 .filters dt.heading {
   margin-block: 1.5em 0.5em !important;
 }
 
-/* Filters more heading margin */
 .filters dt.more.heading {
   margin-bottom: 0 !important;
 }
 
-/* Filters definition list and term styling */
 form.filters dl,
 form.filters dt,
 form.filters dl dl {
@@ -2880,47 +2487,40 @@ form.filters dl dl {
   border: none;
 }
 
-/* Filters expandable and inbox filters padding */
 .filters dd .expandable,
 #inbox-filters dd ul {
   padding: 0 0 0.429em 1em;
 }
 
-/* Filters submit and group width/text-align */
 .filters .submit,
 .filters .group {
   text-align: unset;
   width: 100%;
 }
 
-/* Filters submit input margin */
 .filters .submit:first-of-type:not(:only-of-type) input {
   margin-top: 0;
 }
 
-/* Filters autocomplete input and select min-width */
 .filters .autocomplete input,
 .filters select {
   min-width: unset;
 }
 
-/* Make heading bold when filters are active */
 .filters dt:has(+ dd input:checked) .expander,
 .filters dt.words:has(+ dd input[value]) .expander,
 .filters dt.dates:has(+ dd input[value]) .expander {
   font-weight: 700;
 }
 
-/* Filters expander styling */
 .filters .expander,
 .filters .expanded .expander {
-  background-image: none; /* remove expander arrow */
-  color: #575279;
+  background-image: none;
+  color: var(--text-1);
   box-shadow: none;
   padding-left: 1em;
 }
 
-/* Create new filters expander arrow */
 .filters .expander::before {
   content: "";
   position: absolute;
@@ -2930,12 +2530,10 @@ form.filters dl dl {
   border-left: 0.5em solid;
 }
 
-/* Rotate arrow when expanded */
 .filters .expanded .expander::before {
   transform: rotate(90deg);
 }
 
-/* Filters group search/bookmarker and dd styling */
 .filters .group dt.search,
 .filters .group dt.bookmarker,
 .filters dd {
@@ -2944,26 +2542,20 @@ form.filters dl dl {
   border: none;
 }
 
-/* Filters dt margin for various types */
 .filters dt:not(.filter-toggle, .filters .range dt),
 .filters .more dt.search,
 .filters dt.autocomplete.search {
   margin-block: 1em 0.25em;
 }
 
-/* Filters warning font weight */
 .filters .warning {
   font-weight: 400;
 }
 
-/* Filters list label padding */
 .filters ul li > label {
   padding-block: 0.25em !important;
 }
 
-/*===== Style Range Filters (Wordcount, Date Updated) =====*/
-
-/* Filters range: grid layout */
 .filters dl.range {
   display: grid;
   grid-template-columns: auto auto;
@@ -2971,155 +2563,115 @@ form.filters dl dl {
   align-items: baseline;
 }
 
-/* Filters range dt: first column */
 .filters dl.range dt {
   grid-column: 1;
 }
 
-/* Filters range dd: second column */
 .filters dl.range dd {
   grid-column: 2;
 }
 
-/*===== Javascript =====*/
-/* Only relevant for mobile but it's better to keep it here */
-
-/* Javascript context background */
 .javascript {
-  background: #fffaf5;
+  background: var(--surface-2);
 }
 
 /*═════════════════════════════════════════════════════════════*
  *   ʚʚʚ 18 Zone: Tags, Tagsets, And Tag Wrangling ɞɞɞ       *
  *═════════════════════════════════════════════════════════════*/
-/* See "Archive: (19) Zone Tags Skin" by AO3 */
 
-/* Scrollable tag-listboxes */
 .tag.home.profile .listbox > .tags.index {
   max-height: 60vh;
   overflow: auto;
 }
 
-/* Subtags tree styling */
 .tree.index ul {
   background-color: transparent;
-  border-left: 1px solid #e7d3cb;
+  border-left: 1px solid var(--line-2);
   border-top: 0;
   margin-left: 0.643em;
   padding-block: 0;
   padding-right: 0;
 }
 
-/*========== Tagsets ==========*/
-/* Tagsets look terrible with the default skin and I didn't really make it much better */
-
-/* Tagset tags listbox padding */
 .tagset .tags li.listbox {
   padding: 0;
 }
 
-/* Reviewing nominations: no border radius */
 dl.nomination {
   border-radius: 0;
 }
 
-/* Nomination dt: transparent background */
 .nomination dt {
   background-color: transparent;
 }
 
-/* Nomination autocomplete list margin */
 .nomination dd.autocomplete ul,
 .nomination dd.autocomplete li {
   margin: 0;
 }
 
 /*═════════════════════════════════════════════════════════════*
- *                ʚʚʚ 21 Userstuff ɞɞɞ                      *
+ *                ʚʚʚ 19 Userstuff ɞɞɞ                      *
  *═════════════════════════════════════════════════════════════*/
-/* See "Archive: (21) Userstuff Skin" by AO3 */
-/* Userstuff = displaying content inputted by a user into a textarea */
-
-
 
 .userstuff p,
 .userstuff details {
-  margin: 1em auto; /* slightly narrower space between paragraphs than in default AO3 skin */
+  margin: 1em auto;
 }
 
-/* Userstuff lists: reduce space between list items */
 .userstuff li,
 .userstuff ol ul li {
-  margin-block: 0.5em; /* reduce space (line height) between list items */
+  margin-block: 0.5em;
 }
 
-/*========== Bio on Profile Page ==========*/
-
-/* Bio module margin */
 .bio.module {
   margin-block: 0.5em;
 }
 
-/* Bio module userstuff margin */
 .bio.module .userstuff {
   margin-inline: 0;
 }
 
-/*========== Headings ==========*/
-
-/* Userstuff h2 color */
 .userstuff h2 {
-  color: #575279;
+  color: var(--text-1);
 }
 
-/* Userstuff h3 border color */
 .userstuff h3 {
   border-color: inherit;
 }
 
-/*========== Quotes and Stresses ==========*/
-
-/* Userstuff blockquote styling */
 .userstuff blockquote,
 .splash .userstuff blockquote {
   margin-inline-start: 0.75em;
   padding: 0.75em;
-  border-inline-start: 2px solid #e4d1c9 ;
+  border-inline-start: 2px solid var(--surface-3);
 }
 
-/* Nested blockquote styling */
 .userstuff blockquote blockquote {
   padding: 0.25em;
   border: 0;
 }
 
-/* Userstuff horizontal rule styling */
 .userstuff hr {
-  border: 1px solid #e7d3cb;
+  border: 1px solid var(--line-2);
 }
 
-/*========== Expected Behaviours, Exceptioning ==========*/
-
-/* Workskin: margins, width, font size */
 #workskin {
-  max-width: 70em; /* slightly more narrow than default */
+  max-width: 70em;
   margin: 0 auto;
   padding: 0 2%;
-  font-size: 1.1em; /* change font size of works here */
+  font-size: 1.1em;
 }
 
 /*═════════════════════════════════════════════════════════════*
- *           ʚʚʚ 22 System Messages ɞɞɞ                      *
+ *           ʚʚʚ 20 System Messages ɞɞɞ                      *
  *═════════════════════════════════════════════════════════════*/
-/* See "Archive: (22) System Messages Skin" by AO3 */
 
-/* Footnote styling */
 .footnote {
   font-size: 0.9em;
   text-align: right;
 }
 
-/* Formatting for all system messages */
 .notice,
 .comment_notice,
 .kudos_notice,
@@ -3141,7 +2693,6 @@ form ul.notes {
   line-height: 1.2em;
 }
 
-/* Notes and error/warning/alert lists padding */
 ul.notes,
 form ul.notes,
 error ul,
@@ -3151,7 +2702,6 @@ alert.flash ul {
   padding: 0.25em 2em;
 }
 
-/* Notes and error/warning/alert list item padding */
 ul.notes li,
 error ul li,
 notice ul li,
@@ -3160,41 +2710,36 @@ alert.flash ul li {
   padding-left: 0.5em;
 }
 
-/* Colors for general notices */
 .notice,
 .comment_notice,
 .kudos_notice,
 ul.notes {
-  color: #9A7FD1;
-  background-color: #eceaf7;
+  color: var(--state-note-text);
+  background-color: var(--state-note-bg);
   border-color: currentColor;
 }
 
-/* Colors for warnings */
 .caution {
-  color: #F6C177;
-  background-color: #f8f3e3;
+  color: var(--state-warn-text);
+  background-color: var(--state-warn-bg);
   border-color: currentColor;
 }
 
-/* Colors for alerts/error messages */
 .error,
 div.error,
 .comment_error,
 .kudos_error,
 .alert.flash,
 .required.notice {
-  color: #EB6F92;
-  background-color: #f7e6ec;
+  color: var(--state-err-text);
+  background-color: var(--state-err-bg);
   border-color: currentColor;
 }
 
-/* Required field color */
 .required {
-  color: #EB6F92;
+  color: var(--state-err-text);
 }
 
-/* System message links */
 .notice a,
 .notice a:visited,
 .error a,
@@ -3205,7 +2750,6 @@ div.error,
   border-bottom: 1px solid;
 }
 
-/* System message link hover effect */
 .notice a:hover,
 .error a:hover,
 .announcement .userstuff a:hover,
@@ -3214,35 +2758,29 @@ div.error,
   filter: opacity(60%);
 }
 
-/*========== Admin Announcement Banners ==========*/
-
-/* Admin announcement banner styling */
 .announcement {
   display: flex;
   align-items: end;
-  border-bottom: 1px solid #00000020;
+  border-bottom: 1px solid var(--icon-line);
   padding: 1em 0 1em 2em;
   z-index: 1;
-  background: #eceaf7;
+  background: var(--state-note-bg);
 }
 
-/* Announcement userstuff styling */
 .announcement .userstuff {
   background: transparent;
   margin: 0;
   padding: 0;
-  color: #211F2E;
+  color: var(--text-3);
   border: 0;
   font-size: 0.95em;
   word-break: break-word;
 }
 
-/* Announcement userstuff paragraph margin */
 .announcement .userstuff p {
   margin: 0;
 }
 
-/* Announcement button placement */
 .announcement p.submit {
   position: unset;
   text-align: center;
@@ -3250,7 +2788,6 @@ div.error,
   z-index: 3;
 }
 
-/* Announcement button styling */
 .announcement input[type="submit"],
 .announcement .action {
   line-height: 1;
@@ -3260,70 +2797,56 @@ div.error,
   border: none !important;
   box-shadow: none;
   font-size: 0.95em;
-  color: #211F2E;
+  color: var(--text-3);
 }
 
-/* Event announcement background */
 .announcement.event {
-  background: #EB6F92;
+  background: var(--state-err-text);
 }
 
-/* Event announcement userstuff color */
 .event .userstuff {
   background: transparent;
-  color: #ffffff;
+  color: var(--text-invert);
 }
 
-/* Alert announcement background */
 .announcement.alert {
-  background: #f8f3e3;
+  background: var(--state-warn-bg);
 }
 
-/* Alert announcement userstuff color */
 .alert .userstuff {
   background: transparent;
-  color: #211F2E;
+  color: var(--text-3);
 }
 
-/*========== Thermometer Javascript Widget for Fundraising Drives ==========*/
-
-/* Thermometer widget content styling */
 .announcement .thermometer-content {
   height: 1.5em;
   width: 50%;
   margin-top: 1em;
 }
 
-/* Thermometer widget track styling */
 .announcement .thermometer .track {
-  background: #fffaf5;
+  background: var(--surface-2);
   border: 1.5px solid;
   border-radius: 9999px;
   margin: 0.5em 0;
 }
 
-/* Thermometer goal amount padding */
 .announcement .thermometer .goal .amount {
   padding-left: 0.5em;
 }
 
-/* Thermometer progress amount styling */
 .announcement .thermometer .progress .amount {
   top: 0;
   right: 0.2em;
   left: unset;
-  color: #ffffff;
+  color: var(--text-invert);
 }
 
-/* Thermometer progress bar styling */
 .announcement .thermometer .track div.progress {
-  background-image: linear-gradient(to right, #e6f4ef -25%, #3E8FB0 50%) !important;
+  background-image: linear-gradient(to right, var(--state-ok-bg) -25%, var(--state-ok-text) 50%) !important;
   border-radius: 9999px;
 }
 
-/*========== Symbols (Mostly Help Button) ==========*/
-
-/* Symbol span styling (help button, etc) */
 span.symbol {
   display: inline-block;
   width: 1.4em;
@@ -3332,77 +2855,64 @@ span.symbol {
   border: none;
   border-radius: 100%;
   text-align: center;
-  color: #ffffff;
+  color: var(--text-invert);
   vertical-align: unset;
 }
 
-/* Symbol inner span padding */
 span.symbol span {
   padding: 0;
 }
 
-/* Symbol links: remove underline and border */
 .symbols a,
 .symbol a {
   text-decoration: none;
   border: none;
 }
 
-/* Help question link hover effect */
 .question a:hover {
-  background-color: #eb6f92;
-  border-color: #eb6f92;
-  color: #fffaf5;
+  background-color: var(--accent-1);
+  border-color: var(--accent-1);
+  color: var(--surface-2);
   cursor: help;
 }
 
-/* Question symbol styling */
 span.question {
-  background-color: #eb6f92;
+  background-color: var(--accent-1);
   box-shadow: none;
   vertical-align: super;
   font-size: 0.9em;
 }
 
-/* Question link: remove underline */
 a.question {
-  border: none; /* keep this here so there is no link underline */
+  border: none;
 }
 
-/* Heading question link and help symbol font size */
 .heading a.question,
 .help.symbol.question {
   font-size: 0.75em;
 }
 
-/*========== Symbols Key (Help Content) ==========*/
-
-/* Symbols key heading margin */
 #symbols-key h4 {
   margin: 1em 0;
 }
 
-/* Hide images in symbols key dt */
 dl#symbols-key dt img:not(#symbols-key dl img) {
   display: none;
 }
 
-/* Symbols key dd margin */
 dl#symbols-key dd {
   margin: 0;
 }
 
-/* Symbols key definition list styling */
 #symbols-key dl {
   width: auto;
   margin: 0;
-  padding: 0.643em 0.643em 0 0.643em ;
-  border: 1px solid #e4d1c9 ;
+  padding: 0.643em 0.643em 0 0.643em;
+  border: 1px solid var(--surface-3);
   border-radius: 0.75rem;
-  background-color: #fffaf5;
+  background-color: var(--surface-2);
 }
 
-/* Symbols key dd margin adjustment */
 #symbols-key dl dd,
 #bookmark-symbols-key dd {
   margin: -25px auto 15px 35px;
@@ -3412,9 +2922,6 @@ dl#symbols-key dd {
  *      ʚʚʚ Z1 Replace the Icons and Images ɞɞɞ              *
  *═════════════════════════════════════════════════════════════*/
 
-/*========== Icons for Users, Collections, Tags, Etc. ==========*/
-
-/* Rounded corners for icons */
 .icon,
 .icon img,
 .comment div.icon {
@@ -3422,111 +2929,98 @@ dl#symbols-key dd {
   border: none;
 }
 
-/* Border and white background for uploaded icons */
 .icon img:not(img[src*="/images/skins/iconsets/default/"]) {
   box-sizing: border-box;
   border: 1px solid #D8D2D2;
-  background: #fffaf5;
+  background: var(--surface-2);
 }
 
-/* Default user icon replacement */
 img[src$="/images/skins/iconsets/default/icon_user.png"] {
   box-sizing: border-box;
-  content: url("https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/assets/zerafina-icon-user-visitor-02.png"); /* url of new icon */
-  background-image: linear-gradient(to bottom right, #ea9a97, #eb6f92); /* diagonal gradient */
-  background-color: #eb6f92; /* fallback color */
-  border: 1px solid #00000025;
-  padding: 4px; /* add padding to show the gradient */
+  content: url("https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/assets/zerafina-icon-user-visitor-02.png");
+  background-image: linear-gradient(to bottom right, var(--grad-stop-a), var(--grad-stop-b));
+  background-color: var(--accent-1);
+  border: 1px solid var(--icon-line);
+  padding: 4px;
 }
 
-/* Anon comment icon replacement */
 .comment .icon .anonymous {
   box-sizing: border-box;
   background: 
     url("https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/assets/zerafina-icon-anon-01.png"),
-    linear-gradient(to bottom right, #ea9a97, #eb6f92); /* diagonal gradient */
+    linear-gradient(to bottom right, var(--grad-stop-a), var(--grad-stop-b));
   background-size: cover;
-  background-color: #9ccfd8; /* fallback color */
-  border: 1px solid #00000025;
+  background-color: var(--accent-3);
+  border: 1px solid var(--icon-line);
 }
 
-/* Guest comment icon replacement */
 .comment .icon .visitor { 
   box-sizing: border-box;
   background: 
     url("https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/assets/zerafina-icon-user-visitor-02.png"),
-    linear-gradient(to bottom right, #ea9a97, #eb6f92); /* diagonal gradient */
+    linear-gradient(to bottom right, var(--grad-stop-a), var(--grad-stop-b));
   background-size: cover;
-  background-color: #9ccfd8; /* fallback color */
-  border: 1px solid #00000025;
+  background-color: var(--accent-3);
+  border: 1px solid var(--icon-line);
 }
 
-/* Default collection icon replacement */
 img[src$="/images/skins/iconsets/default/icon_collection.png"] {
   box-sizing: border-box;
-  content: url("https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/assets/zerafina-icon-collection-02.png"); /* url of new icon */
-  background-image: linear-gradient(to bottom right, #ea9a97, #eb6f92); /* diagonal gradient */
-  background-color: #eb6f92; /* fallback color */
-  border: 1px solid #00000025; /* change border width and color here */
-  padding: 4px; /* add some padding so the gradient is visible around the icon */
+  content: url("https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/assets/zerafina-icon-collection-02.png");
+  background-image: linear-gradient(to bottom right, var(--grad-stop-a), var(--grad-stop-b));
+  background-color: var(--accent-1);
+  border: 1px solid var(--icon-line);
+  padding: 4px;
 }
 
-/* Tag icons replacement */
 .tagset .primary .icon, 
 .tag .primary .icon,
 .index .tagset .icon {
   box-sizing: border-box;
   background: 
     url("https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/assets/zerafina-icon-tag-02.png"),
-    linear-gradient(to bottom right, #ea9a97, #eb6f92); /* diagonal gradient */
+    linear-gradient(to bottom right, var(--grad-stop-a), var(--grad-stop-b));
   background-size: cover;
-  background-color: #eb6f92; /* fallback color */
-  border: 1px solid #00000025;
+  background-color: var(--accent-1);
+  border: 1px solid var(--icon-line);
 }
 
-/* Icon for unrevealed works replacement */
 .index .mystery .icon {
   box-sizing: border-box;
   background: 
     url("https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/assets/zerafina-icon-anon-01.png"),
-    linear-gradient(to bottom right, #ea9a97, #eb6f92); /* diagonal gradient */
+    linear-gradient(to bottom right, var(--grad-stop-a), var(--grad-stop-b));
   background-size: cover;
-  background-color: #eb6f92;
+  background-color: var(--accent-1);
   border: 1px solid #D8D2D2;
-  box-shadow: inset 0 0 0 3px #fffaf5;
+  box-shadow: inset 0 0 0 3px var(--surface-2);
 }
 
-/* Admin icon replacement (news posts) */
 .admin .primary .icon {
   box-sizing: border-box;
   background: 
     url("https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/assets/zerafina-icon-admin-02.png"),
-    linear-gradient(to bottom right, #ea9a97, #eb6f92); /* diagonal gradient */
+    linear-gradient(to bottom right, var(--grad-stop-a), var(--grad-stop-b));
   background-size: cover;
-  background-color: #eb6f92;
-  border: 1px solid #00000025;
+  background-color: var(--accent-1);
+  border: 1px solid var(--icon-line);
 }
 
-/* Default icon for skins replacement */
 .skins .primary .icon:not(:has(a .icon)),
 .index .skins .icon:not(:has(a .icon)) {
   box-sizing: border-box;
   background: 
     url("https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/assets/zerafina-icon-skins-02.png"),
-    linear-gradient(to bottom right, #ea9a97, #eb6f92); /* diagonal gradient */
+    linear-gradient(to bottom right, var(--grad-stop-a), var(--grad-stop-b));
   background-size: cover;
-  background-color: #eb6f92;
-  border: 1px solid #00000025;
+  background-color: var(--accent-1);
+  border: 1px solid var(--icon-line);
 }
 
-/* Remove default skin icon under uploaded icons */
 .skins .primary .icon:has(a img.icon) {
   background: none;
 }
 
-/*========== Content Symbols ==========*/
-
-/* Rounded corners for content symbols */
 .blurb ul.required-tags li span,
 .bookmark .status span:not(.status .private),
 #symbols-key dl img,
@@ -3534,7 +3028,6 @@ img[src$="/images/skins/iconsets/default/icon_collection.png"] {
   border-radius: 0.75rem;
 }
 
-/* Sets the size of the symbols keys icons */
 #symbols-key dl img,
 #bookmark-symbols-key img {
   width: 0 !important;
@@ -3542,7 +3035,6 @@ img[src$="/images/skins/iconsets/default/icon_collection.png"] {
   padding: 25px 0 0 25px;
 }
 
-/* Sizing and borders for content symbols */
 .blurb ul.required-tags li span,
 .bookmark .status span:not(.status .private),
 #symbols-key dl img,
@@ -3550,10 +3042,9 @@ img[src$="/images/skins/iconsets/default/icon_collection.png"] {
   background-size: cover;
   background-origin: border-box;
   box-sizing: border-box;
-  border: 1px solid; /* change border width here or delete this if you don't want the borders */
+  border: 1px solid;
 }
 
-/* Empty symbols boxes (no rating, category or warning) */
 .required-tags .rating-notrated,
 .required-tags .category-none, 
 .required-tags .warning-no, 
@@ -3561,211 +3052,171 @@ img[src$="/images/skins/iconsets/default/icon_collection.png"] {
 img[src$="/images/skins/iconsets/default/rating-notrated.png"],
 img[src$="/images/skins/iconsets/default/category-none.png"],
 img[src$="/images/skins/iconsets/default/warning-no.png"] {
-  background: #fffaf5; /* change background color here */
-  color: #e4d1c9 ; /* change border color here */
+  background: var(--surface-2);
+  color: var(--surface-3);
 }
 
-/*
-The following content symbols have transparent borders, allowing the background to show through
-This automatically gives the icons borders that have a slightly darker color than the background color
-You can replace the border color with any other rgb, rgba, or hex color, transparent or not
-*/
-
-/*===== Rating =====*/
-
-/* General audiences */
 .required-tags .rating-general-audience,
 img[src$="/images/skins/iconsets/default/rating-general-audience.png"] { 
-  background: url("https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/assets/zerafina-icon-rating-gen-01.png"); /* url of new icon */
-  background-color: #3e8fb0; /* change background color here */
-  color: #0000001a; /* change border color here */
+  background: url("https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/assets/zerafina-icon-rating-gen-01.png");
+  background-color: var(--rating-gen-bg);
+  color: var(--icon-line);
 }
 
-/* Teen and up audiences */
 .required-tags .rating-teen,
 img[src$="/images/skins/iconsets/default/rating-teen.png"] { 
-  background: url("https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/assets/zerafina-icon-rating-teen-01.png"); /* url of new icon */
-  background-color: #9ccfd8; /* change background color here */
-  color: #0000001a; /* change border color here */
+  background: url("https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/assets/zerafina-icon-rating-teen-01.png");
+  background-color: var(--rating-teen-bg);
+  color: var(--icon-line);
 }
 
-/* Mature */
 .required-tags .rating-mature,
 img[src$="/images/skins/iconsets/default/rating-mature.png"] { 
-  background: url("https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/assets/zerafina-icon-rating-mature-01.png"); /* url of new icon */
-  background-color: #eb6f92; /* change background color here */
-  color: #0000001a; /* change border color here */
+  background: url("https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/assets/zerafina-icon-rating-mature-01.png");
+  background-color: var(--rating-mature-bg);
+  color: var(--icon-line);
 }
 
-/* Explicit */
 .required-tags .rating-explicit,
 img[src$="/images/skins/iconsets/default/rating-explicit.png"] { 
-  background: url("https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/assets/zerafina-icon-rating-explicit-01.png"); /* url of new icon */
-  background-color: #f6c177; /* change background color here */
-  color: #0000001a; /* change border color here */
+  background: url("https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/assets/zerafina-icon-rating-explicit-01.png");
+  background-color: var(--rating-explicit-bg);
+  color: var(--icon-line);
 }
 
-/*===== Relationships, Pairings, Orientations =====*/
-
-/* F/F */
 .required-tags .category-femslash, 
 img[src$="/images/skins/iconsets/default/category-femslash.png"] {
-  background: url("https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/assets/zerafina-icon-category-ff-01.png"); /* url of new icon */
-  background-color: #f6c177; /* change background color here */
-  color: #0000001a; /* change border color here */
+  background: url("https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/assets/zerafina-icon-category-ff-01.png");
+  background-color: var(--rel-ff-bg);
+  color: var(--icon-line);
 }
 
-/* F/M */
 .required-tags .category-het, 
 img[src$="/images/skins/iconsets/default/category-het.png"] {
-  background: url("https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/assets/zerafina-icon-category-mf-01.png"); /* url of new icon */
-  background-color: #eb6f92; /* change background color here */
-  color: #0000001a; /* change border color here */
+  background: url("https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/assets/zerafina-icon-category-mf-01.png");
+  background-color: var(--rel-mf-bg);
+  color: var(--icon-line);
 }
 
-/* Gen */
 .required-tags .category-gen,
 img[src$="/images/skins/iconsets/default/category-gen.png"] {
-  background: url("https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/assets/zerafina-icon-category-gen-01.png"); /* url of new icon */
-  background-color: #3e8fb0; /* change background color here */
-  color: #0000001a; /* change border color here */
+  background: url("https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/assets/zerafina-icon-category-gen-01.png");
+  background-color: var(--rel-gen-bg);
+  color: var(--icon-line);
 }
 
-/* M/M */
 .required-tags .category-slash,
 img[src$="/images/skins/iconsets/default/category-slash.png"] {
-  background: url("https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/assets/zerafina-icon-category-mm-01.png"); /* url of new icon */
-  background-color: #9ccfd8; /* change background color here */
-  color: #0000001a; /* change border color here */
+  background: url("https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/assets/zerafina-icon-category-mm-01.png");
+  background-color: var(--rel-mm-bg);
+  color: var(--icon-line);
 }
 
-/* Multi */
 .required-tags .category-multi,
 img[src$="/images/skins/iconsets/default/category-multi.png"] {
-  background: conic-gradient(from 360deg, #eb6f92 0% 25%, #9ccfd8 25% 50%, #f6c177 50% 75%, #3e8fb0 75% 100%); /* conic gradient with the colors of the relationship icons */
-  color: #0000001a; /* change border color here */
+  background: conic-gradient(from 360deg, var(--accent-1) 0% 25%, var(--accent-3) 25% 50%, var(--accent-5) 50% 75%, var(--text-2) 75% 100%);
+  color: var(--icon-line);
 }
 
-/* Other relationships */
 .required-tags .category-other, 
 img[src$="/images/skins/iconsets/default/category-other.png"] {
-  background: url("https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/assets/zerafina-icon-category-other-01.png"), /* url of new icon */
-    linear-gradient(to left top, #3e8fb0, #9ccfd8, #eb6f92, #f6c177); /* gradient with the colors of the relationship icons */
-  background-color: #3e8fb0; /* change background color here */
-  color: #0000001a; /* change border color here */
+  background: url("https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/assets/zerafina-icon-category-other-01.png"),
+    linear-gradient(to left top, var(--text-2), var(--accent-3), var(--accent-1), var(--accent-5));
+  background-color: var(--text-2);
+  color: var(--icon-line);
 }
 
-/*===== Content Warnings =====*/
-
-/* Author chose not to warn */
 .required-tags .warning-choosenotto, 
 img[src$="/images/skins/iconsets/default/warning-choosenotto.png"] {
-  background: url("https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/assets/zerafina-icon-warning-choosenotto-01.png"); /* url of new icon */
-  background-color: #eb6f92; /* change background color here */
-  color: #0000001a; /* change border color here */
+  background: url("https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/assets/zerafina-icon-warning-choosenotto-01.png");
+  background-color: var(--warn-choosenotto-bg);
+  color: var(--icon-line);
 }
 
-/* Warnings apply */
 .required-tags .warning-yes,
 img[src$="/images/skins/iconsets/default/warning-yes.png"] { 
-  background: url("https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/assets/zerafina-icon-warning-yes-01.png"); /* url of new icon */
-  background-color: #f6c177; /* change background color here */
-  color: #0000001a; /* change border color here */
+  background: url("https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/assets/zerafina-icon-warning-yes-01.png");
+  background-color: var(--warn-yes-bg);
+  color: var(--icon-line);
 }
 
-/* External work */
 .required-tags .external-work,
 img[src$="/images/skins/iconsets/default/warning-external-work.png"] {
-  background: url("https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/assets/zerafina-icon-warning-external-work-02.png"); /* url of new icon */
-  background-color: #9ccfd8; /* change background color here */
-  color: #0000001a; /* change border color here */
+  background: url("https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/assets/zerafina-icon-warning-external-work-02.png");
+  background-color: var(--warn-external-bg);
+  color: var(--icon-line);
 }
 
-/*===== Completion Status =====*/
-
-/* Uncomplete/unfulfilled */
 .required-tags .complete-no, 
 img[src$="/images/skins/iconsets/default/complete-no.png"] { 
-  background: url("https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/assets/zerafina-icon-complete-no-01.png"); /* url of new icon */
-  background-color: #f6c177; /* change background color here */
-  color: #0000001a; /* change border color here */
+  background: url("https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/assets/zerafina-icon-complete-no-01.png");
+  background-color: var(--incomplete-bg);
+  color: var(--icon-line);
 }
 
-/* Completed/filled */
 .required-tags .complete-yes,
 img[src$="/images/skins/iconsets/default/complete-yes.png"] { 
-  background: url("https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/assets/zerafina-icon-complete-yes-01.png"); /* url of new icon */
-  background-color: #3e8fb0; /* change background color here */
-  color: #0000001a; /* change border color here */
+  background: url("https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/assets/zerafina-icon-complete-yes-01.png");
+  background-color: var(--complete-bg);
+  color: var(--icon-line);
 }
 
-/*===== Bookmark Symbols =====*/
-
-/* Rec */
 .status .rec,
 img[src$="/images/skins/iconsets/default/bookmark-rec.png"] { 
-  background: url("https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/assets/zerafina-icon-bookmark-rec-01.png"); /* url of new icon */
-  background-color: #f6c177; /* change background color here */
-  color: #0000001a; /* change border color here */
+  background: url("https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/assets/zerafina-icon-bookmark-rec-01.png");
+  background-color: var(--bookmark-ribbon-rec);
+  color: var(--icon-line);
 }
 
 .bookmark .blurb p.status a:not(.short a):has(.rec)::before {
-  border-inline-color: #f6c177; /* ribbon color */
+  border-inline-color: var(--accent-5);
 }
 
-/* Public bookmark */
 .status .public, 
 img[src$="/images/skins/iconsets/default/bookmark-public.png"] { 
-  background: url("https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/assets/zerafina-icon-bookmark-public-02.png"); /* url of new icon */
-  background-color: #3e8fb0; /* change background color here */
-  color: #0000001a; /* change border color here */
+  background: url("https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/assets/zerafina-icon-bookmark-public-02.png");
+  background-color: var(--bookmark-ribbon-public);
+  color: var(--icon-line);
 }
 
 .bookmark .blurb p.status a:not(.short a):has(.public)::before {
-  border-inline-color: #3e8fb0; /* ribbon color */
+  border-inline-color: var(--text-2);
 }
 
-/* Private bookmark */
 .status .private .text, 
 img[src$="/images/skins/iconsets/default/bookmark-private.png"] {
   font-size: inherit;
   text-indent: -9999px;
   white-space: nowrap;
-  background: url("https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/assets/zerafina-icon-bookmark-locked-02.png"); /* url of new icon */
-  background-color: #eb6f92; /* change background color here */
-  color: #0000001a; /* change border color here */
+  background: url("https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/assets/zerafina-icon-bookmark-locked-02.png");
+  background-color: var(--bookmark-ribbon-private);
+  color: var(--icon-line);
 }
 
 .bookmark .blurb p.status a:not(.short a):has(.private)::before {
-  border-inline-color: #eb6f92; /* ribbon color */
+  border-inline-color: var(--accent-1);
 }
 
-/* Hidden bookmark */
 .status .hidden, 
 img[src$="/images/skins/iconsets/default/bookmark-hidden.png"] {
-  background: url("https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/assets/zerafina-icon-bookmark-hidden-01.png"); /* url of new icon */
-  background-color: #908caa; /* change background color here */
-  color: #0000001a; /* change border color here */
+  background: url("https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/assets/zerafina-icon-bookmark-hidden-01.png");
+  background-color: var(--bookmark-ribbon-hidden);
+  color: var(--icon-line);
 }
 
 .bookmark .blurb p.status a:not(.short a):has(.hidden)::before {
-  border-inline-color: #908caa; /* ribbon color */
+  border-inline-color: var(--accent-muted);
 }
 
-/* Remove borders from bookmark ribbons */
 .bookmark .blurb:not(.short) .status span:not(.status .private) {
   border: none;
 }
 
-/*========== RSS Icon ==========*/
-
-/* Hide old rss icon */
 a.rss span {
   padding: 0;
   background: none;
 }
 
-/* Setup for the new rss icon */
 .actions li a.rss {
   display: inline-flex;
   align-content: center;
@@ -3773,58 +3224,46 @@ a.rss span {
   column-gap: 0.3em;
 }
 
-/* New rss icon */
 .actions li a.rss::before {
   content: "";
   height: 0.85em;
   width: 0.85em;
-  background-image: url("https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/assets/zerafina-icon-rss-01.png"); /* url of new icon */
+  background-image: url("https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/assets/zerafina-icon-rss-01.png");
   background-size: cover;
-  background-color: #eb6f92; /* background color */
-  box-shadow: inset 0 0 0 1px; /* border */
+  background-color: var(--accent-1);
+  box-shadow: inset 0 0 0 1px;
   border-radius: 2px;
-  color: #00000025; /* change border color here */
+  color: var(--icon-line);
 }
 
-/*========== Kudos Icon ==========*/
-
-/* Hide old kudos icon */
 p.kudos {
   background: none;
 }
 
-/* New kudos icon */
 div:has(> p.kudos)::before {
   content: "";
   height: 55px;
   width: 55px;
   position: absolute;
-  background-image: url("https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/assets/zerafina-icon-kudos-03.png"); /* url of new icon */
+  background-image: url("https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/assets/zerafina-icon-kudos-03.png");
   background-size: cover;
-  filter: brightness(0) saturate(100%) invert(45%) sepia(77%) saturate(345%) hue-rotate(152deg) brightness(96%) contrast(90%); /* adjust filter values to change color */
+  filter: var(--filter-1);
 }
 
-/*========== Lock Icon for Restricted Works ==========*/
-
 img[src$="/images/lockblue.png"] {
-  content: url("https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/assets/zerafina-icon-lock-01.png"); /* url of new icon */
-    filter: brightness(0) saturate(100%) invert(31%) sepia(23%) saturate(756%) hue-rotate(208deg) brightness(98%) contrast(87%); /* adjust filter values to change color */
-  }
+  content: url("https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/assets/zerafina-icon-lock-01.png");
+  filter: var(--filter-1);
+}
 
 /*═════════════════════════════════════════════════════════════*
  *      ʚʚʚ Z2 Stats Icons with Hover Text ɞɞɞ               *
  *═════════════════════════════════════════════════════════════*/
 
-/*========== Stats Icons ==========*/
-
-/* Adjust space on right side */
 .stats:not(.skins .stats) dd {
   margin-inline: 0 1em;
   padding: 0;
 } 
 
-/* Slight adjustments to align stats with other elements */
-/* Not the prettiest solution but it works */
 dl.stats:not(.skins .stats) {
   margin-right: -1em;
   word-spacing: -0.3em;
@@ -3834,7 +3273,6 @@ dl.meta.statistics dd {
   padding-left: 5px;
 }
 
-/* Allow stats to break if too long */
 dl.stats,
 dl.stats > * {
   min-width: 0;
@@ -3842,9 +3280,6 @@ dl.stats > * {
   overflow-wrap: anywhere;
 }
 
-/*===== Setup For The Stats Icons =====*/
-
-/* hide the text before the stats */
 .stats:not(.skins .stats) dt {
   display: none;
 }
@@ -3860,143 +3295,112 @@ dl.statistics dt::before {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  filter: brightness(0) saturate(100%) invert(31%) sepia(23%) saturate(756%) hue-rotate(208deg) brightness(98%) contrast(87%); /* changes the color of the icons */
+  filter: var(--filter-1);
 }
 
-/*======= Stats Icons (Images) =======*/
-
-/* Language */
 .stats dd.language::before {
   background-image: url("https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/assets/zerafina-stats-icon-language-01.png");
 }
 
-/* Words */
 .stats dd.words::before,
 dl.statistics dt.words::before {
   background-image: url("https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/assets/zerafina-stats-icon-words-01.png");
 }
 
-/* Works */
 .stats dd.works::before,
-.stats dd:has(a[href$=works])::before /* works in collection */ {
+.stats dd:has(a[href$=works])::before {
   background-image: url("https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/assets/zerafina-stats-icon-works-01.png");
 }
 
-/* Chapters */
 .stats dd.chapters::before {
   background-image: url("https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/assets/zerafina-stats-icon-chapters-01.png");
 }
 
-/* Comments */
 .stats dd.comments::before {
   background-image: url("https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/assets/zerafina-stats-icon-comments-01.png");
 }
 
-/* Kudos */
 .stats dd.kudos::before,
 dl.statistics dt.kudos::before {
   background-image: url("https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/assets/zerafina-stats-icon-kudos-01.png");
 }
 
-/* Bookmarks */
 .stats dd.bookmarks::before,
 dl.statistics dt.bookmarks::before {
   background-image: url("https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/assets/zerafina-stats-icon-bookmarks-02.png");
 }
 
-/* Related works (external bookmarks) */
 .stats dd.inspired::before {
   background-image: url("https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/assets/zerafina-stats-icon-related-works-01.png");
 }
 
-/* Hits */
 .stats dd.hits::before,
 dl.statistics dt.hits::before {
   background-image: url("https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/assets/zerafina-stats-icon-hits-01.png");
 }
 
-/* Collections */
 .stats dd.collections::before,
-.stats dd:has(a[href$=collections])::before /* subcollections*/ {
+.stats dd:has(a[href$=collections])::before {
   background-image: url("https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/assets/zerafina-stats-icon-collection-01.png");
 }
 
-/* Date published */
 .stats dd.published::before {
   background-image: url("https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/assets/zerafina-stats-icon-published-01.png");
 }
 
-/* Date updated/completed */
-/* I have not found a way to display a different icon for each case */
 .stats dd.status::before {
   background-image: url("https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/assets/zerafina-stats-icon-updated-01.png");
 }
 
-/* Completion status (series) */
 .series.meta.group .stats dd:nth-of-type(3)::before {
   background-image: url("https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/assets/zerafina-stats-icon-complete-01.png");
 }
 
-/* Subscriptions (statistics page) */
 .stats dd.subscriptions::before,
 dl.statistics dt.subscriptions::before {
   background-image: url("https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/assets/zerafina-stats-icon-subscriptions-01.png");
 }
 
-/* Comment threads (statistics page) */
 .statistics .stats dd.comments::before,
 dl.statistics dt.comment::before {
   background-image: url("https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/assets/zerafina-stats-icon-comment-threads-01.png");
 }
 
-/* Fandoms */
 .stats dd:has(a[href$=fandoms])::before,
 .tagset .stats dd:nth-of-type(1)::before {
   background-image: url("https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/assets/zerafina-stats-icon-fandoms-01.png");
 }
 
-/* Collections: bookmarked items */
 .collection.blurb .stats dd:has(a[href$=bookmarks])::before {
   background-image: url("https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/assets/zerafina-stats-icon-bookmarked-items-01.png");
 }
 
-/* collections: promts/requests */
 .stats dd:has(a[href$=requests])::before {
   background-image: url("https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/assets/zerafina-stats-icon-promts-01.png");
 }
 
-/* tagsets: characters */
 .tagset .stats dd:nth-of-type(2)::before {
   background-image: url("https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/assets/zerafina-stats-icon-characters-01.png");
 }
 
-/* tagests: relationships */
 .tagset .stats dd:nth-of-type(3)::before {
   background-image: url("https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/assets/zerafina-stats-icon-relationships-01.png");
 }
 
-/* tagsets: additional tags*/
 .tagset .stats dd:nth-of-type(4)::before {
   background-image: url("https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/assets/zerafina-stats-icon-tags-additional-01.png");
 }
 
-/* tagsets: freeform tags *//* example: https://archiveofourown.org/tag_sets/19213 */
 .tagset .meta .stats dd:nth-of-type(4)::before {
   background-image: url("https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/assets/zerafina-stats-icon-tags-freeform-01.png");
 }
 
-/*========== Stats Hover Text ==========*/
-
-/*===== General Formatting/Styling Stuff =====*/
-
-/* Color of stats links */
 .stats a,
 .stats a:visited {
-border: none; /* removes underline from links */
-color: #575279; /* link color */
+  border: none;
+  color: var(--text-1);
 }
 
-/* Text container (tooltip) */
 .stats dd::after {
   display: none;
   position: absolute;
@@ -4004,22 +3408,19 @@ color: #575279; /* link color */
   margin: 2em 0 0 -4em;
   padding: 0.3em;
   border-radius: 0.75rem;
-  border: 1px solid #D7BFB6 ;
-  background: #fffaf5;
+  border: 1px solid var(--line-3);
+  background: var(--surface-2);
   font-size: 0.8em;
   line-height: 1em;
   text-align: center;
-  word-break: break-word; /* prevent overflow by breaking the word if necessary - not the best solution */
-  white-space: normal; /* see comment above */
+  word-break: break-word;
+  white-space: normal;
 }
 
-/* Makes text appear on hover */
 .stats dd:hover::after {
   display: inline-block;
 }
 
-/* This is to prevent the hover text from breaking or getting cut off in some places */
-/* Haven't found a better solution yet */
 .statistics .stats dd:last-of-type::after,
 .index .stats dd:last-of-type:has(a[href$=bookmarks])::after,
 .stats dd.inspired::after,
@@ -4027,121 +3428,96 @@ color: #575279; /* link color */
   right: 0;
 }
 
-/*===== Hover Text for Individual Stats =====*/
-
-/* Language */
 .stats dd.language::after {
   content: "Language";
 }
 
-/* Words */
 .stats dd.words::after {
   content: "Words";
 }
 
-/* Works */
 .stats dd.works::after,
-.stats dd:has(a[href$=works])::after /* works in collection */ {
+.stats dd:has(a[href$=works])::after {
   content: "Works";
 }
 
-/* Chapters */
 .stats dd.chapters::after {
   content: "Chapters";
 }
 
-/* Comments */
 .stats dd.comments::after {
   content: "Comments";
 }
 
-/* Kudos */
 .stats dd.kudos::after {
   content: "Kudos";
 }
 
-/* Bookmarks */
 .stats dd.bookmarks::after {
   content: "Bookmarks";
 }
 
-/* Related works (external bookmarks) */
 .stats dd.inspired::after {
   content: "Related Works";
 }
 
-/* Hits */
 .stats dd.hits::after {
   content: "Hits";
 }
 
-/* Collections */
 .stats dd.collections::after {
   content: "Collections";
 }
 
-/* Date published */
 .stats dd.published::after {
   content: "Published";
 }
 
-/* Date updated/completed */
 .stats dd.status::after {
   content: "Updated";
 }
 
-/* Completion status (series) */
 .series.meta.group .stats dd:nth-of-type(3)::after {
   content: "Complete";
 }
 
-/* Subscriptions (statistics page) */
 .stats dd.subscriptions::after {
   content: "Subscriptions";
 }
 
-/* Comment threads (statistics page) */
 .statistics .stats dd.comments::after {
   content: "Comment Threads";
 }
 
-/* Fandoms */
 .stats dd:has(a[href$=fandoms])::after,
 .tagset .stats dd:nth-of-type(1)::after {
   content: "Fandoms";
 }
 
-/* Tagsets: characters */
 .tagset .stats dd:nth-of-type(2)::after {
   content: "Characters";
 }
 
-/* Tagsets: relationships */
 .tagset .stats dd:nth-of-type(3)::after {
   content: "Relationships";
 }
 
-/* Tagsets: additional tags */
 .tagset .stats dd:nth-of-type(4)::after {
   content: "Additional Tags";
 }
 
-/* Tagsets: freeform tags */
 .tagset .meta .stats dd:nth-of-type(4)::after {
   content: "Freeforms";
 }
 
-/* Collections: prompts/requests */
 .stats dd:has(a[href$=requests])::after {
   content: "Prompts";
 }
 
-/* Collections: challenges/subcollections */
 .collections-index .stats dd:has(a[href$=collections])::after {
   content: "Challenges/Subcollections";
 }
 
-/* Collections: bookmarked items */
 .collection.blurb .stats dd:has(a[href$=bookmarks])::after {
   content: "Bookmarked Items";
 }
@@ -4150,16 +3526,15 @@ color: #575279; /* link color */
  *           ʚʚʚ Z3 Miscellaneous ɞɞɞ                        *
  *═════════════════════════════════════════════════════════════*/
 
-/* Scrollbar */
 * {
-  scrollbar-color: #af9f98 #fffaf5;
+  scrollbar-color: var(--scroll-thumb) var(--surface-2);
   scrollbar-width: thin;
 }
 
 /* Text selection */
 *::selection {
-  background-color: #eb6f92;
-  color: #ffffff;
+  background-color: var(--accent-1); /* #d7827e */
+  color: var(--text-invert) !important; /* #ffffff */
 }
 
 /*========== Fix the Fandoms Index ==========*/
@@ -4183,20 +3558,24 @@ color: #575279; /* link color */
 /*===== Stat Chart =====*/
 /* Issue: filters here do not work on tablet/mobile for me */
 
+
 #stat_chart {
-  border-radius: 0.75rem; /* can't add border because it causes a weird error */
+  border-radius: 0.75rem; /* no variable for radius in color guide */
   margin-top: 1em;
   overflow: clip;
 }
 
 /* Make chart background transparent */
+
 rect {
   filter: opacity(0);
 }
 
 /* Change color of chart */
+
 #stat_chart g > rect {
-  filter: brightness(0) saturate(100%) invert(34%) sepia(12%) saturate(3983%) hue-rotate(284deg) brightness(88%) contrast(96%);
+  /* Use accent color for chart bars */
+  filter: var(--filter-1);
 }
 
 /*===== Fandoms Index: Place Work Title and Stats Next to Each Other (If Possible) =====*/
@@ -4228,6 +3607,7 @@ rect {
 /* Issue: haven't found a way to change the font (works when applying skin directly in Firefox browser but not after saving it to AO3) */
 /* Changing colors also doesn't work on mobile for me but filters do work */
 
+
 .tox {
   border-radius: 0.75rem;
 }
@@ -4235,29 +3615,30 @@ rect {
 /* Border colors */
 .tox,
 .tox * {
-  border-color: #D7BFB6  !important;
+  border-color: var(--line-3) !important; /* #D7BFB6 */
 }
 
 /* Toolbar (top) and statusbar (bottom) */
 .tox .tox-toolbar,
 .tox .tox-statusbar,
 .tox .tox-statusbar__path-item {
-  background-color: #fffaf5;
-  color: #575279;
+  background-color: var(--rp-surface); /* #fffaf5 */
+  color: var(--rp-text); /* #575279 */
 }
 
 /* Toolbar icons background */
 .tox .tox-tbtn--enabled,
 .tox .tox-tbtn:hover {
-  background: #e7d3cb;
+  background: var(--line-2); /* #e7d3cb */
 }
 
 /* Toolbar icons color */
 .tox .tox-tbtn svg {
-  filter: brightness(0) saturate(100%) invert(71%) sepia(22%) saturate(4960%) hue-rotate(300deg) brightness(94%) contrast(96%);
+  /* Use accent color for icons */
+  filter: var(--filter-1);
 }
 
 /* Text edit area */
 .tox .tox-edit-area__iframe {
-  background-color: #fffaf5;
+  background-color: var(--rp-surface); /* #fffaf5 */
 }
