@@ -1696,7 +1696,8 @@ img[src$="/images/skins/iconsets/default/category-multi.png"] {
 /* Other relationships */
 .required-tags .category-other,
 img[src$="/images/skins/iconsets/default/category-other.png"] {
-    linear-gradient(to left top, #3e8fb0, #9ccfd8, #c4a7e7, #403e62);
+  background: url("https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/assets/zerafina-icon-category-other-01.png"), /* url of new icon */
+    linear-gradient(to left top, #c4a7e7, #9ccfd8, #3e8fb0);
   /* gradient with the colors of the relationship icons */
   background-color: #3e8fb0;
   /* change background color here */
