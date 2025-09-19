@@ -116,7 +116,7 @@
 
   /* Filters */
   --filter-1: brightness(0) saturate(100%) invert(88%) sepia(20%) saturate(167%) hue-rotate(206deg) brightness(97%) contrast(96%);
-  --filter-2: brightness(0) saturate(100%) invert(62%) sepia(26%) saturate(1195%) hue-rotate(299deg) brightness(90%) contrast(105%);
+  --filter-2: brightness(0) saturate(100%) invert(71%) sepia(37%) saturate(365%) hue-rotate(221deg) brightness(94%) contrast(93%);
 
   /* ===== DOMAIN TOKENS (color-only for theme layering) ===== */
   /* Bookmark Ribbon */

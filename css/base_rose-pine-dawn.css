@@ -42,8 +42,8 @@
   
   /* ===== SEMANTIC VARIABLES ===== */
   /* Surfaces */
-  --surface-1: var(--rp-base);
-  --surface-2: var(--rp-surface);
+  --surface-1: var(--accent-base);
+  --surface-2: var(--accent-surface);
   --surface-3: #e4d1c9;
   --surface-light: #fffbf5;
   
@@ -72,18 +72,18 @@
   --button-disabled-border: var(--text-2);
 
   /* Text */
-  --text-1: var(--rp-text);
-  --text-2: var(--rp-pine);
+  --text-1: var(--accent-text);
+  --text-2: var(--accent-pine);
   --text-3: #211F2E;
   --text-invert: #ffffff;
   
   /* Accents */
-  --accent-1: var(--rp-love);
-  --accent-2: var(--rp-rose);
-  --accent-3: var(--rp-foam);
-  --accent-4: var(--rp-pine);
-  --accent-5: var(--rp-gold);
-  --accent-muted: var(--rp-muted);
+  --accent-1: var(--accent-love);
+  --accent-2: var(--accent-rose);
+  --accent-3: var(--accent-foam);
+  --accent-4: var(--accent-pine);
+  --accent-5: var(--accent-gold);
+  --accent-muted: var(--accent-muted);
   
   /* Widgets & Utilities */
   --scroll-thumb: #af9f98;
@@ -99,7 +99,7 @@
   --state-ok-bg: #e6f4ef;
   --state-ok-text: var(--accent-4);
   --state-note-bg: #eceaf7;
-  --state-note-text: var(--rp-iris);
+  --state-note-text: var(--accent-iris);
   
   /* Shadows */
   --shadow-1: 0 2px 8px 0 #c8b6ad33, 0 1.5px 0 0 #e7d3cb80;
@@ -3622,8 +3622,8 @@ rect {
 .tox .tox-toolbar,
 .tox .tox-statusbar,
 .tox .tox-statusbar__path-item {
-  background-color: var(--rp-surface); /* #fffaf5 */
-  color: var(--rp-text); /* #575279 */
+  background-color: var(--accent-surface); /* #fffaf5 */
+  color: var(--accent-text); /* #575279 */
 }
 
 /* Toolbar icons background */
@@ -3640,5 +3640,5 @@ rect {
 
 /* Text edit area */
 .tox .tox-edit-area__iframe {
-  background-color: var(--rp-surface); /* #fffaf5 */
+  background-color: var(--accent-surface); /* #fffaf5 */
 }

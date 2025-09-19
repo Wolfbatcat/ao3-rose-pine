@@ -88,7 +88,7 @@ FIND ME ON:
 .interactive-btn-1 { color: #1f1d2e; } /* Button background */
 .interactive-btn-2 { color: #3e8fb0; } /* Button hover/focus */
 .interactive-btn-3 { color: #2e2a47; } /* Button active/selected */
-.interactive-btn-4 { color: #48436c; } /* Alt button/tag background */
+.interactive-btn-4 { color: #393652; } /* Alt button/tag background */
 .interactive-btn-5 { color: #2e2d45; } /* Button current */
 .interactive-form-1 { color: #191724; } /* Input background */
 .interactive-form-2 { color: #2c283d; } /* Input border */
@@ -106,7 +106,7 @@ FIND ME ON:
 .state-notice-text { color: #9A7FD1; }   /* Notice text */
 
 /*──────────────────── Tag Backgrounds ─────────────────────*/
-.tag-bg-1 { color: #48436c; }    /* Default tag */
+.tag-bg-1 { color: #393652; }    /* Default tag */
 .tag-bg-2 { color: #eb6f92; }    /* Fandom tag */
 .tag-bg-3 { color: #9ccfd8; }    /* Relationship tag */
 .tag-bg-4 { color: #3e8fb0; }    /* Character tag */
@@ -921,7 +921,7 @@ a.tag:not(.fandom.index.group a.tag, h2.heading a.tag, .splash .favorite a.tag),
 a.tag:not(.fandom.index.group a.tag, h2.heading a.tag, .splash .favorite a.tag),
 .added.tag,
 .tags a[data-remote="true"] {
-  background-color: #48436c80;
+  background-color: #39365280;
 }
 
 /*========== Consolidated Hover Effects ==========*/
@@ -973,13 +973,13 @@ dd.fandom.tags a {
 }
 
 .unwrangled {
-  background-color: #48436c !important;
+  background-color: #393652 !important;
   border: 1px solid #9893a525;
 }
 
 .tags a[data-remote="true"]:hover,
 .tags a[data-remote="true"]:focus {
-  background-color: #48436c;
+  background-color: #393652;
 }
 
 .fandom.index.group a.tag:hover,
@@ -989,7 +989,7 @@ h2.heading a.tag:hover {
 
 .added.tag {
   position: relative;
-  background-color: #48436c;
+  background-color: #393652;
 }
 
 /*===== Definition Lists (Subscriptions, Related Works, Edit Multiple Works) =====*/
