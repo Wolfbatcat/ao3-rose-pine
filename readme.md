@@ -23,26 +23,25 @@
 <summary>1. Create the base skin</summary>
 
 1. Go to Dashboard → Skins → [Create Site Skin](https://archiveofourown.org/skins/new?skin_type=Skin) on Archive of Our Own.
-2. Give it a unique title, for example: `[BBC] Rosé Pine Dawn`.
-3. Paste the base CSS into the CSS field (see `base_rose-pine-dawn.css` in this repo or `css/base_default.css` for font settings where appropriate).
+2. Give it a unique title, for example: `[BBC] Rosé Pine - Base`.
+3. Paste the base CSS into the CSS field (see `base.css` in this repo.)
 4. Under Advanced, select **Parent Only**.
 5. Click **Submit**.
 
 </details>
 
 <details>
-<summary>2. Optional: add a color variation</summary>
-
-Skip this step if you only want the Dawn scheme.
+<summary>2. Add a color variation</summary>
 
 1. Create another skin titled something like `[BBC] Rosé Pine Moon`.
 2. Paste the alternate color-scheme CSS into the CSS field. See:
-    - `theme01_rose-pine-moon` (Rose Pine Moon)
-    - `theme02_rose-pine-moon-cool` (Rose Pine Moon Cool)
-    - `theme03_rose-pine` (Rosé Pine)
-    - `theme04_rose-pine-cool` (Rosé Pine Cool)
+    - `theme_rosepinedawn.css` (Rosé Pine Dawn)
+    - `theme_rosepinemoon.css` (Rosé Pine Moon)
+    - `theme_rosepinemooncool.css` (Rosé Pine Moon Cool)
+    - `theme_rosepine.css` (Rosé Pine)
+    - `theme_rosepinecool.css` (Rosé Pine Cool)
 3. Set this skin to **Parent Only** and submit.
-4. (Optional) To have this act as a dark-mode variation, edit the skin and under Advanced → Choose @media, set: `(prefers-color-scheme: dark)`.
+4. (Optional) To have a skin act as a light or dark-mode variation, create a second theme and under **Advanced → Choose @media**, set: `(prefers-color-scheme: light)` or `(prefers-color-scheme: dark)`.
 
 </details>
 
@@ -50,7 +49,7 @@ Skip this step if you only want the Dawn scheme.
 <summary>3. Create the tablet skin</summary>
 
 1. Create a skin titled `[BBC] Rosé Pine - Tablet`.
-2. Paste the tablet CSS into the CSS field: `css/media01_tablet.css`.
+2. Paste the tablet CSS into the CSS field: `tablet.css`.
 3. Under Advanced → Choose @media select: `only screen (max-width: 62em)`.
 4. Set this skin to **Parent Only** and submit.
 
@@ -60,7 +59,7 @@ Skip this step if you only want the Dawn scheme.
 <summary>4. Create the mobile skin</summary>
 
 1. Create a skin titled `[BBC] Rosé Pine - Mobile`.
-2. Paste the mobile CSS into the CSS field: `css/media02_mobile.css`.
+2. Paste the mobile CSS into the CSS field: `mobile.css`.
 3. Under Advanced → Choose @media select: `only screen (max-width: 42em)`.
 4. Set this skin to **Parent Only** and submit.
 
@@ -69,47 +68,49 @@ Skip this step if you only want the Dawn scheme.
 <details>
 <summary>5. Chain the skins together</summary>
 
-1. Create a final skin titled `[BBC] Rosé Pine - Default`.
-2. Paste the default chaining CSS into the CSS field: `css/base_default.css` (this contains font settings and is required to save the skin).
+1. Create a final skin titled `[BBC] Rosé Pine Dawn - Default` or whatever theme you used.
+2. Paste the following into the CSS field: `.rose-pine {opacity: 1;}` (this is required to save the skin).
 3. Under Advanced >> Parent Skins, add the skins you created in this order:
-    1. Base Skin (Dawn)
-    2. Optional Color Skin (Moon / Rosé Pine) — if used
-    3. Tablet Skin
-    4. Mobile Skin
+    1. [BBC] Rosé Pine - Base
+    2. [BBC] Rosé Pine Moon Dawn / [BBC] Rose Pine Moon / [BBC] Rose Pine
+    3. [BBC] Rosé Pine - Tablet
+    4. [BBC] Rosé Pine - Mobile
 4. Click **Submit**, then **Use**.
 
 </details>
 
 ## Customization
-
-- **Fonts**: recommended — [Domine](https://fonts.google.com/specimen/Domine) (serif) and [Outfit](https://fonts.google.com/specimen/Outfit) (sans-serif). If you use Outfit, also [Pier Sans](https://befonts.com/pier-sans-font-family.html) works nicely for the headers. The code font is [Victor Mono](https://rubjo.github.io/victor-mono/) set to cursive, just uncomment it in `base_default.css`.
-- **Colors**: Color hex codes are listed at the top of each CSS file in the repo. To change colors:
+> **Note: AO3's code editor does NOT save annotations. If you want to edit a skin, I highly recommend downloading the skin and using a code editor to make your edits.**
+- **Fonts**: recommended — [Domine](https://fonts.google.com/specimen/Domine) (serif) and [Figtree](https://fonts.google.com/specimen/Figtree) (sans-serif). The code font is [Victor Mono](https://rubjo.github.io/victor-mono/) set to cursive, just uncomment it in your theme skin.
+- **Colors**: Variables are listed at the top of each theme CSS file in the repo. To change colors:
   1. Open the CSS file in a text editor.
-  2. Find the color you want to replace and use Replace (Ctrl+H) to update instances. Be careful: using "Replace All" will change every instance of that hex.
-  3. If you only want to change specific section colors (for example, tags), edit that section manually.
+  2. Find the color you want to replace. To update all instances of that color, highlight it and press `Ctrl+H`. To see where variables are used, refer to `base.css`.
 
-- **Change the tag symbol:** To use a different symbol (such as `✦`, `✿`, `♥`, or `ɞ`) after each tag, find the following CSS rule in `base_default.css` underneath the font settings:
+- **Change the tag symbol:** To use a different symbol (such as `✦`, `✿`, `♥`, or `ɞ`) after each tag, find the following CSS rule at end of your theme css file underneath the font settings:
 
     ```css
-    h5.fandoms.heading a.tag:after,
-    dd.fandom.tags a:after,
-    [class^=warning] a.tag:after,
-    [class^=relationship] a.tag:after,
-    [class^=character] a.tag:after,
-    a.tag:not(.fandom.index.group a.tag, h2.heading a.tag, .splash .favorite a.tag):after {
-        content: "\00a0\00a0✿";
+    /* tag decorations */
+    a.tag:not(.fandom.index.group a.tag,
+    h2.heading a.tag,
+    .splash .favorite a.tag,
+    h5.fandoms.heading a.tag,
+    dd.fandom.tags a,
+    [class^=warning] a.tag,
+    [class^=relationship] a,
+    [class^=character] a.tag):after {
+    content: "\00a0\00a0✿";
     }
     ```
     Change the `content` value to your preferred symbol. For example, to use a heart: `content: "\00a0\00a0♥";`
 
 ## Credits
 
-- Thanks to [neos by ZerafinaCSS](https://github.com/ZerafinaCSS/neos/tree/main)
+- Biggest thanks to [neos by ZerafinaCSS](https://github.com/ZerafinaCSS/neos/tree/main)! Could not have made these skins without your code.
 
 ## Preview
 
 | Rosé Pine Dawn | Rosé Pine Moon | Rosé Pine |
 | --- | --- | --- |
-| ![Rosé Pine Dawn](https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/images/image_splash-rose-pine-dawn.png) | ![Rosé Pine Moon](https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/images/image_splash-rose-pine-moon.png) | ![Rosé Pine](https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/images/image_splash-rose-pine.png) |
+| ![Rosé Pine Dawn](https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/images/image_rosepinedawn.png) | ![Rosé Pine Moon](https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/images/image_rosepinemoon.png) | ![Rosé Pine](https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/images/image_rosepine.png) |
 | **Rosé Pine Moon - Cool** | **Rosé Pine - Cool** | **Mobile** |
-| ![Rosé Pine Moon - Cool](https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/images/image_splash-rose-pine-moon-cool.png) | ![Rosé Pine - Cool](https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/images/image_splash-rose-pine-cool.png) | <img src="https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/images/image_mobile.jpg" alt="Mobile" width="1845"> |
+| ![Rosé Pine Moon - Cool](https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/images/image_rosepinemooncool.png) | ![Rosé Pine - Cool](https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/images/image_rosepinecool.png) | <img src="https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/images/image_mobile.jpg" alt="Mobile" width="1845"> |
