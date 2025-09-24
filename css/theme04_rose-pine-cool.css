@@ -78,7 +78,11 @@ FIND ME ON:
 
 /*──────────────────── Text & Font Colors ──────────────────*/
 .core-text-1 { color: #e0def4; } /* Main text */
+<<<<<<< Updated upstream
 .core-text-2 { color: #393652; } /* Link text */
+=======
+.core-text-2 { color: #34314b; } /* Link text */
+>>>>>>> Stashed changes
 .core-text-3 { color: #3e8fb0; } /* Visited/secondary text */
 .core-text-4 { color: #211F2E; } /* Headings, dark text */
 .core-text-5 { color: #ffffff; } /* White text (tags, buttons, hover) */
@@ -88,7 +92,11 @@ FIND ME ON:
 .interactive-btn-1 { color: #1f1d2e; } /* Button background */
 .interactive-btn-2 { color: #3e8fb0; } /* Button hover/focus */
 .interactive-btn-3 { color: #2e2a47; } /* Button active/selected */
+<<<<<<< Updated upstream
 .interactive-btn-4 { color: #393652; } /* Alt tag/button background */
+=======
+.interactive-btn-4 { color: #34314b; } /* Alt tag/button background */
+>>>>>>> Stashed changes
 .interactive-btn-5 { color: #2e2d45; } /* Button current */
 .interactive-form-1 { color: #191724; } /* Input background */
 .interactive-form-2 { color: #2c283d; } /* Input border */
@@ -106,7 +114,11 @@ FIND ME ON:
 .state-notice-text { color: #7CB7E6; }   /* Notice text */
 
 /*──────────────────── Tag Backgrounds ─────────────────────*/
+<<<<<<< Updated upstream
 .tag-bg-1 { color: #393652; }    /* Default tag */
+=======
+.tag-bg-1 { color: #34314b; }    /* Default tag */
+>>>>>>> Stashed changes
 .tag-bg-2 { color: #c4a7e7; }    /* Fandom tag */
 .tag-bg-3 { color: #9ccfd8; }    /* Relationship tag */
 .tag-bg-4 { color: #3e8fb0; }    /* Character tag */
@@ -115,7 +127,11 @@ FIND ME ON:
 .tag-bg-7 { color: #9ccfd8; }    /* Accent tag/icon */
 
 /*──────────────────── Icons & Symbols ─────────────────────*/
+<<<<<<< Updated upstream
 .icon-1 { color: #393652; }      /* General icon */
+=======
+.icon-1 { color: #34314b; }      /* General icon */
+>>>>>>> Stashed changes
 .icon-2 { color: #9ccfd8; }      /* Teen icon */
 .icon-3 { color: #3e8fb0; }      /* Mature icon */
 .icon-4 { color: #c4a7e7; }      /* Explicit icon */
@@ -619,7 +635,11 @@ textarea.LV_invalid_field:is(:hover, :focus, :active) {
 /* Highlight autocomplete item on hover or when selected */
 .autocomplete .dropdown ul li:hover,
 .autocomplete .dropdown li.selected {
+<<<<<<< Updated upstream
   background: linear-gradient(125deg, #c4a7e7, #393652);
+=======
+  background: linear-gradient(125deg, #c4a7e7, #34314b);
+>>>>>>> Stashed changes
   color: #ffffff;
 }
 
@@ -862,8 +882,13 @@ span.requested {
 .nominations .unreviewed,
 .unreviewed.symbol {
   background-color: #2b2107;
+<<<<<<< Updated upstream
   border: 1px solid #393652;
   color: #393652;
+=======
+  border: 1px solid #34314b;
+  color: #34314b;
+>>>>>>> Stashed changes
 }
 
 /* Nominations: approved state */
@@ -891,7 +916,11 @@ span.offered {
 
 /* Offered and requested: alternate highlight */
 span.offered.requested {
+<<<<<<< Updated upstream
   color: #393652;
+=======
+  color: #34314b;
+>>>>>>> Stashed changes
 }
 
 /*========== Arrows for the Accordion Widget ==========*/
@@ -920,7 +949,11 @@ a.tag:not(.fandom.index.group a.tag, h2.heading a.tag, .splash .favorite a.tag),
 a.tag:not(.fandom.index.group a.tag, h2.heading a.tag, .splash .favorite a.tag),
 .added.tag,
 .tags a[data-remote="true"] {
+<<<<<<< Updated upstream
   background-color: #393652;
+=======
+  background-color: #34314b;
+>>>>>>> Stashed changes
 }
 
 /*========== Consolidated Hover Effects ==========*/
@@ -973,13 +1006,21 @@ dd.fandom.tags a {
 }
 
 .unwrangled {
+<<<<<<< Updated upstream
   background-color: #393652 !important;
+=======
+  background-color: #34314b !important;
+>>>>>>> Stashed changes
   border: 1px solid #9893a525;
 }
 
 .tags a[data-remote="true"]:hover,
 .tags a[data-remote="true"]:focus {
+<<<<<<< Updated upstream
   background-color: #393652;
+=======
+  background-color: #34314b;
+>>>>>>> Stashed changes
 }
 
 .fandom.index.group a.tag:hover,
@@ -989,7 +1030,11 @@ h2.heading a.tag:hover {
 
 .added.tag {
   position: relative;
+<<<<<<< Updated upstream
   background-color: #393652;
+=======
+  background-color: #34314b;
+>>>>>>> Stashed changes
 }
 
 /*===== Definition Lists (Subscriptions, Related Works, Edit Multiple Works) =====*/
@@ -1613,7 +1658,11 @@ You can replace the border color with any other rgb, rgba, or hex color, transpa
 /* General audiences */
 .required-tags .rating-general-audience,
 img[src$="/images/skins/iconsets/default/rating-general-audience.png"] {
+<<<<<<< Updated upstream
   background-color: #393652;
+=======
+  background-color: #34314b;
+>>>>>>> Stashed changes
   /* change background color here */
   color: #0000001a;
   /* change border color here */
@@ -1669,7 +1718,11 @@ img[src$="/images/skins/iconsets/default/category-het.png"] {
 /* Gen */
 .required-tags .category-gen,
 img[src$="/images/skins/iconsets/default/category-gen.png"] {
+<<<<<<< Updated upstream
   background-color: #393652;
+=======
+  background-color: #34314b;
+>>>>>>> Stashed changes
   /* change background color here */
   color: #0000001a;
   /* change border color here */
@@ -1687,7 +1740,11 @@ img[src$="/images/skins/iconsets/default/category-slash.png"] {
 /* Multi */
 .required-tags .category-multi,
 img[src$="/images/skins/iconsets/default/category-multi.png"] {
+<<<<<<< Updated upstream
   background: conic-gradient(from 360deg, #c4a7e7 0% 25%, #393652 25% 50%, #9ccfd8 50% 75%, #3e8fb0 75% 100%);
+=======
+  background: conic-gradient(from 360deg, #c4a7e7 0% 25%, #34314b 25% 50%, #9ccfd8 50% 75%, #3e8fb0 75% 100%);
+>>>>>>> Stashed changes
   /* conic gradient with the colors of the relationship icons */
   color: #0000001a;
   /* change border color here */
@@ -1727,7 +1784,11 @@ img[src$="/images/skins/iconsets/default/warning-yes.png"] {
 /* External work */
 .required-tags .external-work,
 img[src$="/images/skins/iconsets/default/warning-external-work.png"] {
+<<<<<<< Updated upstream
   background-color: #393652;
+=======
+  background-color: #34314b;
+>>>>>>> Stashed changes
   /* change background color here */
   color: #0000001a;
   /* change border color here */
@@ -1738,7 +1799,11 @@ img[src$="/images/skins/iconsets/default/warning-external-work.png"] {
 /* Uncomplete/unfulfilled */
 .required-tags .complete-no,
 img[src$="/images/skins/iconsets/default/complete-no.png"] {
+<<<<<<< Updated upstream
   background-color: #393652;
+=======
+  background-color: #34314b;
+>>>>>>> Stashed changes
   /* change background color here */
   color: #0000001a;
   /* change border color here */
@@ -1758,14 +1823,22 @@ img[src$="/images/skins/iconsets/default/complete-yes.png"] {
 /* Rec */
 .status .rec,
 img[src$="/images/skins/iconsets/default/bookmark-rec.png"] {
+<<<<<<< Updated upstream
   background-color: #393652;
+=======
+  background-color: #34314b;
+>>>>>>> Stashed changes
   /* change background color here */
   color: #0000001a;
   /* change border color here */
 }
 
 .bookmark .blurb p.status a:not(.short a):has(.rec)::before {
+<<<<<<< Updated upstream
   border-inline-color: #393652;
+=======
+  border-inline-color: #34314b;
+>>>>>>> Stashed changes
   /* ribbon color */
 }
 

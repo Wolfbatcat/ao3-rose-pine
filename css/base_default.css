@@ -33,7 +33,7 @@ span.claimed,
 h5.fandoms.heading a.tag,
 dd.fandom.tags a,
 select {
-    font-family: Outfit, Pier Sans Light, Domine, Helvetica, "Trebuchet MS", "Lucida Sans", Arial, san-serif, "GNU Unifont";
+    font-family: Figtree, Helvetica, "Trebuchet MS", "Lucida Sans", Arial, san-serif, "GNU Unifont";
     font-weight: 400;
 }
 
@@ -45,7 +45,7 @@ h4,
 h5,
 h6,
 .heading {
-    font-family: Outfit, Piers Sans, Domine, Helvetica, "Trebuchet MS", "Lucida Sans", Arial, sans-serif, "GNU Unifont";
+    font-family: Figtree, Helvetica, "Trebuchet MS", "Lucida Sans", Arial, sans-serif, "GNU Unifont";
     font-weight: 600;
 }
 
@@ -65,6 +65,7 @@ textarea#skin_css,
     /* font-style: italic; */
     /* For cursive version of Victor Mono */
 }
+<<<<<<< Updated upstream
 
 /*═════════════════════════════════════════════════════════════*
  *                ʚʚʚ Symbols ɞɞɞ                *
@@ -114,3 +115,5 @@ dd.fandom.tags a,
    /*  .userstuff p {
         text-align: left !important;
     } 
+=======
+>>>>>>> Stashed changes
