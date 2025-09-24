@@ -120,7 +120,7 @@ GLOBAL VARIABLES
   --icon-content-incomplete:  #f6c177;    /* Incomplete */
   --icon-content-public:      #3e8fb0;    /* Public Bookmark */
   --icon-content-private:     #eb6f92;    /* Private Bookmark */
-  --icon-content-hidden:      var(--link-visited); /* Hidden Bookmark */
+  --icon-content-hidden:      #6e6a86; /* Hidden Bookmark */
   --icon-content-rec:         #f6c177;    /* Rec Bookmark */
 
   /* RATING ICONS */
