@@ -33,8 +33,6 @@
 <details>
 <summary>2. Add a color variation</summary>
 
-Skip this step if you only want the Dawn scheme.
-
 1. Create another skin titled something like `[BBC] Rosé Pine Moon`.
 2. Paste the alternate color-scheme CSS into the CSS field. See:
     - `theme_rosepinedawn.css` (Rosé Pine Dawn)
@@ -43,7 +41,7 @@ Skip this step if you only want the Dawn scheme.
     - `theme_rosepine.css` (Rosé Pine)
     - `theme_rosepinecool.css` (Rosé Pine Cool)
 3. Set this skin to **Parent Only** and submit.
-4. (Optional) To have this act as a dark-mode variation, edit the skin and under Advanced → Choose @media, set: `(prefers-color-scheme: dark)`.
+4. (Optional) To have a skin act as a light or dark-mode variation, create a second theme and under **Advanced → Choose @media**, set: `(prefers-color-scheme: light)` or `(prefers-color-scheme: dark)`.
 
 </details>
 
@@ -82,8 +80,8 @@ Skip this step if you only want the Dawn scheme.
 </details>
 
 ## Customization
-
-- **Fonts**: recommended — [Domine](https://fonts.google.com/specimen/Domine) (serif) and [Figtree](https://fonts.google.com/specimen/Figtree) (sans-serif). The code font is [Victor Mono](https://rubjo.github.io/victor-mono/) set to cursive, just uncomment it in `base_default.css`.
+> **Note: AO3's code editor does NOT save annotations. If you want to edit a skin, I highly recommend downloading the skin and using a code editor to make your edits.**
+- **Fonts**: recommended — [Domine](https://fonts.google.com/specimen/Domine) (serif) and [Figtree](https://fonts.google.com/specimen/Figtree) (sans-serif). The code font is [Victor Mono](https://rubjo.github.io/victor-mono/) set to cursive, just uncomment it in your theme skin.
 - **Colors**: Variables are listed at the top of each theme CSS file in the repo. To change colors:
   1. Open the CSS file in a text editor.
   2. Find the color you want to replace. To update all instances of that color, highlight it and press `Ctrl+H`. To see where variables are used, refer to `base.css`.

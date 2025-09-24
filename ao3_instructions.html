@@ -33,7 +33,7 @@
 
   <h2>Installation</h2>
 
-  <p>To use this skin on AO3, you’ll be creating a small set of linked skins. The base file sets up variables and structure, but you’ll also need to apply one of the theme files (Dawn, Moon, Cool, etc.) to actually get colors.</p>
+  <p>To use this skin on AO3, you’ll be creating a small set of linked skins. The base file sets up variables and structure, but you’ll also need to apply one of the theme files (Rose Pine Dawn, Rose Pine Moon, etc.) to actually get colors.</p>
 
   <h3>1. Create the Base Skin</h3>
   <ul>
@@ -44,7 +44,7 @@
     <li>Click <strong>Submit</strong>.</li>
   </ul>
 
-  <h3>2. Create a Theme Skin (Required)</h3>
+  <h3>2. Create a Theme Skin</h3>
   <p>This step provides the actual colors. Pick one of the themes below.</p>
   <ul>
     <li>Create a skin titled something like <code>[BBC] Rosé Pine Dawn</code> or <code>[BBC] Rosé Pine Moon</code>.</li>
@@ -58,7 +58,7 @@
       </ul>
     </li>
     <li>Set it to <strong>Parent Only</strong> and submit.</li>
-    <li>(Optional) To make this act as a dark mode: edit the skin, go to <strong>Advanced → Choose @media</strong>, and set it to <code>(prefers-color-scheme: dark)</code>.</li>
+    <li>(Optional) To have a skin act as a light or dark-mode variation, create a second theme and under <strong>Advanced → Choose @media</strong>, set: <code>(prefers-color-scheme: light)</code> or <code>(prefers-color-scheme: dark)</code>.</li>
   </ul>
 
   <h3>3. Create the Tablet Skin</h3>
@@ -93,6 +93,10 @@
   </ul>
 
   <h2>Customization</h2>
+  <div class="note">
+  <strong>Note:</strong> AO3's code editor does NOT save annotations. If you want to edit a skin, I highly recommend downloading the skin and using a code editor to make your edits.
+</div>
+
   <ul>
     <li><strong>Fonts:</strong> recommended are <a href="https://fonts.google.com/specimen/Domine" rel="nofollow">Domine</a> (serif) and <a href="https://fonts.google.com/specimen/Figtree" rel="nofollow">Figtree</a> (sans-serif). Code snippets can use <a href="https://rubjo.github.io/victor-mono/" rel="nofollow">Victor Mono</a>. For the cursive version of the code font, just remove the comments from <code>/* font-style: italic; */</code> in your theme file.</li>
     <li><strong>Colors:</strong> each theme’s variables are listed at the top of its CSS file. To tweak, open the file in a text editor, find the color you want to change, and use <strong>Ctrl+H</strong> to replace it everywhere.</li>
