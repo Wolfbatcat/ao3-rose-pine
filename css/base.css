@@ -1705,6 +1705,10 @@ h2.heading a.tag:hover {
   color: var(--link);
 }
 
+a.tag:hover {
+  background: none;
+}
+
 /*========== Tag type variants ==========*/
 
 [class^=warning] a.tag {
@@ -1934,6 +1938,7 @@ fieldset fieldset.listbox {
 /* border at the bottom only in some cases */
 .listbox .index:has(+ .actions[role="navigation"], + h4, + .actions #expand-fandoms) {
   border-bottom: var(--border-width) solid var(--border2);
+  box-shadow: none;
 }
 
 /* mods: alphabet, medium */
