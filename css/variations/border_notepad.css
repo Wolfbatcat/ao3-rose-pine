@@ -48,4 +48,40 @@
   /* ================== SHADOWS (simplified) ================== */
   --shadow-s: 0 2px 4px rgba(0,0,0,0.07);
   --shadow-l: 0 4px 12px rgba(0,0,0,0.1);
+
+
+
+  :root {
+  --color-accent-3-light: #4c58ab;
+  --background-primary: #f2f3fa;
+  --background-primary-alt: #eff1f9;
+  --background-secondary: #ecedf8;
+  --background-secondary-alt: #e9ebf7;
+  --background-tertiary: #dde1fe;
+  --background-modifier-hover: #9d9fa839; /* includes alpha 0.225 */
 }
+
+}
+
+
+
+0 -1px 0 0 rgba(255, 255, 255, .24), 
+0 0 0 1px #e4e8fd, 
+0 0 4px #e4e8fd, 
+0px 4px 8px -6px #e4e8fd, 
+inset 0px -1px 0px #dde1fe, 
+inset 0 -2px 2px 0 #dde1fe
+
+
+
+0 -1px 0 0 rgba(255, 255, 255, .24),
+ 0 0 0 1px #c1c7ec,
+  0 0 6px #c1c7ec;
+
+
+  0 -1px 0 0 rgba(255, 255, 255, .24), 0 0 0 1px #717cc033, 0 0 6px #717cc033
+
+  --var(--background-modifier-border): hsla( 232.0408163265306 , calc(0.4* 96.07843137254902% ), calc( 60% ), 0.2)
+
+
+  0 -1px 0 0 rgba(255, 255, 255, .24), 0 0 0 1px hsla( 232.0408163265306 , calc(0.4* 96.07843137254902% ), calc( 60% ), 0.2) , 0 0 6px hsla( 232.0408163265306 , calc(0.4* 96.07843137254902% ), calc( 60% ), 0.2)

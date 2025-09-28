@@ -596,7 +596,7 @@ col.name {
   background-color: var(--int-current-bg);
   color: var(--int-current-txt);
   border: 1px solid var(--int-current-border);
-  box-shadow: var(--shadow-box2);
+  box-shadow: none;
 }
 
 #dashboard .current:hover {
@@ -2915,9 +2915,15 @@ dl.nomination {
 /* work margins and text */
 #workskin {
   max-width: 70em; /* slightly more narrow than default */
-  margin: 0 auto;
+  margin-top: 2em;
+  margin-bottom: 2em;
   padding: 0 2%;
   font-size: var(--txt-size-work); /* change font size of works here */
+  background-color: var(--bg5) !important;
+  border: var(--border-width) solid var(--border3);
+  border-radius: var(--radius-big);
+  box-shadow: var(--shadow-box1);
+  padding: 0.75em;
 }
 
 /*============================================================
@@ -3239,6 +3245,7 @@ dl#symbols-key dd {
   box-sizing: border-box;
   border: var(--border-width) solid var(--icon-border2);
   background: var(--icon-bg);
+  box-shadow: var(--shadow);
 }
 
 /* default user icon */
