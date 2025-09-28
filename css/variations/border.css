@@ -299,16 +299,14 @@ a.tag:not(.fandom.index.group a.tag,
   [class^=character] a.tag):after {
   content: "\00a0\00a0✿";
 }
+/* ================================================
+   Bookmarks search/list: show blurb shadows cleanly
+   ================================================ */
 
 
 
-li.blurb {
-  margin: 0.75em 0;
-  border-radius: var(--radius-big);
-}
-li.blurb .blurb {
-  box-shadow: var(--shadow-box1);
-}
+
+
 
 
 
