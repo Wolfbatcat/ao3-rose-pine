@@ -1,0 +1,264 @@
+/*============================================================
+
+                      ÊšÊšÊš Dreamy ÉžÉžÉž 
+                  Theme: Lavender Periwinkle Palette
+
+==============================================================
+GLOBAL VARIABLES
+==============================================================*/
+
+:root {
+
+/*>========== UI PARAMETERS ==========<*/
+
+  --margins-header:      1rem;
+  --margins-main:        5%;
+  --margins-narrow:      2.5%;
+
+  --radius-small:        0.75rem;
+  --radius-mid:          0.75rem;
+  --radius-big:          0.75rem;
+  --radius-alt:          0.75rem;
+  --radius-tag:          0 15px 15px;
+
+  --icon-content-radius: 0.75rem;
+  --icon-primary-radius: 99999px;
+  --icon-index-radius:   0.75rem;
+
+
+/*>========== MAIN BACKGROUND COLORS ==========<*/
+
+  --bg1:  #f2f5fd;   /* main background - strong periwinkle tint */
+  --bg2:  #e8eefc;   /* header - rich lavender undertone */
+  --bg3:  #f2f5fd;   /* dashboard */
+  --bg4:  var(--bg5);
+  --bg5:  #e8eefc;   /* blurbs, boxes - matches header */
+  --bg6:  var(--bg5);
+  --bg7:  var(--bg5);
+
+
+/*>========== MAIN BORDERS ==========<*/
+
+  --border1: #c8d6f0;  /* strong periwinkle border */
+  --border2: #bbcfed;  /* deeper periwinkle */
+  --border3: var(--border2);
+  --border4: #adc6e9;  /* richest periwinkle border */
+
+  --border-width: 1px;
+
+
+/*>========== SHADOWS ==========<*/
+
+  --shadow:         0 0.25em 0.5em rgba(98, 125, 155, 0.15);
+  --shadow-header:  0 2px 8px 0 rgba(194, 215, 231, 0.2), 0 1px 0 0 rgba(194, 215, 231, 0.1);
+  --shadow-buttons: 0 2px 6px 0 rgba(194, 215, 231, 0.2), 0 1.5px 0 0 rgba(214, 227, 236, 0.5);
+  --shadow-box1:    0 2px 8px 0 rgba(194, 215, 231, 0.2), 0 1.5px 0 0 rgba(214, 227, 236, 0.5);
+  --shadow-box2:    0 1.5px 4px 0 rgba(194, 215, 231, 0.13), 0 1px 0 0 rgba(206, 225, 236, 0.25);
+
+
+/*>========== MAIN TEXT ==========<*/
+
+  --txt-size-main: 100%;
+  --txt-size-work: 110%;
+
+  --txt-header:        #2b4175; /* harmonized periwinkle-blue */
+  --txt-header-hgl:    var(--link-hgl);
+  --txt-header-hgl-h1: linear-gradient(125deg, #89baf0, #5691d8);
+  --txt-main:          #364d7f; /* consistent periwinkle undertone */
+  --txt-alt1:          #FFFFFF;
+  --txt-alt2:          #FFFFFF;
+
+  --txt-semibold: 500;
+  --txt-bold:     700;
+
+  --link:          #5691d8;  /* base periwinkle - matches tags */
+  --link-hgl:      #4881cc;  /* deeper periwinkle hover */
+  --link-visited:  #3a70c0;  /* visited periwinkle */
+  --link-underline: 1px solid transparent;
+
+
+/*>========== INTERACTION COLORS ==========<*/
+
+  --int-btn-bg:       var(--bg5);
+  --int-btn-border:   var(--border4);
+  --int-btn-txt:      var(--txt-main);
+  --int-btn-hgl-bg:   linear-gradient(to bottom right, #9cc7ed, #83b4e7);
+  --int-btn-hgl-txt:  #ffffff;
+  --int-btn-hgl-border: rgba(0,0,0,0.02);
+
+  --int-bg:       var(--bg5);
+  --int-search:   var(--bg5);
+
+  --int-current-bg:     var(--bg5);
+  --int-current-txt:    var(--txt-main);
+  --int-current-border: var(--border1);
+  --int-disabled-bg:    var(--border1);
+  --int-checked:        #6ea3e1;
+
+  --int-hgl:      var(--link-hgl);
+  --int-hgl-bg:   var(--int-btn-hgl-bg);
+  --int-hgl-txt:  #ffffff;
+
+
+/*>========== ICON COLORS ==========<*/
+
+/* Core content - harmonized periwinkle family */
+  --icon-content-complete:   #5691d8;  /* base periwinkle - matches links */
+  --icon-content-incomplete: #d7e6fb;  /* lightest periwinkle */
+  --icon-content-public:     #6ea3e1;  /* matches checked state */
+  --icon-content-private:    #4881cc;  /* matches link hover */
+  --icon-content-hidden:     #9cc7ed;  /* mid-light periwinkle */
+  --icon-content-rec:        #83b4e7;  /* mid periwinkle */
+
+/* Ratings - same harmonized family */
+  --icon-rating-explicit: #4881cc;  /* deepest */
+  --icon-rating-mature:   #5691d8;  /* base */
+  --icon-rating-teen:     #6ea3e1;  /* lighter */
+  --icon-rating-gen:      #83b4e7;  /* lightest */
+
+/* Relationships - consistent progression */
+  --icon-relationship-mm:  #4881cc;
+  --icon-relationship-ff:  #5691d8;
+  --icon-relationship-mf:  #6ea3e1;
+  --icon-relationship-gen: #83b4e7;
+  --icon-multi:               conic-gradient(from 360deg, #4881cc 0% 25%, #5691d8 25% 50%, #6ea3e1 50% 75%, #83b4e7 75% 100%);
+  --icon-relationship-other:  linear-gradient(to left top, #4881cc, #5691d8, #6ea3e1, #83b4e7);
+
+/* Warnings */
+  --icon-warning-yes:        #6ea3e1;
+  --icon-warning-choose-not: #83b4e7;
+  --icon-content-external:   #3a70c0;  /* matches visited links */
+
+/* Bookmark icons */
+  --icon-content-rec:     #83b4e7;
+  --icon-content-public:  #6ea3e1;
+  --icon-content-private: #4881cc;
+  --icon-content-hidden:  #9cc7ed;
+
+/* Misc */
+  --icon-bg:     var(--int-bg);
+  --icon-id:     var(--link);
+  --icon-anon:   var(--border4);
+
+  --icon-border1: var(--int-btn-hgl-border);
+  --icon-border2: var(--border2);
+
+
+/*>========== TAG COLORS ==========<*/
+
+  --tag-fandom-bg:     #4881cc;  /* deepest - matches link hover */
+  --tag-warning-bg:    #5691d8;  /* base - matches links */
+  --tag-ship-bg:       #6ea3e1;  /* matches checked state */
+  --tag-character-bg:  #83b4e7;  /* mid-light */
+  --tag-default-bg:    #d7e6fb;  /* very light periwinkle - proper hierarchy */
+  --tag-freeform-bg:   var(--tag-default-bg);
+  --tag-splash-bg:     #e8eefc;
+
+  --tag-fandom-txt:    #ffffff;
+  --tag-warning-txt:   #ffffff;
+  --tag-ship-txt:      #ffffff;
+  --tag-character-txt: #ffffff;
+  --tag-default-txt:   #4881cc;  /* matches header text */
+  --tag-freeform-txt:  var(--tag-default-txt);
+
+  --tag-border:        rgba(169, 186, 208, 0.15);
+
+  --tag-hgl-bg:        var(--int-btn-hgl-bg);
+  --tag-hgl-txt:       #ffffff;
+  --tag-hsl-shadow:    inset 0 0 0 1px rgba(255,255,255,0.3);
+
+
+/*>========== COLORS FOR ROLES/STATES ==========<*/
+
+  --notice-bg:  #f0f6fd;   /* periwinkle notice background */
+  --success-bg: #ecf3fc;   /* periwinkle success */
+  --caution-bg: #f3f7fd;   /* periwinkle caution */
+  --alert-bg:   #eff4fd;   /* periwinkle alert */
+
+  --notice-txt:  #6ea3e1;
+  --success-txt: #3a70c0;  /* matches visited links */
+  --caution-txt: #5691d8;  /* matches base links */
+  --alert-txt:   #4881cc;  /* matches link hover */
+
+
+/*>========== FILTERS ==========<*/
+
+  --header-icon:     brightness(0) saturate(100%) invert(22%) sepia(85%) saturate(428%) hue-rotate(184deg) brightness(95%) contrast(97%);
+  --header-icon-hgl: brightness(0) saturate(100%) invert(42%) sepia(98%) saturate(363%) hue-rotate(174deg) brightness(93%) contrast(87%);
+  --kudos-icon:      var(--header-icon-hgl);
+  --lock-icon:       var(--header-icon);
+  --tag-filter:      brightness(1.0) saturate(1.25);
+  --stats-icon:      var(--header-icon);
+  --stat-chart:      saturate(70%) hue-rotate(210deg) contrast(92%) sepia(12%);
+  --rich-txt-editor: none;
+
+}
+
+/*============================================================
+FONTS, TEXT DECORATIONS, ETC.
+============================================================*/
+
+body,
+input,
+.toggled form,
+.dynamic form,
+.secondary,
+.dropdown,
+blockquote,
+.prompt .blurb h6,
+.bookmark .user .meta,
+a.work,
+span.symbol,
+.heading .actions,
+.heading .action,
+.heading span.actions,
+button,
+span.unread,
+.replied,
+span.claimed,
+.actions span.defaulted,
+.splash .news .meta,
+.datetime,
+h5.fandoms.heading a.tag,
+dd.fandom.tags a,
+select {
+    font-family: Figtree, Helvetica, "Trebuchet MS", "Lucida Sans", Arial, san-serif, "GNU Unifont";
+}
+
+h1,
+h2,
+h3,
+.heading {
+    font-family: Figtree, Helvetica, "Trebuchet MS", "Lucida Sans", Arial, sans-serif, "GNU Unifont";
+    font-weight: var(--txt-bold);
+}
+
+kbd,
+tt,
+code,
+var,
+pre,
+samp,
+textarea,
+textarea#skin_css,
+.css.module blockquote pre,
+#floaty-textarea {
+    font-family: Victor Mono SemiBold, Consolas, Monaco, Courier, monospace;
+    font-size: 0.9em;
+}
+
+/* Decorative touches */
+#header .heading a::before { content: "AO3\00a0✦"; }
+#dashboard .current:after { content: "\00a0✦"; }
+.home .header h2::after { content: "\00a0✦"; }
+.splash>.module h3::after { content: "\00a0✦"; }
+a.tag:not(.fandom.index.group a.tag,
+  h2.heading a.tag,
+  .splash .favorite a.tag,
+  h5.fandoms.heading a.tag,
+  dd.fandom.tags a,
+  [class^=warning] a.tag,
+  [class^=relationship] a,
+  [class^=character] a.tag):after {
+  content: "\00a0\00a0✦";
+}

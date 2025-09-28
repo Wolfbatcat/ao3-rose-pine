@@ -1,0 +1,51 @@
+:root {
+  /* ================== TEXT ================== */
+  --text-normal: #1c1d20;
+  --text-muted: #535564;
+  --text-faint: #989bae;
+  --text-accent: #4761fb;        /* color-accent-1-light */
+  --text-accent-hover: #5d74fb;  /* color-accent-2-light */
+
+  /* ================== ACCENT ================== */
+  --color-accent: #3751fb;       /* base accent */
+  --color-accent-1: #4761fb;     /* lighter variant */
+  --color-accent-2: #5d74fb;     /* even lighter */
+  --color-accent-3: #606cb7;     /* desaturated */
+
+  /* ================== SEMANTIC COLORS ================== */
+  --color-red: #dd2c38;
+  --color-green: #1da51d;
+  --color-orange: #de7417;
+  --color-yellow: #c09c0c;
+  --color-cyan: #16a6ab;
+  --color-blue: #1775d9;
+  --color-purple: #8f47e1;
+  --color-pink: #dd1399;
+
+  /* ================== BACKGROUNDS ================== */
+  --background-primary: #ffffff;
+  --background-primary-alt: #fafafa;
+  --background-secondary: #f6f7fb;
+  --background-secondary-alt: #fcfcfc;
+  --background-tertiary: #eff1fa;
+  --workspace-background-translucent: #f6f6f6cc;
+  --background-modifier-hover: #9a9db026;
+  --background-modifier-active-hover: #3751fb26;
+  --background-modifier-box-shadow: #0000001a;
+  --background-modifier-cover: #dcdcdc66;
+  --background-modifier-form-field: transparent;
+  --search-result-background: transparent;
+
+  /* ================== BORDERS ================== */
+  --background-modifier-border: #606cb733;
+  --background-modifier-border-hover: #606cb740;
+  --background-modifier-border-focus: #606cb74d;
+
+  /* ================== HIGHLIGHTS ================== */
+  --text-highlight-bg: #ffd00066;
+  --text-highlight-bg-active: #ff800066;
+
+  /* ================== SHADOWS (simplified) ================== */
+  --shadow-s: 0 2px 4px rgba(0,0,0,0.07);
+  --shadow-l: 0 4px 12px rgba(0,0,0,0.1);
+}

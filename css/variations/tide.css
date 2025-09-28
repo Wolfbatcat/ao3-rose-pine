@@ -1,0 +1,1727 @@
+@charset "UTF-8";
+/*
+===========================
+General font and text stuff
+===========================
+*/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.heading {
+  /*
+    -----------------TITLE FONT-----------------
+  This is the font for the titles, not for the body of text. 
+  If you want to change it remember to provide fallback fonts 
+  (something like 'serif' or 'sans-serif', separated by a comma)
+  */
+  font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
+  border-bottom: none;
+  font-weight: normal;
+}
+
+body,
+input,
+.toggled form,
+.dynamic form,
+.secondary,
+.dropdown,
+button,
+blockquote,
+.filters dt,
+.filters dd,
+.filters input[type=submit],
+.filters .expander,
+.bookmark .user .meta,
+.datetime,
+a.work,
+span.symbol, .splash .news .meta, select {
+  /*
+  -----------------MAIN FONT-----------------
+  This is the font for the entire body of text. If you need to change it please do it here
+  Please also remember to provide fallback fonts 
+  (something like 'serif' or 'sans-serif', separated by a comma)
+  */
+  font-family: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", sans-serif;
+}
+
+.qtip-content, p.note, blockquote, body,
+input,
+.toggled form,
+.dynamic form,
+.secondary,
+.dropdown,
+button, #main, select {
+  /*
+  -----------------TEXT SIZE-----------------
+  This sets the default text size
+  if you need to increase or decrease, please keep in mind that "em"
+  as a measurement changes A LOT between numbers, so you might want to try
+  decimals like 1.1em, 1.2em, 1.15em before going a number up (or down)
+  */
+  font-size: 1em;
+}
+
+.home .header h2,
+.preface h3,
+.faq .categories h3,
+.userstuff h3,
+#footer a {
+  /*
+  Removes all the underlines from titles
+  */
+  border-bottom: none;
+}
+
+.filters dt,
+.filters dd,
+.filters input[type=submit],
+.filters .expander, .userstuff li, .userstuff ul, .userstuff p, .userstuff h2, .userstuff h1, .userstuff h3, .userstuff h4, p.note, blockquote, body,
+input,
+.toggled form,
+.dynamic form,
+.secondary,
+.dropdown,
+button, #main, select {
+  /*
+  -----------------LINE HEIGHT-----------------
+  This is the line height of the text.
+
+    if you need to increase or decrease, please keep in mind that "em"
+  as a measurement changes A LOT between numbers, so you might want to try
+  decimals like 1.7em, 1.5em, 1.65em before going a number up (or down)
+  */
+  line-height: 1.5;
+}
+
+.filters dt,
+.filters dd,
+.filters input[type=submit],
+.filters .expander {
+  /* 
+  a smaller text for the filters
+  just remove the font-size line if you want it bigger
+  */
+  font-size: 0.8333333333em;
+}
+
+h4.heading {
+  /*ALLTHETITLESSSS*/
+  font-size: 1.44em;
+  font-weight: normal;
+}
+
+h4 {
+  /* should this be here if I reset it later? */
+  font-size: 1.2em;
+}
+
+h4.heading .datetime {
+  /* slightly bigger date on blurbs*/
+  padding: 5px;
+  font-size: 0.5787037037em;
+}
+
+.preface a:hover {
+  text-decoration: none;
+}
+
+#header {
+  /*
+  font size  of the stuff in the header menu
+  */
+  font-size: 0.8333333333em;
+}
+
+.news h4.heading {
+  margin: 0;
+}
+
+code, pre {
+  font-family: "Courier New", Courier, Monospace;
+  font-size: 1em;
+  padding: 1em 0.5em;
+}
+
+html,
+body,
+div,
+span,
+applet,
+object,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+.filters dt,
+.filters dd,
+.filters input[type=submit],
+.filters .expander {
+  /* 
+  for some weird reason this is needed 
+  or fonts just won't behave
+  */
+  font-size: 100%;
+}
+
+#header {
+  margin: 0px;
+  padding: 0.8em;
+  border-bottom: 1px solid;
+  border-color: #e8e8e8;
+}
+
+#header .search {
+  float: none;
+}
+
+input#site_search {
+  width: 60px;
+}
+
+#header #search .text {
+  margin: 0;
+}
+
+input#site_search:focus {
+  width: auto;
+}
+
+#header .heading {
+  position: relative;
+  display: inline-block;
+  z-index: 1;
+  padding: 0;
+  margin-left: 0.5em;
+}
+
+#login,
+#greeting {
+  float: right;
+  position: relative;
+  display: inline-block;
+  padding: 0.5em;
+  margin-right: 0.5em;
+}
+
+#header .primary {
+  position: relative;
+  display: block;
+  float: none;
+  background: none;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  box-shadow: none;
+}
+
+#header .primary a {
+  color: currentColor;
+}
+
+#header .logo,
+#header .heading sup,
+#greeting p.icon {
+  display: none;
+}
+
+#header li {
+  display: inline-block;
+  float: none;
+  position: relative;
+}
+
+#header input,
+#header #search > *,
+#header #search .submit {
+  display: inline;
+  float: none;
+  vertical-align: middle;
+}
+
+#header .user {
+  padding: 0px;
+}
+
+#header h1 {
+  vertical-align: sub;
+}
+
+#header .user a:hover,
+#header .user a:focus,
+#header .user .current {
+  color: currentColor;
+  border-radius: 0px;
+}
+
+#footer {
+  background-image: none;
+  border-top: none;
+}
+
+#inner.wrapper {
+  min-height: 80vh;
+}
+
+#main {
+  padding-top: 2em;
+}
+
+#main.dashboard {
+  margin-top: 0px;
+}
+
+#header .menu li {
+  border-bottom: none;
+  margin: 0;
+}
+
+#header .open .menu, #header .dropdown:hover .menu, .open + #small_login, #header .menu li {
+  border-radius: 5px;
+}
+
+.notice a,
+.notice a:link,
+.notice a:visited,
+.announcement a,
+.announcement a:link,
+.announcement a:visited {
+  text-decoration: underline;
+}
+
+/*
+========
+Buttons!
+========
+*/
+#header .menu,
+#small_login,
+#header .dropdown:hover .current + .menu,
+.event .userstuff, .notice,
+.comment_notice,
+ul.notes,
+.caution,
+.error,
+.comment_error,
+.alert.flash,
+.actions a:hover,
+.actions input:hover,
+.actions a:focus,
+.actions input:focus,
+label.action:hover,
+.action:hover,
+.action:focus,
+.dynamic form,
+.ui-draggable form, #header .primary,
+.group.listbox,
+fieldset fieldset.listbox,
+#main li.blurb,
+.wrapper,
+#dashboard .secondary,
+.secondary,
+form blockquote.userstuff,
+.thread .comment,
+.toggled form,
+.listbox .index,
+form .notice,
+form ul.notes,
+form.verbose legend,
+.verbose form legend,
+span.question,
+fieldset,
+form dl,
+fieldset dl dl,
+fieldset fieldset fieldset,
+fieldset fieldset dl dl,
+dd.hideme,
+.delete a,
+span.delete,
+#header ul.primary, .ui-sortable li, input, .actions input,
+input[type=submit],
+textarea, .actions a,
+.actions a:link,
+.action,
+.action:link,
+button, button[type=submit],
+.current,
+.actions label {
+  /*
+  This resets the shadows in several places
+  */
+  box-shadow: none;
+}
+
+#footer,
+.autocomplete .dropdown ul li:hover,
+li.selected,
+.autocomplete a:hover, form .notice,
+form ul.notes,
+form.verbose legend,
+.verbose form legend, input, .actions input,
+input[type=submit],
+textarea, .actions a,
+.actions a:link,
+.action,
+.action:link,
+button, button[type=submit],
+.current,
+.actions label {
+  /*
+  This resets the background image from default skin in several places
+  */
+  background-image: none;
+}
+
+.actions input,
+input[type=submit],
+textarea, .actions a,
+.actions a:link,
+.action,
+.action:link,
+button, button[type=submit],
+.current,
+.actions label {
+  /*
+  Further 3d elements to reset in webkit browsers
+  */
+  -webkit-appearance: none;
+}
+
+form .notice,
+form ul.notes,
+form.verbose legend,
+.verbose form legend,
+.actions a,
+.actions a:link,
+.action,
+.action:link,
+input[type=submit],
+button, button[type=submit],
+.current,
+.actions label, .notice,
+.comment_notice,
+ul.notes,
+.caution,
+.error,
+.comment_error,
+.alert.flash,
+.actions a:hover,
+.actions input:hover,
+.actions a:focus,
+.actions input:focus,
+label.action:hover,
+.action:hover,
+.action:focus,
+.toggled form,
+.dynamic form,
+.ui-draggable form {
+  /* Sets the style for border buttons */
+  border: none;
+}
+
+.actions a,
+.actions a:link,
+.action,
+.action:link,
+button, button[type=submit],
+.current,
+.actions label {
+  border: none;
+}
+
+input {
+  width: 96%;
+  border: 1px solid;
+}
+
+form.search input[type=text],
+dd.autocomplete li.input,
+input[type=radio],
+select,
+input[type=checkbox],
+input[type=file],
+input.number,
+p input,
+p select,
+.heading select,
+li select,
+input:focus,
+select:focus,
+textarea:focus,
+input,
+textarea {
+  border: 0px;
+}
+
+.actions a:hover,
+a:hover,
+.actions input:hover,
+#dashboard a:hover,
+.actions a:focus,
+.actions input:focus,
+#dashboard a:focus,
+.actions a:active,
+.current,
+a.current,
+.current a:visited,
+#dashboard .current,
+#outer .current,
+#header .current,
+span.unread,
+.replied,
+span.claimed,
+dl.index dd,
+.own,
+.draft,
+.draft .unread,
+.child,
+.unwrangled,
+.unreviewed,
+.ui-sortable li:hover,
+#header .primary .menu .current, button[type=submit]:hover {
+  /* resets the border color */
+  border-color: initial;
+  /* extra aggressive shadow removing */
+  box-shadow: none !important;
+}
+
+form .notice,
+form ul.notes,
+form.verbose legend,
+.verbose form legend,
+.actions a,
+.actions a:link,
+.action,
+.action:link,
+input[type=submit],
+button, button[type=submit],
+.current,
+.actions label {
+  border-bottom: none;
+}
+
+.listbox .index,
+.dashboard .listbox .index,
+.splash .news li,
+form dt,
+.picture .header, button[type=submit]:hover {
+  /* 
+  some stuff needs some aggressive non-bordering 
+  */
+  border: none;
+  border-bottom: none;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+}
+
+#header .menu,
+#small_login,
+#header .dropdown:hover .current + .menu,
+.event .userstuff {
+  /* 
+  removes some more effects of default skin
+  */
+  filter: none;
+}
+
+.autocomplete input,
+.autocomplete .dropdown ul li {
+  min-width: 10px;
+}
+
+fieldset.work.meta .fandom.required ul.autocomplete {
+  background: transparent;
+}
+
+/*
+============
+  Filters!
+============
+*/
+.filters fieldset {
+  padding: 0px;
+}
+
+.filters .expander,
+.filters .expanded .expander {
+  /* 
+  sets the spacing and font of the filter expander text 
+  */
+  padding: 0px;
+  font-size: 1.05em;
+  background: none;
+}
+
+.filters .expander::before {
+  /* 
+  This is the arrow for the filters 
+  */
+  content: "➙";
+}
+
+.filters .expanded .expander::before {
+  /* 
+  This is the arrow for the filters when expanded 
+  */
+  content: "➘";
+}
+
+.filters input:checked + .indicator + span {
+  /*
+  resets the weight from the Ao3 default skin
+  */
+  font-weight: inherit;
+}
+
+/*
+=================
+      Forms
+=================
+*/
+/*
+This is the very complicated code for the checkboxes and the radio
+yes I hate it too.
+
+*/
+.filters [type=radio] + .indicator:before,
+.filters [type=radio]:checked + .indicator:before,
+.filters [type=checkbox] + .indicator:before,
+.filters .exclude [type=checkbox] + .indicator:before,
+.filters [type=checkbox]:checked + .indicator:before,
+.filters .exclude [type=checkbox]:checked + .indicator:before,
+input[type=checkbox],
+input[type=radio],
+input[type=checkbox]:checked,
+input[type=radio]:checked,
+.actions input[type=checkbox]:checked,
+label.action input[type=checkbox]:checked,
+input[type=checkbox]:hover,
+.actions input[type=checkbox]:hover {
+  /*
+  sets the size of the checkboxes and radio boxes around the website
+  including filters
+  */
+  width: 0.8em;
+  height: 0.8em;
+}
+
+input[type=radio] {
+  border-radius: 50%;
+}
+
+.filters [type=radio] + .indicator:before {
+  content: "";
+  vertical-align: -0.125em;
+  background: none;
+  background-color: #ebebeb;
+  border: none;
+}
+
+.filters [type=radio]:checked + .indicator:before {
+  content: "";
+  vertical-align: -0.125em;
+  background: none;
+  background-color: #d84549;
+  border: none;
+}
+
+.filters [type=checkbox] + .indicator:before,
+.filters .exclude [type=checkbox] + .indicator:before {
+  content: "";
+  padding: 0px;
+  border-radius: 0px;
+  vertical-align: -0.125em;
+  background: none;
+  background-color: #ebebeb;
+  border: none;
+}
+
+.filters [type=checkbox]:checked + .indicator:before,
+.filters .exclude [type=checkbox]:checked + .indicator:before {
+  content: "";
+  padding: 0px;
+  border-radius: 0px;
+  vertical-align: -0.125em;
+  background: none;
+  background-color: #d84549;
+  border: none;
+}
+
+.filters .exclude [type=checkbox]:checked + .indicator:before {
+  /* 
+  the exclude filters have a different color when checked
+  */
+  background-color: #bd203a;
+}
+
+input[type=checkbox],
+input[type=radio],
+.actions input[type=checkbox],
+label.action input[type=checkbox] {
+  background-color: #ebebeb;
+  border: 1px solid #e8e8e8;
+}
+
+input[type=checkbox],
+input[type=radio],
+input[type=checkbox]:checked,
+input[type=radio]:checked,
+.actions input[type=checkbox]:checked,
+label.action input[type=checkbox]:checked,
+input[type=checkbox]:hover,
+.actions input[type=checkbox]:hover {
+  /* 
+  removes browser-specific appearance of checkboxes and radio 
+  */
+  display: inline-block;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+input[type=checkbox]:checked,
+input[type=radio]:checked,
+.actions input[type=checkbox]:checked,
+label.action input[type=checkbox]:checked {
+  background-color: #d84549;
+  border: none;
+}
+
+input[type=checkbox]:hover,
+.actions input[type=checkbox]:hover, .filters [type=checkbox]:hover + .indicator:before,
+.filters [type=radio]:hover + .indicator:before,
+.filters .exclude [type=checkbox]:hover + .indicator:before {
+  background-color: #e0878a;
+  border: none;
+}
+
+.filters dt {
+  min-width: auto;
+}
+
+.filters {
+  font-size: 90%;
+}
+
+/*
+===============================
+  makes the layout smaller
+===============================
+*/
+div#inner {
+  display: block;
+  margin: 0 auto;
+  width: 80%;
+  max-width: 100em;
+}
+
+/*
+===============================
+Borders and boxes in the layout
+===============================
+*/
+fieldset,
+form dl,
+fieldset dl dl,
+fieldset fieldset,
+fieldset fieldset fieldset,
+fieldset fieldset dl dl,
+dd.hideme,
+form blockquote.userstuff,
+.listbox,
+.listbox .index,
+fieldset fieldset.listbox,
+.own,
+.draft,
+.draft .wrapper,
+.unread,
+.child,
+.unwrangled,
+.unreviewed,
+form.verbose legend,
+.verbose form legend,
+li.blurb,
+li.comment,
+.comment h4.byline,
+dl.index dd,
+form blockquote.userstuff,
+table,
+tr,
+th,
+td,
+thead,
+tfoot,
+.reading h4.viewed,
+li.relationships a,
+#bookmark_form_placement form,
+#collection-form form, .nomination dt {
+  /* 
+  it removes the color background 
+  where it's set in Ao3's default skin
+  */
+  background: transparent;
+}
+
+.secondary,
+dl.meta,
+li.post.group,
+.faq .example,
+.guideline .example,
+tr:hover,
+fieldset,
+form dl,
+fieldset dl dl,
+fieldset fieldset fieldset,
+fieldset fieldset dl dl,
+dd.hideme,
+form blockquote.userstuff,
+.listbox,
+fieldset fieldset.listbox,
+.own,
+.draft,
+.draft .wrapper,
+.unread,
+.child,
+.unwrangled,
+.unreviewed,
+form.verbose legend,
+.verbose form legend,
+li.blurb,
+li.comment, #bookmark_form_placement form,
+#collection-form form {
+  /* 
+  sets the border shapes 
+  */
+  border: 1px solid;
+  border-radius: 5px;
+}
+
+th,
+thead,
+tbody tr {
+  /* 
+  sets the border shapes 
+  */
+  border: 1px solid;
+}
+
+li.post.group {
+  /* 
+  posts social distancing 
+  */
+  padding: 10px;
+}
+
+.splash .news li:last-of-type {
+  /* 
+  last news post in the home page has inexplicabbly a border-bottom
+  this removes it
+  */
+  border-bottom: 1px solid;
+  border-radius: 5px;
+}
+
+tr,
+th,
+td,
+thead,
+tfoot {
+  /* 
+  this is for tables
+  */
+  vertical-align: middle;
+}
+
+col.name {
+  background: transparent;
+}
+
+.bookmark .user,
+.filters dl,
+.filters dt,
+dl.index dd,
+div.comment,
+#modal,
+#dashboard.own,
+#dashboard ul,
+.autocomplete div.dropdown ul,
+.event .userstuff,
+#dashboard.own,
+#dashboard ul,
+.splash .module h3,
+.comment div.icon,
+a,
+a:link,
+a:visited:hover, .alert .userstuff {
+  /* remove borders */
+  border: none;
+}
+
+#dashboard.own,
+#dashboard ul,
+.splash .module h3,
+.comment div.icon,
+a,
+a:link,
+a:visited:hover {
+  /* 
+  further removes borders to those classes where there's a top and bottom border 
+  set in ao3's default skin
+  */
+  border-top: none;
+  border-bottom: none;
+}
+
+span.symbol {
+  /* 
+  what the hell does this change I can't remember
+  */
+  color: initial;
+  border: 1px solid;
+  vertical-align: middle;
+}
+
+.blurb .header img, #workskin h2.heading img {
+  /* 
+  Aligns vertically the little lock next to the title in the blurb
+  it also gives a bit of a space enough to have a background if needed in dark mode, later
+  */
+  vertical-align: baseline;
+  padding: 3px;
+  border-radius: 3px;
+}
+
+/* 
+I make the icons smaller, 
+and as such a few things need to be 
+properly positioned
+*/
+.icon {
+  height: 80px;
+  width: 80px;
+}
+
+.tag .primary .icon,
+.tagset .primary .icon {
+  background: url(/images/imageset.png) -10px -285px;
+}
+
+.skins .primary .icon {
+  background: url(/images/imageset.png) -10px -185px;
+}
+
+.comment h4.byline {
+  padding: 0.25em;
+}
+
+.abbreviated h4.byline {
+  padding-left: 0.25em;
+}
+
+.comment div.icon {
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 10px;
+}
+
+.comment .icon .visitor {
+  background: url(/images/imageset.png) no-repeat -10px -85px;
+  display: block;
+}
+
+/*end of stuff regarding the icon resizing*/
+.comment .posted {
+  /* 
+  positions the date of a comment 
+  */
+  display: block;
+  float: none;
+}
+
+.fandom .group.listbox {
+  width: 100%;
+}
+
+form.inbox {
+  overflow-x: initial;
+}
+
+#dashboard {
+  /*this deals with the border on ipad*/
+  border-color: transparent;
+}
+
+.LV_invalid, .qtip-content {
+  /*tooltips in tagsets and error messages in forms*/
+  background: #bd203a;
+  border: 1px solid #bd203a;
+  color: #fafafa;
+  border-radius: 5px;
+  box-shadow: none;
+  z-index: 1;
+}
+
+.qtip-content {
+  /*tooltips in tagsets*/
+  border-radius: 0 5px 5px;
+}
+
+.LV_invalid:before {
+  border-color: #bd203a transparent;
+  border-width: 0 0.643em 0.643em;
+}
+
+.LV_invalid_field,
+input.LV_invalid_field:hover,
+input.LV_invalid_field:active,
+textarea.LV_invalid_field:hover,
+textarea.LV_invalid_field:active {
+  border-color: #bd203a;
+}
+
+#bookmark-form,
+#collection-form {
+  margin-top: 20px;
+}
+
+/*changes the stats page. yes I need to use hue-rotate because fill is not allowed by ao3. help.*/
+#stat_chart svg rect:first-of-type {
+  opacity: 0%;
+}
+
+#stat_chart g[clip-path^=url] > g:nth-of-type(2) rect, #stat_chart svg g:nth-of-type(2) > g rect:last-of-type, #stat_chart g[clip-path^=url] > g:nth-of-type(2) rect:first-of-type {
+  filter: hue-rotate(222deg);
+  opacity: 70% !important;
+}
+
+#stat_chart svg text {
+  font-family: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", sans-serif;
+}
+
+#stat_chart g[clip-path^=url] > g:nth-of-type(2) rect:hover {
+  filter: hue-rotate(217deg);
+}
+
+a.dropdown-toggle[href*="/works/new"] {
+  background: url(https://64.media.tumblr.com/6a480ec874a2d8405884dca4c4359f0e/8b704f26c7323545-70/s100x200/404cbc9fc50f83963444b551b20f4ddd06d23f53.png) !important;
+  background-size: 15px 15px !important;
+  text-indent: -9999px;
+  display: block-inline;
+  width: 15px !important;
+  height: 15px !important;
+  padding: 0px !important;
+}
+
+a[href*="/users/logout"] {
+  background: url(https://64.media.tumblr.com/28db0028536206eb80f4f6238634738f/8b704f26c7323545-9b/s100x200/4519ffcbaeeee4c8dd80799e98111f8ef459fc83.png) !important;
+  background-size: 15px 15px !important;
+  text-indent: -9999px;
+  display: block-inline;
+  width: 15px !important;
+  height: 15px !important;
+  padding: 0px !important;
+}
+
+body,
+#header,
+#outer.wrapper,
+#inner.wrapper,
+.secondary,
+#modal,
+.filters .expander,
+.autocomplete div.dropdown ul {
+  color: #2e2e2e;
+  background-color: #fafafa;
+}
+
+li.blurb,
+.dashboard li.own,
+li.skins.own,
+.listbox,
+fieldset,
+li.post.group,
+li.comment, .wrapper dl.meta, form dl, #bookmark_form_placement form,
+#collection-form form {
+  /* dark mode cards */
+  background-color: transparent;
+}
+
+::-moz-selection,
+::selection,
+::-webkit-selection {
+  background-color: #d84549;
+  color: #fafafa;
+}
+
+.actions a,
+.actions a:link,
+.actions a:visited,
+.action,
+.action:link,
+.actions input,
+input[type=submit],
+button,
+.current,
+.actions label,
+.listbox > .heading,
+.listbox .heading a:visited,
+form dd.required,
+.filters dt,
+.filters dd,
+.filters input[type=submit],
+.filters .expander,
+#header .primary .menu a,
+#header .primary .menu .current,
+input[type=radio] + label,
+input[type=checkbox] + label,
+.userstuff h1,
+.userstuff h2,
+.userstuff h3,
+.userstuff h4,
+.userstuff h5,
+.userstuff h6,
+dd.fandom li.added.tag, span.unreviewed.symbol, ul.notes li::marker {
+  color: #2e2e2e;
+}
+
+a,
+a:link,
+a:visited,
+a.tag,
+a.tag:link,
+a.tag:visited,
+.listbox .index a,
+.listbox .index a:link,
+.listbox .index a:visited,
+#header .heading a,
+#header .heading a:link,
+#header .heading a:visited,
+.splash .module h3,
+.blurb h4 a:link,
+.blurb h4 a,
+.blurb h4 a:link,
+.blurb h4 a:visited,
+#header a,
+#header a:link,
+#header a:visited,
+#header .current,
+#header .primary .open a,
+#header .primary .open a:link,
+#header .primary .open a:visited,
+#header .primary .dropdown a,
+#header .primary .dropdown a:link,
+#header .primary .dropdown a:visited,
+#header .primary .dropdown a:focus,
+#dashboard a,
+#dashboard a:link,
+#dashboard a:visited,
+#dashboard span,
+li::marker,
+.draggable,
+.droppable {
+  color: #d84549;
+}
+
+.actions a,
+.actions a:link,
+.actions a:visited,
+.action,
+.action:link,
+.action:visited,
+.actions input,
+input[type=submit],
+button,
+button[type=submit],
+.current,
+.actions label,
+.dropdown,
+.splash .favorite li:nth-of-type(odd) a,
+input#site_search:focus,
+#header #search input:focus,
+.autocomplete div.dropdown ul,
+.toggled form,
+.dynamic form,
+.secondary,
+.dropdown,
+form.verbose legend {
+  color: #2e2e2e;
+  background-color: #f2f2f2;
+  transition: box-shadow 0.3s ease-out;
+}
+
+a:hover,
+a:visited:hover,
+a.tag:hover,
+a.tag:visited:hover,
+.listbox .heading a.tag:hover,
+.listbox .heading a.tag:visited:hover,
+.listbox .index a:hover,
+.listbox .index a:visited:hover,
+#dashboard a:hover,
+#dashboard a:visited:hover,
+.actions a:hover,
+.actions a:visited:hover,
+.actions a:focus,
+.actions input:hover,
+.actions input:focus,
+label.action:hover,
+.action:hover,
+.action:visited:hover,
+.action:focus,
+.splash .favorite li:nth-of-type(odd) a:hover,
+.splash .favorite li:nth-of-type(odd) a:visited:hover,
+.splash .favorite li:nth-of-type(odd) a:focus,
+.blurb h4 a:visited:hover,
+.blurb h4 a:hover,
+input[type=submit]:hover,
+button[type=submit]:hover,
+#header .dropdown .menu a:hover,
+#header .dropdown .menu a:visited:hover,
+#header .dropdown .menu a:focus:hover,
+a[href*="/users/logout"],
+.event .userstuff,
+.event .userstuff a,
+.event .userstuff a:link,
+.event .userstuff a:visited {
+  background: linear-gradient(126deg, #d84549 0%, #e14c74 100%);
+  color: #fafafa;
+  box-shadow: 1px 3px 10px -3px #c7c7c7;
+}
+
+.event .userstuff a, .event .userstuff a:link, .event .userstuff a:visited {
+  box-shadow: none;
+  background: none;
+}
+
+a.tag:hover,
+a.tag:visited:hover,
+.listbox .heading a.tag:hover,
+.listbox .heading a.tag:visited:hover,
+.actions a:hover,
+.actions a:visited:hover,
+.actions a:focus,
+.actions input:hover,
+.actions input:focus,
+label.action:hover,
+.action:hover,
+.action:visited:hover,
+.action:focus,
+input[type=submit]:hover,
+button[type=submit]:hover {
+  box-shadow: 1px 3px 10px -3px #c7c7c7 !important;
+}
+
+#header .actions a.dropdown-toggle:hover {
+  box-shadow: none !important;
+}
+
+.blurb h4 a:visited {
+  color: #d84549 !important;
+}
+
+.pagination .current {
+  color: #7b7b7b;
+}
+
+#dashboard .current,
+#header .menu,
+#small_login,
+#header .dropdown:hover .current + .menu,
+#header .actions a:hover,
+#header .actions a:focus,
+#header .dropdown:hover a,
+#header .open a,
+#header #search input:focus,
+#header #search input,
+tr:hover,
+#outer .current,
+.toggled form,
+.dynamic form,
+.secondary,
+.dropdown, .statistics .index li:nth-of-type(even), .ui-sortable li {
+  background-color: #f2f2f2;
+  /* needs this too to override some instances */
+  background: #f2f2f2;
+}
+
+.thread .even, .ui-sortable li:hover {
+  background-color: transparent;
+}
+
+.autocomplete .dropdown ul li:hover,
+li.selected {
+  /* cos'è sta roba e perchè l'ho fatta in modo diverso su dark e light*/
+  background-color: #d84549;
+  color: #fafafa;
+}
+
+a.modal.help:hover, li.relationships a {
+  background-color: transparent;
+}
+
+.notice,
+.comment_notice,
+ul.notes,
+.caution,
+.comment_error,
+.alert.flash, .alert .userstuff,
+.required .autocomplete,
+.autocomplete .notice,
+#header h2.collections,
+#header h2 {
+  background-color: #d1e9eb;
+  color: #2e2e2e;
+}
+
+.notice a, .notice a:link, .notice a:visited, .caution a, .caution a:link, .caution a:visited {
+  color: #2e2e2e;
+  text-decoration: underline;
+}
+
+.error {
+  background-color: #d1e9eb;
+  color: #2e2e2e;
+}
+
+#footer {
+  background: linear-gradient(126deg, #d84549 0%, #e14c74 100%);
+}
+#footer a,
+#footer .heading,
+#footer li {
+  color: #fafafa;
+}
+
+#footer {
+  background: linear-gradient(126deg, #d84549 0%, #e14c74 100%);
+}
+
+fieldset,
+form dl,
+fieldset dl dl,
+fieldset fieldset fieldset,
+fieldset fieldset dl dl,
+dd.hideme,
+form blockquote.userstuff,
+.listbox,
+fieldset fieldset.listbox,
+.own,
+.draft,
+.draft .wrapper,
+.unread,
+.child,
+.unwrangled,
+.unreviewed,
+form.verbose legend,
+.verbose form legend,
+.secondary,
+th,
+thead,
+tbody tr,
+.filters fieldset,
+.wrapper,
+li.blurb,
+dl.meta,
+.faq .example,
+.guideline .example,
+li.post.group,
+li.comment,
+.splash .news li:last-of-type,
+.ui-sortable li,
+#bookmark_form_placement form,
+#collection-form form {
+  border-color: #e8e8e8;
+}
+
+.required,
+.alert.flash,
+.nominations .rejected {
+  color: #bd203a !important;
+}
+
+p.required.notice {
+  color: #2e2e2e !important;
+}
+
+form.search input[type=text],
+dd.autocomplete li.input,
+input[type=radio],
+select,
+input[type=checkbox],
+input[type=file],
+input.number,
+p input,
+p select,
+.heading select,
+li select,
+input:focus,
+select:focus,
+textarea:focus,
+input,
+textarea {
+  color: #2e2e2e;
+  border-top-color: #ebebeb;
+  border-color: #ebebeb;
+  background-color: #ebebeb;
+}
+
+.filters [type=radio] + .indicator:before,
+.filters [type=checkbox] + .indicator:before,
+.filters .exclude [type=checkbox] + .indicator:before {
+  background-color: #ebebeb;
+}
+
+.filters [type=radio]:checked + .indicator:before,
+.filters [type=checkbox]:checked + .indicator:before,
+.filters .exclude [type=checkbox]:checked + .indicator:before {
+  background-color: #d84549;
+}
+
+.filters .exclude [type=checkbox]:checked + .indicator:before {
+  background-color: #bd203a;
+}
+
+.secondary {
+  background-color: #fafafa;
+}
+
+.javascript {
+  background-color: #fafafa !important;
+}
+
+.announcement input[type=submit],
+.announcement .action {
+  background: #fafafa;
+  border: 1px solid #e8e8e8;
+  color: #2e2e2e;
+}
+
+.ui-draggable form {
+  box-shadow: 0 0 3px #ebebeb;
+}
+
+.userstuff blockquote {
+  border-inline-start: 2px solid #d84549;
+}
+
+span.offered.requested {
+  color: #F2AA4C;
+}
+
+span.offered,
+.replied,
+.nominations .approved {
+  color: #75BD57;
+}
+
+.chapter .preface {
+  border-color: #e8e8e8;
+}
+
+span.requested,
+.nominations .rejected {
+  color: #A62637;
+}
+
+.blurb .header h4.heading a:hover,
+.blurb .header h4.heading a:visited:hover {
+  color: #fafafa !important;
+}
+
+.blurb .header img, #workskin h2.heading img {
+  background-color: transparent;
+}
+
+tbody tr:hover {
+  border-color: #e8e8e8;
+}
+
+#header h2 {
+  border-color: #e8e8e8;
+}
+
+#workskin,
+.system .userstuff,
+.collection blockquote.userstuff {
+  width: 70%;
+  max-width: 45em;
+}
+
+.blurb blockquote {
+  text-align: left;
+}
+
+.comment blockquote.userstuff {
+  margin-block-start: 0;
+}
+
+.splash .comment .userstuff {
+  width: 95%;
+  margin: auto;
+}
+
+#main.system h2.heading {
+  text-align: center;
+  margin: auto;
+  display: block;
+}
+
+::selection {
+  background-color: #d84549;
+  color: #fafafa;
+}
+
+/*
+=======
+ Blurb
+======= 
+*/
+h5.fandoms.heading {
+  color: transparent;
+}
+
+.blurb h4.heading {
+  text-align: center;
+  padding: 10px 0;
+  line-height: 150%;
+}
+
+.blurb h4.heading a {
+  display: inline-block;
+  font-size: 100%;
+  border-radius: 5px;
+}
+
+.blurb h4.heading a:first-of-type {
+  display: block;
+  font-size: 140%;
+  margin-bottom: 10px;
+}
+
+.blurb .header .heading {
+  margin: 0.375em 5.25em;
+}
+
+h5.fandoms.heading {
+  text-align: center;
+}
+
+.splash blockquote.userstuff.summary {
+  width: 95%;
+  margin: auto 10px;
+}
+
+/*
+===========
+Stats Icons
+===========
+*/
+dl.stats dt {
+  display: none;
+}
+
+.skins .header dl.stats dt {
+  display: inline-block;
+}
+
+/*for the series in the bookmarks page*/
+dl.stats dd:nth-of-type(1)::before {
+  /*words*/
+  background: url(https://64.media.tumblr.com/fff96d500a04ddf12517a48d83b228d2/b2e751421a20aa0c-a7/s100x200/c848a67de8f463ccdafa5b60948c61a172d5fe24.png);
+}
+
+dl.stats dd:nth-of-type(2)::before {
+  /*works*/
+  background: url(https://64.media.tumblr.com/f835b437a474b4b672a8d4ebe61402b8/8979adde76f2ff05-fb/s100x200/8f86556b6896e96427f5a4a54f0de7be38ddba75.png);
+}
+
+dl.stats dd.language::before {
+  display: none !important;
+}
+
+/*work blurb*/
+dl.stats dd.kudos::before {
+  /*kudos*/
+  background: url(https://64.media.tumblr.com/23a3c6f134a96386f50fb8982a353590/8b704f26c7323545-01/s100x200/31e25f0be03646918168c4d49bd2ee9733b2cd59.png);
+}
+
+dl.stats dd.words::before {
+  /*words*/
+  background: url(https://64.media.tumblr.com/fff96d500a04ddf12517a48d83b228d2/b2e751421a20aa0c-a7/s100x200/c848a67de8f463ccdafa5b60948c61a172d5fe24.png);
+}
+
+dl.stats dd.chapters::before {
+  /*chapters*/
+  background: url(https://64.media.tumblr.com/a8ca48310f24581ae539336583690b26/b2e751421a20aa0c-5c/s100x200/a51b914598b64c3ddf6f705b278f11a68301d443.png);
+}
+
+dl.stats dd.comments::before {
+  /*comments*/
+  background: url(https://64.media.tumblr.com/7172c0bbe03a0eef7b236014dc78c905/8b704f26c7323545-78/s250x400/f37ba1ff69b5ef2ad7e5fe66b61fd748badc00d1.png);
+}
+
+dl.stats dd.bookmarks::before, dl.stats dd a[href$=bookmarks]::before {
+  /*bookmarks*/
+  background: url(https://64.media.tumblr.com/9b95d189a57699762d2262536e922ece/b2e751421a20aa0c-2a/s100x200/1aabb2ad7b90746f0469aefaa39af5b83728f8b9.png);
+}
+
+dl.stats dd.hits::before {
+  /*hits*/
+  background: url(https://64.media.tumblr.com/b2b8862a356132ac1aa41e9e9f0ddd1d/b2e751421a20aa0c-9e/s100x200/dcd2bcb1adbbb8f9e1844b61aee3dd3a653531e3.png);
+}
+
+dl.stats dd.collections::before {
+  /*collections*/
+  background: url(https://64.media.tumblr.com/ae825c2ad8071426c298c5b52970e294/b2e751421a20aa0c-18/s100x200/d1eb5dd259e2db588cda2100057c2c8fd9efaaf0.png);
+}
+
+dl.work dl.stats dd.published::before {
+  /*date published*/
+  background: url(https://64.media.tumblr.com/7e13419071a7eeb35f48a76c7aa0ba36/b2e751421a20aa0c-5d/s250x400/7f351f60793ad683e4a9dc4de55e4ee4d625f9d2.png);
+}
+
+dl.work dl.stats dd.status::before {
+  /*completion status*/
+  background: url(https://64.media.tumblr.com/0ef9349a36cf808783e9488a97b64678/b2e751421a20aa0c-10/s250x400/8df1d3da298f875381822968f8e71ed4d7bcae31.png);
+}
+
+ul.statistics dl.stats dd.subscriptions::before {
+  /*subscriptions (in the stat page)*/
+  background: url(https://64.media.tumblr.com/64db76a65209eff79515dfc23842eb54/fd0b10e0262ddb71-14/s250x400/921de73c3d5bb819f4e3c58c7c45bd4c6edfe55f.png);
+}
+
+/*adjustments for the stat page*/
+dl.stats dd.published::before, dl.stats dd.status::before {
+  width: 0px;
+  margin-right: 0px;
+}
+
+/*for the collections*/
+li.collection dl.stats dd a[href$=collections]::before {
+  /*collections and sub collections*/
+  background: url(https://64.media.tumblr.com/ae825c2ad8071426c298c5b52970e294/b2e751421a20aa0c-18/s100x200/d1eb5dd259e2db588cda2100057c2c8fd9efaaf0.png);
+}
+
+li.collection dl.stats dd a[href$=works]::before {
+  /*works*/
+  background: url(https://64.media.tumblr.com/f835b437a474b4b672a8d4ebe61402b8/8979adde76f2ff05-fb/s100x200/8f86556b6896e96427f5a4a54f0de7be38ddba75.png);
+}
+
+li.collection dl.stats dd a[href$=bookmarks]::before {
+  /*bookmarks*/
+  background: url(https://64.media.tumblr.com/9b95d189a57699762d2262536e922ece/b2e751421a20aa0c-2a/s100x200/1aabb2ad7b90746f0469aefaa39af5b83728f8b9.png);
+}
+
+li.collection dl.stats dd a[href$=fandoms]::before {
+  /*fandoms*/
+  background: url(https://64.media.tumblr.com/0a2f3d28fb850907a859726916e04e6f/8979adde76f2ff05-48/s250x400/926b1499363f66438d02fdc8bbea5ce610a75395.png);
+}
+
+/*
+this creates the space before the stats for the icon. 
+Yes this is the worst css code ever written I blame Ao3's frontend inconsistencies.
+but I'm also sorry for putting this out in the world. I have no excuses.
+*/
+ul.statistics dl.stats dd::before, li.work dl.stats dd::before, li.bookmark dl.stats dd::before, dl.work dl.stats dd::before, .collection dl.stats dd a[href$=collections]::before, li.collection dl.stats dd a[href$=works]::before, li.collection dl.stats dd a[href$=bookmarks]::before, li.collection dl.stats dd a[href$=fandoms]::before, li.series dl.stats dd:not(.language):not(.words):not(.chapters):not(.collections):not(.comments):not(.kudos):not(.bookmarks):not(.hits):not(.published):not(.subscriptions):nth-of-type(1)::before, li:not(.collection) dl.stats dd:not(.language):not(.words):not(.chapters):not(.collections):not(.comments):not(.kudos):not(.bookmarks):not(.hits):not(.published):not(.subscriptions):nth-of-type(2)::before, dl.stats dd:not(.bookmarks) a[href$=bookmarks]::before {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  content: " ";
+  background-size: 14px 14px !important;
+  margin-right: 5px;
+}
+
+/*End of Stats Icons*/
+/*
+======
+ Tags
+======
+*/
+a.tag:hover, li.relationships a.tag:hover, li.characters a.tag:hover {
+  background: linear-gradient(126deg, #d84549 0%, #e14c74 100%) !important;
+  box-shadow: 1px 3px 10px -3px #c7c7c7 !important;
+}
+
+a.tag {
+  background: #f2f2f2 !important;
+  padding: 2px 10px;
+  margin: 4px 0px;
+  border-radius: 0 15px 15px;
+  display: inline-block;
+}
+
+/*relationships tags have one background color*/
+li.relationships a.tag {
+  background: #eed8d9 !important;
+}
+
+/*and character tags have a different background color*/
+li.characters a.tag {
+  background: #f0e6e6 !important;
+}
+
+/*removes the comma between tags*/
+.commas li:after {
+  content: "";
+}
+
+.tag .primary .icon, .tagset .primary .icon {
+  /* idgaf about icons in the tag pages they are useless */
+  display: none;
+}
+
+/*title in tag pages (sometimes they become SO LONG)*/
+h2.heading a.tag {
+  font-size: 75%;
+}
+
+/*useless shadow animation on tags*/
+a.tag {
+  transition: color 0.5s ease-out, box-shadow 0.3s;
+}

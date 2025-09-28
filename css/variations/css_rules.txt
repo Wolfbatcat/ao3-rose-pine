@@ -1,0 +1,83 @@
+
+You can create new skins for the Archive using our wizard, or by writing your own CSS (cascading style sheets) code
+
+    Note that for security reasons, you can only use a limited set of CSS code: all other declarations and comments will be removed!
+We allow the following properties including all their variations (and shorthand values)
+
+    background, border, column, cue, flex, font, layer-background, layout-grid, list-style, margin, marker, outline, overflow, padding, page-break, pause, scrollbar, text, transform, transition
+We also allow the following specific properties
+
+    -replace, -use-link-source, accelerator, accent-color, align-content, align-items, align-self, alignment-adjust, alignment-baseline, appearance, azimuth, baseline-shift, behavior, binding, bookmark-label, bookmark-level, bookmark-target, bottom, box-align, box-direction, box-flex, box-flex-group, box-lines, box-orient, box-pack, box-shadow, box-sizing, caption-side, clear, clip, color, color-profile, color-scheme, content, counter-increment, counter-reset, crop, cue, cue-after, cue-before, cursor, direction, display, dominant-baseline, drop-initial-after-adjust, drop-initial-after-align, drop-initial-before-adjust, drop-initial-before-align, drop-initial-size, drop-initial-value, elevation, empty-cells, filter, fit, fit-position, float, float-offset, font, font-effect, font-emphasize, font-emphasize-position, font-emphasize-style, font-family, font-size, font-size-adjust, font-smooth, font-stretch, font-style, font-variant, font-weight, grid-columns, grid-rows, hanging-punctuation, height, hyphenate-after, hyphenate-before, hyphenate-character, hyphenate-lines, hyphenate-resource, hyphens, icon, image-orientation, image-resolution, ime-mode, include-source, inline-box-align, justify-content, layout-flow, left, letter-spacing, line-break, line-height, line-stacking, line-stacking-ruby, line-stacking-shift, line-stacking-strategy, mark, mark-after, mark-before, marks, marquee-direction, marquee-play-count, marquee-speed, marquee-style, max-height, max-width, min-height, min-width, move-to, nav-down, nav-index, nav-left, nav-right, nav-up, opacity, order, orphans, page, page-policy, phonemes, pitch, pitch-range, play-during, position, presentation-level, punctuation-trim, quotes, rendering-intent, resize, rest, rest-after, rest-before, richness, right, rotation, rotation-point, ruby-align, ruby-overhang, ruby-position, ruby-span, size, speak, speak-header, speak-numeral, speak-punctuation, speech-rate, stress, string-set, tab-side, table-layout, target, target-name, target-new, target-position, top, unicode-bibi, unicode-bidi, user-select, vertical-align, visibility, voice-balance, voice-duration, voice-family, voice-pitch, voice-pitch-range, voice-rate, voice-stress, voice-volume, volume, white-space, white-space-collapse, widows, width, word-break, word-spacing, word-wrap, writing-mode, z-index
+Look at other public skins for examples
+
+    All approved public skins are visible and you can read their code and copy them to edit for your own use.
+Use only one declaration per property per ruleset
+
+    The CSS parser we use retains only one declaration for each property, meaning that rulesets like
+
+            .my-class {
+              background: -moz-linear-gradient(top, #1e5799 0%, #2989d8 50%, #207cca 51%, #7db9e8 100%);
+              background: -o-linear-gradient(top, #1e5799 0%,#2989d8 50%,#207cca 51%,#7db9e8 100%);
+              background: -webkit-linear-gradient(top, #1e5799 0%,#2989d8 50%,#207cca 51%,#7db9e8 100%);
+            }
+          
+
+    will have all but the last background declaration removed (so your gradient would only show up in WebKit browsers). To avoid losing declarations with repeated properties, split each one into its own ruleset, like so:
+
+            .my-class { background: -moz-linear-gradient(top, #1e5799 0%, #2989d8 50%, #207cca 51%, #7db9e8 100%); }
+            .my-class { background: -o-linear-gradient(top, #1e5799 0%,#2989d8 50%,#207cca 51%,#7db9e8 100%); }
+            .my-class { background: -webkit-linear-gradient(top, #1e5799 0%,#2989d8 50%,#207cca 51%,#7db9e8 100%); }
+          
+
+Font and Font Family
+
+    Unfortunately, you cannot use the font shorthand in your CSS. All font properties have to be specified separately, e.g., font-size: 1.1em; font-weight: bold; font-family: Cambria, Constantia, Palatino, Georgia, serif;
+
+    In the font-family property, we allow you to specify any font with an alphanumeric name. You can (but don't have to) specify the name with single or double quotes around it, just make sure the quotes match. (e.g., 'Gill Sans' and "Gill Sans" are both fine; 'Gill Sans" won't work.) Keep in mind that a font has to be installed on the user's operating system to work. It's a good idea when specifying fonts to use fallbacks in case your first-choice font isn't available. See a set of web-safe fonts with fallbacks.
+
+    We cannot allow the @font-face attribute. Sorry! If you have an uncommon font that you want to use in a skin you would like to share, we suggest adding a comment in the skin's "Description" field with a pointer to a place for users to download the font themselves, and using web-safe fonts as fallbacks.
+Custom Properties (Variables)
+
+    Custom property names can contain any combination of lowercase letters (a-z) in the English alphabet, numerals zero to nine (0-9), dashes (-), and underscores (_). They can't contain single (') or double (") quotation marks, or URLs. Any uppercase letters (A-Z) will be converted to lowercase.
+
+    All properties except font-family and content accept the var() function as a value. We don't allow fallbacks.
+
+    Custom properties and the var() function are only available for site skins, and won't work on work skins.
+URLs
+
+    We allow external image URLs (specified as url('https://example.com/my_awesome_image.jpg')) in JPG, GIF, and PNG formats. Please note, however, that skins using external images will not be approved for public use.
+Keywords
+
+    We allow all standard CSS keyword values (e.g., absolute, bottom, center, underline, etc.).
+Numeric Values
+
+    You can specify numeric values up to two decimal places, either as percentages or in various units:
+    cm, em, ex, in, mm, pc, pt, px
+
+    PS: we highly encourage learning about and using em, which lets you set things relative to the viewer's current font size! It will make your layouts much more flexible and responsive to different browser/font settings.
+Colors
+
+    You can specify colors using hex values (eg, #000000 is black in hex) or with RGB or RGBA values (e.g., rgb(0,0,0) and rgba(0,0,0,0) both give you black). This may be safer since not all browsers will necessarily support all color names. However, color names are more readable and easier to remember, so we also allow color names. (We suggest you stick to the set of commonly-supported color names.)
+Scale
+
+    You can specify scale (for the transform property) as scale(numeric value) where the numeric value can be specified up to two decimal places.
+Comments
+
+    Comments are stripped from CSS.
+If you are new to CSS, here are the basics:
+
+    A line of CSS code looks pretty much like this: selector {property: value;}
+
+    The selector is either the name of an HTML tag (like body or h1), or it can be an id or class that has been set on a tag. The property is what you want to change in the contents of that tag (for instance the font size), and the value is what you want to set it to.
+
+    Examples:
+
+        Inside the "body" tag, set the font size slightly larger than the baseline: body {font-size: 1.1em;}
+        Inside any tags with the id "header", set the background color to purple: #header {background-color: purple}
+        Inside any tags with the class "meta", make the text blink: (we do not advise this) .meta {font-style: blink}
+
+    Some useful CSS tutorials for more information:
+
+        CSS introduction tutorial
+        Getting Started (CSS Tutorial) from MDN
+
