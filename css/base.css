@@ -2183,7 +2183,7 @@ li.picture.blurb,
 /*>>========== mod: BOOKMARK ==========<<*/
 
 .bookmarks-index .bookmark.index {
-  overflow: hidden;
+  overflow: visible;
 }
 
 .bookmark .blurb h4.heading {
