@@ -2631,6 +2631,7 @@ li.comment:has(.edit_comment) {
   border: var(--border-width) solid var(--border2);
   border-radius: var(--radius-big);
   background-color: var(--bg5);
+  box-shadow: var(--shadow-box1);
 }
 
 /*============================================================
