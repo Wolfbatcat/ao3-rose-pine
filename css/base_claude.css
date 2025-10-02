@@ -1,4 +1,1115 @@
+.blurb:has(.icon) > .header h4,
+.blurb:has(.icon) > .header h5,
+.blurb > .header > .mods.commas {
+  margin-left: 45px;
+  padding-left: 0.75em;
+}
+
+/*>========== VARIOUS MODIFICATIONS ==========<*/
+
+.item dl.visibility {
+  background-color: var(--bg4);
+}
+
+/*>>========== MODIFICATION: BOOKMARK ==========<<*/
+
+.bookmarks-index .bookmark.index {
+  overflow: visible;
+}
+
+.bookmark .blurb h4.heading {
+  padding-right: 14ch;
+}
+
+.bookmark p.status {
+  top: 5px;
+  right: 0.75em;
+  width: 25px;
+  margin: 0;
+}
+
+/* create bookmark ribbon */
+.bookmark .blurb p.status a:not(.short a)::before {
+  position: absolute;
+  top: -5px;
+  z-index: -1;
+  box-sizing: border-box;
+  height: 40px;
+  border-inline: 14px solid;
+  border-bottom: 5.5px solid transparent;
+  border-radius: 0 0 0.2rem 0.2rem;
+  content: "";
+}
+
+.bookmark span.count {
+  display: none;
+}
+
+.bookmark .count a {
+  color: var(--txt-main);
+}
+
+.bookmark .count a:is(:hover, :focus) {
+  color: var(--link-hgl);
+}
+
+.bookmark p.status:has(span.text) + .header .datetime {
+  margin-right: 33px;
+}
+
+.bookmark .user {
+  box-sizing: border-box;
+  padding: 0.643em;
+  border: var(--border-width) solid var(--border2);
+  border-radius: var(--radius-big);
+  box-shadow: var(--shadow-box2);
+  overflow-wrap: anywhere;
+  word-break: normal;
+}
+
+.bookmark .user .meta {
+  margin: 0;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+.bookmark .user .byline {
+  margin: 0 6em 0 0;
+  font-weight: var(--txt-bold);
+}
+
+.bookmark .module:has(.meta) > .byline,
+.bookmark .short:has(.meta) > .header {
+  margin-bottom: 0.649em;
+}
+
+.bookmark div.user .datetime {
+  top: 0.7em;
+  right: 0.75em;
+}
+
+.bookmark .short.blurb .header {
+  display: flex;
+    column-gap: 0.643em;
+  min-height: 25px;
+}
+
+.bookmark .short.blurb:has(.meta) .header {
+  margin-bottom: 0.429em;
+}
+
+.bookmark .short.blurb .header h5 {
+  order: 2;
+  flex: 1;
+  margin: 0;
+}
+
+.bookmark .short.blurb .header .datetime {
+  order: 3;
+  position: unset;
+  min-width: 11ch;
+  margin-left: auto;
+}
+
+.bookmark .short.blurb .header .status {
+  order: 1;
+  position: unset;
+}
+
+/*>>========== MODIFICATION: READING ==========<<*/
+
+.reading h4.viewed {
+  margin-inline: -0.75em;
+  padding: 0.429em;
+  padding-inline: 0.75em;
+  background: linear-gradient(to right, var(--bg4) 25%, transparent);
+  font-size: 1em;
+}
+
+.reading .deleted h4.viewed {
+  background-color: transparent;
+}
+
+.prompt .blurb h6 {
+  display: none;
+}
+
 /*============================================================
+>> 14 GROUP: PREFACE
+============================================================*/
+/* see "Archive: (14) group preface skin" by AO3 */
+
+div.preface {
+  margin-inline: 5%;
+  padding-inline: 0;
+}
+
+.chapter .preface {
+  border-top: 1.5px solid;
+}
+
+.preface h2.title {
+  font-weight: var(--txt-bold);
+}
+
+.preface h3 {
+  margin-bottom: 1em;
+  border-bottom: 1.5px solid var(--border4);
+}
+
+div.afterword {
+  margin-bottom: 1em;
+}
+
+/*============================================================
+>> 15 GROUP: COMMENTS
+============================================================*/
+/* see "Archive: (15) group comments skin" by AO3 */
+
+div.comment,
+.comment div.icon {
+  border: none;
+}
+
+.comment fieldset {
+	border: 1px solid var(--border1);
+  background-color: var(--bg5);
+  box-shadow: var(--shadow-box1);
+}
+
+li.comment:not(:has(.edit_comment)) {
+  display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  padding: 0.75em 0.75em 0.429em;
+  border: var(--border-width) solid var(--border3);
+  border-radius: var(--radius-big);
+  background-color: var(--bg5);
+  box-shadow: var(--shadow-box1);
+}
+
+.comment div.icon,
+.comment .icon,
+.abbreviated .icon {
+  order: 1;
+  width: 45px;
+  height: 45px;
+  margin: 0;
+  border-radius: var(--icon-primary-radius);
+}
+
+.comment h4.byline {
+  align-content: center;
+  order: 2;
+  flex-grow: 1;
+  flex-basis: 0;
+  margin: 0;
+  padding: 0 0 0 0.642em;
+  background-color: transparent;
+  font-size: 1em;
+  line-height: 1.25;
+}
+
+.comment .userstuff,
+.splash .comment .userstuff {
+  order: 3;
+  box-sizing: border-box;
+  width: 100%;
+  min-height: unset;
+  margin: 0;
+  padding: 0.643em 0;
+}
+
+.comment .posted {
+  width: 100%;
+  font-size: 1em;
+}
+
+.comment .edited {
+  order: 4;
+  width: 100%;
+  margin: 1em 0;
+}
+
+.comment ul.actions {
+  order: 5;
+}
+
+.comment div[id^="delete_comment"] {
+  order: 6;
+  width: 100%;
+}
+
+.comment div:has(.post.comment) {
+  order: 7;
+  width: 100%;
+  margin-top: 0.429em;
+}
+
+li.comment:has(.edit_comment) {
+  border: none;
+}
+
+.comment img {
+  max-height: 500px;
+}
+
+.thread .thread {
+  margin-left: 3%;
+}
+
+/*============================================================
+>> 16 ZONE: SYSTEM
+============================================================*/
+/* see "Archive: (16) zone system skin" by AO3 */
+
+.system .userstuff {
+  max-width: unset;
+}
+
+/*>========== ZONE: SYSTEM: SPLASH PAGE ==========<*/
+
+.splash {
+  display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  box-sizing: border-box;
+  max-width: unset;
+  margin: 0;
+}
+
+.splash > .module h3 {
+  border-bottom: 1.5px solid var(--border4);
+  font-weight: var(--txt-bold);
+  font-size: 1.4em;
+  color: var(--txt-main);
+}
+
+.splash > .module,
+.logged-in .splash > .module {
+  box-sizing: border-box;
+  margin-inline: 0;
+  padding: 0;
+}
+
+.logged-in .splash > .module {
+  width: 49%;
+}
+
+.splash .intro, .splash .social {
+  display: none;
+}
+
+/*>>========== MODULE: FIND YOUR FAVORITES ==========<<*/
+
+.splash .browse li a::before {
+  color: var(--txt-main);
+}
+
+/*>>========== MODULE: FAVORITE TAGS ==========<<*/
+
+.splash .favorite a.tag {
+  border: none;
+  border-radius: var(--radius-alt);
+  background-color: transparent;
+  color: var(--taxt-main);
+}
+
+.splash .favorite li:nth-of-type(odd) a.tag {
+  background-color: var(--tag-splash-bg);
+}
+
+.splash .favorite a.tag:hover,
+.splash .favorite li:nth-of-type(odd) a.tag:hover {
+  background: var(--int-hgl-bg);
+  color: var(--int-hgl-txt);
+  font-weight: var(--txt-semibold) !important;
+}
+
+/*>>========== MODULE: NEWS ==========<<*/
+
+.splash .news h4 {
+  font-weight: var(--txt-bold);
+  font-size: 1em;
+}
+
+.splash .news li {
+  border-bottom: 1.5px solid var(--border1);
+}
+
+.splash .news li:last-of-type {
+  border-bottom: none;
+}
+
+/*>========== ZONE: SYSTEM: FAQS ==========<*/
+
+.faq .categories h3 {
+  border-color: var(--border4);
+}
+
+.faq .example,
+.guideline .example {
+  border: var(--border-width) solid var(--notice-txt);
+}
+
+/*>========== ZONE: SYSTEM: TOS ==========<*/
+
+.tos .userstuff nav.toc > details > summary {
+  border-color: inherit;
+}
+
+/*>========== TOS PROMPT ==========<*/
+
+#tos_prompt {
+  background: var(--bg1);
+}
+
+/*>========== ZONE: SYSTEM: PROXY NOTICE ==========<*/
+
+#proxy-notice {
+  border-bottom: var(--border-width) solid var(--alert-txt);
+  background: var(--alert-bg);
+}
+
+/*============================================================
+>> 17 ZONE: HOME
+============================================================*/
+/* see "Archive: (17) zone home skin" by AO3 */
+
+.home .primary.header.module {
+  display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  margin-bottom: 1em;
+}
+
+.home .header h2 {
+  width: 100%;
+  height: fit-content;
+  margin-block: 0.429em 0;
+  border-bottom: 1.5px solid var(--border1);
+}
+
+.home .header ul.actions {
+  width: 100%;
+  margin-left: 100px;
+  text-align: right;
+}
+
+.home .header .userstuff {
+  margin: 0;
+  padding-top: 2em;
+}
+
+.home .header .type {
+  margin: 0 0 0.643em 0;
+}
+
+.home .header dl.stats {
+  width: 100%;
+  margin-left: auto;
+}
+
+.primary .icon {
+  border-radius: var(--icon-primary-radius);
+}
+
+.skins.home .css.module blockquote {
+  overflow: auto;
+  max-height: 60vh;
+  margin-inline: 0;
+  padding: 0.643em;
+  border: var(--border-width) solid var(--border2);
+  border-radius: var(--radius-big);
+  background-color: var(--bg5);
+  box-shadow: var(--shadow-box1);
+}
+
+/*============================================================
+>> 18 ZONE: SEARCH/BROWSE
+============================================================*/
+/* see "Archive: (18) zone searchbrowse skin" by AO3 */
+
+/*>========== INDEX PAGES WITH FILTERS ==========<*/
+
+.filtered .index:not(:has(+ form.filters)) {
+  width: 100%;
+}
+
+/*>========== INTERACTION: SEARCH ==========<*/
+
+form.search input[type="text"] {
+  border: var(--border-width) solid var(--border2);
+  border-radius: var(--radius-small);
+  background-color: var(--int-bg);
+  background-image: none;
+  color: var(--txt-main);
+}
+
+li.search fieldset {
+  padding: 0 0.429em;
+  font-size: 1em;
+}
+
+/*>========== INTERACTION: FILTER ==========<*/
+
+form.filters {
+  position: sticky;
+  top: 2vh;
+  overflow-x: visible;
+  overflow-y: scroll;
+  overflow-wrap: anywhere;
+  box-sizing: border-box;
+  width: 25%;
+  max-height: 96vh;
+  border-radius: var(--radius-small);
+  margin-block: 0.643em !important;
+  padding: 0 0.643em 0 2%;
+  scrollbar-color: var(--border4) transparent;
+}
+
+form.filters:not(:hover) {
+  scrollbar-color: transparent transparent;
+}
+
+/* prevent overlap with pagination */
+.region:has(ol.pagination.actions) form.filters {
+  margin-bottom: 4.5em !important;
+}
+
+.filters fieldset {
+  overflow: visible;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: transparent;
+}
+
+.filters fieldset li {
+  margin: 0;
+  padding: 0;
+}
+
+.filters fieldset, fieldset > dl {
+	box-shadow: none !important;
+}
+
+.filters dt.heading {
+  margin-block: 1.5em 0.5em !important;
+}
+
+.filters dt.more.heading {
+  margin-bottom: 0 !important;
+}
+
+form.filters dl,
+form.filters dt,
+form.filters dl dl {
+  overflow: visible;
+  margin: 0;
+  border: none;
+}
+
+.filters dd .expandable,
+#inbox-filters dd ul {
+  padding: 0 0 0.429em 1em;
+}
+
+.filters .submit,
+.filters .group {
+  width: 100%;
+  text-align: unset;
+}
+
+.filters .submit:first-of-type:not(:only-of-type) input {
+  margin-top: 0;
+}
+
+.filters .autocomplete input,
+.filters select {
+  min-width: unset;
+}
+
+/* bold heading when filters active */
+.filters dt:has(+ dd input:checked) .expander,
+.filters dt.words:has(+ dd input[value]) .expander,
+.filters dt.dates:has(+ dd input[value]) .expander {
+  font-weight: var(--txt-bold);
+}
+
+.filters .expander,
+.filters .expanded .expander {
+  padding-left: 1em;
+  box-shadow: none;
+  background-image: none;
+  color: var(--txt-main);
+}
+
+/* create filters expander arrow */
+.filters .expander::before {
+  position: absolute;
+  top: 0.6em;
+  left: 0.2em;
+  border-block: 0.3em solid transparent;
+  border-left: 0.5em solid;
+  content: "";
+}
+
+.filters .expanded .expander::before {
+  transform: rotate(90deg);
+}
+
+.filters .group dt.search,
+.filters .group dt.bookmarker,
+.filters dd {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+.filters dt:not(.filter-toggle, .filters .range dt),
+.filters .more dt.search,
+.filters dt.autocomplete.search {
+  margin-block: 1em 0.25em;
+}
+
+.filters .warning {
+  font-weight: 400;
+}
+
+.filters ul li > label {
+  padding-block: 0.25em !important;
+}
+
+/*>>========== STYLE RANGE FILTERS ==========<<*/
+
+.filters dl.range {
+  display: grid;
+    grid-template-columns: auto auto;
+    column-gap: 0.5em;
+    align-items: baseline;
+}
+
+.filters dl.range dt {
+  grid-column: 1;
+}
+
+.filters dl.range dd {
+  grid-column: 2;
+}
+
+/*>>========== JAVASCRIPT CONTEXT ==========<<*/
+
+.javascript {
+  background: var(--bg4);
+}
+
+/*============================================================
+>> 19 ZONE: TAG PAGES, TAGSETS, AND TAG WRANGLING
+============================================================*/
+/* see "Archive: (19) zone tags skin" by AO3 */
+
+.tag.home.profile .listbox > .tags.index {
+  overflow: auto;
+  max-height: 60vh;
+}
+
+.tree.index ul {
+  margin-left: 0.643em;
+  padding-block: 0;
+  padding-right: 0;
+  border-top: 0;
+  border-left: var(--border-width) solid var(--border2);
+  background-color: transparent;
+}
+
+/*>========== TAGSETS ==========<*/
+
+.tagset .tags li.listbox {
+  padding: 0;
+}
+
+dl.nomination {
+  border-radius: 0;
+}
+
+.nomination dt {
+  background-color: transparent;
+}
+
+.nomination dd.autocomplete ul,
+.nomination dd.autocomplete li {
+  margin: 0;
+}
+
+/*============================================================
+>> 21 USERSTUFF
+============================================================*/
+/* see "Archive: (21) userstuff skin" by AO3 */
+
+.userstuff p,
+.userstuff details {
+  margin: 1em auto;
+}
+
+.userstuff li,
+.userstuff ol ul li {
+  margin-block: 0.5em;
+}
+
+/*>========== BIO ON PROFILE PAGE ==========<*/
+
+.bio.module {
+  margin-block: 0.5em;
+}
+
+.bio.module .userstuff {
+  margin-inline: 0;
+}
+
+/*>========== HEADINGS ==========<*/
+
+.userstuff h2 {
+  color: var(--txt-main);
+}
+
+.userstuff h3 {
+  border-color: var(--border4);
+}
+
+/*>========== QUOTES AND STRESSES ==========<*/
+
+.userstuff blockquote,
+.splash .userstuff blockquote {
+  margin-inline-start: 0.75em;
+  padding: 0.75em;
+  border-inline-start: 2px solid var(--border1);
+}
+
+.userstuff blockquote blockquote {
+  padding: 0.25em;
+  border: none;
+}
+
+.userstuff hr {
+  margin-block: 2em;
+  border: var(--border-width) solid var(--border2);
+}
+
+/*>========== EXPECTED BEHAVIOURS ==========<*/
+
+#workskin {
+  max-width: 70em;
+  margin: 0 auto;
+  padding: 0 2%;
+  font-size: var(--txt-size-work);
+}
+
+/*============================================================
+>> 22 SYSTEM MESSAGES
+============================================================*/
+/* see "Archive: (22) system messages skin" by AO3 */
+
+.footnote {
+  font-size: 0.9em;
+  text-align: right;
+}
+
+.notice,
+.comment_notice,
+.kudos_notice,
+ul.notes,
+.caution,
+.error,
+div.error,
+.comment_error,
+.kudos_error,
+.alert.flash,
+form .notice,
+form ul.notes {
+  margin-inline: 0;
+  padding: 0.429em;
+  border: var(--border-width) solid;
+  border-left: 5px solid;
+  border-radius: var(--radius-mid);
+  box-shadow: none;
+  line-height: 1.2em;
+}
+
+ul.notes,
+form ul.notes,
+.error ul,
+.notice ul,
+.caution ul,
+.alert.flash ul {
+  padding: 0.25em 2em;
+}
+
+ul.notes li,
+.error ul li,
+.notice ul li,
+.caution ul li,
+.alert.flash ul li {
+  padding-left: 0.5em;
+}
+
+.notice,
+.comment_notice,
+.kudos_notice,
+ul.notes {
+  border-color: currentColor;
+  background-color: var(--notice-bg);
+  color: var(--notice-txt);
+}
+
+.caution {
+  border-color: currentColor;
+  background-color: var(--caution-bg);
+  color: var(--caution-txt);
+}
+
+.error,
+div.error,
+.comment_error,
+.kudos_error,
+.alert.flash,
+.required.notice {
+  border-color: currentColor;
+  background-color: var(--alert-bg);
+  color: var(--alert-txt);
+}
+
+.required {
+  color: var(--alert-txt);
+}
+
+.alert a:not(.action),
+.alert a:not(.action):visited,
+.notice a:not(.action),
+.notice a:not(.action):visited,
+.error a:not(.action),
+.error a:not(.action):visited,
+.announcement .userstuff a,
+.announcement .userstuff a:visited {
+  border-bottom: 1px solid !important;
+  color: inherit !important;
+}
+
+.alert a:not(.action):is(:hover, :focus),
+.notice a:not(.action):is(:hover, :focus),
+.error a:not(.action):is(:hover, :focus),
+.announcement .userstuff a:is(:hover, :focus),
+.announcement input[type="submit"]:is(:hover, :focus),
+.announcement .action:is(:hover, :focus) {
+  filter: opacity(60%);
+}
+
+/*>========== ADMIN ANNOUNCEMENT BANNERS ==========<*/
+
+.announcement {
+  display: flex;
+    align-items: end;
+  z-index: 1;
+  padding: 1em 0 1em 2em;
+  border-bottom: var(--border-width) solid var(--alert-txt);
+  background: var(--alert-bg);
+}
+
+.announcement .userstuff {
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: transparent;
+  overflow-wrap: anywhere;
+  font-size: 0.95em;
+  word-break: normal;
+  color: var(--alert-txt);
+}
+
+.announcement .userstuff p {
+  margin: 0;
+}
+
+.announcement p.submit {
+  position: unset;
+  z-index: 3;
+  width: 2em;
+  text-align: center;
+}
+
+.announcement input[type="submit"],
+.announcement .action {
+  margin: 0 !important;
+  padding: 0 !important;
+  border: none !important;
+  box-shadow: none;
+  background: transparent !important;
+  font-size: 0.95em;
+  line-height: 1;
+  color: var(--alert-txt);
+}
+
+.announcement.event {
+  background: var(--alert-txt);
+}
+
+.event .userstuff {
+  background: transparent;
+  color: var(--alter-txt);
+}
+
+.announcement.alert {
+  background: var(--alert-bg);
+}
+
+.alert .userstuff {
+  background: transparent;
+  color: var(--alert-txt);
+}
+
+/*>========== THERMOMETER WIDGET ==========<*/
+
+.announcement .thermometer-content {
+  width: 50%;
+  height: 1.5em;
+  margin-top: 1em;
+}
+
+.announcement .thermometer .track {
+  margin: 0.5em 0;
+  border: 1.5px solid;
+  border-radius: 9999px;
+  background: var(--txt-alt2);
+}
+
+.announcement .thermometer .goal .amount {
+  padding-left: 0.5em;
+}
+
+.announcement .thermometer .progress .amount {
+  top: 0;
+  right: 0.2em;
+  left: unset;
+  color: var(--txt-alt2);
+}
+
+.announcement .thermometer .track div.progress {
+  border-radius: 9999px;
+  background-image: linear-gradient(to right, var(--success-bg) -25%, var(--success-txt) 50%) !important;
+}
+
+/*>========== SYMBOLS ==========<*/
+
+span.symbol {
+  display: inline-block;
+  width: 1.4em;
+  height: 1.4em;
+  border: none;
+  border-radius: 100%;
+  line-height: 1.4;
+  text-align: center;
+  vertical-align: unset;
+  color: var(--txt-alt2);
+}
+
+span.symbol span {
+  padding: 0;
+}
+
+.symbols a,
+.symbol a {
+  border: none;
+  text-decoration: none;
+}
+
+.question a:is(:hover, :focus) {
+  border-color: var(--int-hgl);
+  background-color: var(--int-hgl);
+  color: var(--bg4);
+  cursor: help;
+}
+
+span.question {
+  box-shadow: none;
+  background-color: var(--link-hgl);
+  font-size: 0.9em;
+  vertical-align: super;
+}
+
+a.question {
+  border: none;
+}
+
+.heading a.question,
+.help.symbol.question {
+  font-size: 0.75em;
+}
+
+/* prevent emoji on iOS */
+span.rejected.symbol::before {
+  content: "\002716\fe0e";
+}
+
+span.approved.symbol::before {
+  content: "\002714\fe0e";
+}
+
+span.rejected.symbol span,
+span.approved.symbol span {
+  display: none;
+}
+
+span.replied {
+  line-height: 0;
+  text-indent: -9999px;
+}
+
+span.replied::after {
+  display: block;
+  line-height: 1.286;
+  text-indent: 0;
+  content: "\002714\fe0e";
+}
+
+/*>========== SYMBOLS KEY ==========<*/
+
+#symbols-key h4 {
+  margin: 1em 0;
+}
+
+dl#symbols-key dt img:not(#symbols-key dl img) {
+  display: none;
+}
+
+dl#symbols-key dd {
+  margin: 0;
+}
+
+#symbols-key dl {
+  width: auto;
+  margin: 0;
+  padding: 0.643em 0.643em 0 0.643em ;
+  border: var(--border-width) solid var(--border1);
+  border-radius: var(--radius-mid);
+  background-color: var(--bg5);
+}
+
+#symbols-key dl dd,
+#bookmark-symbols-key dd {
+  margin: -25px auto 15px 35px;
+}
+
+/*============================================================
+>> Z1 REPLACE ICONS AND IMAGES
+============================================================*/
+
+/*>========== ICONS FOR USERS, COLLECTIONS, TAGS ==========<*/
+
+.icon img:not(img[src*="/images/skins/iconsets/default/"]) {
+  box-sizing: border-box;
+  border: var(--border-width) solid var(--icon-border2);
+  background: var(--icon-bg);
+}
+
+img[src$="/images/skins/iconsets/default/icon_user.png"] {
+  box-sizing: border-box;
+  border: none;
+  background-image: var(--int-btn-hgl-bg);
+  content: url("https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/assets/zerafina-icon-user-visitor-02.png");
+}
+
+.comment .icon .anonymous {
+  box-sizing: border-box;
+  border: none;
+  background: 
+      url("https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/assets/zerafina-icon-anon-01.png"), 
+      var(--int-btn-hgl-bg);
+    background-color: var(--icon-anon);
+    background-size: cover;
+}
+
+.comment .icon .visitor { 
+  box-sizing: border-box;
+  border: none;
+  background: 
+      url("https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/assets/zerafina-icon-anon-01.png"),
+      var(--int-btn-hgl-bg);
+    background-color: var(--icon-anon);
+    background-size: cover;
+}
+
+img[src$="/images/skins/iconsets/default/icon_collection.png"] {
+  box-sizing: border-box;
+  background-image: var(--int-btn-hgl-bg);
+  background-color: var(--icon-id);
+  content: url("https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/assets/zerafina-icon-collection-02.png");
+}
+
+.tagset .primary .icon, 
+.tag .primary .icon,
+.index .tagset .icon {
+  box-sizing: border-box;
+  border: none;
+  background: url("https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/assets/zerafina-icon-tag-02.png");
+    background-color: var(--icon-id);
+    background-size: cover;
+}
+
+.index .mystery .icon {
+  box-sizing: border-box;
+  border: var(--border-width) solid var(--icon-border2);
+  box-shadow: inset 0 0 0 3px #FFFFFF;
+  background: 
+      url("https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/assets/zerafina-icon-anon-01.png"),
+      var(--int-btn-hgl-bg);
+    background-color: var(--icon-id);
+    background-size: cover;
+}
+
+.admin .primary .icon {
+  box-sizing: border-box;
+  border: none;
+  background: 
+      url("https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/assets/zerafina-icon-admin-02.png"),
+      var(--int-btn-hgl-bg);
+    background-color: var(--icon-id);
+    background-size: cover;
+}
+
+.skins .primary .icon:not(:has(a .icon)),
+.index .skins .icon:not(:has(a .icon)) {
+  box-sizing: border-box;
+  border: none;
+  background: 
+      url("https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/assets/zerafina-icon-skins-02.png"), 
+      var(--int-btn-hgl-bg);
+    background-color: var(--icon-id);
+    background-size: cover;
+}
+
+.skins .primary .icon:has(a .icon) {
+  background: none;
+}
+
+/*>========== CONTENT SYMBOLS ==========<*/
+
+#symbols-key dl img,
+#bookmark-symbols-key img {
+  width: 0 !important;
+  height: 0 !important;
+  padding: 25px 0 0 25px;
+}
+
+.blurb ul.required-tags li a > span,
+.bookmark p.status a > span,
+#symbols-key dl img,
+#bookmark-symbols-key img {
+  box-sizing: border-box;
+  border: var(--border-width) solid var(--icon-border1);
+  border-radius: var(--icon-content-radius);
+  background-size: cover;
+  background-origin: border-box;/*============================================================
 
                      ✿✿✿ Rose Pine ✿✿✿                 
            A Site Skin for the Archive of Our Own          
@@ -33,7 +1144,7 @@ DIRECTORY
 Numeric      = Skin structure from the "Archive 2.0 skin"
 Alphanumeric = Additions by ZerafinaCSS
 
->> 01 BASIC LAYOUT SETTINGS ETC.
+>> 01 BASIC LAYOUT SETTINGS
 >> 02 ELEMENTS
 >> 03 REGION: HEADER
 >> 04 REGION: DASHBOARD
@@ -42,7 +1153,7 @@ Alphanumeric = Additions by ZerafinaCSS
 >> 07 INTERACTIONS
 >> 08 ACTIONS: BUTTONS
 >> 09 ROLES AND STATES
->> 10 TYPES OF DATA, GROUPS OF DATA --> Tags are here
+>> 10 TYPES OF DATA, GROUPS OF DATA
 >> 11 GROUP: LISTBOX
 >> 12 GROUP: META
 >> 13 GROUP: BLURB
@@ -51,24 +1162,23 @@ Alphanumeric = Additions by ZerafinaCSS
 >> 16 ZONE: SYSTEM
 >> 17 ZONE: HOME
 >> 18 ZONE: SEARCH/BROWSE
->> 19 ZONE: TAG PAGES, TAGSETS, and TAG WRANGLING
+>> 19 ZONE: TAG PAGES, TAGSETS, AND TAG WRANGLING
 >> 21 USERSTUFF
 >> 22 SYSTEM MESSAGES
->> Z1 REPLACE THE ICONS AND IMAGES
+>> Z1 REPLACE ICONS AND IMAGES
 >> Z2 STATS ICONS WITH HOVER TEXT
 >> Z3 MISCELLANEOUS
 
 /*============================================================
->> 01 BASIC LAYOUT SETTINGS ETC.
+>> 01 BASIC LAYOUT SETTINGS
 ============================================================*/
 
-/* main text */
 body {
-  font-size: var(--txt-size-main); /* main font size */
-  color: var(--txt-main); /* main font color */
+  font-size: var(--txt-size-main);
+  color: var(--txt-main);
 }
 
-/* this wraps everything (header, inner, footer) */
+/* wraps header, inner, footer */
 #outer {
   display: flex;
     flex-direction: column;
@@ -76,22 +1186,20 @@ body {
   background-color: var(--bg1);
 }
 
-/* this is where the content is */
+/* main content container */
 #inner {
-  flex-grow: 1; /* this makes the footer stay at the bottom of the screen */
+  flex-grow: 1;
   display: flex;
     flex-flow: row;
     justify-content: flex-start;
   min-height: 70vh;
 }
 
-/* remove some spaces/gaps I don't like */
 .blurb li,
 .meta ul li {
   padding-left: 0;
 }
 
-/* remove dotted outline on some active and focused elements */
 a:active,
 a:focus,
 a:focus img,
@@ -109,7 +1217,7 @@ button:focus,
 ============================================================*/
 /* see "Archive: (2) elements skin" by AO3 */
 
-/*>========== links ==========<*/
+/*>========== LINKS ==========<*/
 
 a,
 a:link,
@@ -117,8 +1225,8 @@ a.work,
 .blurb h4 a:link,
 div.preface .byline a,
 .filters p a {
-  border-bottom: var(--link-underline); /* hide the link underline */
-  color: var(--link); /* link color */
+  border-bottom: var(--link-underline);
+  color: var(--link);
 }
 
 a:is(:hover, :focus),
@@ -129,23 +1237,21 @@ div.preface .byline a:is(:hover, :focus),
 .fandom.index.group a.tag:is(:hover, :focus),
 h2.heading a.tag:is(:hover, :focus),
 .filters p a:is(:hover, :focus) {
-  border-bottom-color: inherit; /* make link underline visible on hover */
-  color: var(--link-hgl); /* link hover color */
+  border-bottom-color: inherit;
+  color: var(--link-hgl);
 }
 
 a:visited,
 .blurb .heading a:visited {
-  color: var(--link-visited); /* different color for visited links */
+  color: var(--link-visited);
 }
 
-/* remove border on images that are links */
 a img {
   border: none;
 }
 
-/*>========== text ==========<*/
+/*>========== TEXT ==========<*/
 
-/* h2 headings */
 h2 {
   font-size: 1.8em;
   line-height: 1.2;
@@ -156,20 +1262,18 @@ h2.heading:has(+ .navigation.actions.module) {
   margin-top: 0;
 }
 
-/* horizontal rule/line to separate content */
 hr {
   border: none;
   border-bottom: 3px double;
 }
 
-/* emphasis, cite, italic */
 em,
 cite,
 i {
-  font-style: italic; /* this is oblique in the default skin but I want true italics */
+  font-style: italic;
 }
 
-/*>========== tables ==========<*/
+/*>========== TABLES ==========<*/
 
 table {
   border: var(--border-width) solid var(--border2);
@@ -216,7 +1320,6 @@ col.name {
 ============================================================*/
 /* see "Archive 2.0: (3) region header skin" by AO3 */
 
-/* this is the header */
 #header,
 #tos_prompt .heading {
   display: flex;
@@ -235,7 +1338,6 @@ col.name {
   background: var(--bg2);
 }
 
-/* header elements */
 #header > h1,
 #header > h2,
 #header > nav .user,
@@ -244,15 +1346,14 @@ col.name {
   display: flex;
     align-items: center;
   box-sizing: border-box;
-  min-height: 38px; /* CHANGE HEIGHT OF HEADER HERE */
+  min-height: 38px;
 }
 
-/* remove space before header title */
 #header div.clear {
   display: none;
 }
 
-/*>========== logo and title/heading ==========<*/
+/*>========== LOGO AND TITLE ==========<*/
 
 #header .heading {
   order: 1;
@@ -260,20 +1361,17 @@ col.name {
   padding: 0;
 }
 
-/* reset heading */
 #header .heading a {
   font-size: 1em;
   line-height: 1;
 }
 
-/* new AO3 title/heading */
 #header .heading a::before {
-  font-weight: var(--txt-bold); /* make title bold */
+  font-weight: var(--txt-bold);
   font-size: 1.15em;
-  color: var(--txt-header); /* change title/heading color here */
+  color: var(--txt-header);
 }
 
-/* hovered and focused title */
 #header .heading a:is(:hover, :focus)::before {
   -webkit-background-clip: text;
   background-image: var(--txt-header-hgl-h1);
@@ -285,7 +1383,7 @@ col.name {
   display: none;
 }
 
-/*>========== header dropdown menus ==========<*/
+/*>========== HEADER DROPDOWN MENUS ==========<*/
 
 #header .dropdown-menu,
 #small_login {
@@ -301,7 +1399,7 @@ col.name {
   font-size: 0.95em;
 }
 
-/* add arrow on top of open dropdown menu */
+/* arrow on top of open dropdown */
 #header nav:not(:has(.open)) li.dropdown:hover::before,
 #header .open::before {
   position: absolute;
@@ -311,7 +1409,7 @@ col.name {
   border-right: 8px solid transparent !important;
   border-bottom: 8px solid var(--bg6);
   border-left: 8px solid transparent !important;
-  color: var(--border3); /* this is the border/drop-shadow color; I have to do it this way because otherwise AO3 won't let me use custom properties here */
+  color: var(--border3);
   transform: translate(-50%, 31px);
   filter: drop-shadow(0 -1px);
   content: "";
@@ -323,21 +1421,18 @@ col.name {
   transform: translateX(1.5em);
 }
 
-/* cont. arrow placement for greeting/user menu */
 #header #greeting:not(:has(.open)) li.dropdown:hover::before,
 #header #greeting .open::before {
   z-index: 8;
   transform: translate(5%, 31px);
 }
 
-/* dropdown menu list items */
 #header .navigation .dropdown .menu li {
   margin: 0 0.25em;
   border-bottom: none;
   text-align: left;
 }
 
-/* dropdown menu list item links */
 #header .navigation .dropdown:is(*) .menu li a {
   display: block;
   max-width: unset;
@@ -347,23 +1442,20 @@ col.name {
   color: var(--txt-main);
 }
 
-/* dropdown menu list item links hover etc. */
 #header .navigation .dropdown .menu li a:is(:hover, :focus) {
   background: var(--int-hgl-bg);
   color: var(--int-hgl-txt);
   font-weight: var(--txt-semibold);
 }
 
-/*>========== header navigation / dropdown toggles ==========<*/
+/*>========== HEADER NAVIGATION / DROPDOWN TOGGLES ==========<*/
 
-/* header navigation */
 #header .navigation a,
 #header .user a {
   background: transparent;
   color: var(--txt-header);
 }
 
-/* dropdown toggle => hovered/focused/active */
 #header .navigation.actions .dropdown:is(.open, :hover, :focus, :active) > a,
 #header .navigation.actions > .dropdown a:is(:hover, :focus, :active),
 #header .user a:is(:hover, :focus, :active) {
@@ -371,9 +1463,8 @@ col.name {
   color: var(--txt-header-hgl);
 }
 
-/*>========== login and greeting (= user actions in header) ==========<*/
+/*>========== LOGIN AND GREETING ==========<*/
 
-/* placement */
 #login,
 #greeting {
   order: 3;
@@ -383,7 +1474,6 @@ col.name {
   background-color: transparent;
 }
 
-/* remove margin and padding */
 #header .user,
 #header .user a,
 #small_login .action,
@@ -396,14 +1486,13 @@ col.name {
   line-height: 0;
 }
 
-/* hide small user icon */
 #greeting p.icon {
   display: none;
 }
 
-/*>>========== replace user actions buttons with icons ==========<<*/
+/*>>========== REPLACE USER ACTION BUTTONS WITH ICONS ==========<<*/
 
-/* user icon (replaces the "Hi, [username]!") */
+/* user icon (replaces "Hi, [username]!") */
 #header #greeting .dropdown > a[href*="/users/"] {
   content: url("https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/assets/zerafina-header-icon-user.png");
 }
@@ -418,7 +1507,6 @@ col.name {
   content: url("https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/assets/zerafina-header-icon-logout.png");
 }
 
-/* settings for the icons */
 #header #greeting > ul > li > a {
   display: inline-block;
   height: 18px;
@@ -427,26 +1515,23 @@ col.name {
   filter: var(--header-icon);
 }
 
-/* colors for header icons when hovered/focused */
 #header #greeting > ul > li:is(.open, :hover, :focus) > a,
 #header #greeting > ul > li > a:is(:hover, :focus) {
   filter: var(--header-icon-hgl);
 }
 
-/* gap between icons (works because of "display: flex" above) */
 #header > nav .user {
   column-gap: 0.5em;
 }
 
-/*>========== primary navigation ==========<*/
-/* this is the header navigation bar with Fandoms, Browse, Search and About and the search bar */
+/*>========== PRIMARY NAVIGATION ==========<*/
 
 #header nav:has(> .primary) {
   order: 2;
   flex: 1;
   max-width: 100%;
-  border-width: var(--border-width) !important; /* important for the mobile skin */
-  border-color: var(--border2) !important; /* important for the mobile skin */
+  border-width: var(--border-width) !important;
+  border-color: var(--border2) !important;
 }
 
 #header .primary {
@@ -457,15 +1542,14 @@ col.name {
     align-items: center;
   box-sizing: border-box;
   box-shadow: none;
-  background: none; /* remove background-image and fallback color */
+  background: none;
 }
 
-/* remove space before navigation */
 #header .primary > li.dropdown:first-of-type {
   margin-left: 0;
 }
 
-/*>>========== primary navigation: header search bar ==========<<*/
+/*>>========== PRIMARY NAVIGATION: HEADER SEARCH BAR ==========<<*/
 
 #header .search {
   margin: 0;
@@ -475,7 +1559,6 @@ col.name {
   margin-inline: 1.25em;
 }
 
-/* add search bar icon */
 #header li.search::before {
   position: absolute;
     left: 0.4em;
@@ -483,20 +1566,18 @@ col.name {
   font-weight: var(--txt-bold);
   font-size: 1.25em;
   color: var(--link-hgl);
-  content: "\002315"; /* this is a unicode symbol that looks like a magnifying glass */
+  content: "\002315";
 }
 
-/* remove weird empty space before the search bar */
 #header li.search form label {
   display: none;
 }
 
-/* change the look of header search bar */
 #header #search .text {
   min-width: 170px;
   max-width: 20vw;
   margin: 0;
-  padding-left: 1.8em; /* make room for the search icon */
+  padding-left: 1.8em;
   border: var(--border-width) solid var(--border2);
   border-radius: var(--radius-alt);
   box-shadow: none;
@@ -504,22 +1585,19 @@ col.name {
   transition: width 0.15s;
 }
 
-/* how the search bar looks when selected to receive input */
 #header #search input:focus {
   color: var(--txt-main);
   border-color: var(--int-hgl);
   outline: 1px solid var(--int-hgl);
 }
 
-/* hide search button */
 #header #search .button,
 #header #search span.actions {
   display: none;
 }
 
-/*>========== CONTEXT: collections ==========<*/
+/*>========== CONTEXT: COLLECTIONS ==========<*/
 
-/* collection header */
 #header h2 {
   order: 4;
   display: block;
@@ -539,24 +1617,22 @@ col.name {
 >> 04 REGION: DASHBOARD
 ============================================================*/
 /* see "Archive: (4) region dashboard skin" by AO3 */
-/* #2 of the 4 regions shown on every page */
 
-/* create sticky dashboard */
 #dashboard,
 #dashboard.own {
   position: sticky;
   top: 0;
   box-sizing: border-box;
   width: 18%;
-  min-width: 150px; /* prevent sidebar from getting too narrow */
-  max-width: 230px; /* prevent sidebar from getting too wide */
+  min-width: 150px;
+  max-width: 230px;
   max-height: 100vh;
   overflow-x: visible;
   overflow-y: auto;
   padding: 0.429rem 0.5rem 0 0.5rem;
   border: none;
   border-right: var(--border-width) solid;
-  border-color: var(--border1) !important; /* needs to be like this for tablet + mobile skin */
+  border-color: var(--border1) !important;
   border-radius: 0;
   background-color: var(--bg3);
   font-size: 0.875em;
@@ -618,7 +1694,6 @@ col.name {
 >> 05 REGION: MAIN
 ============================================================*/
 /* see "Archive: (5) region main skin" by AO3 */
-/* #3 of the 4 regions shown on every page */
 
 #main,
 #main.dashboard {
@@ -632,10 +1707,9 @@ col.name {
 }
 
 #main.dashboard {
-  width: 82%; /* dashboard is 18% wide so #main with dahsboard should take up the remaining space */
+  width: 82%;
 }
 
-/* hide the error message pictures */
 #main.errors,
 #main.error-502,
 #main.error-503-maintenance,
@@ -648,7 +1722,6 @@ col.name {
   margin-right: 0;
 }
 
-/* add exclamation mark icon to error pages */
 #main.errors h2.heading::before {
   display: inline-block;
   width: 1em;
@@ -667,7 +1740,6 @@ col.name {
 >> 06 REGION: FOOTER
 ============================================================*/
 /* see "Archive: (6) region footer skin" by AO3 */
-/* #4 of the 4 regions shown on every page */
 
 #footer {
   box-sizing: border-box;
@@ -705,14 +1777,12 @@ col.name {
   float: unset;
 }
 
-/* headings for footer sections */
 #footer .heading {
   margin-block: 0 1em;
   font-weight: var(--txt-bold);
   color: var(--txt-main);
 }
 
-/* links in footer */
 #footer a,
 #footer button {
   border-bottom: var(--link-underline) !important;
@@ -720,7 +1790,6 @@ col.name {
   color: var(--link);
 }
 
-/* hover for links in footer */
 #footer a:is(:hover, :focus),
 #footer button:is(:hover, :focus) {
   border-bottom-color: inherit !important;
@@ -732,7 +1801,7 @@ col.name {
 ============================================================*/
 /* see "Archive: (7) interactions skin" by AO3 */
 
-/*>========== nesting ==========<*/
+/*>========== NESTING ==========<*/
 
 fieldset,
 form dl,
@@ -768,7 +1837,7 @@ dd fieldset {
   margin: 0.643em 0;
 }
 
-/*>========== form rules ==========<*/
+/*>========== FORM RULES ==========<*/
 
 label {
   margin-right: 0;
@@ -799,7 +1868,6 @@ textarea {
   border-radius: var(--radius-big);
 }
 
-/* when element is selected to receive input */
 input[type="text"]:focus,
 input[type="number"]:focus,
 .search input[type="text"]:focus,
@@ -827,7 +1895,6 @@ select:not(select[multiple]):is(:hover, :focus) {
   background: var(--bg5);
 }
 
-/* select dropdown menu */
 select:not(select[multiple]):open {
   background: var(--bg6);
 }
@@ -859,7 +1926,6 @@ option:checked:is(:hover, :focus, :active) {
   color: var(--int-current-txt);
 }
 
-
 form dt {
   display: inline-block;
   box-sizing: border-box;
@@ -886,7 +1952,6 @@ form fieldset#parent-options dd:has(ul) {
   margin: 0;
 }
 
-/* legends = little heading boxes on forms */
 form.verbose legend,
 .verbose form legend,
 form.single legend {
@@ -897,7 +1962,7 @@ form.single legend {
   font-weight: var(--txt-bold);
 }
 
-/* styling the preview box for the "Comment Formatting and Preview" userscript => https://greasyfork.org/en/scripts/484002-ao3-comment-formatting-and-preview */
+/* styling for "Comment Formatting and Preview" userscript */
 div.comment-preview.userstuff {
   margin-top: 0.429em;
   border: 1.5px dotted var(--border2) !important;
@@ -905,9 +1970,8 @@ div.comment-preview.userstuff {
   background: transparent;
 }
 
-/*>========== INPUT ELEMENTS: checkboxes, radio buttons etc. ==========<*/
+/*>========== INPUT ELEMENTS: CHECKBOXES, RADIO BUTTONS ==========<*/
 
-/* remove browser-specific appearance of checkbox + radio buttons and apply new styling */
 input[type="checkbox"],
 input[type="radio"],
 .filters [type="radio"],
@@ -932,7 +1996,6 @@ label.action input[type="checkbox"] {
   user-select: none;
 }
 
-/* hover for checkbox and radio buttons */
 input[type="checkbox"]:hover,
 input[type="radio"]:hover,
 .actions input[type="checkbox"]:hover,
@@ -942,7 +2005,6 @@ label.action input[type="checkbox"]:hover,
   color: var(--int-hgl);
 }
 
-/* disabled checkbox and radio buttons */
 input[type="checkbox"]:disabled,
 input[type="radio"]:disabled {
   border-color: var(--int-disabled) !important;
@@ -955,8 +2017,6 @@ input[type="checkbox"] + label {
   padding-left: 0;
 }
 
-/* attempt at fixing positioning of checkbox labels */
-/* I probably made this unnecessarily complicated and idek if it works everywhere */
 ul:not(ul.actions) li:has(input[type="checkbox"] + label):not(:has(fieldset)),
 ul:not(ul.actions) li:has(input[type="radio"] + label):not(:has(fieldset)),
 ul:not(ul.actions) li:not(.blurb ul li) > label:has(input[type="checkbox"]),
@@ -971,7 +2031,6 @@ ul:not(ul.actions) li:not(.blurb ul li) > label:has(input[type="radio"]) {
 
 /*>>========== CHECKBOXES ==========<<*/
 
-/* checked checkboxes */
 input[type="checkbox"]:checked,
 .actions input[type="checkbox"]:checked,
 label.action input[type="checkbox"]:checked {
@@ -980,7 +2039,6 @@ label.action input[type="checkbox"]:checked {
   color: var(--txt-alt2);
 }
 
-/* replace the checkmark symbol */
 input[type="checkbox"]::before,
 .filters [type="checkbox"]::before,
 .actions input[type="checkbox"]::before {
@@ -1002,24 +2060,21 @@ input[type="checkbox"]::before,
   font-size: 0.75em;
   line-height: 1;
   text-align: center;
-  content: "\002716\fe0e"; /* unicode cross */
+  content: "\002716\fe0e";
   transform: unset;
 }
 
-/* make checkmark visible when checked */
 input[type="checkbox"]:checked::before,
 .filters [type="checkbox"]:checked::before,
 .actions input[type="checkbox"]:checked::before {
   opacity: 1;
 }
 
-/* filters checkbox symbols should be visible always */
 .filters [type="checkbox"]:not(:checked)::before {
   color: var(--border2);
   opacity: 1;
 }
 
-/* hover for checked checkboxes */
 input[type="checkbox"]:checked:hover,
 .actions input[type="checkbox"]:checked:hover,
 label.action input[type="checkbox"]:checked:hover {
@@ -1031,7 +2086,6 @@ label.action input[type="checkbox"]:checked:hover {
   vertical-align: baseline;
 }
 
-/* hide filter checkbox dublicates */
 .filters [type="radio"] + .indicator,
 .filters [type="checkbox"] + .indicator {
   display: none;
@@ -1041,10 +2095,9 @@ label.action input[type="checkbox"]:checked:hover {
 
 input[type="radio"],
 .filters [type="radio"] {
-  border-radius: 100%; /* make radio buttons round again */
+  border-radius: 100%;
 }
 
-/* style checked radio buttons */
 input[type="radio"]:checked,
 .filters [type="radio"]:checked {
   border-color: var(--int-checked);
@@ -1094,13 +2147,12 @@ textarea.LV_invalid_field:is(:hover, :focus) {
   border-color: var(--alert-txt) transparent;
 }
 
-/*>========== WIDGET: AUTO COMPLETE ==========<*/
+/*>========== WIDGET: AUTOCOMPLETE ==========<*/
 
 .autocomplete div.dropdown {
   background: transparent;
 }
 
-/* style like a tooltip */
 .autocomplete div.dropdown ul {
   padding: 0.125em;
   border: 1px solid var(--border4);
@@ -1126,7 +2178,6 @@ textarea.LV_invalid_field:is(:hover, :focus) {
   color: var(--txt-main);
 }
 
-/* style like a tooltip */
 .autocomplete .notice {
   border: 1px solid var(--border4);
   border-radius: var(--radius-small);
@@ -1199,7 +2250,6 @@ textarea.LV_invalid_field:is(:hover, :focus) {
 }
 
 /*>========== WIDGET: MODAL DIALOGS ==========<*/
-/* = dialog box/popup window that appears, when you click on a help symbol for example */
 
 #modal {
   border: var(--border-width) solid var(--border3);
@@ -1229,14 +2279,13 @@ div.dynamic {
   background: transparent;
 }
 
-/*>========== mods: SINGLE ==========<*/
-/* for prominent simple forms consisting of one text input, e.g., on the blocked users page */
+/*>========== MODE: SINGLE ==========<*/
 
 form.single input[type="submit"] {
   vertical-align: unset;
 }
 
-/*>========== WIDGET: TOGGLED FORMS (SHOW/HIDE bookmark and collection) ==========<*/
+/*>========== WIDGET: TOGGLED FORMS ==========<*/
 
 .toggled form,
 .dynamic form {
@@ -1277,7 +2326,7 @@ form.single input[type="submit"] {
   line-height: 1;
 }
 
-/*>========== INTERACTION: POST (work, chapter, comment, news, feedback, challenge etc) ==========<*/
+/*>========== INTERACTION: POST ==========<*/
 
 .post .required .warnings,
 dd.required {
@@ -1313,13 +2362,12 @@ input::file-selector-button {
   border-radius: var(--radius-alt);
   box-shadow: var(--shadow-buttons);
   background: var(--int-btn-bg);
-  background-origin: border-box !important; /* border-box because if I add a background image (gradient) it should start from the corner of the border, NOT the corner of the padding edge */
+  background-origin: border-box !important;
   font-weight: 400;
-  white-space: normal; /* prevent overflow */
+  white-space: normal;
   color: var(--int-btn-txt);
 }
 
-/* social media buttons on homepage */
 .resp-sharing-button {
   border-radius: var(--radius-alt) !important;
 }
@@ -1330,12 +2378,11 @@ label.action,
 }
 
 input[type="submit"] {
-  height: auto; /* DO NOT DELETE */
+  height: auto;
 }
 
-/*>========== subtypes and modes ==========<*/
+/*>========== BUTTON STATES ==========<*/
 
-/* hover + focus */
 .actions a:is(:hover, :focus),
 .actions input:is(:hover, :focus),
 .actions button:is(:hover, :focus),
@@ -1353,7 +2400,6 @@ input::file-selector-button:is(:hover, :focus),
   color: var(--int-btn-hgl-txt);
 }
 
-/* currently active */
 .actions a:active,
 .current,
 a.current,
@@ -1367,7 +2413,7 @@ a:link.current,
   cursor: default;
 }
 
-/* disabled buttons */
+/* disabled buttons use reduced opacity and cannot be clicked */
 .actions label.disabled,
 #tos_prompt [disabled] {
   border-color: var(--int-btn-border);
@@ -1377,7 +2423,6 @@ a:link.current,
   filter: opacity(0.75);
 }
 
-/* disabled buttons select element */
 .actions .disabled select,
 .actions .disabled select:hover {
   border-color: var(--int-btn-border);
@@ -1385,7 +2430,6 @@ a:link.current,
   color: var(--txt-main);
 }
 
-/* button to delete added tags (idk if it is anywhere else) */
 .delete a,
 span.delete,
 span.delete a {
@@ -1406,15 +2450,14 @@ span.delete a {
   color: var(--main-txt);
 }
 
-/* prevent the "Unsubscribe" button from becoming too large */
+/* prevent "Unsubscribe" button overflow */
 .subscriptions-index .edit_subscription > input[type="submit"] {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 
-/*>========== attempt to fix the spacing ==========<*/
-/* I hate this so much ... */
+/*>========== BUTTON SPACING ==========<*/
 
 ul.actions:not(.navigation) > *:not(:first-child),
 fieldset.actions li:not(:first-child) {
@@ -1429,7 +2472,6 @@ fieldset.actions li:not(:first-child) {
 
 /*>========== CONTEXTS ==========<*/
 
-/* placement of secondary menus in fics */
 .chapter .secondary,
 .download .secondary {
   top: unset;
@@ -1443,8 +2485,7 @@ fieldset.actions li:not(:first-child) {
   display: none;
 }
 
-/*>>========== buttons with the the "to top" arrows and "expand"/"contract" symbols ==========<<*/
-/* anywhere else? */
+/*>>========== EXPAND/CONTRACT AND TO-TOP BUTTONS ==========<<*/
 
 .listbox > .heading .action:has(a) {
   padding: 0;
@@ -1458,9 +2499,8 @@ fieldset.actions li:not(:first-child) {
   color: inherit;
 }
 
-/*>========== sort and view actions (statistics page) ==========<*/
+/*>========== SORT AND VIEW ACTIONS ==========<*/
 
-/* display in seperate lines */
 ul.sorting.actions,
 ul.view.actions {
   width: 100%;
@@ -1560,7 +2600,7 @@ span.offered.requested {
   color: var(--caution-txt);
 }
 
-/*>========== arrows for the accordion widget ==========<*/
+/*>========== ACCORDION WIDGET ARROWS ==========<*/
 
 .collapsed::after {
   display: inline-block;
@@ -1595,7 +2635,8 @@ span.offered.requested {
 
 /*>========== TYPE: TAGS ==========<*/
 
-/*========== Reset AO3 default tag styling & commas ==========*/
+/*========== RESET DEFAULT TAG STYLING ==========*/
+
 ul .tags.commas {
   text-align: left;
 }
@@ -1608,9 +2649,8 @@ ul .tags.commas {
   padding: 0;
 }
 
-/*========== Base tag appearance ==========*/
+/*========== BASE TAG APPEARANCE ==========*/
 
-/* Exclude .splash .favorite a.tag and .splash .favorite li:nth-of-type(2n+1) a.tag */
 a.tag:not(.fandom.index.group a.tag):not(h2.heading a.tag):not(.splash .favorite a.tag):not(.splash .favorite li:nth-of-type(2n+1) a.tag),
 .tags a[data-remote="true"],
 .unwrangled,
@@ -1631,7 +2671,7 @@ a.tag:not(.fandom.index.group a.tag):not(h2.heading a.tag):not(.splash .favorite
   padding-right: 1.5em;
 }
 
-/*========== Tag pseudo-element background ==========*/
+/*========== TAG PSEUDO-ELEMENT BACKGROUND ==========*/
 
 a.tag:not(.fandom.index.group a.tag, h2.heading a.tag, .splash .favorite a.tag)::before,
 .tags a[data-remote="true"]::before,
@@ -1654,7 +2694,7 @@ dd.fandom.tags a::before,
   transition: all 0.2s ease;
 }
 
-/*========== Tag hover effects ==========*/
+/*========== TAG HOVER EFFECTS ==========*/
 
 a.tag:not(.fandom.index.group a.tag):not(h2.heading a.tag):not(.splash .favorite a.tag):not(.splash .favorite li:nth-of-type(2n+1) a.tag):hover::before,
 .added.tag:hover::before,
@@ -1682,7 +2722,7 @@ dd.fandom.tags a:hover,
   transform: translateY(-1px);
 }
 
-/*========== Fandom tag formatting ==========*/
+/*========== FANDOM TAG FORMATTING ==========*/
 
 h5.fandoms.heading {
   letter-spacing: -10px;
@@ -1711,7 +2751,7 @@ a.tag:hover {
   background: none;
 }
 
-/*========== Tag type variants ==========*/
+/*========== TAG TYPE VARIANTS ==========*/
 
 [class^=warning] a.tag {
   font-weight: 400;
@@ -1738,7 +2778,7 @@ a.tag:hover {
   border: 1px solid var(--tag-border);
 }
 
-/*========== Added tags formatting ==========*/
+/*========== ADDED TAGS FORMATTING ==========*/
 
 .autocomplete li.added,
 .post .meta dd ul li.added {
@@ -1760,7 +2800,7 @@ a.tag:hover {
   background-color: var(--tag-default-bg);
 }
 
-/*>========== GROUP CLOUD (= tag clouds) ==========<*/
+/*>========== GROUP: CLOUD ==========<*/
 
 a.cloud1 {
   font-size: 0.9em !important;
@@ -1802,7 +2842,7 @@ a.cloud8 {
   box-shadow: none;
 }
 
-/*>>========== definition lists (subscriptions, related works, edit multiple works) ==========<<*/
+/*>>========== DEFINITION LISTS ==========<<*/
 
 dl.index dt,
 dl.index dd {
@@ -1829,35 +2869,29 @@ dl.index dd {
 
 /*>========== TYPES ==========<*/
 
-/* I don't remember what this is ... */
 .actions .reindex a {
   border-bottom: 3px solid var(--alert-txt);
 }
 
-/* display each series in the blurb in a separate line */
 .blurb ul.series li:not(:first-of-type) {
   display: block;
   margin-block: 0.5em 0;
 }
 
-/* color of the series dividers */
 span.series .divider {
   color: var(--border2);
 }
 
-/* display each series in the mata box in a separate line */
 span.series:not(:first-of-type) {
   display: block;
   margin-top: 0.5em;
 }
 
-/* hide comma between series in meta box */
-/* this is kind of a workaround but there seems to be no better way to do this */
+/* workaround: hide comma between series in meta */
 dd.series {
   color: transparent;
 }
 
-/* make text visible again after hiding the comma */
 dd.series span {
   color: var(--txt-main);
 }
@@ -1871,7 +2905,7 @@ dd.series span {
   background-color: var(--bg7);
 }
 
-/*>>========== fix concise index (example: "Edit Multiple Works" page) ==========<<*/
+/*>>========== FIX CONCISE INDEX ==========<<*/
 
 .concise.index {
   display: flex;
@@ -1881,7 +2915,6 @@ dd.series span {
   width: unset;
 }
 
-/* attempt at responsive layout without media queries */
 .concise li {
   flex: 1 0 18.5rem;
   width: unset;
@@ -1937,20 +2970,17 @@ fieldset fieldset.listbox {
   background-color: var(--bg5);
 }
 
-/* border at the bottom only in some cases */
 .listbox .index:has(+ .actions[role="navigation"], + h4, + .actions #expand-fandoms) {
   border-bottom: var(--border-width) solid var(--border2);
   box-shadow: none;
 }
 
-/* mods: alphabet, medium */
 .alphabet .listbox li,
 .media .listbox {
   margin-inline: 0;
 }
 
-/*>========== placement of listbox buttons ==========<*/
-/* this is such a mess */
+/*>========== LISTBOX BUTTON PLACEMENT ==========<*/
 
 #user-fandoms.listbox .actions,
 .listbox > .actions.pagination {
@@ -1971,7 +3001,7 @@ fieldset fieldset.listbox {
   margin: 0.643em 0.429em;
 }
 
-/*>========== fix tagset media listboxes ==========<*/
+/*>========== FIX TAGSET MEDIA LISTBOXES ==========<*/
 
 .tagset .media .listbox {
   box-sizing: border-box;
@@ -1985,7 +3015,7 @@ fieldset fieldset.listbox {
   margin-right: 0;
 }
 
-/*>========== INTERACTION context ==========<*/
+/*>========== INTERACTION CONTEXT ==========<*/
 
 .listbox .many {
   max-height: 35vh;
@@ -2014,7 +3044,6 @@ dl.meta {
   width: 73.5%;
 }
 
-/* move meta tags up a tiny bit */
 dl.meta dd ul {
   margin-top: -0.15em;
 }
@@ -2055,25 +3084,22 @@ li.picture.blurb,
   box-shadow: var(--shadow-box1);
 }
 
-/* bold title */
 .blurb .header h4.heading a:first-child {
   font-weight: var(--txt-bold);
 }
 
-/* change size of the lock for restricted works */
 .blurb .header img {
   width: 0.8em;
   height: 0.8em;
   vertical-align: baseline;
 }
 
-/* position of date posted */
 .blurb .datetime {
-  top: 0; /* leave this here for bookmarks */
-  padding: 0; /* leave this here for own mystery blurbs */
+  top: 0;
+  padding: 0;
 }
 
-/*>========== new blurb header layout starts here ==========<*/
+/*>========== NEW BLURB HEADER LAYOUT ==========<*/
 
 .blurb .header:has(ul.required-tags) {
   display: flex;
@@ -2082,12 +3108,10 @@ li.picture.blurb,
   margin: 0;
 }
 
-/* remove space for icons on right side */
 .blurb .header .heading {
   margin: 0;
 }
 
-/* work title and author etc */
 .blurb .header h4.heading {
   order: 1;
   flex: 1;
@@ -2097,18 +3121,15 @@ li.picture.blurb,
   text-align: left;
 }
 
-/* fandoms tags are also part of header but I'm moving them down */
 .blurb h5.fandoms.heading {
   order: 4;
   margin-top: 0.5em;
 }
 
-/* hide blank space on promts with no fandom */
 .blurb h5.fandoms.heading:not(:has(a.tag)) {
   height: 0;
 }
 
-/* change position of content icons */
 .blurb .header ul.required-tags {
   order: 3;
   display: flex;
@@ -2121,7 +3142,6 @@ li.picture.blurb,
   border-top: var(--border-width) solid var(--border2);
 }
 
-/* this is also needed to change position of content icons */
 .blurb ul.required-tags, 
 .blurb ul.required-tags li,
 .blurb ul.required-tags li+li+li,
@@ -2140,10 +3160,8 @@ li.picture.blurb,
   margin: 0.5em 0 0 0;
 }
 
-/*>========== modification: PICTURE ==========<*/
-/* for indices with icon pictures, e.g. collections, users, skins + mystery blurbs */
+/*>========== MODIFICATION: PICTURE ==========<*/
 
-/* formatting picture blurb header */
 .picture.blurb:has(.icon) > .header,
 .mystery.blurb:has(.icon) > .header {
   min-height: 45px;
@@ -2152,7 +3170,6 @@ li.picture.blurb,
   border-bottom: var(--border-width) solid var(--border2);
 }
 
-/* remove border for user picture blurbs without descriptions or buttons */
 .user.pseud.picture.blurb:not(:has(blockquote, ul.actions)) > .header {
   margin: 0;
   padding: 0;
@@ -3716,12 +4733,6 @@ dl.statistics dt.bookmarks::before {
 /* related works (external bookmarks) */
 .stats dd.inspired::before {
   background-image: url("https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/assets/zerafina-stats-icon-related-works-01.png");
-}
-
-/* reading time */
-.stats dd.readtime::before,
-dl.statistics dt.readtime::before {
-  background-image: url("https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/assets/zerafina-stats-icon-hits-01.png");
 }
 
 /* hits */

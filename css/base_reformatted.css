@@ -31,7 +31,7 @@ DIRECTORY
 ==============================================================
 
 Numeric      = Skin structure from the "Archive 2.0 skin"
-Alphanumeric = Additions by ZerafinaCSS
+Alphanumeric = Additions by ZerafinaCSS, Blackbatcat
 
 >> 01 BASIC LAYOUT SETTINGS ETC.
 >> 02 ELEMENTS
@@ -64,11 +64,11 @@ Alphanumeric = Additions by ZerafinaCSS
 
 /* main text */
 body {
-  font-size: var(--txt-size-main); /* main font size */
-  color: var(--txt-main); /* main font color */
+  font-size: var(--txt-size-main);
+  color: var(--txt-main);
 }
 
-/* this wraps everything (header, inner, footer) */
+/* main page wrapper */
 #outer {
   display: flex;
     flex-direction: column;
@@ -76,22 +76,22 @@ body {
   background-color: var(--bg1);
 }
 
-/* this is where the content is */
+/* main content container */
 #inner {
-  flex-grow: 1; /* this makes the footer stay at the bottom of the screen */
+  flex-grow: 1; /* makes the footer stay at the bottom of the screen */
   display: flex;
     flex-flow: row;
     justify-content: flex-start;
   min-height: 70vh;
 }
 
-/* remove some spaces/gaps I don't like */
+/* remove default padding */
 .blurb li,
 .meta ul li {
   padding-left: 0;
 }
 
-/* remove dotted outline on some active and focused elements */
+/* remove default focus outlines */
 a:active,
 a:focus,
 a:focus img,
@@ -109,7 +109,7 @@ button:focus,
 ============================================================*/
 /* see "Archive: (2) elements skin" by AO3 */
 
-/*>========== links ==========<*/
+/*>========== LINKS ==========<*/
 
 a,
 a:link,
@@ -138,14 +138,14 @@ a:visited,
   color: var(--link-visited); /* different color for visited links */
 }
 
-/* remove border on images that are links */
+/* remove default image link borders */
 a img {
   border: none;
 }
 
-/*>========== text ==========<*/
+/*>========== TEXT ==========<*/
 
-/* h2 headings */
+/* level 2 heading styles */
 h2 {
   font-size: 1.8em;
   line-height: 1.2;
@@ -156,20 +156,20 @@ h2.heading:has(+ .navigation.actions.module) {
   margin-top: 0;
 }
 
-/* horizontal rule/line to separate content */
+/* content separator line */
 hr {
   border: none;
   border-bottom: 3px double;
 }
 
-/* emphasis, cite, italic */
+/* true italic text styles */
 em,
 cite,
 i {
-  font-style: italic; /* this is oblique in the default skin but I want true italics */
+  font-style: italic; /* changes oblique to true italics */
 }
 
-/*>========== tables ==========<*/
+/*>========== TABLES ==========<*/
 
 table {
   border: var(--border-width) solid var(--border2);
@@ -216,7 +216,7 @@ col.name {
 ============================================================*/
 /* see "Archive 2.0: (3) region header skin" by AO3 */
 
-/* this is the header */
+/* site header container */
 #header,
 #tos_prompt .heading {
   display: flex;
@@ -235,7 +235,7 @@ col.name {
   background: var(--bg2);
 }
 
-/* header elements */
+/* header component heights */
 #header > h1,
 #header > h2,
 #header > nav .user,
@@ -244,15 +244,15 @@ col.name {
   display: flex;
     align-items: center;
   box-sizing: border-box;
-  min-height: 38px; /* CHANGE HEIGHT OF HEADER HERE */
+  min-height: 38px;
 }
 
-/* remove space before header title */
+/* remove header title spacing */
 #header div.clear {
   display: none;
 }
 
-/*>========== logo and title/heading ==========<*/
+/*>========== LOGO AND TITLE/HEADING ==========<*/
 
 #header .heading {
   order: 1;
@@ -266,26 +266,26 @@ col.name {
   line-height: 1;
 }
 
-/* new AO3 title/heading */
+/* custom ao3 header title */
 #header .heading a::before {
-  font-weight: var(--txt-bold); /* make title bold */
+  font-weight: var(--txt-bold);
   font-size: 1.15em;
-  color: var(--txt-header); /* change title/heading color here */
+  color: var(--txt-header);
 }
 
-/* hovered and focused title */
+/* header title hover effects */
 #header .heading a:is(:hover, :focus)::before {
   -webkit-background-clip: text;
   background-image: var(--txt-header-hgl-h1);
   color: transparent;
 }
 
-/* hide "Archive of Our Own beta" title + logo */
+/* hide default ao3 title and logo */
 #header .heading a * {
   display: none;
 }
 
-/*>========== header dropdown menus ==========<*/
+/*>========== HEADER DROPDOWN MENUS ==========<*/
 
 #header .dropdown-menu,
 #small_login {
@@ -301,7 +301,7 @@ col.name {
   font-size: 0.95em;
 }
 
-/* add arrow on top of open dropdown menu */
+/* dropdown menu arrow indicator */
 #header nav:not(:has(.open)) li.dropdown:hover::before,
 #header .open::before {
   position: absolute;
@@ -317,27 +317,27 @@ col.name {
   content: "";
 }
 
-/* arrow placement for greeting/user menu */
+/* user menu dropdown positioning */
 #greeting .dropdown-menu {
   z-index: 7;
   transform: translateX(1.5em);
 }
 
-/* cont. arrow placement for greeting/user menu */
+/* user menu arrow positioning */
 #header #greeting:not(:has(.open)) li.dropdown:hover::before,
 #header #greeting .open::before {
   z-index: 8;
   transform: translate(5%, 31px);
 }
 
-/* dropdown menu list items */
+/* dropdown menu item styles */
 #header .navigation .dropdown .menu li {
   margin: 0 0.25em;
   border-bottom: none;
   text-align: left;
 }
 
-/* dropdown menu list item links */
+/* dropdown menu link styles */
 #header .navigation .dropdown:is(*) .menu li a {
   display: block;
   max-width: unset;
@@ -347,14 +347,14 @@ col.name {
   color: var(--txt-main);
 }
 
-/* dropdown menu list item links hover etc. */
+/* dropdown link hover states */
 #header .navigation .dropdown .menu li a:is(:hover, :focus) {
   background: var(--int-hgl-bg);
   color: var(--int-hgl-txt);
   font-weight: var(--txt-semibold);
 }
 
-/*>========== header navigation / dropdown toggles ==========<*/
+/*>========== HEADER NAVIGATION / DROPDOWN TOGGLES ==========<*/
 
 /* header navigation */
 #header .navigation a,
@@ -363,7 +363,7 @@ col.name {
   color: var(--txt-header);
 }
 
-/* dropdown toggle => hovered/focused/active */
+/* dropdown toggle interactive states */
 #header .navigation.actions .dropdown:is(.open, :hover, :focus, :active) > a,
 #header .navigation.actions > .dropdown a:is(:hover, :focus, :active),
 #header .user a:is(:hover, :focus, :active) {
@@ -371,7 +371,7 @@ col.name {
   color: var(--txt-header-hgl);
 }
 
-/*>========== login and greeting (= user actions in header) ==========<*/
+/*>========== LOGIN AND GREETING (= USER ACTIONS IN HEADER) ==========<*/
 
 /* placement */
 #login,
@@ -401,7 +401,7 @@ col.name {
   display: none;
 }
 
-/*>>========== replace user actions buttons with icons ==========<<*/
+/*>>========== REPLACE USER ACTIONS BUTTONS WITH ICONS ==========<<*/
 
 /* user icon (replaces the "Hi, [username]!") */
 #header #greeting .dropdown > a[href*="/users/"] {
@@ -418,7 +418,7 @@ col.name {
   content: url("https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/assets/zerafina-header-icon-logout.png");
 }
 
-/* settings for the icons */
+/* header icon dimensions and display */
 #header #greeting > ul > li > a {
   display: inline-block;
   height: 18px;
@@ -427,18 +427,18 @@ col.name {
   filter: var(--header-icon);
 }
 
-/* colors for header icons when hovered/focused */
+/* header icon hover effects */
 #header #greeting > ul > li:is(.open, :hover, :focus) > a,
 #header #greeting > ul > li > a:is(:hover, :focus) {
   filter: var(--header-icon-hgl);
 }
 
-/* gap between icons (works because of "display: flex" above) */
+/* header icon spacing */
 #header > nav .user {
   column-gap: 0.5em;
 }
 
-/*>========== primary navigation ==========<*/
+/*>========== PRIMARY NAVIGATION ==========<*/
 /* this is the header navigation bar with Fandoms, Browse, Search and About and the search bar */
 
 #header nav:has(> .primary) {
@@ -465,7 +465,7 @@ col.name {
   margin-left: 0;
 }
 
-/*>>========== primary navigation: header search bar ==========<<*/
+/*>>========== PRIMARY NAVIGATION: HEADER SEARCH BAR ==========<<*/
 
 #header .search {
   margin: 0;
@@ -475,7 +475,7 @@ col.name {
   margin-inline: 1.25em;
 }
 
-/* add search bar icon */
+/* search bar magnifying glass icon */
 #header li.search::before {
   position: absolute;
     left: 0.4em;
@@ -486,12 +486,12 @@ col.name {
   content: "\002315"; /* this is a unicode symbol that looks like a magnifying glass */
 }
 
-/* remove weird empty space before the search bar */
+/* remove search label spacing */
 #header li.search form label {
   display: none;
 }
 
-/* change the look of header search bar */
+/* search bar appearance */
 #header #search .text {
   min-width: 170px;
   max-width: 20vw;
@@ -504,20 +504,20 @@ col.name {
   transition: width 0.15s;
 }
 
-/* how the search bar looks when selected to receive input */
+/* search bar focus state */
 #header #search input:focus {
   color: var(--txt-main);
   border-color: var(--int-hgl);
   outline: 1px solid var(--int-hgl);
 }
 
-/* hide search button */
+/* hide redundant search button */
 #header #search .button,
 #header #search span.actions {
   display: none;
 }
 
-/*>========== CONTEXT: collections ==========<*/
+/*>========== CONTEXT: COLLECTIONS ==========<*/
 
 /* collection header */
 #header h2 {
@@ -541,22 +541,22 @@ col.name {
 /* see "Archive: (4) region dashboard skin" by AO3 */
 /* #2 of the 4 regions shown on every page */
 
-/* create sticky dashboard */
+/* sticky sidebar navigation */
 #dashboard,
 #dashboard.own {
   position: sticky;
   top: 0;
   box-sizing: border-box;
   width: 18%;
-  min-width: 150px; /* prevent sidebar from getting too narrow */
-  max-width: 230px; /* prevent sidebar from getting too wide */
+  min-width: 150px; /* minimum sidebar width */
+  max-width: 230px; /* maximum sidebar width */
   max-height: 100vh;
   overflow-x: visible;
   overflow-y: auto;
   padding: 0.429rem 0.5rem 0 0.5rem;
   border: none;
   border-right: var(--border-width) solid;
-  border-color: var(--border1) !important; /* needs to be like this for tablet + mobile skin */
+  border-color: var(--border1) !important; /* required for mobile compatibility */
   border-radius: 0;
   background-color: var(--bg3);
   font-size: 0.875em;
@@ -632,10 +632,10 @@ col.name {
 }
 
 #main.dashboard {
-  width: 82%; /* dashboard is 18% wide so #main with dahsboard should take up the remaining space */
+  width: 82%; /* complementary width to 18% dashboard */
 }
 
-/* hide the error message pictures */
+/* remove default error images */
 #main.errors,
 #main.error-502,
 #main.error-503-maintenance,
@@ -648,7 +648,7 @@ col.name {
   margin-right: 0;
 }
 
-/* add exclamation mark icon to error pages */
+/* error page warning icon */
 #main.errors h2.heading::before {
   display: inline-block;
   width: 1em;
@@ -712,7 +712,7 @@ col.name {
   color: var(--txt-main);
 }
 
-/* links in footer */
+/* footer link styles */
 #footer a,
 #footer button {
   border-bottom: var(--link-underline) !important;
@@ -720,7 +720,7 @@ col.name {
   color: var(--link);
 }
 
-/* hover for links in footer */
+/* footer link hover states */
 #footer a:is(:hover, :focus),
 #footer button:is(:hover, :focus) {
   border-bottom-color: inherit !important;
@@ -732,7 +732,7 @@ col.name {
 ============================================================*/
 /* see "Archive: (7) interactions skin" by AO3 */
 
-/*>========== nesting ==========<*/
+/*>========== NESTING ==========<*/
 
 fieldset,
 form dl,
@@ -768,7 +768,7 @@ dd fieldset {
   margin: 0.643em 0;
 }
 
-/*>========== form rules ==========<*/
+/*>========== FORM RULES ==========<*/
 
 label {
   margin-right: 0;
@@ -799,7 +799,7 @@ textarea {
   border-radius: var(--radius-big);
 }
 
-/* when element is selected to receive input */
+/* input focus states */
 input[type="text"]:focus,
 input[type="number"]:focus,
 .search input[type="text"]:focus,
@@ -827,7 +827,7 @@ select:not(select[multiple]):is(:hover, :focus) {
   background: var(--bg5);
 }
 
-/* select dropdown menu */
+/* open select dropdown styles */
 select:not(select[multiple]):open {
   background: var(--bg6);
 }
@@ -886,7 +886,7 @@ form fieldset#parent-options dd:has(ul) {
   margin: 0;
 }
 
-/* legends = little heading boxes on forms */
+/* form section heading styles */
 form.verbose legend,
 .verbose form legend,
 form.single legend {
@@ -897,17 +897,9 @@ form.single legend {
   font-weight: var(--txt-bold);
 }
 
-/* styling the preview box for the "Comment Formatting and Preview" userscript => https://greasyfork.org/en/scripts/484002-ao3-comment-formatting-and-preview */
-div.comment-preview.userstuff {
-  margin-top: 0.429em;
-  border: 1.5px dotted var(--border2) !important;
-  border-radius: var(--radius-small);
-  background: transparent;
-}
+/*>========== INPUT ELEMENTS: CHECKBOXES, RADIO BUTTONS ETC. ==========<*/
 
-/*>========== INPUT ELEMENTS: checkboxes, radio buttons etc. ==========<*/
-
-/* remove browser-specific appearance of checkbox + radio buttons and apply new styling */
+/* custom checkbox and radio button styles */
 input[type="checkbox"],
 input[type="radio"],
 .filters [type="radio"],
@@ -932,7 +924,7 @@ label.action input[type="checkbox"] {
   user-select: none;
 }
 
-/* hover for checkbox and radio buttons */
+/* checkbox and radio hover states */
 input[type="checkbox"]:hover,
 input[type="radio"]:hover,
 .actions input[type="checkbox"]:hover,
@@ -942,7 +934,7 @@ label.action input[type="checkbox"]:hover,
   color: var(--int-hgl);
 }
 
-/* disabled checkbox and radio buttons */
+/* disabled input styles */
 input[type="checkbox"]:disabled,
 input[type="radio"]:disabled {
   border-color: var(--int-disabled) !important;
@@ -955,8 +947,7 @@ input[type="checkbox"] + label {
   padding-left: 0;
 }
 
-/* attempt at fixing positioning of checkbox labels */
-/* I probably made this unnecessarily complicated and idek if it works everywhere */
+/* checkbox label alignment */
 ul:not(ul.actions) li:has(input[type="checkbox"] + label):not(:has(fieldset)),
 ul:not(ul.actions) li:has(input[type="radio"] + label):not(:has(fieldset)),
 ul:not(ul.actions) li:not(.blurb ul li) > label:has(input[type="checkbox"]),
@@ -971,7 +962,7 @@ ul:not(ul.actions) li:not(.blurb ul li) > label:has(input[type="radio"]) {
 
 /*>>========== CHECKBOXES ==========<<*/
 
-/* checked checkboxes */
+/* checked checkbox styles */
 input[type="checkbox"]:checked,
 .actions input[type="checkbox"]:checked,
 label.action input[type="checkbox"]:checked {
@@ -980,7 +971,7 @@ label.action input[type="checkbox"]:checked {
   color: var(--txt-alt2);
 }
 
-/* replace the checkmark symbol */
+/* custom checkmark symbol */
 input[type="checkbox"]::before,
 .filters [type="checkbox"]::before,
 .actions input[type="checkbox"]::before {
@@ -995,7 +986,7 @@ input[type="checkbox"]::before,
   opacity: 0;
 }
 
-/* cross for "exclude" filter checkboxes */
+/* exclude filter cross symbol */
 .filters .exclude [type="checkbox"]::before {
   width: 100%;
   border: none;
@@ -1003,23 +994,22 @@ input[type="checkbox"]::before,
   line-height: 1;
   text-align: center;
   content: "\002716\fe0e"; /* unicode cross */
-  transform: unset;
 }
 
-/* make checkmark visible when checked */
+/* show checkmark when checked */
 input[type="checkbox"]:checked::before,
 .filters [type="checkbox"]:checked::before,
 .actions input[type="checkbox"]:checked::before {
   opacity: 1;
 }
 
-/* filters checkbox symbols should be visible always */
+/* always show filter checkbox symbols */
 .filters [type="checkbox"]:not(:checked)::before {
   color: var(--border2);
   opacity: 1;
 }
 
-/* hover for checked checkboxes */
+/* checked checkbox hover states */
 input[type="checkbox"]:checked:hover,
 .actions input[type="checkbox"]:checked:hover,
 label.action input[type="checkbox"]:checked:hover {
@@ -1031,7 +1021,7 @@ label.action input[type="checkbox"]:checked:hover {
   vertical-align: baseline;
 }
 
-/* hide filter checkbox dublicates */
+/* hide duplicate filter indicators */
 .filters [type="radio"] + .indicator,
 .filters [type="checkbox"] + .indicator {
   display: none;
@@ -1041,10 +1031,10 @@ label.action input[type="checkbox"]:checked:hover {
 
 input[type="radio"],
 .filters [type="radio"] {
-  border-radius: 100%; /* make radio buttons round again */
+  border-radius: 100%; /* restore round radio buttons */
 }
 
-/* style checked radio buttons */
+/* checked radio button styles */
 input[type="radio"]:checked,
 .filters [type="radio"]:checked {
   border-color: var(--int-checked);
@@ -1199,7 +1189,7 @@ textarea.LV_invalid_field:is(:hover, :focus) {
 }
 
 /*>========== WIDGET: MODAL DIALOGS ==========<*/
-/* = dialog box/popup window that appears, when you click on a help symbol for example */
+/* popup window for help and alerts */
 
 #modal {
   border: var(--border-width) solid var(--border3);
@@ -1229,14 +1219,14 @@ div.dynamic {
   background: transparent;
 }
 
-/*>========== mods: SINGLE ==========<*/
-/* for prominent simple forms consisting of one text input, e.g., on the blocked users page */
+/*>========== MODS: SINGLE ==========<*/
+/* styles for single input forms */
 
 form.single input[type="submit"] {
   vertical-align: unset;
 }
 
-/*>========== WIDGET: TOGGLED FORMS (SHOW/HIDE bookmark and collection) ==========<*/
+/*>========== WIDGET: TOGGLED FORMS (SHOW/HIDE BOOKMARK AND COLLECTION) ==========<*/
 
 .toggled form,
 .dynamic form {
@@ -1277,7 +1267,7 @@ form.single input[type="submit"] {
   line-height: 1;
 }
 
-/*>========== INTERACTION: POST (work, chapter, comment, news, feedback, challenge etc) ==========<*/
+/*>========== INTERACTION: POST (WORK, CHAPTER, COMMENT, NEWS, FEEDBACK, CHALLENGE ETC) ==========<*/
 
 .post .required .warnings,
 dd.required {
@@ -1313,7 +1303,7 @@ input::file-selector-button {
   border-radius: var(--radius-alt);
   box-shadow: var(--shadow-buttons);
   background: var(--int-btn-bg);
-  background-origin: border-box !important; /* border-box because if I add a background image (gradient) it should start from the corner of the border, NOT the corner of the padding edge */
+  background-origin: border-box !important; /* ensure gradient starts from border corner */
   font-weight: 400;
   white-space: normal; /* prevent overflow */
   color: var(--int-btn-txt);
@@ -1330,10 +1320,10 @@ label.action,
 }
 
 input[type="submit"] {
-  height: auto; /* DO NOT DELETE */
+  height: auto; /* required property */
 }
 
-/*>========== subtypes and modes ==========<*/
+/*>========== SUBTYPES AND MODES ==========<*/
 
 /* hover + focus */
 .actions a:is(:hover, :focus),
@@ -1413,8 +1403,7 @@ span.delete a {
   white-space: nowrap;
 }
 
-/*>========== attempt to fix the spacing ==========<*/
-/* I hate this so much ... */
+/*>========== SPACING ADJUSTMENTS ==========<*/
 
 ul.actions:not(.navigation) > *:not(:first-child),
 fieldset.actions li:not(:first-child) {
@@ -1443,8 +1432,7 @@ fieldset.actions li:not(:first-child) {
   display: none;
 }
 
-/*>>========== buttons with the the "to top" arrows and "expand"/"contract" symbols ==========<<*/
-/* anywhere else? */
+/*>>========== NAVIGATION AND EXPANSION BUTTONS ==========<<*/
 
 .listbox > .heading .action:has(a) {
   padding: 0;
@@ -1458,7 +1446,7 @@ fieldset.actions li:not(:first-child) {
   color: inherit;
 }
 
-/*>========== sort and view actions (statistics page) ==========<*/
+/*>========== SORT AND VIEW ACTIONS (STATISTICS PAGE) ==========<*/
 
 /* display in seperate lines */
 ul.sorting.actions,
@@ -1560,7 +1548,7 @@ span.offered.requested {
   color: var(--caution-txt);
 }
 
-/*>========== arrows for the accordion widget ==========<*/
+/*>========== ARROWS FOR THE ACCORDION WIDGET ==========<*/
 
 .collapsed::after {
   display: inline-block;
@@ -1595,7 +1583,7 @@ span.offered.requested {
 
 /*>========== TYPE: TAGS ==========<*/
 
-/*========== Reset AO3 default tag styling & commas ==========*/
+/* reset default tag styles */
 ul .tags.commas {
   text-align: left;
 }
@@ -1608,9 +1596,8 @@ ul .tags.commas {
   padding: 0;
 }
 
-/*========== Base tag appearance ==========*/
-
-/* Exclude .splash .favorite a.tag and .splash .favorite li:nth-of-type(2n+1) a.tag */
+/* base tag styles */
+/* exclude .splash .favorite a.tag and .splash .favorite li:nth-of-type(2n+1) a.tag */
 a.tag:not(.fandom.index.group a.tag):not(h2.heading a.tag):not(.splash .favorite a.tag):not(.splash .favorite li:nth-of-type(2n+1) a.tag),
 .tags a[data-remote="true"],
 .unwrangled,
@@ -1631,8 +1618,7 @@ a.tag:not(.fandom.index.group a.tag):not(h2.heading a.tag):not(.splash .favorite
   padding-right: 1.5em;
 }
 
-/*========== Tag pseudo-element background ==========*/
-
+/* tag pseudo-background effects */
 a.tag:not(.fandom.index.group a.tag, h2.heading a.tag, .splash .favorite a.tag)::before,
 .tags a[data-remote="true"]::before,
 .added.tag::before,
@@ -1654,8 +1640,7 @@ dd.fandom.tags a::before,
   transition: all 0.2s ease;
 }
 
-/*========== Tag hover effects ==========*/
-
+/* tag hover states */
 a.tag:not(.fandom.index.group a.tag):not(h2.heading a.tag):not(.splash .favorite a.tag):not(.splash .favorite li:nth-of-type(2n+1) a.tag):hover::before,
 .added.tag:hover::before,
 .unwrangled:hover::before,
@@ -1682,8 +1667,7 @@ dd.fandom.tags a:hover,
   transform: translateY(-1px);
 }
 
-/*========== Fandom tag formatting ==========*/
-
+/* fandom tag styles */
 h5.fandoms.heading {
   letter-spacing: -10px;
   color: transparent;
@@ -1711,8 +1695,7 @@ a.tag:hover {
   background: none;
 }
 
-/*========== Tag type variants ==========*/
-
+/* tag class styles */
 [class^=warning] a.tag {
   font-weight: 400;
   background-color: var(--tag-warning-bg) !important;
@@ -1738,8 +1721,7 @@ a.tag:hover {
   border: 1px solid var(--tag-border);
 }
 
-/*========== Added tags formatting ==========*/
-
+/* added tag styles */
 .autocomplete li.added,
 .post .meta dd ul li.added {
   display: inline-flex;
@@ -1760,7 +1742,7 @@ a.tag:hover {
   background-color: var(--tag-default-bg);
 }
 
-/*>========== GROUP CLOUD (= tag clouds) ==========<*/
+/*>========== GROUP CLOUD (= TAG CLOUDS) ==========<*/
 
 a.cloud1 {
   font-size: 0.9em !important;
@@ -1802,7 +1784,7 @@ a.cloud8 {
   box-shadow: none;
 }
 
-/*>>========== definition lists (subscriptions, related works, edit multiple works) ==========<<*/
+/*>>========== DEFINITION LIST STYLES ==========<<*/
 
 dl.index dt,
 dl.index dd {
@@ -1829,35 +1811,34 @@ dl.index dd {
 
 /*>========== TYPES ==========<*/
 
-/* I don't remember what this is ... */
+/* reindex action styling */
 .actions .reindex a {
   border-bottom: 3px solid var(--alert-txt);
 }
 
-/* display each series in the blurb in a separate line */
+/* series list line breaks */
 .blurb ul.series li:not(:first-of-type) {
   display: block;
   margin-block: 0.5em 0;
 }
 
-/* color of the series dividers */
+/* series divider color */
 span.series .divider {
   color: var(--border2);
 }
 
-/* display each series in the mata box in a separate line */
+/* meta box series line breaks */
 span.series:not(:first-of-type) {
   display: block;
   margin-top: 0.5em;
 }
 
-/* hide comma between series in meta box */
-/* this is kind of a workaround but there seems to be no better way to do this */
+/* hide series meta box commas */
 dd.series {
   color: transparent;
 }
 
-/* make text visible again after hiding the comma */
+/* restore series text visibility */
 dd.series span {
   color: var(--txt-main);
 }
@@ -1871,7 +1852,7 @@ dd.series span {
   background-color: var(--bg7);
 }
 
-/*>>========== fix concise index (example: "Edit Multiple Works" page) ==========<<*/
+/*>>========== CONCISE INDEX LAYOUT ==========<<*/
 
 .concise.index {
   display: flex;
@@ -1881,7 +1862,7 @@ dd.series span {
   width: unset;
 }
 
-/* attempt at responsive layout without media queries */
+/* fluid responsive layout */
 .concise li {
   flex: 1 0 18.5rem;
   width: unset;
@@ -1937,20 +1918,19 @@ fieldset fieldset.listbox {
   background-color: var(--bg5);
 }
 
-/* border at the bottom only in some cases */
+/* conditional bottom border */
 .listbox .index:has(+ .actions[role="navigation"], + h4, + .actions #expand-fandoms) {
   border-bottom: var(--border-width) solid var(--border2);
   box-shadow: none;
 }
 
-/* mods: alphabet, medium */
+/* alphabet and medium variants */
 .alphabet .listbox li,
 .media .listbox {
   margin-inline: 0;
 }
 
-/*>========== placement of listbox buttons ==========<*/
-/* this is such a mess */
+/*>========== PLACEMENT OF LISTBOX BUTTONS ==========<*/
 
 #user-fandoms.listbox .actions,
 .listbox > .actions.pagination {
@@ -1971,7 +1951,7 @@ fieldset fieldset.listbox {
   margin: 0.643em 0.429em;
 }
 
-/*>========== fix tagset media listboxes ==========<*/
+/*>========== FIX TAGSET MEDIA LISTBOXES ==========<*/
 
 .tagset .media .listbox {
   box-sizing: border-box;
@@ -1985,7 +1965,7 @@ fieldset fieldset.listbox {
   margin-right: 0;
 }
 
-/*>========== INTERACTION context ==========<*/
+/*>========== INTERACTION CONTEXT ==========<*/
 
 .listbox .many {
   max-height: 35vh;
@@ -2014,7 +1994,7 @@ dl.meta {
   width: 73.5%;
 }
 
-/* move meta tags up a tiny bit */
+/* adjust meta tag spacing */
 dl.meta dd ul {
   margin-top: -0.15em;
 }
@@ -2034,6 +2014,7 @@ dl.meta dd ul {
 >> 13 GROUP: BLURB
 ============================================================*/
 /* see "Archive: (13) group blurb skin" by AO3 */
+/* note rewriting left off here */
 
 li.blurb,
 .blurb .blurb,
@@ -2055,25 +2036,25 @@ li.picture.blurb,
   box-shadow: var(--shadow-box1);
 }
 
-/* bold title */
+/* bold blurb titles */
 .blurb .header h4.heading a:first-child {
   font-weight: var(--txt-bold);
 }
 
-/* change size of the lock for restricted works */
+/* restricted work icon size */
 .blurb .header img {
   width: 0.8em;
   height: 0.8em;
   vertical-align: baseline;
 }
 
-/* position of date posted */
+/* post date positioning */
 .blurb .datetime {
   top: 0; /* leave this here for bookmarks */
   padding: 0; /* leave this here for own mystery blurbs */
 }
 
-/*>========== new blurb header layout starts here ==========<*/
+/*>========== BLURB HEADER LAYOUT ==========<*/
 
 .blurb .header:has(ul.required-tags) {
   display: flex;
@@ -2082,7 +2063,7 @@ li.picture.blurb,
   margin: 0;
 }
 
-/* remove space for icons on right side */
+/* remove icon right spacing */
 .blurb .header .heading {
   margin: 0;
 }
@@ -2103,7 +2084,7 @@ li.picture.blurb,
   margin-top: 0.5em;
 }
 
-/* hide blank space on promts with no fandom */
+/* hide empty fandom space */
 .blurb h5.fandoms.heading:not(:has(a.tag)) {
   height: 0;
 }
@@ -2140,8 +2121,8 @@ li.picture.blurb,
   margin: 0.5em 0 0 0;
 }
 
-/*>========== modification: PICTURE ==========<*/
-/* for indices with icon pictures, e.g. collections, users, skins + mystery blurbs */
+/*>========== MODIFICATION: PICTURE ==========<*/
+/* icon styles for indices */
 
 /* formatting picture blurb header */
 .picture.blurb:has(.icon) > .header,
@@ -2163,7 +2144,7 @@ li.picture.blurb,
 .picture .icon img,
 .index .picture .icon {
   width: 45px;
-  height: 45px; /* slightly smaller than default */
+  height: 45px; /* reduced from default */
   border-radius: var(--icon-index-radius);
 }
 
@@ -2175,14 +2156,14 @@ li.picture.blurb,
   padding-left: 0.75em;
 }
 
-/*>========== various little mods ==========<*/
+/*>========== VARIOUS LITTLE MODS ==========<*/
 
 /* mod: blurbs on the manage collection items pages */
 .item dl.visibility {
   background-color: var(--bg4);
 }
 
-/*>>========== mod: BOOKMARK ==========<<*/
+/*>>========== MOD: BOOKMARK ==========<<*/
 
 .bookmarks-index .bookmark.index {
   overflow: visible;
@@ -2192,7 +2173,7 @@ li.picture.blurb,
   padding-right: 14ch;
 }
 
-/* bookmark icon placement for blurbs */
+/* bookmark icon positioning */
 .bookmark p.status {
   top: 5px;
   right: 0.75em; /* same as blurb padding */
@@ -2200,7 +2181,7 @@ li.picture.blurb,
   margin: 0;
 }
 
-/* create bookmark ribbon */
+/* bookmark ribbon effect */
 .bookmark .blurb p.status a:not(.short a)::before {
   position: absolute;
   top: -5px;
@@ -2213,7 +2194,7 @@ li.picture.blurb,
   content: "";
 }
 
-/* hide number of bookmarks icon => can be found in the stats anyway */
+/* hide redundant bookmark count */
 .bookmark span.count {
   display: none;
 }
@@ -2264,7 +2245,7 @@ li.picture.blurb,
   right: 0.75em;
 }
 
-/* the following part is for the overview pages of who has bookmarked a specific work */
+/* bookmark list view styles */
 
 .bookmark .short.blurb .header {
   display: flex;
@@ -2294,9 +2275,9 @@ li.picture.blurb,
   position: unset;
 }
 
-/*>>========== mod: READING ==========<<*/
+/*>>========== MOD: READING ==========<<*/
 
-/* "last visited" (History) */
+/* reading history indicator */
 .reading h4.viewed {
   margin-inline: -0.75em;
   padding: 0.429em;
@@ -2309,13 +2290,13 @@ li.picture.blurb,
   background-color: transparent;
 }
 
-/* mod: PROMPT => hide this to get rid of the weird space before and after promt summary; not sure if this affects anything else */
+/* hide prompt summary spacing */
 .prompt .blurb h6 {
   display: none;
 }
 
 /*============================================================
->> 14 GROUP: PREFACE (= work prefaces)
+>> 14 GROUP: PREFACE (= WORK PREFACES)
 ============================================================*/
 /* see "Archive: (14) group preface skin" by AO3 */
 
@@ -2329,7 +2310,7 @@ div.preface {
 }
 
 .preface h2.title {
-  font-weight: var(--txt-bold); /* bold preface title */
+  font-weight: var(--txt-bold); /* emphasize title */
 }
 
 .preface h3 {
@@ -2464,7 +2445,7 @@ li.comment:has(.edit_comment) {
 
 /*>========== ZONE: SYSTEM: SPLASH PAGE ==========<*/
 
-/* create flexbox layout */
+/* splash page layout */
 .splash {
   display: flex;
     flex-wrap: wrap;
@@ -2499,14 +2480,14 @@ li.comment:has(.edit_comment) {
   display: none;
 }
 
-/*>>========== module: "Find your favorites" ==========<<*/
+/*>>========== MODULE: "FIND YOUR FAVORITES" ==========<<*/
 
-/* color of the little arrows */
+/* browse arrow color */
 .splash .browse li a::before {
   color: var(--txt-main);
 }
 
-/*>>========== module: favorite tags ==========<<*/
+/*>>========== MODULE: FAVORITE TAGS ==========<<*/
 
 /* style favorite tags */
 .splash .favorite a.tag {
@@ -2529,7 +2510,7 @@ li.comment:has(.edit_comment) {
   font-weight: var(--txt-semibold) !important;
 }
 
-/*>>========== module: news ==========<<*/
+/*>>========== MODULE: NEWS ==========<<*/
 
 /* heading */
 .splash .news h4 {
@@ -2556,14 +2537,14 @@ li.comment:has(.edit_comment) {
   border: var(--border-width) solid var(--notice-txt);
 }
 
-/*>========== ZONE: SYSTEM: TOS (Terms Of Service), TOS FAQ, AND TOS POPUP ==========<*/
+/*>========== ZONE: SYSTEM: TOS (TERMS OF SERVICE), TOS FAQ, AND TOS POPUP ==========<*/
 /* to view this log out, delete cookies and visit random work */
 
 .tos .userstuff nav.toc > details > summary {
   border-color: inherit;
 }
 
-/*>========== tos promt ==========<*/
+/*>========== TOS PROMT ==========<*/
 
 #tos_prompt {
   background: var(--bg1);
@@ -2641,7 +2622,7 @@ li.comment:has(.edit_comment) {
 ============================================================*/
 /* see "Archive: (18) zone searchbrowse skin" by AO3 */
 
-/*>========== INDEX PAGES (with filters) ==========<*/
+/*>========== INDEX PAGES (WITH FILTERS) ==========<*/
 
 /* some pages are marked as "filtered" but there are no filters ... */
 /* so they don't need the space on the right for the filters */
@@ -2666,7 +2647,7 @@ li.search fieldset {
 
 /*>========== INTERACTION: FILTER ==========<*/
 
-/* sticky filters box */
+/* persistent filter sidebar */
 form.filters {
   position: sticky;
   top: 2vh;
@@ -2682,7 +2663,7 @@ form.filters {
   scrollbar-color: var(--border4) transparent;
 }
 
-/* hide scrollbar except on hover */
+/* hide inactive scrollbar */
 form.filters:not(:hover) {
   scrollbar-color: transparent transparent;
 }
@@ -2745,7 +2726,7 @@ form.filters dl dl {
   min-width: unset;
 }
 
-/* make heading bold when filters are active */
+/* emphasize active filter headings */
 .filters dt:has(+ dd input:checked) .expander,
 .filters dt.words:has(+ dd input[value]) .expander,
 .filters dt.dates:has(+ dd input[value]) .expander {
@@ -2761,7 +2742,7 @@ form.filters dl dl {
   color: var(--txt-main);
 }
 
-/* create new filters expander arrow */
+/* filter expand indicator */
 .filters .expander::before {
   position: absolute;
   top: 0.6em;
@@ -2798,7 +2779,7 @@ form.filters dl dl {
   padding-block: 0.25em !important;
 }
 
-/*>>========== style range filters (wordcount, date updated) ==========<<*/
+/*>>========== STYLE RANGE FILTERS (WORDCOUNT, DATE UPDATED) ==========<<*/
 
 .filters dl.range {
   display: grid;
@@ -2815,15 +2796,15 @@ form.filters dl dl {
   grid-column: 2;
 }
 
-/*>>========== javascript context ==========<<*/
-/* only relevant for mobile but it's better to keep it here */
+/*>>========== JAVASCRIPT CONTEXT ==========<<*/
+/* mobile-specific javascript styles */
 
 .javascript {
   background: var(--bg4);
 }
 
 /*============================================================
->> 19 ZONE: TAG PAGES, TAGSETS, and TAG WRANGLING
+>> 19 ZONE: TAG PAGES, TAGSETS, AND TAG WRANGLING
 ============================================================*/
 /* see "Archive: (19) zone tags skin" by AO3 */
 
@@ -2881,7 +2862,7 @@ dl.nomination {
   margin-block: 0.5em; /* reduce space (line height) between list items */
 }
 
-/*>========== bio on profile page ==========<*/
+/*>========== BIO ON PROFILE PAGE ==========<*/
 
 .bio.module {
   margin-block: 0.5em;
@@ -2891,7 +2872,7 @@ dl.nomination {
   margin-inline: 0;
 }
 
-/*>========== headings ==========<*/
+/*>========== HEADINGS ==========<*/
 
 .userstuff h2 {
   color: var(--txt-main);
@@ -2901,7 +2882,7 @@ dl.nomination {
   border-color: var(--border4);
 }
 
-/*>========== quotes and stresses ==========<*/
+/*>========== QUOTES AND STRESSES ==========<*/
 
 .userstuff blockquote,
 .splash .userstuff blockquote {
@@ -2920,7 +2901,7 @@ dl.nomination {
   border: var(--border-width) solid var(--border2);
 }
 
-/*>========== expected behaviours, exceptioning ==========<*/
+/*>========== EXPECTED BEHAVIOURS, EXCEPTIONING ==========<*/
 
 /* work margins and text */
 #workskin {
@@ -3100,7 +3081,7 @@ div.error,
   color: var(--alert-txt);
 }
 
-/*>========== thermometer JavaScript widget for fundraising drives ==========<*/
+/*>========== THERMOMETER JAVASCRIPT WIDGET FOR FUNDRAISING DRIVES ==========<*/
 
 .announcement .thermometer-content {
   width: 50%;
@@ -3132,7 +3113,7 @@ div.error,
   background-image: linear-gradient(to right, var(--success-bg) -25%, var(--success-txt) 50%) !important;
 }
 
-/*>========== SYMBOLS (mostly help button) ==========<*/
+/*>========== SYMBOLS (MOSTLY HELP BUTTON) ==========<*/
 
 span.symbol {
   display: inline-block;
@@ -3210,7 +3191,7 @@ span.replied::after {
   content: "\002714\fe0e"; /* unicode checkmark + variation selector to stop it from turning into an emoji */
 }
 
-/*>========== SYMBOLS KEY (help content) ==========<*/
+/*>========== SYMBOLS KEY (HELP CONTENT) ==========<*/
 
 #symbols-key h4 {
   margin: 1em 0;
@@ -3242,7 +3223,7 @@ dl#symbols-key dd {
 >> Z1 REPLACE THE ICONS AND IMAGES
 ============================================================*/
 
-/*>========== ICONS FOR USERS, COLLECTIONS, TAGS etc. ==========<*/
+/*>========== ICONS FOR USERS, COLLECTIONS, TAGS ETC. ==========<*/
 
 /* border + background for uploaded icons */
 .icon img:not(img[src*="/images/skins/iconsets/default/"]) {
@@ -3380,7 +3361,7 @@ This automatically gives the icons borders that have a slightly darker color tha
 You can replace the border color with any other rgb, rgba, or hex color, transparent or not.
 */
 
-/*>>========== Rating ==========<<*/
+/*>>========== RATING ==========<<*/
 
 /* General Audiences */
 .required-tags .rating-general-audience,
@@ -3410,7 +3391,7 @@ img[src$="/images/skins/iconsets/default/rating-explicit.png"] {
   background-color: var(--icon-rating-explicit); /* change background color here */
 }
 
-/*>>========== Relationships, pairings, orientations ==========<<*/
+/*>>========== RELATIONSHIPS, PAIRINGS, ORIENTATIONS ==========<<*/
 
 /* F/F */
 .required-tags .category-femslash, 
@@ -3453,7 +3434,7 @@ img[src$="/images/skins/iconsets/default/category-other.png"] {
   var(--icon-relationship-other); /* gradient with the colors of the relationship icons */
 }
 
-/*>>========== Content warnings ==========<<*/
+/*>>========== CONTENT WARNINGS ==========<<*/
 
 /* Author chose not to warn */
 .required-tags .warning-choosenotto, 
@@ -3476,7 +3457,7 @@ img[src$="/images/skins/iconsets/default/warning-external-work.png"] {
   background-color: var(--icon-content-external); /* change background color here */
 }
 
-/*>>========== Completion status ==========<<*/
+/*>>========== COMPLETION STATUS ==========<<*/
 
 /* uncomplete/unfulfilled */
 .required-tags .complete-no, 
@@ -3492,7 +3473,7 @@ img[src$="/images/skins/iconsets/default/complete-yes.png"] {
   background-color: var(--icon-content-complete); /* change background color here */
 }
 
-/*>>========== Bookmark symbols ==========<<*/
+/*>>========== BOOKMARK SYMBOLS ==========<<*/
 
 /* remove borders from bookmark ribbons */
 .bookmark .blurb:not(.short) .status span {
@@ -3603,7 +3584,7 @@ div:has(> p.kudos)::before {
   filter: var(--kudos-icon); /* adjust filter values to change color */
 }
 
-/*>========== LOCK ICON for restricted works ==========<*/
+/*>========== LOCK ICON FOR RESTRICTED WORKS ==========<*/
 
 img[src$="/images/lockblue.png"] {
   content: url("https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/assets/zerafina-icon-lock-01.png"); /* url of new icon */
@@ -3614,9 +3595,7 @@ img[src$="/images/lockblue.png"] {
 >> Z2 STATS ICONS WITH HOVER TEXT
 ============================================================*/
 
-/*>========== STATS ICONS ==========<*/
-
-/*>>========== stats placement + spacing ==========<<*/
+/*>>========== STATS PLACEMENT + SPACING ==========<<*/
 
 /* reset margin and padding */
 dl.stats dd,
@@ -3650,7 +3629,7 @@ dl.statistics dt {
     align-items: baseline;
 }
 
-/*>>========== setup for the stats icons ==========<<*/
+/*>>========== SETUP FOR THE STATS ICONS ==========<<*/
 
 /* hide the text before the stats */
 .stats:not(.skins .stats) dt {
@@ -3672,7 +3651,7 @@ dl.statistics dt::before {
   filter: var(--stats-icon); /* changes the color of the icons */
 }
 
-/*>>========== stats icons (images) ==========<<*/
+/*>>========== STATS ICONS (IMAGES) ==========<<*/
 
 /* language */
 .stats dd.language::before {
@@ -3716,12 +3695,6 @@ dl.statistics dt.bookmarks::before {
 /* related works (external bookmarks) */
 .stats dd.inspired::before {
   background-image: url("https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/assets/zerafina-stats-icon-related-works-01.png");
-}
-
-/* reading time */
-.stats dd.readtime::before,
-dl.statistics dt.readtime::before {
-  background-image: url("https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/assets/zerafina-stats-icon-hits-01.png");
 }
 
 /* hits */
@@ -3802,7 +3775,7 @@ dl.statistics dt.comment::before {
 
 /*>========== STATS HOVER TEXT ==========<*/
 
-/*>>========== general formatting/styling ==========<<*/
+/*>>========== GENERAL FORMATTING/STYLING ==========<<*/
 
 dl.stats dd {
   justify-content: center;
@@ -3846,7 +3819,7 @@ border: none; /* removes underline from links */
 color: var(--txt-main); /* link color */
 }
 
-/*>>========== hover text for individual stats ==========<<*/
+/*>>========== HOVER TEXT FOR INDIVIDUAL STATS ==========<<*/
 
 /* language */
 .stats dd.language::after {
@@ -3981,8 +3954,7 @@ color: var(--txt-main); /* link color */
   color: var(--int-hgl-txt);
 }
 
-/*>========== fix the Fandoms Index ==========<*/
-/* still not perfect but it's okay for now */
+/*>========== FIX THE FANDOMS INDEX ==========<*/
 
 .media-index .media.fandom.index.group {
   display: flex;
@@ -3997,9 +3969,7 @@ color: var(--txt-main); /* link color */
   margin-block: 1%;
 }
 
-/*>========== statistics page ==========<*/
-
-/*>>========== stat chart ==========<<*/
+/*>========== STATISTICS PAGE ==========<<*/
 
 #stat_chart {
   overflow: hidden;
@@ -4013,7 +3983,7 @@ svg > rect {
   filter: opacity(0)
 }
 
-/*>>========== fandoms index: place work title and stats next to each other (if possible) ==========<<*/
+/*>>========== FANDOMS INDEX: PLACE WORK TITLE AND STATS NEXT TO EACH OTHER (IF POSSIBLE) ==========<<*/
 
 .statistics ul.index li {
   margin: 0;
@@ -4041,8 +4011,7 @@ svg > rect {
   margin-left: auto;
 }
 
-/*>========== rich text editor ==========<*/
-/* ISSUE: haven't found a way to change the font (works when applying skin directly in Firefox browser but not after saving it to AO3) :/ */
+/*>========== RICH TEXT EDITOR ==========<*/ */
 
 .tox.tox-tinymce {
   border-radius: var(--radius-big);
@@ -4054,16 +4023,26 @@ svg > rect {
   filter: var(--rich-txt-editor);
 }
 
-/*>========== AO3 Fictracker styling ==========<*/
-/* highly recommended: https://greasyfork.org/en/scripts/513435-ao3-fictracker */
+/*>========== COMMENT FORMATTING AND PREVIEW STYLING ==========<*/
+/* https://greasyfork.org/en/scripts/484002-ao3-comment-formatting-and-preview */
 
-/* Prevent clipping by blurb containers */
+div.comment-preview.userstuff {
+  margin-top: 0.429em;
+  border: 1.5px dotted var(--border2) !important;
+  border-radius: var(--radius-small);
+  background: transparent;
+}
+
+/*>========== AO3 FICTRACKER STYLING ==========<*/
+/* https://greasyfork.org/en/scripts/513435-ao3-fictracker */
+
+/* prevent clipping by blurb containers */
 li.blurb dl.stats,
 li.blurb .actions {
   overflow: visible !important;
 }
 
-/* Inline header wrapper: acts as a single control, removes header chrome */
+/* inline header wrapper: acts as a single control, removes header chrome */
 li.blurb #header.region {
   display: inline-flex !important;
   align-items: baseline !important;
@@ -4080,14 +4059,14 @@ li.blurb #header.region {
   word-spacing: normal !important;
 }
 
-/* Toggle container (<ul> with label) */
+/* toggle container (<ul> with label) */
 li.blurb #header.region > ul.navigation.actions {
   display: block !important;   /* as a flex item, this won't force a new line */
   margin: 0 !important;
   padding: 0 !important;
 }
 
-/* Toggle <li>: disables header floats, anchors popup */
+/* toggle <li>: disables header floats, anchors popup */
 li.blurb #header.region > ul.navigation.actions > li.dropdown {
   float: none !important;
   display: inline-block !important;
@@ -4096,12 +4075,12 @@ li.blurb #header.region > ul.navigation.actions > li.dropdown {
   color: var(--txt-main) !important;
 }
 
-/* Show/hide dropdown menu (matches AO3 behavior) */
+/* show/hide dropdown menu */
 li.blurb #header.region .menu { display: none !important; }
 li.blurb #header.region .open .menu,
 li.blurb #header.region .dropdown:hover .menu { display: block !important; }
 
-/* Popup panel: positioned above blurb, uses theme tokens */
+/* popup panel: positioned above blurb */
 li.blurb #header.region .menu {
   position: absolute !important;
   top: 100% !important;
@@ -4120,14 +4099,14 @@ li.blurb #header.region .menu {
   font-size: 0.95em !important;
 }
 
-/* Reset menu item styles */
+/* reset menu item styles */
 li.blurb #header.region .menu li {
   float: none !important;
   display: block !important;
   margin: 0 !important;
 }
 
-/* Option links and hover/focus styling using theme highlight variables */
+/* option links and hover/focus styling using theme highlight variables */
 li.blurb #header.region .menu li a {
   display: block !important;
   max-width: unset !important;
@@ -4141,56 +4120,5 @@ li.blurb #header.region .menu li a:hover,
 li.blurb #header.region .menu li a:focus {
   background: var(--int-hgl-bg) !important;
   color: var(--int-hgl-txt) !important;
-}
-
-/* User notes: textarea and preview box styling */
-.user-note-preview > div > div,
-.note-textarea {
-  border: 1px solid var(--border3) !important;
-  border-radius: var(--radius-big) !important;
-}
-
-.user-note-preview > div > div {
-  box-shadow: var(--shadow-box2) !important;
-}
-
-/* Remove border/radius from preview box when a note exists */
-.user-note-preview > div > div:has(details) {
-  border: none !important;
-  border-radius: 0 !important;
-  box-shadow: none !important;
-}
-
-/* Note action buttons: inherit theme button styling */
-.note-actions button {
-  background: var(--int-btn-bg) !important;
-  color: var(--int-btn-txt) !important;
-  border: 1px solid var(--int-btn-border) !important;
-  border-radius: var(--radius-small) !important;
-  box-shadow: var(--shadow-buttons) !important;
-  padding: 0.25em 0.75em !important;
-  font-size: 1em !important;
-  cursor: pointer !important;
-  transition: background 0.2s, color 0.2s;
-}
-.note-actions button:is(:hover, :focus) {
-  background: var(--int-btn-hgl-bg) !important;
-  color: var(--int-btn-hgl-txt) !important;
-  border-color: var(--int-btn-hgl-border) !important;
-}
-
-/* Note details: border, radius, background, and summary corners */
-.user-note-preview details {
-  border-color: var(--border3) !important;
-  border-radius: var(--radius-mid) !important;
-  background: var(--bg6) !important;
-  box-shadow: var(--shadow-box2) !important;
-  padding: 0 !important;
-  margin: 18px 0 1px 0 !important;
-}
-
-.user-note-preview details > summary {
-  border-top-left-radius: var(--radius-mid);
-  border-top-right-radius: var(--radius-mid);
 }
 
