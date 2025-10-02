@@ -205,7 +205,7 @@ GLOBAL VARIABLES
   --lock-icon:           var(--header-icon);
   --tag-filter:          brightness(1.15);
   --stats-icon:          var(--header-icon);
-  --stat-chart:          saturate(50%) hue-rotate(265deg) contrast(98%) sepia(10%);
+  --stat-chart:          saturate(45%) hue-rotate(255deg) contrast(110%) sepia(10%) brightness(110%);
   --rich-txt-editor:     none;
 
 }
