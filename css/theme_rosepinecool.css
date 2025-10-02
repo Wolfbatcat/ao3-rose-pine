@@ -56,10 +56,10 @@ GLOBAL VARIABLES
 /*>========== SHADOWS ==========<*/
 /* replace values with "none" (without quotation marks) to remove shadows */
 
-  --shadow: 0 4px 16px 0 rgba(35, 33, 54, 0.18), 0 1.5px 0 0 rgba(100, 90, 120, 0.10); /* secondary elements, dropdowns, tooltips etc. */
+  --shadow:              0 0.2em 0.4em rgba(12, 10, 20, 0.25); /* secondary elements, dropdowns, tooltips etc. */
   --shadow-header:       var(--shadow-box1);
   --shadow-buttons:      0 3px 8px 0 rgba(25, 23, 36, 0.33), 0 2px 0 0 rgba(70, 60, 90, 0.15);
-  --shadow-box1:          0 8px 28px 0 rgba(25, 23, 36, 0.60), 0 4px 0 0 rgba(25, 23, 36, 0.32); /* blurbs, listboxes, etc */
+  --shadow-box1:         0 8px 28px 0 rgba(25, 23, 36, 0.60), 0 4px 0 0 rgba(25, 23, 36, 0.32); /* blurbs, listboxes, etc */
   --shadow-box2:         0 3px 10px 0 rgba(25, 23, 36, 0.28), 0 2px 0 0 rgba(25, 23, 36, 0.17); /* modals, dropdown menus, tooltips etc. */
 
 
@@ -177,7 +177,7 @@ GLOBAL VARIABLES
   /* hover and focus */
   --tag-hgl-bg:          var(--int-btn-hgl-bg);    /* background */
   --tag-hgl-txt:         var(--txt-alt2);          /* text */
-  --tag-hsl-shadow:    inset 0 0 0 1px rgba(255,255,255,0.3);   /* shadow */
+  --tag-hsl-shadow:      inset 0 0 0 1px rgba(255,255,255,0.3);   /* shadow */
 
 
 
@@ -205,7 +205,7 @@ GLOBAL VARIABLES
   --lock-icon:           var(--header-icon);
   --tag-filter:          brightness(1.10);
   --stats-icon:          var(--header-icon);
-  --stat-chart:          invert(100%) saturate(0) contrast(90%);
+  --stat-chart:          invert(96%) saturate(10%) hue-rotate(85deg);
   --rich-txt-editor:     none;
 
 }
