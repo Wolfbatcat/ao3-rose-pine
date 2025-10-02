@@ -263,7 +263,7 @@ textarea,
 textarea#skin_css,
 .css.module blockquote pre,
 #floaty-textarea {
-    font-family: Victor Mono SemiBold, Consolas, Monaco, Courier, monospace;
+    font-family: Victor Mono Medium, Consolas, Monaco, Courier, monospace;
     font-size: 0.9em;
     /* font-style: italic; */
     /* For cursive version of Victor Mono */
