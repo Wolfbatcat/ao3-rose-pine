@@ -1,15 +1,14 @@
 /*============================================================
 
-                      ʚʚʚ Rose Pine ɞɞɞ 
+                    ✿✿✿ Rose Pine ✿✿✿ 
           MOBILE / NARROW SCREENS (max-width: 42em)
 
 ============================================================*/
 /* credits to Neos by Zerafinacss - https://github.com/ZerafinaCSS/neos */
 
-
 /* centered headings */
 h2.heading,
-h2.heading + h3.heading:not(.landmark) {
+h2.heading+h3.heading:not(.landmark) {
   display: inline-block;
   width: 100%;
   margin-top: 0;
@@ -20,7 +19,7 @@ h2.heading + h3.heading:not(.landmark) {
 >> 03 REGION: HEADER
 ============================================================*/
 
-/* header dropdown menus => removes some stuff that was only needed for desktop or tablet */
+/* header dropdown menus */
 #header .menu {
   width: 100%;
   max-width: unset;
@@ -35,7 +34,7 @@ h2.heading + h3.heading:not(.landmark) {
   text-align: center;
 }
 
-/* header icons should stay in top right corner */
+/* header icons positioned in top right corner */
 #login,
 #greeting {
   order: 2;
@@ -54,7 +53,7 @@ h2.heading + h3.heading:not(.landmark) {
   top: 0;
 }
 
-/* reduce header search bar width */
+/* reduce search bar width */
 #header #search .text {
   width: 35vw;
   min-width: unset;
@@ -62,7 +61,7 @@ h2.heading + h3.heading:not(.landmark) {
   transition: width 0.15s;
 }
 
-/* wider search bar when focused/active */
+/* search bar width when focused/active */
 #header #search .text:is(:focus, :active) {
   width: 95vw;
   max-width: unset;
@@ -103,7 +102,7 @@ form.inbox {
 }
 
 /* space under the first row */
-/* have to do it this way because AO3 doesn't allow row-gap yet (as of March 2025) */
+/* required as AO3 doesn't allow row-gap */
 #footer ul li.module:nth-of-type(-n+2) {
   margin-bottom: 5%;
 }
@@ -125,10 +124,10 @@ p.navigation.actions {
 }
 
 /*============================================================
->> 10 TYPES OF DATA, GROUPS OF DATA
+>> 10 TYPES AND GROUPS OF DATA
 ============================================================*/
 
-/* make the primary icons a little smaller on mobile */
+/* reduce size primary icon size */
 .icon {
   width: 85px;
   height: 85px;

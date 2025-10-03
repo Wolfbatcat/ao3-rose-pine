@@ -1,262 +1,149 @@
 <div>
-  <summary><h2>Previews</h2></summary>
-  <details>
-    <summary>Click here for preview images</summary>
-    <h6>Rosé Pine Dawn</h6>
-    <figure>
-      <img
-        src="https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/images/image_rosepinedawn.png"
-        alt="Rosé Pine Dawn preview"
-        title="Rosé Pine Dawn"
-      />
-    </figure>
-    <h6>Rosé Pine Moon</h6>
-    <figure>
-      <img
-        src="https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/images/image_rosepinemoon.png"
-        alt="Rosé Pine Moon preview"
-        title="Rosé Pine Moon"
-      />
-    </figure>
-    <h6>Rosé Pine Moon Cool</h6>
-    <figure>
-      <img
-        src="https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/images/image_rosepinemooncool.png"
-        alt="Rosé Pine Moon Cool preview"
-        title="Rosé Pine Moon Cool"
-      />
-    </figure>
-    <h6>Rosé Pine</h6>
-    <figure>
-      <img
-        src="https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/images/image_rosepine.png"
-        alt="Rosé Pine preview"
-        title="Rosé Pine"
-      />
-    </figure>
-    <h6>Rosé Pine Cool</h6>
-    <figure>
-      <img
-        src="https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/images/image_rosepinecool.png"
-        alt="Rosé Pine Cool preview"
-        title="Rosé Pine Cool"
-      />
-    </figure>
-    <h6>Mobile</h6>
-    <figure>
-      <img
-        src="https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/images/image_mobile.jpg"
-        alt="Mobile preview"
-        title="Mobile"
-      />
-    </figure>
-    <h6>
-      Pictured:
-      <a
-        href="https://greasyfork.org/en/scripts/513435-ao3-fictracker"
-        rel="nofollow"
-        >Fictracker</a
-      >,
-      <a
-        href="https://greasyfork.org/en/scripts/549777-ao3-reading-time-quality-score"
-        rel="nofollow"
-        >Reading Time &amp; Quality Score</a
-      >, and
-      <a
-        href="https://greasyfork.org/en/scripts/549571-ao3-chapter-shortcuts"
-        rel="nofollow"
-        >Chapter Shortcuts</a
-      >
-    </h6>
-    <figure>
-      <img
-        src="https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/images/image_fictracker.png"
-        alt="Add-ons"
-        title="Add-ons"
-      />
-    </figure>
-  </details>
-  <h2>Installation</h2>
-
-  <p>
-    To use this skin on AO3, you’ll be creating a small set of linked skins. The
-    base file sets up variables and structure, but you’ll also need to apply one
-    of the theme files (Rose Pine Dawn, Rose Pine Moon, etc.) to actually get
-    colors.
-  </p>
-  <h3>1. Create the Base Skin</h3>
-  <ul>
-    <li>
-      Go to your
-      <strong
-        >Dashboard → Skins →
-        <a
-          href="https://archiveofourown.org/skins/new?skin_type=Skin"
-          rel="nofollow"
-          >Create Site Skin</a
-        ></strong
-      >.
-    </li>
-    <li>Give it a name, e.g. <code>[BBC] Rosé Pine - Base</code>.</li>
-    <li>
-      Paste the contents of
-      <a
-        href="https://github.com/Wolfbatcat/ao3-rose-pine/blob/main/css/base.css"
-        rel="nofollow"
-        >base.css</a
-      >
-      into the CSS field.
-    </li>
-    <li>
-      Under <strong>Advanced</strong>, set it to <strong>Parent Only</strong>.
-    </li>
-    <li>Click <strong>Submit</strong>.</li>
-  </ul>
-  <h3>2. Create a Theme Skin</h3>
-
-  <p>This step provides the actual colors. Pick one of the themes below.</p>
-  <ul>
-    <li>
-      Create a skin titled something like <code>[BBC] Rosé Pine Dawn</code> or
-      <code>[BBC] Rosé Pine Moon</code>.
-    </li>
-    <li>
-      Paste the code from one of the theme files:
-      <ul>
-        <li>
-          <a
-            href="https://github.com/Wolfbatcat/ao3-rose-pine/blob/main/css/theme_rosepinedawn.css"
-            rel="nofollow"
-            >Rosé Pine Dawn</a
-          >
-        </li>
-        <li>
-          <a
-            href="https://github.com/Wolfbatcat/ao3-rose-pine/blob/main/css/theme_rosepinemoon.css"
-            rel="nofollow"
-            >Rosé Pine Moon</a
-          >
-        </li>
-        <li>
-          <a
-            href="https://github.com/Wolfbatcat/ao3-rose-pine/blob/main/css/theme_rosepinemooncool.css"
-            rel="nofollow"
-            >Rosé Pine Moon Cool</a
-          >
-        </li>
-        <li>
-          <a
-            href="https://github.com/Wolfbatcat/ao3-rose-pine/blob/main/css/theme_rosepine.css"
-            rel="nofollow"
-            >Rosé Pine</a
-          >
-        </li>
-        <li>
-          <a
-            href="https://github.com/Wolfbatcat/ao3-rose-pine/blob/main/css/theme_rosepinecool.css"
-            rel="nofollow"
-            >Rosé Pine Cool</a
-          >
-        </li>
-      </ul>
-    </li>
-    <li>Set it to <strong>Parent Only</strong> and submit.</li>
-    <li>
-      (Optional) To have a skin act as a light or dark-mode variation, create a
-      second theme and under <strong>Advanced → Choose @media</strong>, set:
-      <code>(prefers-color-scheme: light)</code> or
-      <code>(prefers-color-scheme: dark)</code>.
-    </li>
-  </ul>
-  <h3>3. Create the Tablet Skin</h3>
-  <ul>
-    <li>Create a skin titled <code>[BBC] Rosé Pine - Tablet</code>.</li>
-    <li>
-      Paste in
-      <a
-        href="https://github.com/Wolfbatcat/ao3-rose-pine/blob/main/css/tablet.css"
-        rel="nofollow"
-        >tablet.css</a
-      >.
-    </li>
-    <li>
-      Under <strong>Advanced → Choose @media</strong>, select:
-      <code>only screen (max-width: 62em)</code>.
-    </li>
-    <li>Set to <strong>Parent Only</strong> and submit.</li>
-  </ul>
-  <h3>4. Create the Mobile Skin</h3>
-  <ul>
-    <li>Create a skin titled <code>[BBC] Rosé Pine - Mobile</code>.</li>
-    <li>
-      Paste in
-      <a
-        href="https://github.com/Wolfbatcat/ao3-rose-pine/blob/main/css/mobile.css"
-        rel="nofollow"
-        >mobile.css</a
-      >.
-    </li>
-    <li>
-      Under <strong>Advanced → Choose @media</strong>, select:
-      <code>only screen (max-width: 42em)</code>.
-    </li>
-    <li>Set to <strong>Parent Only</strong> and submit.</li>
-  </ul>
-  <h3>5. Chain Them Together</h3>
-  <ul>
-    <li>
-      Create one final skin, e.g. <code>[BBC] Rosé Pine Dawn - Default</code>.
-    </li>
-    <li>
-      In the CSS field, paste <code>.rose-pine {opacity: 1;}</code> (this is
-      just a placeholder so AO3 lets you save).
-    </li>
-    <li>
-      Under <strong>Advanced → Parent Skins</strong>, add the skins you created
-      in this order:
-      <ol>
-        <li>[BBC] Rosé Pine - Base</li>
-        <li>[BBC] Rosé Pine Dawn / [BBC] Rosé Pine Moon / [BBC] Rosé Pine</li>
-        <li>[BBC] Rosé Pine - Tablet</li>
-        <li>[BBC] Rosé Pine - Mobile</li>
-      </ol>
-    </li>
-    <li>Click <strong>Submit</strong>, then <strong>Use</strong>.</li>
-  </ul>
-  <h2>Customization</h2>
-  <div class="note">
-    <p>
-      <strong>Note:</strong> AO3's code editor does NOT save annotations. If you
-      want to edit a skin, I highly recommend downloading the skin and using a
-      code editor to make your edits.
-    </p>
+  <div>
+    <h2>Previews</h2>
   </div>
-  <ul>
-    <li>
-      <strong>Fonts:</strong> recommended are
-      <a href="https://fonts.google.com/specimen/Domine" rel="nofollow"
-        >Domine</a
-      >
-      (serif) and
-      <a href="https://fonts.google.com/specimen/Figtree" rel="nofollow"
-        >Figtree</a
-      >
-      (sans-serif). Code snippets use
-      <a href="https://rubjo.github.io/victor-mono/" rel="nofollow"
-        >Victor Mono</a
-      >. For the cursive version of the code font, just remove the comments from
-      <code>/* font-style: italic; */</code> in your theme file.
-    </li>
-    <li>
-      <strong>Colors:</strong> each theme’s variables are listed at the top of
-      its CSS file. To tweak, open the file in a text editor, find the color you
-      want to change, and use <strong>Ctrl+H</strong> to replace it everywhere.
-    </li>
-    <li>
-      <strong>Tag symbol:</strong> You can change the little symbol that appears
-      after tags. Look for this rule at the end of the CSS:
+  <details>
+    <summary>Click here for previews</summary>
+<h6>Rosé Pine Dawn</h6>
+<figure><img title="Rosé Pine Dawn"
+    src="https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/images/image_rosepinedawn.png"
+    alt="Rosé Pine Dawn preview"></figure>
+<h6>Rosé Pine Moon</h6>
+<figure><img title="Rosé Pine Moon"
+    src="https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/images/image_rosepinemoon.png"
+    alt="Rosé Pine Moon preview"></figure>
+<h6>Rosé Pine Moon Cool</h6>
+<figure><img title="Rosé Pine Moon Cool"
+    src="https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/images/image_rosepinemooncool.png"
+    alt="Rosé Pine Moon Cool preview"></figure>
+<h6>Rosé Pine</h6>
+<figure><img title="Rosé Pine"
+    src="https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/images/image_rosepine.png"
+    alt="Rosé Pine preview"></figure>
+<h6>Rosé Pine Cool</h6>
+<figure><img title="Rosé Pine Cool"
+    src="https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/images/image_rosepinecool.png"
+    alt="Rosé Pine Cool preview"></figure>
+<h6>Mobile</h6>
+<figure><img title="Mobile"
+    src="https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/images/image_mobile.jpg"
+    alt="Mobile preview"></figure>
+</details>
+<h2>Installation</h2>
 
-      <pre><code>a.tag:not(.fandom.index.group a.tag,
+<p>To use this skin on AO3, you'll be creating a small set of linked skins. The base file sets up variables and
+  structure, but you'll also need to apply one of the theme files (Rose Pine Dawn, Rose Pine Moon, etc.) to actually get
+  the colors.</p>
+<h3>1. Create the Base Skin</h3>
+<ul>
+  <li>Go to your <strong>Dashboard → Skins → <a href="https://archiveofourown.org/skins/new?skin_type=Skin"
+        rel="nofollow">Create Site Skin</a></strong>.</li>
+  <li>Give it a name, like <code>[BBC] Rosé Pine - Base</code>.</li>
+  <li>Paste the contents of <a href="https://github.com/Wolfbatcat/ao3-rose-pine/blob/main/css/base.css"
+      rel="nofollow">base.css</a> into the CSS field.</li>
+  <li>Under <strong>Advanced</strong>, set it to <strong>Parent Only</strong>.</li>
+  <li>Click <strong>Submit</strong>.</li>
+</ul>
+<h3>2. Create a Theme Skin</h3>
+
+<p>This is where the fun part happens—picking your colors! Choose one of the themes below.</p>
+<ul>
+  <li>Create a skin titled something like <code>[BBC] Rosé Pine Dawn</code> or <code>[BBC] Rosé Pine Moon</code>.</li>
+  <li>Paste the code from one of the theme files:
+    <ul>
+      <li><a href="https://github.com/Wolfbatcat/ao3-rose-pine/blob/main/css/theme_rosepinedawn.css" rel="nofollow">Rosé
+          Pine Dawn</a></li>
+      <li><a href="https://github.com/Wolfbatcat/ao3-rose-pine/blob/main/css/theme_rosepinemoon.css" rel="nofollow">Rosé
+          Pine Moon</a></li>
+      <li><a href="https://github.com/Wolfbatcat/ao3-rose-pine/blob/main/css/theme_rosepinemooncool.css"
+          rel="nofollow">Rosé Pine Moon Cool</a></li>
+      <li><a href="https://github.com/Wolfbatcat/ao3-rose-pine/blob/main/css/theme_rosepine.css" rel="nofollow">Rosé
+          Pine</a></li>
+      <li><a href="https://github.com/Wolfbatcat/ao3-rose-pine/blob/main/css/theme_rosepinecool.css" rel="nofollow">Rosé
+          Pine Cool</a></li>
+    </ul>
+  </li>
+  <li>Set it to <strong>Parent Only</strong> and submit.</li>
+  <li>(Optional) Want a skin that switches between light and dark mode automatically? Create a second theme and under <strong>Advanced
+      → Choose @media</strong>, set: <code>(prefers-color-scheme: light)</code> or
+    <code>(prefers-color-scheme: dark)</code>.</li>
+</ul>
+<h3>3. Create the Tablet Skin</h3>
+<ul>
+  <li>Create a skin titled <code>[BBC] Rosé Pine - Tablet</code>.</li>
+  <li>Paste in <a href="https://github.com/Wolfbatcat/ao3-rose-pine/blob/main/css/tablet.css"
+      rel="nofollow">tablet.css</a>.</li>
+  <li>Under <strong>Advanced → Choose @media</strong>, select: <code>only screen (max-width: 62em)</code>.</li>
+  <li>Set to <strong>Parent Only</strong> and submit.</li>
+</ul>
+<h3>4. Create the Mobile Skin</h3>
+<ul>
+  <li>Create a skin titled <code>[BBC] Rosé Pine - Mobile</code>.</li>
+  <li>Paste in <a href="https://github.com/Wolfbatcat/ao3-rose-pine/blob/main/css/mobile.css"
+      rel="nofollow">mobile.css</a>.</li>
+  <li>Under <strong>Advanced → Choose @media</strong>, select: <code>only screen (max-width: 42em)</code>.</li>
+  <li>Set to <strong>Parent Only</strong> and submit.</li>
+</ul>
+<h3>5. Chain Them Together</h3>
+<ul>
+  <li>Create one final skin, like <code>[BBC] Rosé Pine Dawn - Default</code>.</li>
+  <li>In the CSS field, paste <code>.rose-pine {opacity: 1;}</code> (just a placeholder so AO3 lets you save).
+  </li>
+  <li>Under <strong>Advanced → Parent Skins</strong>, add the skins you created in this order:
+    <ol>
+      <li>[BBC] Rosé Pine - Base</li>
+      <li>[BBC] Rosé Pine Dawn / [BBC] Rosé Pine Moon / [BBC] Rosé Pine</li>
+      <li>[BBC] Rosé Pine - Tablet</li>
+      <li>[BBC] Rosé Pine - Mobile</li>
+    </ol>
+  </li>
+  <li>Click <strong>Submit</strong>, then <strong>Use</strong>.</li>
+</ul>
+<h2>Customization</h2>
+<div class="note">
+
+  <p><strong>Note:</strong> AO3's code editor doesn't save annotations, so if you want to edit a skin, I highly recommend
+    downloading it and using a proper code editor to make your changes.</p>
+</div>
+<ul>
+  <li><strong>Fonts:</strong> I recommend <a href="https://fonts.google.com/specimen/Domine"
+      rel="nofollow">Domine</a> (serif) and <a href="https://fonts.google.com/specimen/Figtree"
+      rel="nofollow">Figtree</a> (sans-serif). Code snippets use <a href="https://rubjo.github.io/victor-mono/"
+      rel="nofollow">Victor Mono</a>. If you want the cursive version of the code font, just remove the comments from
+    <code>/* font-style: italic; */</code> in your theme file.</li>
+  <li><strong>Text Size:</strong> You can make text bigger or smaller using two variables in the <code>MAIN TEXT</code> section:
+    <pre><code>/* TEXT SIZE */
+--txt-size-main:       100%;     /* main text size */
+--txt-size-work:       110%;     /* work text size */</code></pre>
+    <code>--txt-size-main</code> controls text size across the whole site (navigation, blurbs, forms, etc.), while <code>--txt-size-work</code> is just for the actual work content. Bump up the percentage to make text larger (like <code>110%</code> or <code>120%</code>) or decrease it for smaller text (like <code>90%</code>). Just be aware that going above 130% for <code>--txt-size-main</code> might cause some minor layout weirdness, though it'll still mostly work.
+    <br><br>
+    <strong>Tip:</strong> For an easier time changing fonts and font sizes, check out the <a href="https://greasyfork.org/en/scripts/550537-ao3-site-wizard" rel="nofollow">AO3: Site Wizard</a> userscript—it works on both PC and mobile!</li>
+  <li><strong>Tag Colors:</strong> Want to change up the tag colors? The variables are in the <code>TAG COLORS</code> section near the top of your theme file:
+    <pre><code>/*>========== TAG COLORS ==========<*/
+
+/* BACKGROUND */
+--tag-default-bg:      #9ccfd8;
+--tag-fandom-bg:       #eb6f92;
+--tag-warning-bg:      #f6c177;
+--tag-ship-bg:         #ea9a97;
+--tag-character-bg:    #3e8fb0;
+--tag-freeform-bg:     var(--tag-default-bg);
+--tag-splash-bg:       #F6ECE3;
+
+/* TEXT */
+--tag-default-txt:     var(--txt-alt1);
+--tag-fandom-txt:      var(--txt-alt1);
+--tag-warning-txt:     var(--txt-alt1);
+--tag-ship-txt:        var(--txt-alt1);
+--tag-character-txt:   var(--txt-alt1);
+--tag-freeform-txt:    var(--txt-alt1);</code></pre>
+    Just swap out the hex color values with whatever you like! For example, if you want purple fandom tags, change <code>--tag-fandom-bg: #eb6f92;</code> to <code>--tag-fandom-bg: #c4a7e7;</code>. You can also tweak the text color for each tag type using the <code>--tag-*-txt</code> variables.
+    <br><br>
+    <strong>Note:</strong> Leave <code>--tag-splash-bg</code> alone—it's specifically for the splash page and doesn't affect regular tag colors.</li>
+  <li><strong>Text Decorations:</strong> Those little symbols after tags and headers? You can change them! The
+    rules are at the end of the theme CSS. For tags, it looks like this:
+
+    <pre><code>a.tag:not(.fandom.index.group a.tag,
 h2.heading a.tag,
 .splash .favorite a.tag,
 h5.fandoms.heading a.tag,
@@ -266,15 +153,47 @@ dd.fandom.tags a,
 [class^=character] a.tag):after {
   content: "\00a0\00a0✿";
 }</code></pre>
-      Swap <code>✿</code> for whatever you like (♥, ✦, ɞ, etc.).
-    </li>
-  </ul>
-  <h2>Credits</h2>
-  <p>
-    Big thanks to
-    <a href="https://github.com/ZerafinaCSS/neos/tree/main" rel="nofollow"
-      >neos by ZerafinaCSS</a
-    >
-    — this project wouldn’t exist without it!
-  </p>
+    Swap out <code>✿</code> for whatever symbol you want (♥, ✦, ʚ, etc.).
+  </li>
+  <li><strong>Title</strong>: Missing the old "Archive of Our Own" title (sans beta)? Just change this in
+    the theme skin:
+    <pre><code>#header .heading a::before {
+  content: "AO3\00a0✿";
+}</code></pre>
+    to this:
+    <pre><code>#header .heading a::before {
+  content: "Archive of Our Own\00a0✿";
+}</code></pre>
+    <ul>
+      <li><strong>Important:</strong> The full title doesn't fit on mobile and tablet screens, so make sure to keep the "AO3"
+        version in those skins.</li>
+    </ul>
+  </li>
+</ul>
+<h2>Add-Ons</h2>
+<p>These userscripts work great with the Rosé Pine theme and can be customized to match the palette:</p>
+<ul>
+  <li><strong><a href="https://www.tumblr.com/blackbatcats/795985329543905280/new-userscript?source=share" rel="nofollow">AO3: Site Wizard</a></strong> - Change fonts and font sizes from anywhere on the site; automatically fixes spacing issues within works.</li>
+  <li><strong><a href="https://www.tumblr.com/blackbatcats/794714820892065792/release-ao3-chapter-shortcuts?source=share" rel="nofollow">AO3: Chapter Shortcuts</a></strong> - Adds a shortcut button to jump straight to the most recent chapter of any work. The shortcut symbol can match the text decoration symbol used throughout the theme.</li>
+  <li><strong><a href="https://www.tumblr.com/blackbatcats/795056231371980800/new-ao3-userscript-because-i-was-tired-of-bad-fic?source=share" rel="nofollow">AO3: Reading Time & Quality Score</a></strong> - Adds customizable reading time and engagement score bars to every work. To make it match this theme, open the settings menu under "Userscripts" on the top navigation bar and check off "Use icons instead of text labels" and optionally "Colored backgrounds" or "Colored text." It already uses Rosé Pine's accent colors and icon colors by default!</li>
+  <li><strong><a href="https://greasyfork.org/en/scripts/513435-ao3-fictracker" rel="nofollow">AO3 Fictracker</a> by Farin</strong> - An absolute lifesaver for tracking fics! Mark works as finished, favorite, or to-read using a customizable tag system. Here are my recommended Rosé Pine highlighting settings:
+    <ul>
+      <li><strong>Favorite</strong> - Rose <code>rgb(235, 188, 186)</code> for regular Rosé Pine theme, or Iris <code>rgb(196, 167, 231)</code> for Cool variants</li>
+      <li><strong>To Read</strong> - Foam <code>rgb(156, 207, 216)</code></li>
+      <li><strong>Finished reading</strong> - Subtle <code>rgb(144, 140, 170)</code></li>
+      <li>Set <strong>Border Size</strong> to 2 and crank <strong>Opacity</strong> all the way up (or adjust to taste!)</li>
+    </ul>
+  </li>
+</ul>
+<h6>Pictured: <a href="https://greasyfork.org/en/scripts/513435-ao3-fictracker" rel="nofollow">Fictracker</a>, <a
+    href="https://greasyfork.org/en/scripts/549777-ao3-reading-time-quality-score" rel="nofollow">Reading Time &amp;
+    Quality Score</a>, and <a href="https://greasyfork.org/en/scripts/549571-ao3-chapter-shortcuts"
+    rel="nofollow">Chapter Shortcuts</a></h6>
+<figure><img title="Add-ons"
+    src="https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/images/image_fictracker.png"
+    alt="Add-ons"></figure>
+
+<h2>Credits</h2>
+<p>Big thanks to <a href="https://github.com/ZerafinaCSS/neos/tree/main" rel="nofollow">neos by ZerafinaCSS</a> — this
+  project wouldn't exist without it!</p>
 </div>

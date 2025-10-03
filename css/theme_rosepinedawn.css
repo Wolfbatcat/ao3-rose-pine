@@ -9,7 +9,6 @@ GLOBAL VARIABLES
 
 :root {
 
-
 /*>========== UI PARAMETERS ==========<*/
 
   /* SPACE ON LEFT/RIGHT SIDE OF SCREEN */
@@ -161,7 +160,7 @@ GLOBAL VARIABLES
   --tag-ship-bg:         #ea9a97;
   --tag-character-bg:    #3e8fb0;
   --tag-freeform-bg:     var(--tag-default-bg);
-  --tag-splash-bg:       #F6ECE3;
+  --tag-splash-bg:       #F6ECE3;   /* leave alone - only for tags on the splash page */
 
   /* TEXT */
   --tag-default-txt:     var(--txt-alt1);
