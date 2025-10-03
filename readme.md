@@ -157,7 +157,7 @@ This is where the fun part happens—picking your colors! Choose one of the them
       content: "Archive of Our Own\00a0✿";
     }
     ```
-    **Important:** The full title doesn't fit on mobile and tablet screens, so make sure to keep the "AO3" version in those skins.
+    **Important:** The full title doesn't fit on mobile and tablet screens, so make sure to add the "AO3" version above to those skins.
 
 ## Add-Ons
 
