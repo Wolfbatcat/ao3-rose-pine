@@ -172,7 +172,8 @@ These userscripts work great with the Rosé Pine theme and can be customized to 
     - **Finished reading** - Subtle `rgb(144, 140, 170)`
     - Set **Border Size** to 2 and crank **Opacity** all the way up (or adjust to taste!)
 
-![Add-ons in action](https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/images/image_fictracker.png)
+![Add-ons in action](https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/images/image_rosepine_additions_light.png)
+![Add-ons in action](https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/images/image_rosepine_blurb.png)
 *Pictured: Fictracker, Reading Time & Quality Score, and Chapter Shortcuts*
 
 ## Credits
