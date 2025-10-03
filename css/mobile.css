@@ -19,6 +19,12 @@ h2.heading+h3.heading:not(.landmark) {
 >> 03 REGION: HEADER
 ============================================================*/
 
+/* title fix */
+#header .heading a::before {
+  content: "AO3\00a0✿";
+  /* do not use the full "Archive of Our Own as it doesn't fit smaller screens" */
+}
+
 /* header dropdown menus */
 #header .menu {
   width: 100%;

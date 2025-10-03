@@ -15,6 +15,12 @@
 >> 03 REGION: HEADER
 ============================================================*/
 
+/* title fix */
+#header .heading a::before {
+  content: "AO3\00a0✿";
+  /* do not use the full "Archive of Our Own" as it doesn't fit smaller screens */
+}
+
 #header .heading {
   margin-left: var(--margins-narrow);
 }

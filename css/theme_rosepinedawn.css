@@ -266,10 +266,11 @@ textarea#skin_css,
 }
 
 /*>========== TEXT DECORATIONS ==========<*/
+ /* don't forget to change the decorations in the tablet and mobile skins as well */
 
 /* TITLE DECORATIONS */
 #header .heading a::before {
-  content: "AO3\00a0✿";
+  content: "Archive of Our Own\00a0✿";
 }
 
 /* DASHBOARD CURRENT TAB DECORATION */
