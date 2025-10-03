@@ -3679,6 +3679,15 @@ dl.statistics dt::before {
   background-image: url("https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/assets/zerafina-stats-icon-language-01.png");
 }
 
+<<<<<<< HEAD
+=======
+/* words */
+.stats dd.words::before,
+dl.statistics dt.words::before {
+  background-image: url("https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/assets/zerafina-stats-icon-words-01.png");
+}
+
+>>>>>>> main
 /* works */
 .stats dd.works::before,
 .stats dd:has(a[href$=works])::before /* works in collection */ {
