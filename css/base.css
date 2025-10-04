@@ -4021,16 +4021,21 @@ li.blurb #header.region .menu li a:focus {
 /*>========== USERSCRIPT: AO3 SITE WIZARD STYLING ==========<*/
 /* https://greasyfork.org/en/scripts/550537-ao3-site-wizard */
 
-/* firefox-exclusive */
-input[type="range"]::-moz-range-track {
-    background: var(--bg-5);
-    border: var(--border-width) solid var(--border2);
-    border-radius: var(--radius-small);
+input[type="range"] {
+    background: transparent;
+    border: none;
 }
 
 input[type="range"]::-moz-range-progress {
     background: var(--link-hgl);
-    border-radius: var(--radius-small);
+    height: 0.25em;
+}
+
+input[type="range"]::-moz-range-track {
+    background: var(--txt-main) !important;
+    border: none !important;
+    height: 0.25em;
+    border-radius: 0.75em;
 }
 
 input[type="range"]::-moz-range-thumb {
@@ -4038,9 +4043,4 @@ input[type="range"]::-moz-range-thumb {
     border: none;
     border-radius: 50%;
     cursor: pointer;
-}
-
-input[type="range"]:focus {
-    background: transparent;
-    outline: none;
 }
