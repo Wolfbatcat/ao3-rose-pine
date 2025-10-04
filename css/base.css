@@ -4017,3 +4017,30 @@ li.blurb #header.region .menu li a:focus {
     border-top-left-radius: var(--radius-mid);
     border-top-right-radius: var(--radius-mid);
 }
+
+/*>========== USERSCRIPT: AO3 SITE WIZARD STYLING ==========<*/
+/* https://greasyfork.org/en/scripts/550537-ao3-site-wizard */
+
+/* firefox-exclusive */
+input[type="range"]::-moz-range-track {
+    background: var(--bg-5);
+    border: var(--border-width) solid var(--border2);
+    border-radius: var(--radius-small);
+}
+
+input[type="range"]::-moz-range-progress {
+    background: var(--link-hgl);
+    border-radius: var(--radius-small);
+}
+
+input[type="range"]::-moz-range-thumb {
+    background: var(--link-hgl);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+input[type="range"]:focus {
+    background: transparent;
+    outline: none;
+}
