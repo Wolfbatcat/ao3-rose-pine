@@ -243,6 +243,8 @@ select {
 h1,
 h2,
 h3,
+h5,
+h6,
 .heading {
     font-family: Figtree, Helvetica, "Trebuchet MS", "Lucida Sans", Arial, sans-serif, "GNU Unifont";
     font-weight: var(--txt-bold);
