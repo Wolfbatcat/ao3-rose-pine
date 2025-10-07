@@ -3106,19 +3106,6 @@ span.approved.symbol span {
     display: none;
 }
 
-/* prevent replied checkmark from becoming emoji on iOS */
-span.replied {
-    line-height: 0;
-    text-indent: -9999px;
-}
-
-span.replied::after {
-    display: block;
-    line-height: 1.286;
-    text-indent: 0;
-    content: "\002714\fe0e";
-}
-
 /*>========== SYMBOLS KEY ==========<*/
 /* help content modal */
 
