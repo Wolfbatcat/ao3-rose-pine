@@ -146,19 +146,7 @@ This is where the fun part happens—picking your colors! Choose one of the them
     ```
     Swap out `✿` for whatever symbol you want (♥, ✦, ʚ, etc.).
 
-- **Title:** Missing the old "Archive of Our Own" title (sans beta)? Just change this in the theme skin:
-    ```css
-    #header .heading a::before {
-      content: "AO3\00a0✿";
-    }
-    ```
-    to this:
-    ```css
-    #header .heading a::before {
-      content: "Archive of Our Own\00a0✿";
-    }
-    ```
-    **Important:** The full title doesn't fit on mobile and tablet screens, so make sure to add the "AO3" version above to those skins.
+    **Important:** The tablet and mobile skins use the shortened version of the title "AO3 ✿". You'll have to change the symbols in those skins too.
 
 ## Add-Ons
 
