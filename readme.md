@@ -51,6 +51,7 @@ This is where the fun part happens—picking your colors! Choose one of the them
     - `theme_rosepinecool.css` (Rosé Pine Cool)
 3. Set it to **Parent Only** and submit.
 4. (Optional) Want a skin that switches between light and dark mode automatically? Create a second theme and under **Advanced → Choose @media**, set: `(prefers-color-scheme: light)` or `(prefers-color-scheme: dark)`. Set your first theme to the other `prefers-color-scheme`.
+    - **Note:** If you prefer to switch skins manually but want a more convenient method, check out my [AO3: Skin Switcher](https://greasyfork.org/en/scripts/551820-ao3-skin-switcher) script. It lets you change skins from any page on the site without losing your place.
 
 </details>
 
