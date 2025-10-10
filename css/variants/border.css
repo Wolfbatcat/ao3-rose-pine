@@ -1,0 +1,214 @@
+:root {
+  --margins-header: 1rem;
+  --margins-main: 7.5%;
+  --margins-narrow: 2.5%;
+  --radius-small: 8px;
+  --radius-mid: 8px;
+  --radius-big: 8px;
+  --radius-alt: 6px;
+  --radius-tag: 0 15px 15px;
+  --icon-content-radius: 0.75rem;
+  --icon-primary-radius: 99999px;
+  --icon-index-radius: 0.75rem;
+  --bg1: #dee2fe;
+  --bg2: #f3f4fa;
+  --bg3: #dee2fe;
+  --bg4: var(--bg5);
+  --bg5: var(--bg2);
+  --bg6: var(--bg5);
+  --bg7: var(--bg5);
+  --border1: #c1c6ec;
+  --border2: #c1c7ec;
+  --border3: var(--border2);
+  --border4: #c1c6ec;
+  --border-width: 1px;
+  --shadow: 0 0.25em 0.5em #89797925;
+  --shadow-header: 0px 6.3px 24.7px rgba(0, 0, 0, 0.112);
+  --shadow-buttons: 0 -1px 0 0 rgba(255, 255, 255, .24), 
+                         0 0 0 1px #dee2fe, 
+                         0 0 4px #dee2fe, 
+                         0px 4px 8px -6px #dee2fe, 
+                         inset 0px -1px 0px #dde1fe, 
+                         inset 0 -2px 2px 0 #dde1fe;
+  --shadow-box1: 0px 1.8px 7.3px #d7dcfa;
+  --shadow-box2: 0px 1.8px 7.3px #d7dcfa;
+  --txt-size-main: 100%;
+  --txt-size-work: 110%;
+  --txt-header: #4e5baa;
+  --txt-header-hgl: var(--link-hgl);
+  --txt-header-hgl-h1: linear-gradient(125deg, #6078fa, #526cfa);
+  --txt-main: #4e5baa;
+  --txt-alt1: #FFFFFF;
+  --txt-alt2: #FFFFFF;
+  --txt-semibold: 500;
+  --txt-bold: 700;
+  --link: #526cfa;
+  --link-hgl: #526cfa;
+  --link-visited: #526cfa;
+  --link-underline: 1px solid transparent;
+  --int-btn-bg: #f3f4fa;
+  --int-btn-border: #c1c7ed;
+  --int-btn-txt: var(--txt-main);
+  --int-btn-hgl-bg: linear-gradient(to bottom right, #6078fa, #526cfa);
+  --int-btn-hgl-txt: var(--txt-alt2);
+  --int-btn-hgl-border: #00000005;
+  --int-bg: var(--bg5);
+  --int-search: var(--bg5);
+  --int-current-bg: #e1e1e8;
+  --int-current-txt: var(--txt-main);
+  --int-current-border: #dbdbe2;
+  --int-disabled-bg: var(--border1);
+  --int-checked: #526cfa;
+  --int-hgl: var(--link-hgl);
+  --int-hgl-bg: var(--int-btn-hgl-bg);
+  --int-hgl-txt: var(--txt-alt2);
+  --icon-content-complete: #526cfa;
+  --icon-content-incomplete: #526cfa;
+  --icon-content-public: #526cfa;
+  --icon-content-private: #526cfa;
+  --icon-content-hidden: #6e6a86;
+  --icon-content-rec: #526cfa;
+  --icon-rating-gen: #526cfa;
+  --icon-rating-teen: #526cfa;
+  --icon-rating-mature: #526cfa;
+  --icon-rating-explicit: #526cfa;
+  --icon-relationship-mm: #526cfa;
+  --icon-relationship-mf: #526cfa;
+  --icon-relationship-gen: #526cfa;
+  --icon-relationship-ff: #526cfa;
+  --icon-multi: conic-gradient(from 360deg, #526cfa 0% 25%, #526cfa 25% 50%, #526cfa 50% 75%, #526cfa 75% 100%);
+  --icon-relationship-other: linear-gradient(to left top, #526cfa, #526cfa, #526cfa, #526cfa);
+  --icon-warning-choose-not: #526cfa;
+  --icon-warning-yes: #526cfa;
+  --icon-content-external: #526cfa;
+  --icon-bg: var(--int-bg);
+  --icon-id: var(--link);
+  --icon-anon: var(--border4);
+  --icon-border1: var(--int-btn-hgl-border);
+  --icon-border2: var(--border2);
+  --tag-default-bg: #dee2fe;
+  --tag-fandom-bg: #526cfa;
+  --tag-warning-bg: #526cfa;
+  --tag-ship-bg: #d0d3eb;
+  --tag-character-bg: #d0d3eb;
+  --tag-freeform-bg: var(--tag-default-bg);
+  --tag-splash-bg: #d0d3eb;
+  --tag-default-txt: #6078fa;
+  --tag-fandom-txt: var(--txt-alt1);
+  --tag-warning-txt: var(--txt-alt1);
+  --tag-ship-txt: var(--tag-default-txt);
+  --tag-character-txt: var(--tag-default-txt);
+  --tag-freeform-txt: var(--tag-default-txt);
+  --tag-border: #9893a525;
+  --tag-hgl-bg: var(--int-btn-hgl-bg);
+  --tag-hgl-txt: var(--txt-alt2);
+  --tag-hsl-shadow: inset 0 0 0 1px rgba(255,255,255,0.3);
+  --notice-bg: #eff1fa;
+  --success-bg: #eff1fa;
+  --caution-bg: #eff1fa;
+  --alert-bg: #eff1fa;
+  --notice-txt: #526cfa;
+  --success-txt: #526cfa;
+  --caution-txt: #526cfa;
+  --alert-txt: #526cfa;
+  --header-icon: brightness(0) saturate(100%) invert(34%) sepia(76%) saturate(495%) hue-rotate(194deg) brightness(89%) contrast(87%);
+  --header-icon-hgl: brightness(0) saturate(100%) invert(37%) sepia(24%) saturate(3555%) hue-rotate(210deg) brightness(103%) contrast(96%);
+  --kudos-icon: var(--header-icon-hgl);
+  --lock-icon: var(--header-icon);
+  --tag-filter: brightness(1.15);
+  --stats-icon: var(--header-icon);
+  --stat-chart: saturate(50%) hue-rotate(265deg) contrast(98%) sepia(10%);
+  --rich-txt-editor: none;
+}
+
+/*>========== FONTS ==========<*/
+
+/* MAIN FONT FAMILY */
+body,
+input,
+.toggled form,
+.dynamic form,
+.secondary,
+.dropdown,
+blockquote,
+.prompt .blurb h6,
+.bookmark .user .meta,
+a.work,
+span.symbol,
+.heading .actions,
+.heading .action,
+.heading span.actions,
+button,
+span.unread,
+.replied,
+span.claimed,
+.actions span.defaulted,
+.splash .news .meta,
+.datetime,
+h5.fandoms.heading a.tag,
+dd.fandom.tags a,
+select {
+    font-family: Figtree, Helvetica, "Trebuchet MS", "Lucida Sans", Arial, san-serif, "GNU Unifont";
+}
+
+/* HEADINGS FONT FAMILY */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.heading {
+    font-family: Figtree, Helvetica, "Trebuchet MS", "Lucida Sans", Arial, sans-serif, "GNU Unifont";
+    font-weight: var(--txt-bold);
+}
+
+/* CODE FONT FAMILY */
+kbd,
+tt,
+code,
+var,
+pre,
+samp,
+textarea,
+textarea#skin_css,
+.css.module blockquote pre,
+#floaty-textarea {
+    font-family: Victor Mono Medium, Consolas, Monaco, Courier, monospace;
+    font-size: 0.9em;
+    /* font-style: italic; */
+    /* For cursive version of Victor Mono */
+}
+
+/*>========== TEXT DECORATIONS ==========<*/
+ /* don't forget to change the decorations in the tablet and mobile skins as well */
+
+/* TITLE DECORATIONS */
+#header .heading a::before {
+  content: "Archive of Our Own\00a0✦";
+}
+
+/* DASHBOARD CURRENT TAB DECORATION */
+#dashboard .current:after {
+  content: "\00a0✦";
+}
+
+.home .header h2::after {
+    content: "\00a0✦";
+}
+
+.splash>.module h3::after {
+  content: "\00a0✦";
+}
+
+/* TAG DECORATIONS */
+a.tag:not(.fandom.index.group a.tag,
+  h2.heading a.tag,
+  .splash .favorite a.tag,
+  h5.fandoms.heading a.tag,
+  dd.fandom.tags a,
+  [class^=warning] a.tag,
+  [class^=relationship] a,
+  [class^=character] a.tag):after {
+  content: "\00a0\00a0✦";
+}

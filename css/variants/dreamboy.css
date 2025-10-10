@@ -1,0 +1,307 @@
+/*============================================================
+
+                      ✦✦✦ Paperboy ✦✦✦ 
+                     Theme: Dream Boy
+
+==============================================================
+GLOBAL VARIABLES
+==============================================================*/
+
+:root {
+
+/*>========== UI PARAMETERS ==========<*/
+
+  /* SPACE ON LEFT/RIGHT SIDE OF SCREEN */
+  --margins-header:      1rem;                /* header on desktop */
+  --margins-main:        5%;                  /* site contents on desktop */
+  --margins-narrow:      2%;                /* site contents and header on tablet/mobile */
+
+  /* BORDER-RADIUS (= ROUNDNESS OF CORNERS) */
+  --radius-small:        0.50rem;             /* smaller elements: list elements, input elements etc. */
+  --radius-mid:          0.50rem;             /* midsizde elements: dropdown menus, system messages etc. */
+  --radius-big:          0.50rem;             /* bigger elements: blurbs, forms, comments, textareas etc. */
+  --radius-alt:          8px;             /* header search box, buttons */
+  --radius-tag:          15px;         /* tags */
+
+  /* ICON BORDER-RADIUS */
+  --icon-content-radius: 0.50rem;             /* content and bookmark icon */
+  --icon-primary-radius: 99999px;             /* primary and comment icon */
+  --icon-index-radius:   0.50rem;             /* index icon */
+
+
+/*>========== MAIN BACKGROUND COLORS ==========<*/
+
+  --bg1:                 #dee2fe;             /* main background, footer etc. */
+  --bg2:                 #f3f4fa;             /* header */
+  --bg3:                 var(--bg1);          /* dashboard */
+  --bg4:                 var(--bg5);          /* forms, javascript context etc. */
+  --bg5:                 var(--bg2);          /* content boxes (blurbs, comments etc.), meta box, listbox, scrollbar track */
+  --bg6:                 var(--bg5);          /* dropdown and secondary menus, tooltips etc. */
+  --bg7:                 var(--bg5);          /* own blurbs, some even/odd list items etc. */
+
+
+/*>========== MAIN BORDERS ==========<*/
+
+  /* COLORS */
+  --border1:             #c1c7ec;             /* header, dashboard, footer, news, blockquote, etc. */
+  --border2:             var(--border1);             /* tables, forms, input elements, listbox etc. - slightly lighter */
+  --border3:             var(--border2);      /* content boxes (blurbs, comments etc.), dropdown and secondary menus */
+  --border4:             #b5bbe8;             /* meta boxes, tooltips, scrollbar thumb etc. - slightly darker/more saturated */
+
+  /* WIDTH */
+  --border-width:        1px;                 /* for almost all borders (experimental - changing this might cause some weirdness) */
+
+
+/*>========== SHADOWS ==========<*/
+/* replace values with "none" (without quotation marks) to remove shadows */
+
+  --shadow:              0 2px 8px rgba(193, 199, 236, 0.3);  /* secondary elements, dropdowns, tooltips etc. */
+  --shadow-header:       0px 3px 12px rgba(193, 199, 236, 0.15); /* header only */
+  --shadow-buttons: 0 -1px 0 0 rgba(255, 255, 255, .24), 
+                         0 0 0 1px #dee2fe, 
+                         0 0 4px #dee2fe, 
+                         0px 4px 8px -6px #dee2fe, 
+                         inset 0px -1px 0px #dde1fe, 
+                         inset 0 -2px 2px 0 #dde1fe;  /* buttons - neomorphic style */
+  --shadow-box1:         0 2px 6px rgba(193, 199, 236, 0.25);  /* blurbs, listboxes, etc - simple drop shadow */
+  --shadow-box2:         0 1px 4px rgba(193, 199, 236, 0.2);  /* modals, dropdown menus, tooltips etc. - lighter drop shadow */
+  
+
+  /*>========== MAIN TEXT ==========<*/
+
+  /* TEXT SIZE */
+  --txt-size-main:       100%;                /* main text size (bigger than 130% causes some issues, but is still mostly functional) */
+  --txt-size-work:       110%;                /* work text size */
+
+  /* TEXT COLORS */
+  --txt-header:          #525579;             /* header text */
+  --txt-header-hgl:      var(--link-hgl);     /* selected header dropdown toggle and link items */
+  --txt-header-hgl-h1:   linear-gradient(125deg, #5e76fa, #5e76fa);  /* gradient for selected AO3 header title */
+  --txt-main:            var(--txt-header);   /* main body text */
+  --txt-alt1:            #FFFFFF;             /* announcements */
+  --txt-alt2:            #FFFFFF;             /* checkbox checkmark, help symbol, event announcements etc. */
+
+  /* TEXT BOLDNESS */
+  --txt-semibold:        500;                 /* font-weight hover effect */
+  --txt-bold:            700;                 /* font-weight for headings */
+
+  /* LINKS */
+  --link:                #5e76fa;             /* link color */
+  --link-hgl:            #5e76fa;             /* color for hovered/focused links, header search bar icon, question icon  */
+  --link-visited:        #696d9c;             /* color for already visited links */
+  --link-underline:      1px solid transparent;  /* link underline => delete "transparent" to make link underlines visible */
+
+
+/*>========== INTERACTION COLORS ==========<*/
+/* = buttons, input and select elements */
+
+  /* BUTTON COLORS */
+  --int-btn-bg:          var(--bg5);          /* background for standard buttons*/
+  --int-btn-border:      var(--border4);      /* border for standard buttons*/
+  --int-btn-txt:         var(--txt-main);     /* text for standard buttons*/
+  --int-btn-hgl-bg:      linear-gradient(to bottom right, #5e76fa, #5e76fa);  /* background for hovered/focused buttons */
+  --int-btn-hgl-txt:     var(--txt-alt2);     /* text for hovered/focused buttons */ 
+  --int-btn-hgl-border:  #00000005;           /* border for hovered/focused buttons */                                                                       
+  
+  --int-bg:              var(--bg5);          /* background for input and select elements */
+  --int-search:          var(--bg5);          /* background for header search box */
+
+  --int-current-bg:      var(--bg5);          /* background for currently active elements */
+  --int-current-txt:     var(--txt-main);     /* text for currently active elements */
+  --int-current-border:  var(--border1);      /* border for currently active elements */
+  --int-disabled-bg:     var(--border1);      /* background for disabled buttons and checkboxes */
+  --int-checked:         #5e76fa;             /* checked checkboxes and radio buttons */
+  
+  --int-hgl:             var(--link-hgl);     /* highlight for hovered/focused/selected elements */
+  --int-hgl-bg:          var(--int-btn-hgl-bg);  /* background for hovered/focused list items */
+  --int-hgl-txt:         var(--txt-alt2);     /* text for hovered/focused list items and for collection header */
+
+
+/*>========== ICON COLORS ==========<*/
+
+  /* CONTENT SYMBOL ICONS */
+  --icon-content-complete:    #5e76fa;
+  --icon-content-incomplete:  #5e76fa;
+  --icon-content-public:      #5e76fa;
+  --icon-content-private:     #5e76fa;
+  --icon-content-hidden:      #6e6a86;
+  --icon-content-rec:         #5e76fa;
+
+  /* RATING ICONS */
+  --icon-rating-gen:          #5e76fa;
+  --icon-rating-teen:         #5e76fa;
+  --icon-rating-mature:       #5e76fa;
+  --icon-rating-explicit:     #5e76fa;
+
+  /* RELATIONSHIP / PAIRING / ORIENTATION ICONS */
+  --icon-relationship-mm:     #5e76fa;
+  --icon-relationship-mf:     #5e76fa;
+  --icon-relationship-gen:    #5e76fa;
+  --icon-relationship-ff:     #5e76fa;
+  --icon-multi:               conic-gradient(from 360deg, #5e76fa 0% 25%, #e0e4fa 25% 50%, #5e76fa 50% 75%, #e0e4fa 75% 100%);
+  --icon-relationship-other:  linear-gradient(to left top, #5e76fa, #e0e4fa, #5e76fa);
+
+  /* CONTENT WARNING ICONS */
+  --icon-warning-choose-not:  #5e76fa;
+  --icon-warning-yes:         #5e76fa;
+  --icon-content-external:    #5e76fa;
+
+  /* OTHER ICONS */
+  --icon-bg:                  var(--int-bg);  /* background for empty icon box or uploaded icon with transparent background */
+  --icon-id:                  var(--link);    /* user, collection, skin, tag, unrevealed work, admin icon + collection header background */
+  --icon-anon:                var(--border4); /* guest, anonymous user */
+
+  /* ICON BORDERS */
+  --icon-border1:             var(--int-btn-hgl-border);  /* rss icon - borders for other icons removed */
+  --icon-border2:             var(--border2); /* uploaded, default user and mystery icon + empty symbols box */
+
+
+/*>========== TAG COLORS ==========<*/
+
+  /* BACKGROUND */
+  --tag-default-bg:      #e0e4fa;
+  --tag-fandom-bg:       #5e76fa;
+  --tag-warning-bg:      #5e76fa;
+  --tag-ship-bg:         #5e76fa;
+  --tag-character-bg:    #5e76fa;
+  --tag-freeform-bg:     var(--tag-default-bg);
+  --tag-splash-bg:       #e1e2e7;   /* leave alone - only for tags on the splash page */
+
+  /* TEXT */
+  --tag-default-txt:     #5e76fa;
+  --tag-fandom-txt:      var(--txt-alt1);
+  --tag-warning-txt:     var(--txt-alt1);
+  --tag-ship-txt:        var(--txt-alt1);
+  --tag-character-txt:   var(--txt-alt1);
+  --tag-freeform-txt:    #5e76fa;
+
+  /* BORDER */
+  --tag-border:          #9893a525;
+
+  /* HOVER AND FOCUS */
+  --tag-hgl-bg:          var(--int-btn-hgl-bg);
+  --tag-hgl-txt:         var(--txt-alt2);
+  --tag-hsl-shadow:      inset 0 0 0 1px rgba(255,255,255,0.3);
+
+
+
+/*>========== COLORS FOR ROLES AND STATES + SYSTEM MESSAGES ==========<*/
+
+  /* BACKGROUND */
+  --notice-bg:           #fbeaec;
+  --success-bg:          #f0f8fc;
+  --caution-bg:          #fef8ea;
+  --alert-bg:            #fceaf3;
+
+  /* TEXT (AND BORDERS) */
+  --notice-txt:          #ea9a97; 
+  --success-txt:         #5e76fa;
+  --caution-txt:         #5e76fa;
+  --alert-txt:           #5e76fa;
+
+
+/*>========== FILTERS ==========<*/
+/* the colors of the following elements can only be changed using filters; adjust filter values to change colors */
+
+  --header-icon:         brightness(0) saturate(100%) invert(28%) sepia(88%) saturate(973%) hue-rotate(208deg) brightness(90%) contrast(73%);
+  --header-icon-hgl:     brightness(0) saturate(100%) invert(43%) sepia(59%) saturate(766%) hue-rotate(196deg) brightness(99%) contrast(98%);
+  --kudos-icon:          var(--header-icon-hgl);
+  --lock-icon:           var(--header-icon);
+  --tag-filter:          brightness(1.15);
+  --stats-icon:          var(--header-icon);
+  --stat-chart:          saturate(45%) hue-rotate(255deg) contrast(110%) sepia(10%) brightness(110%);
+  --rich-txt-editor:     none;
+
+}
+
+/*>========== FONTS ==========<*/
+
+/* MAIN FONT FAMILY */
+body,
+input,
+.toggled form,
+.dynamic form,
+.secondary,
+.dropdown,
+blockquote,
+.prompt .blurb h6,
+.bookmark .user .meta,
+a.work,
+span.symbol,
+.heading .actions,
+.heading .action,
+.heading span.actions,
+button,
+span.unread,
+.replied,
+span.claimed,
+.actions span.defaulted,
+.splash .news .meta,
+.datetime,
+h5.fandoms.heading a.tag,
+dd.fandom.tags a,
+select {
+    font-family: Figtree, Helvetica, "Trebuchet MS", "Lucida Sans", Arial, san-serif, "GNU Unifont";
+}
+
+/* HEADINGS FONT FAMILY */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.heading {
+    font-family: Figtree, Helvetica, "Trebuchet MS", "Lucida Sans", Arial, sans-serif, "GNU Unifont";
+    font-weight: var(--txt-bold);
+}
+
+/* CODE FONT FAMILY */
+kbd,
+tt,
+code,
+var,
+pre,
+samp,
+textarea,
+textarea#skin_css,
+.css.module blockquote pre,
+#floaty-textarea {
+    font-family: Victor Mono Medium, Consolas, Monaco, Courier, monospace;
+    font-size: 0.9em;
+    /* font-style: italic; */
+    /* For cursive version of Victor Mono */
+}
+
+/*>========== TEXT DECORATIONS ==========<*/
+ /* don't forget to change the decorations in the tablet and mobile skins as well */
+
+/* TITLE DECORATIONS */
+#header .heading a::before {
+  content: "Archive of Our Own\00a0✦";
+}
+
+/* DASHBOARD CURRENT TAB DECORATION */
+#dashboard .current:after {
+  content: "\00a0✦";
+}
+
+.home .header h2::after {
+    content: "\00a0✦";
+}
+
+.splash>.module h3::after {
+  content: "\00a0✦";
+}
+
+/* TAG DECORATIONS */
+a.tag:not(.fandom.index.group a.tag,
+  h2.heading a.tag,
+  .splash .favorite a.tag,
+  h5.fandoms.heading a.tag,
+  dd.fandom.tags a,
+  [class^=warning] a.tag,
+  [class^=relationship] a,
+  [class^=character] a.tag):after {
+  content: "\00a0\00a0✦";
+}
