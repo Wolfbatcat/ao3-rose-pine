@@ -2444,11 +2444,6 @@ li.comment:has(.edit_comment) {
 .logged-in .splash>.module {
     box-sizing: border-box;
     margin-inline: 0;
-    padding: 0.75em 0.75em 0.643em;
-    background-color: var(--bg5) !important;
-    border: var(--border-width) solid var(--border3);
-    border-radius: var(--radius-big);
-    box-shadow: var(--shadow-box1);
 }
 
 .logged-in .splash>.module {
