@@ -56,7 +56,7 @@ h2.heading+h3.heading:not(.landmark) {
 /* header search bar positioning */
 #header li.search {
   position: absolute;
-  top: 1em;
+  top: 0.7em;
 }
 
 /* reduce search bar width */
