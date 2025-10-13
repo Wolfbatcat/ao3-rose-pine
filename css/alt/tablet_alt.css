@@ -39,27 +39,26 @@
 
 #dashboard,
 #dashboard.own {
-  top: unset;
-  z-index: 2;
-  width: 100%;
-  min-width: unset;
-  max-width: unset;
-  height: auto;
-  max-height: unset;
-  overflow: visible;
-  margin: 0;
-  padding: 0;
-  border-right: none;
-  border-bottom: var(--border-width) solid;
-  text-align: center;
+    top: unset;
+    z-index: 2;
+    width: auto;
+    min-width: unset;
+    max-width: unset;
+    height: auto;
+    max-height: unset;
+    overflow: visible;
+    margin: 2% 2% 0 2%;
+    padding: 0;
+    border-bottom: var(--border-width) solid;
+    text-align: center;
 }
 
 #dashboard ul {
-  box-sizing: border-box;
-  width: 100%;
-  margin: 0;
-  padding: 0.25em var(--margins-narrow);
-  text-align: center;
+    box-sizing: border-box;
+    width: 100%;
+    margin: 0;
+    padding: 0.25em 0;
+    text-align: center;
 }
 
 #dashboard a,

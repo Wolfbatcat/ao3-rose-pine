@@ -19,12 +19,6 @@ h2.heading+h3.heading:not(.landmark) {
 >> 03 REGION: HEADER
 ============================================================*/
 
-/* title fix */
-#header .heading a::before {
-  content: "AO3\00a0✿";
-  /* do not use the full "Archive of Our Own as it doesn't fit smaller screens" */
-}
-
 /* header dropdown menus */
 #header .menu {
   width: 100%;
@@ -56,7 +50,7 @@ h2.heading+h3.heading:not(.landmark) {
 /* header search bar positioning */
 #header li.search {
   position: absolute;
-  top: 0;
+  top: 0.7em;
 }
 
 /* reduce search bar width */
@@ -71,6 +65,49 @@ h2.heading+h3.heading:not(.landmark) {
 #header #search .text:is(:focus, :active) {
   width: 95vw;
   max-width: unset;
+}
+
+/*============================================================
+>> 04 REGION: DASHBOARD
+============================================================*/
+
+#dashboard,
+#dashboard.own {
+  top: unset;
+  z-index: 2;
+  width: auto;
+  min-width: unset;
+  max-width: unset;
+  height: auto;
+  max-height: unset;
+  overflow: visible;
+  margin: 2% 2% 0 2%;
+  padding: 0;
+  border-bottom: var(--border-width) solid;
+  text-align: center;
+}
+
+#dashboard ul {
+  box-sizing: border-box;
+  width: 100%;
+  margin: 0;
+  padding: 0.25em 0;
+  text-align: center;
+}
+
+#dashboard a,
+#dashboard span {
+  display: inline-block;
+  /* put menu items next to each other */
+  margin-block: var(--border-width);
+}
+
+#dashboard .secondary {
+  position: absolute;
+  left: 50%;
+  width: fit-content;
+  max-width: 95%;
+  transform: translate(-50%, 0);
 }
 
 /*============================================================
@@ -211,7 +248,12 @@ p.navigation.actions {
   padding: 0 0.643em;
 }
 
-.region:has(ol.pagination.actions) form.filters,
+.region:has(ol.pagination.actions) form.filters {
+    background-color: var(--bg5);
+    border: var(--border-width) solid var(--border1);
+    box-shadow: var(--shadow-header);
+}
+
 .javascript {
     background: var(--bg1);
 }
