@@ -14,11 +14,25 @@
 
 ## Preview
 
-| Rosé Pine Dawn | Rosé Pine Moon | Rosé Pine |
+### Normal Layout
+
+| Rosé Pine Dawn | Rosé Pine Moon | Rosé Pine Moon Cool |
 | --- | --- | --- |
-| ![Rosé Pine Dawn](https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/images/image_rosepinedawn.png) | ![Rosé Pine Moon](https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/images/image_rosepinemoon.png) | ![Rosé Pine](https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/images/image_rosepine.png) |
-| **Rosé Pine Moon - Cool** | **Rosé Pine - Cool** | **Mobile** |
-| ![Rosé Pine Moon - Cool](https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/images/image_rosepinemooncool.png) | ![Rosé Pine - Cool](https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/images/image_rosepinecool.png) | <img src="https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/images/image_mobile.jpg" alt="Mobile" width="1845"> |
+| ![Rosé Pine Dawn](https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/images/image_dash_rosepinedawn.png) | ![Rosé Pine Moon](https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/images/image_dash_rosepinemoon.png) | ![Rosé Pine Moon Cool](https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/images/image_dash_rosepinemooncool.png) |
+
+| Rosé Pine | Rosé Pine Cool | Mobile |
+| --- | --- | --- |
+| ![Rosé Pine](https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/images/image_dash_rosepine.png) | ![Rosé Pine Cool](https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/images/image_dash_rosepinecool.png) | <img src="https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/images/image_mobile.jpg" alt="Mobile" width="1845"> |
+
+### Card Layout
+
+| Rosé Pine Dawn | Rosé Pine Moon | Rosé Pine Moon Cool |
+| --- | --- | --- |
+| ![Rosé Pine Dawn (Card)](https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/images/image_card_rosepinedawn.png) | ![Rosé Pine Moon (Card)](https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/images/image_card_rosepine.png) | ![Rosé Pine Moon Cool (Card)](https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/images/image_card_rosepinemooncool.png) |
+
+| Rosé Pine | Rosé Pine Cool |
+| --- | --- |
+| ![Rosé Pine (Card)](https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/images/image_card_rosepinemoon.png) | ![Rosé Pine Cool (Card)](https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/images/image_card_rosepinecool.png) |
 
 ## Installation
 
@@ -26,12 +40,25 @@
 
 > Full instructions also available on [Archive of Our Own](https://archiveofourown.org/works/69993411).
 
+> **Important:** You must choose between the **Normal Layout** or the **Card Layout**. Once you pick a layout, use all the corresponding skins for that layout (base, tablet, and mobile). Do not mix skins from different layouts.
+
+### 0. Choose Your Layout
+
+Before you begin, decide which layout you prefer:
+
+- **Normal Layout:** Uses `base.css`, `tablet.css`, and `mobile.css`
+- **Card Layout:** Uses `base_alt.css`, `tablet_alt.css`, and `mobile_alt.css`
+
+Check the previews above to see which style you prefer, then follow the instructions below using the files for your chosen layout. Note that both layouts use the same theme files, so you can pick any theme you like regardless of which layout you choose.
+
 <details>
 <summary>1. Create the Base Skin</summary>
 
 1. Go to your **Dashboard → Skins → [Create Site Skin](https://archiveofourown.org/skins/new?skin_type=Skin)**.
 2. Give it a name, like `[BBC] Rosé Pine - Base`.
-3. Paste the contents of `base.css` into the CSS field.
+3. Paste the contents of your chosen base file into the CSS field:
+    - **Normal Layout:** `base.css`
+    - **Card Layout:** `base_alt.css`
 4. Under **Advanced**, set it to **Parent Only**.
 5. Click **Submit**.
 
@@ -42,7 +69,7 @@
 
 This is where the fun part happens—picking your colors! Choose one of the themes below.
 
-1. Create a skin titled something like `[BBC] Rosé Pine Dawn` or `[BBC] Rosé Pine Moon`.
+1. [Create a skin](https://archiveofourown.org/skins/new?skin_type=Skin) titled something like `[BBC] Rosé Pine Dawn` or `[BBC] Rosé Pine Moon`.
 2. Paste the code from one of the theme files:
     - `theme_rosepinedawn.css` (Rosé Pine Dawn)
     - `theme_rosepinemoon.css` (Rosé Pine Moon)
@@ -50,16 +77,24 @@ This is where the fun part happens—picking your colors! Choose one of the them
     - `theme_rosepine.css` (Rosé Pine)
     - `theme_rosepinecool.css` (Rosé Pine Cool)
 3. Set it to **Parent Only** and submit.
-4. (Optional) Want a skin that switches between light and dark mode automatically? Create a second theme and under **Advanced → Choose @media**, set: `(prefers-color-scheme: light)` or `(prefers-color-scheme: dark)`. Set your first theme to the other `prefers-color-scheme`.
-    - **Note:** If you prefer to switch skins manually but want a more convenient method, check out my [AO3: Skin Switcher](https://greasyfork.org/en/scripts/551820-ao3-skin-switcher) script. It lets you change skins from any page on the site without losing your place.
+4. (Optional) Want a skin that switches between light and dark mode automatically based on your system preferences?
+    - [Create a second theme skin](https://archiveofourown.org/skins/new?skin_type=Skin) (e.g., `[BBC] Rosé Pine Moon` for dark mode if you already created Dawn for light mode).
+    - Paste in the CSS from your chosen second theme.
+    - Set it to **Parent Only**.
+    - Under **Advanced → Choose @media**, select `(prefers-color-scheme: dark)` for your dark theme OR `(prefers-color-scheme: light)` for your light theme.
+    - Go back to your first theme skin and edit it. Under **Advanced → Choose @media**, select the opposite @media query (`(prefers-color-scheme: light)` if your second theme uses dark, or vice versa).
+    - Now you have two themes that will switch automatically depending on your browser or device settings. When you get to Step 5, you'll add both theme skins to the parent chain.
+    - **Note:** If you prefer to change your skins manually but want an easier way to do so then check out my [AO3: Skin Switcher](https://greasyfork.org/en/scripts/551820-ao3-skin-switcher) script. You can easily change site skins without leaving the page you were on.
 
 </details>
 
 <details>
 <summary>3. Create the Tablet Skin</summary>
 
-1. Create a skin titled `[BBC] Rosé Pine - Tablet`.
-2. Paste in `tablet.css`.
+1. [Create a skin](https://archiveofourown.org/skins/new?skin_type=Skin) titled `[BBC] Rosé Pine - Tablet`.
+2. Paste in the correct tablet file for your chosen layout:
+    - **Normal Layout:** `tablet.css`
+    - **Card Layout:** `tablet_alt.css`
 3. Under **Advanced → Choose @media**, select: `only screen (max-width: 62em)`.
 4. Set to **Parent Only** and submit.
 
@@ -68,8 +103,10 @@ This is where the fun part happens—picking your colors! Choose one of the them
 <details>
 <summary>4. Create the Mobile Skin</summary>
 
-1. Create a skin titled `[BBC] Rosé Pine - Mobile`.
-2. Paste in `mobile.css`.
+1. [Create a skin](https://archiveofourown.org/skins/new?skin_type=Skin) titled `[BBC] Rosé Pine - Mobile`.
+2. Paste in the correct mobile file for your chosen layout:
+    - **Normal Layout:** `mobile.css`
+    - **Card Layout:** `mobile_alt.css`
 3. Under **Advanced → Choose @media**, select: `only screen (max-width: 42em)`.
 4. Set to **Parent Only** and submit.
 
@@ -78,12 +115,12 @@ This is where the fun part happens—picking your colors! Choose one of the them
 <details>
 <summary>5. Chain Them Together</summary>
 
-1. Create one final skin, like `[BBC] Rosé Pine Dawn - Default`.
+1. [Create one final skin](https://archiveofourown.org/skins/new?skin_type=Skin), like `[BBC] Rosé Pine Dawn - Default` (or `[BBC] Rosé Pine Auto - Default` if you created two themes for auto-switching).
 2. In the CSS field, paste `.rose-pine {opacity: 1;}` (just a placeholder so AO3 lets you save).
 3. Under **Advanced → Parent Skins**, add the skins you created in this order:
     1. [BBC] Rosé Pine - Base
-    2. [BBC] Rosé Pine Dawn / [BBC] Rosé Pine Moon / [BBC] Rosé Pine
-        1. If you created an additional dark / light mode skin, add it too.
+    2. **Single theme:** [BBC] Rosé Pine Dawn / [BBC] Rosé Pine Moon / [BBC] Rosé Pine  
+       **OR for auto light/dark switching:** Add *both* of your theme skins (e.g., [BBC] Rosé Pine Dawn and [BBC] Rosé Pine Moon). The order doesn't matter since they use @media queries.
     3. [BBC] Rosé Pine - Tablet
     4. [BBC] Rosé Pine - Mobile
 4. Click **Submit**, then **Use**.
@@ -147,14 +184,15 @@ This is where the fun part happens—picking your colors! Choose one of the them
     ```
     Swap out `✿` for whatever symbol you want (♥, ✦, ʚ, etc.).
 
-    **Important:** The tablet and mobile skins use the shortened version of the title "AO3 ✿". You'll have to change the symbols in those skins too.
+    **Important:** Since the mobile skin uses the shortened version of the title "AO3 ✿", you'll have to change the symbol there too.
 
 ## Add-Ons
 
 These userscripts work great with the Rosé Pine theme and can be customized to match the palette:
 
-- **[AO3: Site Wizard](https://www.tumblr.com/blackbatcats/795985329543905280/new-userscript?source=share)** - Change fonts and font sizes from anywhere on the site; automatically fixes spacing issues within works.
+- **[AO3: Skin Switcher](https://greasyfork.org/en/scripts/551820-ao3-skin-switcher)** - Change site skins from anywhere without leaving the page.
 - **[AO3: Chapter Shortcuts](https://www.tumblr.com/blackbatcats/794714820892065792/release-ao3-chapter-shortcuts?source=share)** - Adds a shortcut button to jump straight to the most recent chapter of any work. The shortcut symbol can match the text decoration symbol used throughout the theme.
+- **[AO3: Site Wizard](https://www.tumblr.com/blackbatcats/795985329543905280/new-userscript?source=share)** - Change fonts and font sizes from anywhere on the site. Customize how works appear with width, alignment, and spacing fixes.
 - **[AO3: Reading Time & Quality Score](https://www.tumblr.com/blackbatcats/795056231371980800/new-ao3-userscript-because-i-was-tired-of-bad-fic?source=share)** - Adds customizable reading time and engagement score bars to every work. To make it match this theme, open the settings menu under "Userscripts" on the top navigation bar and check off "Use icons instead of text labels" and optionally "Colored backgrounds" or "Colored text." It already uses Rosé Pine's accent colors and icon colors by default!
 - **[AO3 Fictracker](https://greasyfork.org/en/scripts/513435-ao3-fictracker) by Farin** - An absolute lifesaver for tracking fics! Mark works as finished, favorite, or to-read using a customizable tag system. Here are my recommended Rosé Pine highlighting settings:
     - **Favorite** - Rose `rgb(235, 188, 186)` for regular Rosé Pine theme, or Iris `rgb(196, 167, 231)` for Cool variants
@@ -162,8 +200,8 @@ These userscripts work great with the Rosé Pine theme and can be customized to 
     - **Finished reading** - Subtle `rgb(144, 140, 170)`
     - Set **Border Size** to 2 and crank **Opacity** all the way up (or adjust to taste!)
 
-![Add-ons in action](https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/images/image_rosepine_additions_light.png)
-![Add-ons in action](https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/images/image_rosepine_blurb.png)
+![Add-ons in action](https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/images/image_rosepine_additions_dark.png)
+![Add-ons in action](https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/images/image_rosepine_blurb_dark.png)
 *Pictured: Fictracker, Reading Time & Quality Score, and Chapter Shortcuts*
 
 ## Credits
