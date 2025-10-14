@@ -684,8 +684,9 @@ ul.navigation:nth-child(3) > li:nth-child(1) > a:nth-child(1) {
     width: 100%;
     max-width: 100%;
     padding: 3% 5%;
-    border: none;
-    background: none;
+    margin-top: 2%;
+    border-top: var(--border-width) solid var(--border2);
+    background: linear-gradient(to top, var(--bg1) 70%, var(--bg2) 100%);
     overflow: hidden;
     overflow-wrap: anywhere;
     font-size: 0.8em;
