@@ -48,7 +48,7 @@
 
 > **Important:** You must choose between the **Normal Layout** or the **Card Layout**. Once you pick a layout, use all the corresponding skins for that layout (base, tablet, and mobile). Do not mix skins from different layouts.
 
-### 0. Choose Your Layout
+### Choose Your Layout
 
 Before you begin, decide which layout you prefer:
 
