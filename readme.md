@@ -61,7 +61,7 @@ Check the previews above to see which style you prefer, then follow the instruct
 <summary>1. Create the Base Skin</summary>
 
 1. Go to your **Dashboard → Skins → [Create Site Skin](https://archiveofourown.org/skins/new?skin_type=Skin)**.
-2. Give it a name, like `[BBC] Rosé Pine - Base`.
+2. Give it a unique name, like `[BBC] Rosé Pine - Base`, with "BBC" being your username or an abbreviation.
 3. Paste the contents of your chosen base file into the CSS field:
     - **Normal Layout:** `base.css`
     - **Card Layout:** `base_alt.css`
