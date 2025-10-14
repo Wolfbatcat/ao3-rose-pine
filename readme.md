@@ -14,7 +14,8 @@
 
 ## Preview
 
-### Normal Layout
+<details>
+<summary>Preview Normal Layout</summary>
 
 | Rosé Pine Dawn | Rosé Pine Moon | Rosé Pine Moon Cool |
 | --- | --- | --- |
@@ -24,7 +25,10 @@
 | --- | --- | --- |
 | ![Rosé Pine](https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/images/image_dash_rosepine.png) | ![Rosé Pine Cool](https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/images/image_dash_rosepinecool.png) | <img src="https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/images/image_mobile.jpg" alt="Mobile" width="1845"> |
 
-### Card Layout
+</details>
+
+<details>
+<summary>Preview Card Layout</summary>
 
 | Rosé Pine Dawn | Rosé Pine Moon | Rosé Pine Moon Cool |
 | --- | --- | --- |
@@ -33,6 +37,8 @@
 | Rosé Pine | Rosé Pine Cool |
 | --- | --- |
 | ![Rosé Pine (Card)](https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/images/image_card_rosepinemoon.png) | ![Rosé Pine Cool (Card)](https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/images/image_card_rosepinecool.png) |
+
+</details>
 
 ## Installation
 
