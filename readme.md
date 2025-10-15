@@ -135,9 +135,11 @@ This is where the fun part happens—picking your colors! Choose one of the them
 
 ## Customization
 
-> **Note:** AO3's code editor doesn't save annotations, so if you want to edit a skin, I highly recommend downloading it and using a proper code editor to make your changes.
+> AO3's code editor doesn't save annotations, so if you want to edit a skin, I highly recommend downloading it and using a proper code editor to make your changes.
 
-- **Fonts:** I recommend [Domine](https://fonts.google.com/specimen/Domine) (serif) and [Figtree](https://fonts.google.com/specimen/Figtree) (sans-serif). Code snippets use [Victor Mono](https://rubjo.github.io/victor-mono/). If you want the cursive version of the code font, just remove the comments from `/* font-style: italic; */` in your theme file.
+**Tip:** For an easier time changing fonts and font sizes, check out the [AO3: Site Wizard](https://greasyfork.org/en/scripts/550537-ao3-site-wizard) userscript—it works on both PC and mobile!
+
+- **Fonts:** I recommend [Bitter](https://fonts.google.com/specimen/Bitter) (serif) or [Figtree](https://fonts.google.com/specimen/Figtree) (sans-serif) for the main font, and [Domine](https://fonts.google.com/specimen/Domine) (serif) for the work font. Code snippets use [Victor Mono](https://rubjo.github.io/victor-mono/). If you want the cursive version of the code font, just remove the comments from `/* font-style: italic; */` in your theme file.
 
 - **Text Size:** You can make text bigger or smaller using two variables in the `MAIN TEXT` section:
     ```css
@@ -147,7 +149,7 @@ This is where the fun part happens—picking your colors! Choose one of the them
     ```
     `--txt-size-main` controls text size across the whole site (navigation, blurbs, forms, etc.), while `--txt-size-work` is just for the actual work content. Bump up the percentage to make text larger (like `110%` or `120%`) or decrease it for smaller text (like `90%`). Just be aware that going above 130% for `--txt-size-main` might cause some minor layout weirdness, though it'll still mostly work.
 
-    **Tip:** For an easier time changing fonts and font sizes, check out the [AO3: Site Wizard](https://greasyfork.org/en/scripts/550537-ao3-site-wizard) userscript—it works on both PC and mobile!
+
 
 - **Tag Colors:** Want to change up the tag colors? The variables are in the `TAG COLORS` section near the top of your theme file:
     ```css

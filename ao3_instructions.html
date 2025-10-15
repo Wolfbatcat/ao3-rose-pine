@@ -71,7 +71,8 @@
     <li><strong>Normal Layout:</strong> Uses <code>base.css</code>, <code>tablet.css</code>, and <code>mobile.css</code>
     </li>
     <li><strong>Card Layout:</strong> Uses <code>base_alt.css</code>, <code>tablet_alt.css</code>, and
-      <code>mobile_alt.css</code></li>
+      <code>mobile_alt.css</code>
+    </li>
   </ul>
 
   <p>Check the previews above to see which style you prefer, then follow the instructions below using the files for your
@@ -81,7 +82,8 @@
   <ul>
     <li>Go to your <strong>Dashboard → Skins → <a href="https://archiveofourown.org/skins/new?skin_type=Skin"
           rel="nofollow">Create Site Skin</a></strong>.</li>
-    <li>Give it a unique name, like <code>[BBC] Rosé Pine - Base</code>, with "BBC" being your username or abbreviation.</li>
+    <li>Give it a unique name, like <code>[BBC] Rosé Pine - Base</code>, with "BBC" being your username or abbreviation.
+    </li>
     <li>Paste the contents of your chosen base file into the CSS field:
       <ul>
         <li><strong>Normal Layout:</strong> <a href="https://github.com/Wolfbatcat/ao3-rose-pine/blob/main/css/base.css"
@@ -198,15 +200,19 @@
   <h2>Customization</h2>
   <div class="note">
 
-    <p><strong>Note:</strong> AO3's code editor doesn't save annotations, so if you want to edit a skin, I highly
-      recommend
-      downloading it and using a proper code editor to make your changes.</p>
+    <p>AO3's code editor doesn't save annotations, so if you want to edit a skin, I highly
+      recommend downloading it and using a proper code editor to make your changes.</p>
+
+    <blockquote><strong>Tip:</strong> For an easier time changing fonts and font sizes, check out the <a
+        href="https://greasyfork.org/en/scripts/550537-ao3-site-wizard" rel="nofollow">AO3: Site Wizard</a>
+      userscript—it works on both PC and mobile.</blockquote>
   </div>
   <ul>
-    <li><strong>Fonts:</strong> I recommend <a href="https://fonts.google.com/specimen/Domine" rel="nofollow">Domine</a>
-      (serif), <a href="https://fonts.google.com/specimen/Bitter" rel="nofollow">Bitter</a>
-      (serif), and <a href="https://fonts.google.com/specimen/Figtree" rel="nofollow">Figtree</a> (sans-serif). Code
-      snippets use <a href="https://rubjo.github.io/victor-mono/" rel="nofollow">Victor Mono</a>. If you want the
+    <li><strong>Fonts:</strong> I recommend <a href="https://fonts.google.com/specimen/Bitter" rel="nofollow">Bitter</a>
+      (serif) or <a href="https://fonts.google.com/specimen/Figtree" rel="nofollow">Figtree</a> (sans-serif) for the
+      main font and <a href="https://fonts.google.com/specimen/Domine" rel="nofollow">Domine</a>
+      (serif) for the work font. Code snippets use <a href="https://rubjo.github.io/victor-mono/" rel="nofollow">Victor
+        Mono</a>. If you want the
       cursive version of the code font, just remove the comments from
       <code>/* font-style: italic; */</code> in your theme file.
     </li>
@@ -221,10 +227,6 @@
       <code>110%</code> or <code>120%</code>) or decrease it for smaller text (like <code>90%</code>). Just be aware
       that going above 130% for <code>--txt-size-main</code> might cause some minor layout weirdness, though it'll still
       mostly work.<br />
-      <br />
-      <strong>Tip:</strong> For an easier time changing fonts and font sizes, check out the <a
-        href="https://greasyfork.org/en/scripts/550537-ao3-site-wizard" rel="nofollow">AO3: Site Wizard</a>
-      userscript—it works on both PC and mobile!
     </li>
     <li><strong>Tag Colors:</strong> Want to change up the tag colors? The variables are in the <code>TAG COLORS</code>
       section near the top of your theme file:
@@ -279,18 +281,17 @@ dd.fandom.tags a,
   <ul>
     <li><strong><a href="https://greasyfork.org/en/scripts/551820-ao3-skin-switcher" rel="nofollow">AO3: Skin
           Switcher</a></strong> - Change site skins from anywhere without leaving the page.</li>
-    <li><strong><a href="https://greasyfork.org/en/scripts/550537-ao3-site-wizard"
-          rel="nofollow">AO3: Site Wizard</a></strong> - Change fonts and font sizes from anywhere on the site.
+    <li><strong><a href="https://greasyfork.org/en/scripts/550537-ao3-site-wizard" rel="nofollow">AO3: Site
+          Wizard</a></strong> - Change fonts and font sizes from anywhere on the site.
       Customize how works appear with width, alignment, and spacing fixes.</li>
-    <li><strong><a
-          href="https://greasyfork.org/en/scripts/549571-ao3-chapter-shortcuts"
-          rel="nofollow">AO3: Chapter Shortcuts</a></strong> - Adds a shortcut button to jump straight to the most
+    <li><strong><a href="https://greasyfork.org/en/scripts/549571-ao3-chapter-shortcuts" rel="nofollow">AO3: Chapter
+          Shortcuts</a></strong> - Adds a shortcut button to jump straight to the most
       recent chapter of any work. The shortcut symbol can match the text decoration symbol used throughout the theme.
     </li>
-    <li><strong><a
-          href="https://greasyfork.org/en/scripts/549777-ao3-reading-time-quality-score"
-          rel="nofollow">AO3: Reading Time &amp; Quality Score</a></strong> - Adds customizable reading time and
-      engagement score bars to every work (available per chapter too!). To make the bars match this skin, open the settings menu under "Userscripts" on
+    <li><strong><a href="https://greasyfork.org/en/scripts/549777-ao3-reading-time-quality-score" rel="nofollow">AO3:
+          Reading Time &amp; Quality Score</a></strong> - Adds customizable reading time and
+      engagement score bars to every work (available per chapter too!). To make the bars match this skin, open the
+      settings menu under "Userscripts" on
       the top navigation bar and check off "Use icons instead of text labels" and optionally "Colored backgrounds" or
       "Colored text." It already uses Rosé Pine's accent colors and icon colors by default!</li>
     <li><strong><a href="https://greasyfork.org/en/scripts/513435-ao3-fictracker" rel="nofollow">AO3 Fictracker</a> by
@@ -306,8 +307,12 @@ dd.fandom.tags a,
           taste!)</li>
       </ul>
     </li>
-    <li><strong><a href="https://greasyfork.org/en/scripts/542872-ao3-floaty-comment-box-responsive" rel="nofollow">AO3 Floaty Comment Box (Responsive)</a> by schildpath</strong> - Allows commenting on the fly, blends in with the site skin.</li>
-    <li><strong><a href="https://greasyfork.org/en/scripts/484002-ao3-comment-formatting-and-preview" rel="nofollow">AO3: Comment Formatting and Preview</a> by escctrl</strong> - Adds buttons to insert HTML formatting, and shows a live preview box of what the comment will look like.</li>
+    <li><strong><a href="https://greasyfork.org/en/scripts/542872-ao3-floaty-comment-box-responsive" rel="nofollow">AO3
+          Floaty Comment Box (Responsive)</a> by schildpath</strong> - Allows commenting on the fly, blends in with the
+      site skin.</li>
+    <li><strong><a href="https://greasyfork.org/en/scripts/484002-ao3-comment-formatting-and-preview"
+          rel="nofollow">AO3: Comment Formatting and Preview</a> by escctrl</strong> - Adds buttons to insert HTML
+      formatting, and shows a live preview box of what the comment will look like.</li>
   </ul>
   <h6>Pictured: <a href="https://greasyfork.org/en/scripts/513435-ao3-fictracker" rel="nofollow">Fictracker</a>, <a
       href="https://greasyfork.org/en/scripts/549777-ao3-reading-time-quality-score" rel="nofollow">Reading Time &amp;
