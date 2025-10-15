@@ -1584,7 +1584,6 @@ a.tag:not(.fandom.index.group a.tag):not(h2.heading a.tag):not(.splash .favorite
     z-index: 1;
     transition: all 0.2s ease;
     background-color: var(--tag-default-bg);
-    padding-right: 1.5em;
 }
 
 /*>>========== TAG PSEUDO-ELEMENT BACKGROUND ==========<<*/
