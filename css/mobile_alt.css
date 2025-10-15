@@ -26,12 +26,13 @@ h2.heading+h3.heading:not(.landmark) {
 
 /* header dropdown menus */
 #header .menu {
-  width: 100%;
+  width: 96%;
   max-width: unset;
   min-width: unset;
   border-inline: none;
-  border-radius: 0;
+  border: var(--border-width) solid var(--border1);
   transform: unset;
+  margin: 0 2%;
 }
 
 /* center dropdown menu text */
