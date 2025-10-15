@@ -204,6 +204,8 @@ These userscripts work great with the Rosé Pine theme and can be customized to 
     - **To Read** - Foam `rgb(156, 207, 216)`
     - **Finished reading** - Subtle `rgb(144, 140, 170)`
     - Set **Border Size** to 2 and crank **Opacity** all the way up (or adjust to taste!)
+- **[AO3 Floaty Comment Box (Responsive)](https://greasyfork.org/en/scripts/542872-ao3-floaty-comment-box-responsive) by schildpath** - Allows commenting on the fly, blends in with the site skin.
+- **[AO3: Comment Formatting and Preview](https://greasyfork.org/en/scripts/484002-ao3-comment-formatting-and-preview) by escctrl** - Adds buttons to insert HTML formatting, and shows a live preview box of what the comment will look like.
 
 ![Add-ons in action](https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/images/image_rosepine_additions_dark.png)
 ![Add-ons in action](https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/images/image_rosepine_blurb_dark.png)
