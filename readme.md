@@ -137,11 +137,31 @@ This is where the fun part happens—picking your colors! Choose one of the them
 
 > AO3's code editor doesn't save annotations, so if you want to edit a skin, I highly recommend downloading it and using a proper code editor to make your changes.
 
+
 **Tip:** For an easier time changing fonts and font sizes, check out the [AO3: Site Wizard](https://greasyfork.org/en/scripts/550537-ao3-site-wizard) userscript—it works on both PC and mobile!
 
-- **Fonts:** I recommend [Bitter](https://fonts.google.com/specimen/Bitter) (serif) or [Figtree](https://fonts.google.com/specimen/Figtree) (sans-serif) for the main font, and [Domine](https://fonts.google.com/specimen/Domine) (serif) for the work font. Code snippets use [Victor Mono](https://rubjo.github.io/victor-mono/). If you want the cursive version of the code font, just remove the comments from `/* font-style: italic; */` in your theme file.
+- **Fonts:**
+    - Recommended fonts: [Bitter](https://fonts.google.com/specimen/Bitter) (serif) or [Figtree](https://fonts.google.com/specimen/Figtree) (sans-serif) for the main font, and [Domine](https://fonts.google.com/specimen/Domine) (serif) for the work font. Code snippets use [Victor Mono](https://rubjo.github.io/victor-mono/).
+    - If you want the cursive version of the code font, just remove the comments from `/* font-style: italic; */` in your theme file.
+    - **To change fonts:**
+        1. Open your theme skin (e.g., `[BBC] Rosé Pine Dawn`).
+        2. Press <kbd>Ctrl+F</kbd> to search for `font-family`.
+        3. You'll see blocks like:
+             ```css
+             body,
+                 input,
+                 ...existing selectors...
+                 {
+                         font-family: Figtree, Bitter, Helvetica, ...;
+                 }
+             ```
+        4. Replace the font names in these `font-family` lines with your preferred fonts, keeping the fallback fonts for best compatibility. For example:
+             ```css
+             font-family: YourFont, Figtree, Bitter, Helvetica, Arial, sans-serif;
+             ```
+        5. Do the same for headings and code font sections if you want to change those as well.
 
-- **Text Size:** You can make text bigger or smaller using two variables in the `MAIN TEXT` section:
+- **Text Size:** You can make text bigger or smaller using two variables in the theme skin:
     ```css
     /* TEXT SIZE */
     --txt-size-main:       100%;     /* main text size */

@@ -215,9 +215,21 @@
         Mono</a>. If you want the
       cursive version of the code font, just remove the comments from
       <code>/* font-style: italic; */</code> in your theme file.
+    <br>
+    <strong>To change fonts:</strong> Open your theme skin (i.e. [BBC] Rosé Pine Dawn) and press <kbd>Ctrl+F</kbd> to search for <code>font-family</code>. You'll see blocks like:
+    <pre><code>body,
+  input,
+  ...existing selectors...
+  {
+      font-family: Figtree, Bitter, Helvetica, ...;
+  }
+  </code></pre>
+    Replace the font names in these <code>font-family</code> lines with your preferred fonts, keeping the fallback fonts for best compatibility. For example:
+    <pre><code>font-family: YourFont, Figtree, Bitter, Helvetica, Arial, sans-serif;
+  </code></pre>
+    Do the same for headings and code font sections if you want to change those as well.
     </li>
-    <li><strong>Text Size:</strong> You can make text bigger or smaller using two variables in the
-      <code>MAIN TEXT</code> section:
+    <li><strong>Text Size:</strong> You can make text bigger or smaller using two variables in the theme skin:
 
       <pre><code>/* TEXT SIZE */
 --txt-size-main:       100%;     /* main text size */
