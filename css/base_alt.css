@@ -2978,6 +2978,7 @@ div.error,
 .announcement {
     display: flex;
     align-items: end;
+    justify-content: center;
     z-index: 1;
     padding: 1em 0 1em 2em;
     border-bottom: var(--border-width) solid var(--alert-txt);
@@ -2989,7 +2990,6 @@ div.error,
     padding: 0;
     border: none;
     background: transparent;
-    overflow-wrap: anywhere;
     font-size: 0.95em;
     word-break: normal;
     color: var(--alert-txt);
@@ -3019,12 +3019,13 @@ div.error,
 }
 
 .announcement.event {
-    background: var(--alert-txt);
+    background: transparent;
+    border: none;
 }
 
 .event .userstuff {
     background: transparent;
-    color: var(--alter-txt);
+    color: var(--txt-main);
 }
 
 .announcement.alert {
@@ -3047,9 +3048,10 @@ div.error,
 
 .announcement .thermometer .track {
     margin: 0.5em 0;
-    border: 1.5px solid;
-    border-radius: 9999px;
-    background: var(--txt-alt2);
+    border: 1.5px solid var(--border1);
+    background: var(--bg5);
+    border-radius: 9999px !important;
+    overflow: hidden;
 }
 
 .announcement .thermometer .goal .amount {
@@ -3058,14 +3060,13 @@ div.error,
 
 .announcement .thermometer .progress .amount {
     top: 0;
-    right: 0.2em;
+    padding-right: 0.75em;
     left: unset;
-    color: var(--txt-alt2);
+    color: var(--txt-alt1);
 }
 
 .announcement .thermometer .track div.progress {
-    border-radius: 9999px;
-    background-image: linear-gradient(to right, var(--success-bg) -25%, var(--success-txt) 50%) !important;
+    background-image: var(--int-btn-hgl-bg) !important;
 }
 
 /*>========== SYMBOLS ==========<*/
