@@ -3010,6 +3010,10 @@ div.error,
     color: var(--alert-txt);
 }
 
+.event .userstuff a:hover {
+    color: var(--link) !important;
+}
+
 /*>========== THERMOMETER WIDGET ==========<*/
 /* JavaScript widget for fundraising drives */
 
