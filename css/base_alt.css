@@ -522,7 +522,7 @@ col.name {
     border-top: var(--border-width) solid var(--border2);
     border-bottom-left-radius: var(--radius-big);
     border-bottom-right-radius: var(--radius-big);
-    background-color: var(--icon-id) !important;
+    background-color: var(--link-hgl) !important;
     background-size: auto 100% !important;
     font-size: 1.15em;
     font-weight: bold;
@@ -2983,6 +2983,12 @@ div.error,
     align-items: end;
     justify-content: center;
     z-index: 1;
+    width: 96%;
+    max-width: 96%;
+    margin-top: 1%;
+    margin-right: 2%;
+    margin-bottom: 0;
+    margin-left: 2%;
     padding: 1em 0 1em 2em;
     border-bottom: var(--border-width) solid var(--alert-txt);
     background: var(--alert-bg);
