@@ -520,9 +520,12 @@ col.name {
     padding: 0.25em var(--margins-header);
     border-inline: none;
     border-top: var(--border-width) solid var(--border2);
+    border-bottom-left-radius: var(--radius-big);
+    border-bottom-right-radius: var(--radius-big);
     background-color: var(--icon-id) !important;
     background-size: auto 100% !important;
-    font-size: 1.25em;
+    font-size: 1.15em;
+    font-weight: bold;
     color: var(--int-hgl-txt);
 }
 

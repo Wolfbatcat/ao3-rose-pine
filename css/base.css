@@ -516,7 +516,8 @@ col.name {
     border-top: var(--border-width) solid var(--border2);
     background-color: var(--icon-id) !important;
     background-size: auto 100% !important;
-    font-size: 1.25em;
+    font-size: 1.15em;
+    font-weight: bold;
     color: var(--int-hgl-txt);
 }
 
