@@ -200,7 +200,7 @@ GLOBAL VARIABLES
 
   --header-icon:         brightness(0) saturate(100%) invert(88%) sepia(20%) saturate(167%) hue-rotate(206deg) brightness(97%) contrast(96%);
   --header-icon-hgl:     brightness(0) saturate(100%) invert(71%) sepia(37%) saturate(365%) hue-rotate(221deg) brightness(94%) contrast(93%);
-  --kudos-icon:          var(--header-icon-hgl);
+  --kudos-icon:          var(--header-icon);
   --lock-icon:           var(--header-icon);
   --tag-filter:          brightness(1.10);
   --stats-icon:          var(--header-icon);
