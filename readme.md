@@ -220,6 +220,7 @@ These userscripts work great with the Rosé Pine theme and can be customized to 
 
 > **Note:** If you're using a Chromium-based browser (Chrome, Brave, Vivaldi, etc.) or Microsoft Edge on PC, an extra step is needed to activate your userscript manager. Follow [these instructions](https://www.tampermonkey.net/faq.php?locale=en#Q209).
 
+- **[AO3: Advanced Blocker](https://greasyfork.org/en/scripts/549942-ao3-advanced-blocker)** - Block works based on tags, authors, titles, word counts, and more. Filter by completion status, language, last update, and primary pairings / characters.
 - **[AO3: Skin Switcher](https://greasyfork.org/en/scripts/551820-ao3-skin-switcher)** - Change site skins from anywhere without leaving the page.
 - **[AO3: Site Wizard](https://greasyfork.org/en/scripts/550537-ao3-site-wizard)** - Change fonts and font sizes from anywhere on the site. Customize how works appear with width, alignment, and spacing fixes.
 - **[AO3: Reading Time & Quality Score](https://greasyfork.org/en/scripts/549777-ao3-reading-time-quality-score)** - Adds customizable reading time and engagement score bars to every work and optionally chapters. To make the bars match the skin, open the settings menu under "Userscripts" on the top navigation bar and check off "Use icons instead of text labels" and optionally "Colored backgrounds" or "Colored text." It already uses Rosé Pine's accent colors and icon colors by default!
