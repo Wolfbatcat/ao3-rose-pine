@@ -23,7 +23,7 @@
 
 | Rosé Pine | Rosé Pine Cool | Mobile |
 | --- | --- | --- |
-| ![Rosé Pine](https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/images/image_rosepine.png) | ![Rosé Pine Cool](https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/images/image_rosepinecool.png) | <img src="https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/images/image_mobile_rosepinemoon.jpg" alt="Mobile" width="1845"> |
+| ![Rosé Pine](https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/images/image_rosepine.png) | ![Rosé Pine Cool](https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/images/image_rosepinecool.png) | <img src="https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/images/image_mobile.jpg" alt="Mobile" width="1845"> |
 
 </details>
 
@@ -34,9 +34,9 @@
 | --- | --- | --- |
 | ![Rosé Pine Dawn (Card)](https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/images/image_card_rosepinedawn.png) | ![Rosé Pine Moon (Card)](https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/images/image_card_rosepine.png) | ![Rosé Pine Moon Cool (Card)](https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/images/image_card_rosepinemooncool.png) |
 
-| Rosé Pine | Rosé Pine Cool |
-| --- | --- |
-| ![Rosé Pine (Card)](https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/images/image_card_rosepinemoon.png) | ![Rosé Pine Cool (Card)](https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/images/image_card_rosepinecool.png) |
+| Rosé Pine | Rosé Pine Cool | Mobile |
+| --- | --- | --- |
+| ![Rosé Pine (Card)](https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/images/image_card_rosepinemoon.png) | ![Rosé Pine Cool (Card)](https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/images/image_card_rosepinecool.png) | <img src="https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/images/image_card_mobile.jpg" alt="Mobile" width="1845"> |
 
 </details>
 
