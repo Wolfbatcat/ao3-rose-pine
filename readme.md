@@ -234,7 +234,7 @@ These userscripts work great with the Rosé Pine theme and can be customized to 
 
 ![Add-ons in action](https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/images/image_rosepine_additions_dark.png)
 ![Add-ons in action](https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/images/image_rosepine_blurb_dark.png)
-*Pictured: Fictracker, Reading Time & Quality Score, and Chapter Shortcuts*
+*Pictured: Fictracker, Site Wizard, Reading Time & Quality Score, and Chapter Shortcuts*
 
 ## Credits
 
