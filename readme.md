@@ -19,11 +19,11 @@
 
 | Rosé Pine Dawn | Rosé Pine Moon | Rosé Pine Moon Cool |
 | --- | --- | --- |
-| ![Rosé Pine Dawn](https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/images/image_dash_rosepinedawn.png) | ![Rosé Pine Moon](https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/images/image_dash_rosepinemoon.png) | ![Rosé Pine Moon Cool](https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/images/image_dash_rosepinemooncool.png) |
+| ![Rosé Pine Dawn](https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/images/image_rosepinedawn.png) | ![Rosé Pine Moon](https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/images/image_rosepinemoon.png) | ![Rosé Pine Moon Cool](https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/images/image_rosepinemooncool.png) |
 
 | Rosé Pine | Rosé Pine Cool | Mobile |
 | --- | --- | --- |
-| ![Rosé Pine](https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/images/image_dash_rosepine.png) | ![Rosé Pine Cool](https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/images/image_dash_rosepinecool.png) | <img src="https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/images/image_mobile.jpg" alt="Mobile" width="1845"> |
+| ![Rosé Pine](https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/images/image_rosepine.png) | ![Rosé Pine Cool](https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/images/image_rosepinecool.png) | <img src="https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/images/image_mobile_rosepinemoon.jpg" alt="Mobile" width="1845"> |
 
 </details>
 
