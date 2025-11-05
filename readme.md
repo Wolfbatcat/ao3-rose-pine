@@ -141,7 +141,7 @@ This is where the fun part happens—picking your colors! Choose one of the them
 **Tip:** For an easier time changing fonts and font sizes, check out the [AO3: Site Wizard](https://greasyfork.org/en/scripts/550537-ao3-site-wizard) userscript—it works on both PC and mobile!
 
 - **Fonts:**
-    - Recommended fonts: [Bitter](https://fonts.google.com/specimen/Bitter) (serif) or [Figtree](https://fonts.google.com/specimen/Figtree) (sans-serif) for the main font, and [Domine](https://fonts.google.com/specimen/Domine) (serif) for the work font. Code snippets use [Victor Mono](https://rubjo.github.io/victor-mono/).
+    - Recommended fonts: [Bitter](https://fonts.google.com/specimen/Bitter) (serif) or [Figtree](https://fonts.google.com/specimen/Figtree) (sans-serif) for the main font, and [Merriweather](https://fonts.google.com/specimen/Merriweather) (serif) for the work font. I also like [Apfel Grotezk](https://www.collletttivo.it/typefaces/apfel-grotezk) (serif) as a main font and [Apfel Grotezk Fett](https://www.collletttivo.it/typefaces/apfel-grotezk) (serif) for headings.Code snippets use [Victor Mono](https://rubjo.github.io/victor-mono/).
     - If you want the cursive version of the code font, just remove the comments from `/* font-style: italic; */` in your theme file.
     - **To change fonts:**
         1. Open your theme skin (e.g., `[BBC] Rosé Pine Dawn`).
