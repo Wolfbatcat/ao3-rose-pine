@@ -1434,6 +1434,13 @@ fieldset.actions li:not(:first-child) {
     display: none;
 }
 
+.work.navigation .download, .javascript .work.navigation .download .secondary {
+	background: var(--bg6);
+	border: var(--border-width) solid var(--border3);
+	box-shadow: var(--shadow);
+    color: var(--txt-main);
+}
+
 /*>>========== EXPAND, CONTRACT, TO TOP BUTTONS ==========<<*/
 
 .listbox>.heading .action:has(a) {
