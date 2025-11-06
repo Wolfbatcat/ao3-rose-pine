@@ -128,6 +128,10 @@ p.navigation.actions {
   display: none;
 }
 
+.javascript .work.navigation .download .secondary {
+  flex-direction: column;
+}
+
 /*============================================================
 >> 10 TYPES AND GROUPS OF DATA
 ============================================================*/
