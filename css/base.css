@@ -1404,10 +1404,11 @@ fieldset.actions li:not(:first-child) {
     display: none;
 }
 
-.work.navigation .download, .javascript .work.navigation .download .secondary {
-	background: var(--bg6);
-	border: var(--border-width) solid var(--border3);
-	box-shadow: var(--shadow);
+.work.navigation .download,
+.javascript .work.navigation .download .secondary {
+    background: var(--bg6);
+    border: var(--border-width) solid var(--border3);
+    box-shadow: var(--shadow);
     color: var(--txt-main);
 }
 
@@ -3877,14 +3878,8 @@ div.comment-preview.userstuff {
     background: transparent;
 }
 
-/*>========== USERSCRIPT: AO3 FICTRACKER STYLING ==========<*/
+//*>========== USERSCRIPT: AO3 FICTRACKER STYLING ==========<*/
 /* https://greasyfork.org/en/scripts/513435-ao3-fictracker */
-
-/* prevent clipping by blurb containers */
-li.blurb dl.stats,
-li.blurb .actions {
-    overflow: visible !important;
-}
 
 /* inline header wrapper styling */
 li.blurb #header.region {
@@ -3893,78 +3888,16 @@ li.blurb #header.region {
     flex-wrap: nowrap !important;
     width: auto !important;
     max-width: none !important;
-
     position: static !important;
     margin: 0 !important;
     padding: 0 !important;
     background: transparent !important;
     border: 0 !important;
     box-shadow: none !important;
-    word-spacing: normal !important;
-}
-
-li.blurb #header.region>ul.navigation.actions {
-    display: block !important;
-    margin: 0 !important;
-    padding: 0 !important;
 }
 
 li.blurb #header.region>ul.navigation.actions>li.dropdown {
-    float: none !important;
-    display: inline-block !important;
-    position: relative !important;
-    margin-left: .25em !important;
     color: var(--txt-main) !important;
-}
-
-/* show/hide dropdown menu */
-li.blurb #header.region .menu {
-    display: none !important;
-}
-
-li.blurb #header.region .open .menu,
-li.blurb #header.region .dropdown:hover .menu {
-    display: block !important;
-}
-
-/* popup panel positioning */
-li.blurb #header.region .menu {
-    position: absolute !important;
-    top: 100% !important;
-    right: 0 !important;
-    left: auto !important;
-    z-index: 2147483647 !important;
-
-    width: unset !important;
-    min-width: 15em !important;
-    max-width: 90vw !important;
-    padding: 0.25em 0 !important;
-    border: 1px solid var(--border3) !important;
-    border-radius: var(--radius-mid) !important;
-    box-shadow: var(--shadow) !important;
-    background: var(--bg6) !important;
-    font-size: 0.95em !important;
-}
-
-li.blurb #header.region .menu li {
-    float: none !important;
-    display: block !important;
-    margin: 0 !important;
-}
-
-li.blurb #header.region .menu li a {
-    display: block !important;
-    max-width: unset !important;
-    padding: 0.5em !important;
-    border-radius: var(--radius-small) !important;
-    background-color: transparent !important;
-    color: var(--txt-main) !important;
-}
-
-li.blurb #header.region .menu li a:hover,
-li.blurb #header.region .menu li a:focus {
-    background: var(--int-hgl-bg) !important;
-    color: var(--int-hgl-txt) !important;
 }
 
 /* user notes styling */
