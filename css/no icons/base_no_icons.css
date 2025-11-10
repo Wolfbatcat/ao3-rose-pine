@@ -55,7 +55,7 @@ Alphanumeric = Additions by ZerafinaCSS
 >> 21 USERSTUFF
 >> 22 SYSTEM MESSAGES
 >> Z1 REPLACE THE ICONS AND IMAGES
->> Z2 STATS ICONS WITH HOVER TEXT
+>> Z2 STATS
 >> Z3 MISCELLANEOUS
 
 /*============================================================
@@ -391,27 +391,18 @@ col.name {
 
 /*>>========== REPLACE USER ACTIONS WITH ICONS ==========<<*/
 
-/* user profile icon */
-#header #greeting .dropdown>a[href*="/users/"] {
-    content: url("https://i.postimg.cc/JzvBwZP1/zerafina-header-icon-user.png");
-}
-
-/* post new work icon */
-#header #greeting .dropdown>a[href*="/works/new"] {
-    content: url("https://i.postimg.cc/NjSrhmpQ/zerafina-header-icon-new-work.png");
-}
-
-/* log out icon */
-#header #greeting a[href*="/users/logout"] {
-    content: url("https://i.postimg.cc/HkR7GXBs/zerafina-header-icon-logout.png");
-}
-
 #header #greeting>ul>li>a {
     display: inline-block;
     height: 18px;
     padding: 10px 0;
     background: transparent;
-    filter: var(--header-icon);
+    font-size: 0;
+    color: var(--txt-header);
+}
+
+#header #greeting>ul>li>a::before {
+    font-size: 18px;
+    content: "ꕤ";
 }
 
 #header #greeting>ul>li:is(.open, :hover, :focus)>a,
@@ -3486,303 +3477,17 @@ img[src$="/images/lockblue.png"] {
 }
 
 /*============================================================
->> Z2 STATS ICONS WITH HOVER TEXT
+>> Z2 STATS
 ============================================================*/
 
-/*>========== STATS ICONS ==========<*/
-
-/*>>========== STATS PLACEMENT AND SPACING ==========<<*/
-
-dl.stats dd,
-dl.stats dt,
-.meta .stats dl dd {
-    margin: 0;
-    padding: 0;
-}
-
-dl.stats {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: right;
-    column-gap: 0.9em;
-}
-
-/* left-align stats in meta boxes */
-.meta dl.stats {
-    justify-content: left;
-}
-
-/* indent stats icons in meta box on statistics page */
-dl.meta.statistics dd {
-    padding-left: 5px;
-    /* matches margin-right below */
-}
-
-dl.stats dd,
-dl.statistics dt {
-    display: flex;
-    align-items: baseline;
-}
-
-/*>>========== STATS ICONS SETUP ==========<<*/
-
-/* hide text labels before stats */
-.stats:not(.skins .stats) dt {
-    display: none;
-}
-
-.stats:not(.skins .stats) dd::before,
-dl.statistics dt::before {
-    display: inline-block;
-    width: 1em;
-    height: 1em;
-    margin-right: 5px;
-    /* matches padding-left above */
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
-    content: "";
-    transform: translate(0, 1px);
-    filter: var(--stats-icon);
-}
-
-/*>>========== STATS ICON IMAGES ==========<<*/
-
-.stats dd.language::before {
-    background-image: url("https://i.postimg.cc/0QqMjxgq/zerafina-stats-icon-language-01.png");
-}
-
-.stats dd.words::before,
-dl.statistics dt.words::before {
-    background-image: url("https://i.postimg.cc/LXMY5Rdg/zerafina-stats-icon-words-01.png");
-}
-
-.stats dd.works::before,
-.stats dd:has(a[href$=works])::before {
-    background-image: url("https://i.postimg.cc/hjbJ7wgS/zerafina-stats-icon-works-01.png");
-}
-
-.stats dd.chapters::before {
-    background-image: url("https://i.postimg.cc/SK9YmRvB/zerafina-stats-icon-chapters-01.png");
-}
-
-.stats dd.comments::before {
-    background-image: url("https://i.postimg.cc/3wG03NqH/zerafina-stats-icon-comments-01.png");
-}
-
-.stats dd.kudos::before,
-dl.statistics dt.kudos::before {
-    background-image: url("https://i.postimg.cc/PxkpJhGn/zerafina-stats-icon-kudos-01.png");
-}
-
-.stats dd.bookmarks::before,
-dl.statistics dt.bookmarks::before {
-    background-image: url("https://i.postimg.cc/k5SR7Gpk/zerafina-stats-icon-bookmarks-02.png");
-}
-
-.stats dd.inspired::before {
-    background-image: url("https://i.postimg.cc/vBdgTMRY/zerafina-stats-icon-related-works-01.png");
-}
-
-.stats dd.hits::before,
-dl.statistics dt.hits::before {
-    background-image: url("https://i.postimg.cc/d1Kk3Fbp/zerafina-stats-icon-hits-01.png");
-}
-
-.stats dd.collections::before,
-.stats dd:has(a[href$=collections])::before {
-    background-image: url("https://i.postimg.cc/CK8nw52p/zerafina-stats-icon-collection-01.png");
-}
-
-.stats dd.published::before {
-    background-image: url("https://i.postimg.cc/tTHZJy0y/zerafina-stats-icon-published-01.png");
-}
-
-/* no way to display different icons for updated vs completed */
-.stats dd.status::before {
-    background-image: url("https://i.postimg.cc/Y9wG0kcG/zerafina-stats-icon-updated-01.png");
-}
-
-.series.meta.group .stats dd:nth-of-type(3)::before {
-    background-image: url("https://i.postimg.cc/26fbyYst/zerafina-stats-icon-complete-01.png");
-}
-
-.stats dd.subscriptions::before,
-dl.statistics dt.subscriptions::before {
-    background-image: url("https://i.postimg.cc/mDGzkRxD/zerafina-stats-icon-subscriptions-01.png");
-}
-
-.statistics .stats dd.comments::before,
-dl.statistics dt.comment::before {
-    background-image: url("https://i.postimg.cc/XJ0GqWR1/zerafina-stats-icon-comment-threads-01.png");
-}
-
-.stats dd:has(a[href$=fandoms])::before,
-.tagset .stats dd:nth-of-type(1)::before {
-    background-image: url("https://i.postimg.cc/wvdyMzCP/zerafina-stats-icon-fandoms-01.png");
-}
-
-.collection.blurb .stats dd:has(a[href$=bookmarks])::before {
-    background-image: url("https://i.postimg.cc/DzG470MD/zerafina-stats-icon-bookmarked-items-01.png");
-}
-
-.stats dd:has(a[href$=requests])::before {
-    background-image: url("https://i.postimg.cc/xCSJ8YrQ/zerafina-stats-icon-promts-01.png");
-}
-
-.tagset .stats dd:nth-of-type(2)::before {
-    background-image: url("https://i.postimg.cc/8CvfTcYQ/zerafina-stats-icon-characters-01.png");
-}
-
-.tagset .stats dd:nth-of-type(3)::before {
-    background-image: url("https://i.postimg.cc/50MYy1c2/zerafina-stats-icon-relationships-01.png");
-}
-
-.tagset .stats dd:nth-of-type(4)::before {
-    background-image: url("https://i.postimg.cc/d1Kk3vMD/zerafina-stats-icon-tags-additional-01.png");
-}
-
-.tagset .meta .stats dd:nth-of-type(4)::before {
-    background-image: url("https://i.postimg.cc/nztjrZ8C/zerafina-stats-icon-tags-freeform-01.png");
-}
-
-/*>========== STATS HOVER TEXT ==========<*/
-
-/*>>========== GENERAL FORMATTING ==========<<*/
-
-dl.stats dd {
-    justify-content: center;
-    position: relative;
-}
-
-/* tooltip container */
-.stats dd::after {
-    display: none;
-    position: absolute;
-    top: 2em;
-    z-index: 99999;
-    padding: 0.3em;
-    border: 1px solid var(--border4);
-    border-radius: var(--radius-small);
-    box-shadow: var(--shadow);
-    background: var(--bg6);
-    font-size: 0.8em;
-    line-height: 1;
-    text-align: center;
-}
-
-.stats dd:hover::after {
-    display: inline-block;
-}
-
-/* prevent hover text clipping - needs better solution */
-.statistics .stats dd:last-of-type::after,
-.index .stats dd:last-of-type:has(a[href$=bookmarks])::after,
-.stats dd.inspired::after,
-.tagset .index .stats dd:last-of-type::after {
-    right: 0;
-}
-
-.stats a,
-.stats a:visited {
-    border: none;
-    color: var(--txt-main);
-}
-
-/*>>========== HOVER TEXT FOR INDIVIDUAL STATS ==========<<*/
-
-.stats dd.language::after {
-    content: "Language";
-}
-
-.stats dd.words::after {
-    content: "Words";
-}
-
-.stats dd.works::after,
-.stats dd:has(a[href$=works])::after {
-    content: "Works";
-}
-
-.stats dd.chapters::after {
-    content: "Chapters";
-}
-
-.stats dd.comments::after {
-    content: "Comments";
-}
-
-.stats dd.kudos::after {
-    content: "Kudos";
-}
-
-.stats dd.bookmarks::after {
-    content: "Bookmarks";
-}
-
-.stats dd.inspired::after {
-    content: "Related Works";
-}
-
-.stats dd.hits::after {
-    content: "Hits";
-}
-
-.stats dd.collections::after {
-    content: "Collections";
-}
-
-.stats dd.published::after {
-    content: "Published";
-}
-
-.stats dd.status::after {
-    content: "Updated";
-}
-
-.series.meta.group .stats dd:nth-of-type(3)::after {
-    content: "Complete";
-}
-
-.stats dd.subscriptions::after {
-    content: "Subscriptions";
-}
-
-.statistics .stats dd.comments::after {
-    content: "Comment Threads";
-}
-
-.stats dd:has(a[href$=fandoms])::after,
-.tagset .stats dd:nth-of-type(1)::after {
-    content: "Fandoms";
-}
-
-.tagset .stats dd:nth-of-type(2)::after {
-    content: "Characters";
-}
-
-.tagset .stats dd:nth-of-type(3)::after {
-    content: "Relationships";
-}
-
-.tagset .stats dd:nth-of-type(4)::after {
-    content: "Additional Tags";
-}
-
-.tagset .meta .stats dd:nth-of-type(4)::after {
-    content: "Freeforms";
-}
-
-.stats dd:has(a[href$=requests])::after {
-    content: "Prompts";
-}
-
-.collections-index .stats dd:has(a[href$=collections])::after {
-    content: "Challenges/Subcollections";
-}
-
-.collection.blurb .stats dd:has(a[href$=bookmarks])::after {
-    content: "Bookmarked Items";
+.mods li, dl.stats dt, dl.stats dd {
+	background: none;
+	width: auto;
+	min-width: 0;
+	display: inline;
+	clear: none;
+	float: none;
+	margin: auto;
 }
 
 /*============================================================

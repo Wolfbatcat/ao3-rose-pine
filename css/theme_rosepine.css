@@ -200,7 +200,7 @@ GLOBAL VARIABLES
 
   --header-icon:         brightness(0) saturate(100%) invert(88%) sepia(20%) saturate(167%) hue-rotate(206deg) brightness(97%) contrast(96%);
   --header-icon-hgl:     brightness(0) saturate(100%) invert(62%) sepia(26%) saturate(1195%) hue-rotate(299deg) brightness(90%) contrast(105%);
-  --kudos-icon:          brightness(0) saturate(100%) invert(75%) sepia(54%) saturate(166%) hue-rotate(141deg) brightness(96%) contrast(89%);
+  --kudos-icon:          var(--header-icon);
   --lock-icon:           var(--header-icon);
   --tag-filter:          brightness(1.10);
   --stats-icon:          var(--header-icon);
@@ -236,7 +236,7 @@ span.claimed,
 h5.fandoms.heading a.tag,
 dd.fandom.tags a,
 select {
-    font-family: Figtree, Helvetica, "Trebuchet MS", "Lucida Sans", Arial, san-serif, "GNU Unifont";
+    font-family: Figtree, Bitter, Helvetica, "Trebuchet MS", "Lucida Sans", Arial, san-serif, "GNU Unifont";
 }
 
 /* HEADINGS FONT FAMILY */
@@ -247,7 +247,7 @@ h4,
 h5,
 h6,
 .heading {
-    font-family: Figtree, Helvetica, "Trebuchet MS", "Lucida Sans", Arial, sans-serif, "GNU Unifont";
+    font-family: Figtree, Bitter, Helvetica, "Trebuchet MS", "Lucida Sans", Arial, sans-serif, "GNU Unifont";
     font-weight: var(--txt-bold);
 }
 
@@ -265,11 +265,11 @@ textarea#skin_css,
     font-family: Victor Mono Medium, Consolas, Monaco, Courier, monospace;
     font-size: 0.9em;
     /* font-style: italic; */
-    /* For cursive version of Victor Mono */
+    /* for cursive version of Victor Mono */
 }
 
 /*>========== TEXT DECORATIONS ==========<*/
- /* don't forget to change the decorations in the tablet and mobile skins as well */
+ /* don't forget to change the decoration in the mobile skin as well */
 
 /* TITLE DECORATIONS */
 #header .heading a::before {

@@ -223,10 +223,16 @@ col.name {
     position: unset;
     z-index: 100;
     box-sizing: border-box;
-    width: 100%;
-    max-width: 100%;
-    margin: 0;
-    border-bottom: var(--border-width) solid var(--border1);
+    width: 96%;
+    max-width: 96%;
+    margin-top: 2%;
+    margin-right: 2%;
+    margin-bottom: 0;
+    margin-left: 2%;
+    border-width: var(--border-width);
+    border-style: solid;
+    border-color: var(--border1);
+    border-radius: var(--radius-mid);
     box-shadow: var(--shadow-header);
     background: var(--bg2);
 }
@@ -514,6 +520,8 @@ col.name {
     padding: 0.25em var(--margins-header);
     border-inline: none;
     border-top: var(--border-width) solid var(--border2);
+    border-bottom-left-radius: var(--radius-big);
+    border-bottom-right-radius: var(--radius-big);
     background-color: var(--link-hgl) !important;
     background-size: auto 100% !important;
     font-size: 1.15em;
@@ -524,38 +532,46 @@ col.name {
 /*============================================================
 >> 04 REGION: DASHBOARD
 ============================================================*/
-
 /* sticky sidebar navigation */
 #dashboard,
 #dashboard.own {
     position: sticky;
-    top: 0;
+    top: 1em;
     box-sizing: border-box;
     width: 18%;
     min-width: 150px;
     /* prevent sidebar from getting too narrow */
     max-width: 230px;
     /* prevent sidebar from getting too wide */
-    max-height: 100vh;
+    max-height: 96vh;
     overflow-x: visible;
     overflow-y: auto;
-    padding: 0.429rem 0.5rem 0 0.5rem;
-    border: none;
-    border-right: var(--border-width) solid;
+    margin-top: 1.85em;
+    margin-left: 2%;
+    padding-top: 0.429rem;
+    padding-right: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-left: 0.5rem;
+    border-width: var(--border-width);
+    border-style: solid;
     border-color: var(--border1) !important;
     /* required for tablet + mobile skin */
-    border-radius: 0;
-    background-color: var(--bg3);
+    border-radius: var(--radius-mid);
+    background-color: var(--bg5);
     font-size: 0.875em;
     scrollbar-color: transparent transparent;
+    box-shadow: var(--shadow-header);
 }
 
 #dashboard ul {
     display: block;
     float: none;
     position: relative;
-    padding: 0.429em 0;
-    border-top: var(--border-width) solid var(--border1);
+    padding-top: 0.429em;
+    padding-bottom: 0.429em;
+    border-top-width: var(--border-width);
+    border-top-style: solid;
+    border-top-color: var(--border1);
     text-align: left;
 }
 
@@ -569,7 +585,10 @@ col.name {
     box-sizing: border-box;
     max-width: 100%;
     margin-block: 1px;
-    padding: 0.429em 0.5rem;
+    padding-top: 0.429em;
+    padding-right: 0.5rem;
+    padding-bottom: 0.429em;
+    padding-left: 0.5rem;
     border-radius: var(--radius-small);
     color: var(--txt-main);
     line-height: 1.286;
@@ -584,7 +603,9 @@ col.name {
 #dashboard .current {
     background-color: var(--int-current-bg);
     color: var(--int-current-txt);
-    border: 1px solid var(--int-current-border);
+    border-width: 1px;
+    border-style: solid;
+    border-color: var(--int-current-border);
     box-shadow: var(--shadow-box2);
 }
 
@@ -596,7 +617,9 @@ col.name {
 #dashboard .secondary {
     margin-block: 0.25em;
     padding: 0.25em;
-    border: var(--border-width) solid var(--border3);
+    border-width: var(--border-width);
+    border-style: solid;
+    border-color: var(--border3);
     box-shadow: var(--shadow);
     background-color: var(--bg6);
 }
@@ -649,6 +672,12 @@ col.name {
     content: "!";
 }
 
+/*
+ul.navigation:nth-child(3) > li:nth-child(1) > a:nth-child(1) {
+    display: flex;
+    margin-right: 24em;
+}
+
 /*============================================================
 >> 06 REGION: FOOTER
 ============================================================*/
@@ -658,6 +687,7 @@ col.name {
     width: 100%;
     max-width: 100%;
     padding: 3% 5%;
+    margin-top: 2%;
     border-top: var(--border-width) solid var(--border2);
     background: linear-gradient(to top, var(--bg1) 70%, var(--bg2) 100%);
     overflow: hidden;
@@ -2425,7 +2455,6 @@ li.comment:has(.edit_comment) {
 .logged-in .splash>.module {
     box-sizing: border-box;
     margin-inline: 0;
-    padding: 0;
 }
 
 .logged-in .splash>.module {
@@ -2962,6 +2991,12 @@ div.error,
     align-items: end;
     justify-content: center;
     z-index: 1;
+    width: 96%;
+    max-width: 96%;
+    margin-top: 1%;
+    margin-right: 2%;
+    margin-bottom: 0;
+    margin-left: 2%;
     padding: 1em 0 1em 2em;
     border-bottom: var(--border-width) solid var(--alert-txt);
     background: var(--alert-bg);
@@ -3878,7 +3913,7 @@ div.comment-preview.userstuff {
     background: transparent;
 }
 
-//*>========== USERSCRIPT: AO3 FICTRACKER STYLING ==========<*/
+/*>========== USERSCRIPT: AO3 FICTRACKER STYLING ==========<*/
 /* https://greasyfork.org/en/scripts/513435-ao3-fictracker */
 
 /* inline header wrapper styling */
