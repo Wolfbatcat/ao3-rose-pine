@@ -402,7 +402,7 @@ col.name {
     width: 18px;
     height: 18px;
     padding: 10px 0;
-    background-image: url("https://i.postimg.cc/gJzxw0BQ/zerafina-icon-sprites.png");
+    background-image: url("https://wolfbatcat.github.io/ao3-rose-pine/assets/zerafina-icon-sprites.png");
     background-size: 270px 162px;
     background-repeat: no-repeat;
     filter: var(--header-icon);
@@ -3200,7 +3200,7 @@ dl#symbols-key dd {
 
 /* default user icon (100px) */
 img[src$="/images/skins/iconsets/default/icon_user.png"] {
-    background-image: url("https://i.postimg.cc/gJzxw0BQ/zerafina-icon-sprites.png"), var(--int-btn-hgl-bg) !important;
+    background-image: url("https://wolfbatcat.github.io/ao3-rose-pine/assets/zerafina-icon-sprites.png"), var(--int-btn-hgl-bg) !important;
     background-position: -325px -625px, center !important;
     background-size: 1500px 900px, 100% !important;
     background-repeat: no-repeat !important;
@@ -3212,7 +3212,7 @@ img[src$="/images/skins/iconsets/default/icon_user.png"] {
 #comment > div:nth-child(2) > a:nth-child(1) > img:nth-child(1) img[src$="/images/skins/iconsets/default/icon_user.png"] {
     box-sizing: border-box;
     border: none;
-    background-image: url("https://i.postimg.cc/gJzxw0BQ/zerafina-icon-sprites.png"), var(--int-btn-hgl-bg);
+    background-image: url("https://wolfbatcat.github.io/ao3-rose-pine/assets/zerafina-icon-sprites.png"), var(--int-btn-hgl-bg);
     background-position: -180px -180px, center;
     background-size: 450px 270px, 100%;
     background-repeat: no-repeat;
@@ -3223,7 +3223,7 @@ img[src$="/images/skins/iconsets/default/icon_user.png"] {
 .comment .icon .anonymous {
     box-sizing: border-box;
     border: none;
-    background-image: url("https://i.postimg.cc/gJzxw0BQ/zerafina-icon-sprites.png"), var(--int-btn-hgl-bg);
+    background-image: url("https://wolfbatcat.github.io/ao3-rose-pine/assets/zerafina-icon-sprites.png"), var(--int-btn-hgl-bg);
     background-position: -180px -180px, center;
     background-size: 450px 270px, 100%;
     background-repeat: no-repeat;
@@ -3234,7 +3234,7 @@ img[src$="/images/skins/iconsets/default/icon_user.png"] {
 .comment .icon .visitor {
     box-sizing: border-box;
     border: none;
-    background-image: url("https://i.postimg.cc/gJzxw0BQ/zerafina-icon-sprites.png"), var(--int-btn-hgl-bg);
+    background-image: url("https://wolfbatcat.github.io/ao3-rose-pine/assets/zerafina-icon-sprites.png"), var(--int-btn-hgl-bg);
     background-position: -180px -180px, center;
     background-size: 450px 270px, 100%;
     background-repeat: no-repeat;
@@ -3245,7 +3245,7 @@ img[src$="/images/skins/iconsets/default/icon_user.png"] {
 img[src$="/images/skins/iconsets/default/icon_collection.png"] {
     box-sizing: border-box;
     border: none;
-    background-image: url("https://i.postimg.cc/gJzxw0BQ/zerafina-icon-sprites.png"), var(--int-btn-hgl-bg);
+    background-image: url("https://wolfbatcat.github.io/ao3-rose-pine/assets/zerafina-icon-sprites.png"), var(--int-btn-hgl-bg);
     background-position: -1500px -1200px, center;
     background-size: cover, 100%;
     background-repeat: no-repeat;
@@ -3257,7 +3257,7 @@ img[src$="/images/skins/iconsets/default/icon_collection.png"] {
 .tag .primary .icon {
     box-sizing: border-box;
     border: none;
-    background-image: url("https://i.postimg.cc/gJzxw0BQ/zerafina-icon-sprites.png"), var(--int-btn-hgl-bg);
+    background-image: url("https://wolfbatcat.github.io/ao3-rose-pine/assets/zerafina-icon-sprites.png"), var(--int-btn-hgl-bg);
     background-position: -800px -400px, center;
     background-size: 1000px 600px, 100%;
     background-repeat: no-repeat;
@@ -3268,7 +3268,7 @@ img[src$="/images/skins/iconsets/default/icon_collection.png"] {
 .index .tagset .icon {
     box-sizing: border-box;
     border: none;
-    background-image: url("https://i.postimg.cc/gJzxw0BQ/zerafina-icon-sprites.png"), var(--int-btn-hgl-bg);
+    background-image: url("https://wolfbatcat.github.io/ao3-rose-pine/assets/zerafina-icon-sprites.png"), var(--int-btn-hgl-bg);
     background-position: -360px -180px, center;
     background-size: 450px 270px, 100%;
     background-repeat: no-repeat;
@@ -3280,7 +3280,7 @@ img[src$="/images/skins/iconsets/default/icon_collection.png"] {
     box-sizing: border-box;
     border: var(--border-width) solid var(--icon-border2);
     box-shadow: inset 0 0 0 3px #FFFFFF;
-    background-image: url("https://i.postimg.cc/gJzxw0BQ/zerafina-icon-sprites.png"), var(--int-btn-hgl-bg);
+    background-image: url("https://wolfbatcat.github.io/ao3-rose-pine/assets/zerafina-icon-sprites.png"), var(--int-btn-hgl-bg);
     background-position: -180px -180px, center;
     background-size: 450px 270px, 100%;
     background-repeat: no-repeat;
@@ -3291,7 +3291,7 @@ img[src$="/images/skins/iconsets/default/icon_collection.png"] {
 .admin .primary .icon {
     box-sizing: border-box;
     border: none;
-    background-image: url("https://i.postimg.cc/gJzxw0BQ/zerafina-icon-sprites.png"), var(--int-btn-hgl-bg);
+    background-image: url("https://wolfbatcat.github.io/ao3-rose-pine/assets/zerafina-icon-sprites.png"), var(--int-btn-hgl-bg);
     background-position: -300px -400px, center;
     background-size: 1000px 600px, 100%;
     background-repeat: no-repeat;
@@ -3302,7 +3302,7 @@ img[src$="/images/skins/iconsets/default/icon_collection.png"] {
 .skins .primary .icon:not(:has(a .icon)) {
     box-sizing: border-box;
     border: none;
-    background-image: url("https://i.postimg.cc/gJzxw0BQ/zerafina-icon-sprites.png"), var(--int-btn-hgl-bg);
+    background-image: url("https://wolfbatcat.github.io/ao3-rose-pine/assets/zerafina-icon-sprites.png"), var(--int-btn-hgl-bg);
     background-position: -700px -400px, center;
     background-size: 1000px 600px, 100%;
     background-repeat: no-repeat;
@@ -3314,7 +3314,7 @@ img[src$="/images/skins/iconsets/default/icon_collection.png"] {
 .index .skins .icon:not(:has(a .icon)) {
     box-sizing: border-box;
     border: none;
-    background-image: url("https://i.postimg.cc/gJzxw0BQ/zerafina-icon-sprites.png"), var(--int-btn-hgl-bg);
+    background-image: url("https://wolfbatcat.github.io/ao3-rose-pine/assets/zerafina-icon-sprites.png"), var(--int-btn-hgl-bg);
     background-position: -315px -180px, center;
     background-size: 450px 270px, 100%;
     background-repeat: no-repeat;
@@ -3344,7 +3344,7 @@ img[src$="/images/skins/iconsets/default/icon_collection.png"] {
     box-sizing: border-box;
     border: var(--border-width) solid var(--icon-border1);
     border-radius: var(--icon-content-radius);
-    background-image: url("https://i.postimg.cc/gJzxw0BQ/zerafina-icon-sprites.png");
+    background-image: url("https://wolfbatcat.github.io/ao3-rose-pine/assets/zerafina-icon-sprites.png");
     background-size: 750px 450px;
     background-repeat: no-repeat;
     background-origin: padding-box;
@@ -3376,28 +3376,28 @@ img[src$="/images/skins/iconsets/default/warning-no.png"] {
 
 .required-tags .rating-general-audience,
 img[src$="/images/skins/iconsets/default/rating-general-audience.png"] {
-    background-image: url("https://i.postimg.cc/gJzxw0BQ/zerafina-icon-sprites.png");
+    background-image: url("https://wolfbatcat.github.io/ao3-rose-pine/assets/zerafina-icon-sprites.png");
     background-position: -175px -100px;
     background-color: var(--icon-rating-gen);
 }
 
 .required-tags .rating-teen,
 img[src$="/images/skins/iconsets/default/rating-teen.png"] {
-    background-image: url("https://i.postimg.cc/gJzxw0BQ/zerafina-icon-sprites.png");
+    background-image: url("https://wolfbatcat.github.io/ao3-rose-pine/assets/zerafina-icon-sprites.png");
     background-position: -325px -100px;
     background-color: var(--icon-rating-teen);
 }
 
 .required-tags .rating-mature,
 img[src$="/images/skins/iconsets/default/rating-mature.png"] {
-    background-image: url("https://i.postimg.cc/gJzxw0BQ/zerafina-icon-sprites.png");
+    background-image: url("https://wolfbatcat.github.io/ao3-rose-pine/assets/zerafina-icon-sprites.png");
     background-position: -250px -100px;
     background-color: var(--icon-rating-mature);
 }
 
 .required-tags .rating-explicit,
 img[src$="/images/skins/iconsets/default/rating-explicit.png"] {
-    background-image: url("https://i.postimg.cc/gJzxw0BQ/zerafina-icon-sprites.png");
+    background-image: url("https://wolfbatcat.github.io/ao3-rose-pine/assets/zerafina-icon-sprites.png");
     background-position: -100px -100px;
     background-color: var(--icon-rating-explicit);
 }
@@ -3406,28 +3406,28 @@ img[src$="/images/skins/iconsets/default/rating-explicit.png"] {
 
 .required-tags .category-femslash,
 img[src$="/images/skins/iconsets/default/category-femslash.png"] {
-    background-image: url("https://i.postimg.cc/gJzxw0BQ/zerafina-icon-sprites.png");
+    background-image: url("https://wolfbatcat.github.io/ao3-rose-pine/assets/zerafina-icon-sprites.png");
     background-position: -325px -25px;
     background-color: var(--icon-relationship-ff);
 }
 
 .required-tags .category-het,
 img[src$="/images/skins/iconsets/default/category-het.png"] {
-    background-image: url("https://i.postimg.cc/gJzxw0BQ/zerafina-icon-sprites.png");
+    background-image: url("https://wolfbatcat.github.io/ao3-rose-pine/assets/zerafina-icon-sprites.png");
     background-position: -475px -25px;
     background-color: var(--icon-relationship-mf);
 }
 
 .required-tags .category-gen,
 img[src$="/images/skins/iconsets/default/category-gen.png"] {
-    background-image: url("https://i.postimg.cc/gJzxw0BQ/zerafina-icon-sprites.png");
+    background-image: url("https://wolfbatcat.github.io/ao3-rose-pine/assets/zerafina-icon-sprites.png");
     background-position: -400px -25px;
     background-color: var(--icon-relationship-gen);
 }
 
 .required-tags .category-slash,
 img[src$="/images/skins/iconsets/default/category-slash.png"] {
-    background-image: url("https://i.postimg.cc/gJzxw0BQ/zerafina-icon-sprites.png");
+    background-image: url("https://wolfbatcat.github.io/ao3-rose-pine/assets/zerafina-icon-sprites.png");
     background-position: -550px -25px;
     background-color: var(--icon-relationship-mm);
 }
@@ -3445,7 +3445,7 @@ img[src$="/images/skins/iconsets/default/category-multi.png"] {
 img[src$="/images/skins/iconsets/default/category-other.png"] {
     width: 27px !important;
     height: 27px !important;
-    background-image: url("https://i.postimg.cc/gJzxw0BQ/zerafina-icon-sprites.png"), var(--icon-relationship-other) !important;
+    background-image: url("https://wolfbatcat.github.io/ao3-rose-pine/assets/zerafina-icon-sprites.png"), var(--icon-relationship-other) !important;
     background-position: -624px -24px, center !important;
     background-size: 750px 450px, 100% !important;
     background-repeat: no-repeat !important;
@@ -3457,21 +3457,21 @@ img[src$="/images/skins/iconsets/default/category-other.png"] {
 
 .required-tags .warning-choosenotto,
 img[src$="/images/skins/iconsets/default/warning-choosenotto.png"] {
-    background-image: url("https://i.postimg.cc/gJzxw0BQ/zerafina-icon-sprites.png");
+    background-image: url("https://wolfbatcat.github.io/ao3-rose-pine/assets/zerafina-icon-sprites.png");
     background-position: -400px -100px;
     background-color: var(--icon-warning-choose-not);
 }
 
 .required-tags .warning-yes,
 img[src$="/images/skins/iconsets/default/warning-yes.png"] {
-    background-image: url("https://i.postimg.cc/gJzxw0BQ/zerafina-icon-sprites.png");
+    background-image: url("https://wolfbatcat.github.io/ao3-rose-pine/assets/zerafina-icon-sprites.png");
     background-position: -550px -102px;
     background-color: var(--icon-warning-yes);
 }
 
 .required-tags .external-work,
 img[src$="/images/skins/iconsets/default/warning-external-work.png"] {
-    background-image: url("https://i.postimg.cc/gJzxw0BQ/zerafina-icon-sprites.png");
+    background-image: url("https://wolfbatcat.github.io/ao3-rose-pine/assets/zerafina-icon-sprites.png");
     background-position: -475px -100px;
     background-color: var(--icon-content-external);
 }
@@ -3480,14 +3480,14 @@ img[src$="/images/skins/iconsets/default/warning-external-work.png"] {
 
 .required-tags .complete-no,
 img[src$="/images/skins/iconsets/default/complete-no.png"] {
-    background-image: url("https://i.postimg.cc/gJzxw0BQ/zerafina-icon-sprites.png");
+    background-image: url("https://wolfbatcat.github.io/ao3-rose-pine/assets/zerafina-icon-sprites.png");
     background-position: -700px -25px;
     background-color: var(--icon-content-incomplete);
 }
 
 .required-tags .complete-yes,
 img[src$="/images/skins/iconsets/default/complete-yes.png"] {
-    background-image: url("https://i.postimg.cc/gJzxw0BQ/zerafina-icon-sprites.png");
+    background-image: url("https://wolfbatcat.github.io/ao3-rose-pine/assets/zerafina-icon-sprites.png");
     background-position: -25px -100px;
     background-color: var(--icon-content-complete);
 }
@@ -3566,7 +3566,7 @@ a.rss span {
     border: 1px solid var(--icon-border1);
     border-radius: var(--radius-small);
     background-color: var(--link);
-    background-image: url("https://i.postimg.cc/gJzxw0BQ/zerafina-icon-sprites.png");
+    background-image: url("https://wolfbatcat.github.io/ao3-rose-pine/assets/zerafina-icon-sprites.png");
     background-size: 54em 32.4em;
     background-position: -7.65em -29.35em;
     background-repeat: no-repeat;
@@ -3586,7 +3586,7 @@ div:has(> p.kudos)::before {
     position: absolute;
     width: 55px;
     height: 55px;
-    background-image: url("https://i.postimg.cc/cJ3tdCbt/zerafina-icon-kudos-03.png");
+    background-image: url("https://wolfbatcat.github.io/ao3-rose-pine/assets/zerafina-icon-kudos-03.png");
     background-size: cover;
     content: "";
     filter: var(--kudos-icon);
@@ -3601,7 +3601,7 @@ img[src$="/images/lockblue.png"] {
     max-width: 0.8em;
     vertical-align: baseline;
     content: "";
-    background-image: url("https://i.postimg.cc/gJzxw0BQ/zerafina-icon-sprites.png");
+    background-image: url("https://wolfbatcat.github.io/ao3-rose-pine/assets/zerafina-icon-sprites.png");
     background-size: 60em 36em;
     background-position: -2.6em -32.6em;
     background-repeat: no-repeat;
@@ -3663,7 +3663,7 @@ dl.statistics dt::before {
     height: 1em;
     margin-right: 5px;
     /* matches padding-left above */
-    background-image: url("https://i.postimg.cc/gJzxw0BQ/zerafina-icon-sprites.png");
+    background-image: url("https://wolfbatcat.github.io/ao3-rose-pine/assets/zerafina-icon-sprites.png");
     background-size: 30em 18em;
     background-repeat: no-repeat;
     background-clip: content-box;
