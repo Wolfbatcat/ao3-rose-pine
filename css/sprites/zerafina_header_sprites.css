@@ -1,0 +1,22 @@
+.sprite-zerafina-header-icon-logout {
+     background: url(https://i.postimg.cc/7LtBcv45/zerafina-header-sprites.pngg);
+     display: inline-block;
+     height: 200px;
+     width: 200px;
+     background-position: -0px -0px;
+ }
+ .sprite-zerafina-header-icon-new-work {
+     background: url(https://i.postimg.cc/7LtBcv45/zerafina-header-sprites.pngg);
+     display: inline-block;
+     height: 200px;
+     width: 200px;
+     background-position: -200px -0px;
+ }
+ .sprite-zerafina-header-icon-user {
+     background: url(https://i.postimg.cc/7LtBcv45/zerafina-header-sprites.pngg);
+     display: inline-block;
+     height: 200px;
+     width: 200px;
+     background-position: -400px -0px;
+ }
+ 

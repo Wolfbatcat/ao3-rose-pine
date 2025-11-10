@@ -1,0 +1,133 @@
+/*>========== CONTENT SYMBOLS ==========<*/
+
+/* size for symbols key icons */
+#symbols-key dl img,
+#bookmark-symbols-key img {
+    width: 0 !important;
+    height: 0 !important;
+    padding: 25px 0 0 25px;
+}
+
+/* base styling for content symbols */
+.blurb ul.required-tags li a>span,
+.bookmark p.status a>span,
+#symbols-key dl img,
+#bookmark-symbols-key img {
+    box-sizing: border-box;
+    border: var(--border-width) solid var(--icon-border1);
+    border-radius: var(--icon-content-radius);
+    background-image: url("https://images.squidge.org/images/2024/03/30/AO3_imageset_regular.png");
+    background-size: 200px 835px;
+    background-repeat: no-repeat;
+    background-origin: border-box;
+}
+
+/* empty symbol boxes: no rating, category, or warning */
+.required-tags .rating-notrated,
+.required-tags .category-none,
+.required-tags .warning-no,
+.status .count,
+img[src$="/images/skins/iconsets/default/rating-notrated.png"],
+img[src$="/images/skins/iconsets/default/category-none.png"],
+img[src$="/images/skins/iconsets/default/warning-no.png"] {
+    border: var(--border-width) solid var(--icon-border2) !important;
+    background: var(--icon-bg);
+}
+
+/*>>========== RATING ==========<<*/
+
+.required-tags .rating-general-audience,
+img[src$="/images/skins/iconsets/default/rating-general-audience.png"] {
+    background-position: -50px -25px;
+    background-color: var(--icon-rating-gen);
+}
+
+.required-tags .rating-teen,
+img[src$="/images/skins/iconsets/default/rating-teen.png"] {
+    background-position: 0px -25px;
+    background-color: var(--icon-rating-teen);
+}
+
+.required-tags .rating-mature,
+img[src$="/images/skins/iconsets/default/rating-mature.png"] {
+    background-position: -75px -25px;
+    background-color: var(--icon-rating-mature);
+}
+
+.required-tags .rating-explicit,
+img[src$="/images/skins/iconsets/default/rating-explicit.png"] {
+    background-position: -25px -25px;
+    background-color: var(--icon-rating-explicit);
+}
+
+/*>>========== RELATIONSHIPS ==========<<*/
+
+.required-tags .category-femslash,
+img[src$="/images/skins/iconsets/default/category-femslash.png"] {
+    background-position: -25px 0px;
+    background-color: var(--icon-relationship-ff);
+}
+
+.required-tags .category-het,
+img[src$="/images/skins/iconsets/default/category-het.png"] {
+    background-position: -75px 0px;
+    background-color: var(--icon-relationship-mf);
+}
+
+.required-tags .category-gen,
+img[src$="/images/skins/iconsets/default/category-gen.png"] {
+    background-position: -50px 0px;
+    background-color: var(--icon-relationship-gen);
+}
+
+.required-tags .category-slash,
+img[src$="/images/skins/iconsets/default/category-slash.png"] {
+    background-position: -125px 0px;
+    background-color: var(--icon-relationship-mm);
+}
+
+.required-tags .category-multi,
+img[src$="/images/skins/iconsets/default/category-multi.png"] {
+    background-color: var(--icon-multi);
+    background-position: -100px 0px;
+}
+
+.required-tags .category-other,
+img[src$="/images/skins/iconsets/default/category-other.png"] {
+    background-position: -150px 0px;
+    background-color: var(--icon-relationship-other);
+}
+
+/*>>========== CONTENT WARNINGS ==========<<*/
+
+.required-tags .warning-choosenotto,
+img[src$="/images/skins/iconsets/default/warning-choosenotto.png"] {
+    background-position: -125px -25px;
+    background-color: var(--icon-warning-choose-not);
+}
+
+.required-tags .warning-yes,
+img[src$="/images/skins/iconsets/default/warning-yes.png"] {
+    background-position: -150px -25px;
+    background-color: var(--icon-warning-yes);
+}
+
+.required-tags .external-work,
+img[src$="/images/skins/iconsets/default/warning-external-work.png"] {
+    background-position: -75px -50px;
+    background-color: var(--icon-content-external);
+}
+
+/*>>========== COMPLETION STATUS ==========<<*/
+
+.required-tags .complete-no,
+img[src$="/images/skins/iconsets/default/complete-no.png"] {
+    background-position: -100px -25px;
+    background-color: var(--icon-content-incomplete);
+}
+
+.required-tags .complete-yes,
+img[src$="/images/skins/iconsets/default/complete-yes.png"] {
+    background-position: -175px -25px;
+    background-color: var(--icon-content-complete);
+}

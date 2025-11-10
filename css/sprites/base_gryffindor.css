@@ -1,0 +1,4240 @@
+/* Sections of the code labeled 'EDIT' are intended to be customized as needed. */
+
+/* || CREDITS || */
+/* Zerafina for the icon and image replacements */
+/* Game-icons.net for the animal (Hogwarts house) image in the header */
+/* Font Awesome and Hero Patterns for other images */
+
+/* || 1 -- CORE */
+body,
+p,
+span {
+    line-height: 2;
+    text-underline-offset: 5px;
+    word-break: break-word;
+}
+
+body,
+.toggled form,
+.dynamic form,
+.secondary,
+.dropdown {
+    background-color: #260d0d;
+    color: #fff;
+}
+
+iframe {
+    max-width: 100%;
+}
+
+input[type=submit],
+input[type=checkbox],
+input[type=file],
+button,
+.button,
+select {
+    cursor: pointer;
+}
+
+input[type=text] {
+    cursor: text !important;
+}
+
+label[for] {
+    line-height: 1.75;
+    cursor: pointer;
+}
+
+.blurb li,
+.actions>*,
+.stats>*,
+.meta ul li {
+    padding-inline: 0;
+}
+
+.blurb li:not(:last-child),
+.actions>*:not(:last-child),
+.meta ul li:not(:last-child) {
+    margin-right: .25em;
+}
+
+.stats>*:not(:first-child) {
+    margin-left: .5em;
+}
+
+/* || 2 -- ELEMENTS */
+a,
+a:link,
+a:visited,
+a:visited:hover {
+    position: relative;
+    color: #0000;
+    background-image: linear-gradient(#d98c8c, #f0dbec);
+    background-clip: text;
+    border-color: #e0b8da;
+    line-height: 1.4;
+    transition-property: background, color;
+    transition-duration: 250ms;
+}
+
+a:is(:hover, :focus),
+a.tag:is(:hover, :focus),
+.stats a:is(:hover, :focus) {
+    color: #0000;
+    background-image: linear-gradient(#cc6666, #e0b8da);
+    background-clip: text;
+}
+
+a:is(:active, :focus),
+button:focus,
+#header #search input:focus,
+#footer a:focus,
+.filters .expander:focus,
+.filters input:focus+.indicator+span,
+.actions input:focus {
+    outline-offset: 1px;
+    outline: 1px dotted;
+}
+
+#header #search input:focus,
+.actions a:is(:active, :focus),
+.actions input:focus {
+    outline-color: #f1ebda;
+}
+
+a:focus img {
+    outline: 0;
+}
+
+hr {
+    text-align: center;
+    display: block;
+    width: 100% !important;
+    border: 0 !important;
+    font-size: 1.25em;
+    margin: 1.5em auto !important;
+    color: #e6b3b3;
+}
+
+hr::after {
+    /* EDIT: Divider with decoration */
+    content: "⋅•⋅⊰∙∘☽༓☾∘∙⊱⋅•⋅";
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.heading {
+    font-style: italic;
+    overflow-wrap: anywhere;
+}
+
+h2,
+h3,
+pre {
+    line-height: 1.5;
+}
+
+.css pre {
+    overflow-wrap: anywhere;
+}
+
+.heading a {
+    font-weight: 700;
+    padding: 2px 1px;
+}
+
+#main>.flash+h2.heading:not(:has(+.actions)),
+#main>.notice+h2.heading:not(:has(+.actions)) {
+    display: block;
+    margin-block: 0 1rem;
+}
+
+a.symbol:focus,
+select:focus,
+input:focus,
+input[type=text]:focus,
+input[type=file]:focus,
+input[type=checkbox]:focus,
+input[type=radio]:focus,
+textarea:focus {
+    outline: 1px dotted #f2d9d9;
+    outline-offset: 1px;
+}
+
+[tabindex="0"]:focus {
+    outline: 1px dotted #f2d9d9;
+    outline-offset: -1px;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    background: #e3d7b5;
+}
+
+kbd {
+    background-color: #ddd;
+    border-radius: 3px;
+    border: 1px solid #bbb;
+    box-shadow: 0 1px 1px #000, 0 2px 0 0 #eee inset;
+    color: #333;
+    display: inline-block;
+    font-size: .85em;
+    font-weight: 700;
+    padding: 2px 5px;
+}
+
+table {
+    background: #240f20;
+    border: 2px solid #d194c7;
+}
+
+thead,
+tfoot,
+tfoot td {
+    border-color: #d194c7;
+}
+
+tbody tr {
+    border-color: #e0b8da;
+}
+
+th,
+td,
+tr {
+    transition-property: background, color;
+    transition-duration: 150ms;
+    border-width: 2px;
+    line-height: 2em;
+    padding: .25em .75em;
+}
+
+thead td {
+    background: #471f41;
+    border-color: #e0b8da;
+}
+
+th,
+tr:hover,
+col.name {
+    background: #471f41;
+    border-color: #e0b8da;
+}
+
+tr:hover {
+    background: #6b2e61
+}
+
+/* || 3 -- REGION: HEADER */
+#header {
+    position: relative;
+    background: #4d1a1a;
+    color: #fff;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em 1.5em;
+    border-bottom: 0;
+    font-size: .875rem;
+}
+
+#header .landmark {
+    display: none;
+}
+
+#header a,
+#header a:visited,
+#header .primary a,
+#header .primary .open a,
+#header .primary .dropdown:hover a,
+#header .primary .dropdown a:focus,
+#header .user a:is(:hover, :focus) {
+    color: #f1ebda;
+}
+
+#header h2 {
+    position: absolute;
+    height: auto !important;
+    right: 1em;
+    bottom: 0;
+    transform: translateY(100%);
+    font-size: 1rem;
+    background: #8f3d81 !important;
+    padding: .5em 1em !important;
+    margin-left: 1em !important;
+    border-radius: 0 0 .5em .5em;
+}
+
+#header:has(h2.collections) {
+    margin-bottom: 4em;
+}
+
+#header .primary {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    background: none;
+    box-shadow: none;
+    padding-inline: .5em;
+    box-sizing: border-box;
+}
+
+#header .primary .menu a,
+#greeting .open a,
+#greeting .dropdown .menu a {
+    padding: .75em 1em;
+}
+
+#header .heading {
+    order: 1;
+    margin: 0;
+    font-size: 1.25rem;
+    padding: 0;
+}
+
+#header nav[aria-label="Site"] {
+    order: 2;
+}
+
+#header .clear {
+    display: none;
+}
+
+#greeting {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    order: 3;
+}
+
+#greeting .user.navigation {
+    display: contents;
+}
+
+#greeting>.icon {
+    order: -1;
+    height: 1.8em;
+    width: 1.8em;
+    margin: 0;
+}
+
+#header .heading a {
+    display: flex;
+    align-items: center;
+    color: #e3d7b5;
+    text-decoration: none;
+    border: 0;
+}
+
+#header .heading a::before,
+#header .heading a::after {
+    position: relative;
+    display: block;
+}
+
+/* EDIT: If you don't want Hogwarts themed header */
+/* Remove this rule and the next one */
+#header .heading img.logo {
+    display: block;
+    height: 1.2em;
+    width: 1.2em;
+    content: url("https://images.squidge.org/images/2025/07/04/lion.png");
+    flex-shrink: 0;
+}
+
+#header .heading a::after {
+    width: fit-content;
+    /* EDIT: Header text */
+    content: "Gryffindor";
+    font-size: .75em;
+    line-height: 1em;
+    margin-left: .4em;
+}
+
+#header .heading a :where(span, sup) {
+    display: none;
+}
+
+#header .primary>li:first-of-type {
+    margin-left: 0;
+}
+
+#header .primary>li,
+#greeting .user>li {
+    margin-inline: 0 .2em;
+}
+
+#header .primary>li:last-child,
+#greeting .user>li:last-child {
+    margin-inline: 0;
+}
+
+#greeting p.icon,
+#header .user {
+    padding: 0;
+}
+
+#greeting p.icon {
+    padding-inline: .75em;
+}
+
+#greeting img.icon {
+    display: block;
+    border-radius: .25em;
+}
+
+#header .search fieldset {
+    padding: 0 !important;
+}
+
+#header .search {
+    line-height: 1.5;
+    margin: .25em .1em;
+}
+
+#header #search .text {
+    display: inline-block;
+    margin: 0 .5em 0 0;
+}
+
+#header #search .submit {
+    display: inline-block;
+    padding: 0;
+}
+
+#header #search input:focus {
+    color: #000;
+}
+
+#header .primary a,
+#header .user a,
+#small_login .action {
+    padding: .45em .75em;
+    line-height: 1.3;
+}
+
+#login,
+#header .dropdown>a,
+#header .dropdown>a:is(:hover, :focus),
+#header .user a[href*='/logout'],
+#header .user a[href*='/logout']:is(:hover, :focus),
+#greeting .open>a,
+#greeting .dropdown:hover>a {
+    border-radius: .5em;
+}
+
+#header .user a {
+    height: 1.3em;
+}
+
+#header .user a[href*='/logout'] {
+    content: url("https://images.squidge.org/images/2025/07/04/logout.png");
+}
+
+#header .user .dropdown>a[href*='/new'] {
+    content: url("https://images.squidge.org/images/2025/07/04/post.png");
+}
+
+#header .user .dropdown:first-child>a {
+    content: url("https://images.squidge.org/images/2025/07/04/profile.png");
+}
+
+#header .actions a:is(:hover, :focus),
+#header .dropdown:hover a,
+#header .dropdown .menu a,
+#header .open a {
+    background: #251f0e;
+    color: #f1ebda
+}
+
+#header .menu,
+#small_login {
+    background: none;
+    background-image: none;
+    box-shadow: none;
+    padding-top: .4em;
+}
+
+#header .dropdown .menu a:is(:hover, :focus) {
+    background: #732626;
+    color: #fff
+}
+
+#header .menu li {
+    border: 0;
+    margin: 0;
+}
+
+#header .menu li a {
+    border-block: 0;
+    border-inline: 1px solid #947d38 !important;
+}
+
+#header .menu li:first-child a {
+    border-radius: .5em .5em 0 0;
+    border-top: 1px solid #947d38 !important;
+}
+
+#header .menu li:last-child a {
+    border-radius: 0 0 .5em .5em;
+    border-bottom: 1px solid #947d38 !important;
+}
+
+#header .menu li:only-child a {
+    border-radius: .5em
+}
+
+/* || 4 -- REGION: DASHBOARD */
+#dashboard,
+#dashboard.own {
+    width: 10em;
+    background: #4d1a1a;
+    color: #f2d9d9;
+    margin: 1em 0;
+    padding-inline: 1.5em;
+    margin-left: -.5em;
+    border: 0;
+    border-radius: 0 1em 1em 0;
+    outline: 2px solid #d5c490;
+    outline-offset: -.4em;
+}
+
+#dashboard ul {
+    border-color: #cc6666;
+}
+
+#dashboard ul:first-of-type {
+    border: 0;
+}
+
+#dashboard ul li {
+    display: inline-block;
+    width: 100%;
+    margin-block: 0;
+    vertical-align: top;
+}
+
+#dashboard ul li:not(:last-child) {
+    margin-bottom: .5em;
+}
+
+#dashboard a,
+#dashboard span {
+    color: #f1ebda;
+}
+
+#dashboard a:is(:hover, :focus) {
+    background: #260d0d;
+    color: #fff;
+}
+
+#dashboard .current {
+    background: #260d0d;
+    cursor: default;
+}
+
+#main.dashboard {
+    padding-top: 1em;
+}
+
+/* || 5 -- REGION: MAIN */
+#main {
+    font-size: .9rem;
+    padding: .5rem 2rem 3.5rem;
+}
+
+.skins.home,
+.tagset .tags.index,
+.alphabet ul.index,
+.media.index,
+.bookmark.index:has(> .blurb+.blurb),
+.tags-search .tag.index,
+.pseud.index,
+.concise.index {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: flex-start;
+}
+
+.tagset .tags.index[style="display: block"] {
+    display: grid !important;
+}
+
+.bookmark.index .blurb:not(.short) {
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+.tagset .tags.index li,
+.alphabet ul.index>li,
+.media .listbox,
+.bookmark.index:has(> .blurb+.blurb)>.short,
+.tags-search .tag.index>li,
+.pseud.index>li,
+.concise.index>li {
+    width: auto;
+    margin-block: 1em;
+    margin-inline: 0 1em;
+}
+
+:where(.tagset.index,
+    .alphabet ul.index,
+    .media.index,
+    .bookmark.index,
+    .tags-search .tag.index,
+    .pseud.index,
+    .concise.index) ul.actions,
+.tagset .tags.index li {
+    padding-inline: 0;
+}
+
+.tagset .tags.index li:nth-child(even),
+.alphabet ul.index>li:nth-child(even),
+.media .listbox:nth-child(even),
+.bookmark.index:has(> .blurb+.blurb)>.short:nth-child(odd),
+.tags-search .tag.index>li:nth-child(even),
+.pseud.index>li:nth-child(even),
+.concise.index>li:nth-child(even) {
+    margin-inline: 1em 0;
+}
+
+:where(.tagset.index,
+    .alphabet ul.index,
+    .media.index,
+    .bookmark.index,
+    .tags-search .tag.index,
+    .pseud.index,
+    .concise.index) .actions button {
+    padding: .25em .5em !important;
+}
+
+.skins.home .userstuff,
+.skins.home .stats,
+.skins.home .type {
+    margin-inline: 0 !important;
+    text-align: right;
+}
+
+.index .listbox .heading .action {
+    margin-left: .5em;
+}
+
+.index .listbox .heading button {
+    margin: .25em .5em;
+}
+
+.tags-search .tag.index>li {
+    background: #260d0d;
+    padding: 1em 1.25em;
+    border-radius: 1em;
+    border: 2px solid #c7b06b;
+    margin: 1em 0;
+}
+
+.tags-search .tag.index .tag {
+    margin-inline: .25em;
+}
+
+.language.index {
+    width: 100%;
+    columns: 3;
+}
+
+.language.index dt,
+.language.index dd {
+    display: inline-block;
+    padding: 0;
+    background: none;
+    border: 0;
+    font-size: .9rem;
+}
+
+.language.index dt {
+    display: flex;
+    align-items: center;
+    float: left;
+    clear: left;
+    margin-right: 10px;
+    margin-bottom: .5em;
+}
+
+.language.index dt>a:first-child,
+.language.index dt>span[lang] {
+    font-size: .9rem;
+    margin: 0 .5em 0 0;
+}
+
+.language.index dd {
+    float: left;
+    clear: right;
+    margin: .3em 0 20px;
+}
+
+.assignment.index .stats {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.assignment.index .stats dt,
+.assignment.index .stats dd {
+    display: inline-block !important;
+    font-size: .875rem;
+    line-height: 1.5;
+    margin: 0 0 .5em
+}
+
+.assignment.index .stats dt {
+    border-width: 1px 0 1px 1px;
+    border-radius: .5em 0 0 .5em;
+    padding: .75em .25em .75em .75em
+}
+
+.assignment.index .stats dd {
+    border-width: 1px 1px 1px 0;
+    border-radius: 0 .5em .5em 0;
+    padding: .75em .75em .75em .25em
+}
+
+.signup.index a.byline {
+    display: inline-block;
+    margin-bottom: .5em;
+}
+
+/* || 6 -- REGION: FOOTER */
+#footer {
+    background: #4d1a1a;
+    color: #fff;
+    border: 0;
+    padding-block: 0;
+}
+
+#footer .heading {
+    font-size: 1.5em;
+    font-weight: 700;
+    color: #0000;
+    background: linear-gradient(#d98c8c, #f0dbec);
+    background-clip: text;
+    margin-bottom: 1em;
+}
+
+#footer ul.navigation {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+#footer .module {
+    min-width: 15em;
+    max-width: 90%;
+    width: 100%;
+    margin: auto;
+}
+
+#footer li {
+    margin: 0;
+}
+
+#footer ul.navigation>li {
+    margin-block: 2em;
+}
+
+#footer li:not(:last-child) {
+    margin-bottom: 1em;
+}
+
+#footer a,
+#footer button {
+    color: #f1ebda;
+    border: 0;
+    text-decoration: underline;
+    text-underline-offset: 0;
+    line-height: 1.5;
+}
+
+#footer a:is(:hover, :focus),
+#footer button:is(:hover, :focus) {
+    color: #e3d7b5;
+}
+
+/* || 7 -- INTERACTIONS */
+.dashboard .filters fieldset {
+    margin-right: 0;
+}
+
+.filters :where(fieldset,
+    form dl,
+    fieldset dl dl,
+    fieldset fieldset fieldset,
+    fieldset fieldset dl dl,
+    dd.hideme,
+    form blockquote.userstuff) {
+    background: #4d1a1a;
+    border: 0;
+    margin: 0;
+    padding: 0;
+    box-shadow: none;
+}
+
+fieldset,
+form dl,
+fieldset dl dl,
+fieldset fieldset fieldset,
+fieldset fieldset dl dl,
+dd.hideme,
+form blockquote.userstuff {
+    border: 0;
+    margin: 0;
+    padding: 0;
+    box-shadow: none;
+}
+
+fieldset,
+form.single fieldset,
+form:not(:has(fieldset)) dl {
+    background: #260d0d;
+    padding: 1em 1.25em;
+    border-radius: 1em;
+    border: 2px solid #c7b06b;
+    margin: 1em 0;
+    box-shadow: none;
+    overflow: visible;
+}
+
+form:not(.filters) fieldset dd :is(.heading, .options) {
+    padding-inline: 0 !important;
+}
+
+.filters fieldset {
+    margin: 1em 0 1em 1em;
+    padding: 1em 1em;
+    border-radius: 1em;
+    outline: 1px solid #d5c490;
+    outline-offset: -.4em;
+}
+
+.filters dt.landmark,
+.filters h4.heading {
+    line-height: 1.75;
+}
+
+.filters fieldset input[type=submit] {
+    margin-block: .5em;
+    padding-inline: .5em;
+}
+
+.filters fieldset .tags li {
+    padding: 0;
+}
+
+.filters fieldset .tags .added.tag {
+    line-height: 2;
+}
+
+form dt,
+.filters .group dt.bookmarker {
+    min-width: unset;
+    border-color: currentColor;
+}
+
+input,
+textarea {
+    box-shadow: none;
+    border: 0;
+    transition-property: background, color;
+    transition-duration: 150ms;
+    vertical-align: middle;
+}
+
+input[type=checkbox],
+input[type=radio],
+input[type=range] {
+    accent-color: #bf4040;
+}
+
+textarea {
+    background: #e3d7b5;
+    color: #000;
+    border-radius: .5em;
+    padding: .25em .5em;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+select,
+select:focus {
+    appearance: none;
+    padding: .35em 2em .35em .5em;
+    background: #e3d7b5 url("https://images.squidge.org/images/2025/07/04/triangle_down.png");
+    color: #251f0e;
+    border-radius: .25em;
+    border: 0;
+    min-width: 0;
+    background-repeat: no-repeat;
+    background-size: 1em 50%;
+    background-position: right .5em center;
+    transition-property: background, color;
+    transition-duration: 150ms;
+    vertical-align: middle;
+}
+
+select:is(:hover, :focus) {
+    color: #000;
+    background: #d5c490 url("https://images.squidge.org/images/2025/07/04/triangle_down.png");
+    background-repeat: no-repeat;
+    background-size: 1em 50%;
+    background-position: right .5em center;
+}
+
+select[disabled] {
+    background: #c7b06b url("https://images.squidge.org/images/2025/07/04/triangle_down.png") !important;
+    background-repeat: no-repeat !important;
+    background-size: 1em 50% !important;
+    background-position: right .5em center !important;
+    cursor: not-allowed;
+    filter: saturate(0);
+}
+
+label:has([disabled]),
+input[disabled] {
+    cursor: not-allowed !important;
+    filter: saturate(0)
+}
+
+input[type=file] {
+    border-radius: .25em
+}
+
+input[type=file]:is(:hover, :focus) {
+    background: inherit;
+}
+
+input::file-selector-button {
+    background: #8f3d81;
+    color: #fff;
+    padding: .5em .75em;
+    margin-right: .75em;
+    line-height: 1.5;
+    border-radius: .25em;
+    border: none;
+    cursor: pointer;
+    transition: background 150ms;
+}
+
+input[type=file]:is(:hover, :focus)::file-selector-button {
+    background: #6b2e61;
+}
+
+#inner input[type=text] {
+    min-width: unset;
+    padding-block: .15em;
+    box-sizing: border-box;
+}
+
+form li input[type=radio]:has(+label),
+form li input[type=checkbox]:has(+label) {
+    margin: 0 .25em 0 0 !important;
+}
+
+input[type=radio]+label,
+input[type=checkbox]+label {
+    padding-left: 0;
+    vertical-align: middle;
+}
+
+input+input+label {
+    margin-right: 1em;
+}
+
+input+input+label:has(+.symbol) {
+    margin-right: .15em;
+}
+
+fieldset fieldset .removeme>fieldset {
+    background: #260d0d;
+    border: 1px solid #c7b06b;
+    box-shadow: none;
+    margin: 0 0 1em;
+    padding: .5em .75em
+}
+
+fieldset fieldset .removeme>fieldset .cancel {
+    margin: 0;
+    padding: 0;
+}
+
+fieldset fieldset .removeme>fieldset .cancel>a {
+    display: inline;
+    padding: .1em .5em;
+}
+
+#ui-datepicker-div {
+    background: #4a3e1c;
+    color: #f2d9d9;
+    box-shadow: none;
+    padding: 1em;
+    border-radius: .5em;
+    border: 1px solid #f2d9d9
+}
+
+#ui-datepicker-div a {
+    cursor: pointer;
+}
+
+.ui-datepicker table {
+    background: #6f5e2a;
+}
+
+.ui-datepicker th {
+    background: #251f0e;
+}
+
+.ui-datepicker td {
+    border-color: #b99c46;
+}
+
+.ui-datepicker tr:hover {
+    background: #4a3e1c;
+}
+
+.ui-datepicker td:hover {
+    background: #251f0e;
+}
+
+.ui-datepicker .ui-datepicker-title {
+    font-size: 1.1em;
+    font-weight: 700;
+    margin-bottom: .25em;
+}
+
+.autocomplete.dropdown {
+    background: #e6b3b3;
+    border: 1px solid #732626;
+    margin-inline: .25em;
+    border-radius: .5em;
+    transform: translateY(.5em);
+}
+
+.filters .autocomplete.dropdown {
+    right: 1em;
+    margin-left: 1em;
+}
+
+.autocomplete.dropdown .notice {
+    margin: 0;
+}
+
+.autocomplete div.dropdown ul {
+    border: none;
+    padding: .1em .2em;
+    background: none;
+    box-shadow: none;
+}
+
+.autocomplete .dropdown ul li {
+    margin-block: .2em;
+    padding: .2em .4em;
+    line-height: 1.5;
+    border-radius: .25em;
+    transition: background 150ms;
+    cursor: pointer;
+}
+
+.autocomplete .dropdown ul li:hover,
+.autocomplete .dropdown li.selected {
+    background: #6f5e2a;
+    color: #fff;
+}
+
+.autocomplete li.added,
+.post .meta dd ul li.added {
+    margin-block: .25em;
+}
+
+.LV_validation_message {
+    display: block;
+    box-sizing: border-box;
+    padding-inline: 1em;
+}
+
+.LV_invalid {
+    background: #e0b8da;
+    border: 1px solid #8f3d81 !important;
+    color: #6b2e61;
+    box-shadow: none;
+    margin-inline: .5em;
+}
+
+.LV_invalid_field,
+input.LV_invalid_field:hover,
+input.LV_invalid_field:active,
+textarea.LV_invalid_field:hover,
+textarea.LV_invalid_field:active {
+    background: #f0dbec !important;
+    border: 1px solid #c270b4 !important;
+}
+
+.LV_invalid:before {
+    border-color: #8f3d81 transparent;
+}
+
+.ui-sortable li {
+    background: #4a3e1c;
+    border-color: #6f5e2a;
+    box-shadow: none;
+}
+
+.ui-sortable li:hover {
+    background: #6f5e2a;
+    border-color: #b99c46;
+    box-shadow: none;
+}
+
+.qtip-content {
+    background: #4d1a1a;
+    border-color: #732626;
+}
+
+legend {
+    border: 0;
+}
+
+legend label {
+    margin: 0;
+}
+
+form:not(.filters) legend {
+    background: #6f5e2a;
+    color: #f1ebda;
+    border: 0;
+    box-shadow: none;
+    border-radius: .5em;
+    outline: 1px solid #947d38;
+    padding: .75em 1em;
+}
+
+form:not(.filters) legend .action {
+    margin-left: .5em;
+    vertical-align: baseline;
+}
+
+form dd.required,
+.post .required .warnings,
+dd.required,
+.required .autocomplete,
+.autocomplete .notice {
+    position: relative;
+    color: #e0b8da;
+}
+
+form:not(.filters) fieldset dl,
+form:not(:has(fieldset)) dl {
+    display: grid;
+    grid-template-columns: 3fr 7fr;
+}
+
+form:not(.filters) fieldset dl>*:not(dt, dd),
+form:not(:has(fieldset)) dl>*:not(dt, dd) {
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+form:not(.filters) fieldset dl {
+    padding: 0;
+    margin-inline: 0;
+}
+
+form:not(:has(fieldset)) dl dt,
+form:not(:has(fieldset)) dl dt.landmark,
+form:not(:has(fieldset)) dl dd,
+form:not(:has(fieldset)) dl dd.actions,
+form:not(.filters) fieldset dt,
+form:not(.filters) fieldset dd {
+    background: none;
+    width: 100%;
+    font-size: .875rem !important;
+    padding: .75em 1em !important;
+    margin: .75em 0;
+    border: 1px solid #c270b4;
+    box-sizing: border-box;
+}
+
+form:not(:has(fieldset)) dl dt,
+form:not(:has(fieldset)) dl dt.landmark,
+form:not(.filters) fieldset dt {
+    border-radius: .5em 0 0 .5em;
+    border-width: 1px 0 1px 1px;
+}
+
+form:not(:has(fieldset)) dl dd,
+form:not(:has(fieldset)) dl dd.actions,
+form:not(.filters) fieldset dd {
+    border-radius: 0 .5em .5em 0;
+    border-width: 1px 1px 1px 0;
+}
+
+form:not(:has(fieldset)) dl dd+dd,
+form:not(.filters) fieldset dd+dd {
+    grid-column-start: 2;
+}
+
+form.verbose fieldset fieldset.listbox:has(legend) .index {
+    padding-inline: 0 !important;
+}
+
+form fieldset .listbox .options {
+    background: none;
+}
+
+form:not(.filters) .options label:has(input) {
+    line-height: 1.286em;
+    padding: .25em .5em;
+}
+
+form .options label>input {
+    margin-right: 5px !important;
+}
+
+form fieldset .listbox .many {
+    display: flex;
+    flex-wrap: wrap;
+    max-height: none;
+}
+
+form fieldset .listbox .many li {
+    margin: 0 .7em .6em 0;
+}
+
+form fieldset .listbox .many label {
+    background: #6b2e61;
+    color: #fff;
+    margin: 0;
+    line-height: 1.2em;
+    padding: .35em .5em;
+}
+
+form fieldset .listbox .many label>[type=checkbox] {
+    margin-right: .5em !important;
+}
+
+form .actions:has(.hidden:only-child, a:only-child) {
+    padding: .5em 0 1em;
+    margin: 0;
+}
+
+fieldset fieldset,
+fieldset dl dl,
+form blockquote.userstuff {
+    background: #260d0d;
+}
+
+.datetime:has(select) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.datetime select:only-child {
+    width: 100%;
+}
+
+form p,
+form p.note {
+    padding-inline: 0;
+}
+
+form p:has(input.number) {
+    padding: 0;
+}
+
+form dd.complex {
+    line-height: 2;
+}
+
+form dd.complex input[type=checkbox] {
+    margin-left: .4em !important;
+}
+
+form dd input[type=checkbox][value="1"] {
+    margin-right: .5em !important;
+}
+
+div.dynamic {
+    background: 0;
+    margin: 1em;
+}
+
+div.dynamic>.comment {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: none;
+}
+
+div.dynamic .heading {
+    line-height: 1.75;
+}
+
+.toggled form,
+.dynamic form {
+    background: #260d0d;
+    padding: 1em 1.5em;
+    border: 1px solid #993333;
+    border-radius: 1em;
+    box-shadow: none;
+}
+
+.toggled form p.footnote,
+.dynamic form p.footnote {
+    margin-bottom: 1em;
+}
+
+#modal {
+    background: #4d1a1a;
+    border-color: #c7b06b;
+    box-shadow: none;
+}
+
+#modal .content {
+    border-color: #e6b3b3
+}
+
+#modal.img .content img {
+    box-shadow: none;
+}
+
+#modal .footer {
+    background: #260d0d
+}
+
+fieldset.creatorships {
+    background: none;
+    border: 0;
+    padding-inline: 0 !important;
+    font-size: 0.75rem;
+    word-break: initial;
+}
+
+.toggled form p.footnote,
+.dynamic form p.footnote {
+    line-height: 1.25
+}
+
+.ui-draggable a {
+    cursor: pointer;
+}
+
+/* || 8 -- ACTIONS (BUTTONS) */
+.actions a,
+.actions a:link,
+.actions a:visited,
+.action,
+.action:link,
+.action:visited,
+.actions button,
+.actions input,
+input[type=submit],
+input[type=button],
+input[type=text],
+input[type=number],
+input[type=password],
+button,
+.current,
+.actions label {
+    background: #e3d7b5;
+    background-image: none;
+    color: #251f0e;
+    padding: .25em .75em;
+    font-size: .875rem;
+    height: unset;
+    line-height: 1.3;
+    border-color: #0000;
+    border-radius: .25em;
+    box-shadow: none;
+    transition-property: background, color;
+    transition-duration: 150ms;
+    cursor: pointer;
+}
+
+.actions li a,
+.actions li button,
+.actions li input,
+.actions li input[type="submit"],
+.actions li .current,
+.actions li label {
+    margin: .25em .1em;
+}
+
+ul.actions:has(+.listbox, +.notice, +.notes, +.caution, +.error, +.alert, +.flash) {
+    margin-bottom: 1em;
+}
+
+h2.heading+.navigation.actions {
+    margin-block: .5em;
+}
+
+input[type=text],
+input[type=password] {
+    padding-inline: .5em;
+}
+
+input[type=password] {
+    box-sizing: border-box;
+}
+
+.actions.sorting a,
+.actions.sorting a:link,
+.actions.sorting a:visited {
+    line-height: 1.4;
+}
+
+.actions.sorting,
+.actions.view {
+    margin: .5em .25em;
+}
+
+.actions:has(+form) {
+    margin-bottom: 1em;
+}
+
+form.ajax-remove {
+    display: inline-block;
+}
+
+#inner .filters .actions input[type=submit] {
+    line-height: 1.4;
+}
+
+.actions a:is(:hover, :focus),
+.actions button:is(:hover, :focus),
+.actions input:is(:hover, :focus),
+label.action:is(:hover, :focus),
+.action:is(:hover, :focus),
+input[type=submit]:is(:hover, :focus),
+input[type=text]:is(:hover, :focus),
+input[type=password]:is(:hover, :focus) {
+    background: #d5c490;
+    color: #000;
+    box-shadow: none;
+    border-color: #0000;
+}
+
+.actions:has(label>select) label,
+.actions:has(label>select) a {
+    height: unset !important;
+    line-height: 1.9em !important;
+}
+
+dl.stats+.landmark+.actions,
+.mystery .summary+.landmark+.actions {
+    margin-top: 1em;
+}
+
+.pagination {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.pagination li {
+    margin: .25em .5em;
+    line-height: 1;
+}
+
+.pagination span,
+.pagination a,
+.actions .previous a,
+.actions .next a,
+.chapters-show #feedback .actions a[href*="/works/"] {
+    height: 1.3em !important;
+}
+
+.pagination span,
+.pagination a {
+    display: block;
+}
+
+.pagination .previous span {
+    content: url("https://images.squidge.org/images/2025/07/04/left_light.png");
+}
+
+.pagination .next span {
+    content: url("https://images.squidge.org/images/2025/07/04/right_light.png");
+}
+
+.pagination .previous a,
+.actions .previous a,
+#main.chapters-show .work:has(.actions .previous)+#feedback .actions li:nth-child(1 of :has(a[href*="/works/"])) a {
+    content: url("https://images.squidge.org/images/2025/07/04/left_dark.png");
+}
+
+.pagination .next a,
+.actions .next a,
+#main.chapters-show .work:has(.actions .previous + .next)+#feedback .actions li:nth-child(2 of :has(a[href*="/works/"])) a,
+#main.chapters-show .work:has(.actions .next):not(:has(.actions .previous))+#feedback .actions li:nth-child(1 of :has(a[href*="/works/"])) a {
+    content: url("https://images.squidge.org/images/2025/07/04/right_dark.png");
+}
+
+.actions a:active,
+.current,
+a.current,
+.actions a.current,
+a:link.current,
+.actions a:link.current,
+.current a:visited,
+.actions a:visited.current,
+.pagination .current,
+.actions .current {
+    background: #993333;
+    color: #f2d9d9;
+    cursor: default;
+}
+
+.pagination .current:is(:hover, :focus),
+.actions .current:is(:hover, :focus) {
+    background: #993333;
+    color: #f2d9d9;
+}
+
+#tos_prompt [type=checkbox],
+.actions li label>input[type=checkbox],
+form input[type=checkbox],
+form input[type=radio] {
+    appearance: none;
+    position: relative;
+    height: 1.2em;
+    width: 1.2em;
+    margin-block: 0 !important;
+    padding: 0 !important;
+    border: 0;
+    border-radius: 3px;
+    transform: none;
+    background: none;
+    vertical-align: middle;
+}
+
+form input[type=radio] {
+    background: #f0dbec;
+}
+
+form label>input[type=radio],
+form .help.symbol:has(+input) {
+    margin-right: .5em !important;
+}
+
+form p.actions {
+    padding-right: 0;
+}
+
+#tos_prompt [type=checkbox]::before,
+.actions li label>input[type=checkbox]::before,
+form input[type=checkbox]::before,
+form input[type=radio]::before {
+    content: "\2714";
+    position: absolute;
+    line-height: 1.2em;
+    top: 0;
+    left: 0;
+    height: 1.2em;
+    width: 1.2em;
+    color: #d194c7;
+    background: #f0dbec linear-gradient(#8f3d81, #8f3d81);
+    background-size: 100% 0%;
+    background-position: 50% 100%;
+    background-repeat: no-repeat;
+    border: 1px solid #8f3d81;
+    border-radius: 3px;
+    text-align: center;
+    font-weight: 700;
+    box-sizing: border-box;
+    transition: background 150ms;
+}
+
+form input[type=radio]::before {
+    border: 0;
+}
+
+#tos_prompt [type=checkbox]:checked::before,
+.actions li label>input[type=checkbox]:checked::before,
+form input[type=checkbox]:checked::before {
+    color: #fff;
+    background: #f0dbec linear-gradient(#8f3d81, #8f3d81);
+    background-size: 100% 100%;
+    background-position: 50% 100%;
+    background-repeat: no-repeat;
+}
+
+form input[type=radio],
+form input[type=radio]::before {
+    border-radius: 1em
+}
+
+form input[type=radio]::before {
+    content: '';
+    background: #f0dbec radial-gradient(#8f3d81 40%, #0000 50%);
+    transform: scale(0);
+    transition: transform 150ms;
+}
+
+form input[type=radio]:checked::before {
+    background: #f0dbec radial-gradient(#8f3d81 40%, #0000 50%);
+    transform: scale(1);
+}
+
+form:not(.filters) fieldset dd>fieldset {
+    border: 0;
+    border-radius: 0;
+    padding: 0 !important;
+    margin: 0;
+}
+
+form fieldset>p.submit {
+    padding: 0;
+}
+
+form fieldset dl+p.submit {
+    padding-top: .75em;
+}
+
+form fieldset:first-of-type .submit {
+    padding-bottom: .75em;
+}
+
+form fieldset .actions:first-child {
+    margin-block: .25em;
+}
+
+form label.action:has([name="work_ids[]"]) {
+    padding: 0;
+    line-height: 1;
+    height: 1.2em;
+}
+
+form label.action:has([name="work_ids[]"]) input {
+    margin: 0;
+}
+
+span.delete {
+    background: none;
+    box-shadow: none;
+    margin: 0;
+}
+
+span.delete a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #251f0e;
+    color: #e6b3b3;
+    height: 1.3em;
+    width: 1.3em;
+    margin: .25em;
+    line-height: 1;
+    padding: 0;
+    vertical-align: middle;
+    border: 1px solid #cc6666;
+    box-sizing: border-box;
+    transition: background 150ms;
+}
+
+span.delete a:is(:hover, :focus) {
+    background: #251f0e
+}
+
+.secondary {
+    right: unset;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #251f0e !important;
+    color: #f1ebda;
+    border-radius: .5em;
+    margin-top: .25em;
+    padding: .5em !important;
+    border: 1px solid #b99c46 !important;
+    box-shadow: none !important;
+}
+
+.secondary select {
+    min-width: 10.5em
+}
+
+.work.navigation .download {
+    background: none !important;
+    box-shadow: none !important;
+    border: none !important
+}
+
+.work.navigation .download .secondary {
+    min-width: 5em
+}
+
+#chapter_index {
+    min-width: 10em
+}
+
+.javascript .work.navigation .secondary {
+    right: auto;
+    left: 0
+}
+
+#chapter_index p,
+.work.navigation .expanded+.secondary {
+    flex-direction: column;
+}
+
+.work.navigation .secondary p,
+.work.navigation .secondary span {
+    word-break: normal;
+}
+
+.secondary .current {
+    background: #6f5e2a !important;
+}
+
+#dashboard .secondary a:is(:hover, :focus) {
+    background: #4a3e1c !important;
+    color: #f1ebda;
+}
+
+.close {
+    font-weight: 700;
+}
+
+/* || 9 -- ROLES AND STATES */
+.draft,
+.draft .wrapper,
+.unread,
+.child,
+.unwrangled,
+.unreviewed {
+    background: #8f3d81;
+}
+
+.own {
+    background: #260d0d
+}
+
+.draft {
+    margin-top: 1em;
+    padding: .5em 1.5em;
+    border: 0;
+    border-radius: 1.5em;
+    outline: 5px dotted #e0b8da;
+    outline-offset: -.75em;
+}
+
+span.offered,
+.replied,
+.nominations .approved,
+span.unread,
+span.claimed,
+.actions span.defaulted {
+    background: #f2d9d9;
+    color: #260d0d;
+    border: 0;
+    font-weight: 700;
+    cursor: default;
+}
+
+/* || 10 -- TYPES OF DATA, GROUPS OF DATA */
+#outer.wrapper {
+    background-color: #260d0d !important;
+    background-image: url("https://images.squidge.org/images/2025/06/24/topography.png") !important;
+}
+
+.javascript {
+    background: #260d0d !important;
+}
+
+.wrapper {
+    box-shadow: none;
+}
+
+.statistics .index li {
+    background: linear-gradient(90deg, #260d0d 30%, #4d1a1a);
+    border: 1px solid #993333;
+    border-radius: .5em;
+    padding: 1em 1.25em;
+}
+
+.statistics .index li:nth-of-type(even) {
+    background: linear-gradient(90deg, #240f20 30%, #471f41);
+    border: 1px solid #8f3d81;
+}
+
+.statistics .index .words {
+    color: #f1ebda;
+    font-style: italic;
+    font-size: .9em;
+}
+
+.statistics .index dt>a {
+    margin-right: .4em;
+}
+
+.statistics .index dt {
+    margin-bottom: 1.5em;
+}
+
+.skins.home>* {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    margin-bottom: 1.5em;
+}
+
+.skins.home .parents.module {
+    grid-column-end: 2;
+}
+
+.skins.home .actions {
+    grid-column-start: 2;
+    width: 100%;
+    text-align: right;
+    padding-inline: 0;
+    margin-left: auto;
+}
+
+.skins.home .css.module {
+    order: 1;
+}
+
+#kudos_message {
+    margin-block: 1em .5em
+}
+
+ul.actions:has(+ #kudos_message) {
+    float: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+
+ul.actions:has(+ #kudos_message)>li {
+    margin: 0 0 .25em .5em !important;
+}
+
+#kudo_submit {
+    box-shadow: 0 0 .5em .25em #cc6666;
+}
+
+span.series,
+span.series .divider,
+span.series .position {
+    line-height: 1.4
+}
+
+span.series .divider {
+    color: #bf4040;
+    filter: saturate(1.5);
+}
+
+span.series:not(:first-child)::before {
+    content: '\A';
+    white-space: pre-wrap;
+}
+
+p.kudos {
+    position: relative;
+    background: none !important;
+    padding-left: 66px;
+    line-height: 1.5;
+    font-size: 0.75rem;
+}
+
+p.kudos::before {
+    content: '';
+    position: absolute;
+    height: 60px;
+    width: 60px;
+    left: 0;
+    background-image: url("https://images.squidge.org/images/2024/03/30/AO3_imageset_regular.png");
+    background-size: 201px 836px;
+    background-position: -111px -582px;
+    filter: drop-shadow(-.75px -1px 0 #000) drop-shadow(-.75px 1px 0 #000) drop-shadow(1px -.75px 0 #000) drop-shadow(1px .75px 0 #000);
+}
+
+.module,
+.dashboard .index {
+    box-sizing: border-box
+}
+
+dl.index dt,
+dl.index dd {
+    background: #4d1a1a;
+    border: 2px solid #c7b06b;
+    padding: 1rem;
+}
+
+dl.index dt {
+    position: relative;
+    font-size: 0;
+    padding-bottom: .25rem;
+    border-radius: .5rem .5rem 0 0;
+    border-width: 2px 2px 0 2px;
+}
+
+dl.index dd {
+    border-radius: 0 0 .5rem .5rem;
+    border-width: 0 2px 2px 2px;
+    padding-top: .25rem;
+    margin-inline: 0;
+    margin-block: 0 1.5rem;
+}
+
+dl.index dt>a:first-child {
+    display: table;
+    background: #251f0e;
+    color: #e3d7b5;
+    padding: .25em .75em;
+    margin-bottom: .4rem;
+    border-radius: .5em;
+    border: 1px solid;
+    font-family: Georgia, serif;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+dl.index dt>a:is(:hover, :focus):first-child {
+    background: #6f5e2a;
+}
+
+dl.index dt>a:nth-child(2) {
+    position: relative;
+    display: inline-block;
+    margin: 0 1rem .6rem 1.5rem;
+    font-family: Georgia, serif;
+    font-size: 1rem;
+}
+
+dl.index dt>a:nth-child(2)::before {
+    content: "\21AA";
+    position: absolute;
+    top: 3px;
+    left: -1.3em;
+    line-height: 1;
+    margin-right: .5em;
+    color: #fff;
+}
+
+dl.index input[type=submit] {
+    height: unset;
+}
+
+dl.subscription dt::after {
+    position: absolute;
+    font-size: 1.25rem;
+    font-weight: 700;
+    text-align: right;
+    right: .75em;
+    top: .75em;
+    opacity: .5;
+    font-style: italic;
+}
+
+dl.subscription dt:has(a[href*="/works"]:first-child)::after {
+    content: "Work";
+}
+
+dl.subscription dt:has(a[href*="/works"]:first-child) {
+    padding-right: 4.25rem;
+}
+
+dl.subscription dt:has(a[href*="/series"]:first-child)::after {
+    content: "Series";
+}
+
+dl.subscription dt:has(a[href*="/series"]:first-child) {
+    padding-right: 4.75rem;
+}
+
+dl.subscription dt:has(a[href*="/users"]:first-child)::after {
+    content: "Author";
+}
+
+dl.subscription dt:has(a[href*="/users"]:first-child) {
+    padding-right: 5.25rem;
+}
+
+ul.cloud {
+    background: #240f20;
+    padding: .5em 1em;
+    border-radius: 1.5em;
+    font-size: 1.1rem;
+}
+
+ul.cloud:empty {
+    display: none;
+}
+
+ul.cloud .tag {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+ul.cloud>li {
+    display: inline-block;
+    line-height: 1;
+    margin-block: .25em;
+}
+
+a.cloud5,
+a.cloud4,
+a.cloud3,
+a.cloud2,
+a.cloud1 {
+    font-weight: 400;
+}
+
+a.cloud8,
+a.cloud7,
+a.cloud6 {
+    line-height: 1.2 !important;
+    font-weight: 700;
+}
+
+a.cloud7 {
+    font-size: 1.75em;
+}
+
+a.cloud8 {
+    font-size: 2em;
+}
+
+a.rss span {
+    display: block;
+    line-height: 1.1;
+    margin-top: 2px;
+    padding-left: 18px;
+}
+
+/* || 11 -- GROUP: LISTBOX */
+.listbox,
+fieldset fieldset.listbox {
+    background: #4d1a1a;
+    border: 2px solid #d5c490;
+    border-radius: .5em;
+    box-shadow: none;
+    margin: 1em auto;
+    padding: 0 !important;
+}
+
+form.verbose fieldset fieldset.listbox:has(legend) {
+    padding-inline: 1em !important;
+    border-radius: 1em
+}
+
+form.verbose fieldset fieldset.listbox:has(legend) .heading {
+    background: none;
+    padding-inline: 0;
+}
+
+.post.work .actions a[data-method="delete"] {
+    outline: 2px solid #cc6666;
+}
+
+.listbox>.heading {
+    display: flex;
+    align-items: center;
+    background: #260d0d;
+    color: #d5c490;
+    padding: .5em .75em;
+    font-size: 1.4em;
+    font-weight: 700;
+}
+
+.listbox>.heading+[title="add tags"] {
+    padding-inline: .75em;
+}
+
+.listbox .heading .action a {
+    color: #4a3e1c
+}
+
+.listbox .heading .action:hover a,
+.listbox .heading .action a:focus {
+    color: #000
+}
+
+.listbox>.heading .actions {
+    margin-left: auto !important;
+    padding: 0 !important;
+}
+
+.listbox>.heading+.actions {
+    padding-right: .5em !important;
+}
+
+.listbox>.heading .actions>li {
+    margin-block: 0;
+}
+
+.listbox .index {
+    background: #4d1a1a;
+    box-shadow: none;
+    padding: .5em 1em;
+}
+
+.listbox>.actions {
+    padding: 0 .75em .5em 0;
+}
+
+.listbox.group>.listbox.group {
+    margin-inline: .75em;
+}
+
+.listbox .tags.index {
+    line-height: 2;
+}
+
+.listbox .tags.index .tag:hover {
+    outline: 1px solid #d194c7;
+    outline-offset: 2px;
+}
+
+.listbox .tags.tree a+.tags.tree {
+    margin-top: .5em
+}
+
+.listbox .tags.tree .tags.tree {
+    background: #0003;
+    border-radius: .5em;
+    border: 1px solid #d5c490
+}
+
+/* || 12 -- GROUP: META */
+dl.meta {
+    border: 2px solid #d5c490;
+    border-radius: 1em;
+    background: #4d1a1a;
+    margin-block: .75em 1em;
+    padding: 1em;
+    line-height: 1.75;
+}
+
+dl.work.meta {
+    background: #260d0d;
+    margin-block: 1em 2em;
+    font-size: .9rem;
+}
+
+dl.work.meta>dt {
+    font-weight: 700;
+}
+
+dl.work.meta>dd {
+    margin-bottom: 1.5em;
+}
+
+dl.work.meta .stats dl {
+    float: none;
+}
+
+dl.work.meta .stats dl>dd:last-child,
+dl.meta :where(dt, dd):last-of-type {
+    margin-bottom: .5em !important;
+}
+
+dl.statistics.meta {
+    background: #260d0d;
+    padding: 1.5em;
+    outline: 1px solid #993333;
+}
+
+.meta dt {
+    position: relative;
+    margin-bottom: .25em;
+    width: 20%;
+    float: left;
+}
+
+.meta dd {
+    width: 75%;
+}
+
+.meta>dd {
+    margin: 0 0 1.5em 0;
+}
+
+.meta>dd:last-child {
+    margin: 0
+}
+
+dl.statistics dt {
+    width: 20% !important;
+    margin-left: 2em;
+    float: left !important;
+}
+
+dl.statistics dd {
+    width: fit-content !important;
+    margin-bottom: 1em;
+    float: left !important;
+}
+
+dl.statistics dt.subscriptions::before,
+dl.statistics dt.hits::before,
+dl.statistics dt.kudos::before,
+dl.statistics dt.comment::before,
+dl.statistics dt.words::before,
+dl.statistics dt.bookmarks::before {
+    content: "";
+    position: absolute;
+    top: .2em;
+    left: -2em;
+    display: inline-block;
+    width: 1.2em;
+    height: 1.2em;
+    background-size: contain !important;
+    background-repeat: no-repeat !important;
+    opacity: 40%;
+    filter: invert(80%) sepia(80%) saturate(120%) brightness(90%) contrast(120%)
+}
+
+/* EDIT: Replace kudos with something else, or add other stats */
+/* Highlights kudos on statistics page */
+dl.statistics dt.kudos::before {
+    filter: invert(30%) sepia(80%) saturate(10000%) hue-rotate(10deg) brightness(200%) contrast(100%);
+    opacity: .9;
+}
+
+/* EDIT: If fill works, you can remove the filter */
+#stat_chart>div>div>div {
+    border-radius: 1em;
+    filter: saturate(.9) brightness(.95);
+    overflow: hidden;
+}
+
+/* "fill" and "pointer-events" aren't supported... yet. */
+/* But it might someday in future */
+
+/* #stat_chart svg>rect {
+  fill: #4a3e1c;
+}
+
+#stat_chart rect {
+  fill: #bf4040
+}
+
+#stat_chart svg>g:nth-child(1 of g) text,
+#stat_chart svg>g:nth-child(3 of g)>g:first-of-type>rect {
+  fill: #fff;
+}
+
+#stat_chart svg>g:nth-child(3 of g)>g:first-of-type>g:first-of-type rect {
+  fill: #6f5e2a;
+}
+
+#stat_chart svg text {
+  fill: #e6b3b3;
+}
+
+#stat_chart .google-visualization-tooltip text {
+  fill: #260d0d;
+}
+
+.google-visualization-tooltip {
+  pointer-events: none;
+} */
+
+.goog-tooltip>div {
+    background: #f2d9d9 !important;
+    padding-inline: 5px !important;
+    color: #260d0d;
+    text-align: center;
+}
+
+.news dl.meta {
+    padding: 1em 1em .5em 1em;
+}
+
+.admin .userstuff,
+.system .userstuff {
+    background: #260d0d;
+    padding: 1em 1.5em;
+    border-radius: .5em;
+    width: auto;
+}
+
+/* || 13 -- GROUP: BLURB */
+.dashboard .own,
+.blurb,
+li.blurb,
+.blurb .blurb {
+    background: #260d0d;
+    padding: 1em 1.25em;
+    border-radius: 1em;
+    border: 2px solid #c7b06b;
+    margin: 1em 0;
+    text-align: start;
+}
+
+.blurb .header {
+    word-spacing: 3px;
+}
+
+.blurb .header h4.heading {
+    margin-top: 0;
+    line-height: 1.75;
+}
+
+.blurb .header h4 a:link,
+.blurb .header h4 a:visited,
+.blurb .header h4 img {
+    color: #e3d7b5;
+    border-color: currentColor;
+    vertical-align: baseline;
+    font-weight: 400;
+}
+
+.blurb .header h4 a:is(:hover, :focus) {
+    color: #e0b8da;
+}
+
+.blurb .header h4 a[href*="/works"],
+.blurb .header h4 a[href*="/series"],
+.blurb .header h4 a[href*="/external_works"] {
+    font-size: 1.2em;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.blurb .header h4 a[rel=author] {
+    color: #cc6666;
+    font-weight: 700;
+}
+
+.blurb .header h4 a[rel=author]:is(:hover, :focus) {
+    color: #e6b3b3;
+}
+
+.blurb .header h4 span {
+    line-height: 1;
+}
+
+.blurb .datetime {
+    color: #d5c490;
+    padding: 0;
+    font-size: .8em;
+}
+
+.blurb .header .fandoms.heading {
+    color: #f1ebda;
+    margin-top: .75em;
+    font-weight: 700;
+    font-family: 'Lucida Grande', 'Lucida Sans Unicode', Verdana, Helvetica, sans-serif, 'GNU Unifont';
+}
+
+.blurb .header ul {
+    margin-block: 1em .25em;
+}
+
+.blurb .header .mods+.mods {
+    margin-top: .5em;
+}
+
+.picture .icon img,
+.index .picture .icon {
+    border-radius: .25em;
+}
+
+.blurb .heading .landmark,
+dt.landmark {
+    position: relative;
+    height: auto;
+    font-size: inherit;
+    line-height: 1;
+    opacity: 1;
+    font-weight: 700;
+    font-style: normal;
+    color: #f1ebda
+}
+
+.blurb .header .fandoms .tag {
+    color: #d5c490;
+    background: none;
+    background-clip: unset;
+    border: 0;
+    font-weight: 400;
+    font-style: normal;
+    vertical-align: middle;
+}
+
+.blurb .header .fandoms .tag:is(:hover, :focus) {
+    color: #fff !important;
+}
+
+.picture .header {
+    border-color: #0000
+}
+
+.blurb blockquote.summary,
+.blurb blockquote.notes {
+    border-radius: .5em;
+    background: #4d1a1a;
+    line-height: 2;
+    padding: 0 1%;
+}
+
+.blurb blockquote.summary:has(p),
+.blurb blockquote.notes:has(p) {
+    padding: .5em .75em !important;
+    margin-block: 1em;
+}
+
+.blurb .tags.commas li:after {
+    content: none;
+}
+
+.blurb .tags {
+    margin-block: 1em .5em;
+    line-height: 2;
+}
+
+.work.meta .commas {
+    line-height: 2;
+}
+
+.work.meta .commas li {
+    padding: 0;
+}
+
+.work.meta .commas li::after {
+    content: none;
+}
+
+.blurb .tags .tag,
+.work.meta .commas .tag {
+    background: #6f5e2a;
+    color: #f1ebda;
+    border-radius: .25em;
+    padding: .1em .5em;
+    border: 0;
+    font-size: .95em;
+    line-height: 1.5;
+    outline: 0;
+    transition: background 150ms;
+}
+
+.work.meta .commas .tag {
+    display: inline-block;
+    background: #6f5e2a;
+    line-height: 1.4;
+}
+
+.blurb .tags .tag:is(:hover, :focus),
+.work.meta .commas .tag:is(:hover, :focus) {
+    background: #b99c46;
+    color: #fff;
+}
+
+.work.meta :where(.rating, .warning, .category) .commas .tag,
+.blurb .tags .warnings .tag {
+    background: #e3d7b5;
+    color: #4d1a1a;
+    font-weight: 700;
+}
+
+.work.meta :where(.rating, .warning, .category) .commas .tag:is(:hover, :focus),
+.blurb .tags .warnings .tag:is(:hover, :focus) {
+    background: #fff;
+    color: #000;
+}
+
+.work.meta .relationship .commas .tag,
+.blurb .tags .relationships .tag {
+    background: #732626;
+    color: #f2d9d9;
+}
+
+.work.meta .relationship .commas .tag:is(:hover, :focus),
+.blurb .tags .relationships .tag:is(:hover, :focus) {
+    background: #bf4040;
+    color: #fff;
+}
+
+.work.meta .character .commas .tag,
+.blurb .tags .characters .tag {
+    background: #6b2e61;
+    color: #f2d9d9;
+}
+
+.work.meta .character .commas .tag:is(:hover, :focus),
+.blurb .tags .characters .tag:is(:hover, :focus) {
+    background: #b24ca2;
+    color: #fff;
+}
+
+/* EDIT: Tag category grouping */
+/* Remove the following starting with "blurb .tags li" 
+to remove the grouping */
+.blurb .tags li:nth-child(1 of .warnings)::before {
+    content: 'Warnings:';
+}
+
+.blurb .tags li:nth-child(1 of .relationships)::before {
+    content: '\A Relationships:';
+}
+
+.blurb .tags li:nth-child(1 of .characters)::before {
+    content: '\A Characters:';
+}
+
+.blurb .tags li:nth-child(1 of .freeforms)::before {
+    content: '\A Other:';
+}
+
+.blurb .tags li:nth-child(1 of .warnings)::before,
+.blurb .tags li:nth-child(1 of .relationships)::before,
+.blurb .tags li:nth-child(1 of .characters)::before,
+.blurb .tags li:nth-child(1 of .freeforms)::before {
+    margin-right: .5em;
+    white-space: pre;
+    font-weight: 700;
+    color: #f1ebda;
+}
+
+.blurb .tags li:nth-child(1 of .warnings)>a::before,
+.blurb .tags li:nth-child(1 of .relationships)>a::before,
+.blurb .tags li:nth-child(1 of .characters)>a::before,
+.blurb .tags li:nth-child(1 of .freeforms)>a::before {
+    content: '';
+    display: inline-block;
+    height: 2em;
+    width: 0;
+}
+
+/* External bookmarks don't have warnings */
+.blurb .tags li.relationships:first-child::before {
+    content: 'Relationships:';
+}
+
+.blurb .tags li.relationships:first-child::after {
+    content: none;
+}
+
+.blurb ul.required-tags {
+    margin: 0;
+}
+
+.blurb ul.required-tags li a {
+    color: #f2d9d9;
+    border: 0;
+    filter: saturate(.75);
+    transition: filter 150ms;
+}
+
+.blurb ul.required-tags li a:is(:hover, :focus) {
+    overflow: visible;
+    filter: saturate(1) drop-shadow(0 0 1px #fff);
+}
+
+.blurb span.text {
+    font-size: 1px;
+}
+
+.blurb .user:nth-last-child(3) {
+    margin-bottom: 0;
+}
+
+.reading h4.viewed {
+    background: #4a3e1c;
+    border-radius: .5em;
+    padding: .5em .75em;
+    line-height: 1.5;
+    font-size: .9em;
+    margin-block: 1em;
+}
+
+.blurb :where(.actions a, .actions a:link, .actions a:visited, .action, .action:link, .action:visited, .actions button, .actions input, input[type=submit], button, .current, .actions label) {
+    background: #c7b06b !important;
+    color: #251f0e !important;
+    margin-block: .5em !important;
+}
+
+.blurb :where(.actions a, .actions a:link, .actions a:visited, .action, .action:link, .action:visited, .actions button, .actions input, input[type=submit], button, .current, .actions label):is(:hover, :focus) {
+    background: #947d38 !important;
+    color: #f1ebda !important;
+}
+
+.blurb dl.stats {
+    font-size: 1.05em;
+    line-height: 1.75;
+    margin-top: .5em;
+    margin-inline: 0;
+}
+
+.blurb dl.stats a {
+    font-weight: 700;
+}
+
+.stats dd:not(.skins .stats dd):has(a:focus) {
+    outline: 1px dotted #f2d9d9;
+}
+
+.stats dd:not(.skins .stats dd)::before {
+    transition: filter 150ms;
+}
+
+.stats dd:not(.skins .stats dd):has(a:is(:hover, :focus))::before {
+    filter: invert(30%) sepia(80%) saturate(200%) hue-rotate(240deg) brightness(180%) contrast(100%);
+}
+
+.bookmark .status a {
+    outline-color: #f2d9d9;
+}
+
+.bookmark .datetime {
+    top: 26px;
+}
+
+.bookmark .work .datetime {
+    top: 0 !important;
+    right: 0 !important;
+    line-height: 1;
+}
+
+.bookmark div.user .datetime {
+    top: 0.875em !important;
+    right: 1.5em !important;
+}
+
+.bookmark .user .byline {
+    font-weight: 700;
+}
+
+.bookmark .user {
+    float: right;
+    border-color: #c7b06b;
+    border-radius: .5em;
+    margin: .75em 0 .5em;
+}
+
+.bookmark.index>.user {
+    float: none;
+}
+
+.bookmark .user .meta {
+    display: inline-block;
+    font-size: 1em;
+    line-height: 1.25;
+    margin: 0;
+}
+
+.bookmark .user .tags li {
+    line-height: 2;
+}
+
+.bookmark .user .meta.heading {
+    margin-top: .75em;
+}
+
+.bookmark .user .meta.commas {
+    margin-bottom: .5em;
+}
+
+.bookmark .user .tags .tag {
+    padding: .3em .5em;
+}
+
+.bookmark p.status {
+    right: 1.25em;
+    width: 55px;
+    margin-top: 0;
+}
+
+.bookmark p.status :where(.rec, .public) {
+    filter: hue-rotate(80deg);
+}
+
+.bookmark p.status .count a {
+    color: #8f3d81;
+    line-height: 25px;
+}
+
+.bookmark p.status .count {
+    left: auto;
+    right: 0;
+}
+
+.bookmark .short .header h5 {
+    margin: .35em 5.5em .35em 35px !important;
+}
+
+.bookmark .dynamic {
+    margin-inline: 0;
+}
+
+/* || 14 -- GROUP: PREFACE */
+blockquote.userstuff {
+    margin-inline: 0;
+}
+
+div.preface .associations {
+    line-height: 1.75;
+}
+
+/* || 15 -- GROUP: COMMENTS */
+form.inbox fieldset {
+    padding: 0;
+}
+
+div.comment,
+li.comment {
+    background: #4d1a1a;
+    border: 1px solid #c7b06b;
+    border-radius: 1em;
+    margin-block: 1em;
+    padding: 1em 1.5em;
+}
+
+.comment:has(>:only-child) {
+    padding: 0;
+    border: 0;
+}
+
+.thread .even {
+    background: #260d0d
+}
+
+.comment div.icon {
+    position: absolute;
+    top: 1em;
+    left: 1em;
+    margin: 0;
+    border: 0;
+}
+
+.comment img.icon,
+.comment span.icon,
+.comment div.icon>a {
+    border-radius: 50%;
+    transition: border-radius 150ms linear;
+}
+
+.comment span.icon:hover,
+.comment div.icon>a:is(:hover, :focus),
+.comment div.icon>a:is(:hover, :focus)>.icon {
+    border-radius: .5em;
+}
+
+.comment h4.byline,
+.comment .userstuff,
+.comment .edited {
+    margin-inline: 100px 74px;
+    padding: 0 .5rem;
+}
+
+.comment .userstuff {
+    background: none !important;
+    margin-right: 0;
+}
+
+.comment .edited {
+    margin-block: 1em
+}
+
+.comment h4.byline {
+    background: none;
+    margin-block: .25rem;
+    padding: 0 .5rem;
+    word-spacing: 3px;
+}
+
+#comments_placeholder .comment h4.byline {
+    margin-right: 188px;
+}
+
+li.comment h4.byline>a {
+    position: relative;
+    display: table;
+    font-size: 1rem;
+}
+
+li.comment:not(.guest) .heading.byline>a:first-of-type,
+li.comment .heading.byline>span:not([class]):first-child {
+    display: inline-block;
+    background: #c7b06b;
+    color: #251f0e;
+    font-weight: bold;
+    font-size: 1rem;
+    line-height: 1.25;
+    padding: .4em 1em;
+    margin: 0 .25em .3em 0;
+    border-radius: 1em;
+    border: 0;
+    overflow-wrap: anywhere;
+}
+
+li.comment .heading.byline>span:not([class]):first-child {
+    background: #cc6666;
+    color: #260d0d;
+}
+
+.thread li.comment .heading.byline>a:first-of-type {
+    margin-bottom: 0;
+    vertical-align: top;
+}
+
+li.comment span.role,
+li.comment span.parent {
+    font-size: .9rem;
+    margin-right: .25em;
+}
+
+.thread li.comment .heading.byline>a:first-of-type:has(~ .role) {
+    background: #8f3d81;
+    filter: saturate(2);
+}
+
+li.comment.guest .heading.byline>a:first-of-type,
+li.comment .heading.byline>a:nth-of-type(2) {
+    margin-block: .2em .4em;
+    margin-left: 1.5em;
+    text-decoration: underline;
+    border-bottom: 0;
+    line-height: 1.5;
+}
+
+li.comment.guest .heading.byline>a:first-of-type::before,
+li.comment .heading.byline>a:nth-of-type(2)::before {
+    content: "\21AA";
+    position: absolute;
+    top: .2em;
+    left: -1.3em;
+    line-height: 1;
+    margin-right: .5em;
+    color: #fff;
+}
+
+.comment .posted.datetime {
+    position: absolute;
+    color: #e6b3b3;
+    font-size: .8rem;
+    top: 1em;
+    right: 1rem;
+    max-width: 10em;
+    text-align: right;
+    line-height: 1.5
+}
+
+.comment .posted.datetime>* {
+    line-height: 1.5
+}
+
+.comment .actions {
+    padding: 0;
+}
+
+.comment :where(.actions a, .actions a:link, .actions a:visited, .action, .action:link, .action:visited, .actions button, .actions input, input[type=submit], button, .current, .actions label) {
+    background: #d5c490 !important;
+    color: #251f0e !important;
+}
+
+.comment :where(.actions a, .actions a:link, .actions a:visited, .action, .action:link, .action:visited, .actions button, .actions input, input[type=submit], button, .current, .actions label):is(:hover, :focus) {
+    background: #947d38 !important;
+    color: #f1ebda !important;
+}
+
+#add_comment_placeholder .post.comment {
+    border: 0;
+    padding: 0;
+}
+
+/* || 16 -- ZONE: SYSTEM */
+.system .userstuff h3:first-child {
+    margin-top: 0;
+}
+
+.system .userstuff:has(h3:first-child) {
+    margin-top: 2em;
+}
+
+.system p {
+    line-height: 2;
+}
+
+.faq .categories h3 {
+    border-color: #e6b3b3;
+    margin-block: 2em 1em;
+}
+
+.faq .example,
+.guideline .example {
+    border-color: #d194c7;
+}
+
+.tos .userstuff nav.toc>details>summary {
+    border: 0;
+}
+
+.splash .module h3 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #4d1a1a;
+    color: #f1ebda;
+    padding: .3em .6em;
+    border: 0;
+    border-radius: .25em;
+    font-weight: 700;
+}
+
+.splash .browse li a:before {
+    color: #bf4040;
+    filter: saturate(2);
+}
+
+.splash .module .module {
+    margin-bottom: 1em;
+}
+
+.splash .module .module,
+.splash .dynamic,
+.splash .news blockquote {
+    box-sizing: border-box;
+}
+
+.splash .module .title {
+    line-height: 1.5;
+}
+
+.splash .link a {
+    display: block;
+}
+
+.splash .favorite ul {
+    margin-top: 1.25em;
+}
+
+.splash .favorite li {
+    background: #b99c46;
+    border-radius: 999px;
+    transition: background 150ms;
+}
+
+.splash .favorite li a {
+    padding: .5em 1em;
+    border-radius: inherit;
+}
+
+.splash .favorite li:not(:last-child) {
+    margin-bottom: .5rem;
+}
+
+.splash .favorite li:nth-of-type(odd) a,
+.splash .favorite li:nth-of-type(even) a,
+.splash .favorite li:nth-of-type(odd) a:is(:hover, :focus),
+.splash .favorite li:nth-of-type(even) a:is(:hover, :focus) {
+    color: #0000 !important;
+    background: linear-gradient(#260d0d, #471f41);
+    background-clip: text;
+}
+
+.splash .favorite li:nth-of-type(odd) {
+    background: #d5c490;
+}
+
+.splash .favorite li:nth-of-type(odd):hover,
+.splash .favorite li:nth-of-type(odd):has(a:focus) {
+    background: #e3d7b5;
+}
+
+.splash .favorite li:nth-of-type(even):hover,
+.splash .favorite li:nth-of-type(even):has(a:focus) {
+    background: #e3d7b5;
+}
+
+.splash .news li {
+    padding-bottom: .5em;
+    border-color: #6b2e61;
+}
+
+.splash .news blockquote.userstuff {
+    padding: 0;
+    background: none;
+}
+
+.splash .module div.account {
+    background: #6b2e61;
+    color: #f1ebda;
+    margin: 1em 0;
+}
+
+.docs .userstuff li {
+    padding: 0 .5em;
+}
+
+#tos_prompt {
+    background: #260d0d;
+}
+
+#tos_prompt .heading {
+    background: #732626;
+}
+
+#tos_prompt .submit button {
+    background: #732626;
+    color: #fff;
+}
+
+/* || 17 -- ZONE: HOME */
+.primary .icon {
+    border-radius: .5em
+}
+
+.home .header h2 {
+    color: #0000;
+    background-image: linear-gradient(#d98c8c, #f0dbec);
+    background-clip: text;
+    padding-left: .5em;
+    padding-bottom: 3px;
+    border-color: #e0b8da;
+    border-width: 1px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    font-size: 1.9em;
+    line-height: 1.25;
+}
+
+.home .primary {
+    margin-bottom: 1.5em;
+}
+
+.home .primary+.heading {
+    clear: both
+}
+
+.bio.module {
+    margin: 1em 0;
+}
+
+/* || 18 -- ZONE: SEARCH/BROWSE */
+form.search input[type=text] {
+    border-color: #0000;
+    padding: .1em .4em;
+}
+
+#inner form.search input[type=text] {
+    border-radius: .25em
+}
+
+.search input:focus+[role=tooltip] {
+    left: .5em;
+    right: .5em;
+    top: 3.25em;
+}
+
+.search [role=tooltip] {
+    background: #251f0e;
+    color: #f1ebda;
+    border-radius: .5em;
+    border: 1px solid #cc6666;
+    padding: .5em 1em;
+}
+
+.simple.search>fieldset {
+    background: none;
+    border: 0;
+}
+
+.simple.search #query {
+    box-sizing: content-box;
+}
+
+.filters .expander {
+    position: relative;
+    width: 100%;
+    background: #4d1a1a;
+    color: #d194c7;
+    font-weight: 700;
+    line-height: 2;
+    padding: .1em 0 .1em 1.5em;
+}
+
+.filters .expanded .expander {
+    background: none;
+}
+
+.filters .expander:is(:hover, :focus) {
+    background: #260d0d;
+}
+
+.filters .expander::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: .55em;
+    left: 3px;
+    height: 1em;
+    width: 1em;
+    background: url("https://images.squidge.org/images/2025/07/04/triangle_right.png");
+    background-repeat: no-repeat;
+    background-size: .75em 1em;
+    background-position: 50% 50%;
+    transition: transform 150ms;
+}
+
+.filters .expanded .expander::before {
+    transform: rotate(90deg);
+}
+
+/* EDIT: Remove expanding animation if you have issues with it or it messes with screen reader — remove all code until "END EDIT" */
+
+.filters .expandable.hidden {
+    display: block !important;
+    max-height: 0 !important;
+    transition: max-height 150ms ease-in;
+    overflow: hidden;
+}
+
+
+
+#work_crossover,
+#work_complete,
+#work_words,
+#work_dates {
+    max-height: 250px;
+}
+
+#include_rating_tags,
+#exclude_rating_tags,
+#include_category_tags,
+#exclude_rating_tags {
+    max-height: 300px;
+}
+
+#include_archive_warning_tags,
+#exclude_archive_warning_tags {
+    max-height: 500px;
+}
+
+.filters .expandable.hidden {
+    display: block !important;
+    max-height: 0 !important;
+    transition: max-height 150ms ease-in;
+    overflow: hidden;
+}
+
+/* END EDIT */
+
+.filters .expandable>ul {
+    overflow: hidden;
+}
+
+.filters .expandable .expander>.landmark {
+    position: absolute;
+}
+
+.filters label[for] span:last-child {
+    font-size: .9em;
+}
+
+.filters .indicator {
+    position: relative;
+    display: inline-block;
+    background: #f0dbec;
+    border: 1px solid #f0dbec;
+    width: 1.2em;
+    height: 1.2em;
+    margin-inline: 2px 5px;
+    vertical-align: -5px;
+}
+
+.filters input[type=radio]+.indicator {
+    border-radius: 1em;
+}
+
+.filters input[type=checkbox]+.indicator {
+    border-radius: 3px;
+}
+
+.filters input[type]+.indicator::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    border: 0;
+    padding: 0;
+    margin: 0;
+}
+
+.filters input[type=radio]+.indicator::before {
+    background: #f0dbec radial-gradient(#8f3d81 40%, #0000 50%);
+    transform: scale(0);
+    transition: transform 150ms;
+}
+
+.filters input[type=radio]:checked+.indicator::before {
+    background: #f0dbec radial-gradient(#8f3d81 40%, #0000 50%);
+    transform: scale(1);
+}
+
+.filters input[type=checkbox]+.indicator::before {
+    color: #d194c7;
+    border-radius: inherit;
+    font-weight: 700;
+    line-height: 1.3em;
+    background: #f0dbec linear-gradient(#8f3d81, #8f3d81);
+    background-size: 100% 0%;
+    background-position: 50% 100%;
+    background-repeat: no-repeat;
+    transition: background 150ms;
+}
+
+.filters input[type=checkbox]:checked+.indicator::before,
+.filters .exclude input[type=checkbox]:checked+.indicator::before {
+    color: #f0dbec;
+    background: #f0dbec linear-gradient(#8f3d81, #8f3d81);
+    background-size: 100% 100%;
+    background-position: 50% 100%;
+    background-repeat: no-repeat;
+}
+
+.filters dt:not(:has(button.expander)) {
+    margin-top: 1em;
+}
+
+/* || 19 -- ZONE: TAGS, TAGSETS, and TAG WRANGLING  */
+.nomination dt {
+    background: #260d0d;
+    color: #f2d9d9;
+}
+
+/* || 20 -- ZONE: TRANSLATION */
+
+/* || 21 -- USER STUFF */
+#workskin {
+    overflow: visible;
+    padding-inline: 0;
+    font-size: 1rem;
+}
+
+#workskin p {
+    line-height: 1.5
+}
+
+#workskin .title {
+    font-weight: 700;
+    text-wrap: balance;
+}
+
+#workskin .byline+.summary,
+#workskin .notes.group,
+#workskin .chapter.group,
+#workskin .preface.group,
+#workskin .afterword.group,
+#workskin .preface h2.title~.notes {
+    width: auto;
+    background: #240f20;
+    border: 1px solid #8f3d81;
+    border-radius: 1em;
+    padding: .75em 1.5em;
+}
+
+#workskin .byline+.summary,
+#workskin .notes.group,
+#workskin .chapter.group,
+#workskin .preface.group,
+#workskin .preface h2.title~.notes {
+    margin: 1.5em 0
+}
+
+#workskin>.preface.group:has(.title) {
+    background: none;
+    margin-inline: 0;
+    padding: 0 !important;
+    border: 0;
+}
+
+#workskin .chapter.group>.summary {
+    margin-inline: 0;
+}
+
+#workskin .byline+.summary {
+    margin-top: 1.5em;
+}
+
+#workskin .notes>p {
+    margin: .5em 0;
+}
+
+#workskin .chapter.actions {
+    padding: 0 !important;
+    transform: translate(1em, .75em);
+}
+
+#workskin .chapter.actions+.chapter.preface {
+    margin-top: 2em;
+}
+
+#workskin :where(.preface.group, .notes.group) h3.heading:not(.byline) {
+    background: #240f20;
+    color: #c7b06b;
+    border: 0;
+    border-radius: 1.5em;
+    font-weight: 700;
+}
+
+#workskin .chapter>.userstuff,
+#workskin #chapters>.userstuff {
+    background: #260d0d;
+    padding: 1px 1.5em;
+    border: 1px solid #ffffff0d;
+    border-radius: 1em;
+    width: auto;
+    margin: 2em 0;
+}
+
+#workskin #chapters>.landmark+.userstuff {
+    margin-block: .25em 2em;
+}
+
+.userstuff details {
+    padding: 0 1em 0 1em;
+    background: #4d1a1a;
+    border-radius: .5em;
+}
+
+.userstuff details[open] {
+    padding: 0 1em 1em 1em;
+    border: 1px solid #c7b06b;
+}
+
+.userstuff details>summary {
+    cursor: pointer;
+    margin-inline: -1em;
+    padding: 5px 10px;
+    border: 1px solid #c7b06b !important;
+    border-radius: .5em;
+    background: hsla(0, 0%, 0%, .3);
+}
+
+.userstuff details[open]>summary {
+    margin-bottom: 1em;
+    border: none !important;
+    border-radius: .5em .5em 0 0;
+}
+
+.userstuff details summary>.heading {
+    margin: 0 .25em;
+    vertical-align: middle;
+}
+
+.userstuff h2 {
+    color: #e6b3b3;
+}
+
+.userstuff h3 {
+    border-color: #e6b3b3;
+}
+
+.userstuff blockquote {
+    background: #240f20;
+    border-color: #c270b4;
+    padding-inline: 1.25em;
+    margin-inline-start: 1em
+}
+
+.userstuff p {
+    line-height: 1.75;
+}
+
+.abbreviated.comment h4.byline {
+    margin-inline: 80px 90px;
+}
+
+.abbreviated.comment .icon {
+    left: 1.5em;
+}
+
+.abbreviated.comment .userstuff {
+    margin: 0;
+    padding: 0;
+}
+
+/* || 22 -- SYSTEM MESSAGES */
+.datetime {
+    font-style: normal;
+    text-underline-offset: 3px;
+}
+
+.required,
+.error,
+.alert.flash {
+    color: #e0b8da;
+}
+
+.notice,
+.comment_notice,
+.kudos_notice,
+ul.notes,
+.caution,
+.error,
+.comment_error,
+.kudos_error,
+.alert.flash {
+    background: #732626;
+    color: #f2d9d9;
+    border: 1px solid #cc6666;
+    border-radius: .5em;
+    box-shadow: none;
+    margin: 1em 0 2em;
+    padding: .5em 1em;
+    line-height: 1.75;
+}
+
+ul.notes li,
+.error ul li,
+.notice ul li,
+.caution ul li {
+    padding-left: 0;
+    margin-left: .5em;
+}
+
+.announcement .userstuff {
+    background: #8f3d81;
+    color: #f0dbec;
+    margin: 2em 1em 1em;
+    border: 1px solid #c270b4;
+    border-radius: .5em
+}
+
+.announcement input[type=submit],
+.announcement .action {
+    background: #f0dbec;
+    color: #6b2e61;
+    border-color: #8f3d81 !important;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.announcement .action {
+    border-radius: 1.5em;
+    height: 2em;
+    width: 2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.announcement p.submit {
+    top: -.75em;
+    right: .25em;
+}
+
+.event .userstuff {
+    position: relative;
+    background: #6b2e61;
+    background-image: linear-gradient(to top, #6b2e61 0%, #b24ca2 100%);
+    color: #f1ebda;
+    border-color: #8f3d81;
+    border-radius: .5em;
+    margin: 2em 1em 1em;
+}
+
+.event .userstuff a {
+    color: #0000;
+}
+
+.announcement .thermometer .track {
+    border-color: #000;
+}
+
+.announcement .thermometer .goal .amount {
+    width: max-content;
+}
+
+.alert .userstuff,
+.caution {
+    background: #d194c7;
+    color: #000;
+    border-color: #b24ca2;
+    filter: invert(1);
+}
+
+.alert .userstuff a,
+.caution a {
+    color: #240f20 !important;
+    border-color: currentColor !important;
+}
+
+.alert .userstuff a:is(:hover, :focus),
+.caution a:is(:hover, :focus) {
+    color: #6b2e61 !important;
+}
+
+.error,
+.comment_error,
+.kudos_error,
+.alert.flash {
+    background: #d98c8c;
+    color: #260d0d;
+    background-image: linear-gradient(to top, #d98c8c 0%, #cc6666 100%);
+    border-color: #993333;
+    border-radius: .5em;
+    box-shadow: none;
+    filter: invert(1);
+}
+
+:where(.error,
+    .comment_error,
+    .kudos_error,
+    .alert.flash) a {
+    color: #260d0d !important;
+    border-color: currentColor !important;
+}
+
+:where(.error,
+    .comment_error,
+    .kudos_error,
+    .alert.flash) a:is(:hover, :focus) {
+    color: #732626 !important;
+}
+
+div.error {
+    border-radius: .5em;
+    padding: .75em 1.25em;
+    margin: 1em 0;
+}
+
+form .notice,
+form ul.notes,
+ul.notes {
+    box-shadow: none;
+}
+
+form ul.notes,
+ul.notes {
+    padding-inline: 2em;
+}
+
+form ul.notes a:has(img) {
+    display: inline-block;
+    border: 0;
+}
+
+form ul.notes a:has(img):focus {
+    outline: 1px dotted #f2d9d9;
+    outline-offset: 1px;
+}
+
+form ul.notes img.icon {
+    display: inline-block;
+    vertical-align: bottom;
+}
+
+span.question {
+    background: #e0b8da;
+    border-color: #6b2e61;
+    box-shadow: none;
+}
+
+a.symbol {
+    vertical-align: super;
+}
+
+span.symbol {
+    color: #6b2e61;
+    font-family: Georgia, serif;
+    border: 1px solid;
+    line-height: 2;
+    vertical-align: baseline;
+    border-radius: 1em;
+}
+
+.actions a span.symbol,
+.actions a span.symbol>span {
+    line-height: .75;
+}
+
+.question a:hover {
+    background: #6b2e61;
+    border-color: #e0b8da;
+    color: #fff;
+    cursor: help;
+}
+
+#symbols-key dl {
+    border-color: #6f5e2a;
+    border-radius: .25em;
+    margin: 0 0 1.25em;
+    padding: .5em;
+}
+
+/* || TINY MCE */
+.tox .tox-dialog,
+.tox .tox-dialog__header,
+.tox .tox-dialog__footer,
+.tox .tox-label,
+.tox .tox-toolbar-label {
+    background: #260d0d;
+    color: #f2d9d9;
+}
+
+.tox .tox-dialog__header,
+.tox .tox-dialog__footer {
+    border: 0;
+}
+
+.tox .tox-dialog {
+    padding-block: .5em;
+    border: 3px solid #cc6666;
+}
+
+.tox .tox-dialog .tox-button {
+    background: #732626;
+    border-color: #732626
+}
+
+.tox .tox-dialog .tox-button:is(:hover, :focus) {
+    background: #993333;
+    border-color: #993333
+}
+
+.tox .tox-dialog .tox-button--secondary {
+    background: #f2d9d9;
+    color: #4d1a1a;
+    border-color: #f2d9d9
+}
+
+.tox .tox-dialog .tox-button--secondary:is(:hover, :focus) {
+    background: #e6b3b3;
+    color: #260d0d;
+    border-color: #e6b3b3
+}
+
+.tox .tox-icon {
+    background: #0000;
+    color: #fff;
+}
+
+.tox .tox-button:is(:hover, :focus) .tox-icon {
+    color: #f2d9d9;
+}
+
+.tox .tox-toolbar,
+.tox .tox-toolbar__overflow,
+.tox .tox-toolbar__primary,
+.tox .tox-statusbar {
+    background: #e6b3b3 !important;
+}
+
+.tox-tinymce,
+.tox:not([dir=rtl]) .tox-toolbar__group:not(:last-of-type),
+.tox .tox-edit-area,
+.tox .tox-edit-area__iframe {
+    border-color: #bf4040 !important;
+}
+
+.tox .tox-edit-area__iframe {
+    background: #e3d7b5 !important;
+    color: #251f0e !important;
+}
+
+.tox .tox-tbtn--enabled,
+.tox .tox-tbtn:not(.tox-tbtn--disabled):is(:hover, :focus, :active),
+.tox .tox-tbtn--enabled:is(:hover, :focus, :active) {
+    background: #cc6666 !important;
+}
+
+.tox .tox-tbtn:not(.tox-tbtn--disabled) {
+    cursor: pointer !important;
+}
+
+.mce-content-body {
+    line-height: 1.5 !important;
+}
+
+.rtf-html-field {
+    position: relative;
+}
+
+/* || ICONS AND IMAGES */
+
+/* ======= NEW IMAGESET ======= */
+.required-tags .rating-notrated,
+.required-tags .rating-general-audience,
+.required-tags .rating-explicit,
+.required-tags .rating-mature,
+.required-tags .rating-teen,
+.required-tags .category-femslash,
+.required-tags .category-gen,
+.required-tags .category-slash,
+.required-tags .category-none,
+.required-tags .category-het,
+.required-tags .category-multi,
+.required-tags .category-other,
+.required-tags .complete-no,
+.required-tags .complete-yes,
+.required-tags .warning-yes,
+.required-tags .warning-no,
+.required-tags .warning-choosenotto,
+.required-tags .external-work,
+.status .private .text,
+.status .public,
+.status .hidden,
+.status .rec,
+.status .count,
+.index .skins .icon,
+.index .mystery .icon,
+.index .tag .icon,
+.index .tagset .icon,
+.comment .icon .anonymous,
+.comment .icon .visitor,
+.abbreviated .icon .visitor,
+.abbreviated .icon .anonymous,
+.skins .primary .icon,
+.admin .primary .icon,
+.tagset .primary .icon,
+.tag .primary .icon,
+a.rss span,
+p.kudos,
+#symbols-key dl img,
+/* content symbols key */
+#bookmark-symbols-key img,
+/* bookmark symbols key */
+img[src$="/images/skins/iconsets/default/icon_user.png"],
+/* this is the default user icon */
+img[src$="/images/skins/iconsets/default/icon_collection.png"],
+/* this is default collection icon */
+img[src$="/images/lockblue.png"]
+
+/* this is the lock for restricted works (not originally part of the imageset) */
+    {
+    background-image: url("https://images.squidge.org/images/2024/03/30/AO3_imageset_regular.png");
+    /* link to the new imageset */
+    background-size: 200px 835px;
+    /* size of the new imageset needs to be the same as the original */
+}
+
+.header .icon:has(img[src].icon:not(img[src$="/images/skins/iconsets/default/icon_user.png"], img[src$="/images/skins/iconsets/default/icon_collection.png"], img[src$="/images/lockblue.png"])),
+.header .icon img[src].icon:not(img[src$="/images/skins/iconsets/default/icon_user.png"], img[src$="/images/skins/iconsets/default/icon_collection.png"], img[src$="/images/lockblue.png"]) {
+    background: none;
+}
+
+/*======= SYMBOLS KEYS =======*/
+
+/* sets the size of the icons for the symbols keys */
+#symbols-key dl img,
+/* content symbols key */
+#bookmark-symbols-key img
+
+/* bookmark symbols key */
+    {
+    width: 0 !important;
+    height: 0 !important;
+    padding: 25px 0 0 25px;
+}
+
+img[src$="/images/skins/iconsets/default/rating-notrated.png"],
+img[src$="/images/skins/iconsets/default/category-none.png"],
+img[src$="/images/skins/iconsets/default/warning-no.png"] {
+    background-position: -150px 0px;
+}
+
+img[src$="/images/skins/iconsets/default/rating-general-audience.png"] {
+    background-position: -50px -25px;
+}
+
+img[src$="/images/skins/iconsets/default/rating-teen.png"] {
+    background-position: 0px -25px;
+}
+
+img[src$="/images/skins/iconsets/default/rating-mature.png"] {
+    background-position: -75px -25px;
+}
+
+img[src$="/images/skins/iconsets/default/rating-explicit.png"] {
+    background-position: -25px -25px;
+}
+
+img[src$="/images/skins/iconsets/default/category-femslash.png"] {
+    background-position: -25px 0px;
+}
+
+img[src$="/images/skins/iconsets/default/category-het.png"] {
+    background-position: -75px 0px;
+}
+
+img[src$="/images/skins/iconsets/default/category-gen.png"] {
+    background-position: -50px 0px;
+}
+
+img[src$="/images/skins/iconsets/default/category-multi.png"] {
+    background-position: -100px 0px;
+}
+
+img[src$="/images/skins/iconsets/default/category-other.png"] {
+    background-position: -125px 0px;
+}
+
+img[src$="/images/skins/iconsets/default/warning-choosenotto.png"] {
+    background-position: -125px -25px;
+}
+
+img[src$="/images/skins/iconsets/default/warning-yes.png"] {
+    background-position: -150px -25px;
+}
+
+img[src$="/images/skins/iconsets/default/warning-external-work.png"] {
+    background-position: -75px -50px;
+}
+
+img[src$="/images/skins/iconsets/default/complete-no.png"] {
+    background-position: -100px -25px;
+}
+
+img[src$="/images/skins/iconsets/default/complete-yes.png"] {
+    background-position: -175px -25px;
+}
+
+img[src$="/images/skins/iconsets/default/bookmark-rec.png"] {
+    background-position: -100px -50px;
+}
+
+img[src$="/images/skins/iconsets/default/bookmark-public.png"] {
+    background-position: -125px -50px;
+}
+
+img[src$="/images/skins/iconsets/default/bookmark-private.png"] {
+    background-position: -175px -50px;
+}
+
+img[src$="/images/skins/iconsets/default/bookmark-hidden.png"] {
+    background-position: -150px -50px;
+}
+
+/* ======= DEFAULT ICONS + LOCK FOR RESTRICTED WORKS ======= */
+
+/* hides the old default icons and the old lock for restricted works */
+img[src$="/images/skins/iconsets/default/icon_user.png"],
+img[src$="/images/skins/iconsets/default/icon_collection.png"],
+img[src$="/images/lockblue.png"],
+img[src$="/images/skins/iconsets/default/icon_user.png"].icon,
+img[src$="/images/skins/iconsets/default/icon_collection.png"].icon,
+img[src$="/images/lockblue.png"].icon {
+    width: 0 !important;
+    height: 0 !important;
+}
+
+/* default user icon */
+img[src$="/images/skins/iconsets/default/icon_user.png"] {
+    padding: 100px 0 0 100px;
+    background-position: 0px -75px;
+}
+
+/* abbreviated default user icon */
+/* used for unread messages on splash page */
+.index:not(.comment) .abbreviated img[src$="/images/skins/iconsets/default/icon_user.png"] {
+    padding: 75px 0 0 75px;
+    background-position: 0px -375px;
+}
+
+/* default user index icon */
+.index:not(.comment) img[src$="/images/skins/iconsets/default/icon_user.png"] {
+    padding: 55px 0 0 55px;
+    background-position: 0px -525px;
+}
+
+/* little default user icon in header */
+#greeting img[src$="/images/skins/iconsets/default/icon_user.png"] {
+    padding: 30px 0 0 30px;
+    background-position: 0 -23px;
+    background-size: 201% !important;
+}
+
+/* default collection icon */
+img[src$="/images/skins/iconsets/default/icon_collection.png"] {
+    padding: 100px 0 0 100px;
+    background-position: -100px -175px;
+}
+
+/* default collection index icon */
+.index img[src$="/images/skins/iconsets/default/icon_collection.png"] {
+    padding: 55px 0 0 55px;
+    background-position: -55px -525px;
+}
+
+/* the lock for restricted works */
+img[src$="/images/lockblue.png"] {
+    padding: 15px 0 0 15px;
+    background-position: -155px -305px;
+    transform: translateY(4px);
+    filter: brightness(1.6) hue-rotate(60deg)
+}
+
+
+/*============================================================
+STATS ICONS
+============================================================*/
+
+/* slight adjustments to align stats with other elements */
+/* not the prettiest solution but it works ... */
+dl.stats {
+    margin-left: -.25em;
+    margin-right: -.25em;
+}
+
+/*======= setup for the stats icons =======*/
+
+/* hide the text before the stats */
+.stats dt:not(.skins .stats dt) {
+    display: none;
+}
+
+.stats dd:not(.skins .stats dd)::before {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    margin-bottom: -.1em;
+    margin-right: 5px;
+    content: "";
+    background-size: contain !important;
+    background-repeat: no-repeat !important;
+    background-position: center;
+    filter: invert(80%) sepia(80%) saturate(120%) brightness(90%) contrast(120%);
+    /* changes the color of the icons from black to gray */
+}
+
+/*======= stats icons (images) =======*/
+
+/* language */
+.stats dd.language::before {
+    background: url(https://images.squidge.org/images/2024/05/05/stats_icon_language_black.png);
+}
+
+/* words */
+.stats dd.words::before,
+dl.statistics dt.words::before {
+    background: url(https://images.squidge.org/images/2024/05/05/stats_icon_words_black.png);
+}
+
+/* works */
+/* works in collection */
+.stats dd.works::before,
+.stats dd:has(a[href$=works])::before {
+    background: url(https://images.squidge.org/images/2024/05/05/stats_icon_works_black.png);
+}
+
+/* chapters */
+.stats dd.chapters::before {
+    background: url(https://images.squidge.org/images/2024/05/05/stats_icon_chapters_black.png);
+}
+
+/* comments */
+.stats dd.comments::before,
+dl.statistics dt.comment::before {
+    background: url(https://images.squidge.org/images/2024/05/05/stats_icon_comments_black.png);
+}
+
+/* kudos */
+.stats dd.kudos::before,
+dl.statistics dt.kudos::before {
+    background: url(https://images.squidge.org/images/2024/05/05/stats_icon_kudos_black.png);
+}
+
+/* bookmarks */
+.stats dd.bookmarks::before,
+.stats dd:not([class])::before,
+dl.statistics dt.bookmarks::before {
+    background: url(https://images.squidge.org/images/2024/05/05/stats_icon_bookmarks_black.png);
+    background-position-x: 2px;
+    /* needs less space, as the icon is narrower than the others */
+}
+
+/* related works (external bookmarks) */
+.stats dd.inspired::before {
+    background: url(https://images.squidge.org/images/2024/05/05/stats_icon_related-works_black.png);
+}
+
+/* hits */
+.stats dd.hits::before,
+dl.statistics dt.hits::before {
+    background: url(https://images.squidge.org/images/2024/05/05/stats_icon_hits_black.png);
+}
+
+/* collections */
+/* subcollections*/
+.stats dd.collections::before,
+.stats dd:has(a[href$=collections])::before {
+    background: url(https://images.squidge.org/images/2024/05/05/stats_icon_collection_black.png);
+}
+
+/* date published */
+.stats dd.published::before {
+    background: url(https://images.squidge.org/images/2024/05/05/stats_icon_published_black.png);
+}
+
+/* date updated/completed */
+/* I have not found a way to display a different icon for each case */
+.stats dd.status::before {
+    background: url(https://images.squidge.org/images/2024/05/05/stats_icon_updated_black.png);
+}
+
+/* completion status (series) */
+.series.meta.group .stats dd:nth-of-type(3)::before {
+    background: url(https://images.squidge.org/images/2024/05/05/stats_icon_complete_black.png);
+}
+
+/* subscriptions (statistics page) */
+.stats dd.subscriptions::before,
+dl.statistics dt.subscriptions::before {
+    background: url(https://images.squidge.org/images/2024/05/05/stats_icon_subscriptions_black.png);
+}
+
+/* comment threads (statistics page) */
+.statistics .stats dd.comments::before {
+    background: url(https://images.squidge.org/images/2024/05/05/stats_icon_comment-threads_black.png);
+}
+
+/* fandoms */
+.stats dd:has(a[href$=fandoms])::before,
+.tagset .stats dd:nth-of-type(1)::before {
+    background: url(https://images.squidge.org/images/2024/05/05/stats_icon_fandoms_black.png);
+}
+
+/* collections: bookmarked items */
+.collection.blurb:not(:has(.work.blurb)) .stats dd:has(a[href$=bookmarks])::before {
+    background: url(https://images.squidge.org/images/2024/05/05/stats_icons_bookmarked-items_black.png);
+}
+
+/* collections: promts/requests */
+.stats dd:has(a[href$=requests])::before {
+    background: url(https://images.squidge.org/images/2024/05/05/stats_icon_promts_black.png);
+}
+
+/* tagsets: characters */
+.tagset .stats dd:nth-of-type(2)::before {
+    background: url(https://images.squidge.org/images/2024/05/05/stats_icon_characters_black.png);
+}
+
+/* tagests: relationships */
+.tagset .stats dd:nth-of-type(3)::before {
+    background: url(https://images.squidge.org/images/2024/05/05/stats_icon_relationships_black.png);
+}
+
+/* tagsets: additional tags*/
+.tagset .stats dd:nth-of-type(4)::before {
+    background: url(https://images.squidge.org/images/2024/05/05/stats_icon_tags-additional_black.png);
+}
+
+/* tagsets: freeform tags */
+/* example: https://archiveofourown.org/tag_sets/19213 */
+.tagset .meta .stats dd:nth-of-type(4)::before {
+    background: url(https://images.squidge.org/images/2024/05/05/stats_icon_tags-freeform_black.png);
+}
+
+/*============================================================
+STATS HOVER TEXT
+============================================================*/
+
+/*======= general formatting/styling stuff =======*/
+
+/* text container (tooltip) */
+.stats dd::after {
+    display: none;
+    position: absolute;
+    z-index: 99999;
+    margin: 2em 0 0 -4em;
+    padding: .3em;
+    border-radius: .25em;
+    border: 1px solid #555;
+    background: #2a2a2a;
+    color: #eee;
+    font-size: .85em;
+    line-height: 1em;
+    text-align: center;
+    word-break: break-word;
+    /* prevent overflow by breaking the word if necessary */
+    white-space: normal;
+    /* see comment above */
+}
+
+/* makes text appear on hover */
+.stats dd:hover::after {
+    display: inline-block;
+}
+
+/* this is to prevent the hover text from breaking or getting cut off in some places */
+/* haven't found a better solution yet :/ */
+.statistics .stats dd:last-of-type::after,
+.index .stats dd:last-of-type:has(a[href$=bookmarks])::after,
+.stats dd.inspired::after,
+.tagset .index .stats dd:last-of-type::after {
+    right: 0;
+    left: unset;
+}
+
+/*======= hover text for individual stats =======*/
+
+/* language */
+.stats dd.language::after {
+    content: "Language";
+}
+
+/* words */
+.stats dd.words::after {
+    content: "Words";
+}
+
+/* works */
+.stats dd.works::after,
+.stats dd:has(a[href$=works])::after
+
+/* works in collection */
+    {
+    content: "Works";
+}
+
+/* chapters */
+.stats dd.chapters::after {
+    content: "Chapters";
+}
+
+/* comments */
+.stats dd.comments::after {
+    content: "Comments";
+}
+
+/* kudos */
+.stats dd.kudos::after {
+    content: "Kudos";
+}
+
+/* bookmarks */
+.stats dd.bookmarks::after {
+    content: "Bookmarks";
+}
+
+/* related works (external bookmarks) */
+.stats dd.inspired::after {
+    content: "Related Works";
+}
+
+/* hits */
+.stats dd.hits::after {
+    content: "Hits";
+}
+
+/* collections */
+.stats dd.collections::after {
+    content: "Collections";
+}
+
+/* date published */
+.stats dd.published::after {
+    content: "Published";
+}
+
+/* date updated/completed */
+.stats dd.status::after {
+    content: "Updated";
+}
+
+/* completion status (series) */
+.series.meta.group .stats dd:nth-of-type(3)::after {
+    content: "Complete";
+}
+
+/* subscriptions (statistics page) */
+.stats dd.subscriptions::after {
+    content: "Subscriptions";
+}
+
+/* comment threads (statistics page) */
+.statistics .stats dd.comments::after {
+    content: "Comment Threads";
+}
+
+/* fandoms */
+.stats dd:has(a[href$=fandoms])::after,
+.tagset .stats dd:nth-of-type(1)::after {
+    content: "Fandoms";
+}
+
+/* tagsets: characters */
+.tagset .stats dd:nth-of-type(2)::after {
+    content: "Characters";
+}
+
+/* tagests: relationships */
+.tagset .stats dd:nth-of-type(3)::after {
+    content: "Relationships";
+}
+
+/* tagsets: additional tags*/
+.tagset .stats dd:nth-of-type(4)::after {
+    content: "Additional Tags";
+}
+
+/* tagsets: freeform tags */
+.tagset .meta .stats dd:nth-of-type(4)::after {
+    content: "Freeforms";
+}
+
+/* collections: promts/requests */
+.stats dd:has(a[href$=requests])::after {
+    content: "Prompts";
+}
+
+/* collections: challenges/subcollections */
+.collections-index .stats dd:has(a[href$=collections])::after {
+    content: "Challenges/Subcollections";
+}
+
+/* collections: bookmarked items */
+.collection.blurb .stats dd:has(a[href$=bookmarks])::after {
+    content: "Bookmarked Items";
+}
+
+/* || MISC */
+/* Adjusting social media buttons */
+.resp-sharing-button {
+    transition: background 150ms !important;
+}
+
+a.resp-sharing-button__link,
+a.resp-sharing-button__link:hover {
+    color: #fff !important;
+}
+
+form dl.stats {
+    overflow: visible;
+}
+
+/* Adjusting Zerafina's stats icon tooltip */
+/* For smooth animation */
+dl.stats dd {
+    position: relative;
+    padding-inline: .5em 0;
+    line-height: 1.75;
+}
+
+dl.stats dd::after {
+    display: inline-block !important;
+    left: -999em;
+    white-space: unset;
+    opacity: 0;
+    transition-property: opacity;
+    transition-duration: 150ms;
+    transition-delay: 0s;
+}
+
+dl.stats dd:hover::after {
+    display: inline-block !important;
+    top: .5em;
+    left: 4em;
+    opacity: 1;
+    transition-delay: .3s;
+}

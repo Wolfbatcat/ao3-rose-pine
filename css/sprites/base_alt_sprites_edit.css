@@ -1,0 +1,4151 @@
+/*============================================================
+
+                     ✿✿✿ Rose Pine ✿✿✿                 
+           A Site Skin for the Archive of Our Own          
+                      By Blackbatcat   
+
+==============================================================
+LINKS & CREDITS
+==============================================================
+
+CODE & INSTRUCTIONS:
+
+- Code (GitHub):       https://github.com/Wolfbatcat/ao3-rose-pine
+- Instructions (AO3):  https://archiveofourown.org/works/69993411
+
+CREDITS:
+
+- Base:                "neos" by ZerafinaCSS               https://archiveofourown.org/works/65849527
+- Inspired by:         "Archive 2.0 skin" by AO3           https://archiveofourown.org/skins/873
+                       "Tide" by ElectricAlice             https://github.com/electricalice/Ao3-tide
+                       "Flat Squares Skin" by milkfatzero  https://ao3-skins.dreamwidth.org/6156.html
+
+FIND ME ON:
+
+- GitHub:              https://github.com/Wolfbatcat
+- AO3:                 https://archiveofourown.org/users/Wolfbatcat/pseuds/Wolfbatcat
+- Tumblr:              https://blackbatcats.tumblr.com/
+
+==============================================================
+DIRECTORY
+==============================================================
+
+Numeric      = Skin structure from the "Archive 2.0 skin"
+Alphanumeric = Additions by ZerafinaCSS
+
+>> 01 BASIC LAYOUT SETTINGS
+>> 02 ELEMENTS
+>> 03 REGION: HEADER
+>> 04 REGION: DASHBOARD
+>> 05 REGION: MAIN
+>> 06 REGION: FOOTER
+>> 07 INTERACTIONS
+>> 08 ACTIONS: BUTTONS
+>> 09 ROLES AND STATES
+>> 10 TYPES AND GROUPS OF DATA -- Tags are here!
+>> 11 GROUP: LISTBOX
+>> 12 GROUP: META
+>> 13 GROUP: BLURB
+>> 14 GROUP: PREFACE
+>> 15 GROUP: COMMENTS
+>> 16 ZONE: SYSTEM
+>> 17 ZONE: HOME
+>> 18 ZONE: SEARCH/BROWSE
+>> 19 ZONE: TAG PAGES, TAGSETS, and TAG WRANGLING
+>> 21 USERSTUFF
+>> 22 SYSTEM MESSAGES
+>> Z1 REPLACE THE ICONS AND IMAGES
+>> Z2 STATS ICONS WITH HOVER TEXT
+>> Z3 MISCELLANEOUS
+
+/*============================================================
+>> 01 BASIC LAYOUT SETTINGS
+============================================================*/
+
+body {
+    font-size: var(--txt-size-main);
+    color: var(--txt-main);
+}
+
+/* wraps header, inner, footer */
+#outer {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: var(--bg1);
+}
+
+/* contains main content */
+#inner {
+    flex-grow: 1;
+    /* keeps footer at bottom */
+    display: flex;
+    flex-flow: row;
+    justify-content: flex-start;
+    min-height: 70vh;
+}
+
+/* remove unwanted spacing */
+.blurb li,
+.meta ul li {
+    padding-left: 0;
+}
+
+/* remove dotted outline on active and focused elements */
+a:active,
+a:focus,
+a:focus img,
+button:focus,
+#footer a:focus,
+#footer button:focus,
+.submit input:focus,
+.filters input:focus+.indicator+span,
+.filters .expander:focus {
+    outline: none;
+}
+
+/*============================================================
+>> 02 ELEMENTS
+============================================================*/
+
+/*>========== LINKS ==========<*/
+
+a,
+a:link,
+a.work,
+.blurb h4 a:link,
+div.preface .byline a,
+.filters p a {
+    border-bottom: var(--link-underline);
+    color: var(--link);
+}
+
+a:is(:hover, :focus),
+a:visited:is(:hover, :focus),
+.blurb .heading a:is(:hover, :focus),
+.blurb .heading a:visited:is(:hover, :focus),
+div.preface .byline a:is(:hover, :focus),
+.fandom.index.group a.tag:is(:hover, :focus),
+h2.heading a.tag:is(:hover, :focus),
+.filters p a:is(:hover, :focus) {
+    border-bottom-color: inherit;
+    /* show underline on hover */
+    color: var(--link-hgl);
+}
+
+a:visited,
+.blurb .heading a:visited {
+    color: var(--link-visited);
+}
+
+/* remove border on linked images */
+a img {
+    border: none;
+}
+
+/*>========== TEXT ==========<*/
+
+h2 {
+    font-size: 1.8em;
+    line-height: 1.2;
+}
+
+h2.heading:has(+ .navigation.actions.module) {
+    display: block;
+    margin-top: 0;
+}
+
+/* horizontal rule separator */
+hr {
+    border: none;
+    border-bottom: 3px double;
+}
+
+em,
+cite,
+i {
+    font-style: italic;
+}
+
+/*>========== TABLES ==========<*/
+
+table {
+    border: var(--border-width) solid var(--border2);
+    background-color: var(--bg4);
+}
+
+thead,
+tfoot,
+tbody tr {
+    border-color: var(--border2);
+}
+
+thead th {
+    border-color: var(--border2);
+    background-color: var(--bg1);
+}
+
+thead td {
+    border-color: var(--bg4);
+    background-color: var(--border1);
+}
+
+tbody th {
+    border-color: var(--border2);
+    background-color: var(--bg1);
+}
+
+tfoot td {
+    border-color: var(--border4);
+}
+
+td {
+    padding: 0.25em 0.5em;
+}
+
+tr:hover,
+col.name {
+    border-color: var(--border2);
+    background: var(--bg5);
+}
+
+/*============================================================
+>> 03 REGION: HEADER
+============================================================*/
+
+#header,
+#tos_prompt .heading {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    align-content: center;
+    column-gap: 1.25em;
+    position: unset;
+    z-index: 100;
+    box-sizing: border-box;
+    width: 96%;
+    max-width: 96%;
+    margin-top: 2%;
+    margin-right: 2%;
+    margin-bottom: 0;
+    margin-left: 2%;
+    border-width: var(--border-width);
+    border-style: solid;
+    border-color: var(--border1);
+    border-radius: var(--radius-mid);
+    box-shadow: var(--shadow-header);
+    background: var(--bg2);
+}
+
+#header>h1,
+#header>h2,
+#header>nav .user,
+#header>nav .dropdown-toggle,
+#header li.search {
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    min-height: 38px;
+}
+
+/* remove space before header title */
+#header div.clear {
+    display: none;
+}
+
+/*>========== LOGO AND TITLE ==========<*/
+
+#header .heading {
+    order: 1;
+    margin-left: var(--margins-header);
+    padding: 0;
+}
+
+/* reset heading size */
+#header .heading a {
+    font-size: 1em;
+    line-height: 1;
+}
+
+/* custom AO3 title styling */
+#header .heading a::before {
+    font-weight: var(--txt-bold);
+    font-size: 1.15em;
+    color: var(--txt-header);
+}
+
+/* gradient effect on hover */
+#header .heading a:is(:hover, :focus)::before {
+    -webkit-background-clip: text;
+    background-image: var(--txt-header-hgl-h1);
+    color: transparent;
+}
+
+/* hide default "Archive of Our Own beta" text and logo */
+#header .heading a * {
+    display: none;
+}
+
+/*>========== HEADER DROPDOWN MENUS ==========<*/
+
+#header .dropdown-menu,
+#small_login {
+    z-index: 5;
+    box-sizing: border-box;
+    width: unset;
+    min-width: 15em;
+    padding: 0.25em 0;
+    border: 1px solid var(--border3);
+    border-radius: var(--radius-mid);
+    box-shadow: var(--shadow);
+    background: var(--bg6);
+    font-size: 0.95em;
+}
+
+/* arrow indicator on open dropdown */
+#header nav:not(:has(.open)) li.dropdown:hover::before,
+#header .open::before {
+    position: absolute;
+    z-index: 6;
+    width: 0;
+    height: 0;
+    border-right: 8px solid transparent !important;
+    border-bottom: 8px solid var(--bg6);
+    border-left: 8px solid transparent !important;
+    color: var(--border3);
+    /* border/shadow color; custom properties don't work in filter context */
+    transform: translate(-50%, 31px);
+    filter: drop-shadow(0 -1px);
+    content: "";
+}
+
+/* arrow positioning for user menu */
+#greeting .dropdown-menu {
+    z-index: 7;
+    transform: translateX(1.5em);
+}
+
+#header #greeting:not(:has(.open)) li.dropdown:hover::before,
+#header #greeting .open::before {
+    z-index: 8;
+    transform: translate(5%, 31px);
+}
+
+#header .navigation .dropdown .menu li {
+    margin: 0 0.25em;
+    border-bottom: none;
+    text-align: left;
+}
+
+#header .navigation .dropdown:is(*) .menu li a {
+    display: block;
+    max-width: unset;
+    padding: 0.5em;
+    border-radius: var(--radius-small);
+    background-color: transparent;
+    color: var(--txt-main);
+}
+
+#header .navigation .dropdown .menu li a:is(:hover, :focus) {
+    background: var(--int-hgl-bg);
+    color: var(--int-hgl-txt);
+    font-weight: var(--txt-semibold);
+}
+
+/*>========== HEADER NAVIGATION ==========<*/
+
+#header .navigation a,
+#header .user a {
+    background: transparent;
+    color: var(--txt-header);
+}
+
+#header .navigation.actions .dropdown:is(.open, :hover, :focus, :active)>a,
+#header .navigation.actions>.dropdown a:is(:hover, :focus, :active),
+#header .user a:is(:hover, :focus, :active) {
+    background: transparent;
+    color: var(--txt-header-hgl);
+}
+
+/*>========== LOGIN AND GREETING ==========<*/
+
+#login,
+#greeting {
+    order: 3;
+    width: auto;
+    margin-right: var(--margins-header);
+    margin-left: auto;
+    background-color: transparent;
+}
+
+#header .user,
+#header .user a,
+#small_login .action,
+#greeting .user>li {
+    margin: 0;
+    padding: 0;
+}
+
+#greeting .user>li {
+    line-height: 0;
+}
+
+/* hide small user icon */
+#greeting p.icon {
+    display: none;
+}
+
+/*>>========== REPLACE USER ACTIONS WITH ICONS ==========<<*/
+
+#header #greeting>ul>li>a {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    padding: 10px 0;
+    background-image: url("https://i.postimg.cc/7LtBcv45/zerafina-header-sprites.png");
+    background-size: 54px 18px; /* 3 icons × 18px wide, 18px tall */
+    background-repeat: no-repeat;
+    background-position-y: center; /* vertically center the sprite */
+    filter: var(--header-icon);
+    overflow: hidden;
+    text-indent: -9999px; /* hide any text */
+    vertical-align: middle; /* align with other header elements */
+}
+
+/* user profile icon */
+#header #greeting .dropdown>a[href*="/users/"] {
+    background-position-x: -36px;
+}
+
+/* post new work icon */
+#header #greeting .dropdown>a[href*="/works/new"] {
+    background-position-x: -18px;
+}
+
+/* log out icon */
+#header #greeting a[href*="/users/logout"] {
+    background-position-x: 0;
+}
+
+/* spacing between header user action icons */
+#header #greeting>ul {
+    display: flex;
+    column-gap: 0.5em;
+}
+
+/*>========== PRIMARY NAVIGATION ==========<*/
+/* contains Fandoms, Browse, Search, About and search bar */
+
+#header nav:has(> .primary) {
+    order: 2;
+    flex: 1;
+    max-width: 100%;
+    border-width: var(--border-width) !important;
+    /* important for mobile skin */
+    border-color: var(--border2) !important;
+    /* important for mobile skin */
+}
+
+#header .primary {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+    align-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    box-shadow: none;
+    background: none;
+}
+
+#header .primary>li.dropdown:first-of-type {
+    margin-left: 0;
+}
+
+/*>>========== HEADER SEARCH BAR ==========<<*/
+
+#header .search {
+    margin: 0;
+}
+
+#header li.search {
+    margin-inline: 1.25em;
+}
+
+/* search icon using unicode symbol */
+#header li.search::before {
+    position: absolute;
+    left: 0.4em;
+    z-index: 1;
+    font-weight: var(--txt-bold);
+    font-size: 1.25em;
+    color: var(--link-hgl);
+    content: "\002315";
+    /* unicode magnifying glass symbol */
+}
+
+#header li.search form label {
+    display: none;
+}
+
+#header #search .text {
+    min-width: 170px;
+    max-width: 20vw;
+    margin: 0;
+    padding-left: 1.8em;
+    /* space for search icon */
+    border: var(--border-width) solid var(--border2);
+    border-radius: var(--radius-alt);
+    box-shadow: none;
+    background-color: var(--int-search);
+    transition: width 0.15s;
+}
+
+#header #search input:focus {
+    color: var(--txt-main);
+    border-color: var(--int-hgl);
+    outline: 1px solid var(--int-hgl);
+}
+
+/* hide search button */
+#header #search .button,
+#header #search span.actions {
+    display: none;
+}
+
+/*>========== COLLECTIONS CONTEXT ==========<*/
+
+#header h2 {
+    order: 4;
+    display: block;
+    width: 100%;
+    min-height: unset;
+    max-height: 30vh;
+    padding: 0.25em var(--margins-header);
+    border-inline: none;
+    border-top: var(--border-width) solid var(--border2);
+    border-bottom-left-radius: var(--radius-big);
+    border-bottom-right-radius: var(--radius-big);
+    background-color: var(--link-hgl) !important;
+    background-size: auto 100% !important;
+    font-size: 1.15em;
+    font-weight: bold;
+    color: var(--int-hgl-txt);
+}
+
+/*============================================================
+>> 04 REGION: DASHBOARD
+============================================================*/
+/* sticky sidebar navigation */
+#dashboard,
+#dashboard.own {
+    position: sticky;
+    top: 1em;
+    box-sizing: border-box;
+    width: 18%;
+    min-width: 150px;
+    /* prevent sidebar from getting too narrow */
+    max-width: 230px;
+    /* prevent sidebar from getting too wide */
+    max-height: 96vh;
+    overflow-x: visible;
+    overflow-y: auto;
+    margin-top: 1.85em;
+    margin-left: 2%;
+    padding-top: 0.429rem;
+    padding-right: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-left: 0.5rem;
+    border-width: var(--border-width);
+    border-style: solid;
+    border-color: var(--border1) !important;
+    /* required for tablet + mobile skin */
+    border-radius: var(--radius-mid);
+    background-color: var(--bg5);
+    font-size: 0.875em;
+    scrollbar-color: transparent transparent;
+    box-shadow: var(--shadow-header);
+}
+
+#dashboard ul {
+    display: block;
+    float: none;
+    position: relative;
+    padding-top: 0.429em;
+    padding-bottom: 0.429em;
+    border-top-width: var(--border-width);
+    border-top-style: solid;
+    border-top-color: var(--border1);
+    text-align: left;
+}
+
+#dashboard ul:not(.secondary):first-of-type {
+    border-top: 0;
+}
+
+#dashboard a,
+#dashboard span {
+    display: block;
+    box-sizing: border-box;
+    max-width: 100%;
+    margin-block: 1px;
+    padding-top: 0.429em;
+    padding-right: 0.5rem;
+    padding-bottom: 0.429em;
+    padding-left: 0.5rem;
+    border-radius: var(--radius-small);
+    color: var(--txt-main);
+    line-height: 1.286;
+}
+
+#dashboard a:is(:hover, :focus) {
+    background: var(--int-hgl-bg);
+    color: var(--int-hgl-txt);
+    font-weight: var(--txt-semibold);
+}
+
+#dashboard .current {
+    background-color: var(--int-current-bg);
+    color: var(--int-current-txt);
+    border-width: 1px;
+    border-style: solid;
+    border-color: var(--int-current-border);
+    box-shadow: var(--shadow-box2);
+}
+
+#dashboard .current:hover {
+    font-weight: var(--txt-semibold);
+    box-shadow: none;
+}
+
+#dashboard .secondary {
+    margin-block: 0.25em;
+    padding: 0.25em;
+    border-width: var(--border-width);
+    border-style: solid;
+    border-color: var(--border3);
+    box-shadow: var(--shadow);
+    background-color: var(--bg6);
+}
+
+/*============================================================
+>> 05 REGION: MAIN
+============================================================*/
+
+#main,
+#main.dashboard {
+    flex-grow: 1;
+    box-sizing: border-box;
+    min-height: unset;
+    max-width: 100%;
+    margin: 0;
+    padding: 1.5em var(--margins-main);
+    line-height: 1.286;
+}
+
+#main.dashboard {
+    width: 82%;
+    /* dashboard is 18% wide, main takes remaining space */
+}
+
+/* hide error message pictures */
+#main.errors,
+#main.error-502,
+#main.error-503-maintenance,
+#main.session {
+    background: none;
+}
+
+#main.errors p,
+#main.errors .heading {
+    margin-right: 0;
+}
+
+/* exclamation mark icon for error pages */
+#main.errors h2.heading::before {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    margin-right: 0.5em;
+    padding: 0.1em;
+    border-radius: 100%;
+    background-color: var(--alert-txt);
+    line-height: 1;
+    text-align: center;
+    color: var(--txt-alt2);
+    content: "!";
+}
+
+/*
+ul.navigation:nth-child(3) > li:nth-child(1) > a:nth-child(1) {
+    display: flex;
+    margin-right: 24em;
+}
+
+/*============================================================
+>> 06 REGION: FOOTER
+============================================================*/
+
+#footer {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 100%;
+    padding: 3% 5%;
+    margin-top: 2%;
+    border-top: var(--border-width) solid var(--border2);
+    background: linear-gradient(to top, var(--bg1) 70%, var(--bg2) 100%);
+    overflow: hidden;
+    overflow-wrap: anywhere;
+    font-size: 0.8em;
+    word-break: normal;
+    color: var(--txt-main);
+}
+
+#footer ul.navigation.actions {
+    display: flex;
+    justify-content: space-between;
+    column-gap: 5%;
+    box-sizing: border-box;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+#footer ul li.module {
+    box-sizing: border-box;
+    max-width: unset;
+    margin: 0;
+    padding: 0;
+}
+
+#footer ul li.module ul.menu {
+    display: block;
+    float: unset;
+}
+
+#footer .heading {
+    margin-block: 0 1em;
+    font-weight: var(--txt-bold);
+    color: var(--txt-main);
+}
+
+#footer a,
+#footer button {
+    border-bottom: var(--link-underline) !important;
+    text-decoration: none;
+    color: var(--link);
+}
+
+#footer a:is(:hover, :focus),
+#footer button:is(:hover, :focus) {
+    border-bottom-color: inherit !important;
+    color: var(--link-hgl);
+}
+
+/*============================================================
+>> 07 INTERACTIONS
+============================================================*/
+
+/*>========== NESTING ==========<*/
+
+fieldset,
+form dl,
+fieldset dl dl,
+fieldset fieldset fieldset,
+fieldset fieldset dl dl,
+dd.hideme,
+form blockquote.userstuff,
+form.single fieldset {
+    margin: 0.643em 0;
+    padding: 0.634em;
+    border: var(--border-width) solid var(--border2);
+    border-radius: var(--radius-big);
+    box-shadow: var(--shadow-box2);
+    background-color: var(--bg4);
+}
+
+fieldset dl,
+fieldset.actions,
+fieldset dl fieldset dl {
+    border: none;
+    background-color: transparent;
+}
+
+fieldset fieldset {
+    background-color: var(--bg4);
+}
+
+fieldset dd dl,
+form .meta dd,
+fieldset dl fieldset dl,
+dd fieldset {
+    margin: 0.643em 0;
+}
+
+/*>========== FORM RULES ==========<*/
+
+label {
+    margin-right: 0;
+}
+
+fieldset>fieldset>dl>dt>label {
+    font-weight: var(--txt-bold);
+}
+
+fieldset>ul>li:has(label input[type="radio"]) {
+    margin: 0 !important;
+}
+
+input,
+input[type="number"],
+textarea {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 100%;
+    border: var(--border-width) solid var(--border2);
+    border-radius: var(--radius-mid);
+    box-shadow: none;
+    background-color: var(--bg5);
+    color: var(--txt-main);
+}
+
+textarea {
+    border-radius: var(--radius-big);
+}
+
+/* focused input styling */
+input[type="text"]:focus,
+input[type="number"]:focus,
+.search input[type="text"]:focus,
+input#user_password:focus,
+select:focus,
+textarea:focus {
+    border-color: var(--int-hgl);
+    outline: 1px solid var(--int-hgl);
+    background-color: var(--int-bg);
+}
+
+select {
+    width: 100%;
+    min-width: 10.5em;
+    padding: 0.25em;
+    border: var(--border-width) solid var(--border2);
+    border-radius: var(--radius-small);
+    background-color: var(--bg5);
+    font-size: 0.95em;
+    vertical-align: middle;
+    color: var(--txt-main);
+}
+
+select:not(select[multiple]):is(:hover, :focus) {
+    background: var(--bg5);
+}
+
+select:not(select[multiple]):open {
+    background: var(--bg6);
+}
+
+.datetime select {
+    width: fit-content;
+}
+
+option,
+.actions option,
+form code {
+    color: var(--txt-main);
+}
+
+option {
+    margin: 0;
+    padding: 0.125em;
+    border-radius: var(--radius-small);
+}
+
+option:is(:hover, :focus, :active) {
+    background: var(--int-hgl-bg);
+    color: var(--int-hgl-txt);
+}
+
+option:is(:checked),
+option:checked:is(:hover, :focus, :active) {
+    background: var(--int-current-bg);
+    color: var(--int-current-txt);
+}
+
+
+form dt {
+    display: inline-block;
+    box-sizing: border-box;
+    width: 25%;
+    min-width: unset;
+    border-bottom: var(--border-width) solid var(--border2);
+}
+
+form dd,
+form dd.any {
+    box-sizing: border-box;
+    width: 75%;
+}
+
+form dd+dd {
+    width: 100%;
+}
+
+form dd.required {
+    color: var(--txt-main);
+}
+
+form fieldset#parent-options dd:has(ul) {
+    margin: 0;
+}
+
+/* form legends styling */
+form.verbose legend,
+.verbose form legend,
+form.single legend {
+    border: var(--border-width) solid var(--border2);
+    border-radius: var(--radius-small);
+    box-shadow: var(--shadow-box2);
+    background-color: var(--bg6);
+    font-weight: var(--txt-bold);
+}
+
+/*>========== INPUT ELEMENTS: CHECKBOXES, RADIO BUTTONS ==========<*/
+
+/* remove browser default styling and apply custom appearance */
+input[type="checkbox"],
+input[type="radio"],
+.filters [type="radio"],
+.filters [type="checkbox"],
+.actions input[type="checkbox"],
+label.action input[type="checkbox"] {
+    flex-shrink: 0;
+    appearance: none;
+    display: inline-block;
+    position: relative;
+    top: 0.1em;
+    box-sizing: border-box;
+    width: 1em;
+    height: 1em;
+    margin: 0;
+    box-shadow: none;
+    border: 1.5px solid var(--border2);
+    border-radius: var(--radius-small);
+    background-color: var(--bg5);
+    background-image: none !important;
+    color: var(--txt-alt2);
+    user-select: none;
+}
+
+input[type="checkbox"]:hover,
+input[type="radio"]:hover,
+.actions input[type="checkbox"]:hover,
+label.action input[type="checkbox"]:hover,
+.filters [type="checkbox"]:hover:not(:checked)::before {
+    border-color: var(--int-hgl);
+    color: var(--int-hgl);
+}
+
+input[type="checkbox"]:disabled,
+input[type="radio"]:disabled {
+    border-color: var(--int-disabled) !important;
+    background-color: var(--int-disabled) !important;
+    cursor: not-allowed;
+}
+
+input[type="radio"]+label,
+input[type="checkbox"]+label {
+    padding-left: 0;
+}
+
+/* fix checkbox label positioning */
+ul:not(ul.actions) li:has(input[type="checkbox"] + label):not(:has(fieldset)),
+ul:not(ul.actions) li:has(input[type="radio"] + label):not(:has(fieldset)),
+ul:not(ul.actions) li:not(.blurb ul li)>label:has(input[type="checkbox"]),
+ul:not(ul.actions) li:not(.blurb ul li)>label:has(input[type="radio"]) {
+    display: flex !important;
+    align-items: baseline;
+    column-gap: 0.5em;
+    width: fit-content;
+    margin: 0;
+    padding-block: 0.3215em;
+}
+
+/*>>========== CHECKBOXES ==========<<*/
+
+input[type="checkbox"]:checked,
+.actions input[type="checkbox"]:checked,
+label.action input[type="checkbox"]:checked {
+    border-color: var(--int-checked);
+    background-color: var(--int-checked);
+    color: var(--txt-alt2);
+}
+
+/* custom checkmark using pseudo-element */
+input[type="checkbox"]::before,
+.filters [type="checkbox"]::before,
+.actions input[type="checkbox"]::before {
+    position: absolute;
+    width: 50%;
+    height: inherit;
+    border-right: 0.25em solid;
+    border-bottom: 0.25em solid;
+    color: var(--txt-alt2);
+    content: "";
+    transform: translate(15%, -20%) scale(0.5) rotate(45deg);
+    opacity: 0;
+}
+
+/* unicode cross for exclude filters */
+.filters .exclude [type="checkbox"]::before {
+    width: 100%;
+    border: none;
+    font-size: 0.75em;
+    line-height: 1;
+    text-align: center;
+    content: "\002716\fe0e";
+    /* unicode cross symbol */
+    transform: unset;
+}
+
+input[type="checkbox"]:checked::before,
+.filters [type="checkbox"]:checked::before,
+.actions input[type="checkbox"]:checked::before {
+    opacity: 1;
+}
+
+/* always show filter checkbox symbols */
+.filters [type="checkbox"]:not(:checked)::before {
+    color: var(--border2);
+    opacity: 1;
+}
+
+input[type="checkbox"]:checked:hover,
+.actions input[type="checkbox"]:checked:hover,
+label.action input[type="checkbox"]:checked:hover {
+    border-color: var(--int-hgl);
+    background-color: var(--int-hgl);
+}
+
+.actions input[type="checkbox"] {
+    vertical-align: baseline;
+}
+
+/* hide duplicate filter indicators */
+.filters [type="radio"]+.indicator,
+.filters [type="checkbox"]+.indicator {
+    display: none;
+}
+
+/*>>========== RADIO BUTTONS ==========<<*/
+
+input[type="radio"],
+.filters [type="radio"] {
+    border-radius: 100%;
+}
+
+input[type="radio"]:checked,
+.filters [type="radio"]:checked {
+    border-color: var(--int-checked);
+    box-shadow: inset 0 0 0 2.5px;
+    background-color: var(--int-checked);
+    background-image: none;
+    color: var(--int-bg)
+}
+
+/*>>========== FILE UPLOAD BUTTON ==========<<*/
+
+input[type="file"] {
+    background: transparent;
+}
+
+input::file-selector-button {
+    box-shadow: none !important;
+}
+
+/*>========== WIDGET: CHARACTER COUNTER ==========<*/
+
+p.character_counter {
+    font-size: 0.85em;
+}
+
+/*>========== WIDGET: LIVE VALIDATION ==========<*/
+
+.LV_validation_message {
+    display: block;
+}
+
+.LV_invalid {
+    border: var(--border-width) solid var(--alert-txt);
+    border-radius: var(--radius-big);
+    color: var(--alert-txt);
+    background: var(--alert-bg);
+    box-shadow: none;
+}
+
+.LV_invalid_field,
+input.LV_invalid_field:is(:hover, :focus),
+textarea.LV_invalid_field:is(:hover, :focus) {
+    border: var(--border-width) solid var(--alert-txt);
+}
+
+.LV_invalid::before {
+    border-color: var(--alert-txt) transparent;
+}
+
+/*>========== WIDGET: AUTO COMPLETE ==========<*/
+
+.autocomplete div.dropdown {
+    background: transparent;
+}
+
+.autocomplete div.dropdown ul {
+    padding: 0.125em;
+    border: 1px solid var(--border4);
+    border-radius: var(--radius-small);
+    box-shadow: var(--shadow);
+    background: var(--bg6);
+    color: var(--txt-main);
+}
+
+.autocomplete .dropdown ul li {
+    margin: 0.125em;
+    padding: 0.25em;
+    border-radius: var(--radius-small);
+}
+
+.autocomplete .dropdown ul li:is(:hover, :focus),
+.autocomplete .dropdown li.selected {
+    background: var(--int-hgl-bg);
+    color: var(--int-hgl-txt);
+}
+
+.required .autocomplete {
+    color: var(--txt-main);
+}
+
+.autocomplete .notice {
+    border: 1px solid var(--border4);
+    border-radius: var(--radius-small);
+    box-shadow: var(--shadow);
+    background: var(--bg6);
+    font-size: 0.95em;
+    color: var(--txt-main);
+}
+
+/*>========== WIDGET: SORTABLE LIST ==========<*/
+
+.ui-sortable li,
+.ui-sortable li:is(:hover, :focus) {
+    border: var(--border-width) solid var(--border1);
+    border-radius: var(--radius-small);
+    box-shadow: none;
+    background: var(--bg4);
+}
+
+.ui-sortable li:hover:not(.ui-sortable ul.actions li:hover),
+.ui-draggable form {
+    box-shadow: var(--shadow);
+}
+
+/*>========== WIDGET: DATEPICKER, TIMEPICKER ==========<*/
+
+#ui-datepicker-div {
+    border: var(--border-width) solid var(--border4);
+    border-radius: var(--radius-mid);
+    box-shadow: var(--shadow);
+    background: var(--bg6);
+}
+
+.ui-datepicker-header a {
+    cursor: pointer;
+}
+
+.ui-datepicker table {
+    background: var(--bg4);
+}
+
+.ui-datepicker td {
+    border-color: var(--border2);
+}
+
+.ui-datepicker tr:hover {
+    background: var(--border1);
+}
+
+.ui-datepicker td:hover {
+    background: var(--bg1)
+}
+
+/*>========== TOOLTIP ==========<*/
+
+.search [role="tooltip"],
+.qtip-content {
+    z-index: 6;
+    padding: 0.429em;
+    border: 1px solid var(--border4);
+    border-radius: var(--radius-small);
+    box-shadow: var(--shadow);
+    background: var(--bg6);
+    color: var(--txt-main);
+}
+
+.qtip-content {
+    border-top-left-radius: 0;
+    font-size: 1.15em;
+}
+
+/*>========== WIDGET: MODAL DIALOGS ==========<*/
+/* popup windows triggered by help symbols, etc. */
+
+#modal {
+    border: var(--border-width) solid var(--border3);
+    border-radius: var(--radius-big);
+    box-shadow: none;
+    background: var(--bg4);
+}
+
+#modal .content {
+    border-bottom: var(--border-width) solid var(--border2);
+}
+
+#modal .footer {
+    align-content: center;
+    overflow: auto;
+    padding-right: 5em;
+    line-height: unset;
+}
+
+#modal.img a {
+    color: var(--txt-alt2);
+}
+
+/*>========== MODE: DYNAMIC ==========<*/
+
+div.dynamic {
+    background: transparent;
+}
+
+/*>========== MODE: SINGLE ==========<*/
+/* simple forms with one text input, e.g. blocked users page */
+
+form.single input[type="submit"] {
+    vertical-align: unset;
+}
+
+/*>========== WIDGET: TOGGLED FORMS ==========<*/
+/* show/hide forms for bookmarks and collections */
+
+.toggled form,
+.dynamic form {
+    margin-bottom: 0.429em;
+    padding: 0.643em;
+    border: var(--border-width) solid var(--border3);
+    border-radius: var(--radius-big);
+    box-shadow: var(--shadow);
+    background-color: var(--bg4);
+    color: var(--txt-main);
+}
+
+.toggled form dd,
+.toggled form dt,
+.dynamic form dd,
+.dynamic form dt {
+    width: 100%;
+    padding: 2px;
+}
+
+.toggled form dl,
+.dynamic form dl {
+    margin: 0;
+    padding: 0.643em 0;
+}
+
+.dynamic form fieldset,
+.toggled form fieldset,
+.toggled form dl,
+.secondary .toggled form,
+.secondary form {
+    overflow: visible;
+}
+
+.toggled form p.footnote,
+.dynamic form p.footnote {
+    margin-bottom: 0.643em;
+    line-height: 1;
+}
+
+/*>========== INTERACTION: POST ==========<*/
+/* works, chapters, comments, news, feedback, challenges */
+
+.post .required .warnings,
+dd.required {
+    font-weight: 400;
+    color: var(--txt-main);
+}
+
+/*============================================================
+>> 08 ACTIONS: BUTTONS
+============================================================*/
+/* subtypes: .action, .navigation, .sorting, .submit, .cancel, .close, .delete, .pagination, .current, .landmark, #skiplinks, input[type="submit"], button */
+
+.actions a,
+.actions a:is(:link, :visited),
+.actions label,
+.actions button,
+.action,
+.action:is(:link, :visited),
+.action a,
+.action a:is(:link, :visited),
+button,
+label.action,
+.actions input,
+input[type="submit"],
+.current,
+.announcement input[type="submit"],
+.announcement .action,
+input::file-selector-button {
+    height: auto;
+    padding: 0.25em 0.75em;
+    border: var(--border-width) solid var(--int-btn-border);
+    border-radius: var(--radius-alt);
+    box-shadow: var(--shadow-buttons);
+    background: var(--int-btn-bg);
+    background-origin: border-box !important;
+    /* ensures gradient backgrounds start from border edge, not padding edge */
+    font-weight: 400;
+    white-space: normal;
+    /* prevent text overflow */
+    color: var(--int-btn-txt);
+}
+
+.resp-sharing-button {
+    border-radius: var(--radius-alt) !important;
+}
+
+label.action,
+.actions label {
+    box-shadow: none;
+}
+
+input[type="submit"] {
+    height: auto;
+    /* required for proper rendering */
+}
+
+/*>========== BUTTON STATES ==========<*/
+
+.actions a:is(:hover, :focus),
+.actions input:is(:hover, :focus),
+.actions button:is(:hover, :focus),
+label.action:is(:hover, :focus),
+.action:is(:hover, :focus),
+.action a:is(:hover, :focus),
+a.action:is(:hover, :focus),
+button:is(:hover, :focus),
+input[type="submit"]:is(:hover, :focus),
+input::file-selector-button:is(:hover, :focus),
+.listbox>.heading .action a:is(:hover, :focus) {
+    border-color: var(--int-btn-hgl-border);
+    box-shadow: none;
+    background: var(--int-btn-hgl-bg);
+    color: var(--int-btn-hgl-txt);
+}
+
+.actions a:active,
+.current,
+a.current,
+a.current:hover,
+a:link.current,
+.current a:visited {
+    border-color: var(--int-current-border);
+    box-shadow: none;
+    background: var(--int-current-bg);
+    color: var(--int-current-txt);
+    cursor: default;
+}
+
+.actions label.disabled,
+#tos_prompt [disabled] {
+    border-color: var(--int-btn-border);
+    background-color: var(--int-disabled);
+    color: var(--txt-main);
+    cursor: not-allowed;
+    filter: opacity(0.75);
+}
+
+.actions .disabled select,
+.actions .disabled select:hover {
+    border-color: var(--int-btn-border);
+    background-color: transparent;
+    color: var(--txt-main);
+}
+
+/* delete tag button styling */
+.delete a,
+span.delete,
+span.delete a {
+    margin: 0;
+    padding: 0;
+    border: none;
+    box-shadow: none;
+    background-color: transparent;
+    color: var(--txt-alt1);
+}
+
+.secondary {
+    position: absolute;
+    border: var(--border-width) solid var(--border3);
+    border-radius: var(--radius-mid);
+    box-shadow: var(--shadow);
+    background-color: var(--bg6);
+    color: var(--main-txt);
+}
+
+/* prevent unsubscribe button overflow */
+.subscriptions-index .edit_subscription>input[type="submit"] {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/*>========== BUTTON SPACING ==========<*/
+
+ul.actions:not(.navigation)>*:not(:first-child),
+fieldset.actions li:not(:first-child) {
+    padding-left: 0.2em;
+}
+
+.heading .actions:not(:last-child),
+.heading .action:not(:last-child),
+.heading span.actions:not(:last-child) {
+    margin-right: 0.5em;
+}
+
+/*>========== BUTTON CONTEXTS ==========<*/
+
+/* secondary menu positioning in works */
+.chapter .secondary,
+.download .secondary {
+    top: unset;
+    right: unset;
+    left: 50%;
+    width: fit-content;
+    transform: translate(-50%, 2.6em);
+}
+
+.dashboard .header .landmark {
+    display: none;
+}
+
+.work.navigation .download,
+.javascript .work.navigation .download .secondary {
+    background: var(--bg6);
+    border: var(--border-width) solid var(--border3);
+    box-shadow: var(--shadow);
+    color: var(--txt-main);
+}
+
+/*>>========== EXPAND, CONTRACT, TO TOP BUTTONS ==========<<*/
+
+.listbox>.heading .action:has(a) {
+    padding: 0;
+    border: none;
+    box-shadow: none;
+    background-color: transparent;
+}
+
+.listbox>.heading .action a {
+    padding-inline: 0.3em;
+    color: inherit;
+}
+
+/*>========== SORT AND VIEW ACTIONS ==========<*/
+/* statistics page */
+
+ul.sorting.actions,
+ul.view.actions {
+    width: 100%;
+    margin-top: 0.429em;
+}
+
+.sorting.actions li:has(h4) {
+    display: none;
+}
+
+.sorting.actions::before {
+    content: "Sort by:";
+}
+
+ul.view.actions::before {
+    content: "View by:";
+}
+
+/*============================================================
+>> 09 ROLES AND STATES
+============================================================*/
+
+.own,
+.draft,
+.draft .wrapper,
+.unread,
+.child,
+.unwrangled,
+.unreviewed {
+    opacity: 1;
+}
+
+.own,
+li.blurb.own {
+    background-color: var(--bg7);
+}
+
+.draft .wrapper {
+    background-color: transparent;
+}
+
+.draft {
+    border: 1.5px dotted var(--border4);
+    border-radius: var(--radius-big);
+    background-color: transparent;
+}
+
+span.unread,
+span.replied,
+span.claimed,
+.actions span.defaulted {
+    border-radius: var(--radius-alt);
+}
+
+span.claimed,
+.actions span.defaulted {
+    border: var(--border-width) solid var(--border4);
+    background-color: var(--int-current-bg);
+    color: var(--txt-main);
+}
+
+.draggable,
+.droppable,
+span.requested {
+    color: var(--alert-txt);
+}
+
+.nominations .unreviewed,
+.unreviewed.symbol {
+    border: var(--border-width) solid var(--caution-txt);
+    background-color: var(--caution-bg);
+    color: var(--caution-txt);
+}
+
+span.replied,
+.nominations .approved,
+.approved.symbol {
+    border: var(--border-width) solid var(--success-txt);
+    background-color: var(--success-bg);
+    color: var(--success-txt);
+}
+
+span.unread,
+.nominations .rejected,
+.rejected.symbol {
+    border: var(--border-width) solid var(--alert-txt);
+    background-color: var(--alert-bg);
+    color: var(--alert-txt);
+}
+
+span.offered {
+    color: var(--success-txt);
+}
+
+span.offered.requested {
+    color: var(--caution-txt);
+}
+
+/*>========== ACCORDION WIDGET ARROWS ==========<*/
+
+.collapsed::after {
+    display: inline-block;
+    margin: 0 0 0.2em 0.5em;
+    padding: 0.2em;
+    border-width: 0 0.15em 0.15em 0;
+    border-style: solid;
+    content: "";
+    transform: rotate(45deg);
+}
+
+.expanded::after {
+    display: inline-block;
+    border-width: 0 0.15em 0.15em 0;
+    border-style: solid;
+    margin: 0 0 -0.05em 0.5em;
+    padding: 0.2em;
+    content: "";
+    transform: rotate(-135deg);
+}
+
+/*>========== CONTEXTS ==========<*/
+
+.comment span.unreviewed {
+    background-color: var(--bg5);
+}
+
+/*============================================================
+>> 10 TYPES AND GROUPS OF DATA
+============================================================*/
+
+/*>========== TYPE: TAGS ==========<*/
+
+ul .tags.commas {
+    text-align: left;
+}
+
+.commas:has(.tag, a[data-remote="true"]) li::after {
+    content: " ";
+}
+
+.commas:has(.tag) li {
+    padding: 0;
+}
+
+/*>>========== BASE TAG APPEARANCE ==========<<*/
+
+/* exclude splash page favorite tags */
+a.tag:not(.fandom.index.group a.tag):not(h2.heading a.tag):not(.splash .favorite a.tag):not(.splash .favorite li:nth-of-type(2n+1) a.tag),
+.tags a[data-remote="true"],
+.unwrangled,
+.added.tag {
+    display: inline-flex;
+    text-decoration: none;
+    padding: 0.15em 0.5em;
+    margin: 0.2em 0;
+    line-height: 1.25;
+    border: 1px solid var(--tag-border);
+    border-radius: var(--radius-tag);
+    color: var(--tag-default-txt);
+    font-size: 0.9em;
+    position: relative;
+    z-index: 1;
+    transition: all 0.2s ease;
+    background-color: var(--tag-default-bg);
+}
+
+/*>>========== TAG PSEUDO-ELEMENT BACKGROUND ==========<<*/
+
+a.tag:not(.fandom.index.group a.tag, h2.heading a.tag, .splash .favorite a.tag)::before,
+.tags a[data-remote="true"]::before,
+.added.tag::before,
+h5.fandoms.heading a.tag::before,
+dd.fandom.tags a::before,
+[class^=warning] a.tag::before,
+[class^=relationship] a.tag::before,
+[class^=character] a.tag::before,
+.unwrangled::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: inherit;
+    border-radius: inherit;
+    z-index: -1;
+    transition: all 0.2s ease;
+}
+
+/*>>========== TAG HOVER EFFECTS ==========<<*/
+
+a.tag:not(.fandom.index.group a.tag):not(h2.heading a.tag):not(.splash .favorite a.tag):not(.splash .favorite li:nth-of-type(2n+1) a.tag):hover::before,
+.added.tag:hover::before,
+.unwrangled:hover::before,
+h5.fandoms.heading a.tag:hover::before,
+dd.fandom.tags a:hover::before,
+[class^=warning] a.tag:hover::before,
+[class^=relationship] a.tag:hover::before,
+[class^=character] a.tag:hover::before,
+.tags a[data-remote="true"]:hover::before {
+    filter: var(--tag-filter);
+    box-shadow: var(--tag-hsl-shadow);
+}
+
+a.tag:not(.fandom.index.group a.tag):not(h2.heading a.tag):not(.splash .favorite a.tag):not(.splash .favorite li:nth-of-type(2n+1) a.tag):hover,
+.added.tag:hover,
+.unwrangled:hover,
+.tags a[data-remote="true"]:hover,
+h5.fandoms.heading a.tag:hover,
+dd.fandom.tags a:hover,
+[class^=warning] a.tag:hover,
+[class^=relationship] a.tag:hover,
+[class^=character] a.tag:hover {
+    color: var(--tag-hgl-txt) !important;
+    transform: translateY(-1px);
+}
+
+/*>>========== FANDOM TAG FORMATTING ==========<<*/
+
+h5.fandoms.heading {
+    letter-spacing: -10px;
+    color: transparent;
+    font-weight: 400;
+}
+
+h5.fandoms.heading a.tag,
+dd.fandom.tags a {
+    letter-spacing: 0;
+    margin-right: 0.35em !important;
+    background-color: var(--tag-fandom-bg) !important;
+    color: var(--tag-fandom-txt) !important;
+}
+
+h2.heading a.tag {
+    line-height: inherit;
+}
+
+h2.heading a.tag:hover {
+    background: none;
+    color: var(--link);
+}
+
+a.tag:hover {
+    background: none;
+}
+
+/*>>========== TAG TYPE VARIANTS ==========<<*/
+
+[class^=warning] a.tag {
+    font-weight: 400;
+    background-color: var(--tag-warning-bg) !important;
+    color: var(--tag-warning-txt) !important;
+}
+
+[class^=relationship] a.tag {
+    background-color: var(--tag-ship-bg) !important;
+    color: var(--tag-ship-txt) !important;
+}
+
+[class^=character] a.tag {
+    background-color: var(--tag-character-bg) !important;
+    color: var(--tag-character-txt) !important;
+}
+
+[class^=freeform] a.tag {
+    background-color: var(--tag-freeform-bg) !important;
+    color: var(--tag-freeform-txt) !important;
+}
+
+.unwrangled {
+    border: 1px solid var(--tag-border);
+}
+
+/*>>========== ADDED TAGS FORMATTING ==========<<*/
+
+.autocomplete li.added,
+.post .meta dd ul li.added {
+    display: inline-flex;
+    align-content: center;
+    align-items: center;
+    column-gap: 0.4em;
+    margin: 0 0.4em 0.4em 0;
+}
+
+.filters li.added {
+    display: flex;
+    justify-content: space-between;
+    margin-right: 0;
+}
+
+.added.tag {
+    position: relative;
+    background-color: var(--tag-default-bg);
+}
+
+/*>========== GROUP: TAG CLOUDS ==========<*/
+
+a.cloud1 {
+    font-size: 0.9em !important;
+}
+
+a.cloud2 {
+    font-size: 1em !important;
+}
+
+a.cloud3 {
+    font-size: 1.1em !important;
+}
+
+a.cloud4 {
+    font-size: 1.2em !important;
+}
+
+a.cloud5 {
+    font-size: 1.3em !important;
+}
+
+a.cloud6 {
+    font-size: 1.4em !important;
+}
+
+a.cloud7 {
+    font-size: 1.5em !important;
+}
+
+a.cloud8 {
+    font-size: 1.6em !important;
+}
+
+/*>========== GROUPS ==========<*/
+
+.wrapper,
+#outer.wrapper,
+#inner.wrapper {
+    box-shadow: none;
+}
+
+/*>>========== DEFINITION LISTS ==========<<*/
+/* subscriptions, related works, edit multiple works */
+
+dl.index dt,
+dl.index dd {
+    padding: 0.643em;
+    border: var(--border-width) solid var(--border2);
+    background-color: var(--bg2);
+    box-shadow: var(--shadow-box1);
+}
+
+dl.index dt {
+    background-color: var(--bg7);
+    border-radius: var(--radius-mid) var(--radius-mid) 0 0;
+}
+
+dl.index dt a:first-of-type {
+    font-weight: var(--txt-bold);
+}
+
+dl.index dd {
+    margin-inline: 0;
+    border-top: 0;
+    border-radius: 0 0 var(--radius-mid) var(--radius-mid);
+}
+
+/*>========== TYPES ==========<*/
+
+.actions .reindex a {
+    border-bottom: 3px solid var(--alert-txt);
+}
+
+/* display series on separate lines in blurbs */
+.blurb ul.series li:not(:first-of-type) {
+    display: block;
+    margin-block: 0.5em 0;
+}
+
+span.series .divider {
+    color: var(--border2);
+}
+
+/* display series on separate lines in meta box */
+span.series:not(:first-of-type) {
+    display: block;
+    margin-top: 0.5em;
+}
+
+/* hide comma between series in meta box - workaround solution */
+dd.series {
+    color: transparent;
+}
+
+/* restore text visibility after hiding comma */
+dd.series span {
+    color: var(--txt-main);
+}
+
+.icon a {
+    border: 0 !important;
+}
+
+.statistics .index li:nth-of-type(even) {
+    border-radius: var(--radius-small);
+    background-color: var(--bg7);
+}
+
+/*>>========== CONCISE INDEX LAYOUT FIX ==========<<*/
+/* example: Edit Multiple Works page */
+
+.concise.index {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 1.5%;
+    box-sizing: border-box;
+    width: unset;
+}
+
+/* responsive layout without media queries */
+.concise li {
+    flex: 1 0 18.5rem;
+    width: unset;
+    min-width: 49%;
+    margin-right: 0;
+}
+
+.concise li label {
+    margin-right: 0.5em !important;
+}
+
+/*============================================================
+>> 11 GROUP: LISTBOX
+============================================================*/
+
+.listbox,
+fieldset fieldset.listbox {
+    clear: right;
+    overflow: hidden;
+    margin: 0.643em auto 1em auto;
+    padding: 0;
+    border: var(--border-width) solid var(--border2);
+    border-radius: var(--radius-big);
+    box-shadow: var(--shadow-box2);
+    background-color: var(--bg5);
+}
+
+.listbox>.listbox {
+    margin: 0.649em;
+}
+
+.listbox>.heading {
+    margin: 0;
+    padding: 0.5em;
+    color: var(--txt-main);
+}
+
+.listbox>.heading a:not(.action a, .actions a),
+.listbox>.heading a:visited:not(.action a:visited, .actions a:visited) {
+    color: var(--txt-main);
+}
+
+.listbox .index {
+    float: none;
+    clear: right;
+    box-sizing: border-box;
+    width: auto;
+    margin: 0;
+    padding: 0.643em;
+    border-top: var(--border-width) solid var(--border2);
+    box-shadow: var(--shadow-box1);
+    background-color: var(--bg5);
+}
+
+/* conditional bottom border */
+.listbox .index:has(+ .actions[role="navigation"], + h4, + .actions #expand-fandoms) {
+    border-bottom: var(--border-width) solid var(--border2);
+    box-shadow: none;
+}
+
+.alphabet .listbox li,
+.media .listbox {
+    margin-inline: 0;
+}
+
+/*>========== LISTBOX BUTTON PLACEMENT ==========<*/
+
+#user-fandoms.listbox .actions,
+.listbox>.actions.pagination {
+    margin: 0.643em;
+    padding: 0;
+}
+
+.listbox>.actions[role="navigation"]:not(.pagination) {
+    margin: 0;
+    padding: 0;
+}
+
+.listbox>p.actions {
+    margin: 0;
+}
+
+.listbox>.actions[role="navigation"]:not(.pagination) a {
+    margin: 0.643em 0.429em;
+}
+
+/*>========== TAGSET MEDIA LISTBOXES ==========<*/
+
+.tagset .media .listbox {
+    box-sizing: border-box;
+    width: 49.5%;
+    margin-right: 1%;
+    border-color: var(--border2);
+    background-color: var(--bg4);
+}
+
+.tagset .media .listbox:nth-child(even) {
+    margin-right: 0;
+}
+
+/*>========== INTERACTION CONTEXT ==========<*/
+
+.listbox .many {
+    max-height: 35vh;
+}
+
+/*============================================================
+>> 12 GROUP: META
+============================================================*/
+
+dl.meta {
+    border: var(--border-width) solid var(--border4);
+    border-radius: var(--radius-big);
+    background-color: var(--bg5);
+    box-shadow: var(--shadow-box1);
+}
+
+.meta dt {
+    box-sizing: border-box;
+    width: 26.5%;
+    min-width: unset;
+}
+
+.meta dd {
+    box-sizing: border-box;
+    width: 73.5%;
+}
+
+/* adjust meta tag positioning */
+dl.meta dd ul {
+    margin-top: -0.15em;
+}
+
+.meta dd ul li {
+    padding-inline-end: 0;
+}
+
+/*>========== CONTEXTS ==========<*/
+
+.news dl.meta {
+    box-shadow: none;
+    background-color: transparent;
+}
+
+/*============================================================
+>> 13 GROUP: BLURB
+============================================================*/
+
+li.blurb,
+.blurb .blurb,
+.region.own+.dashboard li.blurb.own {
+    padding: 0.75em 0.75em 0.643em;
+    background-color: var(--bg5) !important;
+    box-shadow: none;
+    overflow-wrap: anywhere;
+    word-break: normal;
+}
+
+li.blurb,
+li.picture.blurb,
+.listbox li.blurb,
+.toggled.blurb,
+.region.own+.dashboard li.blurb.own {
+    border: var(--border-width) solid var(--border3);
+    border-radius: var(--radius-big);
+    box-shadow: var(--shadow-box1);
+}
+
+.blurb .header h4.heading a:first-child {
+    font-weight: var(--txt-bold);
+}
+
+/* resize restricted work lock icon */
+.blurb .header img {
+    width: 0.8em;
+    height: 0.8em;
+    vertical-align: baseline;
+}
+
+/* date posted positioning */
+.blurb .datetime {
+    top: 0;
+    /* required for bookmarks */
+    padding: 0;
+    /* required for own mystery blurbs */
+}
+
+/*>========== BLURB HEADER LAYOUT ==========<*/
+
+.blurb .header:has(ul.required-tags) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0;
+}
+
+.blurb .header .heading {
+    margin: 0;
+}
+
+/* work title and author */
+.blurb .header h4.heading {
+    order: 1;
+    flex: 1;
+    box-sizing: border-box;
+    padding-right: 11ch;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+/* reposition fandom tags below title */
+.blurb h5.fandoms.heading {
+    order: 4;
+    margin-top: 0.5em;
+}
+
+/* hide empty space on prompts without fandoms */
+.blurb h5.fandoms.heading:not(:has(a.tag)) {
+    height: 0;
+}
+
+/* reposition content rating icons */
+.blurb .header ul.required-tags {
+    order: 3;
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 4px;
+    position: unset;
+    width: 100%;
+    margin-top: 0.429em;
+    padding-top: 0.643em;
+    border-top: var(--border-width) solid var(--border2);
+}
+
+/* reset positioning for content icons */
+.blurb ul.required-tags,
+.blurb ul.required-tags li,
+.blurb ul.required-tags li+li+li,
+.blurb ul.required-tags li+li+li+li,
+.blurb ul.required-tags li a {
+    position: unset;
+    width: unset;
+    height: unset;
+    margin: 0;
+    padding: 0;
+}
+
+.blurb .header p.notice {
+    order: 6;
+    width: 100%;
+    margin: 0.5em 0 0 0;
+}
+
+/*>========== MODIFICATION: PICTURE ==========<*/
+/* indices with icon pictures: collections, users, skins, mystery blurbs */
+
+.picture.blurb:has(.icon)>.header,
+.mystery.blurb:has(.icon)>.header {
+    min-height: 45px;
+    margin: 0;
+    padding-bottom: 0.75em;
+    border-bottom: var(--border-width) solid var(--border2);
+}
+
+/* remove border for user blurbs without descriptions or buttons */
+.user.pseud.picture.blurb:not(:has(blockquote, ul.actions))>.header {
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+.picture .icon img,
+.index .picture .icon {
+    width: 45px;
+    height: 45px;
+    border-radius: var(--icon-index-radius);
+}
+
+/* create space for picture blurb icon */
+.blurb:has(.icon)>.header h4,
+.blurb:has(.icon)>.header h5,
+.blurb>.header>.mods.commas {
+    margin-left: 45px;
+    padding-left: 0.75em;
+}
+
+/*>========== VARIOUS MODIFICATIONS ==========<*/
+
+/* manage collection items pages */
+.item dl.visibility {
+    background-color: var(--bg4);
+}
+
+/*>>========== MODIFICATION: BOOKMARK ==========<<*/
+
+.bookmarks-index .bookmark.index {
+    overflow: visible;
+}
+
+.bookmark .blurb h4.heading {
+    padding-right: 14ch;
+}
+
+.bookmark p.status {
+    top: 5px;
+    right: 0.75em;
+    /* matches blurb padding */
+    width: 25px;
+    margin: 0;
+}
+
+/* create bookmark ribbon using pseudo-element */
+.bookmark .blurb p.status a:not(.short a)::before {
+    position: absolute;
+    top: -5px;
+    z-index: -1;
+    box-sizing: border-box;
+    height: 40px;
+    border-inline: 14px solid;
+    border-bottom: 5.5px solid transparent;
+    border-radius: 0 0 0.2rem 0.2rem;
+    content: "";
+}
+
+/* hide bookmark count icon - available in stats */
+.bookmark span.count {
+    display: none;
+}
+
+.bookmark .count a {
+    color: var(--txt-main);
+}
+
+.bookmark .count a:is(:hover, :focus) {
+    color: var(--link-hgl);
+}
+
+/* position date next to bookmark icon */
+.bookmark p.status:has(span.text)+.header .datetime {
+    margin-right: 33px;
+}
+
+.bookmark .user {
+    box-sizing: border-box;
+    padding: 0.643em;
+    border: var(--border-width) solid var(--border2);
+    border-radius: var(--radius-big);
+    box-shadow: var(--shadow-box2);
+    overflow-wrap: anywhere;
+    word-break: normal;
+}
+
+.bookmark .user .meta {
+    margin: 0;
+    font-size: inherit;
+    line-height: inherit;
+}
+
+.bookmark .user .byline {
+    margin: 0 6em 0 0;
+    font-weight: var(--txt-bold);
+}
+
+.bookmark .module:has(.meta)>.byline,
+.bookmark .short:has(.meta)>.header {
+    margin-bottom: 0.649em;
+}
+
+.bookmark div.user .datetime {
+    top: 0.7em;
+    right: 0.75em;
+}
+
+/* bookmark overview pages - who bookmarked a work */
+.bookmark .short.blurb .header {
+    display: flex;
+    column-gap: 0.643em;
+    min-height: 25px;
+}
+
+.bookmark .short.blurb:has(.meta) .header {
+    margin-bottom: 0.429em;
+}
+
+.bookmark .short.blurb .header h5 {
+    order: 2;
+    flex: 1;
+    margin: 0;
+}
+
+.bookmark .short.blurb .header .datetime {
+    order: 3;
+    position: unset;
+    min-width: 11ch;
+    margin-left: auto;
+}
+
+.bookmark .short.blurb .header .status {
+    order: 1;
+    position: unset;
+}
+
+/*>>========== MODIFICATION: READING ==========<<*/
+
+/* last visited date in History */
+.reading h4.viewed {
+    margin-inline: -0.75em;
+    padding: 0.429em;
+    padding-inline: 0.75em;
+    background: linear-gradient(to right, var(--bg4) 25%, transparent);
+    font-size: 1em;
+}
+
+.reading .deleted h4.viewed {
+    background-color: transparent;
+}
+
+/* hide empty space before and after prompt summary */
+.prompt .blurb h6 {
+    display: none;
+}
+
+/*============================================================
+>> 14 GROUP: PREFACE
+============================================================*/
+
+div.preface {
+    margin-inline: 5%;
+    padding-inline: 0;
+}
+
+.chapter .preface {
+    border-top: 1.5px solid;
+}
+
+.preface h2.title {
+    font-weight: var(--txt-bold);
+}
+
+.preface h3 {
+    margin-bottom: 1em;
+    border-bottom: 1.5px solid var(--border4);
+}
+
+div.afterword {
+    margin-bottom: 1em;
+}
+
+/*============================================================
+>> 15 GROUP: COMMENTS
+============================================================*/
+
+/* remove borders */
+div.comment,
+.comment div.icon {
+    border: none;
+}
+
+.comment fieldset {
+    border: 1px solid var(--border1);
+    background-color: var(--bg5);
+    box-shadow: var(--shadow-box1);
+}
+
+li.comment:not(:has(.edit_comment)) {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    padding: 0.75em 0.75em 0.429em;
+    border: var(--border-width) solid var(--border3);
+    border-radius: var(--radius-big);
+    background-color: var(--bg5);
+    box-shadow: var(--shadow-box1);
+}
+
+.comment div.icon,
+.comment .icon,
+.abbreviated .icon {
+    order: 1;
+    width: 45px;
+    height: 45px;
+    margin: 0;
+    border-radius: var(--icon-primary-radius);
+}
+
+.comment h4.byline {
+    align-content: center;
+    order: 2;
+    flex-grow: 1;
+    flex-basis: 0;
+    margin: 0;
+    padding: 0 0 0 0.642em;
+    background-color: transparent;
+    font-size: 1em;
+    line-height: 1.25;
+}
+
+.comment .userstuff,
+.splash .comment .userstuff {
+    order: 3;
+    box-sizing: border-box;
+    width: 100%;
+    min-height: unset;
+    margin: 0;
+    padding: 0.643em 0;
+}
+
+.comment .posted {
+    width: 100%;
+    font-size: 1em;
+}
+
+.comment .edited {
+    order: 4;
+    width: 100%;
+    margin: 1em 0;
+}
+
+.comment ul.actions {
+    order: 5;
+}
+
+/* delete confirmation */
+.comment div[id^="delete_comment"] {
+    order: 6;
+    width: 100%;
+}
+
+/* reply form */
+.comment div:has(.post.comment) {
+    order: 7;
+    width: 100%;
+    margin-top: 0.429em;
+}
+
+li.comment:has(.edit_comment) {
+    border: none;
+}
+
+/* limit image height in comments */
+.comment img {
+    max-height: 500px;
+}
+
+.thread .thread {
+    margin-left: 3%;
+}
+
+/*============================================================
+>> 16 ZONE: SYSTEM
+============================================================*/
+
+.system .userstuff {
+    max-width: unset;
+}
+
+/*>========== ZONE: SYSTEM: SPLASH PAGE ==========<*/
+
+.splash {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    box-sizing: border-box;
+    max-width: unset;
+    margin: 0;
+}
+
+.splash>.module h3 {
+    border-bottom: 1.5px solid var(--border4);
+    font-weight: var(--txt-bold);
+    font-size: 1.4em;
+    color: var(--txt-main);
+}
+
+/* modules: favorite tags, news, unread messages */
+.splash>.module,
+.logged-in .splash>.module {
+    box-sizing: border-box;
+    margin-inline: 0;
+}
+
+.logged-in .splash>.module {
+    width: 49%;
+}
+
+/* hide social splash */
+.splash .intro,
+.splash .social {
+    display: none;
+}
+
+/*>>========== MODULE: FIND YOUR FAVORITES ==========<<*/
+
+.splash .browse li a::before {
+    color: var(--txt-main);
+}
+
+/*>>========== MODULE: FAVORITE TAGS ==========<<*/
+
+.splash .favorite a.tag {
+    border: none;
+    border-radius: var(--radius-alt);
+    background-color: transparent;
+    color: var(--taxt-main);
+}
+
+.splash .favorite li:nth-of-type(odd) a.tag {
+    background-color: var(--tag-splash-bg);
+}
+
+.splash .favorite a.tag:hover,
+.splash .favorite li:nth-of-type(odd) a.tag:hover {
+    background: var(--int-hgl-bg);
+    color: var(--int-hgl-txt);
+    font-weight: var(--txt-semibold) !important;
+}
+
+/*>>========== MODULE: NEWS ==========<<*/
+
+.splash .news h4 {
+    font-weight: var(--txt-bold);
+    font-size: 1em;
+}
+
+.splash .news li {
+    border-bottom: 1.5px solid var(--border1);
+}
+
+.splash .news li:last-of-type {
+    border-bottom: none;
+}
+
+/*>========== ZONE: SYSTEM: FAQS ==========<*/
+
+.faq .categories h3 {
+    border-color: var(--border4);
+}
+
+.faq .example,
+.guideline .example {
+    border: var(--border-width) solid var(--notice-txt);
+}
+
+/*>========== ZONE: SYSTEM: TOS ==========<*/
+/* Terms of Service, TOS FAQ, TOS popup - view by logging out, deleting cookies, and visiting random work */
+
+.tos .userstuff nav.toc>details>summary {
+    border-color: inherit;
+}
+
+#tos_prompt {
+    background: var(--bg1);
+}
+
+/*>========== ZONE: SYSTEM: PROXY NOTICE ==========<*/
+
+#proxy-notice {
+    border-bottom: var(--border-width) solid var(--alert-txt);
+    background: var(--alert-bg);
+}
+
+/*============================================================
+>> 17 ZONE: HOME
+============================================================*/
+/* home for: user, collections/challenges, tags, admin comms - this zone always shows a dashboard styled in region-dashboard and its parent is #main.dashboard */
+
+.home .primary.header.module {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 1em;
+}
+
+.home .header h2 {
+    width: 100%;
+    height: fit-content;
+    margin-block: 0.429em 0;
+    border-bottom: 1.5px solid var(--border1);
+}
+
+.home .header ul.actions {
+    width: 100%;
+    margin-left: 100px;
+    text-align: right;
+}
+
+.home .header .userstuff {
+    margin: 0;
+    padding-top: 2em;
+}
+
+.home .header .type {
+    margin: 0 0 0.643em 0;
+}
+
+.home .header dl.stats {
+    width: 100%;
+    margin-left: auto;
+}
+
+.primary .icon {
+    border-radius: var(--icon-primary-radius);
+}
+
+/* scrollable CSS code boxes on skins pages */
+.skins.home .css.module blockquote {
+    overflow: auto;
+    max-height: 60vh;
+    margin-inline: 0;
+    padding: 0.643em;
+    border: var(--border-width) solid var(--border2);
+    border-radius: var(--radius-big);
+    background-color: var(--bg5);
+    box-shadow: var(--shadow-box1);
+}
+
+/*============================================================
+>> 18 ZONE: SEARCH/BROWSE
+============================================================*/
+
+/*>========== INDEX PAGES WITH FILTERS ==========<*/
+
+/* remove spacing when filters aren't actually present */
+.filtered .index:not(:has(+ form.filters)) {
+    width: 100%;
+}
+
+/*>========== INTERACTION: SEARCH ==========<*/
+
+form.search input[type="text"] {
+    border: var(--border-width) solid var(--border2);
+    border-radius: var(--radius-small);
+    background-color: var(--int-bg);
+    background-image: none;
+    color: var(--txt-main);
+}
+
+li.search fieldset {
+    padding: 0 0.429em;
+    font-size: 1em;
+}
+
+/*>========== INTERACTION: FILTER ==========<*/
+
+/* sticky filters sidebar */
+form.filters {
+    position: sticky;
+    top: 2vh;
+    overflow-x: visible;
+    overflow-y: scroll;
+    overflow-wrap: anywhere;
+    box-sizing: border-box;
+    width: 25%;
+    max-height: 96vh;
+    border-radius: var(--radius-small);
+    margin-block: 0.643em !important;
+    /* matches blurb spacing */
+    padding: 0 0.643em 0 2%;
+    /* extra space on right for scrollbar */
+    scrollbar-color: var(--border4) transparent;
+}
+
+/* hide scrollbar except on hover */
+form.filters:not(:hover) {
+    scrollbar-color: transparent transparent;
+}
+
+/* prevent filter overlap with pagination buttons */
+.region:has(ol.pagination.actions) form.filters {
+    margin-bottom: 4.5em !important;
+}
+
+.filters fieldset {
+    overflow: visible;
+    margin: 0;
+    padding: 0;
+    border: none;
+    background: transparent;
+}
+
+.filters fieldset li {
+    margin: 0;
+    padding: 0;
+}
+
+.filters fieldset,
+fieldset>dl {
+    box-shadow: none !important;
+}
+
+.filters dt.heading {
+    margin-block: 1.5em 0.5em !important;
+}
+
+.filters dt.more.heading {
+    margin-bottom: 0 !important;
+}
+
+form.filters dl,
+form.filters dt,
+form.filters dl dl {
+    overflow: visible;
+    margin: 0;
+    border: none;
+}
+
+.filters dd .expandable,
+#inbox-filters dd ul {
+    padding: 0 0 0.429em 1em;
+}
+
+.filters .submit,
+.filters .group {
+    width: 100%;
+    text-align: unset;
+}
+
+.filters .submit:first-of-type:not(:only-of-type) input {
+    margin-top: 0;
+}
+
+.filters .autocomplete input,
+.filters select {
+    min-width: unset;
+}
+
+/* bold heading when filters are active */
+.filters dt:has(+ dd input:checked) .expander,
+.filters dt.words:has(+ dd input[value]) .expander,
+.filters dt.dates:has(+ dd input[value]) .expander {
+    font-weight: var(--txt-bold);
+}
+
+.filters .expander,
+.filters .expanded .expander {
+    padding-left: 1em;
+    box-shadow: none;
+    background-image: none;
+    /* remove default expander arrow */
+    color: var(--txt-main);
+}
+
+/* custom expander arrow using pseudo-element */
+.filters .expander::before {
+    position: absolute;
+    top: 0.6em;
+    left: 0.2em;
+    border-block: 0.3em solid transparent;
+    border-left: 0.5em solid;
+    content: "";
+}
+
+/* rotate arrow when expanded */
+.filters .expanded .expander::before {
+    transform: rotate(90deg);
+}
+
+.filters .group dt.search,
+.filters .group dt.bookmarker,
+.filters dd {
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+.filters dt:not(.filter-toggle, .filters .range dt),
+.filters .more dt.search,
+.filters dt.autocomplete.search {
+    margin-block: 1em 0.25em;
+}
+
+.filters .warning {
+    font-weight: 400;
+}
+
+.filters ul li>label {
+    padding-block: 0.25em !important;
+}
+
+/*>>========== RANGE FILTERS LAYOUT ==========<<*/
+/* wordcount, date updated */
+
+.filters dl.range {
+    display: grid;
+    grid-template-columns: auto auto;
+    column-gap: 0.5em;
+    align-items: baseline;
+}
+
+.filters dl.range dt {
+    grid-column: 1;
+}
+
+.filters dl.range dd {
+    grid-column: 2;
+}
+
+/*>>========== JAVASCRIPT CONTEXT ==========<<*/
+/* relevant for mobile but kept here for consistency */
+
+.javascript {
+    background: var(--bg4);
+}
+
+/*============================================================
+>> 19 ZONE: TAG PAGES, TAGSETS, AND TAG WRANGLING
+============================================================*/
+
+/* scrollable tag listboxes */
+.tag.home.profile .listbox>.tags.index {
+    overflow: auto;
+    max-height: 60vh;
+}
+
+.tree.index ul {
+    margin-left: 0.643em;
+    padding-block: 0;
+    padding-right: 0;
+    border-top: 0;
+    border-left: var(--border-width) solid var(--border2);
+    background-color: transparent;
+}
+
+/*>========== TAGSETS ==========<*/
+
+.tagset .tags li.listbox {
+    padding: 0;
+}
+
+dl.nomination {
+    border-radius: 0;
+}
+
+.nomination dt {
+    background-color: transparent;
+}
+
+.nomination dd.autocomplete ul,
+.nomination dd.autocomplete li {
+    margin: 0;
+}
+
+/*============================================================
+>> 21 USERSTUFF
+============================================================*/
+/* userstuff = content inputted by user into textarea */
+
+.userstuff p,
+.userstuff details {
+    margin: 1em auto;
+    /* slightly reduced spacing between paragraphs */
+}
+
+.userstuff li,
+.userstuff ol ul li {
+    margin-block: 0.5em;
+    /* reduced line height between list items */
+}
+
+/*>========== BIO ON PROFILE PAGE ==========<*/
+
+.bio.module {
+    margin-block: 0.5em;
+}
+
+.bio.module .userstuff {
+    margin-inline: 0;
+}
+
+/*>========== HEADINGS ==========<*/
+
+.userstuff h2 {
+    color: var(--txt-main);
+}
+
+.userstuff h3 {
+    border-color: var(--border4);
+}
+
+/*>========== QUOTES AND STRESSES ==========<*/
+
+.userstuff blockquote,
+.splash .userstuff blockquote {
+    margin-inline-start: 0.75em;
+    padding: 0.75em;
+    border-inline-start: 2px solid var(--border1);
+}
+
+.userstuff blockquote blockquote {
+    padding: 0.25em;
+    border: none;
+}
+
+.userstuff hr {
+    margin-block: 2em;
+    border: var(--border-width) solid var(--border2);
+}
+
+/*>========== WORK MARGINS AND TEXT ==========<*/
+
+#workskin {
+    max-width: 70em;
+    /* slightly narrower than default */
+    margin: 0 auto;
+    padding: 0 2%;
+    font-size: var(--txt-size-work);
+    /* adjust work font size here */
+}
+
+/*============================================================
+>> 22 SYSTEM MESSAGES
+============================================================*/
+
+.footnote {
+    font-size: 0.9em;
+    text-align: right;
+}
+
+/* base styling for all messages */
+.notice,
+.comment_notice,
+.kudos_notice,
+ul.notes,
+.caution,
+.error,
+div.error,
+.comment_error,
+.kudos_error,
+.alert.flash,
+form .notice,
+form ul.notes {
+    margin-inline: 0;
+    padding: 0.429em;
+    border: var(--border-width) solid;
+    border-left: 5px solid;
+    border-radius: var(--radius-mid);
+    box-shadow: none;
+    line-height: 1.2em;
+}
+
+ul.notes,
+form ul.notes,
+.error ul,
+.notice ul,
+.caution ul,
+.alert.flash ul {
+    padding: 0.25em 2em;
+}
+
+ul.notes li,
+.error ul li,
+.notice ul li,
+.caution ul li,
+.alert.flash ul li {
+    padding-left: 0.5em;
+}
+
+.notice,
+.comment_notice,
+.kudos_notice,
+ul.notes {
+    border-color: currentColor;
+    background-color: var(--notice-bg);
+    color: var(--notice-txt);
+}
+
+.caution {
+    border-color: currentColor;
+    background-color: var(--caution-bg);
+    color: var(--caution-txt);
+}
+
+.error,
+div.error,
+.comment_error,
+.kudos_error,
+.alert.flash,
+.required.notice {
+    border-color: currentColor;
+    background-color: var(--alert-bg);
+    color: var(--alert-txt);
+}
+
+.required {
+    color: var(--alert-txt);
+}
+
+.alert a:not(.action),
+.alert a:not(.action):visited,
+.notice a:not(.action),
+.notice a:not(.action):visited,
+.error a:not(.action),
+.error a:not(.action):visited,
+.announcement .userstuff a,
+.announcement .userstuff a:visited {
+    border-bottom: 1px solid !important;
+    color: inherit !important;
+}
+
+.alert a:not(.action):is(:hover, :focus),
+.notice a:not(.action):is(:hover, :focus),
+.error a:not(.action):is(:hover, :focus),
+.announcement .userstuff a:is(:hover, :focus),
+.announcement input[type="submit"]:is(:hover, :focus),
+.announcement .action:is(:hover, :focus) {
+    filter: opacity(60%);
+}
+
+/*>========== ADMIN ANNOUNCEMENT BANNERS ==========<*/
+
+.announcement {
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    z-index: 1;
+    width: 96%;
+    max-width: 96%;
+    margin-top: 1%;
+    margin-right: 2%;
+    margin-bottom: 0;
+    margin-left: 2%;
+    padding: 1em 0 1em 2em;
+    border-bottom: var(--border-width) solid var(--alert-txt);
+    background: var(--alert-bg);
+}
+
+.announcement .userstuff {
+    margin: 0;
+    padding: 0;
+    border: none;
+    background: transparent;
+    font-size: 0.95em;
+    word-break: normal;
+    color: var(--alert-txt);
+}
+
+.announcement .userstuff p {
+    margin: 0;
+}
+
+.announcement p.submit {
+    position: unset;
+    z-index: 3;
+    width: 2em;
+    text-align: center;
+}
+
+.announcement input[type="submit"],
+.announcement .action {
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+    box-shadow: none;
+    background: transparent !important;
+    font-size: 0.95em;
+    line-height: 1;
+    color: var(--alert-txt);
+}
+
+.announcement.event {
+    background: transparent;
+    border: none;
+}
+
+.event .userstuff {
+    background: transparent;
+    color: var(--txt-main);
+}
+
+.announcement.alert {
+    background: var(--alert-bg);
+}
+
+.alert .userstuff {
+    background: transparent;
+    color: var(--alert-txt);
+}
+
+.event .userstuff a:hover {
+    color: var(--link) !important;
+}
+
+/*>========== THERMOMETER WIDGET ==========<*/
+/* JavaScript widget for fundraising drives */
+
+.announcement .thermometer-content {
+    width: 50%;
+    height: 1.5em;
+    margin-top: 1em;
+}
+
+.announcement .thermometer .track {
+    margin: 0.5em 0;
+    border: 1.5px solid var(--border1);
+    background: var(--bg5);
+    border-radius: 9999px !important;
+    overflow: hidden;
+}
+
+.announcement .thermometer .goal .amount {
+    padding-left: 0.5em;
+}
+
+.announcement .thermometer .progress .amount {
+    top: 0;
+    padding-right: 0.75em;
+    left: unset;
+    color: var(--txt-alt1);
+}
+
+.announcement .thermometer .track div.progress {
+    background-image: var(--int-btn-hgl-bg) !important;
+}
+
+/*>========== SYMBOLS ==========<*/
+/* help buttons and status indicators */
+
+span.symbol {
+    display: inline-block;
+    width: 1.4em;
+    height: 1.4em;
+    border: none;
+    border-radius: 100%;
+    line-height: 1.4;
+    text-align: center;
+    vertical-align: unset;
+    color: var(--txt-alt2);
+}
+
+span.symbol span {
+    padding: 0;
+}
+
+.symbols a,
+.symbol a {
+    border: none;
+    text-decoration: none;
+}
+
+.question a:is(:hover, :focus) {
+    border-color: var(--int-hgl);
+    background-color: var(--int-hgl);
+    color: var(--bg4);
+    cursor: help;
+}
+
+span.question {
+    box-shadow: none;
+    background-color: var(--link-hgl);
+    font-size: 0.9em;
+    vertical-align: super;
+}
+
+a.question {
+    border: none;
+}
+
+.heading a.question,
+.help.symbol.question {
+    font-size: 0.75em;
+}
+
+/* unicode cross with variation selector to prevent emoji conversion on iOS */
+span.rejected.symbol::before {
+    content: "\002716\fe0e";
+}
+
+/* unicode checkmark with variation selector to prevent emoji conversion on iOS */
+span.approved.symbol::before {
+    content: "\002714\fe0e";
+}
+
+/* hide original symbols */
+span.rejected.symbol span,
+span.approved.symbol span {
+    display: none;
+}
+
+/*>========== SYMBOLS KEY ==========<*/
+/* help content modal */
+
+#symbols-key h4 {
+    margin: 1em 0;
+}
+
+dl#symbols-key dt img:not(#symbols-key dl img) {
+    display: none;
+}
+
+dl#symbols-key dd {
+    margin: 0;
+}
+
+#symbols-key dl {
+    width: auto;
+    margin: 0;
+    padding: 0.643em 0.643em 0 0.643em;
+    border: var(--border-width) solid var(--border1);
+    border-radius: var(--radius-mid);
+    background-color: var(--bg5);
+}
+
+#symbols-key dl dd,
+#bookmark-symbols-key dd {
+    margin: -25px auto 15px 35px;
+}
+
+/*============================================================
+>> Z1 REPLACE ICONS AND IMAGES
+============================================================*/
+
+/*>========== ICONS FOR USERS, COLLECTIONS, TAGS ==========<*/
+
+/* border and background for uploaded icons */
+.icon img:not(img[src*="/images/skins/iconsets/default/"]) {
+    box-sizing: border-box;
+    border: var(--border-width) solid var(--icon-border2);
+    background: var(--icon-bg);
+}
+
+/* default user icon */
+img[src$="/images/skins/iconsets/default/icon_user.png"] {
+    box-sizing: border-box;
+    border: none;
+    background-image: var(--int-btn-hgl-bg);
+    content: url("https://i.postimg.cc/BvFPJbVM/zerafina-icon-user-visitor-02.png");
+}
+
+/* anon comment icon */
+.comment .icon .anonymous {
+    box-sizing: border-box;
+    border: none;
+    background:
+        url("https://i.postimg.cc/6pgGsnYT/zerafina-icon-anon-01.png"),
+        var(--int-btn-hgl-bg);
+    background-color: var(--icon-anon);
+    background-size: cover;
+}
+
+/* guest comment icon */
+.comment .icon .visitor {
+    box-sizing: border-box;
+    border: none;
+    background:
+        url("https://i.postimg.cc/6pgGsnYT/zerafina-icon-anon-01.png"),
+        var(--int-btn-hgl-bg);
+    background-color: var(--icon-anon);
+    background-size: cover;
+}
+
+/* default collection icon */
+img[src$="/images/skins/iconsets/default/icon_collection.png"] {
+    box-sizing: border-box;
+    background-image: var(--int-btn-hgl-bg);
+    background-color: var(--icon-id);
+    content: url("https://i.postimg.cc/t4wV0W2z/zerafina-icon-collection-02.png");
+}
+
+.tagset .primary .icon,
+.tag .primary .icon,
+.index .tagset .icon {
+    box-sizing: border-box;
+    border: none;
+    background: url("https://i.postimg.cc/bvnSqrB6/zerafina-icon-tag-02.png");
+    background-color: var(--icon-id);
+    background-size: cover;
+}
+
+/* unrevealed works icon */
+.index .mystery .icon {
+    box-sizing: border-box;
+    border: var(--border-width) solid var(--icon-border2);
+    box-shadow: inset 0 0 0 3px #FFFFFF;
+    background:
+        url("https://i.postimg.cc/6pgGsnYT/zerafina-icon-anon-01.png"),
+        var(--int-btn-hgl-bg);
+    background-color: var(--icon-id);
+    background-size: cover;
+}
+
+/* admin icon on news posts */
+.admin .primary .icon {
+    box-sizing: border-box;
+    border: none;
+    background:
+        url("https://i.postimg.cc/6pgGsnYp/zerafina-icon-admin-02.png"),
+        var(--int-btn-hgl-bg);
+    background-color: var(--icon-id);
+    background-size: cover;
+}
+
+/* default skins icon */
+.skins .primary .icon:not(:has(a .icon)),
+.index .skins .icon:not(:has(a .icon)) {
+    box-sizing: border-box;
+    border: none;
+    background:
+        url("https://i.postimg.cc/s2WG3xNc/zerafina-icon-skins-02.png"),
+        var(--int-btn-hgl-bg);
+    background-color: var(--icon-id);
+    background-size: cover;
+}
+
+/* remove default skin icon under uploaded icons */
+.skins .primary .icon:has(a .icon) {
+    background: none;
+}
+
+/*>========== CONTENT SYMBOLS ==========<*/
+
+/* size for symbols key icons */
+#symbols-key dl img,
+#bookmark-symbols-key img {
+    width: 0 !important;
+    height: 0 !important;
+    padding: 25px 0 0 25px;
+}
+
+/* base styling for content symbols */
+.blurb ul.required-tags li a>span,
+.bookmark p.status a>span,
+#symbols-key dl img,
+#bookmark-symbols-key img {
+    box-sizing: border-box;
+    border: var(--border-width) solid var(--icon-border1);
+    border-radius: var(--icon-content-radius);
+    background-image: url("https://i.postimg.cc/mrpjTmBD/zerafina-sprites.png");
+    background-size: 450px 25px;
+    background-repeat: no-repeat;
+    background-origin: padding-box;
+}
+
+/* explicit size for blurb symbols only */
+.blurb ul.required-tags li a>span,
+.bookmark p.status a>span {
+    width: 25px;
+    height: 25px;
+    padding: 0;
+    background-origin: border-box;
+}
+
+/* empty symbol boxes: no rating, category, or warning */
+.required-tags .rating-notrated,
+.required-tags .category-none,
+.required-tags .warning-no,
+.status .count,
+img[src$="/images/skins/iconsets/default/rating-notrated.png"],
+img[src$="/images/skins/iconsets/default/category-none.png"],
+img[src$="/images/skins/iconsets/default/warning-no.png"] {
+    border: var(--border-width) solid var(--icon-border2) !important;
+    background: var(--icon-bg) !important;
+    background-image: none !important;
+}
+
+/*>>========== RATING ==========<<*/
+
+.required-tags .rating-general-audience,
+img[src$="/images/skins/iconsets/default/rating-general-audience.png"] {
+    background-image: url("https://i.postimg.cc/mrpjTmBD/zerafina-sprites.png");
+    background-position: -300px 0;
+    background-color: var(--icon-rating-gen);
+}
+
+.required-tags .rating-teen,
+img[src$="/images/skins/iconsets/default/rating-teen.png"] {
+    background-image: url("https://i.postimg.cc/mrpjTmBD/zerafina-sprites.png");
+    background-position: -350px 0;
+    background-color: var(--icon-rating-teen);
+}
+
+.required-tags .rating-mature,
+img[src$="/images/skins/iconsets/default/rating-mature.png"] {
+    background-image: url("https://i.postimg.cc/mrpjTmBD/zerafina-sprites.png");
+    background-position: -325px 0;
+    background-color: var(--icon-rating-mature);
+}
+
+.required-tags .rating-explicit,
+img[src$="/images/skins/iconsets/default/rating-explicit.png"] {
+    background-image: url("https://i.postimg.cc/mrpjTmBD/zerafina-sprites.png");
+    background-position: -275px 0;
+    background-color: var(--icon-rating-explicit);
+}
+
+/*>>========== RELATIONSHIPS ==========<<*/
+
+.required-tags .category-femslash,
+img[src$="/images/skins/iconsets/default/category-femslash.png"] {
+    background-image: url("https://i.postimg.cc/mrpjTmBD/zerafina-sprites.png");
+    background-position: -100px 0;
+    background-color: var(--icon-relationship-ff);
+}
+
+.required-tags .category-het,
+img[src$="/images/skins/iconsets/default/category-het.png"] {
+    background-image: url("https://i.postimg.cc/mrpjTmBD/zerafina-sprites.png");
+    background-position: -150px 0;
+    background-color: var(--icon-relationship-mf);
+}
+
+.required-tags .category-gen,
+img[src$="/images/skins/iconsets/default/category-gen.png"] {
+    background-image: url("https://i.postimg.cc/mrpjTmBD/zerafina-sprites.png");
+    background-position: -125px 0;
+    background-color: var(--icon-relationship-gen);
+}
+
+.required-tags .category-slash,
+img[src$="/images/skins/iconsets/default/category-slash.png"] {
+    background-image: url("https://i.postimg.cc/mrpjTmBD/zerafina-sprites.png");
+    background-position: -175px 0;
+    background-color: var(--icon-relationship-mm);
+}
+
+.required-tags .category-multi,
+img[src$="/images/skins/iconsets/default/category-multi.png"] {
+    background: var(--icon-multi) !important;
+    background-origin: border-box !important;
+    background-clip: padding-box !important;
+}
+
+.required-tags .category-other,
+img[src$="/images/skins/iconsets/default/category-other.png"] {
+    background: var(--icon-relationship-other) !important;
+    background-image: url("https://i.postimg.cc/mrpjTmBD/zerafina-sprites.png"), var(--icon-relationship-other);
+    background-position: -200px 0, center !important;
+    background-size: 450px 25px, 100% !important;
+    background-repeat: no-repeat !important;
+    background-origin: border-box !important;
+    background-clip: padding-box !important;
+}  
+
+/*>>========== CONTENT WARNINGS ==========<<*/
+
+.required-tags .warning-choosenotto,
+img[src$="/images/skins/iconsets/default/warning-choosenotto.png"] {
+    background-image: url("https://i.postimg.cc/mrpjTmBD/zerafina-sprites.png");
+    background-position: -375px 0;
+    background-color: var(--icon-warning-choose-not);
+}
+
+.required-tags .warning-yes,
+img[src$="/images/skins/iconsets/default/warning-yes.png"] {
+    background-image: url("https://i.postimg.cc/mrpjTmBD/zerafina-sprites.png");
+    background-position: -425px 0;
+    background-color: var(--icon-warning-yes);
+}
+
+.required-tags .external-work,
+img[src$="/images/skins/iconsets/default/warning-external-work.png"] {
+    background-image: url("https://i.postimg.cc/mrpjTmBD/zerafina-sprites.png");
+    background-position: -400px 0;
+    background-color: var(--icon-content-external);
+}
+
+/*>>========== COMPLETION STATUS ==========<<*/
+
+.required-tags .complete-no,
+img[src$="/images/skins/iconsets/default/complete-no.png"] {
+    background-image: url("https://i.postimg.cc/mrpjTmBD/zerafina-sprites.png");
+    background-position: -225px 0;
+    background-color: var(--icon-content-incomplete);
+}
+
+.required-tags .complete-yes,
+img[src$="/images/skins/iconsets/default/complete-yes.png"] {
+    background-image: url("https://i.postimg.cc/mrpjTmBD/zerafina-sprites.png");
+    background-position: -250px 0;
+    background-color: var(--icon-content-complete);
+}
+
+/*>>========== BOOKMARK SYMBOLS ==========<<*/
+
+/* remove borders from bookmark ribbons */
+.bookmark .blurb:not(.short) .status span {
+    border: none;
+}
+
+.status .rec,
+img[src$="/images/skins/iconsets/default/bookmark-rec.png"] {
+    background-position: -75px 0;
+    background-color: var(--icon-content-rec);
+}
+
+.bookmark .blurb p.status a:not(.short a):has(.rec)::before {
+    border-inline-color: var(--icon-content-rec);
+}
+
+.status .public,
+img[src$="/images/skins/iconsets/default/bookmark-public.png"] {
+    background-position: -50px 0;
+    background-color: var(--icon-content-public);
+}
+
+.bookmark .blurb p.status a:not(.short a):has(.public)::before {
+    border-inline-color: var(--icon-content-public);
+}
+
+.status .private,
+img[src$="/images/skins/iconsets/default/bookmark-private.png"] {
+    background-position: -25px 0;
+    background-color: var(--icon-content-private);
+    font-size: 0;
+}
+
+/* fix private bookmark background positioning */
+.status .private .text {
+    background: none;
+}
+
+.bookmark .blurb p.status a:not(.short a):has(.private)::before {
+    border-inline-color: var(--icon-content-private);
+}
+
+.status .hidden,
+img[src$="/images/skins/iconsets/default/bookmark-hidden.png"] {
+    background-position: 0 0;
+    background-color: var(--icon-content-hidden);
+}
+
+.bookmark .blurb p.status a:not(.short a):has(.hidden)::before {
+    border-inline-color: var(--icon-content-hidden);
+}
+
+/*>========== RSS ICON ==========<*/
+
+/* hide old rss icon */
+a.rss span {
+    padding: 0;
+    background: none;
+}
+
+.actions li a.rss {
+    display: inline-flex;
+    align-content: center;
+    align-items: center;
+    column-gap: 0.3em;
+}
+
+.actions li a.rss::before {
+    box-sizing: border-box;
+    width: 0.85em;
+    height: 0.85em;
+    border: 1px solid var(--icon-border1);
+    border-radius: var(--radius-small);
+    background-color: var(--link);
+    background-image: url("https://i.postimg.cc/P5V6PG7t/zerafina-stats-sprites.png");
+    background-size: 20em 0.8em;
+    background-position: -0.8em center;
+    background-repeat: no-repeat;
+    background-clip: content-box;
+    background-origin: content-box;
+    content: "";
+}
+
+/*>========== KUDOS ICON ==========<*/
+
+/* hide old kudos icon */
+p.kudos {
+    background: none;
+}
+
+div:has(> p.kudos)::before {
+    position: absolute;
+    width: 55px;
+    height: 55px;
+    background-image: url("https://i.postimg.cc/cJ3tdCbt/zerafina-icon-kudos-03.png");
+    background-size: cover;
+    content: "";
+    filter: var(--kudos-icon);
+}
+
+/*>========== LOCK ICON FOR RESTRICTED WORKS ==========<*/
+
+img[src$="/images/lockblue.png"] {
+    display: inline-block;
+    width: 0.8em;
+    height: 0.8em;
+    vertical-align: baseline;
+    content: "";
+    background-image: url("https://i.postimg.cc/P5V6PG7t/zerafina-stats-sprites.png");
+    background-size: 20em 0.8em;
+    background-position: 0em center;
+    background-repeat: no-repeat;
+    background-clip: content-box;
+    background-origin: content-box;
+    filter: var(--lock-icon);
+}
+
+/*============================================================
+>> Z2 STATS ICONS WITH HOVER TEXT
+============================================================*/
+
+/*>========== STATS ICONS ==========<*/
+
+/*>>========== STATS PLACEMENT AND SPACING ==========<<*/
+
+dl.stats dd,
+dl.stats dt,
+.meta .stats dl dd {
+    margin: 0;
+    padding: 0;
+}
+
+dl.stats {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: right;
+    column-gap: 0.9em;
+}
+
+/* left-align stats in meta boxes */
+.meta dl.stats {
+    justify-content: left;
+}
+
+/* indent stats icons in meta box on statistics page */
+dl.meta.statistics dd {
+    padding-left: 5px;
+    /* matches margin-right below */
+}
+
+dl.stats dd,
+dl.statistics dt {
+    display: flex;
+    align-items: baseline;
+}
+
+/*>>========== STATS ICONS SETUP ==========<<*/
+
+/* hide text labels before stats */
+.stats:not(.skins .stats) dt {
+    display: none;
+}
+
+.stats:not(.skins .stats) dd::before,
+dl.statistics dt::before {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    margin-right: 5px;
+    /* matches padding-left above */
+    background-image: url("https://i.postimg.cc/P5V6PG7t/zerafina-stats-sprites.png");
+    background-size: 26em 1.04em;
+    background-repeat: no-repeat;
+    background-clip: content-box;
+    content: "";
+    transform: translate(0, 1px);
+    filter: var(--stats-icon);
+}
+
+/*>>========== STATS ICON IMAGES ==========<<*/
+
+/* bookmarked-items (position 2) */
+.collection.blurb .stats dd:has(a[href$=bookmarks])::before {
+    background-position-x: -2.08em;
+}
+
+/* bookmarks (position 3) */
+.stats dd.bookmarks::before,
+dl.statistics dt.bookmarks::before {
+    background-position-x: -3.12em;
+}
+
+/* chapters (position 4) */
+.stats dd.chapters::before {
+    background-position-x: -4.16em;
+}
+
+/* characters (position 5) */
+.tagset .stats dd:nth-of-type(2)::before {
+    background-position-x: -5.2em;
+}
+
+/* collection (position 6) */
+.stats dd.collections::before,
+.stats dd:has(a[href$=collections])::before {
+    background-position-x: -6.24em;
+}
+
+/* comment-threads (position 7) */
+.statistics .stats dd.comments::before,
+dl.statistics dt.comment::before {
+    background-position-x: -7.28em;
+}
+
+/* comments (position 8) */
+.stats dd.comments::before {
+    background-position-x: -8.32em;
+}
+
+/* complete (position 9) */
+.series.meta.group .stats dd:nth-of-type(3)::before {
+    background-position-x: -9.36em;
+}
+
+/* fandoms (position 10) */
+.stats dd:has(a[href$=fandoms])::before,
+.tagset .stats dd:nth-of-type(1)::before {
+    background-position-x: -10.4em;
+}
+
+/* hits (position 11) */
+.stats dd.hits::before,
+dl.statistics dt.hits::before {
+    background-position-x: -11.44em;
+}
+
+/* kudos (position 12) */
+.stats dd.kudos::before,
+dl.statistics dt.kudos::before {
+    background-position-x: -12.48em;
+}
+
+/* language (position 13) */
+.stats dd.language::before {
+    background-position-x: -13.52em;
+}
+
+/* prompts (position 14) */
+.stats dd:has(a[href$=requests])::before {
+    background-position-x: -14.56em;
+}
+
+/* published (position 15) */
+.stats dd.published::before {
+    background-position-x: -15.6em;
+}
+
+/* related-works (position 16) */
+.stats dd.inspired::before {
+    background-position-x: -16.64em;
+}
+
+/* relationships (position 17) */
+.tagset .stats dd:nth-of-type(3)::before {
+    background-position-x: -17.68em;
+}
+
+/* subscriptions (position 18) */
+.stats dd.subscriptions::before,
+dl.statistics dt.subscriptions::before {
+    background-position-x: -18.72em;
+}
+
+/* tags-additional (position 19) */
+.tagset .stats dd:nth-of-type(4)::before {
+    background-position-x: -19.76em;
+}
+
+/* tags-freeform (position 20) */
+.tagset .meta .stats dd:nth-of-type(4)::before {
+    background-position-x: -20.8em;
+}
+
+/* updated (position 21) */
+.stats dd.status::before {
+    background-position-x: -21.84em;
+}
+
+/* works (position 22) */
+.stats dd.works::before,
+.stats dd:has(a[href$=works])::before {
+    background-position-x: -22.88em;
+}
+
+/* words (position 23) */
+.stats dd.words::before,
+dl.statistics dt.words::before {
+    background-position-x: -23.92em;
+}
+
+/*>========== STATS HOVER TEXT ==========<*/
+
+/*>>========== GENERAL FORMATTING ==========<<*/
+
+dl.stats dd {
+    justify-content: center;
+    position: relative;
+}
+
+/* tooltip container */
+.stats dd::after {
+    display: none;
+    position: absolute;
+    top: 2em;
+    z-index: 99999;
+    padding: 0.3em;
+    border: 1px solid var(--border4);
+    border-radius: var(--radius-small);
+    box-shadow: var(--shadow);
+    background: var(--bg6);
+    font-size: 0.8em;
+    line-height: 1;
+    text-align: center;
+}
+
+.stats dd:hover::after {
+    display: inline-block;
+}
+
+/* prevent hover text clipping - needs better solution */
+.statistics .stats dd:last-of-type::after,
+.index .stats dd:last-of-type:has(a[href$=bookmarks])::after,
+.stats dd.inspired::after,
+.tagset .index .stats dd:last-of-type::after {
+    right: 0;
+}
+
+.stats a,
+.stats a:visited {
+    border: none;
+    color: var(--txt-main);
+}
+
+/*>>========== HOVER TEXT FOR INDIVIDUAL STATS ==========<<*/
+
+.stats dd.language::after {
+    content: "Language";
+}
+
+.stats dd.words::after {
+    content: "Words";
+}
+
+.stats dd.works::after,
+.stats dd:has(a[href$=works])::after {
+    content: "Works";
+}
+
+.stats dd.chapters::after {
+    content: "Chapters";
+}
+
+.stats dd.comments::after {
+    content: "Comments";
+}
+
+.stats dd.kudos::after {
+    content: "Kudos";
+}
+
+.stats dd.bookmarks::after {
+    content: "Bookmarks";
+}
+
+.stats dd.inspired::after {
+    content: "Related Works";
+}
+
+.stats dd.hits::after {
+    content: "Hits";
+}
+
+.stats dd.collections::after {
+    content: "Collections";
+}
+
+.stats dd.published::after {
+    content: "Published";
+}
+
+.stats dd.status::after {
+    content: "Updated";
+}
+
+.series.meta.group .stats dd:nth-of-type(3)::after {
+    content: "Complete";
+}
+
+.stats dd.subscriptions::after {
+    content: "Subscriptions";
+}
+
+.statistics .stats dd.comments::after {
+    content: "Comment Threads";
+}
+
+.stats dd:has(a[href$=fandoms])::after,
+.tagset .stats dd:nth-of-type(1)::after {
+    content: "Fandoms";
+}
+
+.tagset .stats dd:nth-of-type(2)::after {
+    content: "Characters";
+}
+
+.tagset .stats dd:nth-of-type(3)::after {
+    content: "Relationships";
+}
+
+.tagset .stats dd:nth-of-type(4)::after {
+    content: "Additional Tags";
+}
+
+.tagset .meta .stats dd:nth-of-type(4)::after {
+    content: "Freeforms";
+}
+
+.stats dd:has(a[href$=requests])::after {
+    content: "Prompts";
+}
+
+.collections-index .stats dd:has(a[href$=collections])::after {
+    content: "Challenges/Subcollections";
+}
+
+.collection.blurb .stats dd:has(a[href$=bookmarks])::after {
+    content: "Bookmarked Items";
+}
+
+/*============================================================
+>> Z3 MISCELLANEOUS
+============================================================*/
+
+* {
+    scrollbar-color: var(--border4) var(--bg5);
+    scrollbar-width: thin;
+}
+
+*::selection {
+    background-color: var(--int-hgl);
+    color: var(--int-hgl-txt);
+}
+
+/*>========== FANDOMS INDEX FIX ==========<*/
+
+.media-index .media.fandom.index.group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.media-index .media .listbox {
+    box-sizing: border-box;
+    width: 49%;
+    margin-block: 1%;
+}
+
+/*>========== STATISTICS PAGE ==========<*/
+
+#stat_chart {
+    overflow: hidden;
+    margin-top: 1em;
+    border-radius: var(--radius-mid);
+    filter: var(--stat-chart);
+}
+
+/* transparent chart background */
+svg>rect {
+    filter: opacity(0)
+}
+
+/*>>========== WORK TITLE AND STATS LAYOUT ==========<<*/
+
+.statistics ul.index li {
+    margin: 0;
+    padding: 0.643em;
+}
+
+.statistics ul.index li>dl>dd>dl {
+    margin: 0;
+}
+
+.statistics ul.index li>dl {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 1em;
+}
+
+.statistics ul.index li>dl>dt {
+    margin-block: 0.3em;
+}
+
+.statistics ul.index li>dl>dd {
+    margin-block: 0.3em;
+    margin-left: auto;
+}
+
+/*>========== RICH TEXT EDITOR ==========<*/
+
+.tox.tox-tinymce {
+    border-radius: var(--radius-big);
+}
+
+.tox-editor-container,
+.tox-statusbar,
+.tox-dialog {
+    filter: var(--rich-txt-editor);
+}
+
+/*>========== USERSCRIPT: COMMENT FORMATTING AND PREVIEW ==========<*/
+/* https://greasyfork.org/en/scripts/484002 */
+
+div.comment-preview.userstuff {
+    margin-top: 0.429em;
+    border: 1.5px dotted var(--border2) !important;
+    border-radius: var(--radius-small);
+    background: transparent;
+}
+
+/*>========== USERSCRIPT: AO3 FICTRACKER STYLING ==========<*/
+/* https://greasyfork.org/en/scripts/513435-ao3-fictracker */
+
+/* prevent clipping by blurb containers */
+li.blurb dl.stats,
+li.blurb .actions {
+    overflow: visible !important;
+}
+
+/* inline header wrapper styling */
+li.blurb #header.region {
+    display: inline-flex !important;
+    align-items: baseline !important;
+    flex-wrap: nowrap !important;
+    width: auto !important;
+    max-width: none !important;
+
+    position: static !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: transparent !important;
+    border: 0 !important;
+    box-shadow: none !important;
+    word-spacing: normal !important;
+}
+
+li.blurb #header.region>ul.navigation.actions {
+    display: block !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+li.blurb #header.region>ul.navigation.actions>li.dropdown {
+    float: none !important;
+    display: inline-block !important;
+    position: relative !important;
+    margin-left: .25em !important;
+    color: var(--txt-main) !important;
+}
+
+/* show/hide dropdown menu */
+li.blurb #header.region .menu {
+    display: none !important;
+}
+
+li.blurb #header.region .open .menu,
+li.blurb #header.region .dropdown:hover .menu {
+    display: block !important;
+}
+
+/* popup panel positioning */
+li.blurb #header.region .menu {
+    position: absolute !important;
+    top: 100% !important;
+    right: 0 !important;
+    left: auto !important;
+    z-index: 2147483647 !important;
+
+    width: unset !important;
+    min-width: 15em !important;
+    max-width: 90vw !important;
+    padding: 0.25em 0 !important;
+    border: 1px solid var(--border3) !important;
+    border-radius: var(--radius-mid) !important;
+    box-shadow: var(--shadow) !important;
+    background: var(--bg6) !important;
+    font-size: 0.95em !important;
+}
+
+li.blurb #header.region .menu li {
+    float: none !important;
+    display: block !important;
+    margin: 0 !important;
+}
+
+li.blurb #header.region .menu li a {
+    display: block !important;
+    max-width: unset !important;
+    padding: 0.5em !important;
+    border-radius: var(--radius-small) !important;
+    background-color: transparent !important;
+    color: var(--txt-main) !important;
+}
+
+li.blurb #header.region .menu li a:hover,
+li.blurb #header.region .menu li a:focus {
+    background: var(--int-hgl-bg) !important;
+    color: var(--int-hgl-txt) !important;
+}
+
+/* user notes styling */
+.user-note-preview>div>div,
+.note-textarea {
+    border: 1px solid var(--border3) !important;
+    border-radius: var(--radius-big) !important;
+}
+
+.user-note-preview>div>div {
+    box-shadow: var(--shadow-box2) !important;
+}
+
+/* remove border when note exists */
+.user-note-preview>div>div:has(details) {
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+}
+
+.note-actions button {
+    background: var(--int-btn-bg) !important;
+    color: var(--int-btn-txt) !important;
+    border: 1px solid var(--int-btn-border) !important;
+    border-radius: var(--radius-small) !important;
+    box-shadow: var(--shadow-buttons) !important;
+    padding: 0.25em 0.75em !important;
+    font-size: 1em !important;
+    cursor: pointer !important;
+    transition: background 0.2s, color 0.2s;
+}
+
+.note-actions button:is(:hover, :focus) {
+    background: var(--int-btn-hgl-bg) !important;
+    color: var(--int-btn-hgl-txt) !important;
+    border-color: var(--int-btn-hgl-border) !important;
+}
+
+.user-note-preview details {
+    border-color: var(--border3) !important;
+    border-radius: var(--radius-mid) !important;
+    background: var(--bg6) !important;
+    box-shadow: var(--shadow-box2) !important;
+    padding: 0 !important;
+    margin: 18px 0 1px 0 !important;
+}
+
+.user-note-preview details>summary {
+    border-top-left-radius: var(--radius-mid);
+    border-top-right-radius: var(--radius-mid);
+}
+
+/*>========== USERSCRIPT: AO3 SITE WIZARD STYLING ==========<*/
+/* https://greasyfork.org/en/scripts/550537-ao3-site-wizard */
+
+input[type="range"] {
+    background: transparent;
+    border: none;
+}
+
+input[type="range"]::-moz-range-progress {
+    background: var(--link-hgl);
+    height: 0.25em;
+}
+
+input[type="range"]::-moz-range-track {
+    background: var(--txt-main) !important;
+    border: none !important;
+    height: 0.25em;
+    border-radius: 0.75em;
+}
+
+input[type="range"]::-moz-range-thumb {
+    background: var(--link-hgl);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+}
