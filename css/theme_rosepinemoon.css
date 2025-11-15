@@ -101,7 +101,7 @@ GLOBAL VARIABLES
   --int-bg:              var(--bg5);          /* background for input and select elements */
   --int-search:          #28253c;             /* background for header search box */
 
-  --int-current-bg:      #332f4d;             /* background for currently active elements */
+  --int-current-bg:      #34304f;             /* background for currently active elements */
   --int-current-txt:     var(--txt-main);     /* text for currently active elements */
   --int-current-border:  var(--tag-border);   /* border for currently active elements */
   --int-disabled-bg:     var(--border1);      /* background for disabled buttons and checkboxes */
