@@ -2333,6 +2333,7 @@ div.comment,
     border: 1px solid var(--border1);
     background-color: var(--bg5);
     box-shadow: var(--shadow-box1);
+    padding: 0 0.75em 0.429em;
 }
 
 li.comment:not(:has(.edit_comment)) {
@@ -2573,6 +2574,7 @@ li.comment:has(.edit_comment) {
     margin-left: auto;
 }
 
+.icon,
 .primary .icon {
     border-radius: var(--icon-primary-radius);
 }
