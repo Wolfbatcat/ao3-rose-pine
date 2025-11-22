@@ -135,4 +135,4 @@ This is where the fun part happens—picking your colors! Choose one of the them
 
 ## Credits
 
-Big thanks to [neos by ZerafinaCSS](https://github.com/ZerafinaCSS/neos/tree/main) — this project wouldn't exist without it!
+Big thanks to [neos by ZerafinaCSS](https://github.com/ZerafinaCSS/neos/tree/main) — this skin wouldn't exist without it!
