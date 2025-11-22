@@ -42,9 +42,9 @@
 
 ## Installation
 
-> To use this skin on AO3, you'll be creating a small set of linked skins. The base file sets up variables and structure, but you'll also need to apply one of the theme files (Rose Pine Dawn, Rose Pine Moon, etc.) to actually get the colors.
+> Full instructions, [customization tips](https://archiveofourown.org/works/69993411#:~:text=Customization), and [add-ons](https://archiveofourown.org/works/69993411#:~:text=Add%2DOns) are available on [Archive of Our Own](https://archiveofourown.org/works/69993411).
 
-> Full instructions also available on [Archive of Our Own](https://archiveofourown.org/works/69993411).
+> To use this skin on AO3, you'll be creating a small set of linked skins. The base file sets up variables and structure, but you'll also need to apply one of the theme files (Rose Pine Dawn, Rose Pine Moon, etc.) to actually get the colors.
 
 > **Important:** You must choose between the **Normal Layout** or the **Card Layout**. Once you pick a layout, use all the corresponding skins for that layout (base, tablet, and mobile). Do not mix skins from different layouts.
 
@@ -132,109 +132,6 @@ This is where the fun part happens—picking your colors! Choose one of the them
 4. Click **Submit**, then **Use**.
 
 </details>
-
-## Customization
-
-> AO3's code editor doesn't save annotations, so if you want to edit a skin, I highly recommend downloading it and using a proper code editor to make your changes.
-
-
-**Tip:** For an easier time changing fonts and font sizes, check out the [AO3: Site Wizard](https://greasyfork.org/en/scripts/550537-ao3-site-wizard) userscript—it works on both PC and mobile!
-
-- **Fonts:**
-    - Recommended fonts: [Bitter](https://fonts.google.com/specimen/Bitter) (serif) or [Figtree](https://fonts.google.com/specimen/Figtree) (sans-serif) for the main font, and [Merriweather](https://fonts.google.com/specimen/Merriweather) (serif) for the work font. I also like [Apfel Grotezk](https://www.collletttivo.it/typefaces/apfel-grotezk) (serif) as a main font and [Apfel Grotezk Fett](https://www.collletttivo.it/typefaces/apfel-grotezk) (serif) for headings.Code snippets use [Victor Mono](https://rubjo.github.io/victor-mono/).
-    - If you want the cursive version of the code font, just remove the comments from `/* font-style: italic; */` in your theme file.
-    - **To change fonts:**
-        1. Open your theme skin (e.g., `[BBC] Rosé Pine Dawn`).
-        2. Press <kbd>Ctrl+F</kbd> to search for `font-family`.
-        3. You'll see blocks like:
-             ```css
-             body,
-                 input,
-                 ...existing selectors...
-                 {
-                         font-family: Figtree, Bitter, Helvetica, ...;
-                 }
-             ```
-        4. Replace the font names in these `font-family` lines with your preferred fonts, keeping the fallback fonts for best compatibility. For example:
-             ```css
-             font-family: YourFont, Figtree, Bitter, Helvetica, Arial, sans-serif;
-             ```
-        5. Do the same for headings and code font sections if you want to change those as well.
-
-- **Text Size:** You can make text bigger or smaller using two variables in the theme skin:
-    ```css
-    /* TEXT SIZE */
-    --txt-size-main:       100%;     /* main text size */
-    --txt-size-work:       110%;     /* work text size */
-    ```
-    `--txt-size-main` controls text size across the whole site (navigation, blurbs, forms, etc.), while `--txt-size-work` is just for the actual work content. Bump up the percentage to make text larger (like `110%` or `120%`) or decrease it for smaller text (like `90%`). Just be aware that going above 130% for `--txt-size-main` might cause some minor layout weirdness, though it'll still mostly work.
-
-
-
-- **Tag Colors:** Want to change up the tag colors? The variables are in the `TAG COLORS` section near the top of your theme file:
-    ```css
-    /*>========== TAG COLORS ==========<*/
-
-    /* BACKGROUND */
-    --tag-default-bg:      #9ccfd8;
-    --tag-fandom-bg:       #eb6f92;
-    --tag-warning-bg:      #f6c177;
-    --tag-ship-bg:         #ea9a97;
-    --tag-character-bg:    #3e8fb0;
-    --tag-freeform-bg:     var(--tag-default-bg);
-    --tag-splash-bg:       #F6ECE3;
-
-    /* TEXT */
-    --tag-default-txt:     var(--txt-alt1);
-    --tag-fandom-txt:      var(--txt-alt1);
-    --tag-warning-txt:     var(--txt-alt1);
-    --tag-ship-txt:        var(--txt-alt1);
-    --tag-character-txt:   var(--txt-alt1);
-    --tag-freeform-txt:    var(--txt-alt1);
-    ```
-    Just swap out the hex color values with whatever you like! For example, if you want purple fandom tags, change `--tag-fandom-bg: #eb6f92;` to `--tag-fandom-bg: #c4a7e7;`. You can also tweak the text color for each tag type using the `--tag-*-txt` variables.
-
-    **Note:** Leave `--tag-splash-bg` alone—it's specifically for the splash page and doesn't affect regular tag colors.
-
-- **Text Decorations:** Those little symbols after tags and headers? You can change them! The rules are at the end of the theme CSS. For tags, it looks like this:
-
-    ```css
-    a.tag:not(.fandom.index.group a.tag,
-    h2.heading a.tag,
-    .splash .favorite a.tag,
-    h5.fandoms.heading a.tag,
-    dd.fandom.tags a,
-    [class^=warning] a.tag,
-    [class^=relationship] a,
-    [class^=character] a.tag):after {
-      content: "\00a0\00a0✿";
-    }
-    ```
-    Swap out `✿` for whatever symbol you want (♥, ✦, ʚ, etc.).
-
-    **Important:** Since the mobile skin uses the shortened version of the title "AO3 ✿", you'll have to change the symbol there too.
-
-## Add-Ons
-
-These userscripts work great with the Rosé Pine theme and can be customized to match the palette:
-
-> **Note:** If you're using a Chromium-based browser (Chrome, Brave, Vivaldi, etc.) or Microsoft Edge on PC, an extra step is needed to activate your userscript manager. Follow [these instructions](https://www.tampermonkey.net/faq.php?locale=en#Q209).
-
-- **[AO3: Advanced Blocker](https://greasyfork.org/en/scripts/549942-ao3-advanced-blocker)** - Block works based on tags, authors, titles, word counts, and more. Filter by completion status, language, last update, and primary pairings / characters.
-- **[AO3: Skin Switcher](https://greasyfork.org/en/scripts/551820-ao3-skin-switcher)** - Change site skins from anywhere without leaving the page.
-- **[AO3: Site Wizard](https://greasyfork.org/en/scripts/550537-ao3-site-wizard)** - Change fonts and font sizes from anywhere on the site. Customize how works appear with width, alignment, and spacing fixes.
-- **[AO3: Reading Time & Quality Score](https://greasyfork.org/en/scripts/549777-ao3-reading-time-quality-score)** - Adds customizable reading time and engagement score bars to every work and optionally chapters. To make the bars match the skin, open the settings menu under "Userscripts" on the top navigation bar and check off "Use icons instead of text labels" and optionally "Colored backgrounds" or "Colored text." It already uses Rosé Pine's accent colors and icon colors by default!
-- **[AO3 Fictracker](https://greasyfork.org/en/scripts/513435-ao3-fictracker) by Farin** - An absolute lifesaver for tracking fics! Mark works as finished, favorite, or to-read using a customizable tag system. Here are my recommended Rosé Pine highlighting settings:
-    - **Favorite** - Rose `rgb(235, 188, 186)` for regular Rosé Pine theme, or Iris `rgb(196, 167, 231)` for Cool variants
-    - **To Read** - Foam `rgb(156, 207, 216)`
-    - **Finished Reading** - Subtle `rgb(144, 140, 170)`. Cut the overall **Opacity** (not Border Opacity) in half so it looks faded.
-    - Set **Border Size** to 2.
-- **[AO3 Floaty Comment Box (Responsive)](https://greasyfork.org/en/scripts/542872-ao3-floaty-comment-box-responsive) by schildpath** - Allows commenting on the fly, blends in with the site skin.
-- **[AO3: Comment Formatting and Preview](https://greasyfork.org/en/scripts/484002-ao3-comment-formatting-and-preview) by escctrl** - Adds buttons to insert HTML formatting, and shows a live preview box of what the comment will look like.
-
-![Add-ons in action](https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/images/image_rosepine_additions_dark.png)
-![Add-ons in action](https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/images/image_rosepine_blurb_dark.png)
-*Pictured: Fictracker, Site Wizard, Reading Time & Quality Score, and Chapter Shortcuts*
 
 ## Credits
 
