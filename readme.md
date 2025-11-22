@@ -227,8 +227,8 @@ These userscripts work great with the Rosé Pine theme and can be customized to 
 - **[AO3 Fictracker](https://greasyfork.org/en/scripts/513435-ao3-fictracker) by Farin** - An absolute lifesaver for tracking fics! Mark works as finished, favorite, or to-read using a customizable tag system. Here are my recommended Rosé Pine highlighting settings:
     - **Favorite** - Rose `rgb(235, 188, 186)` for regular Rosé Pine theme, or Iris `rgb(196, 167, 231)` for Cool variants
     - **To Read** - Foam `rgb(156, 207, 216)`
-    - **Finished reading** - Subtle `rgb(144, 140, 170)`
-    - Set **Border Size** to 2 and crank **Opacity** all the way up (or adjust to taste!)
+    - **Finished Reading** - Subtle `rgb(144, 140, 170)`. Cut the overall **Opacity** (not Border Opacity) in half so it looks faded.
+    - Set **Border Size** to 2.
 - **[AO3 Floaty Comment Box (Responsive)](https://greasyfork.org/en/scripts/542872-ao3-floaty-comment-box-responsive) by schildpath** - Allows commenting on the fly, blends in with the site skin.
 - **[AO3: Comment Formatting and Preview](https://greasyfork.org/en/scripts/484002-ao3-comment-formatting-and-preview) by escctrl** - Adds buttons to insert HTML formatting, and shows a live preview box of what the comment will look like.
 
