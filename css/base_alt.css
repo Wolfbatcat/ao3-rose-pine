@@ -2527,7 +2527,6 @@ li.comment:has(.edit_comment) {
 .splash .favorite li:nth-of-type(odd) a.tag:hover {
     background: var(--int-hgl-bg);
     color: var(--int-hgl-txt);
-    font-weight: var(--txt-semibold) !important;
 }
 
 /*>>========== MODULE: NEWS ==========<<*/
