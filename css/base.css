@@ -2180,7 +2180,7 @@ li.picture.blurb,
     margin: 0;
 }
 
-/* create bookmark ribbon using pseudo-element */
+/* Center the bookmark ribbon over the status icon by matching widths */
 .bookmark .blurb p.status a:not(.short a)::before {
     position: absolute;
     top: -5px;
@@ -2190,6 +2190,24 @@ li.picture.blurb,
     box-sizing: border-box;
     height: 40px;
     border-inline: 12.5px solid;
+    border-bottom: 5.5px solid transparent;
+    border-radius: 0 0 0.2rem 0.2rem;
+    content: "";
+}
+
+/* Ensure modals keep original positioning */
+#modal .bookmark p.status {
+    right: 0.75em;
+}
+
+/* create bookmark ribbon using pseudo-element */
+.bookmark .blurb p.status a:not(.short a)::before {
+    position: absolute;
+    top: -5px;
+    z-index: -1;
+    box-sizing: border-box;
+    height: 40px;
+    border-inline: 14px solid;
     border-bottom: 5.5px solid transparent;
     border-radius: 0 0 0.2rem 0.2rem;
     content: "";
