@@ -579,7 +579,6 @@ col.name {
 #dashboard a:is(:hover, :focus) {
     background: var(--int-hgl-bg);
     color: var(--int-hgl-txt);
-    font-weight: var(--txt-semibold);
 }
 
 #dashboard .current {
@@ -3930,7 +3929,7 @@ div.comment-preview.userstuff {
     background: transparent;
 }
 
-//*>========== USERSCRIPT: AO3 FICTRACKER STYLING ==========<*/
+/*>========== USERSCRIPT: AO3 FICTRACKER STYLING ==========<*/
 /* https://greasyfork.org/en/scripts/513435-ao3-fictracker */
 
 /* inline header wrapper styling */
