@@ -212,7 +212,7 @@ GLOBAL VARIABLES
 /*>========== BACKGROUND ==========<*/
 /* wraps header, inner, footer */
 #outer {
-    background-image: url("https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/assets/bg_moon-waves-small.png") !important;
+    background-image: url("https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/assets/backgrounds/bg_moon-heart-small.png") !important;
 }
 
 #workskin {
