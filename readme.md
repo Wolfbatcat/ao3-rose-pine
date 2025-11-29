@@ -44,7 +44,7 @@
 
 > Full instructions, [customization tips](https://archiveofourown.org/works/69993411#:~:text=Customization), and [add-ons](https://archiveofourown.org/works/69993411#:~:text=Add%2DOns) are available on [Archive of Our Own](https://archiveofourown.org/works/69993411).
 
-> To use this skin on AO3, you'll be creating a small set of linked skins. The base file sets up variables and structure, but you'll also need to apply one of the theme files (Rose Pine Dawn, Rose Pine Moon, etc.) to actually get the colors.
+To use this skin on AO3, you'll be creating a small set of linked skins. The base file sets up variables and structure, but you'll also need to apply one of the theme files (Rose Pine Dawn, Rose Pine Moon, etc.) to actually get the colors.
 
 > **Important:** You must choose between the **Normal Layout** or the **Card Layout**. Once you pick a layout, use all the corresponding skins for that layout (base, tablet, and mobile). Do not mix skins from different layouts.
 
