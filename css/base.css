@@ -2185,7 +2185,7 @@ li.picture.blurb,
     margin: 0;
 }
 
-/* Center the bookmark ribbon over the status icon by matching widths */
+/* Create bookmark ribbon */
 .bookmark .blurb p.status a:not(.short a)::before {
     position: absolute;
     top: -5px;
@@ -2194,7 +2194,7 @@ li.picture.blurb,
     z-index: -1;
     box-sizing: border-box;
     height: 40px;
-    border-inline: 12.5px solid;
+    border-inline: 14px solid;
     border-bottom: 5.5px solid transparent;
     border-radius: 0 0 0.2rem 0.2rem;
     content: "";
@@ -2203,19 +2203,6 @@ li.picture.blurb,
 /* Ensure modals keep original positioning */
 #modal .bookmark p.status {
     right: 0.75em;
-}
-
-/* create bookmark ribbon using pseudo-element */
-.bookmark .blurb p.status a:not(.short a)::before {
-    position: absolute;
-    top: -5px;
-    z-index: -1;
-    box-sizing: border-box;
-    height: 40px;
-    border-inline: 14px solid;
-    border-bottom: 5.5px solid transparent;
-    border-radius: 0 0 0.2rem 0.2rem;
-    content: "";
 }
 
 /* hide bookmark count icon - available in stats */
