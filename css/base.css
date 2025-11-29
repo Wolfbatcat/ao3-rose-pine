@@ -1201,6 +1201,12 @@ textarea.LV_invalid_field:is(:hover, :focus) {
     right: 0.75em;
 }
 
+#modal .footer .action.modal-closer {
+	bottom: 4px;
+	position: absolute;
+	right: 8px;
+}
+
 /*>========== MODE: DYNAMIC ==========<*/
 
 div.dynamic {
