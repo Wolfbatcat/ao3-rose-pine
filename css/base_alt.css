@@ -3870,7 +3870,7 @@ dl.stats dd {
 
 * {
     scrollbar-color: var(--border4) var(--bg5);
-    scrollbar-width: thin;
+    scrollbar-width: auto;
 }
 
 *::selection {
