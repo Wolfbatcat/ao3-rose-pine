@@ -313,20 +313,20 @@ a.tag:not(.fandom.index.group a.tag,
 
 /* change appearance of tags here */
 /* excluding fandom list, fav tags on splash page and heading tags in some places */
-a.tag:not(.fandom.index.group a.tag, h2.heading a.tag, .splash .favorite a.tag),
-.tags a[data-remote="true"], /* = hidden warnings/additional tags (can be set in preferences) */
+a.tag:not(.fandom.index.group a.tag):not(h2.heading a.tag):not(.splash .favorite a.tag):not(.splash .favorite li:nth-of-type(2n+1) a.tag),
+.tags a[data-remote="true"],
 .unwrangled,
 .added.tag {
-  margin-block: 0.15em; /* gap between tag rows; needs to be done with margin because row-gap is not allowed on AO3 (as of August 2025) */
-  padding: 0.15em 0.5em !important;
-  background-color: transparent !important;
-  color: var(--tag-freeform-txt);
-  border: var(--border-width) solid var(--tag-freeform-txt);
-  font-size: 0.95em !important;
-  line-height: 1.25 !important;
-  text-decoration: none;
+    margin-block: 0.15em;
+    /* gap between tag rows; needs to be done with margin because row-gap is not allowed on AO3 (as of August 2025) */
+    padding: 0.15em 0.5em !important;
+    background-color: transparent !important;
+    color: var(--tag-freeform-txt);
+    border: var(--border-width) solid var(--tag-freeform-txt);
+    font-size: 1em !important;
+    line-height: 1.25 !important;
+    text-decoration: none;
 }
-
 /* repair and format fandom and collection heading tags */
 .blurb h5.fandoms.heading a.tag,
 .blurb h5.tags.heading a.tag {
@@ -370,7 +370,7 @@ dd.fandom.tags a {
 
 /* unwrangled tags */
 .unwrangled {
-  border: var(--border-width) dashed var(--border4);
+  border: var(--border-width) dashed var(--tag-freeform-txt) !important;
   background: transparent;
 }
 
