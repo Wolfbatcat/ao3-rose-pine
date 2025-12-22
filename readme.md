@@ -40,6 +40,15 @@
 
 </details>
 
+<details>
+<summary>Preview Alternative Tag Style</summary>
+
+| Rosé Pine (Alternative Tags) | Rosé Pine Cool (Alternative Tags) |
+| --- | --- |
+| ![Rosé Pine Alternative Tags](https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/images/image_tags_rosepine.png) | ![Rosé Pine Cool Alternative Tags](https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/images/image_tags_rosepinecool.png) |
+
+</details>
+
 ## Installation
 
 > Full instructions, [customization tips](https://archiveofourown.org/works/69993411#:~:text=Customization), and [add-ons](https://archiveofourown.org/works/69993411#:~:text=Add%2DOns) are available on [Archive of Our Own](https://archiveofourown.org/works/69993411).
@@ -95,6 +104,19 @@ This is where the fun part happens—picking your colors! Choose one of the them
 </details>
 
 <details>
+<summary>2a. (Optional) Create an Alternative Tag Style Skin</summary>
+
+Want a different tag style that's easier on the eyes with darker themes? This optional add-on changes how tags appear throughout the site.
+
+1. [Create a skin](https://archiveofourown.org/skins/new?skin_type=Skin) titled something like `[BBC] Rosé Pine - Tag Mod`.
+2. Paste the code from the tag mod file that matches your theme variant:
+    - **For regular Rosé Pine themes (Dawn, Moon, or Rosé Pine):** [mod_rosepine_tags.css](https://github.com/Wolfbatcat/ao3-rose-pine/blob/main/css/add-ons/mod_rosepine_tags.css)
+    - **For Cool variants (Moon Cool or Rosé Pine Cool):** [mod_rosepinecool_tags.css](https://github.com/Wolfbatcat/ao3-rose-pine/blob/main/css/add-ons/mod_rosepinecool_tags.css)
+3. Set it to **Parent Only** and submit.
+
+</details>
+
+<details>
 <summary>3. Create the Tablet Skin</summary>
 
 1. [Create a skin](https://archiveofourown.org/skins/new?skin_type=Skin) titled `[BBC] Rosé Pine - Tablet`.
@@ -127,8 +149,9 @@ This is where the fun part happens—picking your colors! Choose one of the them
     1. [BBC] Rosé Pine - Base
     2. **Single theme:** [BBC] Rosé Pine Dawn / [BBC] Rosé Pine Moon / [BBC] Rosé Pine  
        **OR for auto light/dark switching:** Add *both* of your theme skins (e.g., [BBC] Rosé Pine Dawn and [BBC] Rosé Pine Moon). The order doesn't matter since they use @media queries.
-    3. [BBC] Rosé Pine - Tablet
-    4. [BBC] Rosé Pine - Mobile
+    3. **(Optional)** [BBC] Rosé Pine - Tag Mod — only if you created the alternative tag style skin in Step 2a
+    4. [BBC] Rosé Pine - Tablet
+    5. [BBC] Rosé Pine - Mobile
 4. Click **Submit**, then **Use**.
 
 </details>
