@@ -1,0 +1,100 @@
+/*============================================================
+
+                      ✿✿✿ Rose Pine ✿✿✿ 
+                     Alternative Tag Style
+
+==============================================================
+GLOBAL VARIABLES
+==============================================================
+
+/*>========== TAG COLORS ==========<*/
+
+:root {
+
+  /* TEXT */
+  --tag-default-txt:     #908caa;
+  --tag-fandom-txt:      #c4a7e7;
+  --tag-warning-txt:     #c4a7e7;
+  --tag-ship-txt:        #9ccfd8;
+  --tag-character-txt:   #3e8fb0;
+  --tag-freeform-txt:    #908caa;
+}
+
+/*>========== STYLE OVERRIDES ==========<*/
+
+a.tag:not(.fandom.index.group a.tag):not(h2.heading a.tag):not(.splash .favorite a.tag):not(.splash .favorite li:nth-of-type(2n+1) a.tag),
+.tags a[data-remote="true"],
+.unwrangled,
+.added.tag {
+    margin-block: 0.15em;
+    padding: 0.15em 0.5em !important;
+    background-color: transparent !important;
+    color: var(--tag-freeform-txt);
+    border: var(--border-width) solid var(--tag-freeform-txt);
+    font-size: 1em !important;
+    line-height: 1.25 !important;
+    text-decoration: none;
+}
+
+.blurb h5.fandoms.heading a.tag,
+.blurb h5.tags.heading a.tag {
+  margin-right: 12px;
+}
+
+a.tag:not(.fandom.index.group a.tag, h2.heading a.tag, .splash .favorite a.tag):is(:hover, :focus),
+.listbox .heading a.tag:visited:is(:hover, :focus),
+.tags a[data-remote="true"]:is(:hover, :focus) {
+  border: 1px solid var(--txt-alt1) !important;
+  transition: 25ms ease-out;
+}
+
+.blurb h5.fandoms.heading a.tag,
+dd.fandom.tags a {
+  border: 1px solid var(--tag-fandom-txt) !important;
+}
+
+[class^="warning"] a.tag {
+  font-weight: 400;
+  border: 1px solid var(--tag-warning-txt) !important;
+}
+
+[class^="relationship"] a.tag {
+  border: 1px solid var(--tag-ship-txt) !important;
+}
+
+[class^="character"] a.tag {
+  border: 1px solid var(--tag-character-txt) !important;
+}
+
+[class^="freeform"] a.tag {
+  border: 1px solid var(--tag-freeform-txt) !important;
+}
+
+.unwrangled {
+  border: var(--border-width) dashed var(--tag-freeform-txt) !important;
+  background: transparent;
+}
+
+.autocomplete li.added,
+.post .meta dd ul li.added {
+  padding: 2px 8px;
+  color: var(--tag-freeform-txt);
+  border: var(--border-width) solid var(--tag-freeform-txt);
+}
+
+li.added:is(:hover, :focus) {
+  border-color: var(--txt-alt2);
+  color: var(--txt-alt2);
+}
+
+li.added:is(:hover, :focus) .delete a {
+  color: inherit;
+}
+
+.delete a, span.delete, span.delete a {
+	color: var(--tag-freeform-txt);
+}
+
+.delete a:hover, span.delete:hover, span.delete a:hover {
+	color: var(--txt-alt2) !important;
+}
