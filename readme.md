@@ -119,6 +119,8 @@ Want a different tag style that's easier on the eyes with darker themes? This op
 <details>
 <summary>3. Create the Tablet Skin</summary>
 
+> <strong>Note:</strong> The tablet skin is <strong>not optional</strong> and must be included for the theme to work properly
+
 1. [Create a skin](https://archiveofourown.org/skins/new?skin_type=Skin) titled `[BBC] Rosé Pine - Tablet`.
 2. Paste in the correct tablet file for your chosen layout:
     - **Normal Layout:** `tablet.css`
