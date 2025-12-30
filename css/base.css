@@ -1229,7 +1229,7 @@ form.single input[type="submit"] {
     padding: 0.643em;
     border: var(--border-width) solid var(--border3);
     border-radius: var(--radius-big);
-    box-shadow: var(--shadow);
+    box-shadow: var(--shadow-box1);
     background-color: var(--bg4);
     color: var(--txt-main);
 }
