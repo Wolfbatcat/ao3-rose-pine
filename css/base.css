@@ -1771,6 +1771,7 @@ a.tag:hover {
   box-sizing: border-box;
   margin-right: 5px;
   letter-spacing: initial;
+  font-weight: 400;
 }
 
 /*>========== GROUP: TAG CLOUDS ==========<*/
