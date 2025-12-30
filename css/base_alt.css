@@ -1253,18 +1253,14 @@ form.single input[type="submit"] {
     padding: 0.643em;
     border: var(--border-width) solid var(--border3);
     border-radius: var(--radius-big);
-    box-shadow: var(--shadow-box1);
+    box-shadow: var(--shadow);
     background-color: var(--bg4);
     color: var(--txt-main);
 }
 
 .toggled form dd,
-.dynamic form dd {
-    width: 100%;
-    padding: 2px;
-}
-
 .toggled form dt,
+.dynamic form dd,
 .dynamic form dt {
     width: 100%;
     padding: 2px;
@@ -1274,6 +1270,9 @@ form.single input[type="submit"] {
 .dynamic form dl {
     margin: 0;
     padding: 0.643em 0;
+}
+
+#new_collection_item > dl:nth-child(2) {
     display: flex;
     align-items: center;
 }
