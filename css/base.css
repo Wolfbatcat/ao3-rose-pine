@@ -2616,9 +2616,10 @@ li.comment:has(.edit_comment) {
 form.search input[type="text"] {
     border: var(--border-width) solid var(--border2);
     border-radius: var(--radius-small);
-    background-color: var(--int-bg);
+    background-color: var(--int-search);
     background-image: none;
     color: var(--txt-main);
+    box-shadow: none;
 }
 
 li.search fieldset {
