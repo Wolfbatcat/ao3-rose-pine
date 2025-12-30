@@ -1259,8 +1259,12 @@ form.single input[type="submit"] {
 }
 
 .toggled form dd,
+.dynamic form dd {
+    width: 100%;
+    padding: 2px;
+}
+
 .toggled form dt,
-.dynamic form dd,
 .dynamic form dt {
     width: 100%;
     padding: 2px;
@@ -1270,6 +1274,8 @@ form.single input[type="submit"] {
 .dynamic form dl {
     margin: 0;
     padding: 0.643em 0;
+    display: flex;
+    align-items: center;
 }
 
 .dynamic form fieldset,
@@ -1774,6 +1780,24 @@ a.tag:hover {
 .added.tag {
     position: relative;
     background-color: var(--tag-default-bg);
+}
+
+/*>>========== COLLECTION TAGS ==========<<*/
+
+/* hide commas between blurb fandom and collection tags */
+.blurb h5.fandoms.heading,
+.blurb h5.tags.heading {
+  margin-right: -5px;
+  letter-spacing: -0.15em;
+  color: transparent;
+}
+
+/* repair fandom and collection heading tags */
+.blurb h5.fandoms.heading a.tag,
+.blurb h5.tags.heading a.tag {
+  box-sizing: border-box;
+  margin-right: 5px;
+  letter-spacing: initial;
 }
 
 /*>========== GROUP: TAG CLOUDS ==========<*/
@@ -2389,6 +2413,21 @@ li.comment:not(:has(.edit_comment)) {
     height: 45px;
     margin: 0;
     border-radius: var(--icon-primary-radius);
+}
+
+/* comment icon animation */
+/* credit to lfkyyy and the Hogwarts skin - https://github.com/Ifkyyy/AO3-skins */
+.comment img.icon,
+.comment span.icon,
+.comment div.icon>a {
+  border-radius: 50%;
+  transition: border-radius 150ms linear;
+}
+
+.comment span.icon:hover,
+.comment div.icon>a:is(:hover, :focus),
+.comment div.icon>a:is(:hover, :focus)>.icon {
+  border-radius: .5em;
 }
 
 .comment h4.byline {
