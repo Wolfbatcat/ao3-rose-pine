@@ -38,7 +38,7 @@ Both Zen Browser and the Zen Internet Firefox extension are required */
   --bg3:                 #23213638;             /* dashboard */
   --bg4:                 #28253e30;          /* forms, javascript context etc. */
   --bg5:                 #2a273f2c;          /* content boxes (blurbs, comments etc.), meta box, listbox, scrollbar track */
-  --bg6:                 #44415a;          /* dropdown and secondary menus, tooltips etc. #232136aa */
+  --bg6:                 #393552;          /* dropdown and secondary menus, tooltips etc. #232136aa */
   --bg7:                 #2d2a4030;          /* own blurbs, some even/odd list items etc. */
 
 
@@ -289,6 +289,7 @@ li.added:is(:hover, :focus) .delete a {
 .delete a:hover, span.delete:hover, span.delete a:hover {
 	color: var(--txt-alt2) !important;
 }
+
 #modal,
 .ao3-menu-dialog,
 #floaty-box-container {
