@@ -3045,7 +3045,7 @@ div.error,
     align-items: end;
     justify-content: center;
     z-index: 1;
-    padding: 1em 0 1em 2em;
+    padding: 0.429em;
     border-bottom: var(--border-width) solid var(--alert-txt);
     background: var(--alert-bg);
 }

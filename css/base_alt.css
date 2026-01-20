@@ -3066,6 +3066,7 @@ div.error,
     display: flex;
     align-items: end;
     justify-content: center;
+    box-sizing: border-box;
     z-index: 1;
     width: 96%;
     max-width: 96%;
@@ -3073,8 +3074,10 @@ div.error,
     margin-right: 2%;
     margin-bottom: 0;
     margin-left: 2%;
-    padding: 1em 0 1em 2em;
-    border-bottom: var(--border-width) solid var(--alert-txt);
+    padding: 0.429em;
+    border: var(--border-width) solid var(--alert-txt);
+    border-left: 5px solid var(--alert-txt);
+    border-radius: var(--radius-big);
     background: var(--alert-bg);
 }
 
