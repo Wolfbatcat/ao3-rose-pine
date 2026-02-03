@@ -27,19 +27,10 @@ a.tag:not(.fandom.index.group a.tag):not(h2.heading a.tag):not(.splash .favorite
 .tags a[data-remote="true"],
 .unwrangled,
 .added.tag {
-  margin-block: 0.15em;
-  padding: 0.15em 0.5em !important;
   background-color: transparent !important;
   color: var(--tag-freeform-txt);
   border: var(--border-width) solid var(--tag-freeform-txt);
   font-size: 1em !important;
-  line-height: 1.25 !important;
-  text-decoration: none;
-}
-
-.blurb h5.fandoms.heading a.tag,
-.blurb h5.tags.heading a.tag {
-  margin-right: 12px;
 }
 
 a.tag:not(.fandom.index.group a.tag,

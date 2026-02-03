@@ -1,0 +1,33 @@
+/*============================================================
+
+                      ✿✿✿ Rose Pine Dawn ✿✿✿ 
+                     Alternative Tag Style - Custom
+
+==============================================================
+GLOBAL VARIABLES
+==============================================================
+NOTE: This version contains a seperate tag color for platonic ships. It is recommended that you use this with the Reorder Ship Tags userscript. 
+https://greasyfork.org/en/scripts/562812-ao3-reorder-ship-tags
+
+/*>========== TAG COLORS ==========<*/
+
+:root {
+  --tag-default-bg: #9ccfd8;
+  --tag-fandom-bg: #eb6f92;
+  --tag-warning-bg: #f6c177;
+  --tag-ship-bg: #ea9a97;
+  --tag-platonic-ship-bg: #ebbcba;
+  --tag-character-bg: #3e8fb0;
+  --tag-freeform-bg: #9ccfd8;
+}
+
+/*>========== STYLE OVERRIDES ==========<*/
+
+
+/* Special styling for platonic ships containing "*a* " */
+li.relationships:has(a[href*="%20*a*%20"]) a.tag,
+[class^="relationship"] a[href*="%20*a*%20"],
+[class^="relationship"] a[href^="/tags/Minor%20or%20Background%20Relationship(s)/works"]{
+  background: var(--tag-platonic-ship-bg) !important;
+  color: var(--tag-ship-txt) !important;
+}
