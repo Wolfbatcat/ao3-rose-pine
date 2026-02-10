@@ -25,7 +25,7 @@ GLOBAL VARIABLES
 
   /* ICON BORDER-RADIUS */
   --icon-content-radius: 0.75rem;             /* content and bookmark icon */
-  --icon-primary-radius: 99999px;             /* primary and comment icon */
+  --icon-primary-radius: 50%;                 /* primary and comment icon */
   --icon-index-radius:   0.75rem;             /* index icon */
 
 
