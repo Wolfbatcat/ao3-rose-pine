@@ -92,21 +92,28 @@ This is where the fun part happens—picking your colors! Choose one of the them
     - `theme_rosepine.css` (Rosé Pine)
     - `theme_rosepinecool.css` (Rosé Pine Cool)
 3. Set it to **Parent Only** and submit.
-4. (Optional) Want a skin that switches between light and dark mode automatically based on your system preferences?
-    - [Create a second theme skin](https://archiveofourown.org/skins/new?skin_type=Skin) (e.g., `[BBC] Rosé Pine Moon` for dark mode if you already created Dawn for light mode).
-    - Paste in the CSS from your chosen second theme.
-    - Set it to **Parent Only**.
-    - Under **Advanced → Choose @media**, select `(prefers-color-scheme: dark)` for your dark theme OR `(prefers-color-scheme: light)` for your light theme.
-    - Go back to your first theme skin and edit it. Under **Advanced → Choose @media**, select the opposite @media query (`(prefers-color-scheme: light)` if your second theme uses dark, or vice versa).
-    - Now you have two themes that will switch automatically depending on your browser or device settings. When you get to Step 5, you'll add both theme skins to the parent chain.
-    - **Note:** If you prefer to change your skins manually but want an easier way to do so then check out my [AO3: Skin Switcher](https://greasyfork.org/en/scripts/551820-ao3-skin-switcher) script. You can easily change site skins without leaving the page you were on.
 
 </details>
 
 <details>
-<summary>2a. (Optional) Create an Alternative Tag Style Skin</summary>
+<summary>2a. (Optional) Auto Light/Dark Mode Switching</summary>
 
-Want a different tag style that's easier on the eyes with darker themes? This optional add-on changes how tags appear throughout the site.
+Want a skin that switches between light and dark mode automatically based on your system preferences?
+
+1. [Create a second theme skin](https://archiveofourown.org/skins/new?skin_type=Skin) (e.g., `[BBC] Rosé Pine Moon` for dark mode if you already created Dawn for light mode).
+2. Paste in the CSS from your chosen second theme.
+3. Set it to **Parent Only**.
+4. Under **Advanced → Choose @media**, select `(prefers-color-scheme: dark)` for your dark theme OR `(prefers-color-scheme: light)` for your light theme.
+5. Go back to your first theme skin and edit it. Under **Advanced → Choose @media**, select the opposite @media query (`(prefers-color-scheme: light)` if your second theme uses dark, or vice versa).
+6. Now you have two themes that will switch automatically depending on your browser or device settings. When you get to Step 5, you'll add both theme skins to the parent chain.
+7. **Tip:** If you prefer to change your skins manually but want an easier way to do so then check out my [AO3: Skin Switcher](https://greasyfork.org/en/scripts/551820-ao3-skin-switcher) script. You can easily change site skins without leaving the page you were on.
+
+</details>
+
+<details>
+<summary>2b. (Optional) Create an Alternative Tag Style Skin</summary>
+
+Want a different tag style that's easier on the eyes with darker themes? This optional add-on changes how tags appear throughout the site. [Previews available here](https://archiveofourown.org/works/69993411#:~:text=Ros%C3%A9%20Pine%20%28Alternative%20Tags).
 
 1. [Create a skin](https://archiveofourown.org/skins/new?skin_type=Skin) titled something like `[BBC] Rosé Pine - Tag Mod`.
 2. Paste the code from the tag mod file that matches your theme variant:
@@ -119,7 +126,7 @@ Want a different tag style that's easier on the eyes with darker themes? This op
 <details>
 <summary>3. Create the Tablet Skin</summary>
 
-> <strong>Note:</strong> The tablet skin is <strong>not optional</strong> and must be included for the theme to work properly
+> <strong>Important:</strong> The tablet and mobile skins are <strong>not optional</strong> and must be included for the theme to work properly across all screen sizes.
 
 1. [Create a skin](https://archiveofourown.org/skins/new?skin_type=Skin) titled `[BBC] Rosé Pine - Tablet`.
 2. Paste in the correct tablet file for your chosen layout:
@@ -151,7 +158,7 @@ Want a different tag style that's easier on the eyes with darker themes? This op
     1. [BBC] Rosé Pine - Base
     2. **Single theme:** [BBC] Rosé Pine Dawn / [BBC] Rosé Pine Moon / [BBC] Rosé Pine  
        **OR for auto light/dark switching:** Add *both* of your theme skins (e.g., [BBC] Rosé Pine Dawn and [BBC] Rosé Pine Moon). The order doesn't matter since they use @media queries.
-    3. **(Optional)** [BBC] Rosé Pine - Tag Mod — only if you created the alternative tag style skin in Step 2a
+    3. **(Optional)** [BBC] Rosé Pine - Tag Mod — only if you created the alternative tag style skin in Step 2b
     4. [BBC] Rosé Pine - Tablet
     5. [BBC] Rosé Pine - Mobile
 4. Click **Submit**, then **Use**.
