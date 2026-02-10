@@ -2646,6 +2646,11 @@ li.comment:has(.edit_comment) {
 .icon,
 .primary .icon {
     border-radius: var(--icon-primary-radius);
+    transition: border-radius 150ms linear;
+}
+.icon:hover,
+.primary .icon:hover {
+    border-radius: 0.5em;
 }
 
 /* scrollable CSS code boxes on skins pages */
