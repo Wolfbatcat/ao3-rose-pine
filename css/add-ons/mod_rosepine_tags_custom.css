@@ -30,7 +30,6 @@ a.tag:not(.fandom.index.group a.tag):not(h2.heading a.tag):not(.splash .favorite
   background-color: transparent !important;
   color: var(--tag-freeform-txt);
   border: var(--border-width) solid var(--tag-freeform-txt);
-  font-size: 1em !important;
 }
 
 a.tag:not(.fandom.index.group a.tag,
