@@ -9,7 +9,7 @@
         Layout</strong>. Once you pick a layout, use all the corresponding skins for that layout (base, tablet, and
       mobile). Do not mix skins from different layouts.</p></div><div class="notice">
 
-<p><strong>Before asking questions:</strong> Check the <strong>Customization</strong> section below for fonts, text size, tag colors, and text decorations. The <strong>Add-Ons</strong> section covers compatible userscripts.</p></div><h3>0. Choose Your Layout</h3>
+<p><strong>Before asking questions:</strong> Check the <strong>Customization</strong> section below for fonts, text size, tag colors, and text decorations. The <strong>Add-Ons</strong> section covers compatible userscripts. Also check the <strong>comments</strong> to see if your question has already been addressed.</p></div><h3>0. Choose Your Layout</h3>
 
 <p>Before you begin, decide which layout you prefer:</p><ul>
     <li><strong>Normal Layout:</strong> Uses <code>base.css</code>, <code>tablet.css</code>, and <code>mobile.css</code>
@@ -72,7 +72,7 @@
     </li>
   </ul><h3>2b. (Optional) Create an Alternative Tag Style Skin</h3>
 
-<p>Want a different tag style that's easier on the eyes with darker themes? This optional add-on changes how tags appear throughout the site. <a href="https://archiveofourown.org/works/69993411#:~:text=Ros%C3%A9%20Pine%20%28Alternative%20Tags" rel="nofollow">Previews available here</a>.</p><ul>
+<p>Want a different tag style that's easier on the eyes with darker themes? This optional add-on changes how tags appear throughout the site. <a href="https://archiveofourown.org/works/69993411#:~:text=Ros%C3%A9%20Pine%20%28Alternative%20Tags" rel="nofollow">Previews here</a>.</p><ul>
     <li><a href="https://archiveofourown.org/skins/new?skin_type=Skin" rel="nofollow">Create a skin</a> titled something
       like <code>[BBC] Rosé Pine - Tag Mod</code>.</li>
     <li>Paste the code from the tag mod file that matches your theme variant:
@@ -84,7 +84,7 @@
     <li>Set it to <strong>Parent Only</strong> and submit.</li>
   </ul><h3>3. Create the Tablet Skin</h3><div class="notice required">
 
-<p><strong>Important:</strong> The tablet and mobile skins are not optional and must be included for the theme to work properly across all screen sizes.</p></div><ul>
+<p><strong>Important:</strong> The tablet and mobile skins are not optional and must be included for the theme to work properly.</p></div><ul>
     <li><a href="https://archiveofourown.org/skins/new?skin_type=Skin" rel="nofollow">Create a skin</a> titled
       <code>[BBC] Rosé Pine - Tablet</code>.
     </li>
@@ -132,7 +132,7 @@
     <li>Click <strong>Submit</strong>, then <strong>Use</strong>.</li>
   </ul><h2>Customization</h2><div class="notice">
 
-<p><strong>Note:</strong> AO3's code editor doesn't save annotations, so if you want to edit a skin, I highly
+<p><strong>Note:</strong> AO3's code editor doesn't save annotations (aka the labels for code sections), so if you want to edit a skin, I highly
       recommend copying it to a proper code editor to make your changes.</p>
 
 <p><strong>Tip:</strong> For an easier time changing fonts and font sizes, check out the <a href="https://greasyfork.org/en/scripts/550537-ao3-site-wizard" rel="nofollow">AO3: Site Wizard</a>
@@ -142,27 +142,29 @@ userscript—it works on both PC and mobile.</p></div><ul>
         Mono</a>. If you want the
       cursive version of the code font, just remove the comments from
       <code>/* font-style: italic; */</code> in your theme file.<br />
+<br />
 <strong>To change fonts:</strong> Open your theme skin (i.e. [BBC] Rosé Pine Dawn) and press <kbd>Ctrl+F</kbd> to
-      search for <code>font-family</code>. You'll see blocks like:
-
+      search for <code>font-family</code>. You'll see blocks like:<br />
+<br />
 <pre><code>body,
   input,
   ...existing selectors...
   {
       font-family: Figtree, Bitter, Helvetica, ...;
   }
-  </code></pre>
+  </code></pre><br />
       Replace the font names in these <code>font-family</code> lines with your preferred fonts, keeping the fallback
-      fonts for best compatibility. For example:
+      fonts for best compatibility. For example:<br />
+<br />
       <pre><code>font-family: YourFont, Figtree, Bitter, Helvetica, Arial, sans-serif;
-  </code></pre>
+  </code></pre><br />
       Do the same for headings and code font sections if you want to change those as well.
     </li>
-    <li><strong>Text Size:</strong> You can make text bigger or smaller using two variables in the theme skin:
-
+    <li><strong>Text Size:</strong> You can make text bigger or smaller using two variables in the theme skin:<br />
+<br />
       <pre><code>/* TEXT SIZE */
 --txt-size-main:       100%;     /* main text size */
---txt-size-work:       110%;     /* work text size */</code></pre>
+--txt-size-work:       110%;     /* work text size */</code></pre><br />
       <code>--txt-size-main</code> controls text size across the whole site (navigation, blurbs, forms, etc.), while
       <code>--txt-size-work</code> is just for the actual work content. Bump up the percentage to make text larger (like
       <code>110%</code> or <code>120%</code>) or decrease it for smaller text (like <code>90%</code>). Just be aware
@@ -170,7 +172,8 @@ userscript—it works on both PC and mobile.</p></div><ul>
       mostly work.<br />
 </li>
     <li><strong>Tag Colors:</strong> Want to change up the tag colors? The variables are in the <code>TAG COLORS</code>
-      section near the top of your theme file:
+      section near the top of your theme file:<br />
+<br />
       <pre><code>/*&gt;========== TAG COLORS ==========&lt;*/
 
 /* BACKGROUND */
@@ -188,7 +191,7 @@ userscript—it works on both PC and mobile.</p></div><ul>
 --tag-warning-txt:     var(--txt-alt1);
 --tag-ship-txt:        var(--txt-alt1);
 --tag-character-txt:   var(--txt-alt1);
---tag-freeform-txt:    var(--txt-alt1);</code></pre>
+--tag-freeform-txt:    var(--txt-alt1);</code></pre><br />
       Just swap out the hex color values with whatever you like! For example, if you want purple fandom tags, change
       <code>--tag-fandom-bg: #eb6f92;</code> to <code>--tag-fandom-bg: #c4a7e7;</code>. You can also tweak the text
       color for each tag type using the <code>--tag-*-txt</code> variables.<br />
@@ -198,19 +201,19 @@ userscript—it works on both PC and mobile.</p></div><ul>
 <br />
 <strong>Important:</strong> If you're using the Alternative Tag Style add-on (Step 2a), you must change the tag colors in the tag add-on skin instead of the theme skin. The border and text colors are controlled by the tag text variables (like <code>--tag-default-txt</code>).
     </li>
-    <li><strong>Platonic Ship Tags:</strong> Want platonic ships (relationships with the &amp; symbol) to stand out with their own color? Add this rule to the bottom of your theme skin to give them a custom color:
-
+    <li><strong>Platonic Ship Tags:</strong> Want platonic ships (relationships with the &amp; symbol) to stand out with their own color? Add this rule to the bottom of your theme skin to give them a custom color:<br />
+<br />
       <pre><code>li.relationships:has(a[href*="%20*a*%20"]) a.tag,
 [class^="relationship"] a[href*="%20*a*%20"] {
   background-color: #c4a7e7 !important;
-}</code></pre>
+}</code></pre><br />
       Replace <code>#c4a7e7</code> with any color you prefer. If you're using the tags add-on, make sure you add the code to the tags add-on instead of the theme skin and target the color and border properties instead of the background color.<br />
 <br />
 <strong>Note:</strong> If you're using the Alternative Tag Style add-on, there's a <a href="https://github.com/Wolfbatcat/ao3-rose-pine/blob/main/css/add-ons/mod_rosepine_tags_custom.css" rel="nofollow">custom variant</a> that includes this platonic ship distinction already built in.
     </li>
     <li><strong>Text Decorations:</strong> Those little symbols after tags and headers? You can change them! The
-      rules are at the end of the theme CSS. For tags, it looks like this:
-
+      rules are at the end of the theme CSS. For tags, it looks like this:<br />
+<br />
       <pre><code>a.tag:not(.fandom.index.group a.tag,
 h2.heading a.tag,
 .splash .favorite a.tag,
@@ -220,13 +223,12 @@ dd.fandom.tags a,
 [class^=relationship] a,
 [class^=character] a.tag):after {
   content: "\00a0\00a0✿";
-}</code></pre>
-      Swap out <code>✿</code> for whatever symbol you want (♥, ✦, ʚ, etc.).
+}</code></pre><br />
+      Swap out <code>✿</code> for whatever symbol you want (♥, ✦, ʚ, etc.).<br />
+<br />
+<strong>Important:</strong> Since the mobile skin uses the shortened version of the title "AO3 ✿",
+        you'll have to change the symbol there too.
     </li>
-    <ul>
-      <li><strong>Important:</strong> Since the mobile skin uses the shortened version of the title "AO3 ✿",
-        you'll have to change the symbol there too.</li>
-    </ul>
 
   </ul><h2>Add-Ons</h2><p>These userscripts work great with the Rosé Pine theme. Some can be customized to match the palette.</p><div class="notice">
 
