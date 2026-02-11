@@ -27,7 +27,7 @@ https://greasyfork.org/en/scripts/562812-ao3-reorder-ship-tags
 /* Special styling for platonic ships containing "*a* " */
 li.relationships:has(a[href*="%20*a*%20"]) a.tag,
 [class^="relationship"] a[href*="%20*a*%20"],
-[class^="relationship"] a[href^="/tags/Minor%20or%20Background%20Relationship(s)/works"]{
+[class^="relationship"] a[href^="/tags/Other%20Relationship%20Tags%20to%20Be%20Added"]{
   background: var(--tag-platonic-ship-bg) !important;
   color: var(--tag-ship-txt) !important;
 }
