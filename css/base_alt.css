@@ -1375,10 +1375,10 @@ a.current,
 a.current:hover,
 a:link.current,
 .current a:visited {
-    border-color: var(--int-current-border);
+    border-color: var(--int-btn-hgl-border);
     box-shadow: none;
-    background: var(--int-current-bg);
-    color: var(--int-current-txt);
+    background: var(--int-btn-hgl-bg);
+    color: var(--int-btn-hgl-txt);
     cursor: default;
 }
 
