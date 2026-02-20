@@ -2936,6 +2936,7 @@ dl.nomination {
     padding: 0 2%;
     font-size: var(--txt-size-work);
     /* adjust work font size here */
+    color: #FFF;
 }
 
 /*>========== IMAGES ==========<*/
