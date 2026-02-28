@@ -1226,9 +1226,9 @@ textarea.LV_invalid_field:is(:hover, :focus) {
 }
 
 #modal .footer .action.modal-closer {
-	bottom: 4px;
-	position: absolute;
-	right: 8px;
+    bottom: 4px;
+    position: absolute;
+    right: 8px;
 }
 
 /*>========== MODE: DYNAMIC ==========<*/
@@ -1272,7 +1272,7 @@ form.single input[type="submit"] {
     padding: 0.643em 0;
 }
 
-#new_collection_item > dl:nth-child(2) {
+#new_collection_item>dl:nth-child(2) {
     display: flex;
     align-items: center;
 }
@@ -1786,17 +1786,17 @@ a.tag:hover {
 /* hide commas between blurb fandom and collection tags */
 .blurb h5.fandoms.heading,
 .blurb h5.tags.heading {
-  margin-right: -5px;
-  color: transparent;
+    margin-right: -5px;
+    color: transparent;
 }
 
 /* repair fandom and collection heading tags */
 .blurb h5.fandoms.heading a.tag,
 .blurb h5.tags.heading a.tag {
-  box-sizing: border-box;
-  margin-right: 5px;
-  letter-spacing: initial;
-  font-weight: 400
+    box-sizing: border-box;
+    margin-right: 5px;
+    letter-spacing: initial;
+    font-weight: 400
 }
 
 /*>========== GROUP: TAG CLOUDS ==========<*/
@@ -2419,14 +2419,14 @@ li.comment:not(:has(.edit_comment)) {
 .comment img.icon,
 .comment span.icon,
 .comment div.icon>a {
-  border-radius: 50%;
-  transition: border-radius 150ms linear;
+    border-radius: 50%;
+    transition: border-radius 150ms linear;
 }
 
 .comment span.icon:hover,
 .comment div.icon>a:is(:hover, :focus),
 .comment div.icon>a:is(:hover, :focus)>.icon {
-  border-radius: .5em;
+    border-radius: .5em;
 }
 
 .comment h4.byline {
@@ -2648,6 +2648,7 @@ li.comment:has(.edit_comment) {
     border-radius: var(--icon-primary-radius);
     transition: border-radius 150ms linear;
 }
+
 .icon:hover,
 .primary .icon:hover {
     border-radius: 0.5em;
@@ -4027,6 +4028,10 @@ li.blurb #header.region>ul.navigation.actions>li.dropdown {
 }
 
 /* user notes styling */
+.create-note-btn {
+    border-radius: 8px !important;
+}
+
 .user-note-preview>div>div,
 .note-textarea {
     border: 1px solid var(--border3) !important;
@@ -4076,8 +4081,9 @@ li.blurb #header.region>ul.navigation.actions>li.dropdown {
     border-top-right-radius: var(--radius-mid);
 }
 
-/*>========== USERSCRIPT: AO3 SITE WIZARD STYLING ==========<*/
-/* https://greasyfork.org/en/scripts/550537-ao3-site-wizard */
+
+/*>========== MISC USERSCRIPT STYLING ==========<*/
+/* https://greasyfork.org/en/users/1498004 */
 
 input[type="range"] {
     background: transparent;
@@ -4101,4 +4107,9 @@ input[type="range"]::-moz-range-thumb {
     border: none;
     border-radius: 50%;
     cursor: pointer;
+}
+
+input[type="checkbox"]:checked+[class*="toggle-slider"],
+input[type="checkbox"]:checked+[class*="toggle-track"] {
+    background-color: var(--link-visited) !important;
 }
