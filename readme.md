@@ -36,7 +36,7 @@
 
 | Rosé Pine | Rosé Pine Cool | Mobile |
 | --- | --- | --- |
-| ![Rosé Pine (Card)](https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/images/image_card_rosepinemoon.png) | ![Rosé Pine Cool (Card)](https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/images/image_card_rosepinecool.png) | <img src="https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/images/image_card_mobile.png" alt="Mobile" width="1845"> |
+| ![Rosé Pine (Card)](https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/images/image_card_rosepine.png) | ![Rosé Pine Cool (Card)](https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/images/image_card_rosepinecool.png) | <img src="https://raw.githubusercontent.com/Wolfbatcat/ao3-rose-pine/refs/heads/main/images/image_card_mobile.png" alt="Mobile" width="1845"> |
 
 </details>
 
