@@ -1317,11 +1317,6 @@ input::file-selector-button {
     border-radius: var(--radius-alt) !important;
 }
 
-label.action,
-.actions label {
-    box-shadow: none;
-}
-
 input[type="submit"] {
     height: auto;
     /* required for proper rendering */
