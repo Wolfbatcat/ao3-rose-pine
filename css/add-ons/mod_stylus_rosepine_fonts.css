@@ -3,45 +3,28 @@
 @namespace      https://github.com/ravenothere/AO3-Tweaks
 @version        1.0.0
 @description    Custom fonts for the AO3 Rose Pine site skin
-@author         ravenothere, BlackBatCat
+@author         BlackBatCat
 ==/UserStyle== */
 
+/* NOTE: This file is meant to be used as an add-on to the main Rose Pine site. Big thanks to the creators of the fonts used here and ravenothere for getting them to work on mobile!*/
+
 @-moz-document domain("archiveofourown.org") {
-    @font-face {
-        font-family: "Apfel Grotezk";
-        src: url("https://cdn.jsdelivr.net/gh/collletttivo/apfel-grotezk@main/fonts/ApfelGrotezk-Regular.woff2");
-    }
+    
+    /*>========== SETTINGS ==========<*/
 
-    @font-face {
-        font-family: "Apfel Grotezk Fett";
-        src: url("https://cdn.jsdelivr.net/gh/collletttivo/apfel-grotezk@main/fonts/ApfelGrotezk-Fett.woff2");
-    }
-
-    @font-face {
-        font-family: "Domine";
-        src: url("https://cdn.jsdelivr.net/gh/googlefonts/Domine@main/fonts/variable/Domine%5Bwght%5D.ttf");
-    }
-
-    @font-face {
-        font-family: "Victor Mono Medium";
-        src: url("https://cdn.jsdelivr.net/gh/rubjo/victor-mono@master/dist/woff2/VictorMono-Regular.woff2");
-    }
-
-    @font-face {
-        font-family: "Merriweather";
-        src: url("https://cdn.jsdelivr.net/gh/SorkinType/Merriweather@master/fonts/webfonts/Merriweather-Regular.woff2");
-    }
-
-    @font-face {
-        font-family: "Figtree";
-        src: url("https://cdn.jsdelivr.net/gh/erikdkennedy/figtree@master/fonts/webfonts/Figtree%5Bwght%5D.woff2");
-
-    }
-
-    /*>========== FONTS ==========<*/
+    /* Edit the variables below to customize fonts and text sizes. */
 
     :root {
-        --txt-bold: 700;
+        /* TEXT SIZES */
+        --txt-size-main:       100%;                /* main text size (bigger than 130% causes some issues, but is still mostly functional) */
+        --txt-size-work:       110%;                /* work text size */
+        --txt-bold:             700;                /* font weight for bold text */
+
+        /* FONTS */
+        --font-main:           Figtree, Merriweather, Apfel Grotezk, Bitter, Helvetica, "Trebuchet MS", "Lucida Sans", Arial, sans-serif, "GNU Unifont";
+        --font-work:           Figtree, Merriweather, Apfel Grotezk, Bitter, Helvetica, "Trebuchet MS", "Lucida Sans", Arial, sans-serif, "GNU Unifont";
+        --font-heading:        Figtree, Merriweather, Apfel Grotezk Fett, Bitter, Helvetica, "Trebuchet MS", "Lucida Sans", Arial, sans-serif, "GNU Unifont";
+        --font-code:           Victor Mono Medium, Consolas, Monaco, Courier, monospace;
     }
 
     /* MAIN FONT FAMILY */
@@ -69,7 +52,13 @@
     h5.fandoms.heading a.tag,
     dd.fandom.tags a,
     select {
-        font-family: Apfel Grotezk, Figtree, Bitter, Helvetica, "Trebuchet MS", "Lucida Sans", Arial, sans-serif, "GNU Unifont";
+        font-family: var(--font-main);
+    }
+
+    /* WORKS FONT */
+    #workskin,
+    .preface * {
+        font-family: var(--font-work);
     }
 
     /* HEADINGS FONT FAMILY */
@@ -80,7 +69,7 @@
     h5,
     h6,
     .heading {
-        font-family: Apfel Grotezk Fett, Figtree, Bitter, Helvetica, "Trebuchet MS", "Lucida Sans", Arial, sans-serif, "GNU Unifont";
+        font-family: var(--font-heading);
         font-weight: var(--txt-bold);
     }
 
@@ -95,15 +84,38 @@
     textarea#skin_css,
     .css.module blockquote pre,
     #floaty-textarea {
-        font-family: Victor Mono Medium, Consolas, Monaco, Courier, monospace;
+        font-family: var(--font-code);
         /* font-style: italic; */
 
     }
 
-    /* WORKS FONT */
-    #workskin,
-    .preface * {
-        font-family: Merriweather, serif;
+    /* IMPORTED FONTS */
+    @font-face {
+        font-family: "Figtree";
+        src: url("https://cdn.jsdelivr.net/gh/erikdkennedy/figtree@master/fonts/webfonts/Figtree%5Bwght%5D.woff2");
+    }
+
+    @font-face {
+        font-family: "Apfel Grotezk";
+        src: url("https://cdn.jsdelivr.net/gh/collletttivo/apfel-grotezk@main/fonts/ApfelGrotezk-Regular.woff2");
+    }
+
+    @font-face {
+        font-family: "Apfel Grotezk Fett";
+        src: url("https://cdn.jsdelivr.net/gh/collletttivo/apfel-grotezk@main/fonts/ApfelGrotezk-Fett.woff2");
+    }
+
+    @font-face {
+        font-family: "Domine";
+        src: url("https://cdn.jsdelivr.net/gh/googlefonts/Domine@main/fonts/variable/Domine%5Bwght%5D.ttf");
+    }
+    @font-face {
+        font-family: "Merriweather";
+        src: url("https://cdn.jsdelivr.net/gh/SorkinType/Merriweather@master/fonts/webfonts/Merriweather-Regular.woff2");
+    }
+    @font-face {
+        font-family: "Victor Mono Medium";
+        src: url("https://cdn.jsdelivr.net/gh/rubjo/victor-mono@master/dist/woff2/VictorMono-Regular.woff2");
     }
 
 }
