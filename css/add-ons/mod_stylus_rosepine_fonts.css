@@ -1,0 +1,109 @@
+/* ==UserStyle==
+@name           AO3: Rose Pine Fonts
+@namespace      https://github.com/ravenothere/AO3-Tweaks
+@version        1.0.0
+@description    Custom fonts for the AO3 Rose Pine site skin
+@author         ravenothere, BlackBatCat
+==/UserStyle== */
+
+@-moz-document domain("archiveofourown.org") {
+    @font-face {
+        font-family: "Apfel Grotezk";
+        src: url("https://cdn.jsdelivr.net/gh/collletttivo/apfel-grotezk@main/fonts/ApfelGrotezk-Regular.woff2");
+    }
+
+    @font-face {
+        font-family: "Apfel Grotezk Fett";
+        src: url("https://cdn.jsdelivr.net/gh/collletttivo/apfel-grotezk@main/fonts/ApfelGrotezk-Fett.woff2");
+    }
+
+    @font-face {
+        font-family: "Domine";
+        src: url("https://cdn.jsdelivr.net/gh/googlefonts/Domine@main/fonts/variable/Domine%5Bwght%5D.ttf");
+    }
+
+    @font-face {
+        font-family: "Victor Mono Medium";
+        src: url("https://cdn.jsdelivr.net/gh/rubjo/victor-mono@master/dist/woff2/VictorMono-Regular.woff2");
+    }
+
+    @font-face {
+        font-family: "Merriweather";
+        src: url("https://cdn.jsdelivr.net/gh/SorkinType/Merriweather@master/fonts/webfonts/Merriweather-Regular.woff2");
+    }
+
+    @font-face {
+        font-family: "Figtree";
+        src: url("https://cdn.jsdelivr.net/gh/erikdkennedy/figtree@master/fonts/webfonts/Figtree%5Bwght%5D.woff2");
+
+    }
+
+    /*>========== FONTS ==========<*/
+
+    :root {
+        --txt-bold: 700;
+    }
+
+    /* MAIN FONT FAMILY */
+    body,
+    input,
+    .toggled form,
+    .dynamic form,
+    .secondary,
+    .dropdown,
+    blockquote,
+    .prompt .blurb h6,
+    .bookmark .user .meta,
+    a.work,
+    span.symbol,
+    .heading .actions,
+    .heading .action,
+    .heading span.actions,
+    button,
+    span.unread,
+    .replied,
+    span.claimed,
+    .actions span.defaulted,
+    .splash .news .meta,
+    .datetime,
+    h5.fandoms.heading a.tag,
+    dd.fandom.tags a,
+    select {
+        font-family: Apfel Grotezk, Figtree, Bitter, Helvetica, "Trebuchet MS", "Lucida Sans", Arial, sans-serif, "GNU Unifont";
+    }
+
+    /* HEADINGS FONT FAMILY */
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    .heading {
+        font-family: Apfel Grotezk Fett, Figtree, Bitter, Helvetica, "Trebuchet MS", "Lucida Sans", Arial, sans-serif, "GNU Unifont";
+        font-weight: var(--txt-bold);
+    }
+
+    /* CODE FONT FAMILY */
+    kbd,
+    tt,
+    code,
+    var,
+    pre,
+    samp,
+    textarea,
+    textarea#skin_css,
+    .css.module blockquote pre,
+    #floaty-textarea {
+        font-family: Victor Mono Medium, Consolas, Monaco, Courier, monospace;
+        /* font-style: italic; */
+
+    }
+
+    /* WORKS FONT */
+    #workskin,
+    .preface * {
+        font-family: Merriweather, serif;
+    }
+
+}
