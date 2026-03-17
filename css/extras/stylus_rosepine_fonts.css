@@ -1,0 +1,126 @@
+/* ==UserStyle==
+@name           AO3: Rose Pine Fonts
+@namespace      https://github.com/Wolfbatcat/ao3-rose-pine
+@version        1.0.1
+@description    Custom fonts for the AO3 Rose Pine site skin
+@author         BlackBatCat, ravenothere
+==/UserStyle== */
+
+/* NOTE: This file is meant to be used as an add-on to the main Rose Pine site skin. The `--txt-size` variables will NOT work on other site skins.
+         Big thanks to the creators of the fonts used here and ravenothere for getting them to work on mobile!*/
+
+@-moz-document domain("archiveofourown.org") {
+    
+    /*>========== SETTINGS ==========<*/
+
+    /* Edit the variables below to customize fonts and text sizes. */
+
+    :root {
+        /* TEXT SIZES */
+        --txt-size-main:       100%;                /* main text size (bigger than 130% causes some issues, but is still mostly functional) */
+        --txt-size-work:       110%;                /* work text size */
+        --txt-bold:             700;                /* font weight for bold text */
+
+        /* FONTS */
+        --font-main:           Figtree, Merriweather, Apfel Grotezk, Bitter, Helvetica, "Trebuchet MS", "Lucida Sans", Arial, sans-serif, "GNU Unifont";
+        --font-work:           Figtree, Merriweather, Apfel Grotezk, Bitter, Helvetica, "Trebuchet MS", "Lucida Sans", Arial, sans-serif, "GNU Unifont";
+        --font-heading:        ; /* Leave blank to use the main font for headings */
+        --font-code:           Victor Mono Medium, Consolas, Monaco, Courier, monospace;
+    }
+
+    /* MAIN FONT FAMILY */
+    body,
+    input,
+    .toggled form,
+    .dynamic form,
+    .secondary,
+    .dropdown,
+    blockquote,
+    .prompt .blurb h6,
+    .bookmark .user .meta,
+    a.work,
+    span.symbol,
+    .heading .actions,
+    .heading .action,
+    .heading span.actions,
+    button,
+    span.unread,
+    .replied,
+    span.claimed,
+    .actions span.defaulted,
+    .splash .news .meta,
+    .datetime,
+    h5.fandoms.heading a.tag,
+    dd.fandom.tags a,
+    select {
+        font-family: var(--font-main);
+    }
+
+    /* WORKS FONT */
+    #workskin,
+    .preface * {
+        font-family: var(--font-work);
+    }
+
+    /* HEADINGS FONT FAMILY */
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    .heading {
+        font-family: var(--font-heading);
+        font-weight: var(--txt-bold);
+    }
+
+    /* CODE FONT FAMILY */
+    kbd,
+    tt,
+    code,
+    var,
+    pre,
+    samp,
+    textarea,
+    textarea#skin_css,
+    .css.module blockquote pre,
+    #floaty-textarea {
+        font-family: var(--font-code);
+        /* font-style: italic; */
+
+    }
+
+    /* IMPORTED FONTS */
+    @font-face {
+        font-family: "Figtree";
+        src: url("https://cdn.jsdelivr.net/gh/erikdkennedy/figtree@master/fonts/webfonts/Figtree%5Bwght%5D.woff2");
+    }
+
+    @font-face {
+        font-family: "Apfel Grotezk";
+        src: url("https://cdn.jsdelivr.net/gh/collletttivo/apfel-grotezk@main/fonts/ApfelGrotezk-Regular.woff2");
+    }
+
+    @font-face {
+        font-family: "Apfel Grotezk Fett";
+        src: url("https://cdn.jsdelivr.net/gh/collletttivo/apfel-grotezk@main/fonts/ApfelGrotezk-Fett.woff2");
+    }
+
+    @font-face {
+        font-family: "Domine";
+        src: url("https://cdn.jsdelivr.net/gh/googlefonts/Domine@main/fonts/variable/Domine%5Bwght%5D.ttf");
+    }
+    @font-face {
+        font-family: "Merriweather";
+        src: url("https://cdn.jsdelivr.net/gh/SorkinType/Merriweather@master/fonts/webfonts/Merriweather-Regular.woff2");
+    }
+    @font-face {
+        font-family: "Victor Mono Medium";
+        src: url("https://cdn.jsdelivr.net/gh/rubjo/victor-mono@master/dist/woff2/VictorMono-Regular.woff2");
+    }
+    @font-face {
+        font-family: "Outfit";
+        src: url("https://cdn.jsdelivr.net/gh/Outfitio/Outfit-Fonts@main/fonts/webfonts/Outfit-Regular.woff2");
+    }
+
+}
