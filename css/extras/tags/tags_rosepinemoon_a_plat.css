@@ -1,7 +1,7 @@
 /*============================================================
 
-                      ✿✿✿ Rose Pine Dawn ✿✿✿ 
-                     Alternative Tag Style - Custom
+                   ✿✿✿ Rose Pine Moon Tags ✿✿✿
+                  Style A — Platonic Ships
 
 ==============================================================
 GLOBAL VARIABLES
@@ -12,13 +12,14 @@ https://greasyfork.org/en/scripts/562812-ao3-reorder-ship-tags
 /*>========== TAG COLORS ==========<*/
 
 :root {
-  --tag-default-bg: #9ccfd8;
-  --tag-fandom-bg: #eb6f92;
-  --tag-warning-bg: #f6c177;
-  --tag-ship-bg: #ea9a97;
-  --tag-platonic-ship-bg: #ebbcba;
-  --tag-character-bg: #3e8fb0;
-  --tag-freeform-bg: #9ccfd8;
+  /* BACKGROUND */
+  --tag-default-bg:      #393757;
+  --tag-fandom-bg:       #eb6f92;
+  --tag-warning-bg:      #ebbcba;
+  --tag-ship-bg:         #ebbcba;
+  --tag-platonic-ship-bg: #9ccfd8;
+  --tag-character-bg:    #3e8fb0;
+  --tag-freeform-bg:     var(--tag-default-bg);
 }
 
 /*>========== STYLE OVERRIDES ==========<*/

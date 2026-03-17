@@ -1,7 +1,7 @@
 /*============================================================
 
-                      ✿✿✿ Rose Pine ✿✿✿ 
-                     Alternative Tag Style
+                   ✿✿✿ Rose Pine Tags ✿✿✿
+                          Style B
 
 ==============================================================
 GLOBAL VARIABLES
@@ -10,11 +10,11 @@ GLOBAL VARIABLES
 /*>========== TAG COLORS ==========<*/
 
 :root {
-
+    
   /* TEXT */
   --tag-default-txt:     #908caa;
-  --tag-fandom-txt:      #c4a7e7;
-  --tag-warning-txt:     #c4a7e7;
+  --tag-fandom-txt:      #eb6f92;
+  --tag-warning-txt:     #ebbcba;
   --tag-ship-txt:        #9ccfd8;
   --tag-character-txt:   #3e8fb0;
   --tag-freeform-txt:    #908caa;

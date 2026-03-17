@@ -1,0 +1,68 @@
+/*============================================================
+
+                ✿✿✿ Rose Pine Dawn Tags ✿✿✿
+                          Style B
+
+==============================================================
+GLOBAL VARIABLES
+==============================================================
+
+/*>========== TAG COLORS ==========<*/
+
+:root {
+
+  /* BACKGROUND */
+  --tag-default-bg:      #9ccfd8;
+  --tag-fandom-bg:       #eb6f92;
+  --tag-warning-bg:      #f6c177;
+  --tag-ship-bg:         #ea9a97;
+  --tag-character-bg:    #5DA8C6;
+  --tag-freeform-bg:     var(--tag-default-bg);
+
+  /* TEXT */
+  --tag-default-txt:     #214D54;
+  --tag-fandom-txt:      #460A1B;
+  --tag-warning-txt:     #694007;
+  --tag-ship-txt:        #681815;
+  --tag-character-txt:   #132B35;
+  --tag-freeform-txt:    var(--tag-default-txt);
+
+}
+
+/*>========== STYLE OVERRIDES ==========<*/
+
+a.tag:not(.fandom.index.group a.tag):not(h2.heading a.tag):not(.splash .favorite a.tag):not(.splash .favorite li:nth-of-type(2n+1) a.tag):hover,
+.added.tag:hover,
+.unwrangled:hover,
+.tags a[data-remote="true"]:hover {
+    color: var(--tag-default-txt) !important;
+}
+
+h5.fandoms.heading a.tag:not(.fandom.index.group a.tag):not(h2.heading a.tag):not(.splash .favorite a.tag):not(.splash .favorite li:nth-of-type(2n+1) a.tag):hover,
+dd.fandom.tags a.tag:not(.fandom.index.group a.tag):not(h2.heading a.tag):not(.splash .favorite a.tag):not(.splash .favorite li:nth-of-type(2n+1) a.tag):hover {
+    color: var(--tag-fandom-txt) !important;
+}
+
+[class^=warning] a.tag:not(.fandom.index.group a.tag):not(h2.heading a.tag):not(.splash .favorite a.tag):not(.splash .favorite li:nth-of-type(2n+1) a.tag):hover {
+    color: var(--tag-warning-txt) !important;
+}
+
+[class^=relationship] a.tag:not(.fandom.index.group a.tag):not(h2.heading a.tag):not(.splash .favorite a.tag):not(.splash .favorite li:nth-of-type(2n+1) a.tag):hover {
+    color: var(--tag-ship-txt) !important;
+}
+
+[class^=character] a.tag:not(.fandom.index.group a.tag):not(h2.heading a.tag):not(.splash .favorite a.tag):not(.splash .favorite li:nth-of-type(2n+1) a.tag):hover {
+    color: var(--tag-character-txt) !important;
+}
+
+.delete a,
+span.delete,
+span.delete a {
+  color: var(--tag-default-txt);
+}
+
+.delete a:hover,
+span.delete:hover,
+span.delete a:hover {
+  color: var(--tag-default-txt) !important;
+}
