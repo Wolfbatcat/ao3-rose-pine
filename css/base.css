@@ -4045,6 +4045,10 @@ li.blurb #header.region>ul.navigation.actions>li.dropdown {
     border-top-right-radius: var(--radius-mid);
 }
 
+.create-note-btn:hover{
+    opacity: 100% !important;
+}
+
 /*>========== MISC USERSCRIPT STYLING ==========<*/
 /* https://greasyfork.org/en/users/1498004 */
 
