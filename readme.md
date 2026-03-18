@@ -117,8 +117,9 @@ Want a different tag style that's easier on the eyes with darker themes? This op
 
 1. [Create a skin](https://archiveofourown.org/skins/new?skin_type=Skin) titled something like `[BBC] Rosé Pine - Tag Mod`.
 2. Paste the code from the tag mod file that matches your theme variant:
-    - **For regular Rosé Pine themes (Dawn, Moon, or Rosé Pine):** [mod_rosepine_tags.css](https://github.com/Wolfbatcat/ao3-rose-pine/blob/main/css/add-ons/mod_rosepine_tags.css)
-    - **For Cool variants (Moon Cool or Rosé Pine Cool):** [mod_rosepinecool_tags.css](https://github.com/Wolfbatcat/ao3-rose-pine/blob/main/css/add-ons/mod_rosepinecool_tags.css)
+    - **For Rosé Pine Dawn:** [tags_rosepinedawn_b.css](https://github.com/Wolfbatcat/ao3-rose-pine/blob/main/css/extras/tags/tags_rosepinedawn_b.css)
+    - **For Rosé Pine and Rosé Pine Moon:** [tags_rosepine_b.css](https://github.com/Wolfbatcat/ao3-rose-pine/blob/main/css/extras/tags/tags_rosepine_b.css)
+    - **For Rosé Pine Cool and Rosé Pine Moon Cool:** [tags_rosepinecool_b.css](https://github.com/Wolfbatcat/ao3-rose-pine/blob/main/css/extras/tags/tags_rosepinecool_b.css)
 3. Set it to **Parent Only** and submit.
 
 </details>
