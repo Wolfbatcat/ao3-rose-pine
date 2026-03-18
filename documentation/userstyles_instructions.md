@@ -44,3 +44,4 @@ To swap a font, replace the first value in the font stack with the name of your 
 - **[Merriweather](https://fonts.google.com/specimen/Merriweather)** — Sorkin Type
 - **[Victor Mono](https://rubjo.github.io/victor-mono/)** — Rune Bjørnerås
 - **[Domine](https://fonts.google.com/specimen/Domine)** — Impallari Type
+- **[Outfit](https://fonts.google.com/specimen/Outfit)** — Smartsheet Inc, Rodrigo Fuenzalida
