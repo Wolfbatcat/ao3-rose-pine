@@ -1186,25 +1186,19 @@ textarea.LV_invalid_field:is(:hover, :focus) {
 }
 
 #modal .footer {
-    align-content: center;
-    overflow: auto;
-    padding-right: 5em;
-    line-height: unset;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#modal .footer .action.modal-closer {
+    position: relative;
+    bottom: unset;
+    right: unset;
 }
 
 #modal.img a {
     color: var(--txt-alt2);
-}
-
-/* Ensure modals keep original positioning */
-#modal .bookmark p.status {
-    right: 0.75em;
-}
-
-#modal .footer .action.modal-closer {
-    bottom: 4px;
-    position: absolute;
-    right: 8px;
 }
 
 /*>========== MODE: DYNAMIC ==========<*/

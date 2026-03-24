@@ -1,8 +1,8 @@
 /*============================================================
 
-                     ✿✿✿ Rose Pine ✿✿✿                 
+            ✦✦✦ Rose Pine — Closer to Home ✦✦✦            
            A Site Skin for the Archive of Our Own          
-                      By Blackbatcat   
+                      By ravenothere   
 
 ==============================================================
 LINKS & CREDITS
@@ -10,11 +10,12 @@ LINKS & CREDITS
 
 CODE & INSTRUCTIONS:
 
-- Code (GitHub):       https://github.com/Wolfbatcat/ao3-rose-pine
-- Instructions (AO3):  https://archiveofourown.org/works/69993411
+- Code & Instructions (GitHub):       https://github.com/ravenothere
+- Instructions (AO3):  https://archiveofourown.org/works/80768621
 
 CREDITS:
 
+- Original Skin:       "Rose Pine" by Blackbatcat          https://github.com/Wolfbatcat/ao3-rose-pine
 - Base:                "neos" by ZerafinaCSS               https://archiveofourown.org/works/65849527
 - Inspired by:         "Archive 2.0 skin" by AO3           https://archiveofourown.org/skins/873
                        "Tide" by ElectricAlice             https://github.com/electricalice/Ao3-tide
@@ -22,9 +23,9 @@ CREDITS:
 
 FIND ME ON:
 
-- GitHub:              https://github.com/Wolfbatcat
-- AO3:                 https://archiveofourown.org/users/BlackBatCat/pseuds/BlackBatCat
-- Tumblr:              https://blackbatcats.tumblr.com/
+- GitHub:              https://github.com/ravenothere
+- AO3:                 https://archiveofourown.org/users/DoveEater/pseuds/ravenothere
+- Tumblr:              https://www.tumblr.com/ravenothere
 
 ==============================================================
 DIRECTORY
@@ -217,9 +218,10 @@ col.name {
 #tos_prompt .heading {
     display: flex;
     flex-wrap: wrap;
-    align-items: flex-start;
+    align-items: center;
     align-content: center;
     column-gap: 1.25em;
+    padding-block: 0.5em;
     position: unset;
     z-index: 100;
     box-sizing: border-box;
@@ -281,9 +283,18 @@ col.name {
     color: transparent;
 }
 
-/* hide default "Archive of Our Own beta" text and logo */
-#header .heading a * {
-    display: none;
+/* hide default "Archive of Our Own beta" text and recolor logo */
+#header .logo {
+  filter: var(--header-icon-hgl);
+}
+
+#header .logo:is(:hover, :focus) {
+  filter: var(--header-icon);
+}
+
+#header h1.heading a span,
+#header h1.heading a sup {
+  display: none;
 }
 
 /*>========== HEADER DROPDOWN MENUS ==========<*/
@@ -511,13 +522,18 @@ col.name {
 
 /*>========== COLLECTIONS CONTEXT ==========<*/
 
+#header:has(h2) {
+    padding-bottom: 0;
+}
+
 #header h2 {
     order: 4;
     display: block;
     width: 100%;
     min-height: unset;
     max-height: 30vh;
-    padding: 0.25em var(--margins-header);
+    margin-top: 0.25em;
+    padding: 0.5em var(--margins-header);
     border-inline: none;
     border-top: var(--border-width) solid var(--border2);
     border-bottom-left-radius: var(--radius-big);
@@ -1209,6 +1225,7 @@ textarea.LV_invalid_field:is(:hover, :focus) {
     box-shadow: none;
     background: var(--bg4);
 }
+
 #modal .content {
     border-bottom: var(--border-width) solid var(--border2);
 }
@@ -1336,6 +1353,11 @@ input::file-selector-button {
 
 .resp-sharing-button {
     border-radius: var(--radius-alt) !important;
+}
+
+label.action,
+.actions label {
+    box-shadow: none;
 }
 
 input[type="submit"] {
@@ -2100,72 +2122,6 @@ li.picture.blurb,
     /* required for own mystery blurbs */
 }
 
-/*>========== BLURB HEADER LAYOUT ==========<*/
-
-.blurb .header:has(ul.required-tags) {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    margin: 0;
-}
-
-.blurb .header .heading {
-    margin: 0;
-}
-
-/* work title and author */
-.blurb .header h4.heading {
-    order: 1;
-    flex: 1;
-    box-sizing: border-box;
-    padding-right: 11ch;
-    font-size: 1.1em;
-    text-align: left;
-}
-
-/* reposition fandom tags below title */
-.blurb h5.fandoms.heading {
-    order: 4;
-    margin-top: 0.5em;
-}
-
-/* hide empty space on prompts without fandoms */
-.blurb h5.fandoms.heading:not(:has(a.tag)) {
-    height: 0;
-}
-
-/* reposition content rating icons */
-.blurb .header ul.required-tags {
-    order: 3;
-    display: flex;
-    flex-wrap: wrap;
-    column-gap: 4px;
-    position: unset;
-    width: 100%;
-    margin-top: 0.429em;
-    padding-top: 0.643em;
-    border-top: var(--border-width) solid var(--border2);
-}
-
-/* reset positioning for content icons */
-.blurb ul.required-tags,
-.blurb ul.required-tags li,
-.blurb ul.required-tags li+li+li,
-.blurb ul.required-tags li+li+li+li,
-.blurb ul.required-tags li a {
-    position: unset;
-    width: unset;
-    height: unset;
-    margin: 0;
-    padding: 0;
-}
-
-.blurb .header p.notice {
-    order: 6;
-    width: 100%;
-    margin: 0.5em 0 0 0;
-}
-
 /*>========== MODIFICATION: PICTURE ==========<*/
 /* indices with icon pictures: collections, users, skins, mystery blurbs */
 
@@ -2213,7 +2169,7 @@ li.picture.blurb,
 }
 
 .bookmark .blurb h4.heading {
-    padding-right: 14ch;
+    padding-right: 6ch;
 }
 
 .bookmark p.status {
@@ -3477,7 +3433,7 @@ img[src$="/images/skins/iconsets/default/warning-choosenotto.png"] {
 img[src$="/images/skins/iconsets/default/warning-yes.png"] {
     background: url("https://wolfbatcat.github.io/ao3-rose-pine/assets/zerafina-icon-warning-yes-01.png");
     background-color: var(--icon-warning-yes);
-    background-position: center -2px;
+    background-position: center -1px;
 }
 
 .required-tags .external-work,
@@ -4074,9 +4030,6 @@ li.blurb #header.region>ul.navigation.actions>li.dropdown {
     border-top-right-radius: var(--radius-mid);
 }
 
-.create-note-btn:hover{
-    opacity: 100% !important;
-}
 
 /*>========== MISC USERSCRIPT STYLING ==========<*/
 /* https://greasyfork.org/en/users/1498004 */
