@@ -1,10 +1,32 @@
 /*============================================================
 
-                    ✿✿✿ Rose Pine ✿✿✿ 
+                    ✿✿✿ Rosé Pine ✿✿✿ 
           MOBILE / NARROW SCREENS (max-width: 42em)
+                      By BlackBatCat
 
+==============================================================
+SKIN METADATA
+==============================================================
+
+  - Skin:         Rosé Pine (Normal Layout — Mobile)
+  - File:         mobile.css
+  - Author:       BlackBatCat
+  - Tumblr:       blackbatcats
+  - License:      MIT
+  - Updated:      2026-04-18 23:45 UTC
+
+  - Repository:   https://github.com/Wolfbatcat/ao3-rose-pine
+  - Instructions: https://archiveofourown.org/works/69993411
+
+  - Base:         "neos" by ZerafinaCSS               https://archiveofourown.org/works/65849527
+
+  - Inspired by:  "Archive 2.0 skin" by AO3           https://archiveofourown.org/skins/873
+                  "Tide" by ElectricAlice             https://github.com/electricalice/Ao3-tide
+                  "Flat Squares Skin" by milkfatzero  https://ao3-skins.dreamwidth.org/6156.html
+
+=============================================================
+>> 01 BASIC LAYOUT SETTINGS
 ============================================================*/
-/* credits to Neos by Zerafinacss - https://github.com/ZerafinaCSS/neos */
 
 /* centered headings */
 h2.heading,
@@ -56,6 +78,19 @@ h2.heading+h3.heading:not(.landmark) {
 #header li.search {
   position: absolute;
   top: 0;
+}
+
+#header nav:not(:has(.open)) li.dropdown:hover::before,
+#header .open::before {
+  top: auto;
+  left: auto;
+  transform: translate(-50%, 2.214em);
+}
+
+#header #greeting:not(:has(.open)) li.dropdown:hover::before,
+#header #greeting .open::before {
+  left: auto;
+  transform: translateY(2.071em);
 }
 
 /* reduce search bar width */
@@ -216,7 +251,7 @@ p.navigation.actions {
 
 .region:has(ol.pagination.actions) form.filters,
 .javascript {
-    background: var(--bg1);
+  background: var(--bg1);
 }
 
 /*============================================================
@@ -227,3 +262,5 @@ p.navigation.actions {
 .media-index .media .listbox {
   width: 100%;
 }
+
+

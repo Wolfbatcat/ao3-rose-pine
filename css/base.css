@@ -1,38 +1,37 @@
 /*============================================================
 
-                     ✿✿✿ Rose Pine ✿✿✿                 
+                     ✿✿✿ Rosé Pine ✿✿✿                 
            A Site Skin for the Archive of Our Own          
-                      By Blackbatcat   
+                      By BlackBatCat   
 
 ==============================================================
-LINKS & CREDITS
+SKIN METADATA
 ==============================================================
 
-CODE & INSTRUCTIONS:
+  - Skin:         Rosé Pine (Normal Layout)
+  - File:         base.css
+  - Author:       BlackBatCat
+  - Tumblr:       blackbatcats
+  - License:      MIT
+  - Updated:      2026-04-18 23:45 UTC
 
-- Code (GitHub):       https://github.com/Wolfbatcat/ao3-rose-pine
-- Instructions (AO3):  https://archiveofourown.org/works/69993411
+  - Repository:   https://github.com/Wolfbatcat/ao3-rose-pine
+  - Instructions: https://archiveofourown.org/works/69993411
 
-CREDITS:
+  - Base:         "neos" by ZerafinaCSS               https://archiveofourown.org/works/65849527
 
-- Base:                "neos" by ZerafinaCSS               https://archiveofourown.org/works/65849527
-- Inspired by:         "Archive 2.0 skin" by AO3           https://archiveofourown.org/skins/873
-                       "Tide" by ElectricAlice             https://github.com/electricalice/Ao3-tide
-                       "Flat Squares Skin" by milkfatzero  https://ao3-skins.dreamwidth.org/6156.html
-
-FIND ME ON:
-
-- GitHub:              https://github.com/Wolfbatcat
-- AO3:                 https://archiveofourown.org/users/BlackBatCat/pseuds/BlackBatCat
-- Tumblr:              https://blackbatcats.tumblr.com/
+  - Inspired by:  "Archive 2.0 skin" by AO3           https://archiveofourown.org/skins/873
+                  "Tide" by ElectricAlice             https://github.com/electricalice/Ao3-tide
+                  "Flat Squares Skin" by milkfatzero  https://ao3-skins.dreamwidth.org/6156.html
 
 ==============================================================
 DIRECTORY
 ==============================================================
 
 Numeric      = Skin structure from the "Archive 2.0 skin"
-Alphanumeric = Additions by ZerafinaCSS
+Alphanumeric = Additions by ZerafinaCSS and other contributors
 
+>> A0 GLOBAL VARIABLES, FONTS, AND TEXT DECORATIONS
 >> 01 BASIC LAYOUT SETTINGS
 >> 02 ELEMENTS
 >> 03 REGION: HEADER
@@ -57,6 +56,150 @@ Alphanumeric = Additions by ZerafinaCSS
 >> Z1 REPLACE THE ICONS AND IMAGES
 >> Z2 STATS ICONS WITH HOVER TEXT
 >> Z3 MISCELLANEOUS
+
+=============================================================
+>> A0 GLOBAL VARIABLES, FONTS, AND TEXT DECORATIONS
+============================================================*/
+
+:root {
+
+/*>========== UI PARAMETERS ==========<*/
+
+  /* SPACE ON LEFT/RIGHT SIDE OF SCREEN */
+  --margins-header:      1rem;                /* header on desktop */
+  --margins-main:        5%;                  /* site contents on desktop */
+  --margins-narrow:      2.5%;                /* site contents and header on tablet/mobile */
+
+  /* BLURB PADDING */
+  --blurb-padding: 0.75em;
+  --blurb-padding-neg: -0.75em;
+
+  /* BORDER-RADIUS (= ROUNDNESS OF CORNERS) */
+  --radius-small:        0.75rem;             /* smaller elements: list elements, input elements etc. */
+  --radius-mid:          0.75rem;             /* midsizde elements: dropdown menus, system messages etc. */
+  --radius-big:          0.75rem;             /* bigger elements: blurbs, forms, comments, textareas etc. */
+  --radius-alt:          0.75rem;             /* header search box, buttons */
+  --radius-tag:          0 15px 15px;         /* tags */
+
+  /* ICON BORDER-RADIUS */
+  --icon-content-radius: 0.75rem;             /* content and bookmark icon */
+  --icon-primary-radius: 50%;                 /* primary and comment icon */
+  --icon-index-radius:   0.75rem;             /* index icon */
+
+  /* BORDER WIDTH */
+  --border-width:        1px;                 /* for almost all borders (experimental - changing this might cause some weirdness) */
+
+  /* TEXT SIZE */
+  --txt-size-main:       100%;                /* main text size (bigger than 130% causes some issues, but is still mostly functional) */
+  --txt-size-work:       110%;                /* work text size */
+
+  /* TEXT BOLDNESS */
+  --txt-semibold:        600;                 /* font-weight hover effect */
+  --txt-bold:            700;                 /* font-weight for headings */
+
+  /* LINK DECORATION */
+  --link-underline:      1px solid transparent;  /* link underline => delete "transparent" to make link underlines visible */
+
+/*>========== LAYOUT TOGGLES ==========<*/
+
+  --greeting-icon-display: none;  /* set to "inline" to show the user avatar in the header */
+  --splash-social-display: none;   /* set to "inline" to show the social share buttons on the splash page */
+  --footer-display: inline;        /* set to "none" to hide the footer */
+
+
+}
+
+/*>========== FONTS ==========<*/
+
+/* MAIN FONT FAMILY */
+body,
+input,
+.toggled form,
+.dynamic form,
+.secondary,
+.dropdown,
+blockquote,
+.prompt .blurb h6,
+.bookmark .user .meta,
+a.work,
+span.symbol,
+.heading .actions,
+.heading .action,
+.heading span.actions,
+button,
+span.unread,
+.replied,
+span.claimed,
+.actions span.defaulted,
+.splash .news .meta,
+.datetime,
+h5.fandoms.heading a.tag,
+dd.fandom.tags a,
+select {
+    font-family: Figtree, Bitter, Helvetica, "Trebuchet MS", "Lucida Sans", Arial, sans-serif, "GNU Unifont";
+}
+
+/* HEADINGS FONT FAMILY */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.heading {
+    font-family: Figtree, Bitter, Helvetica, "Trebuchet MS", "Lucida Sans", Arial, sans-serif, "GNU Unifont";
+    font-weight: var(--txt-bold);
+}
+
+/* CODE FONT FAMILY */
+kbd,
+tt,
+code,
+var,
+pre,
+samp,
+textarea,
+textarea#skin_css,
+.css.module blockquote pre,
+#floaty-textarea {
+    font-family: Victor Mono Medium, Consolas, Monaco, Courier, monospace;
+    font-size: 0.9em;
+    /* font-style: italic; */
+    /* for cursive version of Victor Mono */
+}
+
+/*>========== TEXT DECORATIONS ==========<*/
+ /* don't forget to change the decoration in the mobile skin as well */
+
+/* TITLE DECORATIONS */
+#header .heading a::before {
+  content: "Archive of Our Own\00a0✿";
+}
+
+/* DASHBOARD CURRENT TAB DECORATION */
+#dashboard .current:after {
+  content: "\00a0✿";
+}
+
+.home .header h2::after {
+    content: "\00a0✿";
+}
+
+.splash>.module h3::after {
+  content: "\00a0✿";
+}
+
+/* TAG DECORATIONS */
+a.tag:not(.fandom.index.group a.tag,
+  h2.heading a.tag,
+  .splash .favorite a.tag,
+  h5.fandoms.heading a.tag,
+  dd.fandom.tags a,
+  [class^=warning] a.tag,
+  [class^=relationship] a,
+  [class^=character] a.tag):after {
+  content: "\00a0\00a0✿";
+}
 
 /*============================================================
 >> 01 BASIC LAYOUT SETTINGS
@@ -239,7 +382,7 @@ col.name {
     display: flex;
     align-items: center;
     box-sizing: border-box;
-    min-height: 38px;
+    min-height: 2.571em;
 }
 
 /* remove space before header title */
@@ -300,6 +443,8 @@ col.name {
 #header nav:not(:has(.open)) li.dropdown:hover::before,
 #header .open::before {
     position: absolute;
+    top: 100%;
+    left: 50%;
     z-index: 6;
     width: 0;
     height: 0;
@@ -308,7 +453,7 @@ col.name {
     border-left: 8px solid transparent !important;
     color: var(--border3);
     /* border/shadow color; custom properties don't work in filter context */
-    transform: translate(-50%, 31px);
+    transform: translate(-50%, -7px);
     filter: drop-shadow(0 -1px);
     content: "";
 }
@@ -322,7 +467,8 @@ col.name {
 #header #greeting:not(:has(.open)) li.dropdown:hover::before,
 #header #greeting .open::before {
     z-index: 8;
-    transform: translate(5%, 31px);
+    left: 0;
+    transform: translateY(-7px);
 }
 
 #header .navigation .dropdown .menu li {
@@ -373,6 +519,17 @@ col.name {
     background-color: transparent;
 }
 
+#greeting {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    column-gap: 0.5em;
+}
+
+#greeting ul.user.navigation {
+    display: contents;
+}
+
 #header .user,
 #header .user a,
 #small_login .action,
@@ -385,9 +542,25 @@ col.name {
     line-height: 0;
 }
 
-/* hide small user icon */
 #greeting p.icon {
-    display: none;
+    display: var(--greeting-icon-display);
+    order: -1;
+    margin: 0;
+    padding: 0;
+}
+
+#greeting img.icon {
+    display: block;
+    height: 1.143em;
+    width: 1.143em;
+    min-height: 1.143em;
+    min-width: 1.143em;
+    border-radius: 0.25em;
+}
+
+#greeting img.icon:hover {
+    border-color: var(--int-hgl);
+    outline: 1px solid var(--int-hgl);
 }
 
 /*>>========== REPLACE USER ACTIONS WITH ICONS ==========<<*/
@@ -407,10 +580,22 @@ col.name {
     content: url("https://wolfbatcat.github.io/ao3-rose-pine/assets/zerafina-header-icon-logout.png");
 }
 
+/* override box-sizing/min-height from the dropdown-toggle rule so height: 1em scales correctly */
+#header #greeting .dropdown>a[href*="/users/"],
+#header #greeting .dropdown>a[href*="/works/new"],
+#header #greeting a[href*="/users/logout"] {
+    display: inline-block;
+    box-sizing: content-box;
+    height: 1.143em;
+    min-height: 1.143em;
+    min-width: 1.143em;
+}
+
 #header #greeting>ul>li>a {
     display: inline-block;
-    height: 18px;
-    padding: 10px 0;
+    height: 1.143em;
+    /* 0.714em × 2 + 1.143em = 2.571em ≈ 36px at 14px base, matching header min-height */
+    padding: 0.714em 0;
     background: transparent;
     filter: var(--header-icon);
 }
@@ -655,6 +840,7 @@ col.name {
 ============================================================*/
 
 #footer {
+    display: var(--footer-display);
     box-sizing: border-box;
     width: 100%;
     max-width: 100%;
@@ -864,6 +1050,11 @@ form dd.required {
 
 form fieldset#parent-options dd:has(ul) {
     margin: 0;
+}
+
+/* prevent parent skins dropdown from being cut off */
+form.skin.verbose.post fieldset {
+    overflow: visible;
 }
 
 /* form legends styling */
@@ -1255,12 +1446,6 @@ form.single input[type="submit"] {
     overflow: visible;
 }
 
-.toggled form p.footnote,
-.dynamic form p.footnote {
-    margin-bottom: 0.643em;
-    line-height: 1;
-}
-
 /*>========== INTERACTION: POST ==========<*/
 /* works, chapters, comments, news, feedback, challenges */
 
@@ -1406,31 +1591,38 @@ fieldset.actions li:not(:first-child) {
 }
 
 /*>========== BUTTON CONTEXTS ==========<*/
+/* credits to ZerafinaCSS*/
 
-/* secondary menu positioning in works */
-.chapter .secondary,
-.download .secondary {
-    top: unset;
-    right: unset;
-    left: 50%;
-    width: fit-content;
-    transform: translate(-50%, 2.6em);
-}
-
-.chapter .secondary a {
-    white-space: nowrap;
-}
-
-.dashboard .header .landmark {
-    display: none;
-}
-
-.work.navigation .download,
+/* chapter index and download menus */
+.javascript .work.navigation .secondary,
+.javascript .work.navigation .chapter .secondary,
 .javascript .work.navigation .download .secondary {
-    background: var(--bg6);
+    top: unset;
+    box-sizing: border-box;
+    width: min-content;
+    min-width: 97.5%;
+    max-width: 200%;
     border: var(--border-width) solid var(--border3);
+    border-radius: var(--radius-mid);
     box-shadow: var(--shadow);
-    color: var(--txt-main);
+    background-color: var(--bg6);
+    color: var(--main-txt);
+}
+
+.javascript .work.navigation .expanded+.secondary,
+.javascript .work.navigation .secondary li,
+.javascript .work.navigation .secondary p,
+.javascript .work.navigation .secondary a {
+    display: block;
+}
+
+.javascript .work.navigation .secondary form p {
+    display: flex;
+    padding: 0;
+}
+
+.javascript .work.navigation .secondary form p select {
+    width: 100%;
 }
 
 /*>>========== EXPAND, CONTRACT, TO TOP BUTTONS ==========<<*/
@@ -1711,6 +1903,14 @@ a.tag:hover {
     color: var(--tag-ship-txt) !important;
 }
 
+/* platonic ship tags: contains "*a* " (e.g. "Character *a* Character") */
+li.relationships:has(a[href*="%20*a*%20"]) a.tag,
+[class^="relationship"] a[href*="%20*a*%20"],
+[class^="relationship"] a[href^="/tags/Other%20Relationship%20Tags%20to%20Be%20Added"] {
+    background-color: var(--tag-platonic-ship-bg) !important;
+    color: var(--tag-platonic-ship-txt) !important;
+}
+
 [class^=character] a.tag {
     background-color: var(--tag-character-bg) !important;
     color: var(--tag-character-txt) !important;
@@ -1951,6 +2151,12 @@ fieldset fieldset.listbox {
     margin-inline: 0;
 }
 
+#advanced_skin .listbox .index:has(.showme) {
+    border-top: 0;
+    background: transparent;
+    box-shadow: none;
+}
+
 /*>========== LISTBOX BUTTON PLACEMENT ==========<*/
 
 #user-fandoms.listbox .actions,
@@ -2028,6 +2234,7 @@ dl.meta dd ul {
 .news dl.meta {
     box-shadow: none;
     background-color: transparent;
+    border-radius: 0px;
 }
 
 /*============================================================
@@ -2037,7 +2244,7 @@ dl.meta dd ul {
 li.blurb,
 .blurb .blurb,
 .region.own+.dashboard li.blurb.own {
-    padding: 0.75em 0.75em 0.643em;
+    padding: var(--blurb-padding) var(--blurb-padding) 0.643em;
     background-color: var(--bg5) !important;
     box-shadow: none;
     overflow-wrap: anywhere;
@@ -2146,7 +2353,7 @@ li.picture.blurb,
 .mystery.blurb:has(.icon)>.header {
     min-height: 45px;
     margin: 0;
-    padding-bottom: 0.75em;
+    padding-bottom: var(--blurb-padding);
     border-bottom: var(--border-width) solid var(--border2);
 }
 
@@ -2169,7 +2376,7 @@ li.picture.blurb,
 .blurb:has(.icon)>.header h5,
 .blurb>.header>.mods.commas {
     margin-left: 45px;
-    padding-left: 0.75em;
+    padding-left: var(--blurb-padding);
 }
 
 /*>========== VARIOUS MODIFICATIONS ==========<*/
@@ -2214,7 +2421,7 @@ li.picture.blurb,
 
 /* Ensure modals keep original positioning */
 #modal .bookmark p.status {
-    right: 0.75em;
+    right: var(--blurb-padding);
 }
 
 /* hide bookmark count icon - available in stats */
@@ -2263,7 +2470,7 @@ li.picture.blurb,
 
 .bookmark div.user .datetime {
     top: 0.7em;
-    right: 0.75em;
+    right: var(--blurb-padding);
 }
 
 /* bookmark overview pages - who bookmarked a work */
@@ -2299,9 +2506,9 @@ li.picture.blurb,
 
 /* last visited date in History */
 .reading h4.viewed {
-    margin-inline: -0.75em;
+    margin-inline: var(--blurb-padding-neg);
     padding: 0.429em;
-    padding-inline: 0.75em;
+    padding-inline: var(--blurb-padding);
     background: linear-gradient(to right, var(--bg4) 25%, transparent);
     font-size: 1em;
 }
@@ -2320,12 +2527,12 @@ li.picture.blurb,
 ============================================================*/
 
 div.preface {
-    margin-inline: 5%;
-    padding-inline: 0;
+    margin: 1.5em 5%;
+    padding: 0.643em 0 0 0;
 }
 
 .chapter .preface {
-    border-top: 1.5px solid;
+    border-top: 1.5px solid var(--border4);
 }
 
 .preface h2.title {
@@ -2355,7 +2562,7 @@ div.comment,
     border: 1px solid var(--border1);
     background-color: var(--bg5);
     box-shadow: var(--shadow-box1);
-    padding: 0 0.75em 0.429em;
+    padding: 0 var(--blurb-padding) 0.429em;
 }
 
 li.comment:not(:has(.edit_comment)) {
@@ -2363,7 +2570,7 @@ li.comment:not(:has(.edit_comment)) {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: flex-end;
-    padding: 0.75em 0.75em 0.429em;
+    padding: var(--blurb-padding) var(--blurb-padding) 0.429em;
     border: var(--border-width) solid var(--border3);
     border-radius: var(--radius-big);
     background-color: var(--bg5);
@@ -2432,10 +2639,28 @@ li.comment:not(:has(.edit_comment)) {
     order: 5;
 }
 
-/* delete confirmation */
+/* delete confirmation box */
 .comment div[id^="delete_comment"] {
     order: 6;
+    display: flex;
+    flex-wrap: wrap;
     width: 100%;
+    padding: 0.429em 0.75em;
+    border: var(--border-width) solid var(--alert-txt);
+    border-radius: var(--radius-big);
+    outline: 1px solid var(--alert-txt)
+}
+
+/* delete confirmation text */
+.comment div[id^="delete_comment"] h3 {
+    font-weight: 700;
+    font-size: var(--txt-size-main);
+    line-height: inherit;
+}
+
+/* delete confirmation buttons */
+.comment div[id^="delete_comment"] ul.actions {
+    margin-left: auto;
 }
 
 /* reply form */
@@ -2451,6 +2676,8 @@ li.comment:has(.edit_comment) {
 
 /* limit image height in comments */
 .comment img {
+    width: 100%;
+    max-width: 750px;
     max-height: 500px;
 }
 
@@ -2496,10 +2723,28 @@ li.comment:has(.edit_comment) {
     width: 49%;
 }
 
-/* hide social splash */
+/*>>========== MODULE: SOCIALS ==========<<*/
+
 .splash .intro,
 .splash .social {
-    display: none;
+    display: var(--splash-social-display);
+}
+
+.resp-sharing-button--bluesky,
+.resp-sharing-button--bluesky,
+.resp-sharing-button--tumblr,
+.resp-sharing-button--tumblr {
+    background: var(--int-btn-hgl-bg);
+    border-color: var(--int-btn-hgl-bg);
+}
+
+.resp-sharing-button--bluesky:hover,
+.resp-sharing-button--bluesky:active,
+.resp-sharing-button--tumblr:hover,
+.resp-sharing-button--tumblr:active {
+    background: var(--int-btn-hgl-bg);
+    border-color: var(--int-btn-hgl-bg);
+    filter: var(--tag-filter);
 }
 
 /*>>========== MODULE: FIND YOUR FAVORITES ==========<<*/
@@ -2597,6 +2842,8 @@ li.comment:has(.edit_comment) {
 }
 
 .home .header .userstuff {
+    overflow-wrap: anywhere;
+    word-break: normal;
     margin: 0;
     padding-top: 2em;
 }
@@ -2751,6 +2998,18 @@ form.filters dl dl {
     font-weight: var(--txt-bold);
 }
 
+/* hide empty filter categories */
+/* for example, if there are no relationships, the relationship filter option will not appear */
+.filters dt.tags:not(:has(+ dd input)).filter-toggle {
+    display: none;
+}
+
+/* hide search bar for bookmarkers tags if there are none */
+.filters dt#toggle_include_tag_tags:not(:has(+ dd input)).filter-toggle~.bookmarker.autocomplete.search,
+.filters dt#toggle_exclude_tag_tags:not(:has(+ dd input)).filter-toggle~.bookmarker.autocomplete.search {
+    display: none;
+}
+
 .filters .expander,
 .filters .expanded .expander {
     padding-left: 1em;
@@ -2872,10 +3131,27 @@ dl.nomination {
     /* slightly reduced spacing between paragraphs */
 }
 
-.userstuff li,
-.userstuff ol ul li {
-    margin-block: 0.5em;
-    /* reduced line height between list items */
+/*>========== LISTS ==========<*/
+
+.userstuff :is(ul, ol) {
+    margin: 1em auto;
+    padding: 0 0 0 2.5em;
+}
+
+.userstuff :is(ul, ol) :is(ul, ol) {
+    margin: 0.75em auto;
+}
+
+.userstuff:not(.docs .userstuff) :is(ol, ul) li {
+    margin: 0 0 0.5em 0;
+}
+
+.userstuff ul>li>ul>li {
+    list-style-type: circle;
+}
+
+.userstuff ul>li>ul>li>ul>li {
+    list-style-type: disc;
 }
 
 /*>========== BIO ON PROFILE PAGE ==========<*/
@@ -3908,9 +4184,9 @@ dl.stats dd {
     filter: var(--stat-chart);
 }
 
-/* transparent chart background */
-svg>rect {
-    filter: opacity(0)
+/* remove white chart background */
+svg > rect {
+    display: none;
 }
 
 /*>>========== WORK TITLE AND STATS LAYOUT ==========<<*/
@@ -3956,11 +4232,15 @@ svg>rect {
 /*>========== USERSCRIPT: COMMENT FORMATTING AND PREVIEW ==========<*/
 /* https://greasyfork.org/en/scripts/484002 */
 
-div.comment-preview.userstuff {
+div.fmtPreview.userstuff {
     margin-top: 0.429em;
-    border: 1.5px dotted var(--border2) !important;
-    border-radius: var(--radius-small);
+    border: 2px dotted var(--border2) !important;
+    border-radius: var(--radius-big);
     background: transparent;
+}
+
+div.fmtPreview.userstuff p code {
+    display: inline;
 }
 
 /*>========== USERSCRIPT: AO3 FICTRACKER STYLING ==========<*/
@@ -4039,7 +4319,7 @@ li.blurb #header.region>ul.navigation.actions>li.dropdown {
     border-top-right-radius: var(--radius-mid);
 }
 
-.create-note-btn:hover{
+.create-note-btn:hover {
     opacity: 100% !important;
 }
 

@@ -1,10 +1,32 @@
 /*============================================================
 
-                    ✿✿✿ Rose Pine ✿✿✿ 
+                    ✿✿✿ Rosé Pine ✿✿✿ 
           TABLET / MIDSIZE SCREENS (max-width: 62em)
+                      By BlackBatCat
 
+==============================================================
+SKIN METADATA
+==============================================================
+
+  - Skin:         Rosé Pine (Card Layout — Tablet)
+  - File:         tablet_card.css
+  - Author:       BlackBatCat
+  - Tumblr:       blackbatcats
+  - License:      MIT
+  - Updated:      2026-04-18
+
+  - Repository:   https://github.com/Wolfbatcat/ao3-rose-pine
+  - Instructions: https://archiveofourown.org/works/69993411
+
+  - Base:         "neos" by ZerafinaCSS               https://archiveofourown.org/works/65849527
+
+  - Inspired by:  "Archive 2.0 skin" by AO3           https://archiveofourown.org/skins/873
+                  "Tide" by ElectricAlice             https://github.com/electricalice/Ao3-tide
+                  "Flat Squares Skin" by milkfatzero  https://ao3-skins.dreamwidth.org/6156.html
+
+=============================================================
+>> 01 BASIC LAYOUT SETTINGS
 ============================================================*/
-/* credits to Neos by Zerafinacss - https://github.com/ZerafinaCSS/neos */
 
 /* converts sidebar to top menu */
 #inner {
@@ -39,26 +61,26 @@
 
 #dashboard,
 #dashboard.own {
-    top: unset;
-    z-index: 2;
-    width: auto;
-    min-width: unset;
-    max-width: unset;
-    height: auto;
-    max-height: unset;
-    overflow: visible;
-    margin: 2% 2% 0 2%;
-    padding: 0;
-    border-bottom: var(--border-width) solid;
-    text-align: center;
+  top: unset;
+  z-index: 2;
+  width: auto;
+  min-width: unset;
+  max-width: unset;
+  height: auto;
+  max-height: unset;
+  overflow: visible;
+  margin: 2% 2% 0 2%;
+  padding: 0;
+  border-bottom: var(--border-width) solid;
+  text-align: center;
 }
 
 #dashboard ul {
-    box-sizing: border-box;
-    width: 100%;
-    margin: 0;
-    padding: 0.25em 0;
-    text-align: center;
+  box-sizing: border-box;
+  width: 100%;
+  margin: 0;
+  padding: 0.25em 0;
+  text-align: center;
 }
 
 #dashboard a,
@@ -72,8 +94,15 @@
   position: absolute;
   left: 50%;
   width: fit-content;
-  max-width: 95%;
-  transform: translate(-50%, 0);
+  min-width: 40vw;
+  max-width: 75vw;
+  transform: translateX(-50%);
+}
+
+#dashboard .secondary li .current,
+#dashboard .secondary li a {
+  margin: 1px;
+  display: block;
 }
 
 /*============================================================
@@ -102,3 +131,5 @@
 .region:has(ol.pagination.actions) form.filters {
   margin-bottom: 7.5em !important;
 }
+
+

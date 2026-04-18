@@ -1,33 +1,35 @@
 /*============================================================
 
-                      ✿✿✿ Rose Pine ✿✿✿ 
-                     Theme: Rose Pine Cool
+                      ✿✿✿ Rosé Pine ✿✿✿ 
+                     Theme: Rosé Pine Cool
+                      By BlackBatCat
+
+==============================================================
+SKIN METADATA
+==============================================================
+
+  - Skin:         Rosé Pine
+  - Theme:        Rosé Pine Cool
+  - File:         theme_rosepinecool.css
+  - Author:       BlackBatCat
+  - Tumblr:       blackbatcats
+  - License:      MIT
+  - Updated:      2026-04-18 23:45 UTC
+
+  - Repository:   https://github.com/Wolfbatcat/ao3-rose-pine
+  - Instructions: https://archiveofourown.org/works/69993411
+
+  - Base:         "neos" by ZerafinaCSS               https://archiveofourown.org/works/65849527
+
+  - Inspired by:  "Archive 2.0 skin" by AO3           https://archiveofourown.org/skins/873
+                  "Tide" by ElectricAlice             https://github.com/electricalice/Ao3-tide
+                  "Flat Squares Skin" by milkfatzero  https://ao3-skins.dreamwidth.org/6156.html
 
 ==============================================================
 GLOBAL VARIABLES
 ==============================================================*/
 
 :root {
-
-/*>========== UI PARAMETERS ==========<*/
-
-  /* SPACE ON LEFT/RIGHT SIDE OF SCREEN */
-  --margins-header:      1rem;                /* header on desktop */
-  --margins-main:        5%;                  /* site contents on desktop */
-  --margins-narrow:      2.5%;                /* site contents and header on tablet/mobile */
-
-  /* BORDER-RADIUS (= ROUNDNESS OF CORNERS) */
-  --radius-small:        0.75rem;             /* smaller elements: list elements, input elements etc. */
-  --radius-mid:          0.75rem;             /* midsizde elements: dropdown menus, system messages etc. */
-  --radius-big:          0.75rem;             /* bigger elements: blurbs, forms, comments, textareas etc. */
-  --radius-alt:          0.75rem;             /* header search box, buttons */
-  --radius-tag:          0 15px 15px;         /* tags */
-
-  /* ICON BORDER-RADIUS */
-  --icon-content-radius: 0.75rem;             /* content and bookmark icon */
-  --icon-primary-radius: 50%;                 /* primary and comment icon */
-  --icon-index-radius:   0.75rem;             /* index icon */
-
 
 /*>========== MAIN BACKGROUND COLORS ==========<*/
 
@@ -48,9 +50,6 @@ GLOBAL VARIABLES
   --border3:             var(--border2);      /* content boxes (blurbs, comments etc.), dropdown and secondary menus */
   --border4:             #332e45;             /* meta boxes, tooltips, scrollbar thumb etc. */
 
-  /* WIDTH */
-  --border-width:        1px;                 /* for almost all borders (experimental - changing this might cause some weirdness) */
-
 
 /*>========== SHADOWS ==========<*/
 /* replace values with "none" (without quotation marks) to remove shadows */
@@ -64,10 +63,6 @@ GLOBAL VARIABLES
 
 /*>========== MAIN TEXT ==========<*/
 
-  /* TEXT SIZE */
-  --txt-size-main:       100%;                /* main text size (bigger than 130% causes some issues, but is still mostly functional) */
-  --txt-size-work:       110%;                /* work text size */
-
   /* TEXT COLORS */
   --txt-header:          #e0def4;             /* header text */
   --txt-header-hgl:      var(--link-hgl);     /* selected header dropdown toggle and link items */
@@ -76,15 +71,10 @@ GLOBAL VARIABLES
   --txt-alt1:            #FFFFFF;             /* announcements */
   --txt-alt2:            #FFFFFF;             /* checkbox checkmark, help symbol, event announcements etc. */
 
-  /* TEXT BOLDNESS */
-  --txt-semibold:        600;                 /* font-weight hover effect */
-  --txt-bold:            700;                 /* font-weight for headings */
-
   /* LINKS */
   --link:                #9ccfd8;             /* link color */
   --link-hgl:            #c4a7e7;             /* color for hovered/focused links, header search bar icon, question icon  */
   --link-visited:        #c4a7e7;             /* color for already visited links */
-  --link-underline:      1px solid transparent;  /* link underline => delete "transparent" to make link underlines visible */
 
 
 /*>========== INTERACTION COLORS ==========<*/
@@ -158,6 +148,7 @@ GLOBAL VARIABLES
   --tag-fandom-bg:       #c4a7e7;
   --tag-warning-bg:      #c4a7e7;
   --tag-ship-bg:         #9ccfd8;
+  --tag-platonic-ship-bg: var(--tag-ship-bg);
   --tag-character-bg:    #3e8fb0;
   --tag-freeform-bg:     var(--tag-default-bg);
   --tag-splash-bg:       var(--bg5);    /* leave alone - only for tags on the splash page */
@@ -167,6 +158,7 @@ GLOBAL VARIABLES
   --tag-fandom-txt:      var(--txt-alt1);
   --tag-warning-txt:     var(--txt-alt1);
   --tag-ship-txt:        var(--txt-alt1);
+  --tag-platonic-ship-txt: var(--tag-ship-txt);
   --tag-character-txt:   var(--txt-alt1);
   --tag-freeform-txt:    var(--txt-alt1);
 
@@ -177,7 +169,6 @@ GLOBAL VARIABLES
   --tag-hgl-bg:          var(--int-btn-hgl-bg);
   --tag-hgl-txt:         var(--txt-alt2);
   --tag-hsl-shadow:      inset 0 0 0 1px rgba(255,255,255,0.3);
-
 
 
 /*>========== COLORS FOR ROLES AND STATES + SYSTEM MESSAGES ==========<*/
@@ -207,96 +198,7 @@ GLOBAL VARIABLES
   --stat-chart:          invert(96%) saturate(20%) hue-rotate(75deg) brightness(115%);
   --rich-txt-editor:     none;
 
+
 }
 
-/*>========== FONTS ==========<*/
 
-/* MAIN FONT FAMILY */
-body,
-input,
-.toggled form,
-.dynamic form,
-.secondary,
-.dropdown,
-blockquote,
-.prompt .blurb h6,
-.bookmark .user .meta,
-a.work,
-span.symbol,
-.heading .actions,
-.heading .action,
-.heading span.actions,
-button,
-span.unread,
-.replied,
-span.claimed,
-.actions span.defaulted,
-.splash .news .meta,
-.datetime,
-h5.fandoms.heading a.tag,
-dd.fandom.tags a,
-select {
-    font-family: Figtree, Bitter, Helvetica, "Trebuchet MS", "Lucida Sans", Arial, sans-serif, "GNU Unifont";
-}
-
-/* HEADINGS FONT FAMILY */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-.heading {
-    font-family: Figtree, Bitter, Helvetica, "Trebuchet MS", "Lucida Sans", Arial, sans-serif, "GNU Unifont";
-    font-weight: var(--txt-bold);
-}
-
-/* CODE FONT FAMILY */
-kbd,
-tt,
-code,
-var,
-pre,
-samp,
-textarea,
-textarea#skin_css,
-.css.module blockquote pre,
-#floaty-textarea {
-    font-family: Victor Mono Medium, Consolas, Monaco, Courier, monospace;
-    font-size: 0.9em;
-    /* font-style: italic; */
-    /* for cursive version of Victor Mono */
-}
-
-/*>========== TEXT DECORATIONS ==========<*/
- /* don't forget to change the decoration in the mobile skin as well */
-
-/* TITLE DECORATIONS */
-#header .heading a::before {
-  content: "Archive of Our Own\00a0✿";
-}
-
-/* DASHBOARD CURRENT TAB DECORATION */
-#dashboard .current:after {
-  content: "\00a0✿";
-}
-
-.home .header h2::after {
-    content: "\00a0✿";
-}
-
-.splash>.module h3::after {
-  content: "\00a0✿";
-}
-
-/* TAG DECORATIONS */
-a.tag:not(.fandom.index.group a.tag,
-  h2.heading a.tag,
-  .splash .favorite a.tag,
-  h5.fandoms.heading a.tag,
-  dd.fandom.tags a,
-  [class^=warning] a.tag,
-  [class^=relationship] a,
-  [class^=character] a.tag):after {
-  content: "\00a0\00a0✿";
-}
