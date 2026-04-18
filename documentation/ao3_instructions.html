@@ -107,7 +107,7 @@
   <h2>Installation</h2>
 
   <p>To use this skin on AO3, you'll be creating a small set of linked skins. The base file sets up variables and
-    structure, but you'll also need to apply one of the theme files (Rose Pine Dawn, Rose Pine Moon, etc.) to actually
+    structure, but you'll also need to apply one of the theme files (RoséPine Dawn, RoséPine Moon, etc.) to actually
     get
     the colors.</p>
   <div class="required notice">
@@ -129,8 +129,8 @@
   <ul>
     <li><strong>Normal Layout:</strong> Uses <code>base.css</code>, <code>tablet.css</code>, and <code>mobile.css</code>
     </li>
-    <li><strong>Card Layout:</strong> Uses <code>base_alt.css</code>, <code>tablet_alt.css</code>, and
-      <code>mobile_alt.css</code>
+    <li><strong>Card Layout:</strong> Uses <code>base_card.css</code>, <code>tablet_card.css</code>, and
+      <code>mobile_card.css</code>
     </li>
   </ul>
 
@@ -148,8 +148,8 @@
         <li><strong>Normal Layout:</strong> <a href="https://github.com/Wolfbatcat/ao3-rose-pine/blob/main/css/base.css"
             rel="nofollow">base.css</a></li>
         <li><strong>Card Layout:</strong> <a
-            href="https://github.com/Wolfbatcat/ao3-rose-pine/blob/main/css/base_alt.css"
-            rel="nofollow">base_alt.css</a></li>
+            href="https://github.com/Wolfbatcat/ao3-rose-pine/blob/main/css/base_card.css"
+            rel="nofollow">base_card.css</a></li>
       </ul>
     </li>
     <li>Under <strong>Advanced</strong>, set it to <strong>Parent Only</strong>.</li>
@@ -238,8 +238,8 @@
             href="https://github.com/Wolfbatcat/ao3-rose-pine/blob/main/css/tablet.css" rel="nofollow">tablet.css</a>
         </li>
         <li><strong>Card Layout:</strong> <a
-            href="https://github.com/Wolfbatcat/ao3-rose-pine/blob/main/css/tablet_alt.css"
-            rel="nofollow">tablet_alt.css</a></li>
+            href="https://github.com/Wolfbatcat/ao3-rose-pine/blob/main/css/tablet_card.css"
+            rel="nofollow">tablet_card.css</a></li>
       </ul>
     </li>
     <li>Under <strong>Advanced → Choose @media</strong>, select: <code>only screen (max-width: 62em)</code>.</li>
@@ -262,8 +262,8 @@
             href="https://github.com/Wolfbatcat/ao3-rose-pine/blob/main/css/mobile.css" rel="nofollow">mobile.css</a>
         </li>
         <li><strong>Card Layout:</strong> <a
-            href="https://github.com/Wolfbatcat/ao3-rose-pine/blob/main/css/mobile_alt.css"
-            rel="nofollow">mobile_alt.css</a></li>
+            href="https://github.com/Wolfbatcat/ao3-rose-pine/blob/main/css/mobile_card.css"
+            rel="nofollow">mobile_card.css</a></li>
       </ul>
     </li>
     <li>Under <strong>Advanced → Choose @media</strong>, select: <code>only screen (max-width: 42em)</code>.</li>
@@ -315,9 +315,9 @@
         href="https://rubjo.github.io/victor-mono/" rel="nofollow">Victor
         Mono</a>. If you want the
       cursive version of the code font, just remove the comments from
-      <code>/* font-style: italic; */</code> in your theme file.<br />
+      <code>/* font-style: italic; */</code> in your base file.<br />
       <br />
-      <strong>To change fonts:</strong> Open your theme skin (i.e. [BBC] Rosé Pine Dawn) and press <kbd>Ctrl+F</kbd> to
+      <strong>To change fonts:</strong> Open your base skin (i.e. [BBC] Rosé Pine - Base) and press <kbd>Ctrl+F</kbd> to
       search for <code>font-family</code>. You'll see blocks like:<br />
       <br />
       <pre><code>body,
@@ -336,7 +336,7 @@
       <br />
       <strong>For mobile devices:</strong> If you're on Android, you can use custom fonts on Firefox by installing the
       <a href="https://addons.mozilla.org/en-US/android/addon/styl-us/" rel="nofollow">Stylus</a> extension and applying
-      the <a href="https://userstyles.world/style/26908/ao3-rose-pine-fonts" rel="nofollow">AO3: Rose Pine Fonts</a>
+      the <a href="https://userstyles.world/style/26908/ao3-rose-pine-fonts" rel="nofollow">AO3: RoséPine Fonts</a>
       userstyle. See the userstyle page for instructions on how to change the fonts. To add your own fonts to mobile,
       see <a href="https://github.com/ravenothere/AO3-Tweaks?tab=readme-ov-file" rel="nofollow">Custom Fonts for
         Mobile</a> by <a href="https://www.tumblr.com/ravenothere" rel="nofollow">ravenothere</a>. Big thanks to
@@ -345,7 +345,7 @@
         href="https://github.com/ravenothere/AO3-Rose-Pine-Closer-to-Home" rel="nofollow">AO3 Rosé Pine — Closer to
         Home</a>, which is a fork of this skin.
     </li>
-    <li><strong>Text Size:</strong> You can make text bigger or smaller using two variables in the theme skin:<br />
+    <li><strong>Text Size:</strong> You can make text bigger or smaller using two variables in the base skin:<br />
       <br />
       <pre><code>/* TEXT SIZE */
 --txt-size-main:       100%;     /* main text size */
@@ -413,19 +413,17 @@
           </ul>
         </li>
       </ul>
-      <strong>Or add it manually:</strong> Add this rule to the bottom of your theme skin to give them a custom
-      color:<br />
+      <strong>To change the platonic ship color:</strong> Open your platonic ship tag add-on skin and change the variable at the top of the <code>:root</code> block:
+      <ul>
+        <li><strong>Style A</strong> uses <code>--tag-platonic-ship-bg</code> for the background color.</li>
+        <li><strong>Style B</strong> uses <code>--tag-platonic-ship-txt</code> for the text and border color.</li>
+      </ul>
+      For example, to use purple for platonic ships in Style A:<br />
       <br />
-      <pre><code>li.relationships:has(a[href*="%20*a*%20"]) a.tag,
-[class^="relationship"] a[href*="%20*a*%20"] {
-  background-color: #c4a7e7 !important;
-}</code></pre><br />
-      Replace <code>#c4a7e7</code> with any color you prefer. If you're using a tag add-on, make sure you add the code
-      to the tag add-on instead of the theme skin and target the color and border properties instead of the background
-      color.
+      <pre><code>--tag-platonic-ship-bg: #c4a7e7;</code></pre>
     </li>
     <li><strong>Text Decorations:</strong> Those little symbols after tags and headers? You can change them! The
-      rules are at the end of the theme CSS. For tags, it looks like this:<br />
+      rules are in the base skin CSS. For tags, it looks like this:<br />
       <br />
       <pre><code>a.tag:not(.fandom.index.group a.tag,
 h2.heading a.tag,
@@ -441,6 +439,13 @@ dd.fandom.tags a,
       <br />
       <strong>Important:</strong> Since the mobile skin uses the shortened version of the title "AO3 ✿",
       you'll have to change the symbol there too.
+    </li>
+    <li><strong>Layout Toggles:</strong> A few optional display settings are available in the <code>LAYOUT TOGGLES</code> section near the top of your base skin. To change them, find the variable and update its value:
+      <ul>
+        <li><strong>Profile picture in the header:</strong> Your user avatar can be shown next to the header icons. Change <code>--greeting-icon-display: none;</code> to <code>--greeting-icon-display: inline;</code></li>
+        <li><strong>Social share buttons on the homepage:</strong> AO3's social media share buttons on the splash page are hidden by default. Change <code>--splash-social-display: none;</code> to <code>--splash-social-display: inline;</code></li>
+        <li><strong>Footer:</strong> The footer is shown by default. Change <code>--footer-display: inline;</code> to <code>--footer-display: none;</code> to hide it.</li>
+      </ul>
     </li>
 
   </ul>
@@ -508,7 +513,7 @@ dd.fandom.tags a,
         </li>
       </ul>
       <p><strong>Alternatively:</strong> Try my custom fork <strong><a
-            href="https://greasyfork.org/en/scripts/566605-ao3-fictracker-blackbatcat-s-version" rel="nofollow">AO3
+            href="https://greasyfork.org/en/scripts/566605-ao3-fictracker-BlackBatCat-s-version" rel="nofollow">AO3
             FicTracker - BlackBatCat's Version</a></strong> which includes all the settings above pre-configured, plus
         chapter tracking, kudos button hiding, and a "Subscribed" status. Be sure to read about the changes from the
         original script before using it!</p>
@@ -520,7 +525,7 @@ dd.fandom.tags a,
           rel="nofollow">AO3: Comment Formatting and Preview</a> by escctrl</strong> - Adds buttons to insert HTML
       formatting, and shows a live preview box of what the comment will look like.</li>
   </ul>
-  <h6>Pictured: <a href="https://greasyfork.org/en/scripts/566605-ao3-fictracker-blackbatcat-s-version"
+  <h6>Pictured: <a href="https://greasyfork.org/en/scripts/566605-ao3-fictracker-BlackBatCat-s-version"
       rel="nofollow">Fictracker (BBC's Version)</a>, <a href="https://greasyfork.org/en/scripts/550537-ao3-site-wizard"
       rel="nofollow">Site Wizard</a>,<a href="https://greasyfork.org/en/scripts/549777-ao3-reading-time-quality-score"
       rel="nofollow"> Reading Time &amp;
@@ -541,3 +546,5 @@ dd.fandom.tags a,
   <p>Big thanks to <a href="https://github.com/ZerafinaCSS/neos/tree/main" rel="nofollow">neos by ZerafinaCSS</a> — this
     project wouldn't exist without it!</p>
 </div>
+
+

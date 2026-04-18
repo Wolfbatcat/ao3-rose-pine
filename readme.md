@@ -62,7 +62,7 @@ To use this skin on AO3, you'll be creating a small set of linked skins. The bas
 Before you begin, decide which layout you prefer:
 
 - **Normal Layout:** Uses `base.css`, `tablet.css`, and `mobile.css`
-- **Card Layout:** Uses `base_alt.css`, `tablet_alt.css`, and `mobile_alt.css`
+- **Card Layout:** Uses `base_card.css`, `tablet_card.css`, and `mobile_card.css`
 
 Check the previews above to see which style you prefer, then follow the instructions below using the files for your chosen layout. Note that both layouts use the same theme files, so you can pick any theme you like regardless of which layout you choose.
 
@@ -73,7 +73,7 @@ Check the previews above to see which style you prefer, then follow the instruct
 2. Give it a unique name, like `[BBC] Rosé Pine - Base`, with "BBC" being your username or an abbreviation.
 3. Paste the contents of your chosen base file into the CSS field:
     - **Normal Layout:** `base.css`
-    - **Card Layout:** `base_alt.css`
+    - **Card Layout:** `base_card.css`
 4. Under **Advanced**, set it to **Parent Only**.
 5. Click **Submit**.
 
@@ -132,7 +132,7 @@ Want a different tag style that's easier on the eyes with darker themes? This op
 1. [Create a skin](https://archiveofourown.org/skins/new?skin_type=Skin) titled `[BBC] Rosé Pine - Tablet`.
 2. Paste in the correct tablet file for your chosen layout:
     - **Normal Layout:** `tablet.css`
-    - **Card Layout:** `tablet_alt.css`
+    - **Card Layout:** `tablet_card.css`
 3. Under **Advanced → Choose @media**, select: `only screen (max-width: 62em)`.
 4. Set to **Parent Only** and submit.
 
@@ -144,7 +144,7 @@ Want a different tag style that's easier on the eyes with darker themes? This op
 1. [Create a skin](https://archiveofourown.org/skins/new?skin_type=Skin) titled `[BBC] Rosé Pine - Mobile`.
 2. Paste in the correct mobile file for your chosen layout:
     - **Normal Layout:** `mobile.css`
-    - **Card Layout:** `mobile_alt.css`
+    - **Card Layout:** `mobile_card.css`
 3. Under **Advanced → Choose @media**, select: `only screen (max-width: 42em)`.
 4. Set to **Parent Only** and submit.
 
@@ -169,3 +169,5 @@ Want a different tag style that's easier on the eyes with darker themes? This op
 ## Credits
 
 Big thanks to [neos by ZerafinaCSS](https://github.com/ZerafinaCSS/neos/tree/main) — this skin wouldn't exist without it!
+
+
