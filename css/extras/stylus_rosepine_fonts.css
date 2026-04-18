@@ -1,12 +1,12 @@
 /* ==UserStyle==
-@name           AO3: Rose Pine Fonts
+@name           AO3: Rosé Pine Fonts
 @namespace      https://github.com/Wolfbatcat/ao3-rose-pine
 @version        1.0.1
-@description    Custom fonts for the AO3 Rose Pine site skin
+@description    Custom fonts for the AO3 Rosé Pine site skin
 @author         BlackBatCat, ravenothere
 ==/UserStyle== */
 
-/* NOTE: This file is meant to be used as an add-on to the main Rose Pine site skin. The `--txt-size` variables will NOT work on other site skins.
+/* NOTE: This file is meant to be used as an add-on to the main Rosé Pine site skin. The `--txt-size` variables will NOT work on other site skins.
          Big thanks to the creators of the fonts used here and ravenothere for getting them to work on mobile!*/
 
 @-moz-document domain("archiveofourown.org") {
@@ -124,3 +124,5 @@
     }
 
 }
+
+

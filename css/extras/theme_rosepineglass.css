@@ -1,7 +1,8 @@
 /*============================================================
 
-                      ✿✿✿ Rose Pine ✿✿✿ 
-                     Theme: Rose Pine Glass
+                      ✿✿✿ Rosé Pine ✿✿✿ 
+                     Theme: Rosé Pine Glass
+                        - DEPRECATED -
 
 ==============================================================
 GLOBAL VARIABLES
@@ -400,3 +401,5 @@ a.tag:not(.fandom.index.group a.tag,
   [class^=character] a.tag):after {
   content: "\00a0\00a0✿";
 }
+
+

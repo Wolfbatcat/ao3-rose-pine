@@ -1,7 +1,30 @@
 /*============================================================
 
-            ✿✦✿ Rose Pine — Closer to Home ✿✦✿ 
-               Theme: Rose Pine Cool - Original
+            ✿✦✿ Rosé Pine — Closer to Home ✿✦✿ 
+               Theme: Rosé Pine Cool - Original
+                      By BlackBatCat
+
+==============================================================
+SKIN METADATA
+==============================================================
+
+  - Skin:         Rosé Pine — Closer to Home
+  - Theme:        Rosé Pine Cool (CTH)
+  - File:         theme_rosepinecool_cth.css
+  - Author:       BlackBatCat
+  - Tumblr:       blackbatcats
+  - License:      MIT
+  - Updated:      2026-04-18 23:37 UTC
+
+  - Repository:   https://github.com/Wolfbatcat/ao3-rose-pine
+  - Instructions: https://archiveofourown.org/works/69993411
+
+  - Base:         "neos" by ZerafinaCSS               https://archiveofourown.org/works/65849527
+                  "Closer to Home" by ravenothere      https://archiveofourown.org/works/80768621
+
+  - Inspired by:  "Archive 2.0 skin" by AO3           https://archiveofourown.org/skins/873
+                  "Tide" by ElectricAlice             https://github.com/electricalice/Ao3-tide
+                  "Flat Squares Skin" by milkfatzero  https://ao3-skins.dreamwidth.org/6156.html
 
 ==============================================================
 GLOBAL VARIABLES
@@ -294,3 +317,5 @@ a.tag:not(.fandom.index.group a.tag,
   [class^=character] a.tag):after {
   content: "\00a0\00a0✿";
 }
+
+

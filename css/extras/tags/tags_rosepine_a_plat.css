@@ -1,7 +1,27 @@
 /*============================================================
 
-                   ✿✿✿ Rose Pine Tags ✿✿✿
+                   ✿✿✿ Rosé Pine Tags ✿✿✿
                   Style A — Platonic Ships
+==============================================================
+SKIN METADATA
+==============================================================
+
+  - Skin:         Rosé Pine
+  - Add-on:       Tags - Style A — Platonic Ships
+  - File:         tags_rosepine_a_plat.css
+  - Author:       BlackBatCat
+  - Tumblr:       blackbatcats
+  - License:      MIT
+  - Updated:      2026-04-18 23:37 UTC
+  
+  - Repository:   https://github.com/Wolfbatcat/ao3-rose-pine
+  - Instructions: https://archiveofourown.org/works/69993411
+  
+  - Base:         "Rosé Pine" by BlackBatCat               https://archiveofourown.org/works/69993411
+  
+  - Inspired by:  "Archive 2.0 skin" by AO3                 https://archiveofourown.org/skins/873
+                  "Tide" by ElectricAlice                   https://github.com/electricalice/Ao3-tide
+                  "Flat Squares Skin" by milkfatzero        https://ao3-skins.dreamwidth.org/6156.html
 
 ==============================================================
 GLOBAL VARIABLES
@@ -24,7 +44,6 @@ https://greasyfork.org/en/scripts/562812-ao3-reorder-ship-tags
 
 /*>========== STYLE OVERRIDES ==========<*/
 
-
 /* Special styling for platonic ships containing "*a* " */
 li.relationships:has(a[href*="%20*a*%20"]) a.tag,
 [class^="relationship"] a[href*="%20*a*%20"],
@@ -32,3 +51,5 @@ li.relationships:has(a[href*="%20*a*%20"]) a.tag,
   background: var(--tag-platonic-ship-bg) !important;
   color: var(--tag-ship-txt) !important;
 }
+
+
