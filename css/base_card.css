@@ -13,7 +13,7 @@ SKIN METADATA
   - Author:       BlackBatCat
   - Tumblr:       blackbatcats
   - License:      MIT
-  - Updated:      2026-04-19 02:08 UTC
+  - Updated:      2026-04-21 15:09 UTC
 
   - Repository:   https://github.com/Wolfbatcat/ao3-rose-pine
   - Instructions: https://archiveofourown.org/works/69993411
@@ -2566,7 +2566,7 @@ div.preface {
 }
 
 .chapter .preface {
-    border-top: 1.5px solid var(--border4) !important;
+    border-top: none;
 }
 
 .preface h2.title {
