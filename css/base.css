@@ -13,7 +13,7 @@ SKIN METADATA
   - Author:       BlackBatCat
   - Tumblr:       blackbatcats
   - License:      MIT
-  - Updated:      2026-04-22 22:06 UTC
+  - Updated:      2026-04-22 22:38 UTC
 
   - Repository:   https://github.com/Wolfbatcat/ao3-rose-pine
   - Instructions: https://archiveofourown.org/works/69993411
@@ -178,7 +178,7 @@ textarea#skin_css,
 
 /* HEADING DECORATIONS */
 #dashboard .current:after,
-h2:not(#workskin h2, h2.heading:has(+ .navigation.actions.module))::after,
+.home .header h2::after,
 .splash>.module h3::after {
     content: "\00a0✿";
 }
