@@ -13,7 +13,7 @@ SKIN METADATA
   - Author:       BlackBatCat
   - Tumblr:       blackbatcats
   - License:      MIT
-  - Updated:      2026-04-21 15:50 UTC
+  - Updated:      2026-04-22 18:42 UTC
 
   - Repository:   https://github.com/Wolfbatcat/ao3-rose-pine
   - Instructions: https://archiveofourown.org/works/69993411
@@ -169,36 +169,30 @@ textarea#skin_css,
 }
 
 /*>========== TEXT DECORATIONS ==========<*/
- /* don't forget to change the decoration in the mobile skin as well */
+/* don't forget to change the decoration in the mobile skin as well */
 
 /* TITLE DECORATIONS */
 #header .heading a::before {
-  content: "Archive of Our Own\00a0✿";
+    content: "Archive of Our Own\00a0✿";
 }
 
-/* DASHBOARD CURRENT TAB DECORATION */
-#dashboard .current:after {
-  content: "\00a0✿";
-}
-
-.home .header h2::after {
-    content: "\00a0✿";
-}
-
+/* HEADING DECORATIONS */
+#dashboard .current:after,
+h2:not(#workskin h2)::after,
 .splash>.module h3::after {
-  content: "\00a0✿";
+    content: "\00a0✿";
 }
 
 /* TAG DECORATIONS */
 a.tag:not(.fandom.index.group a.tag,
-  h2.heading a.tag,
-  .splash .favorite a.tag,
-  h5.fandoms.heading a.tag,
-  dd.fandom.tags a,
-  [class^=warning] a.tag,
-  [class^=relationship] a,
-  [class^=character] a.tag):after {
-  content: "\00a0\00a0✿";
+    h2.heading a.tag,
+    .splash .favorite a.tag,
+    h5.fandoms.heading a.tag,
+    dd.fandom.tags a,
+    [class^=warning] a.tag,
+    [class^=relationship] a,
+    [class^=character] a.tag):after {
+    content: "\00a0\00a0✿";
 }
 
 /*============================================================
@@ -3212,7 +3206,8 @@ dl.nomination {
     color: var(--txt-main);
 }
 
-.userstuff h3 {
+.userstuff h3,
+.userstuff h6 {
     border-color: var(--border4);
 }
 
