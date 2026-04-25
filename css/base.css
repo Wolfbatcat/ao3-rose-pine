@@ -13,7 +13,7 @@ SKIN METADATA
   - Author:       BlackBatCat
   - Tumblr:       blackbatcats
   - License:      MIT
-  - Updated:      2026-04-22 22:38 UTC
+  - Updated:      2026-04-25 04:56 UTC
 
   - Repository:   https://github.com/Wolfbatcat/ao3-rose-pine
   - Instructions: https://archiveofourown.org/works/69993411
@@ -3301,21 +3301,15 @@ div.error,
     color: inherit !important;
 }
 
-.alert a:not(.action):is(:hover, :focus),
-.notice a:not(.action):is(:hover, :focus),
-.error a:not(.action):is(:hover, :focus),
-.announcement .userstuff a:is(:hover, :focus),
-.announcement input[type="submit"]:is(:hover, :focus),
-.announcement .action:is(:hover, :focus) {
-    filter: opacity(60%);
-}
-
 /*>========== ADMIN ANNOUNCEMENT BANNERS ==========<*/
 
 .announcement {
     display: flex;
     align-items: end;
     justify-content: center;
+    margin-top: 1%;
+    margin-right: 2%;
+    margin-left: 2%;
     z-index: 1;
     padding: 0.429em;
     border-bottom: var(--border-width) solid var(--alert-txt);
@@ -3334,13 +3328,14 @@ div.error,
 
 .announcement .userstuff p {
     margin: 0;
-}
+    font-size: 0.95em;
 
-.announcement p.submit {
-    position: unset;
-    z-index: 3;
-    width: 2em;
-    text-align: center;
+    &.submit {
+        position: unset;
+        z-index: 3;
+        width: 2em;
+        text-align: center;
+    }
 }
 
 .announcement input[type="submit"],
@@ -4259,6 +4254,7 @@ li.blurb #header.region {
     background: transparent !important;
     border: 0 !important;
     box-shadow: none !important;
+    color: inherit !important;
 }
 
 li.blurb #header.region>ul.navigation.actions>li.dropdown {
