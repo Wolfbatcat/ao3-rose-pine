@@ -1,0 +1,21 @@
+/*>>========== WORK/READER BORDERS - DASHED ==========<<*/
+
+.home .header h2 {
+	border-bottom: 3px dotted var(--border1);
+}
+
+.chapter .preface {
+	border-top: 3px dotted var(--border4);
+}
+
+.preface h3 {
+	border-bottom: 3px dotted var(--border4);
+}
+
+.userstuff h6 {
+	border-bottom: 2px dotted var(--border4);
+}
+
+.userstuff h3 {
+	border-bottom: 0.15em dotted var(--border4);
+}
