@@ -13,7 +13,7 @@ SKIN METADATA
   - Author:       BlackBatCat
   - Tumblr:       blackbatcats
   - License:      MIT
-  - Updated:      2026-04-25 05:08 UTC
+  - Updated:      2026-04-28 22:18 UTC
 
   - Repository:   https://github.com/Wolfbatcat/ao3-rose-pine
   - Instructions: https://archiveofourown.org/works/69993411
@@ -92,6 +92,7 @@ Alphanumeric = Additions by ZerafinaCSS and other contributors
   /* TEXT SIZE */
   --txt-size-main:       100%;                /* main text size (bigger than 130% causes some issues, but is still mostly functional) */
   --txt-size-work:       110%;                /* work text size */
+  --greeting-icon-size:  1.143em;             /* header greeting icon size */
 
   /* TEXT BOLDNESS */
   --txt-semibold:        600;                 /* font-weight hover effect */
@@ -102,7 +103,7 @@ Alphanumeric = Additions by ZerafinaCSS and other contributors
 
 /*>========== LAYOUT TOGGLES ==========<*/
 
-  --greeting-icon-display: none;  /* set to "inline" to show the user avatar in the header */
+  --greeting-icon-display: none;  /* set to "flex" to show the user avatar in the header */
   --splash-social-display: none;   /* set to "inline" to show the social share buttons on the splash page */
   --footer-display: inline;        /* set to "none" to hide the footer */
 
@@ -545,10 +546,11 @@ col.name {
 
 #greeting img.icon {
     display: block;
-    height: 1.143em;
-    width: 1.143em;
-    min-height: 1.143em;
-    min-width: 1.143em;
+    height: var(--greeting-icon-size);
+    width: var(--greeting-icon-size);
+    min-height: var(--greeting-icon-size);
+    min-width: var(--greeting-icon-size);
+    border: none;
     border-radius: 0.25em;
 }
 
@@ -580,9 +582,9 @@ col.name {
 #header #greeting a[href*="/users/logout"] {
     display: inline-block;
     box-sizing: content-box;
-    height: 1.143em;
-    min-height: 1.143em;
-    min-width: 1.143em;
+    height: var(--greeting-icon-size);
+    min-height: var(--greeting-icon-size);
+    min-width: var(--greeting-icon-size);
 }
 
 #header #greeting>ul>li>a {
@@ -4318,6 +4320,42 @@ li.blurb #header.region>ul.navigation.actions>li.dropdown {
 
 .create-note-btn:hover {
     opacity: 100% !important;
+}
+
+/*>========== USERSCRIPT - BADGE FOR UNREAD INBOX MESSAGES ==========<*/
+/* https://greasyfork.org/en/scripts/474892 */
+
+#greeting a#inboxbadge {
+    display: flex !important;
+    align-items: center;
+    box-sizing: border-box !important;
+    column-gap: 0 !important;
+    padding: 0 0.25em !important;
+    margin: 0 !important;
+    height: var(--greeting-icon-size) !important;
+    color: var(--bg2) !important;
+}
+
+#greeting #inboxbadge {
+    background: var(--txt-main) !important;
+    border: 2px solid var(--txt-main) !important;
+    border-radius: 0.25em !important;
+}
+
+#greeting a#inboxbadge .iconify {
+    width: 1em;
+    height: 1em;
+    display: flex;
+    flex-shrink: 0;
+}
+
+#greeting p.icon:has(#inboxbadge) {
+    display: flex !important;
+}
+
+#greeting p.icon:has(#inboxbadge) img.icon {
+    display: var(--greeting-icon-display);
+    margin-left: 0.5em;
 }
 
 /*>========== MISC USERSCRIPT STYLING ==========<*/
