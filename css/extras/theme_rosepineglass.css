@@ -1,4 +1,6 @@
-/*============================================================
+.site-skin-metadata {
+    content:"
+==============================================================
 
                       ✿✿✿ Rosé Pine ✿✿✿ 
                      Theme: Rosé Pine Glass
@@ -14,18 +16,19 @@ SKIN METADATA
   - Author:       BlackBatCat
   - Tumblr:       blackbatcats
   - License:      MIT
-  - Updated:      2026-04-19 02:08 UTC
+  - Updated:      2026-05-05 02:15 UTC
 
   - Repository:   https://github.com/Wolfbatcat/ao3-rose-pine
   - Instructions: https://archiveofourown.org/works/69993411
 
-  - Base:         "neos" by ZerafinaCSS               https://archiveofourown.org/works/65849527
+  - Base:         'neos' by ZerafinaCSS               https://archiveofourown.org/works/65849527
 
-  - Inspired by:  "Transparent Zen" by Sameera Wijerathna           https://sameerasw.com/zen
+  - Inspired by:  'Transparent Zen' by Sameera Wijerathna           https://sameerasw.com/zen
 
-==============================================================
+";}
+/*============================================================
 GLOBAL VARIABLES
-==============================================================*/
+==============================================================
 NOTE: This theme is only compatible with Zen Browser and is intented for AO3's desktop site. 
 Both Zen Browser and the Zen Internet Firefox extension are required */
 
