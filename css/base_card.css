@@ -15,7 +15,7 @@ SKIN METADATA
   - Author:       BlackBatCat
   - Tumblr:       blackbatcats
   - License:      MIT
-  - Updated:      2026-05-12 06:55 UTC
+  - Updated:      2026-05-12 18:33 UTC
 
   - Repository:   https://github.com/Wolfbatcat/ao3-rose-pine
   - Instructions: https://archiveofourown.org/works/69993411
@@ -95,7 +95,7 @@ Alphanumeric = Additions by ZerafinaCSS and other contributors
   /* TEXT SIZE */
   --txt-size-main:       100%;                /* main text size (bigger than 130% causes some issues, but is still mostly functional) */
   --txt-size-work:       110%;                /* work text size */
-  --greeting-icon-size:  1.143em;             /* header greeting icon size */
+  --greeting-icon-size:  1.286em;             /* header greeting icon size */
 
   /* TEXT BOLDNESS */
   --txt-semibold:        600;                 /* font-weight hover effect */
@@ -4304,6 +4304,22 @@ li.blurb #header.region {
 
 li.blurb #header.region>ul.navigation.actions>li.dropdown {
     color: var(--txt-main) !important;
+}
+
+/* prevent Change Status dropdown from clipping off the right edge on narrow screens */
+li.blurb #header.region>ul.navigation.actions>li.dropdown>.menu.dropdown-menu {
+    z-index: 9999 !important;
+    box-sizing: border-box !important;
+    width: max-content !important;
+    min-width: 15em !important;
+    padding: 0.25em 0 !important;
+    border: 1px solid var(--border3) !important;
+    border-radius: var(--radius-mid) !important;
+    box-shadow: var(--shadow) !important;
+    background: var(--bg6) !important;
+    font-size: 0.95em !important;
+    left: auto !important;
+    right: 0 !important;
 }
 
 /* user notes styling */
