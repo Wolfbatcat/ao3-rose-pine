@@ -361,6 +361,13 @@
       that going above 130% for <code>--txt-size-main</code> might cause some minor layout weirdness, though it'll still
       mostly work.<br />
     </li>
+    <li><strong>Work Width:</strong> You can adjust the maximum width of the workskin in the base skin:<br />
+      <br />
+      <pre><code>--workskin-width:      70em;     /* max width of work content on desktop */</code></pre><br />
+      Increase it for a wider reading column (like <code>90em</code>) or decrease it for a narrower one (like
+      <code>40em</code>). On tablet and mobile the work area always fills the available width regardless of this
+      setting.<br />
+    </li>
     <li><strong>Tag Colors:</strong> Want to change up the tag colors? The variables are in the <code>TAG COLORS</code>
       section near the top of your theme file:<br />
       <br />
@@ -460,7 +467,7 @@ dd.fandom.tags a,
       </ul>
     </li>
     <li><strong>Utility Snippets:</strong> Want to hide other bits of AO3's UI — things like download formats you never
-      use, work stats, or various action buttons? Check out <
+      use, work stats, or various action buttons? Check out <a
         href="https://github.com/ZerafinaCSS/Site-Skin-Add-Ons/blob/main/utility-snippets.css"
         rel="nofollow">ZerafinaCSS's Utility Snippets</a>. It's a collection of ready-to-use CSS
       rules covering buttons, header elements, stats, tags, icons, and more. Copy only the snippets you want and paste
