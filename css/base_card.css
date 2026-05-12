@@ -15,7 +15,7 @@ SKIN METADATA
   - Author:       BlackBatCat
   - Tumblr:       blackbatcats
   - License:      MIT
-  - Updated:      2026-05-12 18:33 UTC
+  - Updated:      2026-05-12 18:39 UTC
 
   - Repository:   https://github.com/Wolfbatcat/ao3-rose-pine
   - Instructions: https://archiveofourown.org/works/69993411
@@ -4287,7 +4287,6 @@ div.fmtPreview.userstuff p code {
 /*>========== USERSCRIPT: AO3 FICTRACKER STYLING ==========<*/
 /* https://greasyfork.org/en/scripts/513435-ao3-fictracker */
 
-/* inline header wrapper styling */
 li.blurb #header.region {
     display: inline-flex !important;
     align-items: baseline !important;
@@ -4306,7 +4305,10 @@ li.blurb #header.region>ul.navigation.actions>li.dropdown {
     color: var(--txt-main) !important;
 }
 
-/* prevent Change Status dropdown from clipping off the right edge on narrow screens */
+li.blurb #header.region>ul.navigation.actions>li.dropdown::before {
+    content: none !important;
+}
+
 li.blurb #header.region>ul.navigation.actions>li.dropdown>.menu.dropdown-menu {
     z-index: 9999 !important;
     box-sizing: border-box !important;
@@ -4322,7 +4324,6 @@ li.blurb #header.region>ul.navigation.actions>li.dropdown>.menu.dropdown-menu {
     right: 0 !important;
 }
 
-/* user notes styling */
 .create-note-btn {
     border-radius: 8px !important;
 }
@@ -4337,7 +4338,6 @@ li.blurb #header.region>ul.navigation.actions>li.dropdown>.menu.dropdown-menu {
     box-shadow: var(--shadow-box2) !important;
 }
 
-/* remove border when note exists */
 .user-note-preview>div>div:has(details) {
     border: none !important;
     border-radius: 0 !important;
