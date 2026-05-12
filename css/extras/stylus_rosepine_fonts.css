@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           AO3: Rosé Pine Fonts
 @namespace      https://github.com/Wolfbatcat/ao3-rose-pine
-@version        1.0.1
+@version        1.0.2
 @description    Custom fonts for the AO3 Rosé Pine site skin
 @author         BlackBatCat, ravenothere
 ==/UserStyle== */
@@ -25,7 +25,7 @@
         --font-main:           Figtree, Merriweather, Apfel Grotezk, Bitter, Helvetica, "Trebuchet MS", "Lucida Sans", Arial, sans-serif, "GNU Unifont";
         --font-work:           Figtree, Merriweather, Apfel Grotezk, Bitter, Helvetica, "Trebuchet MS", "Lucida Sans", Arial, sans-serif, "GNU Unifont";
         --font-heading:        ; /* Leave blank to use the main font for headings */
-        --font-code:           Victor Mono Medium, Consolas, Monaco, Courier, monospace;
+        --font-code:           "Victor Mono", Consolas, Monaco, Courier, monospace;
     }
 
     /* MAIN FONT FAMILY */
@@ -86,7 +86,7 @@
     .css.module blockquote pre,
     #floaty-textarea {
         font-family: var(--font-code);
-        /* font-style: italic; */
+        /* font-style: italic; */ /* Uncomment for the cursive italic variant of Victor Mono */
 
     }
 
@@ -115,8 +115,14 @@
         src: url("https://cdn.jsdelivr.net/gh/SorkinType/Merriweather@master/fonts/webfonts/Merriweather-Regular.woff2");
     }
     @font-face {
-        font-family: "Victor Mono Medium";
+        font-family: "Victor Mono";
+        font-style: normal;
         src: url("https://cdn.jsdelivr.net/gh/rubjo/victor-mono@master/dist/woff2/VictorMono-Regular.woff2");
+    }
+    @font-face {
+        font-family: "Victor Mono";
+        font-style: italic;
+        src: url("https://cdn.jsdelivr.net/gh/rubjo/victor-mono@master/dist/woff2/VictorMono-Italic.woff2");
     }
     @font-face {
         font-family: "Outfit";
