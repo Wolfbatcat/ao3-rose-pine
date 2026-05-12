@@ -15,7 +15,7 @@ SKIN METADATA
   - Author:       BlackBatCat
   - Tumblr:       blackbatcats
   - License:      MIT
-  - Updated:      2026-05-05 02:15 UTC
+  - Updated:      2026-05-12 06:55 UTC
 
   - Repository:   https://github.com/Wolfbatcat/ao3-rose-pine
   - Instructions: https://archiveofourown.org/works/69993411
@@ -132,6 +132,14 @@ SKIN METADATA
 /* prevent the filter box from overlapping the pagination buttons */
 .region:has(ol.pagination.actions) form.filters {
   margin-bottom: 7.5em !important;
+}
+
+/*============================================================
+>> 21 USERSTUFF
+============================================================*/
+
+:root {
+  --workskin-width: 100%;
 }
 
 

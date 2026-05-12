@@ -15,7 +15,7 @@ SKIN METADATA
   - Author:       BlackBatCat
   - Tumblr:       blackbatcats
   - License:      MIT
-  - Updated:      2026-05-12 05:45 UTC
+  - Updated:      2026-05-12 06:55 UTC
 
   - Repository:   https://github.com/Wolfbatcat/ao3-rose-pine
   - Instructions: https://archiveofourown.org/works/69993411
@@ -71,6 +71,7 @@ Alphanumeric = Additions by ZerafinaCSS and other contributors
   --margins-header:      1rem;                /* header on desktop */
   --margins-main:        5%;                  /* site contents on desktop */
   --margins-narrow:      2.5%;                /* site contents and header on tablet/mobile */
+  --workskin-width:      70em;               /* max width of work content on desktop */
 
   /* BLURB PADDING */
   --blurb-padding: 0.75em;
@@ -3199,13 +3200,10 @@ dl.nomination {
 /*>========== WORK MARGINS AND TEXT ==========<*/
 
 #workskin {
-    max-width: 70em;
-    /* slightly narrower than default */
+    max-width: var(--workskin-width);
     margin: 0 auto;
     padding: 0 2%;
     font-size: var(--txt-size-work);
-    /* adjust work font size here */
-    color: var(--txt-size-work);
 }
 
 /*>========== IMAGES ==========<*/
