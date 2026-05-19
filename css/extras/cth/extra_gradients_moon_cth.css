@@ -1,0 +1,147 @@
+/*>========== ICON GRADIENT OVERRIDE ==========<*/
+/* Layer this skin on top of Rosé Pine Moon (CTH).
+   Replaces flat icon and tag colors with Moon-based gradients. */
+
+:root {
+  --icon-grad-blue:   linear-gradient(135deg, #61a5c0 0%, #3e8fb0 50%, #2f718e 100%);
+  --icon-grad-cyan:   linear-gradient(135deg, #b7dee5 0%, #9ccfd8 50%, #79b4bf 100%);
+  --icon-grad-pink:   linear-gradient(135deg, #f293af 0%, #eb6f92 50%, #c74f72 100%);
+  --icon-grad-gold:   linear-gradient(135deg, #f4cfcd 0%, #ebbcba 50%, #cd9d9b 100%);
+  --icon-grad-purple: linear-gradient(135deg, #afaac4 0%, #908caa 50%, #706d8a 100%);
+
+  --tag-grad-default: radial-gradient(120% 90% at 24% 18%, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0) 50%), linear-gradient(165deg, #4a4666 0%, #393757 62%, #2f2d4a 100%);
+  --tag-grad-fandom: radial-gradient(120% 90% at 24% 18%, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0) 50%), linear-gradient(165deg, #f089a9 0%, #eb6f92 62%, #dd6386 100%);
+  --tag-grad-warning: radial-gradient(120% 90% at 24% 18%, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0) 50%), linear-gradient(165deg, #f1cbca 0%, #ebbcba 62%, #dcaeac 100%);
+  --tag-grad-ship: radial-gradient(120% 90% at 24% 18%, rgba(255, 255, 255, 0.13) 0%, rgba(255, 255, 255, 0) 50%), linear-gradient(165deg, #b2dae3 0%, #9ccfd8 62%, #88c0cb 100%);
+  --tag-grad-platonic: radial-gradient(120% 90% at 24% 18%, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0) 50%), linear-gradient(165deg, #f0cccb 0%, #ebbcba 62%, #dcaeac 100%);
+  --tag-grad-character: radial-gradient(120% 90% at 24% 18%, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0) 50%), linear-gradient(165deg, #68a9c3 0%, #3e8fb0 62%, #327691 100%);
+}
+
+/*>>========== RATING ==========<<*/
+
+.required-tags .rating-general-audience,
+img[src$="/images/skins/iconsets/default/rating-general-audience.png"] {
+  background: url("https://wolfbatcat.github.io/ao3-rose-pine/assets/zerafina-icon-rating-gen-01.png"),
+    var(--icon-grad-cyan);
+}
+
+.required-tags .rating-teen,
+img[src$="/images/skins/iconsets/default/rating-teen.png"] {
+  background: url("https://wolfbatcat.github.io/ao3-rose-pine/assets/zerafina-icon-rating-teen-01.png"),
+    var(--icon-grad-blue);
+  background-position: center 1px, center;
+}
+
+.required-tags .rating-mature,
+img[src$="/images/skins/iconsets/default/rating-mature.png"] {
+  background: url("https://wolfbatcat.github.io/ao3-rose-pine/assets/zerafina-icon-rating-mature-01.png"),
+    var(--icon-grad-gold);
+  background-size: 23px 23px, cover !important;
+  background-position: center;
+}
+
+.required-tags .rating-explicit,
+img[src$="/images/skins/iconsets/default/rating-explicit.png"] {
+  background: url("https://wolfbatcat.github.io/ao3-rose-pine/assets/zerafina-icon-rating-explicit-01.png"),
+    var(--icon-grad-pink);
+}
+
+/*>>========== RELATIONSHIPS ==========<<*/
+
+.required-tags .category-femslash,
+img[src$="/images/skins/iconsets/default/category-femslash.png"] {
+  background: url("https://wolfbatcat.github.io/ao3-rose-pine/assets/zerafina-icon-category-ff-01.png"),
+    var(--icon-grad-gold);
+}
+
+.required-tags .category-het,
+img[src$="/images/skins/iconsets/default/category-het.png"] {
+  background: url("https://wolfbatcat.github.io/ao3-rose-pine/assets/zerafina-icon-category-mf-01.png"),
+    var(--icon-grad-blue);
+}
+
+.required-tags .category-gen,
+img[src$="/images/skins/iconsets/default/category-gen.png"] {
+  background: url("https://wolfbatcat.github.io/ao3-rose-pine/assets/zerafina-icon-category-gen-01.png"),
+    var(--icon-grad-cyan);
+}
+
+.required-tags .category-slash,
+img[src$="/images/skins/iconsets/default/category-slash.png"] {
+  background: url("https://wolfbatcat.github.io/ao3-rose-pine/assets/zerafina-icon-category-mm-01.png"),
+    var(--icon-grad-pink);
+}
+
+/*>>========== CONTENT WARNINGS ==========<<*/
+
+.required-tags .warning-choosenotto,
+img[src$="/images/skins/iconsets/default/warning-choosenotto.png"] {
+  background: url("https://wolfbatcat.github.io/ao3-rose-pine/assets/zerafina-icon-warning-choosenotto-01.png"),
+    var(--icon-grad-cyan);
+}
+
+.required-tags .warning-yes,
+img[src$="/images/skins/iconsets/default/warning-yes.png"] {
+  background: url("https://wolfbatcat.github.io/ao3-rose-pine/assets/zerafina-icon-warning-yes-01.png"),
+    var(--icon-grad-pink);
+  background-position: center -2px, center;
+}
+
+.required-tags .external-work,
+img[src$="/images/skins/iconsets/default/warning-external-work.png"] {
+  background: url("https://wolfbatcat.github.io/ao3-rose-pine/assets/zerafina-icon-warning-external-work-02.png"),
+    var(--icon-grad-gold);
+}
+
+/*>>========== COMPLETION STATUS ==========<<*/
+
+.required-tags .complete-no,
+img[src$="/images/skins/iconsets/default/complete-no.png"] {
+  background: url("https://wolfbatcat.github.io/ao3-rose-pine/assets/zerafina-icon-complete-no-01.png"),
+    var(--icon-grad-cyan);
+}
+
+.required-tags .complete-yes,
+img[src$="/images/skins/iconsets/default/complete-yes.png"] {
+  background: url("https://wolfbatcat.github.io/ao3-rose-pine/assets/zerafina-icon-complete-yes-01.png"),
+    var(--icon-grad-blue);
+}
+
+/*>>========== TAG COLOR GRADIENTS ==========<<*/
+
+a.tag:not(.fandom.index.group a.tag):not(h2.heading a.tag):not(.splash .favorite a.tag):not(.splash .favorite li:nth-of-type(2n+1) a.tag),
+.added.tag,
+.unwrangled,
+.tags a[data-remote="true"] {
+  background: var(--tag-grad-default) !important;
+  border-color: var(--tag-border) !important;
+  color: #211f33 !important;
+}
+
+h5.fandoms.heading a.tag:not(.fandom.index.group a.tag):not(h2.heading a.tag):not(.splash .favorite a.tag):not(.splash .favorite li:nth-of-type(2n+1) a.tag),
+dd.fandom.tags a.tag:not(.fandom.index.group a.tag):not(h2.heading a.tag):not(.splash .favorite a.tag):not(.splash .favorite li:nth-of-type(2n+1) a.tag) {
+  background: var(--tag-grad-fandom) !important;
+  color: #460A1B !important;
+}
+
+[class^=warning] a.tag:not(.fandom.index.group a.tag):not(h2.heading a.tag):not(.splash .favorite a.tag):not(.splash .favorite li:nth-of-type(2n+1) a.tag) {
+  background: var(--tag-grad-warning) !important;
+  color: #553533 !important;
+}
+
+[class^=relationship] a.tag:not(.fandom.index.group a.tag):not(h2.heading a.tag):not(.splash .favorite a.tag):not(.splash .favorite li:nth-of-type(2n+1) a.tag) {
+  background: var(--tag-grad-ship) !important;
+  color: #214D54 !important;
+}
+
+li.relationships:has(a[href*="%20*a*%20"]) a.tag,
+[class^="relationship"] a[href*="%20*a*%20"],
+[class^="relationship"] a[href^="/tags/Other%20Relationship%20Tags%20to%20Be%20Added"] {
+  background: var(--tag-grad-platonic) !important;
+  color: #553533 !important;
+}
+
+[class^=character] a.tag:not(.fandom.index.group a.tag):not(h2.heading a.tag):not(.splash .favorite a.tag):not(.splash .favorite li:nth-of-type(2n+1) a.tag) {
+  background: var(--tag-grad-character) !important;
+  color: #163745 !important;
+}
