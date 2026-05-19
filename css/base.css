@@ -15,7 +15,7 @@ SKIN METADATA
   - Author:       BlackBatCat
   - Tumblr:       blackbatcats
   - License:      MIT
-  - Updated:      2026-05-12 18:39 UTC
+  - Updated:      2026-05-19 00:53 UTC
 
   - Repository:   https://github.com/Wolfbatcat/ao3-rose-pine
   - Instructions: https://archiveofourown.org/works/69993411
@@ -2595,7 +2595,7 @@ li.comment:not(:has(.edit_comment)) {
 .comment img.icon,
 .comment span.icon,
 .comment div.icon>a {
-    border-radius: 50%;
+    border-radius: var(--icon-primary-radius);
     transition: border-radius 150ms linear;
 }
 
