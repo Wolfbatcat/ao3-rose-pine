@@ -115,7 +115,7 @@ a.tag:not(.fandom.index.group a.tag):not(h2.heading a.tag):not(.splash .favorite
 .tags a[data-remote="true"] {
   background: var(--tag-grad-default) !important;
   border-color: var(--tag-border) !important;
-  color: #211f33 !important;
+  color: #b9b6cf !important;
 }
 
 h5.fandoms.heading a.tag:not(.fandom.index.group a.tag):not(h2.heading a.tag):not(.splash .favorite a.tag):not(.splash .favorite li:nth-of-type(2n+1) a.tag),
