@@ -15,7 +15,7 @@ SKIN METADATA
   - Author:       BlackBatCat
   - Tumblr:       blackbatcats
   - License:      MIT
-  - Updated:      2026-06-16 03:38 UTC
+  - Updated:      2026-06-16 05:40 UTC
 
   - Repository:   https://github.com/Wolfbatcat/ao3-rose-pine
   - Instructions: https://archiveofourown.org/works/69993411
@@ -1594,7 +1594,14 @@ fieldset.actions li:not(:first-child) {
 }
 
 /*>========== BUTTON CONTEXTS ==========<*/
-/* credits to ZerafinaCSS*/
+/* credits to ZerafinaCSS and lfky */
+
+/* fix download menu flashing */
+.work.navigation .download {
+    background: none !important;
+    box-shadow: none !important;
+    border: none !important
+}
 
 /* chapter index and download menus */
 .javascript .work.navigation .secondary,
@@ -2611,7 +2618,7 @@ li.comment:not(:has(.edit_comment)) {
 }
 
 /* comment icon animation */
-/* credit to lfkyyy and the Hogwarts skin - https://github.com/Ifkyyy/AO3-skins */
+/* credit to lfk and the Hogwarts skin - https://github.com/Ifkyyy/AO3-skins */
 .comment img.icon,
 .comment span.icon,
 .comment div.icon>a {
