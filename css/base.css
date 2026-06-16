@@ -15,7 +15,7 @@ SKIN METADATA
   - Author:       BlackBatCat
   - Tumblr:       blackbatcats
   - License:      MIT
-  - Updated:      2026-06-14 20:28 UTC
+  - Updated:      2026-06-16 03:38 UTC
 
   - Repository:   https://github.com/Wolfbatcat/ao3-rose-pine
   - Instructions: https://archiveofourown.org/works/69993411
@@ -93,8 +93,8 @@ Alphanumeric = Additions by ZerafinaCSS and other contributors
   --border-width:        1px;                 /* for almost all borders (experimental - changing this might cause some weirdness) */
 
   /* TEXT SIZE */
-  --txt-size-main:       100%;                /* main text size (bigger than 130% causes some issues, but is still mostly functional) */
-  --txt-size-work:       110%;                /* work text size */
+  --txt-size-main:       110%;                /* main text size (bigger than 130% causes some issues, but is still mostly functional) */
+  --txt-size-work:       115%;                /* work text size */
   --greeting-icon-size:  1.286em;             /* header greeting icon size */
 
   /* TEXT BOLDNESS */
@@ -170,6 +170,11 @@ textarea#skin_css,
     font-size: 0.9em;
     /* font-style: italic; */
     /* for cursive version of Victor Mono */
+}
+
+/* WORKSKIN FONT */
+#workskin *:not(kbd, tt, code, var, pre, samp) {
+    font-family: Figtree, Bitter, Helvetica, "Trebuchet MS", "Lucida Sans", Arial, sans-serif, "GNU Unifont";
 }
 
 /*>========== TEXT DECORATIONS ==========<*/
