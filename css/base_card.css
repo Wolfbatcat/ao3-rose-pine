@@ -25,7 +25,8 @@ SKIN METADATA
   - Inspired by:  'Archive 2.0 skin' by AO3           https://archiveofourown.org/skins/873
                   'Tide' by ElectricAlice             https://github.com/electricalice/Ao3-tide
                   'Flat Squares Skin' by milkfatzero  https://ao3-skins.dreamwidth.org/6156.html
-";} 
+";
+}
 /*============================================================
  DIRECTORY
 ==============================================================
@@ -64,53 +65,50 @@ Alphanumeric = Additions by ZerafinaCSS and other contributors
 ============================================================*/
 
 :root {
+    /*>========== UI PARAMETERS ==========<*/
 
-/*>========== UI PARAMETERS ==========<*/
+    /* SPACE ON LEFT/RIGHT SIDE OF SCREEN */
+    --margins-header: 1rem; /* header on desktop */
+    --margins-main: 5%; /* site contents on desktop */
+    --margins-narrow: 2.5%; /* site contents and header on tablet/mobile */
+    --workskin-width: 70em; /* max width of work content on desktop */
 
-  /* SPACE ON LEFT/RIGHT SIDE OF SCREEN */
-  --margins-header:      1rem;                /* header on desktop */
-  --margins-main:        5%;                  /* site contents on desktop */
-  --margins-narrow:      2.5%;                /* site contents and header on tablet/mobile */
-  --workskin-width:      70em;               /* max width of work content on desktop */
+    /* BLURB PADDING */
+    --blurb-padding: 0.75em;
+    --blurb-padding-neg: -0.75em;
 
-  /* BLURB PADDING */
-  --blurb-padding: 0.75em;
-  --blurb-padding-neg: -0.75em;
+    /* BORDER-RADIUS (= ROUNDNESS OF CORNERS) */
+    --radius-small: 0.75rem; /* smaller elements: list elements, input elements etc. */
+    --radius-mid: 0.75rem; /* midsizde elements: dropdown menus, system messages etc. */
+    --radius-big: 0.75rem; /* bigger elements: blurbs, forms, comments, textareas etc. */
+    --radius-alt: 0.75rem; /* header search box, buttons */
+    --radius-tag: 0 15px 15px; /* tags */
 
-  /* BORDER-RADIUS (= ROUNDNESS OF CORNERS) */
-  --radius-small:        0.75rem;             /* smaller elements: list elements, input elements etc. */
-  --radius-mid:          0.75rem;             /* midsizde elements: dropdown menus, system messages etc. */
-  --radius-big:          0.75rem;             /* bigger elements: blurbs, forms, comments, textareas etc. */
-  --radius-alt:          0.75rem;             /* header search box, buttons */
-  --radius-tag:          0 15px 15px;         /* tags */
+    /* ICON BORDER-RADIUS */
+    --icon-content-radius: 0.75rem; /* content and bookmark icon */
+    --icon-primary-radius: 50%; /* primary and comment icon */
+    --icon-index-radius: 0.75rem; /* index icon */
 
-  /* ICON BORDER-RADIUS */
-  --icon-content-radius: 0.75rem;             /* content and bookmark icon */
-  --icon-primary-radius: 50%;                 /* primary and comment icon */
-  --icon-index-radius:   0.75rem;             /* index icon */
+    /* BORDER WIDTH */
+    --border-width: 1px; /* for almost all borders (experimental - changing this might cause some weirdness) */
 
-  /* BORDER WIDTH */
-  --border-width:        1px;                 /* for almost all borders (experimental - changing this might cause some weirdness) */
+    /* TEXT SIZE */
+    --txt-size-main: 100%; /* main text size (bigger than 130% causes some issues, but is still mostly functional) */
+    --txt-size-work: 110%; /* work text size */
+    --greeting-icon-size: 1.286em; /* header greeting icon size */
 
-  /* TEXT SIZE */
-  --txt-size-main:       100%;                /* main text size (bigger than 130% causes some issues, but is still mostly functional) */
-  --txt-size-work:       110%;                /* work text size */
-  --greeting-icon-size:  1.286em;             /* header greeting icon size */
+    /* TEXT BOLDNESS */
+    --txt-semibold: 600; /* font-weight hover effect */
+    --txt-bold: 700; /* font-weight for headings */
 
-  /* TEXT BOLDNESS */
-  --txt-semibold:        600;                 /* font-weight hover effect */
-  --txt-bold:            700;                 /* font-weight for headings */
+    /* LINK DECORATION */
+    --link-underline: 1px solid transparent; /* link underline => delete "transparent" to make link underlines visible */
 
-  /* LINK DECORATION */
-  --link-underline:      1px solid transparent;  /* link underline => delete "transparent" to make link underlines visible */
+    /*>========== LAYOUT TOGGLES ==========<*/
 
-/*>========== LAYOUT TOGGLES ==========<*/
-
-  --greeting-icon-display: none;  /* set to "flex" to show the user avatar in the header */
-  --splash-social-display: none;   /* set to "inline" to show the social share buttons on the splash page */
-  --footer-display: inline;        /* set to "none" to hide the footer */
-
-
+    --greeting-icon-display: none; /* set to "flex" to show the user avatar in the header */
+    --splash-social-display: none; /* set to "inline" to show the social share buttons on the splash page */
+    --footer-display: inline; /* set to "none" to hide the footer */
 }
 
 /*>========== FONTS ==========<*/
@@ -166,7 +164,12 @@ textarea,
 textarea#skin_css,
 .css.module blockquote pre,
 #floaty-textarea {
-    font-family: Victor Mono Medium, Consolas, Monaco, Courier, monospace;
+    font-family:
+        Victor Mono Medium,
+        Consolas,
+        Monaco,
+        Courier,
+        monospace;
     font-size: 0.9em;
     /* font-style: italic; */
     /* for cursive version of Victor Mono */
@@ -188,19 +191,21 @@ textarea#skin_css,
 /* HEADING DECORATIONS */
 #dashboard .current:after,
 .home .header h2::after,
-.splash>.module h3::after {
+.splash > .module h3::after {
     content: "\00a0✿";
 }
 
 /* TAG DECORATIONS */
-a.tag:not(.fandom.index.group a.tag,
-    h2.heading a.tag,
-    .splash .favorite a.tag,
-    h5.fandoms.heading a.tag,
-    dd.fandom.tags a,
-    [class^=warning] a.tag,
-    [class^=relationship] a,
-    [class^=character] a.tag):after {
+a.tag:not(
+        .fandom.index.group a.tag,
+        h2.heading a.tag,
+        .splash .favorite a.tag,
+        h5.fandoms.heading a.tag,
+        dd.fandom.tags a,
+        [class^="warning"] a.tag,
+        [class^="relationship"] a,
+        [class^="character"] a.tag
+    ):after {
     content: "\00a0\00a0✿";
 }
 
@@ -245,7 +250,7 @@ button:focus,
 #footer a:focus,
 #footer button:focus,
 .submit input:focus,
-.filters input:focus+.indicator+span,
+.filters input:focus + .indicator + span,
 .filters .expander:focus {
     outline: none;
 }
@@ -383,10 +388,10 @@ col.name {
     background: var(--bg2);
 }
 
-#header>h1,
-#header>h2,
-#header>nav .user,
-#header>nav .dropdown-toggle,
+#header > h1,
+#header > h2,
+#header > nav .user,
+#header > nav .dropdown-toggle,
 #header li.search {
     display: flex;
     align-items: center;
@@ -509,8 +514,8 @@ col.name {
     color: var(--txt-header);
 }
 
-#header .navigation.actions .dropdown:is(.open, :hover, :focus, :active)>a,
-#header .navigation.actions>.dropdown a:is(:hover, :focus, :active),
+#header .navigation.actions .dropdown:is(.open, :hover, :focus, :active) > a,
+#header .navigation.actions > .dropdown a:is(:hover, :focus, :active),
 #header .user a:is(:hover, :focus, :active) {
     background: transparent;
     color: var(--txt-header-hgl);
@@ -541,12 +546,12 @@ col.name {
 #header .user,
 #header .user a,
 #small_login .action,
-#greeting .user>li {
+#greeting .user > li {
     margin: 0;
     padding: 0;
 }
 
-#greeting .user>li {
+#greeting .user > li {
     line-height: 0;
 }
 
@@ -576,12 +581,12 @@ col.name {
 /*>>========== REPLACE USER ACTIONS WITH ICONS ==========<<*/
 
 /* user profile icon */
-#header #greeting .dropdown>a[href*="/users/"] {
+#header #greeting .dropdown > a[href*="/users/"] {
     content: url("https://wolfbatcat.github.io/ao3-rose-pine/assets/zerafina-header-icon-user.png");
 }
 
 /* post new work icon */
-#header #greeting .dropdown>a[href*="/works/new"] {
+#header #greeting .dropdown > a[href*="/works/new"] {
     content: url("https://wolfbatcat.github.io/ao3-rose-pine/assets/zerafina-header-icon-new-work.png");
 }
 
@@ -590,8 +595,8 @@ col.name {
     content: url("https://wolfbatcat.github.io/ao3-rose-pine/assets/zerafina-header-icon-logout.png");
 }
 
-#header #greeting .dropdown>a[href*="/users/"],
-#header #greeting .dropdown>a[href*="/works/new"],
+#header #greeting .dropdown > a[href*="/users/"],
+#header #greeting .dropdown > a[href*="/works/new"],
 #header #greeting a[href*="/users/logout"] {
     display: inline-block;
     box-sizing: content-box;
@@ -600,7 +605,7 @@ col.name {
     min-width: var(--greeting-icon-size);
 }
 
-#header #greeting>ul>li>a {
+#header #greeting > ul > li > a {
     display: inline-block;
     height: 1.143em;
     /* 0.714em × 2 + 1.143em = 2.571em ≈ 36px at 14px base, matching header min-height */
@@ -609,16 +614,15 @@ col.name {
     filter: var(--header-icon);
 }
 
-#header #greeting>ul>li:is(.open, :hover, :focus)>a,
-#header #greeting>ul>li>a:is(:hover, :focus) {
+#header #greeting > ul > li:is(.open, :hover, :focus) > a,
+#header #greeting > ul > li > a:is(:hover, :focus) {
     filter: var(--header-icon-hgl);
 }
 
 /* spacing between icons */
-#header>nav .user {
+#header > nav .user {
     column-gap: 0.5em;
 }
-
 
 /*>========== PRIMARY NAVIGATION ==========<*/
 /* contains Fandoms, Browse, Search, About and search bar */
@@ -644,7 +648,7 @@ col.name {
     background: none;
 }
 
-#header .primary>li.dropdown:first-of-type {
+#header .primary > li.dropdown:first-of-type {
     margin-left: 0;
 }
 
@@ -975,11 +979,11 @@ label {
     margin-right: 0;
 }
 
-fieldset>fieldset>dl>dt>label {
+fieldset > fieldset > dl > dt > label {
     font-weight: var(--txt-bold);
 }
 
-fieldset>ul>li:has(label input[type="radio"]) {
+fieldset > ul > li:has(label input[type="radio"]) {
     margin: 0 !important;
 }
 
@@ -1059,7 +1063,6 @@ option:checked:is(:hover, :focus, :active) {
     color: var(--int-current-txt);
 }
 
-
 form dt {
     display: inline-block;
     box-sizing: border-box;
@@ -1074,7 +1077,7 @@ form dd.any {
     width: 75%;
 }
 
-form dd+dd {
+form dd + dd {
     width: 100%;
 }
 
@@ -1107,7 +1110,7 @@ dt.warning {
     font-weight: 400;
 }
 
-dt.warning>a:nth-child(1) {
+dt.warning > a:nth-child(1) {
     color: var(--txt-main);
 }
 
@@ -1154,16 +1157,16 @@ input[type="radio"]:disabled {
     cursor: not-allowed;
 }
 
-input[type="radio"]+label,
-input[type="checkbox"]+label {
+input[type="radio"] + label,
+input[type="checkbox"] + label {
     padding-left: 0;
 }
 
 /* fix checkbox label positioning */
 ul:not(ul.actions) li:has(input[type="checkbox"] + label):not(:has(fieldset)),
 ul:not(ul.actions) li:has(input[type="radio"] + label):not(:has(fieldset)),
-ul:not(ul.actions) li:not(.blurb ul li)>label:has(input[type="checkbox"]),
-ul:not(ul.actions) li:not(.blurb ul li)>label:has(input[type="radio"]) {
+ul:not(ul.actions) li:not(.blurb ul li) > label:has(input[type="checkbox"]),
+ul:not(ul.actions) li:not(.blurb ul li) > label:has(input[type="radio"]) {
     display: flex !important;
     align-items: baseline;
     column-gap: 0.5em;
@@ -1233,8 +1236,8 @@ label.action input[type="checkbox"]:checked:hover {
 }
 
 /* hide duplicate filter indicators */
-.filters [type="radio"]+.indicator,
-.filters [type="checkbox"]+.indicator {
+.filters [type="radio"] + .indicator,
+.filters [type="checkbox"] + .indicator {
     display: none;
 }
 
@@ -1251,7 +1254,7 @@ input[type="radio"]:checked,
     box-shadow: inset 0 0 0 2.5px;
     background-color: var(--int-checked);
     background-image: none;
-    color: var(--int-bg)
+    color: var(--int-bg);
 }
 
 /*>>========== FILE UPLOAD BUTTON ==========<<*/
@@ -1375,7 +1378,7 @@ textarea.LV_invalid_field:is(:hover, :focus) {
 }
 
 .ui-datepicker td:hover {
-    background: var(--bg1)
+    background: var(--bg1);
 }
 
 /*>========== TOOLTIP ==========<*/
@@ -1467,7 +1470,7 @@ form.single input[type="submit"] {
     padding: 0.643em 0;
 }
 
-#new_collection_item>dl:nth-child(2) {
+#new_collection_item > dl:nth-child(2) {
     display: flex;
     align-items: center;
 }
@@ -1546,7 +1549,7 @@ a.action:is(:hover, :focus),
 button:is(:hover, :focus),
 input[type="submit"]:is(:hover, :focus),
 input::file-selector-button:is(:hover, :focus),
-.listbox>.heading .action a:is(:hover, :focus) {
+.listbox > .heading .action a:is(:hover, :focus) {
     border-color: var(--int-btn-hgl-border);
     box-shadow: none;
     background: var(--int-btn-hgl-bg);
@@ -1604,7 +1607,7 @@ span.delete a {
 }
 
 /* prevent unsubscribe button overflow */
-.subscriptions-index .edit_subscription>input[type="submit"] {
+.subscriptions-index .edit_subscription > input[type="submit"] {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -1612,7 +1615,7 @@ span.delete a {
 
 /*>========== BUTTON SPACING ==========<*/
 
-ul.actions:not(.navigation)>*:not(:first-child),
+ul.actions:not(.navigation) > *:not(:first-child),
 fieldset.actions li:not(:first-child) {
     padding-left: 0.2em;
 }
@@ -1630,7 +1633,7 @@ fieldset.actions li:not(:first-child) {
 .work.navigation .download {
     background: none !important;
     box-shadow: none !important;
-    border: none !important
+    border: none !important;
 }
 
 /* chapter index and download menus */
@@ -1649,7 +1652,7 @@ fieldset.actions li:not(:first-child) {
     color: var(--main-txt);
 }
 
-.javascript .work.navigation .expanded+.secondary,
+.javascript .work.navigation .expanded + .secondary,
 .javascript .work.navigation .secondary li,
 .javascript .work.navigation .secondary p,
 .javascript .work.navigation .secondary a {
@@ -1667,14 +1670,14 @@ fieldset.actions li:not(:first-child) {
 
 /*>>========== EXPAND, CONTRACT, TO TOP BUTTONS ==========<<*/
 
-.listbox>.heading .action:has(a) {
+.listbox > .heading .action:has(a) {
     padding: 0;
     border: none;
     box-shadow: none;
     background-color: transparent;
 }
 
-.listbox>.heading .action a {
+.listbox > .heading .action a {
     padding-inline: 0.3em;
     color: inherit;
 }
@@ -1831,7 +1834,9 @@ ul .tags.commas {
 /*>>========== BASE TAG APPEARANCE ==========<<*/
 
 /* exclude splash page favorite tags */
-a.tag:not(.fandom.index.group a.tag):not(h2.heading a.tag):not(.splash .favorite a.tag):not(.splash .favorite li:nth-of-type(2n+1) a.tag),
+a.tag:not(.fandom.index.group a.tag):not(h2.heading a.tag):not(.splash .favorite a.tag):not(
+        .splash .favorite li:nth-of-type(2n + 1) a.tag
+    ),
 .tags a[data-remote="true"],
 .unwrangled,
 .added.tag {
@@ -1857,11 +1862,11 @@ a.tag:not(.fandom.index.group a.tag, h2.heading a.tag, .splash .favorite a.tag):
 .added.tag::before,
 h5.fandoms.heading a.tag::before,
 dd.fandom.tags a::before,
-[class^=warning] a.tag::before,
-[class^=relationship] a.tag::before,
-[class^=character] a.tag::before,
+[class^="warning"] a.tag::before,
+[class^="relationship"] a.tag::before,
+[class^="character"] a.tag::before,
 .unwrangled::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
@@ -1875,28 +1880,32 @@ dd.fandom.tags a::before,
 
 /*>>========== TAG HOVER EFFECTS ==========<<*/
 
-a.tag:not(.fandom.index.group a.tag):not(h2.heading a.tag):not(.splash .favorite a.tag):not(.splash .favorite li:nth-of-type(2n+1) a.tag):hover::before,
+a.tag:not(.fandom.index.group a.tag):not(h2.heading a.tag):not(.splash .favorite a.tag):not(
+        .splash .favorite li:nth-of-type(2n + 1) a.tag
+    ):hover::before,
 .added.tag:hover::before,
 .unwrangled:hover::before,
 h5.fandoms.heading a.tag:hover::before,
 dd.fandom.tags a:hover::before,
-[class^=warning] a.tag:hover::before,
-[class^=relationship] a.tag:hover::before,
-[class^=character] a.tag:hover::before,
+[class^="warning"] a.tag:hover::before,
+[class^="relationship"] a.tag:hover::before,
+[class^="character"] a.tag:hover::before,
 .tags a[data-remote="true"]:hover::before {
     filter: var(--tag-filter);
     box-shadow: var(--tag-hsl-shadow);
 }
 
-a.tag:not(.fandom.index.group a.tag):not(h2.heading a.tag):not(.splash .favorite a.tag):not(.splash .favorite li:nth-of-type(2n+1) a.tag):hover,
+a.tag:not(.fandom.index.group a.tag):not(h2.heading a.tag):not(.splash .favorite a.tag):not(
+        .splash .favorite li:nth-of-type(2n + 1) a.tag
+    ):hover,
 .added.tag:hover,
 .unwrangled:hover,
 .tags a[data-remote="true"]:hover,
 h5.fandoms.heading a.tag:hover,
 dd.fandom.tags a:hover,
-[class^=warning] a.tag:hover,
-[class^=relationship] a.tag:hover,
-[class^=character] a.tag:hover {
+[class^="warning"] a.tag:hover,
+[class^="relationship"] a.tag:hover,
+[class^="character"] a.tag:hover {
     color: var(--tag-hgl-txt) !important;
     transform: translateY(-1px);
 }
@@ -1932,13 +1941,13 @@ a.tag:hover {
 
 /*>>========== TAG TYPE VARIANTS ==========<<*/
 
-[class^=warning] a.tag {
+[class^="warning"] a.tag {
     font-weight: 400;
     background-color: var(--tag-warning-bg) !important;
     color: var(--tag-warning-txt) !important;
 }
 
-[class^=relationship] a.tag {
+[class^="relationship"] a.tag {
     background-color: var(--tag-ship-bg) !important;
     color: var(--tag-ship-txt) !important;
 }
@@ -1951,12 +1960,12 @@ li.relationships:has(a[href*="%20*a*%20"]) a.tag,
     color: var(--tag-platonic-ship-txt) !important;
 }
 
-[class^=character] a.tag {
+[class^="character"] a.tag {
     background-color: var(--tag-character-bg) !important;
     color: var(--tag-character-txt) !important;
 }
 
-[class^=freeform] a.tag {
+[class^="freeform"] a.tag {
     background-color: var(--tag-freeform-bg) !important;
     color: var(--tag-freeform-txt) !important;
 }
@@ -2002,7 +2011,7 @@ li.relationships:has(a[href*="%20*a*%20"]) a.tag,
     box-sizing: border-box;
     margin-right: 5px;
     letter-spacing: initial;
-    font-weight: 400
+    font-weight: 400;
 }
 
 /*>========== GROUP: TAG CLOUDS ==========<*/
@@ -2044,7 +2053,7 @@ a.cloud8 {
 .wrapper,
 #outer.wrapper,
 #inner.wrapper {
-    box-shadow: none;
+    box-shadow: none !important;
 }
 
 /*>>========== DEFINITION LISTS ==========<<*/
@@ -2068,7 +2077,7 @@ dl.index dt:has(+ dt) {
     padding-bottom: 0;
 }
 
-dl.index dt+dt {
+dl.index dt + dt {
     border-radius: 0;
     border-top: none;
 }
@@ -2163,18 +2172,18 @@ fieldset fieldset.listbox {
     background-color: var(--bg5);
 }
 
-.listbox>.listbox {
+.listbox > .listbox {
     margin: 0.649em;
 }
 
-.listbox>.heading {
+.listbox > .heading {
     margin: 0;
     padding: 0.5em;
     color: var(--txt-main);
 }
 
-.listbox>.heading a:not(.action a, .actions a),
-.listbox>.heading a:visited:not(.action a:visited, .actions a:visited) {
+.listbox > .heading a:not(.action a, .actions a),
+.listbox > .heading a:visited:not(.action a:visited, .actions a:visited) {
     color: var(--txt-main);
 }
 
@@ -2210,21 +2219,21 @@ fieldset fieldset.listbox {
 /*>========== LISTBOX BUTTON PLACEMENT ==========<*/
 
 #user-fandoms.listbox .actions,
-.listbox>.actions.pagination {
+.listbox > .actions.pagination {
     margin: 0.643em;
     padding: 0;
 }
 
-.listbox>.actions[role="navigation"]:not(.pagination) {
+.listbox > .actions[role="navigation"]:not(.pagination) {
     margin: 0;
     padding: 0;
 }
 
-.listbox>p.actions {
+.listbox > p.actions {
     margin: 0;
 }
 
-.listbox>.actions[role="navigation"]:not(.pagination) a {
+.listbox > .actions[role="navigation"]:not(.pagination) a {
     margin: 0.643em 0.429em;
 }
 
@@ -2299,7 +2308,7 @@ dl.meta dd ul {
 
 li.blurb,
 .blurb .blurb,
-.region.own+.dashboard li.blurb.own {
+.region.own + .dashboard li.blurb.own {
     padding: var(--blurb-padding) var(--blurb-padding) 0.643em;
     background-color: var(--bg5) !important;
     box-shadow: none;
@@ -2311,7 +2320,7 @@ li.blurb,
 li.picture.blurb,
 .listbox li.blurb,
 .toggled.blurb,
-.region.own+.dashboard li.blurb.own {
+.region.own + .dashboard li.blurb.own {
     border: var(--border-width) solid var(--border3);
     border-radius: var(--radius-big);
     box-shadow: var(--shadow-box1);
@@ -2386,8 +2395,8 @@ li.picture.blurb,
 /* reset positioning for content icons */
 .blurb ul.required-tags,
 .blurb ul.required-tags li,
-.blurb ul.required-tags li+li+li,
-.blurb ul.required-tags li+li+li+li,
+.blurb ul.required-tags li + li + li,
+.blurb ul.required-tags li + li + li + li,
 .blurb ul.required-tags li a {
     position: unset;
     width: unset;
@@ -2405,8 +2414,8 @@ li.picture.blurb,
 /*>========== MODIFICATION: PICTURE ==========<*/
 /* indices with icon pictures: collections, users, skins, mystery blurbs */
 
-.picture.blurb:has(.icon)>.header,
-.mystery.blurb:has(.icon)>.header {
+.picture.blurb:has(.icon) > .header,
+.mystery.blurb:has(.icon) > .header {
     min-height: 45px;
     margin: 0;
     padding-bottom: var(--blurb-padding);
@@ -2414,7 +2423,7 @@ li.picture.blurb,
 }
 
 /* remove border for user blurbs without descriptions or buttons */
-.user.pseud.picture.blurb:not(:has(blockquote, ul.actions))>.header {
+.user.pseud.picture.blurb:not(:has(blockquote, ul.actions)) > .header {
     margin: 0;
     padding: 0;
     border: none;
@@ -2428,9 +2437,9 @@ li.picture.blurb,
 }
 
 /* create space for picture blurb icon */
-.blurb:has(.icon)>.header h4,
-.blurb:has(.icon)>.header h5,
-.blurb>.header>.mods.commas {
+.blurb:has(.icon) > .header h4,
+.blurb:has(.icon) > .header h5,
+.blurb > .header > .mods.commas {
     margin-left: 45px;
     padding-left: var(--blurb-padding);
 }
@@ -2494,7 +2503,7 @@ li.picture.blurb,
 }
 
 /* position date next to bookmark icon */
-.bookmark p.status:has(span.text)+.header .datetime {
+.bookmark p.status:has(span.text) + .header .datetime {
     margin-right: 33px;
 }
 
@@ -2519,8 +2528,8 @@ li.picture.blurb,
     font-weight: var(--txt-bold);
 }
 
-.bookmark .module:has(.meta)>.byline,
-.bookmark .short:has(.meta)>.header {
+.bookmark .module:has(.meta) > .byline,
+.bookmark .short:has(.meta) > .header {
     margin-bottom: 0.649em;
 }
 
@@ -2651,15 +2660,15 @@ li.comment:not(:has(.edit_comment)) {
 /* credit to lfk and the Hogwarts skin - https://github.com/Ifkyyy/AO3-skins */
 .comment img.icon,
 .comment span.icon,
-.comment div.icon>a {
+.comment div.icon > a {
     border-radius: var(--icon-primary-radius);
     transition: border-radius 150ms linear;
 }
 
 .comment span.icon:hover,
-.comment div.icon>a:is(:hover, :focus),
-.comment div.icon>a:is(:hover, :focus)>.icon {
-    border-radius: .5em;
+.comment div.icon > a:is(:hover, :focus),
+.comment div.icon > a:is(:hover, :focus) > .icon {
+    border-radius: 0.5em;
 }
 
 .comment h4.byline {
@@ -2708,7 +2717,7 @@ li.comment:not(:has(.edit_comment)) {
     padding: 0.429em 0.75em;
     border: var(--border-width) solid var(--alert-txt);
     border-radius: var(--radius-big);
-    outline: 1px solid var(--alert-txt)
+    outline: 1px solid var(--alert-txt);
 }
 
 /* delete confirmation text */
@@ -2763,7 +2772,7 @@ li.comment:has(.edit_comment) {
     margin: 0;
 }
 
-.splash>.module h3 {
+.splash > .module h3 {
     border-bottom: 1.5px solid var(--border4);
     font-weight: var(--txt-bold);
     font-size: 1.4em;
@@ -2771,13 +2780,13 @@ li.comment:has(.edit_comment) {
 }
 
 /* modules: favorite tags, news, unread messages */
-.splash>.module,
-.logged-in .splash>.module {
+.splash > .module,
+.logged-in .splash > .module {
     box-sizing: border-box;
     margin-inline: 0;
 }
 
-.logged-in .splash>.module {
+.logged-in .splash > .module {
     width: 49%;
 }
 
@@ -2858,7 +2867,7 @@ li.comment:has(.edit_comment) {
 /*>========== ZONE: SYSTEM: TOS ==========<*/
 /* Terms of Service, TOS FAQ, TOS popup - view by logging out, deleting cookies, and visiting random work */
 
-.tos .userstuff nav.toc>details>summary {
+.tos .userstuff nav.toc > details > summary {
     border-color: inherit;
 }
 
@@ -3000,7 +3009,7 @@ form.filters:not(:hover) {
     margin-bottom: 4.5em !important;
 }
 
-.filters>fieldset {
+.filters > fieldset {
     overflow: visible;
     margin: 0;
     padding: 0;
@@ -3008,13 +3017,13 @@ form.filters:not(:hover) {
     background: transparent;
 }
 
-.filters>fieldset li {
+.filters > fieldset li {
     margin: 0;
     padding: 0;
 }
 
 .filters fieldset,
-fieldset>dl {
+fieldset > dl {
     box-shadow: none !important;
 }
 
@@ -3068,8 +3077,8 @@ form.filters dl dl {
 }
 
 /* hide search bar for bookmarkers tags if there are none */
-.filters dt#toggle_include_tag_tags:not(:has(+ dd input)).filter-toggle~.bookmarker.autocomplete.search,
-.filters dt#toggle_exclude_tag_tags:not(:has(+ dd input)).filter-toggle~.bookmarker.autocomplete.search {
+.filters dt#toggle_include_tag_tags:not(:has(+ dd input)).filter-toggle ~ .bookmarker.autocomplete.search,
+.filters dt#toggle_exclude_tag_tags:not(:has(+ dd input)).filter-toggle ~ .bookmarker.autocomplete.search {
     display: none;
 }
 
@@ -3116,7 +3125,7 @@ form.filters dl dl {
     font-weight: 400;
 }
 
-.filters ul li>label {
+.filters ul li > label {
     padding-block: 0.25em !important;
 }
 
@@ -3150,7 +3159,7 @@ form.filters dl dl {
 ============================================================*/
 
 /* scrollable tag listboxes */
-.tag.home.profile .listbox>.tags.index {
+.tag.home.profile .listbox > .tags.index {
     overflow: auto;
     max-height: 60vh;
 }
@@ -3209,11 +3218,11 @@ dl.nomination {
     margin: 0 0 0.5em 0;
 }
 
-.userstuff ul>li>ul>li {
+.userstuff ul > li > ul > li {
     list-style-type: circle;
 }
 
-.userstuff ul>li>ul>li>ul>li {
+.userstuff ul > li > ul > li > ul > li {
     list-style-type: disc;
 }
 
@@ -3591,8 +3600,7 @@ img[src$="/images/skins/iconsets/default/icon_user.png"] {
     box-sizing: border-box;
     border: none;
     background:
-        url("https://wolfbatcat.github.io/ao3-rose-pine/assets/zerafina-icon-anon-01.png"),
-        var(--int-btn-hgl-bg);
+        url("https://wolfbatcat.github.io/ao3-rose-pine/assets/zerafina-icon-anon-01.png"), var(--int-btn-hgl-bg);
     background-color: var(--icon-anon);
     background-size: cover;
 }
@@ -3602,8 +3610,7 @@ img[src$="/images/skins/iconsets/default/icon_user.png"] {
     box-sizing: border-box;
     border: none;
     background:
-        url("https://wolfbatcat.github.io/ao3-rose-pine/assets/zerafina-icon-anon-01.png"),
-        var(--int-btn-hgl-bg);
+        url("https://wolfbatcat.github.io/ao3-rose-pine/assets/zerafina-icon-anon-01.png"), var(--int-btn-hgl-bg);
     background-color: var(--icon-anon);
     background-size: cover;
 }
@@ -3623,8 +3630,7 @@ img[src$="/images/skins/iconsets/default/icon_collection.png"] {
     box-sizing: border-box;
     border: none;
     background:
-        url("https://wolfbatcat.github.io/ao3-rose-pine/assets/zerafina-icon-tag-02.png"),
-        var(--int-btn-hgl-bg);
+        url("https://wolfbatcat.github.io/ao3-rose-pine/assets/zerafina-icon-tag-02.png"), var(--int-btn-hgl-bg);
     background-color: var(--icon-id);
     background-size: cover;
 }
@@ -3633,10 +3639,9 @@ img[src$="/images/skins/iconsets/default/icon_collection.png"] {
 .index .mystery .icon {
     box-sizing: border-box;
     border: var(--border-width) solid var(--icon-border2);
-    box-shadow: inset 0 0 0 3px #FFFFFF;
+    box-shadow: inset 0 0 0 3px #ffffff;
     background:
-        url("https://wolfbatcat.github.io/ao3-rose-pine/assets/zerafina-icon-anon-01.png"),
-        var(--int-btn-hgl-bg);
+        url("https://wolfbatcat.github.io/ao3-rose-pine/assets/zerafina-icon-anon-01.png"), var(--int-btn-hgl-bg);
     background-color: var(--icon-id);
     background-size: cover;
 }
@@ -3646,8 +3651,7 @@ img[src$="/images/skins/iconsets/default/icon_collection.png"] {
     box-sizing: border-box;
     border: none;
     background:
-        url("https://wolfbatcat.github.io/ao3-rose-pine/assets/zerafina-icon-admin-02.png"),
-        var(--int-btn-hgl-bg);
+        url("https://wolfbatcat.github.io/ao3-rose-pine/assets/zerafina-icon-admin-02.png"), var(--int-btn-hgl-bg);
     background-color: var(--icon-id);
     background-size: cover;
 }
@@ -3658,8 +3662,7 @@ img[src$="/images/skins/iconsets/default/icon_collection.png"] {
     box-sizing: border-box;
     border: none;
     background:
-        url("https://wolfbatcat.github.io/ao3-rose-pine/assets/zerafina-icon-skins-02.png"),
-        var(--int-btn-hgl-bg);
+        url("https://wolfbatcat.github.io/ao3-rose-pine/assets/zerafina-icon-skins-02.png"), var(--int-btn-hgl-bg);
     background-color: var(--icon-id);
     background-size: cover;
 }
@@ -3680,8 +3683,8 @@ img[src$="/images/skins/iconsets/default/icon_collection.png"] {
 }
 
 /* base styling for content symbols */
-.blurb ul.required-tags li a>span,
-.bookmark p.status a>span,
+.blurb ul.required-tags li a > span,
+.bookmark p.status a > span,
 #symbols-key dl img,
 #bookmark-symbols-key img {
     box-sizing: border-box;
@@ -3765,7 +3768,8 @@ img[src$="/images/skins/iconsets/default/category-multi.png"] {
 
 .required-tags .category-other,
 img[src$="/images/skins/iconsets/default/category-other.png"] {
-    background: url("https://wolfbatcat.github.io/ao3-rose-pine/assets/zerafina-icon-category-other-01.png"),
+    background:
+        url("https://wolfbatcat.github.io/ao3-rose-pine/assets/zerafina-icon-category-other-01.png"),
         var(--icon-relationship-other);
 }
 
@@ -3982,7 +3986,7 @@ dl.statistics dt.words::before {
 }
 
 .stats dd.works::before,
-.stats dd:has(a[href$=works])::before {
+.stats dd:has(a[href$="works"])::before {
     background-image: url("https://wolfbatcat.github.io/ao3-rose-pine/assets/zerafina-stats-icon-works-01.png");
 }
 
@@ -4014,7 +4018,7 @@ dl.statistics dt.hits::before {
 }
 
 .stats dd.collections::before,
-.stats dd:has(a[href$=collections])::before {
+.stats dd:has(a[href$="collections"])::before {
     background-image: url("https://wolfbatcat.github.io/ao3-rose-pine/assets/zerafina-stats-icon-collection-01.png");
 }
 
@@ -4041,16 +4045,16 @@ dl.statistics dt.comment::before {
     background-image: url("https://wolfbatcat.github.io/ao3-rose-pine/assets/zerafina-stats-icon-comment-threads-01.png");
 }
 
-.stats dd:has(a[href$=fandoms])::before,
+.stats dd:has(a[href$="fandoms"])::before,
 .tagset .stats dd:nth-of-type(1)::before {
     background-image: url("https://wolfbatcat.github.io/ao3-rose-pine/assets/zerafina-stats-icon-fandoms-01.png");
 }
 
-.collection.blurb .stats dd:has(a[href$=bookmarks])::before {
+.collection.blurb .stats dd:has(a[href$="bookmarks"])::before {
     background-image: url("https://wolfbatcat.github.io/ao3-rose-pine/assets/zerafina-stats-icon-bookmarked-items-01.png");
 }
 
-.stats dd:has(a[href$=requests])::before {
+.stats dd:has(a[href$="requests"])::before {
     background-image: url("https://wolfbatcat.github.io/ao3-rose-pine/assets/zerafina-stats-icon-promts-01.png");
 }
 
@@ -4101,7 +4105,7 @@ dl.stats dd {
 
 /* prevent hover text clipping - needs better solution */
 .statistics .stats dd:last-of-type::after,
-.index .stats dd:last-of-type:has(a[href$=bookmarks])::after,
+.index .stats dd:last-of-type:has(a[href$="bookmarks"])::after,
 .stats dd.inspired::after,
 .tagset .index .stats dd:last-of-type::after {
     right: 0;
@@ -4124,7 +4128,7 @@ dl.stats dd {
 }
 
 .stats dd.works::after,
-.stats dd:has(a[href$=works])::after {
+.stats dd:has(a[href$="works"])::after {
     content: "Works";
 }
 
@@ -4176,7 +4180,7 @@ dl.stats dd {
     content: "Comment Threads";
 }
 
-.stats dd:has(a[href$=fandoms])::after,
+.stats dd:has(a[href$="fandoms"])::after,
 .tagset .stats dd:nth-of-type(1)::after {
     content: "Fandoms";
 }
@@ -4197,15 +4201,15 @@ dl.stats dd {
     content: "Freeforms";
 }
 
-.stats dd:has(a[href$=requests])::after {
+.stats dd:has(a[href$="requests"])::after {
     content: "Prompts";
 }
 
-.collections-index .stats dd:has(a[href$=collections])::after {
+.collections-index .stats dd:has(a[href$="collections"])::after {
     content: "Challenges/Subcollections";
 }
 
-.collection.blurb .stats dd:has(a[href$=bookmarks])::after {
+.collection.blurb .stats dd:has(a[href$="bookmarks"])::after {
     content: "Bookmarked Items";
 }
 
@@ -4246,7 +4250,7 @@ dl.stats dd {
     border-radius: var(--radius-mid);
 }
 
-#stat_chart svg>rect {
+#stat_chart svg > rect {
     display: none;
 }
 
@@ -4279,11 +4283,11 @@ dl.stats dd {
     padding: 0.643em;
 }
 
-.statistics ul.index li>dl>dd>dl {
+.statistics ul.index li > dl > dd > dl {
     margin: 0;
 }
 
-.statistics ul.index li>dl {
+.statistics ul.index li > dl {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -4291,11 +4295,11 @@ dl.stats dd {
     column-gap: 1em;
 }
 
-.statistics ul.index li>dl>dt {
+.statistics ul.index li > dl > dt {
     margin-block: 0.3em;
 }
 
-.statistics ul.index li>dl>dd {
+.statistics ul.index li > dl > dd {
     margin-block: 0.3em;
     margin-left: auto;
 }
@@ -4330,7 +4334,6 @@ dl.stats dd {
     border: var(--border-width) solid var(--int-btn-border) !important;
     border-radius: var(--radius-btn) !important;
     box-shadow: var(--shadow-buttons) !important;
-    ;
     background: var(--int-btn-bg) !important;
     background-origin: border-box !important;
     color: var(--int-btn-txt) !important;
@@ -4371,7 +4374,7 @@ dl.stats dd {
 }
 
 .tox .tox-dialog-wrap__backdrop {
-    background: #000000B2 !important;
+    background: #000000b2 !important;
     /* same as AO3 modal backdrop */
 }
 
@@ -4431,15 +4434,15 @@ li.blurb #header.region {
     box-shadow: none !important;
 }
 
-li.blurb #header.region>ul.navigation.actions>li.dropdown {
+li.blurb #header.region > ul.navigation.actions > li.dropdown {
     color: var(--txt-main) !important;
 }
 
-li.blurb #header.region>ul.navigation.actions>li.dropdown::before {
+li.blurb #header.region > ul.navigation.actions > li.dropdown::before {
     content: none !important;
 }
 
-li.blurb #header.region>ul.navigation.actions>li.dropdown>.menu.dropdown-menu {
+li.blurb #header.region > ul.navigation.actions > li.dropdown > .menu.dropdown-menu {
     z-index: 9999 !important;
     box-sizing: border-box !important;
     width: max-content !important;
@@ -4458,17 +4461,17 @@ li.blurb #header.region>ul.navigation.actions>li.dropdown>.menu.dropdown-menu {
     border-radius: 8px !important;
 }
 
-.user-note-preview>div>div,
+.user-note-preview > div > div,
 .note-textarea {
     border: 1px solid var(--border3) !important;
     border-radius: var(--radius-big) !important;
 }
 
-.user-note-preview>div>div {
+.user-note-preview > div > div {
     box-shadow: var(--shadow-box2) !important;
 }
 
-.user-note-preview>div>div:has(details) {
+.user-note-preview > div > div:has(details) {
     border: none !important;
     border-radius: 0 !important;
     box-shadow: none !important;
@@ -4483,7 +4486,9 @@ li.blurb #header.region>ul.navigation.actions>li.dropdown>.menu.dropdown-menu {
     padding: 0.25em 0.75em !important;
     font-size: 1em !important;
     cursor: pointer !important;
-    transition: background 0.2s, color 0.2s;
+    transition:
+        background 0.2s,
+        color 0.2s;
 }
 
 .note-actions button:is(:hover, :focus) {
@@ -4501,7 +4506,7 @@ li.blurb #header.region>ul.navigation.actions>li.dropdown>.menu.dropdown-menu {
     margin: 18px 0 1px 0 !important;
 }
 
-.user-note-preview details>summary {
+.user-note-preview details > summary {
     border-top-left-radius: var(--radius-mid);
     border-top-right-radius: var(--radius-mid);
 }
@@ -4574,7 +4579,7 @@ input[type="range"]::-moz-range-thumb {
     cursor: pointer;
 }
 
-input[type="checkbox"]:checked+[class*="toggle-slider"],
-input[type="checkbox"]:checked+[class*="toggle-track"] {
+input[type="checkbox"]:checked + [class*="toggle-slider"],
+input[type="checkbox"]:checked + [class*="toggle-track"] {
     background-color: var(--link-visited) !important;
 }
