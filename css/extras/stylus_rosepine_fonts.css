@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           AO3: Rosé Pine Fonts
 @namespace      https://github.com/Wolfbatcat/ao3-rose-pine
-@version        1.0.2
+@version        1.0.3
 @description    Custom fonts for the AO3 Rosé Pine site skin
 @author         BlackBatCat, ravenothere
 ==/UserStyle== */
@@ -10,22 +10,25 @@
          Big thanks to the creators of the fonts used here and ravenothere for getting them to work on mobile!*/
 
 @-moz-document domain("archiveofourown.org") {
-    
     /*>========== SETTINGS ==========<*/
 
     /* Edit the variables below to customize fonts and text sizes. */
 
     :root {
         /* TEXT SIZES */
-        --txt-size-main:       100%;                /* main text size (bigger than 130% causes some issues, but is still mostly functional) */
-        --txt-size-work:       110%;                /* work text size */
-        --txt-bold:             700;                /* font weight for bold text */
+        --txt-size-main: 100%; /* main text size (bigger than 130% causes some issues, but is still mostly functional) */
+        --txt-size-work: 110%; /* work text size */
+        --txt-bold: 700; /* font weight for bold text */
 
         /* FONTS */
-        --font-main:           Figtree, Merriweather, Apfel Grotezk, Bitter, Helvetica, "Trebuchet MS", "Lucida Sans", Arial, sans-serif, "GNU Unifont";
-        --font-work:           Figtree, Merriweather, Apfel Grotezk, Bitter, Helvetica, "Trebuchet MS", "Lucida Sans", Arial, sans-serif, "GNU Unifont";
+        --font-main:
+            Figtree, Merriweather, "Apfel Grotezk", Bitter, Helvetica, "Trebuchet MS", "Lucida Sans", Arial, sans-serif,
+            "GNU Unifont";
+        --font-work:
+            Figtree, Merriweather, "Apfel Grotezk", Bitter, Helvetica, "Trebuchet MS", "Lucida Sans", Arial, sans-serif,
+            "GNU Unifont";
         --font-heading:        ; /* Leave blank to use the main font for headings */
-        --font-code:           "Victor Mono", Consolas, Monaco, Courier, monospace;
+        --font-code: "Victor Mono", Consolas, Monaco, Courier, monospace;
     }
 
     /* MAIN FONT FAMILY */
@@ -87,13 +90,22 @@
     #floaty-textarea {
         font-family: var(--font-code);
         /* font-style: italic; */ /* Uncomment for the cursive italic variant of Victor Mono */
-
     }
 
     /* IMPORTED FONTS */
     @font-face {
         font-family: "Figtree";
-        src: url("https://cdn.jsdelivr.net/gh/erikdkennedy/figtree@master/fonts/webfonts/Figtree%5Bwght%5D.woff2");
+        font-style: normal;
+        font-weight: 300 900;
+        src: url("https://cdn.jsdelivr.net/gh/erikdkennedy/figtree@master/fonts/webfonts/Figtree%5Bwght%5D.woff2")
+            format("woff2-variations");
+    }
+    @font-face {
+        font-family: "Figtree";
+        font-style: italic;
+        font-weight: 300 900;
+        src: url("https://cdn.jsdelivr.net/gh/erikdkennedy/figtree@master/fonts/webfonts/Figtree-Italic%5Bwght%5D.woff2")
+            format("woff2-variations");
     }
 
     @font-face {
@@ -112,7 +124,17 @@
     }
     @font-face {
         font-family: "Merriweather";
-        src: url("https://cdn.jsdelivr.net/gh/SorkinType/Merriweather@master/fonts/webfonts/Merriweather-Regular.woff2");
+        font-style: normal;
+        font-weight: 300 900;
+        src: url("https://cdn.jsdelivr.net/gh/SorkinType/Merriweather@master/fonts/webfonts/Merriweather%5Bopsz,wdth,wght%5D.woff2")
+            format("woff2-variations");
+    }
+    @font-face {
+        font-family: "Merriweather";
+        font-style: italic;
+        font-weight: 300 900;
+        src: url("https://cdn.jsdelivr.net/gh/SorkinType/Merriweather@master/fonts/webfonts/Merriweather-Italic%5Bopsz,wdth,wght%5D.woff2")
+            format("woff2-variations");
     }
     @font-face {
         font-family: "Victor Mono";
@@ -128,7 +150,4 @@
         font-family: "Outfit";
         src: url("https://cdn.jsdelivr.net/gh/Outfitio/Outfit-Fonts@main/fonts/webfonts/Outfit-Regular.woff2");
     }
-
 }
-
-
