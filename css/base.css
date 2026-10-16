@@ -68,21 +68,21 @@ Alphanumeric = Additions by ZerafinaCSS and other contributors
     /*>========== UI PARAMETERS ==========<*/
 
     /* SPACE ON LEFT/RIGHT SIDE OF SCREEN */
-    --margins-header: 1rem; /* header on desktop */
-    --margins-main: 5%; /* site contents on desktop */
-    --margins-narrow: 2.5%; /* site contents and header on tablet/mobile */
-    --workskin-width: 70em; /* max width of work content on desktop */
+    --margins-header: 1rem;     /* header on desktop */
+    --margins-main: 5%;         /* site contents on desktop */
+    --margins-narrow: 2.5%;     /* site contents and header on tablet/mobile */
+    --workskin-width: 70em;     /* max width of work content on desktop */
 
     /* BLURB PADDING */
     --blurb-padding: 0.75em;
     --blurb-padding-neg: -0.75em;
 
     /* BORDER-RADIUS (= ROUNDNESS OF CORNERS) */
-    --radius-small: 0.75rem; /* smaller elements: list elements, input elements etc. */
-    --radius-mid: 0.75rem; /* midsizde elements: dropdown menus, system messages etc. */
-    --radius-big: 0.75rem; /* bigger elements: blurbs, forms, comments, textareas etc. */
-    --radius-alt: 0.75rem; /* header search box, buttons */
-    --radius-tag: 0 15px 15px; /* tags */
+    --radius-small: 0.75rem;    /* smaller elements: list elements, input elements etc. */
+    --radius-mid: 0.75rem;      /* midsizde elements: dropdown menus, system messages etc. */
+    --radius-big: 0.75rem;      /* bigger elements: blurbs, forms, comments, textareas etc. */
+    --radius-alt: 0.75rem;      /* header search box, buttons */
+    --radius-tag: 0 15px 15px;  /* tags */
 
     /* ICON BORDER-RADIUS */
     --icon-content-radius: 0.75rem; /* content and bookmark icon */
@@ -93,13 +93,13 @@ Alphanumeric = Additions by ZerafinaCSS and other contributors
     --border-width: 1px; /* for almost all borders (experimental - changing this might cause some weirdness) */
 
     /* TEXT SIZE */
-    --txt-size-main: 110%; /* main text size (bigger than 130% causes some issues, but is still mostly functional) */
-    --txt-size-work: 115%; /* work text size */
+    --txt-size-main: 110%;      /* main text size (bigger than 130% causes some issues, but is still mostly functional) */
+    --txt-size-work: 115%;      /* work text size */
     --greeting-icon-size: 1.286em; /* header greeting icon size */
 
     /* TEXT BOLDNESS */
-    --txt-semibold: 600; /* font-weight hover effect */
-    --txt-bold: 700; /* font-weight for headings */
+    --txt-semibold: 600;        /* font-weight hover effect */
+    --txt-bold: 700;            /* font-weight for headings */
 
     /* LINK DECORATION */
     --link-underline: 1px solid transparent; /* link underline => delete "transparent" to make link underlines visible */
@@ -108,7 +108,7 @@ Alphanumeric = Additions by ZerafinaCSS and other contributors
 
     --greeting-icon-display: none; /* set to "flex" to show the user avatar in the header */
     --splash-social-display: none; /* set to "inline" to show the social share buttons on the splash page */
-    --footer-display: inline; /* set to "none" to hide the footer */
+    --footer-display: inline;   /* set to "none" to hide the footer */
 }
 
 /*>========== FONTS ==========<*/
@@ -3388,7 +3388,12 @@ p.muted.notice {
     background: transparent !important;
     font-size: 0.95em;
     line-height: 1;
-    color: var(--alert-txt);
+    color: var(--link-hgl);
+}
+
+.announcement input[type="submit"]:is(:hover, :focus),
+.announcement .action:is(:hover, :focus) {
+    color: var(--int-btn-hgl-txt);
 }
 
 .announcement.event {

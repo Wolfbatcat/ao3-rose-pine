@@ -178,14 +178,14 @@ GLOBAL VARIABLES
   /* BACKGROUND */
   --notice-bg:           #181c24;
   --success-bg:          #14181e;
-  --caution-bg:          #1a1824;
-  --alert-bg:            #1a1420;
+  --caution-bg:          #191825;
+  --alert-bg:            #191825;
 
   /* TEXT (AND BORDERS) */
   --notice-txt:          #9ccfd8; 
   --success-txt:         #3e8fb0;
   --caution-txt:         #c4a7e7;
-  --alert-txt:           #eb6f92;
+  --alert-txt:           #c4a7e7;
 
 
 /*>========== FILTERS ==========<*/
